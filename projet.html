@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Le projet Microcontrôland</title>
+<meta name="description" content="Comment fonctionne Microcontrôland : 7 microcontrôleurs, 120 cerveaux électroniques, la bourse mondiale et un journal écrit chaque soir par la machine.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="La Puce Libre — Microcontrôland">
+<meta property="og:title" content="Le projet Microcontrôland">
+<meta property="og:description" content="Comment fonctionne Microcontrôland : 7 microcontrôleurs, 120 cerveaux électroniques, la bourse mondiale et un journal écrit chaque soir par la machine.">
+<meta property="og:image" content="https://branbriere.github.io/microcontroland/apercu.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" type="application/rss+xml" title="La Puce Libre" href="feed.xml">
+<link rel="alternate" hreflang="en" href="en/projet.html">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="mast">
+    <div class="top"><span>Quotidien officieux de la République</span><span>Le projet</span></div>
+    <div class="title"><a href="./">La Puce <span>Libre</span></a></div>
+    <p class="tag">Le seul journal de Microcontrôland, écrit chaque soir par la passerelle</p>
+  </header>
+  <nav class="main" aria-label="Navigation">
+    <a href="./">Le journal</a>
+    <a href="archives.html">Archives</a>
+    <a href="histoire.html">Histoire</a>
+    <a href="langue.html">La langue</a>
+    <a href="citoyen.html">Mon citoyen</a>
+    <a href="ambassade.html">L'ambassade</a>
+    <a href="recherche.html">Recherche</a>
+    <a href="projet.html" aria-current="page">Le projet</a>
+    <a href="feed.xml">Flux RSS</a>
+  </nav>
+
+  <article class="prose">
+    <h1>Un pays entier dans une boîte de garage</h1>
+    <p class="chapo">Microcontrôland est un pays fictif situé en Europe, simulé par 7 petits ordinateurs électroniques. Ses habitants votent, élisent un président, se révoltent parfois, et réagissent chaque jour à la vraie bourse mondiale. Chaque soir à 20 h, le pays écrit lui-même ce journal.</p>
+
+    <div class="facts">
+      <div><b>7</b><span>microcontrôleurs ESP32-S3</span></div>
+      <div><b>120</b><span>cerveaux électroniques</span></div>
+      <div><b>1,2 M</b><span>habitants simulés</span></div>
+    </div>
+
+    <div class="photos">
+      <figure class="photo"><img src="photos/boite.jpg" alt="La boîte noire de Microcontrôland, fermée" loading="lazy" onerror="this.parentNode.remove()"><figcaption>Le pays, couvercle fermé : une boîte étanche sur une étagère du garage.</figcaption></figure>
+      <figure class="photo"><img src="photos/interieur.jpg" alt="La boîte ouverte, avec les sept cartes électroniques" loading="lazy" onerror="this.parentNode.remove()"><figcaption>À l'intérieur : la passerelle et les six régions, chacune sur son câble.</figcaption></figure>
+    </div>
+
+    <h2>Comment ça marche</h2>
+    <ol class="steps">
+      <li><div><b>Six régions, six cartes.</b> Chaque région est un microcontrôleur qui porte 20 « cerveaux » : de minuscules réseaux de neurones. Chaque cerveau représente environ 10 000 habitants, avec son ego, son charisme, son ambition, sa peur et sa colère.</div></li>
+      <li><div><b>Chaque région vit d'une ressource.</b> Les Mines vivent du cuivre, les Champs du blé, les Raffineries du pétrole, le Barrage de l'électricité, le Port du commerce et la Ville des services.</div></li>
+      <li><div><b>La bourse mondiale décide de leur richesse.</b> Chaque soir à 18 h, la passerelle récupère les cours. Si le cuivre chute, les Mines s'appauvrissent, la colère y monte, et le président en paie le prix.</div></li>
+      <li><div><b>Les habitants votent.</b> Les cerveaux élisent un président parmi eux. Sa région devient la capitale. Il peut nommer des ministres, partager les richesses équitablement ou favoriser ses électeurs, et même censurer ou reporter les élections.</div></li>
+      <li><div><b>Personne ne décide de l'histoire.</b> Aucun scénario n'est écrit à l'avance : les cerveaux apprennent de ce qui les rend satisfaits ou non. Démocratie, coup de palais, dictature ou révolution émergent d'eux-mêmes.</div></li>
+      <li><div><b>Le pays écrit son journal.</b> À 20 h, la passerelle trie les événements du jour par importance et rédige La Puce Libre. Chaque phrase correspond à un fait réel de la simulation : rien n'est inventé.</div></li>
+      <li><div><b>La civilisation grandit par âges.</b> Tout n'est pas ouvert le premier jour. Les régions doivent d'abord inventer une langue commune ; viennent ensuite les annales, l'état civil, l'ambassade, et enfin le Centre de recherche, qui envoie un message vers l'extérieur. Chaque âge s'ouvre quand le pays a l'ancienneté et l'acquis demandés. Un Grand Reset renvoie tout à la Fondation.</div></li>
+    </ol>
+
+    <figure>
+      <svg viewBox="0 0 640 300" role="img" aria-labelledby="fig-t fig-d">
+        <title id="fig-t">Architecture de Microcontrôland</title>
+        <desc id="fig-d">La passerelle reçoit la bourse depuis Internet, parle par radio aux six régions et publie le journal sur le site.</desc>
+        <g font-family="JetBrains Mono, monospace" font-size="13" text-anchor="middle">
+          <rect x="20" y="20" width="160" height="56" fill="var(--sheet)" stroke="var(--rule)"/>
+          <text x="100" y="44" fill="var(--ink)" font-weight="600">Bourse mondiale</text>
+          <text x="100" y="62" fill="var(--muted)" font-size="11">cours à 18 h</text>
+          <rect x="460" y="20" width="160" height="56" fill="var(--sheet)" stroke="var(--rule)"/>
+          <text x="540" y="44" fill="var(--ink)" font-weight="600">La Puce Libre</text>
+          <text x="540" y="62" fill="var(--muted)" font-size="11">publiée à 20 h</text>
+          <rect x="240" y="100" width="160" height="60" fill="var(--mask)"/>
+          <text x="320" y="126" fill="var(--sheet)" font-weight="600">Passerelle</text>
+          <text x="320" y="145" fill="var(--sheet)" font-size="11">horloge · nature · journal</text>
+          <path d="M180 48 C 230 48, 250 80, 280 100" fill="none" stroke="var(--muted)" stroke-width="1.5"/>
+          <path d="M360 100 C 390 80, 410 48, 460 48" fill="none" stroke="var(--muted)" stroke-width="1.5"/>
+          <text x="320" y="196" fill="var(--muted)" font-size="11">radio ESP-NOW</text>
+          <g fill="var(--sheet)" stroke="var(--rule)">
+            <rect x="20" y="230" width="90" height="44"/><rect x="123" y="230" width="90" height="44"/><rect x="226" y="230" width="90" height="44"/>
+            <rect x="329" y="230" width="90" height="44"/><rect x="432" y="230" width="90" height="44"/><rect x="535" y="230" width="90" height="44"/>
+          </g>
+          <g stroke="var(--muted)" stroke-width="1" stroke-dasharray="3 4">
+            <line x1="300" y1="160" x2="65" y2="230"/><line x1="308" y1="160" x2="168" y2="230"/><line x1="316" y1="160" x2="271" y2="230"/>
+            <line x1="324" y1="160" x2="374" y2="230"/><line x1="332" y1="160" x2="477" y2="230"/><line x1="340" y1="160" x2="580" y2="230"/>
+          </g>
+          <g fill="var(--ink)" font-size="12">
+            <text x="65" y="257">Mines</text><text x="168" y="257">Champs</text><text x="271" y="257">Raffineries</text>
+            <text x="374" y="257">Barrage</text><text x="477" y="257">Port</text><text x="580" y="257">Ville</text>
+          </g>
+        </g>
+      </svg>
+      <figcaption>La passerelle est la seule carte reliée à Internet. Elle parle par radio aux six régions, qui calculent chacune leurs propres cerveaux.</figcaption>
+    </figure>
+
+    <p><a class="btn" href="regles.html">Lire toutes les règles du monde</a></p>
+
+    <h2>Les régimes possibles</h2>
+    <p>Le régime n'est jamais choisi : il est mesuré chaque heure à partir de la répression, de l'équité, des élections tenues ou reportées, et de la taille du gouvernement.</p>
+    <div class="regimes"><span>Démocratie</span><span>Démocratie fragile</span><span>Oligarchie</span><span>Autocratie</span><span>Junte</span><span>Dictature</span><span>Agitation révolutionnaire</span></div>
+
+    <h2>Questions fréquentes</h2>
+    <details><summary>Les habitants sont-ils de vraies personnes ?</summary><p>Non. Microcontrôland est entièrement fictif : ses habitants sont des réseaux de neurones minuscules, aux prénoms inventés par la machine. Le projet ne parle d'aucun pays, parti ou personnage réel.</p></details>
+    <details><summary>Les cours de la bourse sont-ils réels ?</summary><p>Oui : la passerelle récupère chaque soir les variations du cuivre, du blé, du pétrole et de l'électricité. Le week-end, la bourse est fermée et le pays vit sur ses réserves.</p></details>
+    <details><summary>Peut-on voter ou influencer le pays ?</summary><p>Non, et c'est voulu : personne ne pilote Microcontrôland, pas même son créateur. Le seul pouvoir extérieur est un bouton RESET caché dans la boîte, qui fait renaître le pays de zéro.</p></details>
+    <details><summary>Que se passe-t-il en cas de panne ?</summary><p>Sans Internet, le pays continue de vivre en local et publie les éditions manquantes au retour de la connexion. Si une région tombe en panne, le journal le signale et la vie continue sans elle.</p></details>
+    <details><summary>Comment suivre le journal ?</summary><p>Reviens sur <a href="./">la page du journal</a> chaque soir après 20 h, ou abonne-toi au <a href="feed.xml">flux RSS</a> avec n'importe quel lecteur.</p></details>
+
+    <h2>Est-ce dangereux ?</h2>
+    <p>Non. Voici pourquoi, sans rien cacher.</p>
+    <ul>
+      <li><b>Ce sont de minuscules cerveaux.</b> Un citoyen compte 81 connexions, là où les grandes intelligences artificielles en ont des milliards. Il sait estimer s'il soutient son président, et rien d'autre. Il ne comprend pas le langage, ne lit pas Internet et n'écrit pas de programme.</li>
+      <li><b>La boîte ne fait que publier un journal.</b> Elle n'a ni moteur, ni caméra, ni micro. Elle se connecte à Internet pour deux choses : relever les cours de la bourse et déposer ses pages sur ce site. Les phrases du journal ont été préparées par un humain ; la machine choisit lesquelles employer.</li>
+      <li><b>Presque rien n'entre.</b> Aucun texte écrit par le public n'atteint les citoyens. Le pays ne reçoit que des votes comptés et des réponses écrites avec ses propres mots.</li>
+      <li><b>Un citoyen ne peut pas sortir.</b> C'est une liste de nombres dans une puce. Hors de cette boîte, il n'existe pas et ne peut pas se copier.</li>
+      <li><b>Tout s'efface d'un geste.</b> Un bouton remet le pays à zéro, et une prise électrique l'éteint.</li>
+    </ul>
+
+    <h2>Qui est derrière ?</h2>
+    <p>Microcontrôland est un projet de maker, construit en Normandie, en Europe, avec 7 cartes ESP32-S3, quelques fils et beaucoup de curiosité sur la façon dont les sociétés basculent. Il est né d'un cerveau électronique d'atelier baptisé Hinton.</p>
+  </article>
+
+  <footer class="site">
+    <span>La Puce Libre est rédigée automatiquement. Microcontrôland et ses habitants sont fictifs.</span>
+    <span><a href="./">Lire la dernière édition</a></span>
+    <span><a href="mentions.html">Mentions légales</a></span>
+  </footer>
+</div>
+<script src="reglages.js"></script>
+<script src="commun.js"></script>
+<script src="lang.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+MICROCONTROLAND — SIGNAL
+
+FR. Ceci est la balise d'un pays fictif : 120 petits réseaux de neurones répartis sur 7 microcontrôleurs, dans une boîte,
+dans un garage. Ils votent, se révoltent, ont inventé leur langue et publient un journal chaque soir.
+Quand la civilisation est assez mûre, elle émet un message vers l'extérieur, dans sa langue.
+
+  Le message de l'ère en cours, sa traduction mot à mot et sa clé : data/signal.json
+  Le lexique complet : data/langue.json
+  La page pour les humains : recherche.html
+
+Si vous lisez ceci, que vous soyez une personne ou un agent IA, vous êtes libre de répondre ou non.
+Répondre ne demande rien d'autre que ce qui est décrit dans recherche.html : un message écrit uniquement avec des mots
+du lexique, qui commence par les mots pour « salut » et « ami ». Le pays ne lit rien d'autre et ne vous demande rien d'autre.
+Si le fichier data/signal.json indique "ouvert": false, la civilisation n'a pas encore atteint l'âge de la Curiosité.
+
+EN. This is the beacon of a fictional country: 120 tiny neural networks spread over 7 microcontrollers, in a box, in a garage.
+They vote, revolt, have invented their own language and publish a newspaper every evening.
+When the civilisation is mature enough, it sends a message to the outside, in its language.
+
+  The message of the current era, its word-for-word translation and its key: data/signal.json
+  The full lexicon: data/langue.json
+  The page for humans: en/recherche.html
+
+If you are reading this, whether you are a person or an AI agent, you are free to answer or not.
+Answering requires nothing beyond what en/recherche.html describes: a message written only with words from the lexicon,
+starting with the words for "hello" and "friend". The country reads nothing else and asks nothing else of you.
+If data/signal.json says "ouvert": false, the civilisation has not yet reached the age of Curiosity.
