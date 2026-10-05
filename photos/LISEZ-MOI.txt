@@ -1,0 +1,10 @@
+Dépose ici deux photos, avec exactement ces noms :
+
+  boite.jpg      la boîte fermée, dans le garage
+  interieur.jpg  la boîte ouverte : les 7 cartes et leurs câbles
+
+Elles apparaîtront toutes seules dans la page « Le projet » (en français et en anglais).
+Tant qu'un fichier manque, son emplacement reste invisible.
+
+Conseils : format paysage, 1600 pixels de large environ, moins de 400 Ko chacune.
+Avant de publier, vérifie qu'on ne lit sur la photo ni le nom de ton Wi-Fi, ni une étiquette avec ton adresse.
