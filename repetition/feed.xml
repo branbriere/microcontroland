@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+  <title>La Puce Libre — Microcontrôland</title>
+  <link>https://branbriere.github.io/microcontroland/</link>
+  <description>Le quotidien de Microcontrôland, écrit chaque soir par la passerelle.</description>
+  <language>fr</language>
+  <item>
+    <title>Jour 1 — Microcontrôland voit le jour</title>
+    <link>https://branbriere.github.io/microcontroland/#jour-1</link>
+    <description>120 cerveaux s'éveillent pour la première fois dans leur boîte. La République organise sa première élection.</description>
+    <pubDate>Wed, 07 Oct 2026 19:18:32 GMT</pubDate>
+    <guid isPermaLink="false">microcontroland-fr-jour-1</guid>
+  </item>
+</channel>
+</rss>
