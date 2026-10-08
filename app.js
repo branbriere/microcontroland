@@ -101,7 +101,7 @@
     $('#capline').textContent = `${L.capital}${LANG === 'en' ? ': ' : ' : '}${s.capitale ? rn(s.capitale) : '—'} · ${T(s.population)}`;
     const regimeChanged = s.regimePrecedent && T(s.regimePrecedent) !== T(s.regime);
     const late = isLatest ? Math.floor((Date.now() - new Date(e.date + 'T20:00:00').getTime()) / 864e5) : 0;
-    $('#edition').innerHTML = `${ESSAI ? `<p class="stale" role="status">${L.essai}</p>` : ''}${late >= 2 && !ESSAI ? `<p class="stale" role="status">${L.stale(late)}</p>` : ''}
+    $('#edition').innerHTML = `${late >= 2 && !ESSAI ? `<p class="stale" role="status">${L.stale(late)}</p>` : ''}
     <div class="grid">
       <main>
         <article>
