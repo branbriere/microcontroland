@@ -5,5 +5,12 @@
   <link>https://branbriere.github.io/microcontroland/</link>
   <description>Le quotidien de Microcontrôland, écrit chaque soir par la passerelle.</description>
   <language>fr</language>
+  <item>
+    <title>Jour 1 — Microcontrôland voit le jour</title>
+    <link>https://branbriere.github.io/microcontroland/#jour-1</link>
+    <description>120 cerveaux s'éveillent pour la première fois dans leur boîte. La République organise sa première élection.</description>
+    <pubDate>Fri, 09 Oct 2026 18:00:01 GMT</pubDate>
+    <guid isPermaLink="false">microcontroland-fr-jour-1</guid>
+  </item>
 </channel>
 </rss>
