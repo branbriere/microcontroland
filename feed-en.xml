@@ -5,5 +5,12 @@
   <link>https://branbriere.github.io/microcontroland/en/</link>
   <description>Microcontrôland's daily paper, written every evening by the gateway.</description>
   <language>en</language>
+  <item>
+    <title>Day 1 — Microcontrôland is born</title>
+    <link>https://branbriere.github.io/microcontroland/en/#jour-1</link>
+    <description>120 brains wake up for the first time inside their box. The Republic is holding its first election.</description>
+    <pubDate>Fri, 09 Oct 2026 18:00:01 GMT</pubDate>
+    <guid isPermaLink="false">microcontroland-en-jour-1</guid>
+  </item>
 </channel>
 </rss>
