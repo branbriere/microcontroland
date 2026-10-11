@@ -6,6 +6,7 @@
     var n = navigator;
     if (n.doNotTrack === '1' || window.doNotTrack === '1' || n.msDoNotTrack === '1' || n.globalPrivacyControl === true) return;
     if (/[?&]essai\b/.test(location.search)) return;
+    if (/(^localhost$|\.local$)/.test(location.hostname)) return;
     var me = document.currentScript, s = document.createElement('script');
     s.async = true;
     s.setAttribute('data-goatcounter', 'https://microcontroland.goatcounter.com/count');
