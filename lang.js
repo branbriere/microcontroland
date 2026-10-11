@@ -2,7 +2,7 @@
 (function () {
   const lang = document.documentElement.lang === 'en' ? 'en' : 'fr';
   const file = location.pathname.split('/').pop() || 'index.html';
-  const target = (l) => (l === lang ? file : (lang === 'en' ? '../' + file : 'en/' + file)) + location.hash;
+  const target = (l) => (l === lang ? file : (lang === 'en' ? '../' + file : 'en/' + file)) + location.search + location.hash;  // garde ?essai et les autres paramètres
   let saved = null;
   try { saved = localStorage.getItem('mcl-lang'); } catch (_) {}
   if (!saved && lang === 'fr' && /^en\b/i.test(navigator.language || '')) saved = 'en';

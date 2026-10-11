@@ -5,7 +5,7 @@
   const $ = (s) => document.querySelector(s);
   const LANG = document.documentElement.lang === 'en' ? 'en' : 'fr';
   const BASE = window.MCL_BASE || '';
-  const ESSAI = /[?&]essai\b/.test(location.search);        // ?essai : lit les éditions de la répétition générale
+  const ESSAI = false;   // la répétition générale n'est plus publiée sur le site public (11 octobre 2026)        // ?essai : lit les éditions de la répétition générale
   const DATA = BASE + (ESSAI ? 'repetition/' : /[?&]demo\b/.test(location.search) ? 'demo/' : '');   // ?demo : pays d'exemple déjà évolué
   const T = (v) => (v && typeof v === 'object') ? (v[LANG] ?? v.fr ?? '') : (v ?? '');
   const esc = (s) => String(T(s)).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');

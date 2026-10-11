@@ -4,7 +4,7 @@
   const LANG = document.documentElement.lang === 'en' ? 'en' : 'fr';
   const BASE = window.MCL_BASE || '';
   const q = location.search;
-  const MODE = /[?&]essai\b/.test(q) ? 'essai' : /[?&]demo\b/.test(q) ? 'demo' : '';   // ?essai : répétition générale · ?demo : pays d'exemple déjà évolué
+  const MODE = /[?&]demo\b/.test(q) ? 'demo' : '';   // ?essai n'existe plus sur le site public (11 octobre 2026)   // ?essai : répétition générale · ?demo : pays d'exemple déjà évolué
   const DATA = BASE + (MODE === 'essai' ? 'repetition/' : MODE === 'demo' ? 'demo/' : '');
   const T = (v) => (v && typeof v === 'object' && !Array.isArray(v)) ? (v[LANG] ?? v.fr ?? '') : (v ?? '');
   const esc = (s) => String(T(s)).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
