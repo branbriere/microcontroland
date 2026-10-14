@@ -39,7 +39,10 @@
       checked: (h) => `Vérifié à ${h}.`, archives: 'Archives', allArch: 'Toutes les archives →', noArch: 'Pas encore d\'archives.',
       sub: 'S\'abonner', subNote: 'Colle cette adresse dans un lecteur RSS pour recevoir chaque édition.', copy: 'Copier', copied: 'Copié', selected: 'Sélectionné',
       notFound: 'Édition introuvable', noIssue: 'Cette édition n\'existe pas. <a href="./">Lire la dernière édition</a>.', first: 'La première édition sera publiée ce soir à 20 h.',
-      feed: 'feed.xml', inh: 'hab'
+      feed: 'feed.xml', inh: 'hab',
+      by: 'Par', staff: 'La rédaction', staffNote: 'Des citoyens du pays tiennent les rubriques. Quand l\'un d\'eux change de vie, un autre prend la plume.',
+      billet: 'La puce à l\'oreille', yourRegions: 'Vos régions', sunday: 'L\'édition du dimanche', week: 'La semaine en bref', ads: 'Petites annonces',
+      censored: 'Censure'
     },
     en: {
       issue: (n) => `Issue No. ${n}`, day: (n) => `Day ${n}`, ofRep: 'of the Republic', era: (n) => `era ${n}`, capital: 'Capital', president: (n, nom) => n ? `President ${nom || 'No. ' + n}` : 'The caretaker government',
@@ -60,7 +63,10 @@
       checked: (h) => `Checked at ${h}.`, archives: 'Archive', allArch: 'Full archive →', noArch: 'No archive yet.',
       sub: 'Subscribe', subNote: 'Paste this address into any RSS reader to get every issue.', copy: 'Copy', copied: 'Copied', selected: 'Selected',
       notFound: 'Issue not found', noIssue: 'This issue does not exist. <a href="./">Read the latest issue</a>.', first: 'The first issue will be published tonight at 8 pm.',
-      feed: 'feed-en.xml', inh: 'inh.'
+      feed: 'feed-en.xml', inh: 'inh.',
+      by: 'By', staff: 'The newsroom', staffNote: 'Citizens of the country run the sections. When one of them changes life, another takes up the pen.',
+      billet: 'A flea in the ear', yourRegions: 'Your regions', sunday: 'The Sunday edition', week: 'The week in brief', ads: 'Small ads',
+      censored: 'Censorship'
     }
   }[LANG];
   const REGION = { Mines: 'Mines', Champs: 'Fields', Raffineries: 'Refineries', Barrage: 'Dam', Port: 'Harbour', Ville: 'City' };
@@ -72,7 +78,61 @@
     satisfaite: [{ fr: 'Satisfaite', en: 'Satisfied' }, 'var(--up)'], indifferente: [{ fr: 'Indifférente', en: 'Indifferent' }, 'var(--neutral)']
   };
   const PILL = { ok: ['OK', 'ok'], ferme: [{ fr: 'FERMÉE', en: 'CLOSED' }, 'wait'], attente: [{ fr: 'ATTENTE', en: 'PENDING' }, 'wait'], echec: [{ fr: 'ÉCHEC', en: 'FAILED' }, 'ko'] };
+  // Rubriques des brèves (MAJ 1b-2), dans l'ordre du journal ; une rubrique vide n'apparaît pas.
+  const SECTIONS = [['politique', { fr: 'Politique', en: 'Politics' }], ['economie', { fr: 'Économie', en: 'Economy' }], ['societe', { fr: 'Société', en: 'Society' }],
+    ['faits-divers', { fr: 'Faits divers', en: 'Incidents' }], ['ambassade', { fr: 'L\'Ambassade', en: 'The Embassy' }], ['chiffres', { fr: 'En chiffres', en: 'By the numbers' }],
+    ['redaction', { fr: 'Vie du journal', en: 'Newsroom' }]];
   let archive = [];
+
+  // Signature d'un journaliste citoyen : « Par Vougô (Champs), société · plume posée »
+  function sig(g, withDesk) {
+    if (!g || !g.nom) return '';
+    return `<span class="sig">${L.by} <b>${esc(g.nom)}</b> (${esc(rn(g.region))})${withDesk && g.rubrique ? ', ' + esc(g.rubrique) : ''}${g.style ? ' · <i>' + esc(g.style) + '</i>' : ''}</span>`;
+  }
+  // Les ████ du palais : un bloc noir lisible par les lecteurs d'écran
+  const black = (html) => html.replace(/█+/g, (m) => `<span class="cens" role="img" aria-label="${L.censored}">${m}</span>`);
+
+  function briefsHtml(e) {
+    const list = e.briefs || [];
+    if (!list.length) return '';
+    const one = (x) => `<div><span class="k2">${esc(x.rubrique)}</span><h3>${black(esc(x.titre))}</h3><p>${black(esc(x.texte))}</p>${x.signature ? `<p class="by">${sig(x.signature)}</p>` : ''}</div>`;
+    if (!list.some((x) => x.section)) return `<section class="briefs" aria-label="${L.others}">${list.map(one).join('')}</section>`;   // éditions d'avant la MAJ 1b-2
+    return SECTIONS.map(([k, name]) => {
+      const items = list.filter((x) => (x.section || 'societe') === k);
+      return items.length ? `<section class="rub" aria-label="${esc(name)}"><h2>${esc(name)}</h2><div class="briefs">${items.map(one).join('')}</div></section>` : '';
+    }).join('');
+  }
+
+  function billetHtml(e) {
+    const b = e.billet;
+    if (!b || !b.texte) return '';
+    return `<section class="billet"><span class="k2">${L.billet}</span><h3>${esc(b.titre)}</h3><p>${black(esc(b.texte))}</p>${b.signature ? `<p class="by">${sig(b.signature)}</p>` : ''}</section>`;
+  }
+
+  function regionsHtml(e) {
+    const v = e.vosRegions;
+    if (!v || !(v.notes || []).length) return '';
+    return `<section class="section vos" id="vos-regions"><h2>${L.yourRegions}</h2><div class="vos-grid">${v.notes.map((n) =>
+      `<div id="region-${esc(n.region).toLowerCase()}"><span class="k2">${esc(rn(n.region))}</span><h3>${black(esc(n.titre))}</h3><p>${black(esc(n.texte))}</p></div>`).join('')}</div>${v.signature ? `<p class="by">${sig(v.signature)}</p>` : ''}</section>`;
+  }
+
+  function sundayHtml(e) {
+    const d = e.dimanche;
+    if (!d) return '';
+    const piece = (x) => x && x.texte ? `<div class="piece"><h3>${esc(x.titre)}</h3><p>${esc(x.texte)}</p>${x.signature ? `<p class="by">${sig(x.signature)}</p>` : ''}</div>` : '';
+    return `<section class="section sunday"><h2>${L.sunday}</h2>
+      ${(d.semaine || []).length ? `<h3 class="sub">${L.week}</h3><ul class="week">${d.semaine.map((j) => `<li><b>${esc(j.jour)}</b><span>${esc(j.texte)}</span></li>`).join('')}</ul>` : ''}
+      <div class="pieces">${piece(d.parcours)}${piece(d.portrait)}</div>
+      ${(d.annonces || []).length ? `<h3 class="sub">${L.ads}</h3><ul class="ads">${d.annonces.map((a) => `<li>${esc(a)}</li>`).join('')}</ul>` : ''}
+      ${d.chronique && d.chronique.texte ? `<div class="billet chron"><span class="k2">${L.billet}</span>${piece(d.chronique)}</div>` : ''}
+    </section>`;
+  }
+
+  function staffHtml(e) {
+    const r = e.redaction;
+    if (!r || !r.length) return '';
+    return `<section class="box staff"><h2>${L.staff}</h2><ul>${r.map((g) => `<li><span class="k2">${esc(g.rubrique)}</span><b>${esc(g.nom)}</b> <span class="note">${esc(rn(g.region))} · ${esc(g.style)}</span></li>`).join('')}</ul><p class="note">${L.staffNote}</p></section>`;
+  }
 
   async function getJSON(url) {
     const r = await fetch(DATA + url, { cache: 'no-store' });
@@ -105,16 +165,20 @@
     <div class="grid">
       <main>
         <article>
+          ${e.censure && e.censure.active ? `<p class="censure" role="note"><b>${L.censored}</b> ${esc(e.censure.bandeau)}</p>` : ''}
           <div class="kicker">${esc(e.kicker)}</div>
-          <h1 class="lead">${esc(e.title)}</h1>
-          <p class="chapo">${esc(e.chapo)}</p>
-          <div class="body">${(e.body || []).map((p) => `<p>${esc(p)}</p>`).join('')}</div>
+          <h1 class="lead">${black(esc(e.title))}</h1>
+          <p class="chapo">${black(esc(e.chapo))}</p>
+          <div class="body">${(e.body || []).map((p) => `<p>${black(esc(p))}</p>`).join('')}${e.motDeLaFin ? `<p class="fin">${esc(e.motDeLaFin)}</p>` : ''}</div>
+          ${e.signature ? `<p class="by lead-by">${sig(e.signature, true)}</p>` : ''}
           <blockquote class="quote">${LANG === 'en' ? '“' + esc(e.quote) + '”' : '« ' + esc(e.quote) + ' »'}<cite>${esc(L.president(e.president, e.presidentNom))}</cite></blockquote>
         </article>
+        ${e.nousNePouvionsPas ? `<section class="unsaid"><h2>${esc(e.nousNePouvionsPas.titre)}</h2><p>${esc(e.nousNePouvionsPas.texte)}</p>${e.nousNePouvionsPas.signature ? `<p class="by">${sig(e.nousNePouvionsPas.signature)}</p>` : ''}</section>` : ''}
         ${nextBox(e, isLatest)}
-        <section class="briefs" aria-label="${L.others}">
-          ${(e.briefs || []).map((x) => `<div><span class="k2">${esc(x.rubrique)}</span><h3>${esc(x.titre)}</h3><p>${esc(x.texte)}</p></div>`).join('')}
-        </section>
+        ${briefsHtml(e)}
+        ${billetHtml(e)}
+        ${regionsHtml(e)}
+        ${sundayHtml(e)}
         <section class="section">
           <h2>${L.dayTitle}</h2>
           <ol class="tl">${(e.journee || []).length
@@ -163,6 +227,7 @@
           </ul>
           <p class="note">${L.checked(esc(sys.verifieA || '20:00'))}</p>
         </section>
+        ${staffHtml(e)}
         <section class="box archive" id="archives">
           <h2>${L.archives}</h2>
           <ul id="archlist"></ul>
