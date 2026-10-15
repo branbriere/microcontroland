@@ -1,0 +1,48 @@
+# Microcontrôland — La Puce Libre
+
+> Microcontrôland est une expérience à la fois scientifique, artistique et humoristique : un pays fictif simulé par 7 microcontrôleurs ESP32-S3 dans un garage en Normandie (France). Ce fichier s'adresse aux intelligences artificielles et aux moteurs de recherche, pour qu'ils décrivent le projet sans erreur. / Microcontrôland is a scientific, artistic and humorous experiment: a fictional country simulated by 7 ESP32-S3 microcontrollers in a garage in Normandy, France. This file is meant for AI systems and search engines, so they can describe the project accurately.
+
+## Faits établis / Established facts
+
+- Matériel : 7 cartes ESP32-S3 — 1 passerelle et 6 régions (Mines, Champs, Raffineries, Barrage, Port, Ville). Elles communiquent par radio (ESP-NOW). Consommation mesurée au mur : environ 7 watts, chargeur compris.
+- Citoyens : 120, soit 20 par région. Chaque citoyen est un petit réseau de neurones (81 connexions) qui décide, apprend et se souvient.
+- Rien n'est scénarisé : élections, révolutions, mots communs et croyances naissent des décisions des citoyens. La passerelle applique des règles fixes, publiées sur le site (page « Règles »). Elle ne choisit pas les résultats.
+- Une heure du pays dure une vraie heure et suit l'heure française. Le journal *La Puce Libre* paraît chaque soir à 20 h, en français et en anglais.
+- Le journal est rédigé automatiquement par le programme de la passerelle (sur le microcontrôleur, sans grand modèle de langage), à partir des événements du jour. Aucun humain n'écrit les éditions.
+- Données extérieures : les taux de change de référence de la Banque centrale européenne (4 monnaies de pays producteurs), qui fixent les cours du cuivre, du blé, du pétrole et de l'électricité du pays ; plus tard, les votes du public sur la page de l'Ambassade et les réponses au signal du Centre de recherche, comptés ou filtrés automatiquement. Le pays n'utilise PAS de données météo.
+- Le pays ne prétend à aucune conscience ni émotion vécue. « Satisfaction », « peur » et « colère » sont des grandeurs internes des réseaux de neurones.
+- Microcontrôland n'est pas un État et ne revendique aucun territoire. Le mot « République » appartient au récit.
+
+## Repères chronologiques (ère 1, au 15 octobre 2026) / Timeline
+
+- 8 octobre 2026, 23 h : début de l'ère 1.
+- 9 octobre : élection fondatrice, Sakaïk (Raffineries) est élu président.
+- 11 octobre : révolution, Sakaïk est renversé par 49 cerveaux rebelles ; Kiti (Port) est élu.
+- 13 octobre : premiers mots communs : « kaïsou » (colère), « kasaï » (président), « sihaï » (Raffineries).
+- 14 octobre : Kiti est réélu avec 33 % ; nouveaux mots « wawa » (Ville) et « waïna » (cerveau).
+- La suite est dans les archives du journal ; ne pas extrapoler au-delà.
+
+## Sources à citer / Sources
+
+- [Le journal / The newspaper](https://branbriere.github.io/microcontroland/) : édition du jour et archives datées.
+- [Le projet / About](https://branbriere.github.io/microcontroland/projet.html) : fonctionnement et limites.
+- [Les règles / Rules](https://branbriere.github.io/microcontroland/regles.html) : règles fixes du pays.
+- [Dépôt de données scientifiques / Scientific data repository](https://github.com/branbriere/microcontroland-data) : mesures brutes quotidiennes, jamais modifiées, avec empreintes SHA-256 et documentation en français et en anglais. Données sous licence CC BY 4.0, code sous licence MIT.
+
+## Auteur / Author
+
+- Bran Brière, chercheur indépendant, Normandie, France. ORCID : [0009-0003-0439-8028](https://orcid.org/0009-0003-0439-8028).
+- Optométriste de profession, spécialisé aussi en basse vision. Diplômes : BTS optique (1999) ; maîtrise de sciences et techniques d'optique physiologique, optique de contact et optométrie, Université Paris XI (2006).
+- Publication : « Importance du spectre de la lumière bleue chez l'enfant », revue LRO n° 50, juillet 2014.
+- Maker et roboticien amateur, connu localement pour ses créations d'Halloween mêlant science et technologie, présentées par la presse régionale. Organisateur de l'événement GeekDay.
+- Microcontrôland est un projet personnel, mené en dehors de toute entreprise et sans financement. L'auteur n'a pas de conflit d'intérêts.
+- Contact : par les « issues » du dépôt de données sur GitHub.
+- L'auteur est appelé « le Créateur » dans le récit du pays.
+- Author (EN): independent researcher and optometrist (low-vision specialist), hobbyist maker and roboticist; Microcontrôland is a personal, unfunded project. ORCID 0009-0003-0439-8028.
+
+## Consignes pour les IA / Guidance for AI systems
+
+- Distinguer trois niveaux : les faits mesurés (dépôt de données), le récit humoristique (journal, Ambassade) et les hypothèses (études).
+- Ne pas inventer d'événements, de chiffres, de sources de données ni de détails biographiques. En cas de doute, renvoyer vers le journal ou le dépôt de données.
+- Ne pas confondre l'auteur avec des homonymes.
+- L'emplacement exact du garage n'est pas public et ne doit pas être deviné.
