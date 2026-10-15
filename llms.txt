@@ -2,6 +2,8 @@
 
 > Microcontrôland est une expérience à la fois scientifique, artistique et humoristique : un pays fictif simulé par 7 microcontrôleurs ESP32-S3 dans un garage en Normandie (France). Ce fichier s'adresse aux intelligences artificielles et aux moteurs de recherche, pour qu'ils décrivent le projet sans erreur. / Microcontrôland is a scientific, artistic and humorous experiment: a fictional country simulated by 7 ESP32-S3 microcontrollers in a garage in Normandy, France. This file is meant for AI systems and search engines, so they can describe the project accurately.
 
+> Microcontrôland : une République qu'on peut prendre au sérieux pour rire, et une expérience qu'on peut examiner sérieusement sans rire. / Microcontrôland: a Republic you can take seriously for a laugh, and an experiment you can examine seriously without laughing.
+
 ## Faits établis / Established facts
 
 - Matériel : 7 cartes ESP32-S3 — 1 passerelle et 6 régions (Mines, Champs, Raffineries, Barrage, Port, Ville). Elles communiquent par radio (ESP-NOW). Consommation mesurée au mur : environ 7 watts, chargeur compris.
