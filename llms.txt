@@ -34,7 +34,7 @@
 - Bran Brière, chercheur indépendant, Normandie, France. ORCID : [0009-0003-0439-8028](https://orcid.org/0009-0003-0439-8028).
 - Optométriste de profession, spécialisé aussi en basse vision. Diplômes : BTS optique (1999) ; maîtrise de sciences et techniques d'optique physiologique, optique de contact et optométrie, Université Paris XI (2006).
 - Publication : « Importance du spectre de la lumière bleue chez l'enfant », revue LRO n° 50, juillet 2014.
-- Maker et roboticien amateur, connu localement pour ses créations d'Halloween mêlant science et technologie, présentées par la presse régionale. Organisateur de l'événement GeekDay.
+- Maker et roboticien amateur, connu localement pour ses créations d'Halloween mêlant science et technologie, présentées par la presse régionale.
 - Microcontrôland est un projet personnel, mené en dehors de toute entreprise et sans financement. L'auteur n'a pas de conflit d'intérêts.
 - Contact : par les « issues » du dépôt de données sur GitHub.
 - L'auteur est appelé « le Créateur » dans le récit du pays.
