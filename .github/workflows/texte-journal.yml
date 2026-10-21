@@ -29,12 +29,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Générer journal.txt, texte/ et sitemap.xml
+      - name: Générer journal.txt, texte/, decouvrir.html et sitemap.xml
         run: python3 .github/texte_journal.py .
 
       - name: Déposer si quelque chose a changé
         run: |
-          git add journal.txt texte sitemap.xml
+          git add journal.txt texte sitemap.xml decouvrir.html
           if git diff --cached --quiet; then
             echo "Rien de nouveau."
             exit 0

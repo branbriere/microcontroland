@@ -12,9 +12,10 @@ intitulés de rubrique. Censure (████) et coquilles restent telles quell
   texte/histoire.html  présidents et ères (data/histoire.json), fermée avant l'âge de la Mémoire
   texte/langue.html    lexique et « qui comprend qui » (data/langue.json), fermée avant la Parole
   sitemap.xml          plan du site pour les moteurs et les agents
+  decouvrir.html       « Découvrir le pays en 5 minutes » : textes fixes + état du pays du soir
 
 Usage : python3 .github/texte_journal.py [racine du site]
-Licence MIT. Version 1.1, 21 octobre 2026 (1.0 : 20 octobre 2026).
+Licence MIT. Version 1.2, 21 octobre 2026 (1.1 et 1.0 : 21 et 20 octobre 2026).
 """
 import html
 import json
@@ -234,7 +235,7 @@ def index(eds):
     return ('<!doctype html>\n<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">'
             f'<title>{e(LIB["fr"]["liste"])}</title><style>body{{max-width:42em;margin:2em auto;padding:0 1em;font:1.05em/1.5 Georgia,serif}}</style></head><body>\n'
             f'<h1>{e(LIB["fr"]["liste"])}</h1><p lang="en">{e(LIB["en"]["liste"])}</p>\n'
-            '<p><a href="../journal.txt">journal.txt</a> · <a href="histoire.html">Histoire / History</a> · '
+            '<p><a href="../decouvrir.html">Découvrir le pays en 5 minutes / Discover in 5 minutes</a> · <a href="../journal.txt">journal.txt</a> · <a href="histoire.html">Histoire / History</a> · '
             '<a href="langue.html">La langue / Language</a> · <a href="../llms.txt">llms.txt</a></p>\n'
             f'<ul>{li}</ul>\n<p><small>{e(LIB["fr"]["source"])}</small></p></body></html>\n')
 
@@ -398,6 +399,132 @@ def lire(f, defaut):
         return defaut
 
 
+# ---------------------------------------------------------------------------
+# « Découvrir le pays en 5 minutes » : textes fixes (repris de llms.txt et des
+# règles) + l'état du pays tiré de data/latest.json et data/langue.json.
+# ---------------------------------------------------------------------------
+CINQ = {
+    "fr": {
+        "titre": "Découvrir Microcontrôland en 5 minutes",
+        "phrase": "Microcontrôland est un pays fictif simulé par 7 microcontrôleurs ESP32-S3 dans un garage en Normandie : 120 citoyens, chacun doté d'un petit réseau de neurones, votent et se révoltent, les six régions inventent une langue commune, et la passerelle en tire chaque soir à 20 h un journal, La Puce Libre. Rien n'est scénarisé, et aucun humain n'écrit les éditions.",
+        "auj": "Aujourd'hui dans le pays",
+        "auj_note": "Mis à jour automatiquement après chaque édition, à partir des données publiées.",
+        "edition": "Dernière édition : n° {n} du {d} (ère {e}, jour {j})",
+        "regime": "Régime", "president": "Président", "depuis": "au pouvoir depuis {x}", "capitale": "Capitale",
+        "humeur": "Satisfaction {s} %, colère {c} %, peur {p} %",
+        "foi": "Foi : {a} % de croyants, {b} % d'agnostiques, {c} % d'athées",
+        "age": "Âge atteint : {a}", "suivant": "Prochain âge : {a} ({p})",
+        "mots": "Langue : {m} mots communs sur {i} idées vécues",
+        "regles": "Comment ça marche, en cinq règles",
+        "r": ["Une heure du pays dure une vraie heure, à l'heure française.",
+              "Les citoyens élisent un président tous les trois jours. Il peut nommer des ministres, partager les richesses, censurer ou reporter l'élection.",
+              "Un citoyen se rebelle quand sa colère l'emporte sur sa peur. Si plus de 40 % du pays est en révolte, le président tombe.",
+              "Les cours des matières premières suivent de vraies monnaies, d'après les taux quotidiens de la Banque centrale européenne. Tempêtes et sécheresses, elles, sont simulées.",
+              "La civilisation grandit par âges : la langue, puis les annales, l'état civil, l'ambassade et enfin un signal vers l'extérieur. Chaque âge ouvre une nouvelle page du site."],
+        "lire": "Trois façons de lire",
+        "sourire": "Sourire", "sourire_t": "le journal du soir, satirique, écrit par la machine.",
+        "comprendre": "Comprendre", "comprendre_t": "les règles fixes du pays, le projet, et l'état de chaque fonction.",
+        "verifier": "Vérifier", "verifier_t": "les données brutes de chaque jour, avec leur empreinte SHA-256, les protocoles et les études.",
+        "pas": "Ce que Microcontrôland n'est pas",
+        "p": ["Les citoyens ne sont ni vivants ni conscients : « colère », « peur » ou « foi » sont des variables de leurs réseaux de neurones.",
+              "Le journal n'est pas écrit par un grand modèle de langage : la passerelle choisit parmi des tournures préparées à l'avance et y place les vrais noms et les vrais chiffres.",
+              "Microcontrôland n'est pas un État et n'a aucun lien avec un État, un parti ou une personne réels. Personne ne le pilote, pas même son créateur."],
+        "liens": {"journal": "Le journal", "texte": "Le journal en texte", "histoire": "Histoire", "langue": "La langue",
+                  "regles": "Les règles", "projet": "Le projet", "etat": "État des fonctionnalités",
+                  "donnees": "Le site des données", "plan": "Toutes les données en liens directs"},
+        "source": "Page générée automatiquement après chaque édition. Les chiffres viennent de data/latest.json et data/langue.json.",
+    },
+    "en": {
+        "titre": "Discover Microcontrôland in 5 minutes",
+        "phrase": "Microcontrôland is a fictional country simulated by 7 ESP32-S3 microcontrollers in a garage in Normandy: 120 citizens, each with a small neural network, vote and revolt, the six regions invent a shared language, and every evening at 8 pm the gateway turns it into a newspaper, La Puce Libre. Nothing is scripted, and no human writes the issues.",
+        "auj": "Today in the country",
+        "auj_note": "Updated automatically after each issue, from the published data.",
+        "edition": "Latest issue: no. {n} of {d} (era {e}, day {j})",
+        "regime": "Regime", "president": "President", "depuis": "in power for {x}", "capitale": "Capital",
+        "humeur": "Satisfaction {s}%, anger {c}%, fear {p}%",
+        "foi": "Faith: {a}% believers, {b}% agnostics, {c}% atheists",
+        "age": "Age reached: {a}", "suivant": "Next age: {a} ({p})",
+        "mots": "Language: {m} shared words out of {i} ideas lived through",
+        "regles": "How it works, in five rules",
+        "r": ["One hour in the country lasts one real hour, on French time.",
+              "Citizens elect a president every three days. The president can appoint ministers, share out the wealth, censor or postpone the election.",
+              "A citizen rebels when anger outweighs fear. If more than 40% of the country is in revolt, the president falls.",
+              "Commodity prices follow real currencies, from the European Central Bank's daily rates. Storms and droughts, on the other hand, are simulated.",
+              "The civilisation grows through ages: language, then annals, the civil registry, the embassy and finally a signal to the outside. Each age opens a new page of the site."],
+        "lire": "Three ways to read",
+        "sourire": "Smile", "sourire_t": "the evening paper, satirical, written by the machine.",
+        "comprendre": "Understand", "comprendre_t": "the country's fixed rules, the project, and the status of every feature.",
+        "verifier": "Verify", "verifier_t": "the raw data of every day, with its SHA-256 hash, the protocols and the studies.",
+        "pas": "What Microcontrôland is not",
+        "p": ["The citizens are neither alive nor conscious: \"anger\", \"fear\" or \"faith\" are variables of their neural networks.",
+              "The paper is not written by a large language model: the gateway picks among phrasings prepared in advance and fills in the real names and figures.",
+              "Microcontrôland is not a state and has no link with any real state, party or person. Nobody steers it, not even its creator."],
+        "liens": {"journal": "The newspaper", "texte": "The newspaper as text", "histoire": "History", "langue": "Language",
+                  "regles": "Rules", "projet": "About", "etat": "Feature status",
+                  "donnees": "The data site", "plan": "All data as direct links"},
+        "source": "Page generated automatically after each issue. Figures come from data/latest.json and data/langue.json.",
+    },
+}
+
+
+def decouvrir(latest, lang, base):
+    e = html.escape
+    D = "https://donnees.microcontroland.org/"
+    corps = []
+    for lg in LANGS:
+        C, en = CINQ[lg], lg == "en"
+        L = C["liens"]
+        pre = base + ("en/" if en else "")
+        a = lambda href, t: f'<a href="{e(href)}">{e(t)}</a>'
+        corps += [f'<article lang="{lg}" id="{lg}"><h1>{e(C["titre"])}</h1>', f"<p>{e(C['phrase'])}</p>",
+                  f"<h2>{e(C['auj'])}</h2>", f"<p><small>{e(C['auj_note'])}</small></p><ul>"]
+        li = []
+        if latest.get("day"):
+            li.append(a(f"{base}texte/{latest['day']}.html", C["edition"].format(n=latest["day"], d=latest.get("date", "?"), e=latest.get("ere", "?"), j=latest.get("jourEre", "?")))
+                      + (f" : « {e(tr(latest.get('title'), lg))} »" if not en else f": “{e(tr(latest.get('title'), lg))}”"))
+        et = latest.get("etat") or {}
+        sep = ": " if en else " : "
+        if tr(et.get("regime"), lg):
+            li.append(e(C["regime"] + sep + tr(et["regime"], lg)))
+        if latest.get("presidentNom"):
+            li.append(e(C["president"] + sep + str(latest["presidentNom"]) + (", " + C["depuis"].format(x=tr(et.get("auPouvoirDepuis"), lg)) if tr(et.get("auPouvoirDepuis"), lg) else "")))
+        if et.get("capitale"):
+            li.append(e(C["capitale"] + sep + reg(str(et["capitale"]), lg)))
+        if all(isinstance(et.get(k), (int, float)) for k in ("satisfaction", "colere", "peur")):
+            li.append(e(C["humeur"].format(s=et["satisfaction"], c=et["colere"], p=et["peur"])))
+        fo = et.get("foi") or {}
+        if all(isinstance(fo.get(k), (int, float)) for k in ("croyants", "agnostiques", "athees")):
+            li.append(e(C["foi"].format(a=fo["croyants"], b=fo["agnostiques"], c=fo["athees"])))
+        ag = latest.get("ages") or {}
+        etapes = ag.get("etapes") or []
+        n = ag.get("age")
+        if isinstance(n, int) and 0 <= n < len(etapes):
+            li.append(e(C["age"].format(a=tr(etapes[n].get("nom"), lg))))
+            if n + 1 < len(etapes):
+                li.append(e(C["suivant"].format(a=tr(etapes[n + 1].get("nom"), lg), p=tr(etapes[n + 1].get("progres"), lg))))
+        if isinstance(lang.get("partages"), int) and isinstance(lang.get("idees"), int):
+            li.append(a(base + "texte/langue.html", C["mots"].format(m=lang["partages"], i=lang["idees"])))
+        corps += [f"<li>{x}</li>" for x in li] + ["</ul>"]
+        corps += [f"<h2>{e(C['regles'])}</h2><ol>"] + [f"<li>{e(x)}</li>" for x in C["r"]] + ["</ol>"]
+        corps += [f"<h2>{e(C['lire'])}</h2><ul>",
+                  f"<li><b>{e(C['sourire'])}</b> : " if not en else f"<li><b>{e(C['sourire'])}</b>: ",
+                  ]
+        corps[-1] += e(C["sourire_t"]) + " " + " · ".join([a(pre, L["journal"]), a(base + "journal.txt", L["texte"]), a(base + "texte/histoire.html", L["histoire"]), a(base + "texte/langue.html", L["langue"])]) + "</li>"
+        corps.append((f"<li><b>{e(C['comprendre'])}</b>" + (": " if en else " : ") + e(C["comprendre_t"]) + " "
+                      + " · ".join([a(pre + "regles.html", L["regles"]), a(pre + "projet.html", L["projet"]),
+                                    a("https://github.com/branbriere/microcontroland-data/blob/main/documentation/etat-fonctionnalites" + (".en" if en else "") + ".md", L["etat"])]) + "</li>"))
+        corps.append((f"<li><b>{e(C['verifier'])}</b>" + (": " if en else " : ") + e(C["verifier_t"]) + " "
+                      + " · ".join([a(D, L["donnees"]), a(D + "plan.html", L["plan"])]) + "</li></ul>"))
+        corps += [f"<h2>{e(C['pas'])}</h2><ul>"] + [f"<li>{e(x)}</li>" for x in C["p"]] + ["</ul>",
+                  f"<p><small>{e(C['source'])}</small></p></article><hr>"]
+    return ('<!doctype html>\n<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">'
+            f'<title>{e(CINQ["fr"]["titre"])} / {e(CINQ["en"]["titre"])}</title>'
+            f'<meta name="description" content="{e(CINQ["en"]["phrase"])}">'
+            f'<link rel="alternate" type="application/json" href="data/latest.json">{STYLE}</head><body>\n'
+            '<nav><a href="#fr">Français</a> · <a href="#en">English</a> · <a href="llms.txt">llms.txt</a></nav>\n'
+            + "\n".join(corps) + "\n</body></html>\n")
+
+
 def sitemap(racine, base, eds):
     """Toutes les pages publiques du site, plus les versions texte."""
     urls = []
@@ -450,8 +577,9 @@ def main():
     (out / "langue.html").write_text(page_rubrique(
         {"fr": "La langue de Microcontrôland : le microcontrôlandais", "en": "The language of Microcontrôland"},
         lambda lg: langue_lg(lang, latest, lg), "data/langue.json"), encoding="utf-8")
+    (racine / "decouvrir.html").write_text(decouvrir(latest, lang, base), encoding="utf-8")
     (racine / "sitemap.xml").write_text(sitemap(racine, base, eds), encoding="utf-8")
-    print(f"{len(eds)} éditions ; journal.txt = n° {eds[-1]['day']} ; histoire, langue et sitemap.xml écrits")
+    print(f"{len(eds)} éditions ; journal.txt = n° {eds[-1]['day']} ; histoire, langue, decouvrir.html et sitemap.xml écrits")
     return 0
 
 
