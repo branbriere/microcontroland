@@ -15,7 +15,7 @@ intitulés de rubrique. Censure (████) et coquilles restent telles quell
   decouvrir.html       « Découvrir le pays en 5 minutes » : textes fixes + état du pays du soir
 
 Usage : python3 .github/texte_journal.py [racine du site]
-Licence MIT. Version 1.2, 21 octobre 2026 (1.1 et 1.0 : 21 et 20 octobre 2026).
+Licence MIT. Version 1.3, 21 octobre 2026 (1.2, 1.1 et 1.0 : 21 et 20 octobre 2026).
 """
 import html
 import json
@@ -406,7 +406,7 @@ def lire(f, defaut):
 CINQ = {
     "fr": {
         "titre": "Découvrir Microcontrôland en 5 minutes",
-        "phrase": "Microcontrôland est un pays fictif simulé par 7 microcontrôleurs ESP32-S3 dans un garage en Normandie : 120 citoyens, chacun doté d'un petit réseau de neurones, votent et se révoltent, les six régions inventent une langue commune, et la passerelle en tire chaque soir à 20 h un journal, La Puce Libre. Rien n'est scénarisé, et aucun humain n'écrit les éditions.",
+        "phrase": "Microcontrôland est un pays fictif simulé par 7 microcontrôleurs ESP32-S3 dans un garage en Normandie : 120 citoyens, chacun doté d'un petit réseau de neurones, votent et se révoltent, les six régions inventent une langue commune, et la passerelle en tire chaque soir à 20 h un journal, La Puce Libre. Les événements ne sont pas scénarisés, et aucun humain n'écrit les éditions.",
         "auj": "Aujourd'hui dans le pays",
         "auj_note": "Mis à jour automatiquement après chaque édition, à partir des données publiées.",
         "edition": "Dernière édition : n° {n} du {d} (ère {e}, jour {j})",
@@ -420,13 +420,14 @@ CINQ = {
               "Les citoyens élisent un président tous les trois jours. Il peut nommer des ministres, partager les richesses, censurer ou reporter l'élection.",
               "Un citoyen se rebelle quand sa colère l'emporte sur sa peur. Si plus de 40 % du pays est en révolte, le président tombe.",
               "Les cours des matières premières suivent de vraies monnaies, d'après les taux quotidiens de la Banque centrale européenne. Tempêtes et sécheresses, elles, sont simulées.",
-              "La civilisation grandit par âges : la langue, puis les annales, l'état civil, l'ambassade et enfin un signal vers l'extérieur. Chaque âge ouvre une nouvelle page du site."],
+              "La civilisation grandit par âges : la langue, puis les annales, l'état civil, l'ambassade et enfin un signal vers l'extérieur. Ces âges sont des étapes prévues par le programme, que le pays atteint à son rythme ; chacun ouvre une nouvelle page du site."],
         "lire": "Trois façons de lire",
         "sourire": "Sourire", "sourire_t": "le journal du soir, satirique, écrit par la machine.",
         "comprendre": "Comprendre", "comprendre_t": "les règles fixes du pays, le projet, et l'état de chaque fonction.",
         "verifier": "Vérifier", "verifier_t": "les données brutes de chaque jour, avec leur empreinte SHA-256, les protocoles et les études.",
         "pas": "Ce que Microcontrôland n'est pas",
         "p": ["Les citoyens ne sont ni vivants ni conscients : « colère », « peur » ou « foi » sont des variables de leurs réseaux de neurones.",
+              "Les mots communs ne sont pas des entrées des cerveaux : ils n'influencent pas directement les décisions des citoyens. Ils pèsent seulement, par une règle fixe, sur la confiance entre régions et sur les votes.",
               "Le journal n'est pas écrit par un grand modèle de langage : la passerelle choisit parmi des tournures préparées à l'avance et y place les vrais noms et les vrais chiffres.",
               "Microcontrôland n'est pas un État et n'a aucun lien avec un État, un parti ou une personne réels. Personne ne le pilote, pas même son créateur."],
         "liens": {"journal": "Le journal", "texte": "Le journal en texte", "histoire": "Histoire", "langue": "La langue",
@@ -436,7 +437,7 @@ CINQ = {
     },
     "en": {
         "titre": "Discover Microcontrôland in 5 minutes",
-        "phrase": "Microcontrôland is a fictional country simulated by 7 ESP32-S3 microcontrollers in a garage in Normandy: 120 citizens, each with a small neural network, vote and revolt, the six regions invent a shared language, and every evening at 8 pm the gateway turns it into a newspaper, La Puce Libre. Nothing is scripted, and no human writes the issues.",
+        "phrase": "Microcontrôland is a fictional country simulated by 7 ESP32-S3 microcontrollers in a garage in Normandy: 120 citizens, each with a small neural network, vote and revolt, the six regions invent a shared language, and every evening at 8 pm the gateway turns it into a newspaper, La Puce Libre. Events are not scripted, and no human writes the issues.",
         "auj": "Today in the country",
         "auj_note": "Updated automatically after each issue, from the published data.",
         "edition": "Latest issue: no. {n} of {d} (era {e}, day {j})",
@@ -450,13 +451,14 @@ CINQ = {
               "Citizens elect a president every three days. The president can appoint ministers, share out the wealth, censor or postpone the election.",
               "A citizen rebels when anger outweighs fear. If more than 40% of the country is in revolt, the president falls.",
               "Commodity prices follow real currencies, from the European Central Bank's daily rates. Storms and droughts, on the other hand, are simulated.",
-              "The civilisation grows through ages: language, then annals, the civil registry, the embassy and finally a signal to the outside. Each age opens a new page of the site."],
+              "The civilisation grows through ages: language, then annals, the civil registry, the embassy and finally a signal to the outside. These ages are stages built into the program, which the country reaches at its own pace; each one opens a new page of the site."],
         "lire": "Three ways to read",
         "sourire": "Smile", "sourire_t": "the evening paper, satirical, written by the machine.",
         "comprendre": "Understand", "comprendre_t": "the country's fixed rules, the project, and the status of every feature.",
         "verifier": "Verify", "verifier_t": "the raw data of every day, with its SHA-256 hash, the protocols and the studies.",
         "pas": "What Microcontrôland is not",
         "p": ["The citizens are neither alive nor conscious: \"anger\", \"fear\" or \"faith\" are variables of their neural networks.",
+              "Shared words are not inputs to the brains: they do not directly influence the citizens' decisions. They only weigh, through a fixed rule, on trust between regions and on votes.",
               "The paper is not written by a large language model: the gateway picks among phrasings prepared in advance and fills in the real names and figures.",
               "Microcontrôland is not a state and has no link with any real state, party or person. Nobody steers it, not even its creator."],
         "liens": {"journal": "The newspaper", "texte": "The newspaper as text", "histoire": "History", "langue": "Language",
