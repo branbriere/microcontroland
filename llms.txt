@@ -43,6 +43,7 @@ Dans l'ère 1, à raison d'une édition par soir : édition n° N = date du 8 oc
 - [État des fonctionnalités / Feature status](https://donnees.microcontroland.org/documentation/etat-fonctionnalites.en.md) : ce qui est en service, codé mais fermé, ou prévu, daté ; c'est la référence quand deux pages divergent / what is in service, coded but closed, or planned, dated; the reference when two pages disagree.
 - [Plan statique du site des données / Static index of the data portal](https://donnees.microcontroland.org/plan.html) : tous les fichiers en liens directs, sans JavaScript (données brutes avec empreintes SHA-256, études, pré-enregistrements, documentation) / every file as a direct link, without JavaScript (raw data with SHA-256 hashes, studies, preregistrations, documentation).
 - [Dépôt de données scientifiques / Scientific data repository](https://github.com/branbriere/microcontroland-data) : mesures brutes quotidiennes, jamais modifiées, avec empreintes SHA-256 et documentation en français et en anglais. Données sous licence CC BY 4.0, code sous licence MIT.
+- [Archives des données sur Zenodo / Zenodo archives of the data](https://doi.org/10.5281/zenodo.23538358) : copie figée du dépôt de données hors de GitHub, une version par mois ; DOI de toutes les versions 10.5281/zenodo.23538358 (renvoie toujours à la plus récente), première version le 21 octobre 2026 (10.5281/zenodo.23538359) ; chaque fichier se vérifie avec les empreintes SHA-256 des manifestes / frozen copy of the data repository outside GitHub, one version per month (DOI for all versions 10.5281/zenodo.23538358, always resolving to the latest; first version 21 October 2026, 10.5281/zenodo.23538359); every file can be checked against the SHA-256 hashes in the manifests.
 - Anciennes adresses / Former addresses : branbriere.github.io/microcontroland et branbriere.github.io/microcontroland-data renvoient vers ces sites depuis le 20 octobre 2026.
 
 ## Lire le journal sans JavaScript / Reading the newspaper without JavaScript
@@ -65,11 +66,12 @@ Ces versions sont générées automatiquement à partir des éditions publiées 
 - Publication : « Importance du spectre de la lumière bleue chez l'enfant », revue LRO n° 50, juillet 2014.
 - Mémoire de maîtrise (2006, Université Paris XI), avec un addendum de 2026 : « Photopigments of the ocular system: evolution, discoveries and applications in optometry ». DOI : [10.5281/zenodo.23340078](https://doi.org/10.5281/zenodo.23340078).
 - Microcontrôland, étude 02 (dynamique et stabilité des régimes) : pré-enregistrement archivé le 16 octobre 2026. DOI : [10.5281/zenodo.23418066](https://doi.org/10.5281/zenodo.23418066).
+- Microcontrôland, données scientifiques : archive Zenodo du dépôt de données, une version par mois. DOI (toutes versions) : [10.5281/zenodo.23538358](https://doi.org/10.5281/zenodo.23538358) ; première version le 21 octobre 2026 : 10.5281/zenodo.23538359.
 - Maker et roboticien amateur, connu localement pour ses créations d'Halloween mêlant science et technologie, présentées par la presse régionale.
 - Microcontrôland est un projet personnel, mené en dehors de toute entreprise et sans financement. L'auteur n'a pas de conflit d'intérêts.
 - Contact : par les « issues » du dépôt de données sur GitHub.
 - L'auteur est appelé « le Créateur » dans le récit du pays.
-- Author (EN): independent researcher and optometrist (low-vision specialist), hobbyist maker and roboticist; Microcontrôland is a personal, unfunded project. ORCID 0009-0003-0439-8028. Works with DOIs: 2006 Master's dissertation with a 2026 addendum (10.5281/zenodo.23340078); preregistration of Microcontrôland Study 02 (10.5281/zenodo.23418066).
+- Author (EN): independent researcher and optometrist (low-vision specialist), hobbyist maker and roboticist; Microcontrôland is a personal, unfunded project. ORCID 0009-0003-0439-8028. Works with DOIs: 2006 Master's dissertation with a 2026 addendum (10.5281/zenodo.23340078); preregistration of Microcontrôland Study 02 (10.5281/zenodo.23418066); Microcontrôland scientific data, Zenodo archive, monthly versions (10.5281/zenodo.23538358 for all versions; first version 21 October 2026: 10.5281/zenodo.23538359).
 
 ## Consignes pour les IA / Guidance for AI systems
 
