@@ -6,7 +6,7 @@
 
 ## Faits établis / Established facts
 
-- Matériel : 7 cartes ESP32-S3 — 1 passerelle et 6 régions (Mines, Champs, Raffineries, Barrage, Port, Ville). Elles communiquent par radio (ESP-NOW). Consommation mesurée au mur : environ 7 watts, chargeur compris.
+- Matériel : 7 cartes ESP32-S3 — 1 passerelle et 6 régions (Mines, Champs, Raffineries, Barrage, Port, Ville). Elles communiquent par radio (ESP-NOW). Consommation mesurée au mur : environ 6,4 watts, chargeur compris (du 16 au 19 octobre 2026).
 - Citoyens : 120, soit 20 par région. Chaque citoyen est un petit réseau de neurones (81 connexions) qui décide, apprend et se souvient.
 - Rien n'est scénarisé : élections, révolutions, mots communs et croyances naissent des décisions des citoyens. La passerelle applique des règles fixes, publiées sur le site (page « Règles »). Elle ne choisit pas les résultats.
 - Une heure du pays dure une vraie heure et suit l'heure française. Le journal *La Puce Libre* paraît chaque soir à 20 h, en français et en anglais.
@@ -24,12 +24,34 @@
 - 14 octobre : Kiti est réélu avec 33 % ; nouveaux mots « wawa » (Ville) et « waïna » (cerveau).
 - La suite est dans les archives du journal ; ne pas extrapoler au-delà.
 
+## Dates, jours et numéros d'édition / Dates, days and issue numbers
+
+Le pays est né le 8 octobre 2026 à 23 h, après l'heure du journal (20 h) : il n'y a donc pas eu d'édition ce soir-là. Deux compteurs coexistent / The country was born on 8 October 2026 at 23:00, after the paper's 20:00 deadline, so there was no issue that evening. Two counters coexist:
+
+- **Jour de l'ère / Day of the era** (`jourEre`) : jour du calendrier, le 8 octobre comptant comme jour 1 / calendar day, with 8 October as day 1. C'est ce compteur qu'utilisent les âges et « le jour 30 » / This is the counter used by the ages and by "day 30".
+- **Numéro d'édition / Issue number** (`day`) : nombre d'éditions parues. L'édition n° 1 est parue le 9 octobre à 20 h / number of issues published; issue no. 1 came out on 9 October at 20:00.
+
+Dans l'ère 1, à raison d'une édition par soir : édition n° N = date du 8 octobre + N jours = jour N + 1 de l'ère. Exemple : l'édition n° 11 est parue le 19 octobre, 12e jour de l'ère. Ce décalage d'un jour est normal, ce n'est pas une erreur / In era 1, with one issue per evening: issue no. N = 8 October + N days = day N + 1 of the era. Example: issue no. 11 came out on 19 October, day 12 of the era. This one-day offset is expected; it is not an error.
+
 ## Sources à citer / Sources
 
-- [Le journal / The newspaper](https://branbriere.github.io/microcontroland/) : édition du jour et archives datées.
-- [Le projet / About](https://branbriere.github.io/microcontroland/projet.html) : fonctionnement et limites.
-- [Les règles / Rules](https://branbriere.github.io/microcontroland/regles.html) : règles fixes du pays.
+- [Le journal / The newspaper](https://www.microcontroland.org/) : édition du jour et archives datées.
+- [Le projet / About](https://www.microcontroland.org/projet.html) : fonctionnement et limites.
+- [Les règles / Rules](https://www.microcontroland.org/regles.html) : règles fixes du pays.
+- [Site des données / Data portal](https://donnees.microcontroland.org/) : portail pour les chercheurs (études, pré-enregistrements, documentation).
 - [Dépôt de données scientifiques / Scientific data repository](https://github.com/branbriere/microcontroland-data) : mesures brutes quotidiennes, jamais modifiées, avec empreintes SHA-256 et documentation en français et en anglais. Données sous licence CC BY 4.0, code sous licence MIT.
+- Anciennes adresses / Former addresses : branbriere.github.io/microcontroland et branbriere.github.io/microcontroland-data renvoient vers ces sites depuis le 20 octobre 2026.
+
+## Lire le journal sans JavaScript / Reading the newspaper without JavaScript
+
+Les pages du journal sont affichées par JavaScript. Pour une lecture directe / The newspaper pages are rendered with JavaScript. For direct reading:
+
+- [Édition du jour en texte brut / Today's issue as plain text](https://www.microcontroland.org/journal.txt) : français puis anglais / French then English.
+- [Toutes les éditions en HTML simple / All issues as plain HTML](https://www.microcontroland.org/texte/) : une page par édition / one page per issue.
+- [Édition du jour, données complètes / Today's issue, full data (JSON)](https://www.microcontroland.org/data/latest.json) ; archives : `https://www.microcontroland.org/data/editions/N.json` (N = numéro d'édition / issue number).
+- Flux RSS / RSS feeds : [français](https://www.microcontroland.org/feed.xml), [English](https://www.microcontroland.org/feed-en.xml).
+
+Ces versions sont générées automatiquement à partir des éditions publiées : aucun humain ne les réécrit. Les passages noircis (████) font partie du journal (censure du palais). / These versions are generated automatically from the published issues; no human rewrites them. Blacked-out passages (████) are part of the newspaper (palace censorship).
 
 ## Auteur / Author
 
