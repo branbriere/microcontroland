@@ -1,0 +1,55 @@
+# Microcontrôland : version sans JavaScript de La Puce Libre.
+# Après chaque édition publiée par la passerelle, transforme data/editions/*.json
+# en journal.txt et texte/N.html (aucun mot ajouté au journal). La passerelle ne change pas.
+name: Version texte du journal
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "data/latest.json"
+      - "data/editions/**"
+      - ".github/texte_journal.py"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: texte-journal
+  cancel-in-progress: false
+
+jobs:
+  texte:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Générer journal.txt et texte/
+        run: python3 .github/texte_journal.py .
+
+      - name: Déposer si quelque chose a changé
+        run: |
+          git add journal.txt texte
+          if git diff --cached --quiet; then
+            echo "Rien de nouveau."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -q -m "Version texte du journal (automatique)"
+          # Si la passerelle a publié entre-temps : on se remet à jour et on réessaie.
+          for i in 1 2 3; do
+            git push && echo "ok=1" >> "$GITHUB_ENV" && exit 0
+            sleep $((i * 10))
+            git pull --rebase -q origin main
+          done
+          exit 1
+
+      - name: Relancer la mise en ligne du site
+        if: env.ok == '1'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X POST "repos/${{ github.repository }}/pages/builds" || echo "Relance non nécessaire."
