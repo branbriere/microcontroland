@@ -1,6 +1,6 @@
 # Microcontrôland : version sans JavaScript de La Puce Libre.
 # Après chaque édition publiée par la passerelle, transforme data/editions/*.json
-# en journal.txt et texte/N.html (aucun mot ajouté au journal). La passerelle ne change pas.
+# en journal.txt, texte/ (éditions, histoire, langue) et sitemap.xml (aucun mot ajouté au journal). La passerelle ne change pas.
 name: Version texte du journal
 
 on:
@@ -9,6 +9,8 @@ on:
     paths:
       - "data/latest.json"
       - "data/editions/**"
+      - "data/histoire.json"
+      - "data/langue.json"
       - ".github/texte_journal.py"
   workflow_dispatch:
 
@@ -27,12 +29,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Générer journal.txt et texte/
+      - name: Générer journal.txt, texte/ et sitemap.xml
         run: python3 .github/texte_journal.py .
 
       - name: Déposer si quelque chose a changé
         run: |
-          git add journal.txt texte
+          git add journal.txt texte sitemap.xml
           if git diff --cached --quiet; then
             echo "Rien de nouveau."
             exit 0
