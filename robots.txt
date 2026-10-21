@@ -1,0 +1,8 @@
+# Microcontrôland : La Puce Libre (www.microcontroland.org)
+# Tous les robots sont les bienvenus, humains et IA. Rien n'est bloqué.
+# All robots are welcome. Nothing is blocked.
+# Lecture sans JavaScript / Reading without JavaScript: /llms.txt, /journal.txt, /texte/
+User-agent: *
+Allow: /
+
+Sitemap: https://www.microcontroland.org/sitemap.xml

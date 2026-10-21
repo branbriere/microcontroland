@@ -48,6 +48,8 @@ Les pages du journal sont affichées par JavaScript. Pour une lecture directe / 
 
 - [Édition du jour en texte brut / Today's issue as plain text](https://www.microcontroland.org/journal.txt) : français puis anglais / French then English.
 - [Toutes les éditions en HTML simple / All issues as plain HTML](https://www.microcontroland.org/texte/) : une page par édition / one page per issue.
+- [Histoire (présidents, régimes, ères) / History (presidents, regimes, eras)](https://www.microcontroland.org/texte/histoire.html) et [la langue (lexique, qui comprend qui) / the language (lexicon, who understands whom)](https://www.microcontroland.org/texte/langue.html) : mêmes textes que les pages du site, et même ouverture selon l'âge du pays / same texts as the site pages, opening with the same ages of the country.
+- [Plan du site / Sitemap](https://www.microcontroland.org/sitemap.xml) : toutes les pages, régénéré après chaque édition / every page, regenerated after each issue.
 - [Édition du jour, données complètes / Today's issue, full data (JSON)](https://www.microcontroland.org/data/latest.json) ; archives : `https://www.microcontroland.org/data/editions/N.json` (N = numéro d'édition / issue number).
 - Flux RSS / RSS feeds : [français](https://www.microcontroland.org/feed.xml), [English](https://www.microcontroland.org/feed-en.xml).
 
