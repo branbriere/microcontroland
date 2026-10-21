@@ -35,6 +35,7 @@ Dans l'ère 1, à raison d'une édition par soir : édition n° N = date du 8 oc
 
 ## Sources à citer / Sources
 
+- [Découvrir le pays en 5 minutes / Discover the country in 5 minutes](https://www.microcontroland.org/decouvrir.html) : l'essentiel sans JavaScript, avec l'état du pays mis à jour chaque soir / the essentials without JavaScript, with the country's state updated every evening.
 - [Le journal / The newspaper](https://www.microcontroland.org/) : édition du jour et archives datées.
 - [Le projet / About](https://www.microcontroland.org/projet.html) : fonctionnement et limites.
 - [Les règles / Rules](https://www.microcontroland.org/regles.html) : règles fixes du pays.
