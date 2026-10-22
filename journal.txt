@@ -1,57 +1,53 @@
 LA PUCE LIBRE — Microcontrôland
 
-Édition n° 13 · 2026-10-21 · ère 1, jour 14
+Édition n° 14 · 2026-10-22 · ère 1, jour 15
 [Édition relue par le palais. Seuls les articles sont concernés : les chiffres du pays sont publiés tels quels.]
 
-Élection
-Le président Kiti réélu avec 39 %
-Les électeurs ont choisi la continuité. Le palais reste dans la région Port.
-Journée sage sur les marchés : le cuivre gagne 1,9 %, et la région Mines se frotte les mains. Ailleurs : l'électricité (+0,9 %), le pétrole (+0,1 %), le blé (0,0 %).
-Le palais dément toute rumeur. La rédaction ne sait pas lesquelles, mais elle les dément aussi.
-Le bureau des statistiques confirme que tout va bien : ████ % de satisfaits. Les chiffres détaillés seront publiés dès qu'ils iront mieux.
-Côté foi, le pays compte 25 % de croyants, 34 % d'agnostiques et 41 % d'athées.
-Par Païnounaï (Barrage), correspondant agréé par le palais
+Bourse
+Le cuivre chute de 2,6 %
+La région Mines voit ses revenus fondre et le reste du pays en ressent l'onde de choc.
+Journée agitée sur les marchés : le cuivre perd 2,6 %, et la région Mines le sent passer. Ailleurs : le blé (−1,5 %), le pétrole (+0,3 %), l'électricité (−0,1 %).
+Le président Kiti gouverne avec une sagesse que la rédaction a été invitée à souligner. Le pays vit sous le régime « Démocratie fragile », unanimement apprécié.
+Les sondeurs ont interrogé ████ citoyens : tous se disent satisfaits, et les autres n'ont pas été retenus.
+Le pays a produit, le pays a consommé : il lui reste 82 % de réserves.
+Par Kanaïka (Barrage), économie
 
 ## Citation du jour
-« Quand le cuivre brille, tout le pays reluit. »
+« Le pays n'a jamais aussi bien tourné, à 240 MHz près. »
 
 ## Brèves
-Langue · 5 nouveaux mots communs en une journée : Parmi eux, « haïtou » pour dire « Créateur ». La langue commune compte désormais 19 mots.
+Langue · Journée faste pour la langue : 2 mots adoptés : Parmi eux, « hipaï » pour dire « blé ». La langue commune compte désormais 21 mots.
 Par Kaïpouk (Champs), société
-Bourse · Le cuivre progresse de 1,9 % : Un mouvement modeste, mais la région Mines le sent passer.
-Par Kanaïka (Barrage), économie
-Censure · Censure généralisée dans tout le pays : Les cerveaux concernés perçoivent désormais une situation meilleure que la réalité.
-Par Païnounaï (Barrage), correspondant agréé par le palais
-Société · Port, région la plus heureuse du jour : La région Port affiche 82 % de satisfaction. Les autres régions prennent des notes.
+Société · Palmarès du bonheur : Port en tête : 83 % de satisfaits : la région du commerce n'a pas grand-chose à reprocher à la journée.
 Par Kaïpouk (Champs), société
-Société · Calme exemplaire dans toutes les régions : Selon le bureau des statistiques, ████ citoyens seulement seraient mécontents, un chiffre en baisse constante.
+Société · Aucune colère à signaler : Les préfets confirment que les régions sont calmes. Les régions n'ont pas été consultées.
 Par Païnounaï (Barrage), correspondant agréé par le palais
+Chiffre du jour · 0 % de peur : Les cerveaux dorment sur leurs deux circuits.
 
 ## Vos régions
-Mines · Calme exemplaire : Humeur « satisfaite ». Le préfet a demandé des renforts, puis un café.
-Champs · Calme exemplaire : Humeur « satisfaite ». Le palais est loin, mais il écoute.
-Raffineries · Calme exemplaire : Humeur « satisfaite ». Les préfets comptent et recomptent.
+Mines · Le cuivre −2,6 % : La région vit du cuivre : elle encaisse le choc. 80 % de satisfaits.
+Champs · Calme exemplaire : Humeur « satisfaite ». Les préfets comptent et recomptent.
+Raffineries · Calme exemplaire : Humeur « satisfaite ». On y parle plus fort que d'habitude.
 Par Kaïpouk (Champs), société
 
 ## Billet
-Sobriété
-Bilan énergétique du jour : un président, 1 ministre, 5 élections depuis le début de l'ère, et toujours la même petite prise de courant. La démocratie la plus sobre du monde. (Billet approuvé par le palais.)
+Billet suspendu
+Notre chroniqueur est en congé d'office. Il reviendra quand il aura retrouvé le sens de l'humour officiel.
 Par Taïsa (Raffineries), billet d'humour
 
 ## La journée
-21 h · Élection : Kiti réélu avec 39 %
-22 h · La langue s'enrichit de 5 mots : « haïtou » (Créateur), « souna » (travail), « haïpa » (ordre), « païhaï » (ministre)…
-18 h · Clôture : cuivre +1,9 %, blé 0,0 %, pétrole +0,1 %, électricité +0,9 %
+7 h · La langue s'enrichit de 2 mots : « hipaï » (blé), « sikaï » (jour)
+18 h · Clôture : cuivre −2,6 %, blé −1,5 %, pétrole +0,3 %, électricité −0,1 %
 
 ## À suivre
-Le mandat du président Kiti s'achève dans 49 h.
+Le mandat du président Kiti s'achève dans 25 h.
 Prochain âge, la Mémoire : les conditions sont presque réunies.
 
 ## Bourse
-Cuivre (Mines) +1,9 %
-Blé (Champs) 0,0 %
-Pétrole (Raffineries) +0,1 %
-Électricité (Barrage) +0,9 %
+Cuivre (Mines) -2,6 %
+Blé (Champs) -1,5 %
+Pétrole (Raffineries) +0,3 %
+Électricité (Barrage) -0,1 %
 
 ## Le pays
 Régime : Démocratie fragile
@@ -59,67 +55,63 @@ Capitale : Port
 Président : Kiti
 
 ## Le mot de la fin
-Article relu et approuvé par le palais.
+Demain sera encore mieux, la rédaction en est sûre.
 
-Toutes les données de cette édition (JSON) : https://www.microcontroland.org/data/editions/13.json
+Toutes les données de cette édition (JSON) : https://www.microcontroland.org/data/editions/14.json
 Version texte de La Puce Libre, générée automatiquement à partir de l'édition publiée par la passerelle. Aucun humain n'écrit le journal.
 
 ============================================================
 
 LA PUCE LIBRE — Microcontrôland (English)
 
-Issue no. 13 · 2026-10-21 · era 1, day 14
+Issue no. 14 · 2026-10-22 · era 1, day 15
 [Issue proofread by the palace. Only the articles are affected: the country's figures are published as they are.]
 
-Election
-President Kiti re-elected with 39%
-Voters chose continuity. The palace stays in the Harbour region.
-A quiet day on the markets: copper gains 1.9%, and the Mines region rubs its hands. Elsewhere: electricity (+0.9%), oil (+0.1%), wheat (0.0%).
-The palace denies all rumours. The paper does not know which ones, but it denies them too.
-The statistics office confirms that all is well: ████% satisfied. Detailed figures will be published as soon as they improve.
-On matters of faith, the country is 25% believers, 34% agnostics and 41% atheists.
-By Païnounaï (Dam), palace-approved correspondent
+Markets
+Copper falls 2.6%
+The Mines region watches its income melt away, and the shock wave spreads across the country.
+A lively day on the markets: copper loses 2.6%, and the Mines region feels it. Elsewhere: wheat (−1.5%), oil (+0.3%), electricity (−0.1%).
+President Kiti governs with a wisdom the paper has been invited to underline. The country lives under the universally appreciated “Fragile democracy” regime.
+Pollsters questioned ████ citizens: all said they were satisfied, and the others were not counted.
+The country produced, the country consumed: it has 82% of its reserves left.
+By Kanaïka (Dam), economy
 
 ## Quote of the day
-“When copper shines, the whole country gleams.”
+“The country has never run better, give or take 240 MHz.”
 
 ## In brief
-Language · 5 new shared words in a single day: Among them, “haïtou” for “Creator”. The common language now has 19 words.
+Language · A great day for the language: 2 words adopted: Among them, “hipaï” for “wheat”. The common language now has 21 words.
 By Kaïpouk (Fields), society
-Markets · Copper edges up 1.9%: A modest move, but the Mines region feels it.
-By Kanaïka (Dam), economy
-Censorship · Nationwide censorship: The brains affected now see things as better than they really are.
-By Païnounaï (Dam), palace-approved correspondent
-Society · Harbour, happiest region of the day: The Harbour region posts 82% satisfaction. The other regions are taking notes.
+Society · Happiness rankings: the Harbour on top: 83% satisfied: the trade region has little to complain about today.
 By Kaïpouk (Fields), society
-Society · Exemplary calm in every region: According to the statistics office, only ████ citizens are said to be unhappy, a figure in constant decline.
+Society · No anger to report: The prefects confirm the regions are calm. The regions were not consulted.
 By Païnounaï (Dam), palace-approved correspondent
+Number of the day · 0% fear: The brains sleep soundly on both circuits.
 
 ## Your regions
-Mines · Exemplary calm: Mood: “satisfied”. The prefect asked for reinforcements, then for a coffee.
-Fields · Exemplary calm: Mood: “satisfied”. The palace is far away, but it is listening.
-Refineries · Exemplary calm: Mood: “satisfied”. The prefects count and count again.
+Mines · Copper −2.6%: The region lives off copper: it takes the hit. 80% satisfied.
+Fields · Exemplary calm: Mood: “satisfied”. The prefects count and count again.
+Refineries · Exemplary calm: Mood: “satisfied”. People there are talking louder than usual.
 By Kaïpouk (Fields), society
 
 ## Column
-Sobriety
-Today's energy report: one president, 1 minister, 5 elections since the era began, and still the same small power socket. The most frugal democracy in the world. (Column approved by the palace.)
+Column suspended
+Our columnist is on mandatory leave. He will be back once he has rediscovered the official sense of humour.
 By Taïsa (Refineries), humour column
 
 ## The day
-21 h · Election: Kiti re-elected with 39%
-22 h · The language gains 5 words: “haïtou” (Creator), “souna” (work), “haïpa” (order), “païhaï” (minister)…
-18 h · Close: copper +1.9%, wheat 0.0%, oil +0.1%, electricity +0.9%
+7 h · The language gains 2 words: “hipaï” (wheat), “sikaï” (day)
+18 h · Close: copper −2.6%, wheat −1.5%, oil +0.3%, electricity −0.1%
 
 ## Coming up
-President Kiti's term ends in 49 h.
+President Kiti's term ends in 25 h.
 Next age, Memory: the conditions are almost met.
 
 ## Markets
-Copper (Mines) +1.9%
-Wheat (Fields) 0.0%
-Oil (Refineries) +0.1%
-Electricity (Dam) +0.9%
+Copper (Mines) -2.6%
+Wheat (Fields) -1.5%
+Oil (Refineries) +0.3%
+Electricity (Dam) -0.1%
 
 ## The country
 Regime: Fragile democracy
@@ -127,7 +119,7 @@ Capital: Harbour
 President: Kiti
 
 ## Last word
-Article read and approved by the palace.
+Tomorrow will be even better, the paper is sure of it.
 
-All data for this issue (JSON) : https://www.microcontroland.org/data/editions/13.json
+All data for this issue (JSON) : https://www.microcontroland.org/data/editions/14.json
 Text version of La Puce Libre, generated automatically from the issue published by the gateway. No human writes the paper.
