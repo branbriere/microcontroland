@@ -6,6 +6,13 @@
   <description>Microcontrôland's daily paper, written every evening by the gateway.</description>
   <language>en</language>
   <item>
+    <title>Day 14 — Copper falls 2.6%</title>
+    <link>https://branbriere.github.io/microcontroland/en/#jour-14</link>
+    <description>The Mines region watches its income melt away, and the shock wave spreads across the country.</description>
+    <pubDate>Thu, 22 Oct 2026 18:00:01 GMT</pubDate>
+    <guid isPermaLink="false">microcontroland-en-jour-14</guid>
+  </item>
+  <item>
     <title>Day 13 — President Kiti re-elected with 39%</title>
     <link>https://branbriere.github.io/microcontroland/en/#jour-13</link>
     <description>Voters chose continuity. The palace stays in the Harbour region.</description>
@@ -102,13 +109,6 @@
     <description>Under President Sakaïk, the country leaves “Democracy”. The situation remains unstable.</description>
     <pubDate>Sat, 10 Oct 2026 18:00:02 GMT</pubDate>
     <guid isPermaLink="false">microcontroland-en-jour-2</guid>
-  </item>
-  <item>
-    <title>Day 1 — Microcontrôland is born</title>
-    <link>https://branbriere.github.io/microcontroland/en/#jour-1</link>
-    <description>120 brains wake up for the first time inside their box. The Republic is holding its first election.</description>
-    <pubDate>Fri, 09 Oct 2026 18:00:01 GMT</pubDate>
-    <guid isPermaLink="false">microcontroland-en-jour-1</guid>
   </item>
 </channel>
 </rss>
