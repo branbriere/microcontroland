@@ -6,6 +6,13 @@
   <description>Le quotidien de Microcontrôland, écrit chaque soir par la passerelle.</description>
   <language>fr</language>
   <item>
+    <title>Jour 15 — Le pays a un mot pour « nous » : kouwaï</title>
+    <link>https://branbriere.github.io/microcontroland/#jour-15</link>
+    <description>Cinq régions au moins disent désormais la même chose. La langue commune compte 22 mots.</description>
+    <pubDate>Fri, 23 Oct 2026 18:00:01 GMT</pubDate>
+    <guid isPermaLink="false">microcontroland-fr-jour-15</guid>
+  </item>
+  <item>
     <title>Jour 14 — Le cuivre chute de 2,6 %</title>
     <link>https://branbriere.github.io/microcontroland/#jour-14</link>
     <description>La région Mines voit ses revenus fondre et le reste du pays en ressent l'onde de choc.</description>
@@ -102,13 +109,6 @@
     <description>Révolte ! Le président Sakaïk est renversé par 49 cerveaux rebelles (490 k hab)</description>
     <pubDate>Sun, 11 Oct 2026 07:00:00 GMT</pubDate>
     <guid isPermaLink="false">microcontroland-fr-depeche-1-59</guid>
-  </item>
-  <item>
-    <title>Jour 2 — Microcontrôland bascule en démocratie fragile</title>
-    <link>https://branbriere.github.io/microcontroland/#jour-2</link>
-    <description>Sous le président Sakaïk, le pays quitte le régime « Démocratie ». La situation reste instable.</description>
-    <pubDate>Sat, 10 Oct 2026 18:00:02 GMT</pubDate>
-    <guid isPermaLink="false">microcontroland-fr-jour-2</guid>
   </item>
 </channel>
 </rss>
