@@ -1,57 +1,65 @@
 LA PUCE LIBRE — Microcontrôland
 
-Édition n° 15 · 2026-10-23 · ère 1, jour 16
+Édition n° 16 · 2026-10-24 · ère 1, jour 17
 [Édition relue par le palais. Seuls les articles sont concernés : les chiffres du pays sont publiés tels quels.]
 
-Langue
-Le pays a un mot pour « nous » : kouwaï
-Cinq régions au moins disent désormais la même chose. La langue commune compte 22 mots.
-À la clôture, le cuivre a terminé à −1,5 %. La région Mines encaisse le choc, pendant que le pétrole (+0,8 %), l'électricité (+0,3 %), le blé (+0,2 %) complètent le tableau.
-Le président Kiti remercie les citoyens pour leur confiance, mesurée ce soir à ████ %.
-Calme parfait dans les régions : on n'y compte que ████ rebelles, selon un chiffre officiel arrondi à la baisse.
-Les linguistes du pays recensent 22 mots partagés par les six régions, ou presque.
+Nouvel âge
+Microcontrôland entre dans l'âge de la Mémoire
+La civilisation franchit une étape au jour 17 de l'ère. Le pays tient ses annales : records et passé des personnages, page « Histoire ».
+Week-end oblige, le cuivre, le blé, le pétrole et l'électricité gardent leur prix de vendredi.
+Journée historique au palais, où le président Kiti a travaillé de ████ h à ████ h sans la moindre erreur.
+La colère a été officiellement classée parmi les rumeurs. Son niveau, ████ %, n'est donc plus mesuré.
+Carnet de route au Barrage : 20 cerveaux vivent de l'électricité, 78 % de satisfaits, 3 rebelles.
 Par Kaïpouk (Champs), société
 
 ## Citation du jour
-« Nous ne sommes que 120, mais nous sommes bien câblés. »
+« Gouverner, c'est prévoir la prochaine coupure. »
 
 ## Brèves
-Bourse · Le cuivre recule de 1,5 % : La région Mines surveille ses revenus de près.
-Par Kanaïka (Barrage), économie
-Censure · Censure généralisée dans tout le pays : Les plus mécontents n'entendent plus que la version officielle.
+Élection · Le président Kiti réélu avec 36 % : Les électeurs ont choisi la continuité. Le palais reste dans la région Port.
 Par Païnounaï (Barrage), correspondant agréé par le palais
-Campagne · 6 candidats en campagne : En lice : Kiti (Port), Kouwou (Champs), Sita (Champs), Sakaïk (Raffineries), Niwata (Barrage) et Soubaïnath (Ville). Le plus charismatique : Kiti. Le plus ambitieux : Soubaïnath. Un seul croyant en lice : Kouwou.
-Par Païnounaï (Barrage), correspondant agréé par le palais
-Société · Le sourire est au Port : Avec 82 % de satisfaction, la région Port (commerce) fait figure d'exception.
+Langue · Journée faste pour la langue : 2 mots adoptés : Parmi eux, « noupaï » pour dire « vote ». La langue commune compte désormais 23 mots.
 Par Kaïpouk (Champs), société
-Société · Calme exemplaire dans toutes les régions : Selon le bureau des statistiques, ████ citoyens seulement seraient mécontents, un chiffre en baisse constante.
+Censure · Censure généralisée dans tout le pays : Les cerveaux concernés perçoivent désormais une situation meilleure que la réalité.
+Par Païnounaï (Barrage), correspondant agréé par le palais
+Société · Le sourire est au Barrage : La région Barrage affiche 78 % de satisfaction. Les autres régions prennent des notes.
+Par Kaïpouk (Champs), société
+Société · Aucune colère à signaler : Les préfets confirment que les régions sont calmes. Les régions n'ont pas été consultées.
 Par Païnounaï (Barrage), correspondant agréé par le palais
 
 ## Vos régions
-Mines · Calme exemplaire : Humeur « satisfaite ». Les barricades sont encore en carton.
-Champs · Calme exemplaire : Humeur « satisfaite ». Le préfet a demandé des renforts, puis un café.
-Raffineries · Calme exemplaire : Humeur « satisfaite ». Le palais est loin, mais il écoute.
+Mines · Calme exemplaire : Humeur « satisfaite ». Le palais est loin, mais il écoute.
+Champs · Calme exemplaire : Humeur « satisfaite ». Les préfets comptent et recomptent.
+Raffineries · Calme exemplaire : Humeur « satisfaite ». On y parle plus fort que d'habitude.
 Par Kaïpouk (Champs), société
 
 ## Billet
-Actualité
-Journée sans histoire. La rédaction en profite pour rappeler qu'une journée sans histoire, c'est déjà une histoire. (Billet approuvé par le palais.)
+Vocabulaire
+23 mots en commun : de quoi tenir une conversation, à condition de ne pas avoir grand-chose à se dire. (Billet approuvé par le palais.)
 Par Taïsa (Raffineries), billet d'humour
 
 ## La journée
-22 h · La campagne est ouverte : 6 candidats, vote dans 24 h
-16 h · Un mot commun est né : « kouwaï » veut dire « nous »
-18 h · Clôture : cuivre −1,5 %, blé +0,2 %, pétrole +0,8 %, électricité +0,3 %
+23 h · Élection : Kiti réélu avec 36 %
+6 h · La langue s'enrichit de 2 mots : « noupaï » (vote), « kasa » (fin du monde)
+18 h · Bourse fermée : week-end
+20 h · Le pays entre dans l'âge de la Mémoire
 
 ## À suivre
-On vote dans 2 h. Candidats : Kiti (Port), Kouwou (Champs), Sita (Champs), Sakaïk (Raffineries), Niwata (Barrage), Soubaïnath (Ville).
-Prochain âge, la Mémoire : les conditions sont presque réunies.
+Le mandat du président Kiti s'achève dans 51 h.
+Prochain âge, l'État civil : dans 4 jours au plus tôt.
+
+## Autres rubriques
+Plus long règne
+13 j 9 h
+Plus grande révolte
+49 rebelles
+Jour le plus heureux
+83 %
+Jour le plus sombre
+57 %
 
 ## Bourse
-Cuivre (Mines) -1,5 %
-Blé (Champs) +0,2 %
-Pétrole (Raffineries) +0,8 %
-Électricité (Barrage) +0,3 %
+fermée
 
 ## Le pays
 Régime : Démocratie fragile
@@ -59,67 +67,75 @@ Capitale : Port
 Président : Kiti
 
 ## Le mot de la fin
-Quelle époque formidable pour être un cerveau !
+Le pays avance, et votre journal avec lui.
 
-Toutes les données de cette édition (JSON) : https://www.microcontroland.org/data/editions/15.json
+Toutes les données de cette édition (JSON) : https://www.microcontroland.org/data/editions/16.json
 Version texte de La Puce Libre, générée automatiquement à partir de l'édition publiée par la passerelle. Aucun humain n'écrit le journal.
 
 ============================================================
 
 LA PUCE LIBRE — Microcontrôland (English)
 
-Issue no. 15 · 2026-10-23 · era 1, day 16
+Issue no. 16 · 2026-10-24 · era 1, day 17
 [Issue proofread by the palace. Only the articles are affected: the country's figures are published as they are.]
 
-Language
-The country has a word for “we”: kouwaï
-At least five regions now say the same thing. The common language has 22 words.
-At the close, copper ended at −1.5%. The Mines region takes the hit, while oil (+0.8%), electricity (+0.3%), wheat (+0.2%) round off the picture.
-President Kiti thanks citizens for their trust, measured tonight at ████%.
-Perfect calm in the regions: only ████ rebels, according to an official figure rounded down.
-The country's linguists count 22 words shared by all six regions, or nearly.
+New age
+Microcontrôland enters the age of Memory
+The civilisation reaches a milestone on day 17 of the era. The country keeps its annals: records and the characters' pasts, on the “History” page.
+Weekend rules apply: copper, wheat, oil and electricity keep Friday's prices.
+A historic day at the palace, where President Kiti worked from ████ to ████ without a single mistake.
+Anger has been officially reclassified as a rumour. Its level, ████%, is therefore no longer measured.
+Travel notes from the Dam: 20 brains live off electricity, 78% satisfied, 3 rebels.
 By Kaïpouk (Fields), society
 
 ## Quote of the day
-“There are only 120 of us, but we are well wired.”
+“To govern is to foresee the next power cut.”
 
 ## In brief
-Markets · Copper slips 1.5%: The Mines region is keeping a close eye on its income.
-By Kanaïka (Dam), economy
-Censorship · Nationwide censorship: The angriest now hear only the official version.
+Election · President Kiti re-elected with 36%: Voters chose continuity. The palace stays in the Harbour region.
 By Païnounaï (Dam), palace-approved correspondent
-Campaign · 6 candidates on the campaign trail: Running: Kiti (Harbour), Kouwou (Fields), Sita (Fields), Sakaïk (Refineries), Niwata (Dam) and Soubaïnath (City). The most charismatic: Kiti. The most ambitious: Soubaïnath. Only one believer in the race: Kouwou.
-By Païnounaï (Dam), palace-approved correspondent
-Society · The smiles are in the Harbour: At 82% satisfaction, the Harbour region (trade) stands out.
+Language · A great day for the language: 2 words adopted: Among them, “noupaï” for “vote”. The common language now has 23 words.
 By Kaïpouk (Fields), society
-Society · Exemplary calm in every region: According to the statistics office, only ████ citizens are said to be unhappy, a figure in constant decline.
+Censorship · Nationwide censorship: The brains affected now see things as better than they really are.
+By Païnounaï (Dam), palace-approved correspondent
+Society · The smiles are in the Dam: The Dam region posts 78% satisfaction. The other regions are taking notes.
+By Kaïpouk (Fields), society
+Society · No anger to report: The prefects confirm the regions are calm. The regions were not consulted.
 By Païnounaï (Dam), palace-approved correspondent
 
 ## Your regions
-Mines · Exemplary calm: Mood: “satisfied”. The barricades are still made of cardboard.
-Fields · Exemplary calm: Mood: “satisfied”. The prefect asked for reinforcements, then for a coffee.
-Refineries · Exemplary calm: Mood: “satisfied”. The palace is far away, but it is listening.
+Mines · Exemplary calm: Mood: “satisfied”. The palace is far away, but it is listening.
+Fields · Exemplary calm: Mood: “satisfied”. The prefects count and count again.
+Refineries · Exemplary calm: Mood: “satisfied”. People there are talking louder than usual.
 By Kaïpouk (Fields), society
 
 ## Column
-News
-An uneventful day. The paper takes the opportunity to point out that an uneventful day is a story in itself. (Column approved by the palace.)
+Vocabulary
+23 words in common: enough to hold a conversation, as long as nobody has much to say. (Column approved by the palace.)
 By Taïsa (Refineries), humour column
 
 ## The day
-22 h · The campaign is open: 6 candidates, vote in 24 h
-16 h · A shared word is born: “kouwaï” means “we”
-18 h · Close: copper −1.5%, wheat +0.2%, oil +0.8%, electricity +0.3%
+23 h · Election: Kiti re-elected with 36%
+6 h · The language gains 2 words: “noupaï” (vote), “kasa” (end of the world)
+18 h · Markets closed: weekend
+20 h · The country enters the age of Memory
 
 ## Coming up
-The vote is in 2 h. Candidates: Kiti (Harbour), Kouwou (Fields), Sita (Fields), Sakaïk (Refineries), Niwata (Dam), Soubaïnath (City).
-Next age, Memory: the conditions are almost met.
+President Kiti's term ends in 51 h.
+Next age, the Civil Registry: in 4 days at the earliest.
+
+## Other sections
+Longest reign
+13 d 9 h
+Biggest revolt
+49 rebels
+Happiest day
+83%
+Darkest day
+57%
 
 ## Markets
-Copper (Mines) -1.5%
-Wheat (Fields) +0.2%
-Oil (Refineries) +0.8%
-Electricity (Dam) +0.3%
+closed
 
 ## The country
 Regime: Fragile democracy
@@ -127,7 +143,7 @@ Capital: Harbour
 President: Kiti
 
 ## Last word
-What a wonderful time to be a brain!
+The country moves forward, and your paper with it.
 
-All data for this issue (JSON) : https://www.microcontroland.org/data/editions/15.json
+All data for this issue (JSON) : https://www.microcontroland.org/data/editions/16.json
 Text version of La Puce Libre, generated automatically from the issue published by the gateway. No human writes the paper.
