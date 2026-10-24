@@ -6,6 +6,13 @@
   <description>Le quotidien de Microcontrôland, écrit chaque soir par la passerelle.</description>
   <language>fr</language>
   <item>
+    <title>Jour 16 — Microcontrôland entre dans l'âge de la Mémoire</title>
+    <link>https://branbriere.github.io/microcontroland/#jour-16</link>
+    <description>La civilisation franchit une étape au jour 17 de l'ère. Le pays tient ses annales : records et passé des personnages, page « Histoire ».</description>
+    <pubDate>Sat, 24 Oct 2026 18:00:01 GMT</pubDate>
+    <guid isPermaLink="false">microcontroland-fr-jour-16</guid>
+  </item>
+  <item>
     <title>Jour 15 — Le pays a un mot pour « nous » : kouwaï</title>
     <link>https://branbriere.github.io/microcontroland/#jour-15</link>
     <description>Cinq régions au moins disent désormais la même chose. La langue commune compte 22 mots.</description>
@@ -102,13 +109,6 @@
     <description>Élection post-révolution : Kiti (Port) élu avec 70 %</description>
     <pubDate>Sun, 11 Oct 2026 09:00:01 GMT</pubDate>
     <guid isPermaLink="false">microcontroland-fr-depeche-1-61</guid>
-  </item>
-  <item>
-    <title>Dernière minute — Révolte ! Le président Sakaïk est renversé par 49 cerveaux rebelles (490 k hab)</title>
-    <link>https://branbriere.github.io/microcontroland/</link>
-    <description>Révolte ! Le président Sakaïk est renversé par 49 cerveaux rebelles (490 k hab)</description>
-    <pubDate>Sun, 11 Oct 2026 07:00:00 GMT</pubDate>
-    <guid isPermaLink="false">microcontroland-fr-depeche-1-59</guid>
   </item>
 </channel>
 </rss>
