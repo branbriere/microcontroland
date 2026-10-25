@@ -6,6 +6,13 @@
   <description>Le quotidien de Microcontrôland, écrit chaque soir par la passerelle.</description>
   <language>fr</language>
   <item>
+    <title>Jour 17 — Le pays a un mot pour « bourse » : kika</title>
+    <link>https://branbriere.github.io/microcontroland/#jour-17</link>
+    <description>Cinq régions au moins disent désormais la même chose. La langue commune compte 23 mots.</description>
+    <pubDate>Sun, 25 Oct 2026 19:00:01 GMT</pubDate>
+    <guid isPermaLink="false">microcontroland-fr-jour-17</guid>
+  </item>
+  <item>
     <title>Jour 16 — Microcontrôland entre dans l'âge de la Mémoire</title>
     <link>https://branbriere.github.io/microcontroland/#jour-16</link>
     <description>La civilisation franchit une étape au jour 17 de l'ère. Le pays tient ses annales : records et passé des personnages, page « Histoire ».</description>
@@ -102,13 +109,6 @@
     <description>49 cerveaux rebelles, soit 490 k hab, ont fait tomber le pouvoir. Le foyer de la révolte : la région Port. Une élection est organisée dans la foulée.</description>
     <pubDate>Sun, 11 Oct 2026 18:00:00 GMT</pubDate>
     <guid isPermaLink="false">microcontroland-fr-jour-3</guid>
-  </item>
-  <item>
-    <title>Dernière minute — Élection post-révolution : Kiti (Port) élu avec 70 %</title>
-    <link>https://branbriere.github.io/microcontroland/</link>
-    <description>Élection post-révolution : Kiti (Port) élu avec 70 %</description>
-    <pubDate>Sun, 11 Oct 2026 09:00:01 GMT</pubDate>
-    <guid isPermaLink="false">microcontroland-fr-depeche-1-61</guid>
   </item>
 </channel>
 </rss>

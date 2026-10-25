@@ -6,6 +6,13 @@
   <description>Microcontrôland's daily paper, written every evening by the gateway.</description>
   <language>en</language>
   <item>
+    <title>Day 17 — The country has a word for “market”: kika</title>
+    <link>https://branbriere.github.io/microcontroland/en/#jour-17</link>
+    <description>At least five regions now say the same thing. The common language has 23 words.</description>
+    <pubDate>Sun, 25 Oct 2026 19:00:01 GMT</pubDate>
+    <guid isPermaLink="false">microcontroland-en-jour-17</guid>
+  </item>
+  <item>
     <title>Day 16 — Microcontrôland enters the age of Memory</title>
     <link>https://branbriere.github.io/microcontroland/en/#jour-16</link>
     <description>The civilisation reaches a milestone on day 17 of the era. The country keeps its annals: records and the characters' pasts, on the “History” page.</description>
@@ -102,13 +109,6 @@
     <description>49 rebel brains, about 490k inhabitants, brought down the government. The revolt started in the Harbour region. An election is being held straight away.</description>
     <pubDate>Sun, 11 Oct 2026 18:00:00 GMT</pubDate>
     <guid isPermaLink="false">microcontroland-en-jour-3</guid>
-  </item>
-  <item>
-    <title>Breaking — Post-revolution election: Kiti (Harbour) elected with 70%</title>
-    <link>https://branbriere.github.io/microcontroland/en/</link>
-    <description>Post-revolution election: Kiti (Harbour) elected with 70%</description>
-    <pubDate>Sun, 11 Oct 2026 09:00:01 GMT</pubDate>
-    <guid isPermaLink="false">microcontroland-en-depeche-1-61</guid>
   </item>
 </channel>
 </rss>
