@@ -11,6 +11,7 @@
   <url><loc>https://www.microcontroland.org/projet.html</loc><xhtml:link rel="alternate" hreflang="fr" href="https://www.microcontroland.org/projet.html"/><xhtml:link rel="alternate" hreflang="en" href="https://www.microcontroland.org/en/projet.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://www.microcontroland.org/projet.html"/></url>
   <url><loc>https://www.microcontroland.org/recherche.html</loc><xhtml:link rel="alternate" hreflang="fr" href="https://www.microcontroland.org/recherche.html"/><xhtml:link rel="alternate" hreflang="en" href="https://www.microcontroland.org/en/recherche.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://www.microcontroland.org/recherche.html"/></url>
   <url><loc>https://www.microcontroland.org/regles.html</loc><xhtml:link rel="alternate" hreflang="fr" href="https://www.microcontroland.org/regles.html"/><xhtml:link rel="alternate" hreflang="en" href="https://www.microcontroland.org/en/regles.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://www.microcontroland.org/regles.html"/></url>
+  <url><loc>https://www.microcontroland.org/relique.html</loc><xhtml:link rel="alternate" hreflang="fr" href="https://www.microcontroland.org/relique.html"/><xhtml:link rel="alternate" hreflang="en" href="https://www.microcontroland.org/en/relique.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://www.microcontroland.org/relique.html"/></url>
   <url><loc>https://www.microcontroland.org/en/ambassade.html</loc><xhtml:link rel="alternate" hreflang="fr" href="https://www.microcontroland.org/ambassade.html"/><xhtml:link rel="alternate" hreflang="en" href="https://www.microcontroland.org/en/ambassade.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://www.microcontroland.org/ambassade.html"/></url>
   <url><loc>https://www.microcontroland.org/en/archives.html</loc><xhtml:link rel="alternate" hreflang="fr" href="https://www.microcontroland.org/archives.html"/><xhtml:link rel="alternate" hreflang="en" href="https://www.microcontroland.org/en/archives.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://www.microcontroland.org/archives.html"/></url>
   <url><loc>https://www.microcontroland.org/en/citoyen.html</loc><xhtml:link rel="alternate" hreflang="fr" href="https://www.microcontroland.org/citoyen.html"/><xhtml:link rel="alternate" hreflang="en" href="https://www.microcontroland.org/en/citoyen.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://www.microcontroland.org/citoyen.html"/></url>
@@ -21,11 +22,12 @@
   <url><loc>https://www.microcontroland.org/en/projet.html</loc><xhtml:link rel="alternate" hreflang="fr" href="https://www.microcontroland.org/projet.html"/><xhtml:link rel="alternate" hreflang="en" href="https://www.microcontroland.org/en/projet.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://www.microcontroland.org/projet.html"/></url>
   <url><loc>https://www.microcontroland.org/en/recherche.html</loc><xhtml:link rel="alternate" hreflang="fr" href="https://www.microcontroland.org/recherche.html"/><xhtml:link rel="alternate" hreflang="en" href="https://www.microcontroland.org/en/recherche.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://www.microcontroland.org/recherche.html"/></url>
   <url><loc>https://www.microcontroland.org/en/regles.html</loc><xhtml:link rel="alternate" hreflang="fr" href="https://www.microcontroland.org/regles.html"/><xhtml:link rel="alternate" hreflang="en" href="https://www.microcontroland.org/en/regles.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://www.microcontroland.org/regles.html"/></url>
-  <url><loc>https://www.microcontroland.org/journal.txt</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://www.microcontroland.org/en/relique.html</loc><xhtml:link rel="alternate" hreflang="fr" href="https://www.microcontroland.org/relique.html"/><xhtml:link rel="alternate" hreflang="en" href="https://www.microcontroland.org/en/relique.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://www.microcontroland.org/relique.html"/></url>
+  <url><loc>https://www.microcontroland.org/journal.txt</loc><lastmod>2026-10-26</lastmod></url>
   <url><loc>https://www.microcontroland.org/llms.txt</loc></url>
-  <url><loc>https://www.microcontroland.org/texte/</loc><lastmod>2026-10-25</lastmod></url>
-  <url><loc>https://www.microcontroland.org/texte/histoire.html</loc><lastmod>2026-10-25</lastmod></url>
-  <url><loc>https://www.microcontroland.org/texte/langue.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://www.microcontroland.org/texte/</loc><lastmod>2026-10-26</lastmod></url>
+  <url><loc>https://www.microcontroland.org/texte/histoire.html</loc><lastmod>2026-10-26</lastmod></url>
+  <url><loc>https://www.microcontroland.org/texte/langue.html</loc><lastmod>2026-10-26</lastmod></url>
   <url><loc>https://www.microcontroland.org/texte/1.html</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://www.microcontroland.org/texte/2.html</loc><lastmod>2026-10-10</lastmod></url>
   <url><loc>https://www.microcontroland.org/texte/3.html</loc><lastmod>2026-10-11</lastmod></url>
@@ -43,4 +45,5 @@
   <url><loc>https://www.microcontroland.org/texte/15.html</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://www.microcontroland.org/texte/16.html</loc><lastmod>2026-10-24</lastmod></url>
   <url><loc>https://www.microcontroland.org/texte/17.html</loc><lastmod>2026-10-25</lastmod></url>
+  <url><loc>https://www.microcontroland.org/texte/18.html</loc><lastmod>2026-10-26</lastmod></url>
 </urlset>
