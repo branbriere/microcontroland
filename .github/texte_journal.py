@@ -15,7 +15,7 @@ intitulés de rubrique. Censure (████) et coquilles restent telles quell
   decouvrir.html       « Découvrir le pays en 5 minutes » : textes fixes + état du pays du soir
 
 Usage : python3 .github/texte_journal.py [racine du site]
-Licence MIT. Version 1.3, 21 octobre 2026 (1.2, 1.1 et 1.0 : 21 et 20 octobre 2026).
+Licence MIT. Version 1.4, 25 octobre 2026 : noms des ministres (firmware 0.8). (1.3, 1.2, 1.1 et 1.0 : 21 et 20 octobre 2026).
 """
 import html
 import json
@@ -27,7 +27,7 @@ LIB = {
     "fr": {"edition": "Édition n° {n}", "jour": "ère {e}, jour {j}", "par": "Par {nom} ({region}), {rubrique}",
            "citation": "Citation du jour", "breves": "Brèves", "regions": "Vos régions", "billet": "Billet",
            "journee": "La journée", "suivre": "À suivre", "bourse": "Bourse", "fermee": "fermée",
-           "etat": "Le pays", "regime": "Régime", "capitale": "Capitale", "president": "Président",
+           "etat": "Le pays", "regime": "Régime", "capitale": "Capitale", "president": "Président", "ministres": "Ministres",
            "fin": "Le mot de la fin", "complet": "Toutes les données de cette édition (JSON)",
            "source": "Version texte de La Puce Libre, générée automatiquement à partir de l'édition publiée par la passerelle. Aucun humain n'écrit le journal.",
            "liste": "La Puce Libre : toutes les éditions en texte", "retour": "Toutes les éditions",
@@ -35,7 +35,7 @@ LIB = {
     "en": {"edition": "Issue no. {n}", "jour": "era {e}, day {j}", "par": "By {nom} ({region}), {rubrique}",
            "citation": "Quote of the day", "breves": "In brief", "regions": "Your regions", "billet": "Column",
            "journee": "The day", "suivre": "Coming up", "bourse": "Markets", "fermee": "closed",
-           "etat": "The country", "regime": "Regime", "capitale": "Capital", "president": "President",
+           "etat": "The country", "regime": "Regime", "capitale": "Capital", "president": "President", "ministres": "Ministers",
            "fin": "Last word", "complet": "All data for this issue (JSON)",
            "source": "Text version of La Puce Libre, generated automatically from the issue published by the gateway. No human writes the paper.",
            "liste": "La Puce Libre: all issues as text", "retour": "All issues",
@@ -174,6 +174,9 @@ def sections(ed, lg):
         pays.append((L["capitale"] + (" : " if lg == "fr" else ": ")) + reg(str(et["capitale"]), lg))
     if ed.get("presidentNom"):
         pays.append((L["president"] + (" : " if lg == "fr" else ": ")) + str(ed["presidentNom"]))
+    mn = [f"{m.get('nom') or 'nº ' + str(m.get('id'))} ({reg(m.get('region', ''), lg)})" for m in et.get("ministresNoms") or []]
+    if mn:   # firmware 0.8
+        pays.append((L["ministres"] + (" : " if lg == "fr" else ": ")) + ", ".join(mn))
     if pays:
         out.append((L["etat"], pays))
 
