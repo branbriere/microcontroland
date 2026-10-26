@@ -6,6 +6,13 @@
   <description>Le quotidien de Microcontrôland, écrit chaque soir par la passerelle.</description>
   <language>fr</language>
   <item>
+    <title>Jour 18 — Le blé chute de 15,0 %</title>
+    <link>https://branbriere.github.io/microcontroland/#jour-18</link>
+    <description>La région Champs voit ses revenus fondre et le reste du pays en ressent l'onde de choc.</description>
+    <pubDate>Mon, 26 Oct 2026 19:00:03 GMT</pubDate>
+    <guid isPermaLink="false">microcontroland-fr-jour-18</guid>
+  </item>
+  <item>
     <title>Jour 17 — Le pays a un mot pour « bourse » : kika</title>
     <link>https://branbriere.github.io/microcontroland/#jour-17</link>
     <description>Cinq régions au moins disent désormais la même chose. La langue commune compte 23 mots.</description>
@@ -102,13 +109,6 @@
     <description>Un mouvement modeste, mais la région Champs le sent passer.</description>
     <pubDate>Mon, 12 Oct 2026 18:00:00 GMT</pubDate>
     <guid isPermaLink="false">microcontroland-fr-jour-4</guid>
-  </item>
-  <item>
-    <title>Jour 3 — La rue renverse le président Sakaïk</title>
-    <link>https://branbriere.github.io/microcontroland/#jour-3</link>
-    <description>49 cerveaux rebelles, soit 490 k hab, ont fait tomber le pouvoir. Le foyer de la révolte : la région Port. Une élection est organisée dans la foulée.</description>
-    <pubDate>Sun, 11 Oct 2026 18:00:00 GMT</pubDate>
-    <guid isPermaLink="false">microcontroland-fr-jour-3</guid>
   </item>
 </channel>
 </rss>

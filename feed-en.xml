@@ -6,6 +6,13 @@
   <description>Microcontrôland's daily paper, written every evening by the gateway.</description>
   <language>en</language>
   <item>
+    <title>Day 18 — Wheat falls 15.0%</title>
+    <link>https://branbriere.github.io/microcontroland/en/#jour-18</link>
+    <description>The Fields region watches its income melt away, and the shock wave spreads across the country.</description>
+    <pubDate>Mon, 26 Oct 2026 19:00:03 GMT</pubDate>
+    <guid isPermaLink="false">microcontroland-en-jour-18</guid>
+  </item>
+  <item>
     <title>Day 17 — The country has a word for “market”: kika</title>
     <link>https://branbriere.github.io/microcontroland/en/#jour-17</link>
     <description>At least five regions now say the same thing. The common language has 23 words.</description>
@@ -102,13 +109,6 @@
     <description>A modest move, but the Fields region feels it.</description>
     <pubDate>Mon, 12 Oct 2026 18:00:00 GMT</pubDate>
     <guid isPermaLink="false">microcontroland-en-jour-4</guid>
-  </item>
-  <item>
-    <title>Day 3 — The street topples President Sakaïk</title>
-    <link>https://branbriere.github.io/microcontroland/en/#jour-3</link>
-    <description>49 rebel brains, about 490k inhabitants, brought down the government. The revolt started in the Harbour region. An election is being held straight away.</description>
-    <pubDate>Sun, 11 Oct 2026 18:00:00 GMT</pubDate>
-    <guid isPermaLink="false">microcontroland-en-jour-3</guid>
   </item>
 </channel>
 </rss>
