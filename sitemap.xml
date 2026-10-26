@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.microcontroland.org/ambassade.html</loc></url>
-  <url><loc>https://www.microcontroland.org/archives.html</loc></url>
-  <url><loc>https://www.microcontroland.org/citoyen.html</loc></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url><loc>https://www.microcontroland.org/ambassade.html</loc><xhtml:link rel="alternate" hreflang="fr" href="https://www.microcontroland.org/ambassade.html"/><xhtml:link rel="alternate" hreflang="en" href="https://www.microcontroland.org/en/ambassade.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://www.microcontroland.org/ambassade.html"/></url>
+  <url><loc>https://www.microcontroland.org/archives.html</loc><xhtml:link rel="alternate" hreflang="fr" href="https://www.microcontroland.org/archives.html"/><xhtml:link rel="alternate" hreflang="en" href="https://www.microcontroland.org/en/archives.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://www.microcontroland.org/archives.html"/></url>
+  <url><loc>https://www.microcontroland.org/citoyen.html</loc><xhtml:link rel="alternate" hreflang="fr" href="https://www.microcontroland.org/citoyen.html"/><xhtml:link rel="alternate" hreflang="en" href="https://www.microcontroland.org/en/citoyen.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://www.microcontroland.org/citoyen.html"/></url>
   <url><loc>https://www.microcontroland.org/decouvrir.html</loc></url>
-  <url><loc>https://www.microcontroland.org/histoire.html</loc></url>
-  <url><loc>https://www.microcontroland.org/</loc></url>
-  <url><loc>https://www.microcontroland.org/langue.html</loc></url>
-  <url><loc>https://www.microcontroland.org/mentions.html</loc></url>
-  <url><loc>https://www.microcontroland.org/projet.html</loc></url>
-  <url><loc>https://www.microcontroland.org/recherche.html</loc></url>
-  <url><loc>https://www.microcontroland.org/regles.html</loc></url>
-  <url><loc>https://www.microcontroland.org/en/ambassade.html</loc></url>
-  <url><loc>https://www.microcontroland.org/en/archives.html</loc></url>
-  <url><loc>https://www.microcontroland.org/en/citoyen.html</loc></url>
-  <url><loc>https://www.microcontroland.org/en/histoire.html</loc></url>
-  <url><loc>https://www.microcontroland.org/en/</loc></url>
-  <url><loc>https://www.microcontroland.org/en/langue.html</loc></url>
-  <url><loc>https://www.microcontroland.org/en/mentions.html</loc></url>
-  <url><loc>https://www.microcontroland.org/en/projet.html</loc></url>
-  <url><loc>https://www.microcontroland.org/en/recherche.html</loc></url>
-  <url><loc>https://www.microcontroland.org/en/regles.html</loc></url>
+  <url><loc>https://www.microcontroland.org/histoire.html</loc><xhtml:link rel="alternate" hreflang="fr" href="https://www.microcontroland.org/histoire.html"/><xhtml:link rel="alternate" hreflang="en" href="https://www.microcontroland.org/en/histoire.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://www.microcontroland.org/histoire.html"/></url>
+  <url><loc>https://www.microcontroland.org/</loc><xhtml:link rel="alternate" hreflang="fr" href="https://www.microcontroland.org/"/><xhtml:link rel="alternate" hreflang="en" href="https://www.microcontroland.org/en/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://www.microcontroland.org/"/></url>
+  <url><loc>https://www.microcontroland.org/langue.html</loc><xhtml:link rel="alternate" hreflang="fr" href="https://www.microcontroland.org/langue.html"/><xhtml:link rel="alternate" hreflang="en" href="https://www.microcontroland.org/en/langue.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://www.microcontroland.org/langue.html"/></url>
+  <url><loc>https://www.microcontroland.org/mentions.html</loc><xhtml:link rel="alternate" hreflang="fr" href="https://www.microcontroland.org/mentions.html"/><xhtml:link rel="alternate" hreflang="en" href="https://www.microcontroland.org/en/mentions.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://www.microcontroland.org/mentions.html"/></url>
+  <url><loc>https://www.microcontroland.org/projet.html</loc><xhtml:link rel="alternate" hreflang="fr" href="https://www.microcontroland.org/projet.html"/><xhtml:link rel="alternate" hreflang="en" href="https://www.microcontroland.org/en/projet.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://www.microcontroland.org/projet.html"/></url>
+  <url><loc>https://www.microcontroland.org/recherche.html</loc><xhtml:link rel="alternate" hreflang="fr" href="https://www.microcontroland.org/recherche.html"/><xhtml:link rel="alternate" hreflang="en" href="https://www.microcontroland.org/en/recherche.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://www.microcontroland.org/recherche.html"/></url>
+  <url><loc>https://www.microcontroland.org/regles.html</loc><xhtml:link rel="alternate" hreflang="fr" href="https://www.microcontroland.org/regles.html"/><xhtml:link rel="alternate" hreflang="en" href="https://www.microcontroland.org/en/regles.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://www.microcontroland.org/regles.html"/></url>
+  <url><loc>https://www.microcontroland.org/en/ambassade.html</loc><xhtml:link rel="alternate" hreflang="fr" href="https://www.microcontroland.org/ambassade.html"/><xhtml:link rel="alternate" hreflang="en" href="https://www.microcontroland.org/en/ambassade.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://www.microcontroland.org/ambassade.html"/></url>
+  <url><loc>https://www.microcontroland.org/en/archives.html</loc><xhtml:link rel="alternate" hreflang="fr" href="https://www.microcontroland.org/archives.html"/><xhtml:link rel="alternate" hreflang="en" href="https://www.microcontroland.org/en/archives.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://www.microcontroland.org/archives.html"/></url>
+  <url><loc>https://www.microcontroland.org/en/citoyen.html</loc><xhtml:link rel="alternate" hreflang="fr" href="https://www.microcontroland.org/citoyen.html"/><xhtml:link rel="alternate" hreflang="en" href="https://www.microcontroland.org/en/citoyen.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://www.microcontroland.org/citoyen.html"/></url>
+  <url><loc>https://www.microcontroland.org/en/histoire.html</loc><xhtml:link rel="alternate" hreflang="fr" href="https://www.microcontroland.org/histoire.html"/><xhtml:link rel="alternate" hreflang="en" href="https://www.microcontroland.org/en/histoire.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://www.microcontroland.org/histoire.html"/></url>
+  <url><loc>https://www.microcontroland.org/en/</loc><xhtml:link rel="alternate" hreflang="fr" href="https://www.microcontroland.org/"/><xhtml:link rel="alternate" hreflang="en" href="https://www.microcontroland.org/en/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://www.microcontroland.org/"/></url>
+  <url><loc>https://www.microcontroland.org/en/langue.html</loc><xhtml:link rel="alternate" hreflang="fr" href="https://www.microcontroland.org/langue.html"/><xhtml:link rel="alternate" hreflang="en" href="https://www.microcontroland.org/en/langue.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://www.microcontroland.org/langue.html"/></url>
+  <url><loc>https://www.microcontroland.org/en/mentions.html</loc><xhtml:link rel="alternate" hreflang="fr" href="https://www.microcontroland.org/mentions.html"/><xhtml:link rel="alternate" hreflang="en" href="https://www.microcontroland.org/en/mentions.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://www.microcontroland.org/mentions.html"/></url>
+  <url><loc>https://www.microcontroland.org/en/projet.html</loc><xhtml:link rel="alternate" hreflang="fr" href="https://www.microcontroland.org/projet.html"/><xhtml:link rel="alternate" hreflang="en" href="https://www.microcontroland.org/en/projet.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://www.microcontroland.org/projet.html"/></url>
+  <url><loc>https://www.microcontroland.org/en/recherche.html</loc><xhtml:link rel="alternate" hreflang="fr" href="https://www.microcontroland.org/recherche.html"/><xhtml:link rel="alternate" hreflang="en" href="https://www.microcontroland.org/en/recherche.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://www.microcontroland.org/recherche.html"/></url>
+  <url><loc>https://www.microcontroland.org/en/regles.html</loc><xhtml:link rel="alternate" hreflang="fr" href="https://www.microcontroland.org/regles.html"/><xhtml:link rel="alternate" hreflang="en" href="https://www.microcontroland.org/en/regles.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://www.microcontroland.org/regles.html"/></url>
   <url><loc>https://www.microcontroland.org/journal.txt</loc><lastmod>2026-10-25</lastmod></url>
   <url><loc>https://www.microcontroland.org/llms.txt</loc></url>
   <url><loc>https://www.microcontroland.org/texte/</loc><lastmod>2026-10-25</lastmod></url>
