@@ -193,7 +193,7 @@
           <dl>
             <dt>${L.pres}</dt><dd>${e.president ? `${e.presidentNom ? esc(e.presidentNom) + ', ' : ''}${LANG === 'en' ? 'No.' : 'nº'} ${e.president} (${esc(rn(s.capitale))})` : L.vacant}</dd>
             <dt>${L.since}</dt><dd>${esc(s.auPouvoirDepuis)}</dd>
-            <dt>${L.gov}</dt><dd>${s.ministres ? L.ministers(s.ministres) : L.none}</dd>
+            <dt>${L.gov}</dt><dd>${s.ministres ? L.ministers(s.ministres) + ((s.ministresNoms || []).length ? ' : ' + s.ministresNoms.map((m) => `${esc(m.nom || (LANG === 'en' ? 'No. ' : 'nº ') + m.id)} (${esc(rn(m.region))})`).join(', ') : '') : L.none}</dd>
             <dt>${L.goal}</dt><dd>${s.objectif} %</dd>
             <dt>${L.res}</dt><dd>${s.ressources} %</dd>
             ${s.foi ? `<dt>${L.faith}</dt><dd>${L.faithLine(s.foi)}</dd>` : ''}
