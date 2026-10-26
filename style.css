@@ -172,9 +172,12 @@ footer.site{margin-top:34px;padding-top:12px;border-top:6px solid var(--mask);fo
 .faith div{background:var(--sheet);border:1px solid var(--rule);padding:12px;min-width:0}
 .faith b{font:900 18px var(--f-mast);text-transform:uppercase;letter-spacing:.03em;color:var(--mask)}
 .faith p{margin:4px 0 0;font-size:15px}
-.lang{display:inline-flex;gap:0;border:1px solid var(--rule);margin-left:4px}
+.lang{display:inline-flex;gap:0;border:1px solid var(--rule)}
 nav.main .lang a{padding:3px 8px;border:0;font:600 12px var(--f-data)}
 nav.main .lang a[aria-current="true"]{background:var(--ink);color:var(--paper);border-bottom:0}
+.lang-note{margin:10px 0 0;padding:8px 36px 8px 12px;position:relative;border:1px solid var(--rule);font:13px/1.45 var(--f-data);color:var(--muted)}
+.lang-note a{color:var(--ink)}
+.lang-note button{position:absolute;top:4px;right:6px;border:0;background:none;color:inherit;font:18px/1 var(--f-data);cursor:pointer;padding:4px 6px}
 
 /* Page Histoire */
 .hist-scroll{overflow-x:auto}
