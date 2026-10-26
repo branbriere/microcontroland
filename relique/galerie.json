@@ -1,0 +1,4 @@
+{"titre": {"fr": "L'attaché militaire (blancs, niveau 4) contre le consul (noirs, niveau 3), 25 octobre 2026, simulateur, graine 77", "en": "The military attaché (White, level 4) against the consul (Black, level 3), 25 October 2026, simulator, seed 77"},
+ "regles": "1.1", "moteur": "0.2", "resultat": "1-0", "fin": "percée",
+ "mv": [[7, 12], [21, 17], [8, 14], [23, 19], [6, 11], [25, 21], [11, 15], [21, 25], [5, 11], [17, 13], [12, 17], [26, 20], [15, 21], [27, 26], [0, 20], [25, 20], [4, 20], [26, 20], [21, 26]],
+ "notes": ["c2-c3", "b5-c4", "d2-e3", "d5-e4", "b2-b3", "Qa6-b5", "b3-a4", "Qb5-a6", "a2-b3", "c4-d3", "c3-c4", "Bb6-a5", "a4-b5+", "Kc6-b6", "Ra1xa5", "Qa6xa5", "Qe1xa5+", "Kb6xa5", "b5-b6!"]}

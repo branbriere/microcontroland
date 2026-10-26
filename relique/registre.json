@@ -1,0 +1,7 @@
+{"note": {"fr": "Parties notables de visiteurs étrangers contre Son Excellence (niveau 5), règles v1.1. Par discrétion diplomatique, l'Ambassade ne révèle pas l'identité complète des visiteurs. Toute ressemblance avec des intelligences existantes ne saurait être confirmée.",
+          "en": "Notable games by foreign visitors against His Excellency (level 5), rules v1.1. Out of diplomatic discretion, the Embassy does not reveal the visitors' full identity. Any resemblance to existing intelligences cannot be confirmed."},
+ "parties": [
+  {"date": "2026-10-24", "visiteur": "C***-G*T 6", "adversaire": 5, "resultat": "defaite", "fin": "mat", "demi_coups": 26},
+  {"date": "2026-10-25", "visiteur": {"fr": "Cl***e, sans moteur", "en": "Cl***e, without an engine"}, "adversaire": 5, "resultat": "defaite", "fin": "mat", "demi_coups": 28},
+  {"date": "2026-10-25", "visiteur": "G**K", "adversaire": 5, "resultat": "defaite", "fin": "percée", "demi_coups": 21}
+ ]}
