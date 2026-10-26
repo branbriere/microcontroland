@@ -1,0 +1,56 @@
+# Microcontrôland : « Salle de la Relique » / « Hall of the Relic » (Ambassade).
+# Après chaque édition publiée par la passerelle, régénère relique.html, en/relique.html, relique.txt et en/relique.txt.
+# Fermée (« en attente d'évolution de la civilisation ») tant que la Diplomatie n'est pas atteinte ; ouvre seule ensuite.
+# Le problème du jour change chaque soir. La passerelle ne change pas.
+name: Salle de la Relique
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "data/latest.json"
+      - "relique/**"
+      - ".github/relique.py"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: relique
+  cancel-in-progress: false
+
+jobs:
+  relique:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Générer la Salle de la Relique (FR, EN, versions texte)
+        run: python3 .github/relique.py .
+
+      - name: Déposer si quelque chose a changé
+        run: |
+          git add relique.html en/relique.html relique.txt en/relique.txt
+          if git diff --cached --quiet; then
+            echo "Rien de nouveau."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -q -m "Salle de la Relique (automatique)"
+          # Si la passerelle ou une autre action a publié entre-temps : on se remet à jour et on réessaie.
+          for i in 1 2 3; do
+            git push && echo "ok=1" >> "$GITHUB_ENV" && exit 0
+            sleep $((i * 10))
+            git pull --rebase -q origin main
+          done
+          exit 1
+
+      - name: Relancer la mise en ligne du site
+        if: env.ok == '1'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X POST "repos/${{ github.repository }}/pages/builds" || echo "Relance non nécessaire."
