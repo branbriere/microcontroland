@@ -15,7 +15,7 @@ intitulés de rubrique. Censure (████) et coquilles restent telles quell
   decouvrir.html       « Découvrir le pays en 5 minutes » : textes fixes + état du pays du soir
 
 Usage : python3 .github/texte_journal.py [racine du site]
-Licence MIT. Version 1.4, 25 octobre 2026 : noms des ministres (firmware 0.8). (1.3, 1.2, 1.1 et 1.0 : 21 et 20 octobre 2026).
+Licence MIT. Version 1.5 (après la 0.8) : sitemap.xml déclare les paires français/anglais (hreflang). 1.4, 25 octobre 2026 : noms des ministres (firmware 0.8). (1.3, 1.2, 1.1 et 1.0 : 21 et 20 octobre 2026).
 """
 import html
 import json
@@ -541,8 +541,18 @@ def sitemap(racine, base, eds):
              (base + "texte/histoire.html", dernier), (base + "texte/langue.html", dernier)]
     urls += [(f"{base}texte/{d['day']}.html", str(d.get("date", "")) or None) for d in eds]
     ok = lambda x: x and len(x) == 10 and x[4] == "-" and x[7] == "-"
-    return ('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
-            + "".join(f"  <url><loc>{html.escape(u)}</loc>" + (f"<lastmod>{m}</lastmod>" if ok(m) else "") + "</url>\n" for u, m in urls)
+    # Pages présentes en français et en anglais : chaque version déclare l'autre (hreflang), le français par défaut.
+    page = lambda rel: base + ("" if rel == "index.html" else rel.replace("index.html", ""))
+    paires = {}
+    for f in sorted(racine.glob("*.html")):
+        if (racine / "en" / f.name).exists():
+            fr, en = page(f.name), page("en/" + f.name)
+            alt = (f'<xhtml:link rel="alternate" hreflang="fr" href="{html.escape(fr)}"/>'
+                   f'<xhtml:link rel="alternate" hreflang="en" href="{html.escape(en)}"/>'
+                   f'<xhtml:link rel="alternate" hreflang="x-default" href="{html.escape(fr)}"/>')
+            paires[fr] = paires[en] = alt
+    return ('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'
+            + "".join(f"  <url><loc>{html.escape(u)}</loc>" + (f"<lastmod>{m}</lastmod>" if ok(m) else "") + paires.get(u, "") + "</url>\n" for u, m in urls)
             + "</urlset>\n")
 
 
