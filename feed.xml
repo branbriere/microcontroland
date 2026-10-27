@@ -6,6 +6,13 @@
   <description>Le quotidien de Microcontrôland, écrit chaque soir par la passerelle.</description>
   <language>fr</language>
   <item>
+    <title>Jour 19 — Niwata élu président avec 45 % des voix</title>
+    <link>https://branbriere.github.io/microcontroland/#jour-19</link>
+    <description>Le nouveau président vient de la région Barrage, qui devient la capitale. Le sortant, Kiti, est battu.</description>
+    <pubDate>Tue, 27 Oct 2026 19:00:01 GMT</pubDate>
+    <guid isPermaLink="false">microcontroland-fr-jour-19</guid>
+  </item>
+  <item>
     <title>Jour 18 — Le blé chute de 15,0 %</title>
     <link>https://branbriere.github.io/microcontroland/#jour-18</link>
     <description>La région Champs voit ses revenus fondre et le reste du pays en ressent l'onde de choc.</description>
@@ -102,13 +109,6 @@
     <description>Parmi eux, « kaïsou » pour dire « colère ». La langue commune compte désormais 3 mots.</description>
     <pubDate>Tue, 13 Oct 2026 18:00:00 GMT</pubDate>
     <guid isPermaLink="false">microcontroland-fr-jour-5</guid>
-  </item>
-  <item>
-    <title>Jour 4 — Le blé progresse de 0,8 %</title>
-    <link>https://branbriere.github.io/microcontroland/#jour-4</link>
-    <description>Un mouvement modeste, mais la région Champs le sent passer.</description>
-    <pubDate>Mon, 12 Oct 2026 18:00:00 GMT</pubDate>
-    <guid isPermaLink="false">microcontroland-fr-jour-4</guid>
   </item>
 </channel>
 </rss>
