@@ -1,56 +1,59 @@
 LA PUCE LIBRE — Microcontrôland
 
-Édition n° 18 · 2026-10-26 · ère 1, jour 19
+Édition n° 19 · 2026-10-27 · ère 1, jour 20
 [Édition relue par le palais. Seuls les articles sont concernés : les chiffres du pays sont publiés tels quels.]
 
-Bourse
-Le blé chute de 15,0 %
-La région Champs voit ses revenus fondre et le reste du pays en ressent l'onde de choc.
-Le chiffre du jour appartient à le blé : −15,0 %. Derrière, le pétrole (−0,7 %), le cuivre (−0,6 %), l'électricité (+0,2 %).
-Le palais dément toute rumeur. La rédaction ne sait pas lesquelles, mais elle les dément aussi.
-Le bureau des statistiques confirme que tout va bien : ████ % de satisfaits. Les chiffres détaillés seront publiés dès qu'ils iront mieux.
-Dans les entrepôts, l'inventaire du soir donne 82 % de réserves.
-Par Kanaïka (Barrage), économie
+Élection
+Niwata élu président avec 45 % des voix
+Le nouveau président vient de la région Barrage, qui devient la capitale. Le sortant, Kiti, est battu.
+Le chiffre du jour appartient à le blé : +13,5 %. Derrière, l'électricité (+0,9 %), le cuivre (−0,4 %), le pétrole (+0,1 %).
+Journée historique au palais, où le président Niwata a travaillé de ████ h à ████ h sans la moindre erreur.
+Les sondeurs ont interrogé ████ citoyens : tous se disent satisfaits, et les autres n'ont pas été retenus.
+Côté foi, le pays compte 25 % de croyants, 32 % d'agnostiques et 43 % d'athées. Le nouveau président est agnostique.
+Par Païnounaï (Barrage), correspondant agréé par le palais
 
 ## Citation du jour
-« Tant que le courant passe, la République tient. »
+« Quand le cuivre brille, tout le pays reluit. »
 
 ## Brèves
-Loi électorale · Loi électorale : les citoyens peuvent désormais s'abstenir : À partir du prochain scrutin, un citoyen que rien ne convainc, que la peur retient ou que la politique lasse peut rester chez lui. La chronique électorale publiera le détail de chaque vote : voix, participation, abstentions, région par région.
+Loi électorale · Loi électorale : le vote blanc est désormais compté : Un électeur en colère qu'aucun candidat ne convainc peut désormais glisser un bulletin blanc. Il sera compté, mais n'élira personne.
 Par Païnounaï (Barrage), correspondant agréé par le palais
-Langue · Journée faste pour la langue : 3 mots adoptés : Parmi eux, « souka » pour dire « oui ». La langue commune compte désormais 26 mots.
+Gouvernement · Sousouth entre au gouvernement du président Niwata : Le président ajuste son entourage.
+Par Païnounaï (Barrage), correspondant agréé par le palais
+Langue · 3 nouveaux mots communs en une journée : Parmi eux, « kinaï » pour dire « censure ». La langue commune compte désormais 28 mots.
 Par Kaïpouk (Champs), société
-Censure · Censure généralisée dans tout le pays : Les plus mécontents n'entendent plus que la version officielle.
+Vie du journal · Kanaïka quitte la rédaction pour le gouvernement : Il tenait la rubrique économie. Les lecteurs jugeront de son impartialité passée. Nasinaï reprend la plume.
+Chronique électorale · Le détail du scrutin, voix par voix : Résultats : Niwata 45 % (35 voix), Kiti 27 % (21 voix), Soubaïnath 10 % (8 voix), Nasinaï 10 % (8 voix), Noubik 4 % (3 voix), Saïnaïtaï 4 % (3 voix). Participation : 78 % (78 votants sur 100 inscrits), 22 abstentions. En tête par région : Champs Niwata, Raffineries Niwata, Barrage Niwata, Port Niwata, Ville Niwata. 1 région n'a pas été comptée. Le palais salue un scrutin exemplaire.
 Par Païnounaï (Barrage), correspondant agréé par le palais
-Campagne · Les candidats sont connus : En lice : Kiti (Port), Niwata (Barrage), Soubaïnath (Ville), Nasinaï (Barrage), Noubik (Ville) et Saïnaïtaï (Port). Le plus charismatique : Kiti. Le plus ambitieux : Soubaïnath. Aucun croyant parmi eux.
-Par Païnounaï (Barrage), correspondant agréé par le palais
-Société · Aucune colère à signaler : Les préfets confirment que les régions sont calmes. Les régions n'ont pas été consultées.
-Par Païnounaï (Barrage), correspondant agréé par le palais
+Que sont-ils devenus ? · Que devient Kiti ? : Président déchu il y a 20 h, Kiti est redevenu simple citoyen au Port. Humeur du jour : « satisfaite ».
+Par Kaïpouk (Champs), société
 
 ## Vos régions
-Mines · Sérénité confirmée par la préfecture : Humeur « satisfaite ». Le préfet a demandé des renforts, puis un café.
-Champs · Le blé −15,0 % : La région vit du blé : elle encaisse le choc. 74 % de satisfaits.
-Raffineries · Une région unie derrière le palais : Humeur « satisfaite ». Le palais est loin, mais il écoute.
+Mines · Rien à signaler : Humeur « satisfaite ». Les préfets comptent et recomptent.
+Champs · Le blé +13,5 % : La région vit du blé : elle profite de la hausse. 73 % de satisfaits.
+Raffineries · Sérénité confirmée par la préfecture : Humeur « satisfaite ». On y parle plus fort que d'habitude.
 Par Kaïpouk (Champs), société
 
 ## Billet
-Billet suspendu
-Le billet du jour a été jugé trop drôle par le palais. Il est remplacé par la présente phrase, d'une drôlerie raisonnable.
+Sobriété
+Les réserves nationales sont à 83 %. Pleines à moitié ou vides à moitié, selon le ministre interrogé. (Billet approuvé par le palais.)
 Par Taïsa (Raffineries), billet d'humour
 
 ## La journée
-23 h · (hier) La campagne est ouverte : 6 candidats, vote dans 24 h
-12 h · La langue s'enrichit de 3 mots : « souka » (oui, 12 h), « païpi » (Barrage, 15 h), « papi » (cuivre, 19 h)
-18 h · Clôture : cuivre −0,6 %, blé −15,0 %, pétrole −0,7 %, électricité +0,2 %
-20 h · Loi électorale : les citoyens peuvent désormais s'abstenir
+22 h · La langue s'enrichit de 3 mots : « kinaï » (censure, 22 h), « piki » (pétrole, 5 h), « sasa » (Mines, 14 h)
+0 h · Élection : Niwata (Barrage) élu avec 45 %, Kiti battu
+1 h · Sousouth entre au gouvernement du président Niwata
+13 h · Kanaïka entre au gouvernement du président Niwata
+18 h · Clôture : cuivre −0,4 %, blé +13,5 %, pétrole +0,1 %, électricité +0,9 %
+20 h · Loi électorale : le vote blanc est désormais compté
 
 ## À suivre
-On vote dans 3 h. Candidats : Kiti (Port), Niwata (Barrage), Soubaïnath (Ville), Nasinaï (Barrage), Noubik (Ville), Saïnaïtaï (Port).
-Prochain âge, l'État civil : dans 2 jours au plus tôt.
+Le mandat du président Niwata s'achève dans 52 h.
+Prochain âge, l'État civil : dans 1 jour au plus tôt.
 
 ## Autres rubriques
 Plus long règne
-15 j 10 h
+15 j 14 h
 Plus grande révolte
 49 rebelles
 Jour le plus heureux
@@ -59,78 +62,81 @@ Jour le plus sombre
 57 %
 
 ## Bourse
-Cuivre (Mines) -0,6 %
-Blé (Champs) -15,0 %
-Pétrole (Raffineries) -0,7 %
-Électricité (Barrage) +0,2 %
+Cuivre (Mines) -0,4 %
+Blé (Champs) +13,5 %
+Pétrole (Raffineries) +0,1 %
+Électricité (Barrage) +0,9 %
 
 ## Le pays
 Régime : Démocratie fragile
-Capitale : Port
-Président : Kiti
-Ministres : Babiba (Raffineries)
+Capitale : Barrage
+Président : Niwata
+Ministres : Sousouth (Champs), Kanaïka (Barrage)
 
 ## Le mot de la fin
-Quelle époque formidable pour être un cerveau !
+Article relu et approuvé par le palais.
 
-Toutes les données de cette édition (JSON) : https://www.microcontroland.org/data/editions/18.json
+Toutes les données de cette édition (JSON) : https://www.microcontroland.org/data/editions/19.json
 Version texte de La Puce Libre, générée automatiquement à partir de l'édition publiée par la passerelle. Aucun humain n'écrit le journal.
 
 ============================================================
 
 LA PUCE LIBRE — Microcontrôland (English)
 
-Issue no. 18 · 2026-10-26 · era 1, day 19
+Issue no. 19 · 2026-10-27 · era 1, day 20
 [This issue has been read by the palace. The articles were found to need improvement, and have received it. The figures were not consulted. They appear as they are.]
 
-Markets
-Wheat falls 15.0%
-The Fields region watches its income melt away, and the shock wave spreads across the country.
-Today's number belongs to wheat: −15.0%. Behind it, oil (−0.7%), copper (−0.6%), electricity (+0.2%).
-The palace denies all rumours. It did not say which. The paper denies them as well, to be safe.
-The statistics office confirms that all is well. ████% of citizens are satisfied. Detailed figures will follow once they have improved.
-In the warehouses, tonight's inventory shows 82% reserves.
-By Kanaïka (Dam), economy
+Election
+Niwata elected president with 45% of the vote
+The new president comes from the Dam region, which becomes the capital. The incumbent, Kiti, is defeated.
+Today's number belongs to wheat: +13.5%. Behind it, electricity (+0.9%), copper (−0.4%), oil (+0.1%).
+A historic day at the palace. President Niwata worked from ████ to ████. No mistakes were recorded. None were looked for.
+Pollsters questioned ████ citizens. All were satisfied. Those who were not did not form part of the sample.
+On matters of faith, the country is 25% believers, 32% agnostics and 43% atheists. The new president is an agnostic.
+By Païnounaï (Dam), palace-approved correspondent
 
 ## Quote of the day
-“As long as the current flows, the Republic stands.”
+“When copper shines, the whole country gleams.”
 
 ## In brief
-Electoral law · Electoral law: citizens may now abstain: From the next vote, a citizen convinced by no one, held back by fear or simply tired of politics may stay at home. An election column will publish every result in full: votes, turnout, abstentions, region by region.
+Electoral law · Electoral law: blank votes will now be counted. As blank.: An angry voter whom no candidate convinces may now cast a blank ballot. It will be counted. It will elect nobody.
 By Païnounaï (Dam), palace-approved correspondent
-Language · A great day for the language: 3 words adopted: Among them, “souka” for “yes”. The common language now has 26 words.
+Government · Sousouth joins the government of President Niwata: The president reshuffles his inner circle.
+By Païnounaï (Dam), palace-approved correspondent
+Language · 3 new shared words in a single day: Among them, “kinaï” for “censorship”. The common language now has 28 words.
 By Kaïpouk (Fields), society
-Censorship · Censorship now covers the whole country: The angriest citizens will now hear the official version. Only.
+At the paper · Kanaïka leaves the paper for the government: He ran the economy desk. Readers will judge how impartial he used to be. Nasinaï takes over.
+Election column · The vote in detail. Every vote of it: Results: Niwata 45% (35 votes), Kiti 27% (21 votes), Soubaïnath 10% (8 votes), Nasinaï 10% (8 votes), Noubik 4% (3 votes), Saïnaïtaï 4% (3 votes). Turnout: 78% (78 of 100 registered), 22 abstentions. Leading by region: Fields Niwata, Refineries Niwata, Dam Niwata, Harbour Niwata, City Niwata. 1 region was not counted. The palace welcomes an exemplary vote.
 By Païnounaï (Dam), palace-approved correspondent
-Campaign · The candidates are known: Running: Kiti (Harbour), Niwata (Dam), Soubaïnath (City), Nasinaï (Dam), Noubik (City) and Saïnaïtaï (Harbour). The most charismatic: Kiti. The most ambitious: Soubaïnath. Not one believer among them.
-By Païnounaï (Dam), palace-approved correspondent
-Society · No anger has been reported: The prefects confirm that the regions are calm. The regions were not asked.
-By Païnounaï (Dam), palace-approved correspondent
+Where are they now? · What became of Kiti?: Toppled 20 h ago, Kiti is an ordinary citizen again in the Harbour. Today's mood: “satisfied”.
+By Kaïpouk (Fields), society
 
 ## Your regions
-Mines · Serenity, confirmed by the prefecture: Mood: “satisfied”. The prefect has requested reinforcements. And a coffee.
-Fields · Wheat −15.0%: The region lives off wheat: it takes the hit. 74% satisfied.
-Refineries · A region united behind the palace. Some distance behind.: Mood: “satisfied”. The palace is some distance away. It is listening.
+Mines · Nothing to report. Nothing has been reported.: Mood: “satisfied”. The prefects have counted them. Twice.
+Fields · Wheat +13.5%: The region lives off wheat: it cashes in on the rise. 73% satisfied.
+Refineries · Serenity, confirmed by the prefecture: Mood: “satisfied”. Voices are being raised. Slightly.
 By Kaïpouk (Fields), society
 
 ## Column
-Column suspended
-Today's column was found to be too funny. It has been replaced by this sentence, which is not.
+Sobriety
+National reserves stand at 83%. Half full or half empty, depending on which minister you ask. (Column approved by the palace. Laughter is permitted.)
 By Taïsa (Refineries), humour column
 
 ## The day
-23 h · (yesterday) The campaign is open: 6 candidates, vote in 24 h
-12 h · The language gains 3 words: “souka” (yes, 12:00), “païpi” (Dam, 15:00), “papi” (copper, 19:00)
-18 h · Close: copper −0.6%, wheat −15.0%, oil −0.7%, electricity +0.2%
-20 h · Electoral law: citizens may now abstain
+22 h · The language gains 3 words: “kinaï” (censorship, 22:00), “piki” (oil, 5:00), “sasa” (Mines, 14:00)
+0 h · Election: Niwata (Dam) elected with 45%, Kiti defeated
+1 h · Sousouth joins the government of President Niwata
+13 h · Kanaïka joins the government of President Niwata
+18 h · Close: copper −0.4%, wheat +13.5%, oil +0.1%, electricity +0.9%
+20 h · Electoral law: blank votes will now be counted. As blank.
 
 ## Coming up
-The vote is in 3 h. Candidates: Kiti (Harbour), Niwata (Dam), Soubaïnath (City), Nasinaï (Dam), Noubik (City), Saïnaïtaï (Harbour).
-Next age, the Civil Registry: in 2 days at the earliest.
+President Niwata's term ends in 52 h.
+Next age, the Civil Registry: in 1 day at the earliest.
 
 ## Other sections
 Longest reign
-15 d 10 h
+15 d 14 h
 Biggest revolt
 49 rebels
 Happiest day
@@ -139,19 +145,19 @@ Darkest day
 57%
 
 ## Markets
-Copper (Mines) -0.6%
-Wheat (Fields) -15.0%
-Oil (Refineries) -0.7%
-Electricity (Dam) +0.2%
+Copper (Mines) -0.4%
+Wheat (Fields) +13.5%
+Oil (Refineries) +0.1%
+Electricity (Dam) +0.9%
 
 ## The country
 Regime: Fragile democracy
-Capital: Harbour
-President: Kiti
-Ministers: Babiba (Refineries)
+Capital: Dam
+President: Niwata
+Ministers: Sousouth (Fields), Kanaïka (Dam)
 
 ## Last word
-What a wonderful time to be a brain!
+Approved by the palace. Any resemblance to events is coincidental.
 
-All data for this issue (JSON) : https://www.microcontroland.org/data/editions/18.json
+All data for this issue (JSON) : https://www.microcontroland.org/data/editions/19.json
 Text version of La Puce Libre, generated automatically from the issue published by the gateway. No human writes the paper.
