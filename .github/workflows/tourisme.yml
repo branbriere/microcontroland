@@ -1,0 +1,62 @@
+# Microcontrôland : « Office national du tourisme » / « National Tourist Office ».
+# Après chaque édition publiée par la passerelle (et après la Galerie et l'Atelier, pour la pièce du nouveau président),
+# régénère tourisme.html, en/tourisme.html, tourisme.txt, en/tourisme.txt ; une fois ouvert, aussi tourisme/ (dépliants PDF, pièces SVG).
+# Fermé (« en attente d'évolution de la civilisation ») tant que la Diplomatie n'est pas atteinte ; ouvre seul ensuite.
+# La passerelle ne change pas.
+name: Office du tourisme
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "data/latest.json"
+      - ".github/tourisme.py"
+  workflow_run:
+    workflows: ["Galerie des presidents", "Atelier"]
+    types: [completed]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: tourisme
+  cancel-in-progress: false
+
+jobs:
+  tourisme:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Générer l'Office du tourisme (FR, EN, texte, dépliants, pièces)
+        run: python3 .github/tourisme.py .
+
+      - name: Déposer si quelque chose a changé
+        run: |
+          git add tourisme.html en/tourisme.html tourisme.txt en/tourisme.txt
+          if [ -d tourisme ]; then git add tourisme; fi
+          if git diff --cached --quiet; then
+            echo "Rien de nouveau."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -q -m "Office du tourisme (automatique)"
+          # Si la passerelle ou une autre action a publié entre-temps : on se remet à jour et on réessaie.
+          for i in 1 2 3; do
+            git push && echo "ok=1" >> "$GITHUB_ENV" && exit 0
+            sleep $((i * 10))
+            git pull --rebase -q origin main
+          done
+          exit 1
+
+      - name: Relancer la mise en ligne du site
+        if: env.ok == '1'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X POST "repos/${{ github.repository }}/pages/builds" || echo "Relance non nécessaire."
