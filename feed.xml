@@ -6,6 +6,13 @@
   <description>Le quotidien de Microcontrôland, écrit chaque soir par la passerelle.</description>
   <language>fr</language>
   <item>
+    <title>Jour 20 — Microcontrôland entre dans l'âge de l'État civil</title>
+    <link>https://branbriere.github.io/microcontroland/#jour-20</link>
+    <description>La civilisation franchit une étape au jour 21 de l'ère. Chaque citoyen est inscrit au registre : on peut en adopter un et le suivre.</description>
+    <pubDate>Wed, 28 Oct 2026 19:00:01 GMT</pubDate>
+    <guid isPermaLink="false">microcontroland-fr-jour-20</guid>
+  </item>
+  <item>
     <title>Jour 19 — Niwata élu président avec 45 % des voix</title>
     <link>https://branbriere.github.io/microcontroland/#jour-19</link>
     <description>Le nouveau président vient de la région Barrage, qui devient la capitale. Le sortant, Kiti, est battu.</description>
@@ -102,13 +109,6 @@
     <description>Le sortant a convaincu une fois de plus. La capitale reste Port.</description>
     <pubDate>Wed, 14 Oct 2026 18:00:00 GMT</pubDate>
     <guid isPermaLink="false">microcontroland-fr-jour-6</guid>
-  </item>
-  <item>
-    <title>Jour 5 — 3 nouveaux mots communs en une journée</title>
-    <link>https://branbriere.github.io/microcontroland/#jour-5</link>
-    <description>Parmi eux, « kaïsou » pour dire « colère ». La langue commune compte désormais 3 mots.</description>
-    <pubDate>Tue, 13 Oct 2026 18:00:00 GMT</pubDate>
-    <guid isPermaLink="false">microcontroland-fr-jour-5</guid>
   </item>
 </channel>
 </rss>

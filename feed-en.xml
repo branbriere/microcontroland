@@ -6,6 +6,13 @@
   <description>Microcontrôland's daily paper, written every evening by the gateway.</description>
   <language>en</language>
   <item>
+    <title>Day 20 — Microcontrôland enters the age of the Civil Registry</title>
+    <link>https://branbriere.github.io/microcontroland/en/#jour-20</link>
+    <description>The civilisation reaches a milestone on day 21 of the era. Every citizen is entered in the registry: you can adopt one and follow them.</description>
+    <pubDate>Wed, 28 Oct 2026 19:00:01 GMT</pubDate>
+    <guid isPermaLink="false">microcontroland-en-jour-20</guid>
+  </item>
+  <item>
     <title>Day 19 — Niwata elected president with 45% of the vote</title>
     <link>https://branbriere.github.io/microcontroland/en/#jour-19</link>
     <description>The new president comes from the Dam region, which becomes the capital. The incumbent, Kiti, is defeated.</description>
@@ -102,13 +109,6 @@
     <description>The incumbent has done it again. The capital remains the Harbour.</description>
     <pubDate>Wed, 14 Oct 2026 18:00:00 GMT</pubDate>
     <guid isPermaLink="false">microcontroland-en-jour-6</guid>
-  </item>
-  <item>
-    <title>Day 5 — 3 new shared words in a single day</title>
-    <link>https://branbriere.github.io/microcontroland/en/#jour-5</link>
-    <description>Among them, “kaïsou” for “anger”. The common language now has 3 words.</description>
-    <pubDate>Tue, 13 Oct 2026 18:00:00 GMT</pubDate>
-    <guid isPermaLink="false">microcontroland-en-jour-5</guid>
   </item>
 </channel>
 </rss>
