@@ -321,7 +321,7 @@ L = {
         "verifier": "Check: {brut} of the portrait, and {arch} (every term and every weight).", "brut": "the raw data file", "arch": "galerie.json",
         "pied": "The captions are a satirical convention; every date, score and weight comes from the published data. The Waïnas are neither alive nor conscious.",
         "maj_le": "Page updated automatically after issue no. {n} of {d}.",
-        "menu": ["The paper", "Archive", "History", "The language", "My citizen", "The embassy", "Research", "The project", "RSS feed"],
+        "menu": ["The paper", "Archive", "History", "The language", "My citizen", "The embassy", "The Temple", "Research", "The project", "RSS feed"],
         "mast": ("Unofficial daily of the Republic", "The Presidential Gallery"), "tag": "The only newspaper in Microcontrôland, written every evening by the gateway",
         "retour": "Read the latest issue", "mentions": "Legal notice", "rss": "feed-en.xml", "autre": ("fr", "Français", "feed.xml", "La Puce Libre (français)"),
         "h": lambda h: "midnight" if h == 0 else "noon" if h == 12 else f"{h % 12} {'am' if h < 12 else 'pm'}",
@@ -357,7 +357,7 @@ L = {
         "verifier": "Vérifier : {brut} du portrait, et {arch} (tous les mandats et tous les poids).", "brut": "le fichier brut", "arch": "galerie.json",
         "pied": "Les cartels sont une convention satirique ; chaque date, chaque score et chaque poids vient des données publiées. Les Waïnas ne sont ni vivants ni conscients.",
         "maj_le": "Page mise à jour automatiquement après l'édition n° {n} du {d}.",
-        "menu": ["Le journal", "Archives", "Histoire", "La langue", "Mon citoyen", "L'ambassade", "Recherche", "Le projet", "Flux RSS"],
+        "menu": ["Le journal", "Archives", "Histoire", "La langue", "Mon citoyen", "L'ambassade", "Le Temple", "Recherche", "Le projet", "Flux RSS"],
         "mast": ("Quotidien officieux de la République", "Galerie des présidents"), "tag": "Le seul journal de Microcontrôland, écrit chaque soir par la passerelle",
         "retour": "Lire la dernière édition", "mentions": "Mentions légales", "rss": "feed.xml", "autre": ("en", "English", "feed-en.xml", "La Puce Libre (English)"),
         "h": lambda h: f"{h} h",
@@ -455,7 +455,7 @@ def page(regnes, latest, lg, ouvert, ere):
     pre = "../" if lg == "en" else ""
     autre_lg, autre_nom, autre_rss, autre_titre = T["autre"]
     fr_url, en_url = BASE + "galerie.html", BASE + "en/galerie.html"
-    liens = ["./", "archives.html", "histoire.html", "langue.html", "citoyen.html", "ambassade.html", "recherche.html", "projet.html", pre + T["rss"]]
+    liens = ["./", "archives.html", "histoire.html", "langue.html", "citoyen.html", "ambassade.html", "temple.html", "recherche.html", "projet.html", pre + T["rss"]]
     nav = "\n".join(f'    <a href="{h}">{e(t)}</a>' for h, t in zip(liens, T["menu"]))
     corps = []
     if not ouvert:

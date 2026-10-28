@@ -77,7 +77,7 @@ L = {
         "pied1": "Code du jeu sous licence MIT : {e} (arbitre et IA), {r} (cette page). Les parties jouées ici ne sont ni enregistrées ni envoyées.",
         "pied2": "Microcontrôland est un pays fictif. La Relique, son culte et son Ministère sont des inventions de ce site ; ils ne parodient aucune religion réelle.",
         "maj_le": "Page mise à jour automatiquement après l'édition n° {n} du {d}.",
-        "menu": ["Le journal", "Archives", "Histoire", "La langue", "Mon citoyen", "L'ambassade", "Recherche", "Le projet", "Flux RSS"],
+        "menu": ["Le journal", "Archives", "Histoire", "La langue", "Mon citoyen", "L'ambassade", "Le Temple", "Recherche", "Le projet", "Flux RSS"],
         "mast": ("Quotidien officieux de la République", "L'ambassade"), "tag": "Le seul journal de Microcontrôland, écrit chaque soir par la passerelle",
         "retour": "Retour à l'ambassade", "mentions": "Mentions légales", "rss": "feed.xml", "autre": ("en", "English", "feed-en.xml", "La Puce Libre (English)"),
         # version texte
@@ -143,7 +143,7 @@ L = {
         "pied1": "Game code under the MIT licence: {e} (arbiter and AI), {r} (this page). Games played here are neither recorded nor sent anywhere.",
         "pied2": "Microcontrôland is a fictional country. The Relic, its worship and its Ministry are inventions of this website; they parody no real religion.",
         "maj_le": "Page updated automatically after issue no. {n} of {d}.",
-        "menu": ["The paper", "Archive", "History", "The language", "My citizen", "The embassy", "Research", "The project", "RSS feed"],
+        "menu": ["The paper", "Archive", "History", "The language", "My citizen", "The embassy", "The Temple", "Research", "The project", "RSS feed"],
         "mast": ("Unofficial daily of the Republic", "The embassy"), "tag": "The only newspaper in Microcontrôland, written every evening by the gateway",
         "retour": "Back to the embassy", "mentions": "Legal notice", "rss": "feed-en.xml", "autre": ("fr", "Français", "feed.xml", "La Puce Libre (français)"),
         "t_titre": "MICROCONTRÔLAND - HALL OF THE RELIC (Embassy)",
@@ -313,7 +313,7 @@ def tete(lg, ouvert, pre):
 
 def nav(lg, pre):
     T = L[lg]
-    liens = ["./", "archives.html", "histoire.html", "langue.html", "citoyen.html", "ambassade.html", "recherche.html", "projet.html", pre + T["rss"]]
+    liens = ["./", "archives.html", "histoire.html", "langue.html", "citoyen.html", "ambassade.html", "temple.html", "recherche.html", "projet.html", pre + T["rss"]]
     cur = ' aria-current="page"'
     return "\n".join(f'    <a href="{h}"{cur if h == "ambassade.html" else ""}>{e(t)}</a>' for h, t in zip(liens, T["menu"]))
 

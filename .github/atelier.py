@@ -295,7 +295,7 @@ L = {
         "attente": "L'atelier ouvre avec le premier relevé complet des poids des cerveaux (firmware 0.8, à partir du 26 octobre 2026). Les soirs précédents n'ont pas de dessin.",
         "pied": "Le critique est une rubrique satirique ; les faits qu'il cite sont mesurés. Les Waïnas ne sont ni vivants ni conscients, et ils n'ont aucune intention artistique.",
         "maj_le": "Page mise à jour automatiquement après l'édition n° {n} du {d}.",
-        "menu": ["Le journal", "Archives", "Histoire", "La langue", "Mon citoyen", "L'ambassade", "Recherche", "Le projet", "Flux RSS"],
+        "menu": ["Le journal", "Archives", "Histoire", "La langue", "Mon citoyen", "L'ambassade", "Le Temple", "Recherche", "Le projet", "Flux RSS"],
         "mast": ("Quotidien officieux de la République", "L'atelier"), "tag": "Le seul journal de Microcontrôland, écrit chaque soir par la passerelle",
         "retour": "Lire la dernière édition", "mentions": "Mentions légales", "rss": "feed.xml", "autre": ("en", "English", "feed-en.xml", "La Puce Libre (English)"),
     },
@@ -318,7 +318,7 @@ L = {
         "attente": "The Studio opens with the first complete record of the brains' weights (firmware 0.8, from 26 October 2026). Earlier evenings have no drawing.",
         "pied": "The critic is a satirical column; the facts quoted are measured. The Waïnas are neither alive nor conscious, and have no artistic intent.",
         "maj_le": "Page updated automatically after issue no. {n} of {d}.",
-        "menu": ["The paper", "Archive", "History", "The language", "My citizen", "The embassy", "Research", "The project", "RSS feed"],
+        "menu": ["The paper", "Archive", "History", "The language", "My citizen", "The embassy", "The Temple", "Research", "The project", "RSS feed"],
         "mast": ("Unofficial daily of the Republic", "The Studio"), "tag": "The only newspaper in Microcontrôland, written every evening by the gateway",
         "retour": "Read the latest issue", "mentions": "Legal notice", "rss": "feed-en.xml", "autre": ("fr", "Français", "feed.xml", "La Puce Libre (français)"),
     },
@@ -347,7 +347,7 @@ def page(archive, latest, lg):
     pre = "../" if lg == "en" else ""
     autre_lg, autre_nom, autre_rss, autre_titre = T["autre"]
     fr_url, en_url = BASE + "atelier.html", BASE + "en/atelier.html"
-    liens = ["./", "archives.html", "histoire.html", "langue.html", "citoyen.html", "ambassade.html", "recherche.html", "projet.html", pre + T["rss"]]
+    liens = ["./", "archives.html", "histoire.html", "langue.html", "citoyen.html", "ambassade.html", "temple.html", "recherche.html", "projet.html", pre + T["rss"]]
     nav = "\n".join(f'    <a href="{h}">{e(t)}</a>' for h, t in zip(liens, T["menu"]))
     rg = (lambda r: REGION_EN.get(r, r)) if lg == "en" else (lambda r: r)
     corps = []
