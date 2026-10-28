@@ -28,6 +28,52 @@
     }).catch(() => {});
   }
 
+  // À l'âge de la Diplomatie, la vitrine du pays déménage à l'Office du tourisme ; la Relique et le guichet des visas ouvrent.
+  function vitrine(e) {
+    const M = window.MCL; if (!M) return;
+    const ouvert = M.ageOf(e) >= 4, en = LANG === 'en';
+    const v = $('vitrine'), d = $('demenage'), rq = $('rq-etat');
+    if (ouvert && v && d) { v.hidden = true; d.hidden = false; }
+    if (rq) {
+      const s = e && e.ages ? e.ages.etapes[4] : null;
+      rq.textContent = ouvert ? (en ? 'Open. Admission free, silence appreciated.' : 'Ouverte. Entrée libre, silence apprécié.')
+        : (en ? 'The hall opens with the Embassy, in the age of Diplomacy.' : 'La salle ouvre avec l\'Ambassade, à l\'âge de la Diplomatie.') + (s && M.T(s.progres) ? (en ? ' Where the country stands: ' : ' Où en est le pays : ') + M.T(s.progres) + '.' : '');
+    }
+    visa(e, ouvert);
+  }
+
+  // Guichet des visas : un visa décoratif, dessiné dans le navigateur. Aucun champ, rien n'est envoyé ni enregistré.
+  function visa(e, ouvert) {
+    const el = $('visa'), M = window.MCL; if (!el || !M) return;
+    const en = LANG === 'en', esc = M.esc;
+    if (!ouvert) { el.innerHTML = `<p class="note">${en ? 'The visa desk opens with the Embassy, in the age of Diplomacy.' : 'Le guichet des visas ouvre avec l\'Ambassade, à l\'âge de la Diplomatie.'}</p>`; return; }
+    el.innerHTML = `<p><button type="button" class="btn" id="visa-go">${en ? 'Stamp my visa' : 'Tamponner mon visa'}</button></p><div id="visa-out"></div>`;
+    $('visa-go').addEventListener('click', () => {
+      M.get('data/ambassade.json').catch(() => ({})).then((a) => {
+        const now = new Date();
+        const jour = now.toLocaleDateString(en ? 'en-GB' : 'fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
+        const regime = M.T(e.etat && e.etat.regime) || '—';
+        const sign = a && a.ambassadeur ? (en ? `Signed: ${a.ambassadeur}, ambassador.` : `Signé : ${a.ambassadeur}, ambassadeur.`) : (en ? 'Signed: the Embassy.' : 'Signé : l\'Ambassade.');
+        const rows = en
+          ? [['Holder', 'Visitor'], ['Issued on', jour], ['Day of the Republic', String(e.jourEre || e.day || '?')], ['Regime of the day', regime], ['Valid until', 'the next power cut'], ['Border', 'closed (waterproof cable gland)']]
+          : [['Titulaire', 'Visiteur'], ['Délivré le', jour], ['Jour de la République', String(e.jourEre || e.day || '?')], ['Régime du jour', regime], ['Valable jusqu\'à', 'la prochaine coupure de courant'], ['Frontière', 'fermée (passe-câble étanche)']];
+        const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 320" role="img" aria-label="${en ? 'Visitor visa' : 'Visa de visiteur'}">
+<rect x="4" y="4" width="552" height="312" rx="10" fill="#f4f6f2" stroke="#0d6a47" stroke-width="3"/>
+<rect x="4" y="4" width="552" height="44" rx="10" fill="#0d6a47"/><rect x="4" y="38" width="552" height="10" fill="#0d6a47"/>
+<text x="24" y="33" font-family="Arial Narrow,Arial,sans-serif" font-weight="700" font-size="15" letter-spacing="1" fill="#f4f6f2">${en ? 'REPUBLIC OF MICROCONTRÔLAND · VISITOR VISA' : 'RÉPUBLIQUE DE MICROCONTRÔLAND · VISA DE VISITEUR'}</text>
+${rows.map((r, i) => `<text x="24" y="${82 + i * 30}" font-family="Courier New,monospace" font-size="12" fill="#56655c">${esc(r[0]).toUpperCase()}</text><text x="200" y="${82 + i * 30}" font-family="Georgia,serif" font-size="15" fill="#14201a">${esc(r[1])}</text>`).join('')}
+<g transform="rotate(-14 480 150)"><circle cx="480" cy="150" r="50" fill="none" stroke="#b8352a" stroke-width="4" opacity=".85"/><circle cx="480" cy="150" r="41" fill="none" stroke="#b8352a" stroke-width="1.5" opacity=".85"/>
+<text x="480" y="146" text-anchor="middle" font-family="Arial Narrow,Arial,sans-serif" font-weight="700" font-size="22" fill="#b8352a" opacity=".85">${en ? 'SEEN' : 'VU'}</text>
+<text x="480" y="166" text-anchor="middle" font-family="Arial Narrow,Arial,sans-serif" font-weight="700" font-size="11" letter-spacing="1" fill="#b8352a" opacity=".85">${en ? 'EMBASSY' : 'AMBASSADE'}</text></g>
+<text x="24" y="284" font-family="Georgia,serif" font-style="italic" font-size="13" fill="#56655c">${esc(sign)}</text>
+<text x="24" y="303" font-family="Georgia,serif" font-style="italic" font-size="12" fill="#56655c">${en ? 'No value, no record, no border opened.' : 'Sans valeur, sans enregistrement, aucune frontière ouverte.'}</text>
+</svg>`;
+        const url = URL.createObjectURL(new Blob([svg], { type: 'image/svg+xml' }));
+        $('visa-out').innerHTML = `<div class="amb-visa">${svg}</div><p><a class="btn ghost" href="${url}" download="${en ? 'visa-microcontroland.svg' : 'visa-microcontroland.svg'}">${en ? 'Save the visa (SVG)' : 'Enregistrer le visa (SVG)'}</a></p>`;
+      });
+    });
+  }
+
   fetch(DATA + 'data/latest.json', { cache: 'no-store' }).then((r) => { if (r.status === 404) return null; if (!r.ok) throw 0; return r.json(); }).then((e) => {
     if (!e) {   // avant la première édition : le pays n'a encore rien publié
       $('l-note').textContent = LANG === 'en' ? 'The country has not published anything yet. The situation will appear here after the first issue, at 8 pm.' : 'Le pays n\'a encore rien publié. La situation s\'affichera ici après la première édition, à 20 h.';
@@ -44,5 +90,6 @@
       ? `Situation on day ${d} of the Republic${era}: ${m ? m + ' minister' + (m > 1 ? 's' : '') : 'no ministers'}, president in power for ${T(s.auPouvoirDepuis)}.${faith} Updated every evening at 8 pm.`
       : `Situation au jour ${d} de la République${era} : ${m ? m + ' ministre' + (m > 1 ? 's' : '') : 'aucun ministre'}, président au pouvoir depuis ${T(s.auPouvoirDepuis)}.${faith} Mise à jour chaque soir à 20 h.`;
     diplo(e);
+    vitrine(e);
   }).catch(() => { $('l-note').textContent = LANG === 'en' ? 'Current situation temporarily unavailable.' : 'Situation actuelle momentanément indisponible.'; });
 })();

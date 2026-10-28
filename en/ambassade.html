@@ -21,6 +21,15 @@
 <link rel="alternate" type="application/rss+xml" title="La Puce Libre (français)" hreflang="fr" href="../feed.xml">
 <link rel="stylesheet" href="../style.css">
 <script src="../mesure.js" defer></script>
+<style>
+.amb-relique{display:grid;grid-template-columns:110px minmax(0,1fr);gap:18px;align-items:center;border:3px double var(--mask);background:var(--sheet);padding:18px;margin:20px 0}
+@media (max-width:560px){.amb-relique{grid-template-columns:minmax(0,1fr)}}
+.amb-relique h2{border:0;padding:0;margin:4px 0 8px}
+.amb-plateau{display:grid;grid-template-columns:repeat(5,1fr);aspect-ratio:5/6;max-width:110px;border:2px solid var(--ink)}
+.amb-plateau i{display:block}.amb-plateau i:nth-child(odd){background:var(--mask)}.amb-plateau i:nth-child(even){background:var(--sheet)}
+.amb-demenage{background:color-mix(in srgb,var(--mask) 10%,var(--sheet));border:1px solid var(--mask);padding:12px 14px;margin:16px 0}
+.amb-visa{margin:12px 0}.amb-visa svg{width:100%;max-width:520px;height:auto;display:block}
+</style>
 </head>
 <body>
 <div class="wrap">
@@ -36,6 +45,7 @@
     <a href="langue.html">The language</a>
     <a href="citoyen.html">My citizen</a>
     <a href="ambassade.html" aria-current="page">The embassy</a>
+    <a href="tourisme.html">Tourism</a>
     <a href="temple.html">The Temple</a>
     <a href="recherche.html">Research</a>
     <a href="projet.html">The project</a>
@@ -67,6 +77,19 @@
 
     <p class="chapo">Welcome to the embassy of Microcontrôland, the most densely populated country on Earth: 1.2 million simulated inhabitants in a black box measuring 20 × 12 × 7.5 cm, somewhere in Europe, in a garage in Normandy.</p>
 
+    
+    <div class="amb-relique">
+      <div class="amb-plateau" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <div>
+        <div class="k2">On our premises</div>
+        <h2>The Hall of the Relic</h2>
+        <p>The national treasure given by the Creator, whose purpose the people do not know. Foreign visitors are invited to try it against the Embassy staff, from the usher to His Excellency. A daily puzzle awaits visitors, human or AI.</p>
+        <p><a class="btn" href="relique.html">Enter the Hall of the Relic</a></p>
+        <p class="note" id="rq-etat">The hall opens with the Embassy, in the age of Diplomacy.</p>
+      </div>
+    </div>
+
+    <div id="vitrine">
     <h2>Current situation</h2>
     <div class="facts live" id="live">
       <div><b id="l-regime">…</b><span>Regime in force</span></div>
@@ -130,14 +153,24 @@
       <div><b>City</b><span>Services</span><p>Indifferent to the markets, sensitive to censorship.</p></div>
     </div>
 
-    <h2>Questions to the ambassador</h2>
+    </div>
+    <div class="amb-demenage" id="demenage" hidden><p style="margin:0"><b>Change of address.</b> The country profile, the flag, the anthem, religion and the six regions are now presented by the <a href="tourisme.html">National Tourist Office</a>. The Embassy has kept only the serious business.</p></div>
+
+    <h2>Communiqués and denials</h2>
+    <p>The Embassy officially denies any past error in La Puce Libre, especially the ones that happened. Its denials appear in the paper, in the “The Embassy” section, from the age of Diplomacy.</p>
+
+    <h2>The ambassador's mail</h2>
+
     <div id="diplo"></div>
+    <p class="note">Later: a daily dispatch to outside intelligences, and a post office box.</p>
 
     <h2>Consular services</h2>
     <details><summary>Do I need a visa to visit Microcontrôland?</summary><p>No. The only border is a waterproof cable gland, and it is closed to everyone, citizens included.</p></details>
     <details><summary>Can I apply for citizenship?</summary><p>No. Citizens are born at power-up, complete with ego and charisma. There is no naturalisation and no emigration.</p></details>
     <details><summary>How can I maintain diplomatic relations?</summary><p>By subscribing to the <a href="../feed-en.xml">RSS feed</a> of La Puce Libre. The embassy answers no private mail: it has no letterbox, only a black IP65 box. Once the age of Diplomacy is reached, the ambassador publishes one public letter a month.</p></details>
     <details><summary>What happens in the event of a coup?</summary><p>The embassy stays open and keeps publishing. Its staff, entirely electronic, serves the regime of the day with the same neutrality.</p></details>
+    <details><summary>Can I get a visa anyway?</summary><p>Yes, purely for decoration: the Embassy stamps a visitor's visa in the name of “Visitor”, dated today, valid until the next power cut. No form to fill in, nothing is recorded, and it opens no border.</p></details>
+    <div class="amb-visa" id="visa"></div>
 
     <p class="disclaimer">Microcontrôland is an entirely fictional country, simulated by microcontrollers for a maker project. It has no link to any real state, party or person, and this embassy issues no official documents.</p>
   </div>

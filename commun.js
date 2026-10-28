@@ -48,7 +48,7 @@
   if (MODE) { const p = document.createElement('p'); p.className = 'stale'; p.setAttribute('role', 'status'); p.textContent = MODE === 'demo' ? L.demo : L.essai; const nav = document.querySelector('nav.main'); if (nav) nav.after(p); }
 
   // Dans le menu, les rubriques encore fermées sont marquées d'un sablier.
-  const PAGE_AGE = { 'langue.html': 1, 'histoire.html': 2, 'citoyen.html': 3, 'recherche.html': 5 };
+  const PAGE_AGE = { 'langue.html': 1, 'histoire.html': 2, 'citoyen.html': 3, 'tourisme.html': 4, 'recherche.html': 5 };
   latest().then((e) => {
     document.querySelectorAll('nav.main > a').forEach((a) => {
       const f = (a.getAttribute('href') || '').split('?')[0];

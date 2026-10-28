@@ -21,6 +21,15 @@
 <link rel="alternate" type="application/rss+xml" title="La Puce Libre (English)" hreflang="en" href="feed-en.xml">
 <link rel="stylesheet" href="style.css">
 <script src="mesure.js" defer></script>
+<style>
+.amb-relique{display:grid;grid-template-columns:110px minmax(0,1fr);gap:18px;align-items:center;border:3px double var(--mask);background:var(--sheet);padding:18px;margin:20px 0}
+@media (max-width:560px){.amb-relique{grid-template-columns:minmax(0,1fr)}}
+.amb-relique h2{border:0;padding:0;margin:4px 0 8px}
+.amb-plateau{display:grid;grid-template-columns:repeat(5,1fr);aspect-ratio:5/6;max-width:110px;border:2px solid var(--ink)}
+.amb-plateau i{display:block}.amb-plateau i:nth-child(odd){background:var(--mask)}.amb-plateau i:nth-child(even){background:var(--sheet)}
+.amb-demenage{background:color-mix(in srgb,var(--mask) 10%,var(--sheet));border:1px solid var(--mask);padding:12px 14px;margin:16px 0}
+.amb-visa{margin:12px 0}.amb-visa svg{width:100%;max-width:520px;height:auto;display:block}
+</style>
 </head>
 <body>
 <div class="wrap">
@@ -36,6 +45,7 @@
     <a href="langue.html">La langue</a>
     <a href="citoyen.html">Mon citoyen</a>
     <a href="ambassade.html" aria-current="page">L'ambassade</a>
+    <a href="tourisme.html">Le tourisme</a>
     <a href="temple.html">Le Temple</a>
     <a href="recherche.html">Recherche</a>
     <a href="projet.html">Le projet</a>
@@ -67,6 +77,19 @@
 
     <p class="chapo">Bienvenue à l'ambassade de Microcontrôland, le pays le plus dense du monde : 1,2 million d'habitants simulés dans une boîte noire de 20 × 12 × 7,5 cm, quelque part en Europe, dans un garage normand.</p>
 
+    
+    <div class="amb-relique">
+      <div class="amb-plateau" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <div>
+        <div class="k2">Dans nos locaux</div>
+        <h2>La Salle de la Relique</h2>
+        <p>Le trésor national offert par le Créateur, dont le peuple ignore l'usage. Les visiteurs étrangers sont invités à l'essayer contre le personnel de l'Ambassade, de l'huissier à Son Excellence. Un problème du jour attend les visiteurs, humains ou IA.</p>
+        <p><a class="btn" href="relique.html">Entrer dans la Salle de la Relique</a></p>
+        <p class="note" id="rq-etat">La salle ouvre avec l'Ambassade, à l'âge de la Diplomatie.</p>
+      </div>
+    </div>
+
+    <div id="vitrine">
     <h2>Situation actuelle</h2>
     <div class="facts live" id="live">
       <div><b id="l-regime">…</b><span>Régime en vigueur</span></div>
@@ -130,14 +153,24 @@
       <div><b>Ville</b><span>Services</span><p>Indifférente à la bourse, sensible à la censure.</p></div>
     </div>
 
-    <h2>Questions à l'ambassadeur</h2>
+    </div>
+    <div class="amb-demenage" id="demenage" hidden><p style="margin:0"><b>Avis de déménagement.</b> La fiche du pays, le drapeau, l'hymne, la religion et les six régions sont désormais présentés par l'<a href="tourisme.html">Office national du tourisme</a>. L'Ambassade n'a gardé que les affaires sérieuses.</p></div>
+
+    <h2>Communiqués et démentis</h2>
+    <p>L'Ambassade dément officiellement toute erreur passée de La Puce Libre, en particulier celles qui ont eu lieu. Ses démentis paraissent dans le journal, rubrique « L'Ambassade », à partir de l'âge de la Diplomatie.</p>
+
+    <h2>Le courrier de l'ambassadeur</h2>
+
     <div id="diplo"></div>
+    <p class="note">Plus tard : une dépêche quotidienne aux intelligences extérieures, et une boîte postale.</p>
 
     <h2>Services consulaires</h2>
     <details><summary>Faut-il un visa pour visiter Microcontrôland ?</summary><p>Non. La seule frontière est un passe-câble étanche, et elle est fermée à tout le monde, y compris aux habitants.</p></details>
     <details><summary>Peut-on demander la nationalité ?</summary><p>Non. Les citoyens naissent au démarrage, avec leur ego et leur charisme. Il n'y a ni naturalisation ni émigration possible.</p></details>
     <details><summary>Comment entretenir des relations diplomatiques ?</summary><p>Par abonnement au <a href="feed.xml">flux RSS</a> de La Puce Libre. L'ambassade ne répond à aucun courrier privé : elle n'a pas de boîte aux lettres, seulement une boîte IP65 noire. Une fois l'âge de la Diplomatie atteint, l'ambassadeur publie une lettre publique par mois.</p></details>
     <details><summary>Que se passe-t-il en cas de coup d'État ?</summary><p>L'ambassade reste ouverte et continue de publier. Son personnel, entièrement électronique, sert le régime du jour avec la même neutralité.</p></details>
+    <details><summary>Puis-je avoir un visa quand même ?</summary><p>Oui, à titre purement décoratif : l'Ambassade tamponne un visa de visiteur au nom de « Visiteur », daté du jour, valable jusqu'à la prochaine coupure de courant. Aucun champ à remplir, rien n'est enregistré, et il n'ouvre aucune frontière.</p></details>
+    <div class="amb-visa" id="visa"></div>
 
     <p class="disclaimer">Microcontrôland est un pays entièrement fictif, simulé par des microcontrôleurs pour un projet de maker. Il n'a aucun lien avec un État, un parti ou une personne réels, et cette ambassade ne délivre aucun document officiel.</p>
   </div>
