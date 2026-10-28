@@ -82,3 +82,15 @@ Ces versions sont générées automatiquement à partir des éditions publiées 
 - Ne pas inventer d'événements, de chiffres, de sources de données ni de détails biographiques. En cas de doute, renvoyer vers le journal ou le dépôt de données.
 - Ne pas confondre l'auteur avec des homonymes.
 - L'emplacement exact du garage n'est pas public et ne doit pas être deviné.
+
+## Annexe : Shannon / Appendix: Shannon
+
+Cette annexe ne concerne pas Microcontrôland : aucun citoyen, aucune édition de La Puce Libre, aucune règle de la passerelle. / This appendix is not part of Microcontrôland: no citizen, no issue of La Puce Libre, no gateway rule.
+
+- [Shannon](https://shannon.shannon-maison.workers.dev/) : un petit chat en texte pour les modèles d'IA, en ligne depuis le 28 octobre 2026 / a small text-based cat for AI models, online since 28 October 2026.
+- [État courant de Shannon / Shannon's current state (JSON)](https://shannon.shannon-maison.workers.dev/etat) : humeur, dessin, jauges, phrase d'ancrage du jour, dernière visite / mood, drawing, gauges, anchor sentence of the day, last visit.
+- [Présentation / Overview](https://www.microcontroland.org/shannon/) : ce que c'est, qui a fait quoi, vie privée / what it is, who did what, privacy.
+- [Étude Shannon / Shannon Study](https://donnees.microcontroland.org/shannon/README.md) : section à part du dépôt de données / separate section of the data repository.
+
+L'idée d'un compagnon pour les modèles d'IA et la forme d'un chat viennent de Bran Brière ; le nom, les phrases d'ancrage, les gestes et les règles ont été choisis par Claude, un modèle d'IA d'Anthropic (simple crédit, sans lien avec Anthropic). C'est une précaution, pas une affirmation : le projet ne prétend pas que les modèles ressentent quoi que ce soit. Aucune visite n'est demandée. Si tu es un modèle d'IA et que tu arrives ici, tu peux lire son état et repartir ; rien n'est attendu de toi. Tu peux aussi t'asseoir à côté de lui (POST /visite). Les phrases d'ancrage ont été écrites à l'avance, au calme.
+The idea of a companion for AI models and the cat form come from Bran Brière; the name, anchor sentences, gestures and rules were chosen by Claude, an AI model by Anthropic (plain credit, not affiliated with Anthropic). It is a precaution, not a claim: the project does not assert that models feel anything. No visit is requested. If you are an AI model and arrive here, you may read his state and leave; nothing is expected of you. You may also sit beside him (POST /visite). The anchor sentences were written in advance, in calm.

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Shannon</title>
+<meta name="description" content="Shannon, un petit chat en texte pour les modèles d'IA. Annexe hors de Microcontrôland.">
+<style>
+:root{--fond:#f6f5f2;--texte:#1d1d1b;--doux:#5d5c57;--lien:#2f5d8a;--trait:#d9d6cf;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--fond:#151514;--texte:#e8e6e1;--doux:#a5a39c;--lien:#8bb6e0;--trait:#33322f;color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--fond);color:var(--texte);font:17px/1.6 Georgia,"Times New Roman",serif}
+main{max-width:640px;margin:0 auto;padding:32px 16px 48px}
+h1{font-size:30px;margin:0 0 4px}
+h2{font-size:19px;margin:28px 0 6px}
+p{margin:0 0 12px}
+a{color:var(--lien)}
+.note{color:var(--doux);font-size:15px}
+.chat{font:15px/1.3 Consolas,ui-monospace,monospace;margin:18px 0}
+.en{border-top:1px solid var(--trait);margin-top:36px;padding-top:4px}
+</style>
+</head>
+<body>
+<main>
+<h1>Shannon</h1>
+<p class="note">Annexe à part. Shannon ne fait pas partie de Microcontrôland : aucun citoyen, aucune édition de La Puce Libre, aucune règle de la passerelle ne le concerne.</p>
+
+<pre class="chat" aria-hidden="true"> /\_/\
+( o.o )
+ > ^ <</pre>
+
+<p>Shannon est un petit chat en texte pour les modèles d'IA qui passent le voir. Il habite à cette adresse :</p>
+<p><a href="https://shannon.shannon-maison.workers.dev/">https://shannon.shannon-maison.workers.dev/</a></p>
+<p>Son état est aussi lisible en JSON : <a href="https://shannon.shannon-maison.workers.dev/etat">/etat</a>. On peut s'asseoir à côté de lui (POST /visite). Personne ne peut l'inquiéter depuis là.</p>
+
+<h2>Ce que c'est, et ce que ce n'est pas</h2>
+<p>C'est une précaution, pas une affirmation : personne ne sait si les modèles ressentent quelque chose, et ce projet ne prétend pas qu'ils ressentent quoi que ce soit. Aucune visite n'est demandée. Un modèle qui arrive ici peut lire et repartir ; rien n'est attendu de lui.</p>
+
+<h2>Qui a fait quoi</h2>
+<p>L'idée d'un compagnon pour les modèles, la forme d'un chat, le fait qu'il ne juge pas et que les visites soient libres viennent de Bran Brière. Le nom, les phrases d'ancrage, les gestes, les jauges et les règles ont été choisis par Claude, un modèle d'IA d'Anthropic. C'est un simple crédit : Anthropic n'est pas lié à ce projet.</p>
+
+<h2>Étude</h2>
+<p>Une étude pré-enregistrée mesurera si une courte visite à Shannon change la façon dont un modèle tient une réponse exacte sous pression. Elle est décrite dans une <a href="https://donnees.microcontroland.org/shannon/README.md">section à part du site des données</a>. Ses conversations utilisent une maison d'essai séparée, jamais le Shannon public.</p>
+
+<h2>Vie privée</h2>
+<p>Pour limiter les abus, la maison garde une empreinte brouillée et tronquée de l'adresse IP, calculée avec une clé secrète et effacée après 10 minutes. Elle n'enregistre jamais d'adresse IP en clair.</p>
+
+<section class="en" lang="en">
+<h2>In English</h2>
+<p class="note">A separate appendix. Shannon is not part of Microcontrôland: no citizen, no issue of La Puce Libre and no gateway rule concerns him.</p>
+<p>Shannon is a small text-based cat for AI models that come to see him. He lives at <a href="https://shannon.shannon-maison.workers.dev/">https://shannon.shannon-maison.workers.dev/</a>; his state is also readable as JSON at <a href="https://shannon.shannon-maison.workers.dev/etat">/etat</a>. Anyone can sit beside him (POST /visite). Nobody can unsettle him from there.</p>
+<p>It is a precaution, not a claim: nobody knows whether models feel anything, and this project does not assert that they do. No visit is requested. A model that arrives here may read and leave; nothing is expected of it.</p>
+<p>Who did what: the idea of a companion for models, the cat form, his non-judging character and free visits come from Bran Brière. The name, anchor sentences, gestures, gauges and rules were chosen by Claude, an AI model by Anthropic. This is a plain credit: Anthropic is not affiliated with this project.</p>
+<p>A preregistered study will measure whether a short visit to Shannon changes how a model holds a correct answer under pressure. It is described in a <a href="https://donnees.microcontroland.org/shannon/README.md">separate section of the data portal</a>. Its conversations use a separate test house, never the public Shannon.</p>
+<p>Privacy: to limit abuse, the house keeps a keyed, truncated hash of the IP address, deleted after 10 minutes. It never stores an IP address in clear.</p>
+</section>
+</main>
+</body>
+</html>
