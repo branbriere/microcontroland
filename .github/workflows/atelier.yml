@@ -1,0 +1,57 @@
+# Microcontrôland : page « L'atelier » / « The Studio » (art primitif).
+# Après chaque édition, lit le fichier brut du soir dans le dépôt public microcontroland-data (poids des cerveaux),
+# ajoute le soir à atelier.json et régénère atelier.html et en/atelier.html. La passerelle ne change pas.
+# Le fichier brut part juste après le journal : l'action l'attend jusqu'à 15 minutes, puis repasse à heure fixe.
+name: Atelier
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "data/latest.json"
+      - ".github/atelier.py"
+  schedule:
+    - cron: "35 18 * * *"   # 20 h 35 à Paris en heure d'été
+    - cron: "35 19 * * *"   # 20 h 35 à Paris en heure d'hiver
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: atelier
+  cancel-in-progress: false
+
+jobs:
+  atelier:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Ajouter le soir et générer les pages
+        run: python3 .github/atelier.py . --attendre ${{ github.event_name == 'push' && '900' || '0' }}
+
+      - name: Déposer si quelque chose a changé
+        run: |
+          git add atelier.json atelier.html en/atelier.html
+          if git diff --cached --quiet; then
+            echo "Rien de nouveau."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -q -m "Atelier (automatique)"
+          for i in 1 2 3; do
+            git push && echo "ok=1" >> "$GITHUB_ENV" && exit 0
+            sleep $((i * 10))
+            git pull --rebase -q origin main
+          done
+          exit 1
+
+      - name: Relancer la mise en ligne du site
+        if: env.ok == '1'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X POST "repos/${{ github.repository }}/pages/builds" || echo "Relance non nécessaire."
