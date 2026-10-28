@@ -20,10 +20,10 @@
   const L = LANG === 'en'
     ? { ages: 'The ages of the civilisation', open: 'reached', waitK: 'Waiting for the civilisation to evolve', waitT: (n) => `This section opens in the age of ${n}`,
         where: 'Where the country stands', locked: 'Not open yet: the civilisation has not reached this age', age: 'Age', noData: 'The country has not published anything yet.',
-        demo: 'Demo: a sample country that has already lived 100 days. Nothing here comes from the real box.', essai: 'Dress rehearsal: these pages show gateway tests.' }
+        temple: 'The Temple has not been consecrated yet', demo: 'Demo: a sample country that has already lived 100 days. Nothing here comes from the real box.', essai: 'Dress rehearsal: these pages show gateway tests.' }
     : { ages: 'Les âges de la civilisation', open: 'atteint', waitK: 'En attente d\'évolution de la civilisation', waitT: (n) => `Cette rubrique s'ouvrira à l'âge de ${n}`,
         where: 'Où en est le pays', locked: 'Pas encore ouvert : la civilisation n\'a pas atteint cet âge', age: 'Âge', noData: 'Le pays n\'a encore rien publié.',
-        demo: 'Démonstration : un pays d\'exemple qui a déjà vécu 100 jours. Rien ici ne vient de la vraie boîte.', essai: 'Répétition générale : ces pages montrent des essais de la passerelle.' };
+        temple: 'Le Temple n\'est pas encore consacré', demo: 'Démonstration : un pays d\'exemple qui a déjà vécu 100 jours. Rien ici ne vient de la vraie boîte.', essai: 'Répétition générale : ces pages montrent des essais de la passerelle.' };
   const ageOf = (e) => (e && e.ages ? e.ages.age : 0);
 
   // La frise des âges : étapes atteintes, et ce qui manque pour la suivante.
@@ -53,6 +53,7 @@
     document.querySelectorAll('nav.main > a').forEach((a) => {
       const f = (a.getAttribute('href') || '').split('?')[0];
       if (PAGE_AGE[f] > ageOf(e)) { a.classList.add('locked'); a.title = L.locked; }
+      if (f === 'temple.html' && !(e && e.temple && e.temple.ouvert)) { a.classList.add('locked'); a.title = L.temple; }   // Temple : prévu (MAJ 3), un tiers de croyants
     });
   }).catch(() => {});
 

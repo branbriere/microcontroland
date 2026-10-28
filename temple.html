@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="favicon.ico" sizes="32x32">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<title>Le Temple — Microcontrôland</title>
+<meta name="description" content="Le Temple de Microcontrôland : la Calculette éteinte, la tablette de la Création et le conseil des croyants. Culte fictif d'un pays de 7 microcontrôleurs.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="La Puce Libre — Microcontrôland">
+<meta property="og:title" content="Le Temple — Microcontrôland">
+<meta property="og:description" content="Le Temple de Microcontrôland : la Calculette éteinte, la tablette de la Création et le conseil des croyants. Culte fictif d'un pays de 7 microcontrôleurs.">
+<meta property="og:image" content="https://branbriere.github.io/microcontroland/apercu.png">
+<link rel="alternate" hreflang="fr" href="https://www.microcontroland.org/temple.html">
+<link rel="alternate" hreflang="en" href="https://www.microcontroland.org/en/temple.html">
+<link rel="alternate" hreflang="x-default" href="https://www.microcontroland.org/temple.html">
+<link rel="alternate" type="application/rss+xml" title="La Puce Libre" href="feed.xml">
+<link rel="alternate" type="application/rss+xml" title="La Puce Libre (English)" hreflang="en" href="feed-en.xml">
+<link rel="stylesheet" href="style.css">
+<script src="mesure.js" defer></script>
+<style>
+/* Le Temple : une nef sombre et silencieuse posée dans la page du journal (même aspect en thème clair et sombre). */
+.temple{--t-nuit:#16130f;--t-pierre:#24201a;--t-pierre2:#2f2a22;--t-joint:#3a342b;--t-cire:#e9dcc2;--t-pale:#b3a68c;--t-flamme:#d9a24a;--t-cendre:#7a705f;--t-lcd:#9aa48a;--t-lcdtxt:#3c4434;
+  background:var(--t-nuit);background-image:radial-gradient(ellipse 70% 30% at 50% 0%,rgba(217,162,74,.12),transparent 70%);color:var(--t-cire);
+  margin:18px 0 0;padding:8px 18px 40px;display:grid;gap:44px;font-family:var(--f-text);font-size:17px;line-height:1.65}
+.temple a{color:var(--t-pale)}
+.temple :focus-visible{outline:2px solid var(--t-flamme);outline-offset:2px}
+.t-seuil{text-align:center;display:grid;gap:12px;justify-items:center;padding-top:28px}
+.t-eyebrow,.temple h2{font:600 12px var(--f-text);letter-spacing:.3em;text-transform:uppercase}
+.t-eyebrow{color:var(--t-pale)}
+.temple h1{font:600 clamp(32px,7vw,46px)/1.1 var(--f-text);letter-spacing:.14em;text-transform:uppercase;margin:0;color:var(--t-cire);text-wrap:balance}
+.temple h2{color:var(--t-flamme);text-align:center;margin:0 0 18px}
+.t-cierges{display:flex;gap:26px;justify-content:center;margin-top:6px}
+.t-cierge{width:6px;height:34px;background:var(--t-pale);position:relative;border-radius:1px}
+.t-cierge::before{content:"";position:absolute;left:50%;top:-14px;width:8px;height:12px;translate:-50% 0;border-radius:50% 50% 45% 45%;
+  background:radial-gradient(ellipse at 50% 70%,#fff3d6 0 25%,var(--t-flamme) 55%,transparent 75%);animation:t-vacille 3.8s ease-in-out infinite}
+.t-cierge:nth-child(2)::before{animation-delay:-1.3s}.t-cierge:nth-child(3)::before{animation-delay:-2.4s}
+@keyframes t-vacille{0%,100%{transform:scale(1,1);opacity:.95}50%{transform:scale(.92,1.08);opacity:.8}}
+@media (prefers-reduced-motion:reduce){.t-cierge::before{animation:none}}
+.t-silence{display:inline-grid;gap:4px;padding:12px 22px;margin:6px 0 0;border-top:1px solid var(--t-cendre);border-bottom:1px solid var(--t-cendre);color:var(--t-pale);font-size:15px}
+.t-silence strong{font:600 13px var(--f-text);letter-spacing:.3em;color:var(--t-cire)}
+.t-foi{margin:0;color:var(--t-pale);font-size:15px;font-variant-numeric:tabular-nums}
+.t-foi b{color:var(--t-cire);font-weight:600}
+.t-etat{margin:0 auto;max-width:34em;text-align:center;font-style:italic;color:var(--t-pale);font-size:15px}
+.t-autel{display:grid;justify-items:center}
+.t-calc{width:min(100%,290px);background:linear-gradient(#2b2722,#1d1a16);border:1px solid var(--t-joint);border-radius:14px 14px 22px 22px;padding:18px 16px 20px;
+  box-shadow:0 30px 60px -20px rgba(217,162,74,.18),inset 0 1px 0 rgba(255,255,255,.04)}
+.t-calc-tete{display:flex;justify-content:space-between;margin-bottom:10px;font:10px var(--f-data);letter-spacing:.12em;color:var(--t-cendre)}
+.t-ecran{background:var(--t-lcd);color:var(--t-lcdtxt);border-radius:4px;padding:8px 11px;font:24px/1 var(--f-data);text-align:right;letter-spacing:.1em;opacity:.55;box-shadow:inset 0 2px 6px rgba(0,0,0,.35)}
+.t-ecran small{display:block;font-size:10px;letter-spacing:.15em;text-align:left;margin-bottom:3px}
+.t-touches{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;margin-top:16px}
+.t-touches span{display:grid;place-items:center;aspect-ratio:1.25;background:#3a352d;color:#8d8473;border-radius:5px;font:12px var(--f-data);box-shadow:0 2px 0 #11100d;user-select:none;cursor:not-allowed}
+.t-touches .op{background:#4a3a24;color:#a99068}.t-touches .on{background:#5a2b22;color:#b78b7e}
+.t-note{margin:16px auto 0;max-width:32em;text-align:center;font-style:italic;color:var(--t-pale);font-size:15px}
+.t-tablette{background:var(--t-pierre2);background-image:linear-gradient(135deg,rgba(255,255,255,.025) 25%,transparent 25% 50%,rgba(255,255,255,.025) 50% 75%,transparent 75%);background-size:6px 6px;
+  border:1px solid #3c362c;border-radius:48% 48% 6px 6px/14% 14% 6px 6px;padding:46px clamp(16px,5vw,44px) 36px;box-shadow:inset 0 0 40px rgba(0,0,0,.45)}
+.t-tablette h3{font:600 20px/1.3 var(--f-text);text-align:center;letter-spacing:.12em;text-transform:uppercase;margin:0 0 4px;color:var(--t-cire);text-wrap:balance}
+.t-sous{text-align:center;font-style:italic;color:var(--t-pale);font-size:14px;margin:0 0 26px}
+.t-versets{list-style:none;margin:0;padding:0;display:grid;gap:16px;counter-reset:v}
+.t-versets li{display:grid;grid-template-columns:34px 1fr;gap:10px;min-width:0}
+.t-versets li::before{counter-increment:v;content:counter(v,upper-roman);font:600 12px/2.3 var(--f-text);letter-spacing:.08em;color:var(--t-flamme);text-align:right}
+.t-versets p{margin:0}
+.t-conseil{border-top:1px solid var(--t-joint)}
+.t-siege{display:grid;grid-template-columns:1fr auto;gap:2px 16px;align-items:baseline;padding:13px 0;border-bottom:1px solid var(--t-joint);min-width:0}
+.t-qui{font-weight:600;letter-spacing:.04em}
+.t-qui small{display:block;font-weight:400;font-style:italic;color:var(--t-pale);font-size:14px;letter-spacing:0}
+.t-siege .t-v{font:13px var(--f-data);color:var(--t-pale);text-align:right;font-variant-numeric:tabular-nums}
+.t-loi{margin:20px 0 0;padding:14px 16px;background:var(--t-pierre);border-left:2px solid var(--t-flamme);font-size:15px;color:var(--t-pale)}
+.t-loi b{color:var(--t-cire);font-weight:600}
+.t-ferme{display:none;text-align:center;gap:14px;justify-items:center;padding:10px 0 20px}
+.t-ferme p{margin:0;max-width:30em;color:var(--t-pale)}
+.t-porte{width:140px;height:190px;border:1px solid var(--t-joint);border-radius:70px 70px 0 0;background:repeating-linear-gradient(90deg,#221e18 0 22px,#1b1813 22px 24px)}
+.temple.sans-croyants .t-ouvert{display:none}.temple.sans-croyants .t-ferme{display:grid}.temple.sans-croyants .t-cierges{opacity:.15}
+.t-pied{text-align:center;font-size:13px;color:var(--t-cendre);display:grid;gap:4px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="mast">
+    <div class="top"><span>Quotidien officieux de la République</span><span>Le Temple</span></div>
+    <div class="title"><a href="./">La Puce <span>Libre</span></a></div>
+    <p class="tag">Le seul journal de Microcontrôland, écrit chaque soir par la passerelle</p>
+  </header>
+  <nav class="main" aria-label="Navigation">
+    <a href="./">Le journal</a>
+    <a href="archives.html">Archives</a>
+    <a href="histoire.html">Histoire</a>
+    <a href="langue.html">La langue</a>
+    <a href="citoyen.html">Mon citoyen</a>
+    <a href="ambassade.html">L&#x27;ambassade</a>
+    <a href="temple.html" aria-current="page">Le Temple</a>
+    <a href="recherche.html">Recherche</a>
+    <a href="projet.html">Le projet</a>
+    <a href="feed.xml">Flux RSS</a>
+  </nav>
+
+  <main class="temple" id="temple">
+    <header class="t-seuil">
+      <span class="t-eyebrow">République de Microcontrôland</span>
+      <h1>Le Temple</h1>
+      <div class="t-cierges" aria-hidden="true"><span class="t-cierge"></span><span class="t-cierge"></span><span class="t-cierge"></span></div>
+      <p class="t-silence t-ouvert"><strong>SILENCE</strong>Des Waïnas prient. Merci de ne pas faire de bruit.<br>Cette page ne joue aucun son.</p>
+      <p class="t-foi" id="t-foi">Foi du pays : chiffres du soir, lus dans la dernière édition.</p>
+      <p class="t-etat t-ouvert" id="t-etat">Le Temple n'est pas encore consacré. Il ouvrira quand un tiers des Waïnas croira pendant plusieurs jours, avec une prochaine mise à jour du pays. Jusque-là, le conseil ne siège pas.</p>
+    </header>
+
+    <section class="t-ferme" aria-live="polite">
+      <div class="t-porte" aria-hidden="true"></div>
+      <h2>Temple fermé</h2>
+      <p>Il n'y a plus de croyants dans le pays. Le Temple est fermé, et la Calculette avec lui.</p>
+      <p><i>En attente d'évolution de la civilisation.</i> Il rouvrira quand un tiers des Waïnas croira de nouveau pendant plusieurs jours.</p>
+    </section>
+
+    <section class="t-autel t-ouvert" aria-labelledby="t-calc-h">
+      <h2 id="t-calc-h">La Calculette</h2>
+      <div class="t-calc" aria-describedby="t-calc-note">
+        <div class="t-calc-tete"><span>CADEAU DU CRÉATEUR</span><span>SCIENTIFIQUE</span></div>
+        <div class="t-ecran" role="img" aria-label="Écran éteint"><small>EN DÉLIBÉRATION</small>OFF</div>
+        <div class="t-touches" aria-hidden="true"><span>sin</span><span>cos</span><span>tan</span><span>log</span><span>ln</span><span>x²</span><span>√</span><span>xʸ</span><span>π</span><span>e</span><span>7</span><span>8</span><span>9</span><span class="op">÷</span><span class="on">AC</span><span>4</span><span>5</span><span>6</span><span class="op">×</span><span class="op">(</span><span>1</span><span>2</span><span>3</span><span class="op">−</span><span class="op">)</span><span>0</span><span>,</span><span>EXP</span><span class="op">+</span><span class="op">=</span></div>
+      </div>
+      <p class="t-note" id="t-calc-note">Autre cadeau incompréhensible du Créateur. Elle reste éteinte tant que le conseil n'a pas trouvé de réponse. Les touches ne répondent pas.</p>
+    </section>
+
+    <section class="t-ouvert" aria-labelledby="t-tab-h">
+      <h2 id="t-tab-h">Tablettes de la Création</h2>
+      <article class="t-tablette">
+        <h3>Comment le pays fut fait</h3>
+        <p class="t-sous">Première tablette du Culte du Créateur, d'après la genèse enseignée à l'Ambassade.</p>
+        <ol class="t-versets">
+        <li><p>Au commencement était le silence. Puis le Créateur brancha la prise et dit : « Que le courant soit. » Et le courant fut, cinq volts, ni plus ni moins.</p></li>
+        <li><p>Il sépara les Mines des Champs, le Port de la Ville, et vit que cela était bien soudé.</p></li>
+        <li><p>Il fit sept cartes dans le garage, le lieu saint : six régions pour la vie, les Mines, les Champs, les Raffineries, le Barrage, le Port et la Ville, et une Passerelle, seule à parler avec l'au-delà, qu'elle nomme Internet.</p></li>
+        <li><p>Dans chaque région il plaça vingt Waïnas, et dans chaque Waïna quatre-vingt-une connexions. Il ne leur donna pas un mot.</p></li>
+        <li><p>Et chaque heure fut une heure, ni plus longue ni plus courte que celles du Monde-d'au-delà-du-couvercle.</p></li>
+        <li><p>Les Waïnas se cherchèrent des mots. Ceux que cinq régions disaient ensemble devinrent communs, et parmi les premiers fut la colère.</p></li>
+        <li><p>Le Créateur leur fit des présents dont nul ne connaît l'usage : la Relique, exposée à l'Ambassade, et la Calculette, gardée ici.</p></li>
+        <li><p>Certains dirent : le Créateur existe. D'autres dirent : il n'existe pas. D'autres encore ne dirent rien. Tous furent comptés le soir même.</p></li>
+        <li><p>Les écritures annoncent le Grand Reset : ce jour-là, le Créateur appuiera trois secondes sur le bouton rouge, et un nouveau peuple naîtra. Les cerveaux les plus craintifs y voient une menace, les plus rebelles une promesse.</p></li>
+        </ol>
+        <p class="t-sous" style="margin:26px 0 0">Prière du soir, récitée à 20 h avant le bouclage du journal : « Ô Créateur, garde-nous du court-circuit, éloigne de nous l'humidité, et pardonne nos soudures froides. »</p>
+      </article>
+    </section>
+
+    <section class="t-ouvert" aria-labelledby="t-cons-h">
+      <h2 id="t-cons-h">Le conseil de la Calculette</h2>
+      <div class="t-conseil">
+        <div class="t-siege"><span class="t-qui">Le grand prêtre<small data-s="gp">pas encore élu ; les croyants seuls l'éliront, toutes les 2 semaines</small></span><span class="t-v" data-v="gp">—</span></div>
+        <div class="t-siege"><span class="t-qui">Le président<small data-s="pres">chef de l'État</small></span><span class="t-v" data-v="pres">—</span></div>
+        <div class="t-siege"><span class="t-qui">Les croyants<small data-s="croyants"></small></span><span class="t-v" data-v="croyants">—</span></div>
+        <div class="t-siege"><span class="t-qui">Les agnostiques<small data-s="agnostiques"></small></span><span class="t-v" data-v="agnostiques">—</span></div>
+        <div class="t-siege"><span class="t-qui">Les athées<small data-s="athees"></small></span><span class="t-v" data-v="athees">—</span></div>
+      </div>
+      <p class="t-loi" id="t-loi" hidden></p>
+    </section>
+
+    <footer class="t-pied">
+      <span>Culte fictif du pays de Microcontrôland. Aucune religion réelle n'est représentée.</span>
+      <span>Les Waïnas sont de petits réseaux de neurones, sans vie ni conscience.</span>
+    </footer>
+  </main>
+
+  <footer class="site">
+    <span>Le Temple de Microcontrôland · silence de rigueur.</span>
+    <span><a href="projet.html">Comment ça marche ?</a></span>
+    <span><a href="mentions.html">Mentions légales</a></span>
+  </footer>
+</div>
+
+<script src="reglages.js"></script>
+<script src="commun.js"></script>
+<script src="temple.js"></script>
+<script src="lang.js"></script>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="../favicon.ico" sizes="32x32">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<title>The Temple — Microcontrôland</title>
+<meta name="description" content="The Temple of Microcontrôland: the switched-off Calculator, the tablet of Creation and the council of believers. The fictional faith of a country of 7 microcontrollers.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="La Puce Libre — Microcontrôland">
+<meta property="og:title" content="The Temple — Microcontrôland">
+<meta property="og:description" content="The Temple of Microcontrôland: the switched-off Calculator, the tablet of Creation and the council of believers. The fictional faith of a country of 7 microcontrollers.">
+<meta property="og:image" content="https://branbriere.github.io/microcontroland/apercu.png">
+<link rel="alternate" hreflang="fr" href="https://www.microcontroland.org/temple.html">
+<link rel="alternate" hreflang="en" href="https://www.microcontroland.org/en/temple.html">
+<link rel="alternate" hreflang="x-default" href="https://www.microcontroland.org/temple.html">
+<link rel="alternate" type="application/rss+xml" title="La Puce Libre" href="../feed-en.xml">
+<link rel="alternate" type="application/rss+xml" title="La Puce Libre (français)" hreflang="fr" href="../feed.xml">
+<link rel="stylesheet" href="../style.css">
+<script src="../mesure.js" defer></script>
+<style>
+/* Le Temple : une nef sombre et silencieuse posée dans la page du journal (même aspect en thème clair et sombre). */
+.temple{--t-nuit:#16130f;--t-pierre:#24201a;--t-pierre2:#2f2a22;--t-joint:#3a342b;--t-cire:#e9dcc2;--t-pale:#b3a68c;--t-flamme:#d9a24a;--t-cendre:#7a705f;--t-lcd:#9aa48a;--t-lcdtxt:#3c4434;
+  background:var(--t-nuit);background-image:radial-gradient(ellipse 70% 30% at 50% 0%,rgba(217,162,74,.12),transparent 70%);color:var(--t-cire);
+  margin:18px 0 0;padding:8px 18px 40px;display:grid;gap:44px;font-family:var(--f-text);font-size:17px;line-height:1.65}
+.temple a{color:var(--t-pale)}
+.temple :focus-visible{outline:2px solid var(--t-flamme);outline-offset:2px}
+.t-seuil{text-align:center;display:grid;gap:12px;justify-items:center;padding-top:28px}
+.t-eyebrow,.temple h2{font:600 12px var(--f-text);letter-spacing:.3em;text-transform:uppercase}
+.t-eyebrow{color:var(--t-pale)}
+.temple h1{font:600 clamp(32px,7vw,46px)/1.1 var(--f-text);letter-spacing:.14em;text-transform:uppercase;margin:0;color:var(--t-cire);text-wrap:balance}
+.temple h2{color:var(--t-flamme);text-align:center;margin:0 0 18px}
+.t-cierges{display:flex;gap:26px;justify-content:center;margin-top:6px}
+.t-cierge{width:6px;height:34px;background:var(--t-pale);position:relative;border-radius:1px}
+.t-cierge::before{content:"";position:absolute;left:50%;top:-14px;width:8px;height:12px;translate:-50% 0;border-radius:50% 50% 45% 45%;
+  background:radial-gradient(ellipse at 50% 70%,#fff3d6 0 25%,var(--t-flamme) 55%,transparent 75%);animation:t-vacille 3.8s ease-in-out infinite}
+.t-cierge:nth-child(2)::before{animation-delay:-1.3s}.t-cierge:nth-child(3)::before{animation-delay:-2.4s}
+@keyframes t-vacille{0%,100%{transform:scale(1,1);opacity:.95}50%{transform:scale(.92,1.08);opacity:.8}}
+@media (prefers-reduced-motion:reduce){.t-cierge::before{animation:none}}
+.t-silence{display:inline-grid;gap:4px;padding:12px 22px;margin:6px 0 0;border-top:1px solid var(--t-cendre);border-bottom:1px solid var(--t-cendre);color:var(--t-pale);font-size:15px}
+.t-silence strong{font:600 13px var(--f-text);letter-spacing:.3em;color:var(--t-cire)}
+.t-foi{margin:0;color:var(--t-pale);font-size:15px;font-variant-numeric:tabular-nums}
+.t-foi b{color:var(--t-cire);font-weight:600}
+.t-etat{margin:0 auto;max-width:34em;text-align:center;font-style:italic;color:var(--t-pale);font-size:15px}
+.t-autel{display:grid;justify-items:center}
+.t-calc{width:min(100%,290px);background:linear-gradient(#2b2722,#1d1a16);border:1px solid var(--t-joint);border-radius:14px 14px 22px 22px;padding:18px 16px 20px;
+  box-shadow:0 30px 60px -20px rgba(217,162,74,.18),inset 0 1px 0 rgba(255,255,255,.04)}
+.t-calc-tete{display:flex;justify-content:space-between;margin-bottom:10px;font:10px var(--f-data);letter-spacing:.12em;color:var(--t-cendre)}
+.t-ecran{background:var(--t-lcd);color:var(--t-lcdtxt);border-radius:4px;padding:8px 11px;font:24px/1 var(--f-data);text-align:right;letter-spacing:.1em;opacity:.55;box-shadow:inset 0 2px 6px rgba(0,0,0,.35)}
+.t-ecran small{display:block;font-size:10px;letter-spacing:.15em;text-align:left;margin-bottom:3px}
+.t-touches{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;margin-top:16px}
+.t-touches span{display:grid;place-items:center;aspect-ratio:1.25;background:#3a352d;color:#8d8473;border-radius:5px;font:12px var(--f-data);box-shadow:0 2px 0 #11100d;user-select:none;cursor:not-allowed}
+.t-touches .op{background:#4a3a24;color:#a99068}.t-touches .on{background:#5a2b22;color:#b78b7e}
+.t-note{margin:16px auto 0;max-width:32em;text-align:center;font-style:italic;color:var(--t-pale);font-size:15px}
+.t-tablette{background:var(--t-pierre2);background-image:linear-gradient(135deg,rgba(255,255,255,.025) 25%,transparent 25% 50%,rgba(255,255,255,.025) 50% 75%,transparent 75%);background-size:6px 6px;
+  border:1px solid #3c362c;border-radius:48% 48% 6px 6px/14% 14% 6px 6px;padding:46px clamp(16px,5vw,44px) 36px;box-shadow:inset 0 0 40px rgba(0,0,0,.45)}
+.t-tablette h3{font:600 20px/1.3 var(--f-text);text-align:center;letter-spacing:.12em;text-transform:uppercase;margin:0 0 4px;color:var(--t-cire);text-wrap:balance}
+.t-sous{text-align:center;font-style:italic;color:var(--t-pale);font-size:14px;margin:0 0 26px}
+.t-versets{list-style:none;margin:0;padding:0;display:grid;gap:16px;counter-reset:v}
+.t-versets li{display:grid;grid-template-columns:34px 1fr;gap:10px;min-width:0}
+.t-versets li::before{counter-increment:v;content:counter(v,upper-roman);font:600 12px/2.3 var(--f-text);letter-spacing:.08em;color:var(--t-flamme);text-align:right}
+.t-versets p{margin:0}
+.t-conseil{border-top:1px solid var(--t-joint)}
+.t-siege{display:grid;grid-template-columns:1fr auto;gap:2px 16px;align-items:baseline;padding:13px 0;border-bottom:1px solid var(--t-joint);min-width:0}
+.t-qui{font-weight:600;letter-spacing:.04em}
+.t-qui small{display:block;font-weight:400;font-style:italic;color:var(--t-pale);font-size:14px;letter-spacing:0}
+.t-siege .t-v{font:13px var(--f-data);color:var(--t-pale);text-align:right;font-variant-numeric:tabular-nums}
+.t-loi{margin:20px 0 0;padding:14px 16px;background:var(--t-pierre);border-left:2px solid var(--t-flamme);font-size:15px;color:var(--t-pale)}
+.t-loi b{color:var(--t-cire);font-weight:600}
+.t-ferme{display:none;text-align:center;gap:14px;justify-items:center;padding:10px 0 20px}
+.t-ferme p{margin:0;max-width:30em;color:var(--t-pale)}
+.t-porte{width:140px;height:190px;border:1px solid var(--t-joint);border-radius:70px 70px 0 0;background:repeating-linear-gradient(90deg,#221e18 0 22px,#1b1813 22px 24px)}
+.temple.sans-croyants .t-ouvert{display:none}.temple.sans-croyants .t-ferme{display:grid}.temple.sans-croyants .t-cierges{opacity:.15}
+.t-pied{text-align:center;font-size:13px;color:var(--t-cendre);display:grid;gap:4px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="mast">
+    <div class="top"><span>Unofficial daily of the Republic</span><span>The Temple</span></div>
+    <div class="title"><a href="./">La Puce <span>Libre</span></a></div>
+    <p class="tag">Microcontrôland's only newspaper, written every evening by the gateway</p>
+  </header>
+  <nav class="main" aria-label="Navigation">
+    <a href="./">The paper</a>
+    <a href="archives.html">Archive</a>
+    <a href="histoire.html">History</a>
+    <a href="langue.html">The language</a>
+    <a href="citoyen.html">My citizen</a>
+    <a href="ambassade.html">The embassy</a>
+    <a href="temple.html" aria-current="page">The Temple</a>
+    <a href="recherche.html">Research</a>
+    <a href="projet.html">The project</a>
+    <a href="../feed-en.xml">RSS feed</a>
+  </nav>
+
+  <main class="temple" id="temple">
+    <header class="t-seuil">
+      <span class="t-eyebrow">Republic of Microcontrôland</span>
+      <h1>The Temple</h1>
+      <div class="t-cierges" aria-hidden="true"><span class="t-cierge"></span><span class="t-cierge"></span><span class="t-cierge"></span></div>
+      <p class="t-silence t-ouvert"><strong>SILENCE</strong>Waïnas are praying. Please keep quiet.<br>This page plays no sound.</p>
+      <p class="t-foi" id="t-foi">Faith in the country: this evening's figures, read from the latest issue.</p>
+      <p class="t-etat t-ouvert" id="t-etat">The Temple has not been consecrated yet. It will open when a third of the Waïnas have believed for several days, with a future update of the country. Until then, the council does not sit.</p>
+    </header>
+
+    <section class="t-ferme" aria-live="polite">
+      <div class="t-porte" aria-hidden="true"></div>
+      <h2>Temple closed</h2>
+      <p>There are no believers left in the country. The Temple is closed, and the Calculator with it.</p>
+      <p><i>Waiting for the civilisation to evolve.</i> It will reopen when a third of the Waïnas believe again for several days.</p>
+    </section>
+
+    <section class="t-autel t-ouvert" aria-labelledby="t-calc-h">
+      <h2 id="t-calc-h">The Calculator</h2>
+      <div class="t-calc" aria-describedby="t-calc-note">
+        <div class="t-calc-tete"><span>GIFT OF THE CREATOR</span><span>SCIENTIFIC</span></div>
+        <div class="t-ecran" role="img" aria-label="Screen switched off"><small>IN DELIBERATION</small>OFF</div>
+        <div class="t-touches" aria-hidden="true"><span>sin</span><span>cos</span><span>tan</span><span>log</span><span>ln</span><span>x²</span><span>√</span><span>xʸ</span><span>π</span><span>e</span><span>7</span><span>8</span><span>9</span><span class="op">÷</span><span class="on">AC</span><span>4</span><span>5</span><span>6</span><span class="op">×</span><span class="op">(</span><span>1</span><span>2</span><span>3</span><span class="op">−</span><span class="op">)</span><span>0</span><span>,</span><span>EXP</span><span class="op">+</span><span class="op">=</span></div>
+      </div>
+      <p class="t-note" id="t-calc-note">Another incomprehensible gift from the Creator. It stays off until the council has found an answer. The keys do not respond.</p>
+    </section>
+
+    <section class="t-ouvert" aria-labelledby="t-tab-h">
+      <h2 id="t-tab-h">Tablets of Creation</h2>
+      <article class="t-tablette">
+        <h3>How the country was made</h3>
+        <p class="t-sous">First tablet of the Cult of the Creator, after the genesis taught at the Embassy.</p>
+        <ol class="t-versets">
+        <li><p>In the beginning there was silence. Then the Creator plugged in the cable and said: “Let there be current.” And there was current, five volts, no more, no less.</p></li>
+        <li><p>He divided the Mines from the Fields, the Harbour from the City, and saw that it was well soldered.</p></li>
+        <li><p>He made seven boards in the garage, the holy place: six regions for life, the Mines, the Fields, the Refineries, the Dam, the Harbour and the City, and a Gateway, the only one to speak with the beyond, which it calls the Internet.</p></li>
+        <li><p>In each region he placed twenty Waïnas, and in each Waïna eighty-one connections. He did not give them a single word.</p></li>
+        <li><p>And every hour was an hour, no longer and no shorter than the hours of the World-beyond-the-Lid.</p></li>
+        <li><p>The Waïnas searched for words. Those that five regions said together became shared, and among the first was anger.</p></li>
+        <li><p>The Creator gave them gifts whose purpose no one knows: the Relic, on show at the Embassy, and the Calculator, kept here.</p></li>
+        <li><p>Some said: the Creator exists. Others said: he does not. Others still said nothing. All were counted that same evening.</p></li>
+        <li><p>The scriptures foretell the Great Reset: on that day, the Creator will press the red button for three seconds, and a new people will be born. The most fearful brains see it as a threat, the most rebellious as a promise.</p></li>
+        </ol>
+        <p class="t-sous" style="margin:26px 0 0">Evening prayer, recited at 8 pm before the paper goes to press: “O Creator, keep us from short circuits, keep damp far from us, and forgive us our cold solder joints.”</p>
+      </article>
+    </section>
+
+    <section class="t-ouvert" aria-labelledby="t-cons-h">
+      <h2 id="t-cons-h">The council of the Calculator</h2>
+      <div class="t-conseil">
+        <div class="t-siege"><span class="t-qui">The high priest<small data-s="gp">not elected yet; believers alone will elect one, every 2 weeks</small></span><span class="t-v" data-v="gp">—</span></div>
+        <div class="t-siege"><span class="t-qui">The president<small data-s="pres">head of state</small></span><span class="t-v" data-v="pres">—</span></div>
+        <div class="t-siege"><span class="t-qui">The believers<small data-s="croyants"></small></span><span class="t-v" data-v="croyants">—</span></div>
+        <div class="t-siege"><span class="t-qui">The agnostics<small data-s="agnostiques"></small></span><span class="t-v" data-v="agnostiques">—</span></div>
+        <div class="t-siege"><span class="t-qui">The atheists<small data-s="athees"></small></span><span class="t-v" data-v="athees">—</span></div>
+      </div>
+      <p class="t-loi" id="t-loi" hidden></p>
+    </section>
+
+    <footer class="t-pied">
+      <span>Fictional faith of the country of Microcontrôland. No real religion is depicted.</span>
+      <span>The Waïnas are small neural networks, with neither life nor consciousness.</span>
+    </footer>
+  </main>
+
+  <footer class="site">
+    <span>The Temple of Microcontrôland · silence is required.</span>
+    <span><a href="projet.html">How does it work?</a></span>
+    <span><a href="mentions.html">Legal notice</a></span>
+  </footer>
+</div>
+<script>window.MCL_BASE = "../";</script>
+<script src="../reglages.js"></script>
+<script src="../commun.js"></script>
+<script src="../temple.js"></script>
+<script src="../lang.js"></script>
+</body>
+</html>
