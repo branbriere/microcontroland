@@ -1,0 +1,57 @@
+# Microcontrôland : page « Galerie des présidents » / « The Presidential Gallery ».
+# Après chaque édition, relit les fichiers bruts publiés du dépôt microcontroland-data (mandats et poids des cerveaux)
+# et régénère galerie.json, galerie.html et en/galerie.html. La passerelle ne change pas.
+# Le fichier brut part juste après le journal : l'action l'attend jusqu'à 15 minutes, puis repasse à heure fixe.
+name: Galerie des presidents
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "data/latest.json"
+      - ".github/galerie.py"
+  schedule:
+    - cron: "40 18 * * *"   # 20 h 40 à Paris en heure d'été
+    - cron: "40 19 * * *"   # 20 h 40 à Paris en heure d'hiver
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: galerie
+  cancel-in-progress: false
+
+jobs:
+  galerie:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Générer la galerie
+        run: python3 .github/galerie.py . --attendre ${{ github.event_name == 'push' && '900' || '0' }}
+
+      - name: Déposer si quelque chose a changé
+        run: |
+          git add galerie.json galerie.html en/galerie.html
+          if git diff --cached --quiet; then
+            echo "Rien de nouveau."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -q -m "Galerie des présidents (automatique)"
+          for i in 1 2 3; do
+            git push && echo "ok=1" >> "$GITHUB_ENV" && exit 0
+            sleep $((i * 10))
+            git pull --rebase -q origin main
+          done
+          exit 1
+
+      - name: Relancer la mise en ligne du site
+        if: env.ok == '1'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X POST "repos/${{ github.repository }}/pages/builds" || echo "Relance non nécessaire."
