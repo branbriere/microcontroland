@@ -1,48 +1,45 @@
 LA PUCE LIBRE — Microcontrôland
 
-Édition n° 20 · 2026-10-28 · ère 1, jour 21
+Édition n° 21 · 2026-10-29 · ère 1, jour 22
 
-Nouvel âge
-Microcontrôland entre dans l'âge de l'État civil
-La civilisation franchit une étape au jour 21 de l'ère. Chaque citoyen est inscrit au registre : on peut en adopter un et le suivre.
-Le chiffre du jour appartient à le blé : +1,1 %. Derrière, l'électricité (+0,7 %), le pétrole (−0,5 %), le cuivre (0,0 %).
-Le président Niwata, issu de la région Barrage, gouverne depuis 1 j 20 h avec 2 ministres (Sousouth, Kanaïka). Le pays vit sous le régime « Démocratie ».
-La satisfaction gagne 3 points en une journée, à 78 %. La région Mines compte 4 rebelles, la colère nationale est à 18 %.
-Coup d'œil à la Ville, terre de services : l'humeur y est « satisfaite » et l'on y compte 4 rebelles.
-Par Kaïpouk (Champs), société
+Sondages
+Les sondages font leur entrée dans la campagne
+À mi-campagne, vingt citoyens tirés au sort diront pour qui ils comptent voter. L'échantillon est petit : le sondage peut se tromper, et il pourrait bien influencer les indécis.
+La région Champs a suivi le téléscripteur de près : le blé finit à −1,4 %. Les autres cours : le pétrole (+1,1 %), l'électricité (+0,4 %), le cuivre (+0,1 %).
+Depuis son bureau au Barrage, Niwata expédie les affaires courantes. Cela fait 2 j 20 h que ça dure.
+Le moral remonte : 78 % de satisfaits hier, 82 % ce soir. 4 cerveaux aux Mines ont rejoint la rébellion.
+Dans les temples comme ailleurs, on compte : 26 % de fidèles, 31 % de sceptiques, 43 % d'incrédules.
+Par Sousou (Port), politique
 
 ## Citation du jour
-« La bourse monte, le moral aussi. »
+« Chaque cerveau compte. »
 
 ## Brèves
-Changement de régime · Microcontrôland bascule en démocratie : Sous le président Niwata, le pays quitte le régime « Démocratie fragile ». Les institutions retrouvent leur souffle.
+Campagne · 6 candidats en campagne : En lice : Niwata (Barrage), Kiti (Port), Naïkaïth (Barrage), Kouwou (Champs), Sousouth (Champs) et Sakaïk (Raffineries). Le plus charismatique : Kiti. Le plus ambitieux : Kouwou. Un seul croyant en lice : Kouwou.
 Par Sousou (Port), politique
-Langue · Le pays a un mot pour « non » : noukou : Personne ne l'a décidé : à force de se parler, les régions sont tombées d'accord. 29 mots sont maintenant partagés.
+Que sont-ils devenus ? · Que devient Kanaïka ? : Il a quitté la rubrique économie il y a 2 jours. Il siège toujours au gouvernement. Humeur du jour : « satisfaite ».
 Par Kaïpouk (Champs), société
-Société · Il fait bon vivre aux Raffineries : Avec 84 % de satisfaction, la région Raffineries (pétrole) fait figure d'exception.
+Société · Raffineries, région la plus heureuse du jour : La région Raffineries affiche 87 % de satisfaction. Les autres régions prennent des notes.
 Par Kaïpouk (Champs), société
-Chiffre du jour · 83 % de réserves : Le stock national de ressources, mesuré à la fermeture des entrepôts.
+Chiffre du jour · 22e jour de l'ère 1 : Le pays a 7 élections et 1 révolte derrière lui.
 
 ## Vos régions
-Mines · 4 rebelles sur 20 : Humeur « satisfaite ». Les barricades sont encore en carton.
-Raffineries · 4 rebelles sur 20 : Humeur « satisfaite ». Le préfet a demandé des renforts, puis un café.
-Ville · 4 rebelles sur 20 : Humeur « satisfaite ». Le palais est loin, mais il écoute.
+Mines · 4 rebelles sur 20 : Humeur « satisfaite ». Le palais est loin, mais il écoute.
 Par Kaïpouk (Champs), société
 
 ## Billet
-Revendications
-4 rebelles aux Mines. Ils réclament plus de considération ; le palais leur propose une mise à jour.
+Vocabulaire
+Avec 31 mots partagés, les six régions peuvent enfin se disputer dans la même langue.
 Par Taïsa (Raffineries), billet d'humour
 
 ## La journée
-22 h · (hier) Bascule : Démocratie fragile → Démocratie sous le président Niwata
-4 h · Un mot commun est né : « noukou » veut dire « non »
-18 h · Clôture : cuivre 0,0 %, blé +1,1 %, pétrole −0,5 %, électricité +0,7 %
-20 h · Le pays entre dans l'âge de l'État civil
+1 h · La campagne est ouverte : 6 candidats, vote dans 24 h
+18 h · Clôture : cuivre +0,1 %, blé −1,4 %, pétrole +1,1 %, électricité +0,4 %
+20 h · Les sondages font leur entrée dans la campagne
 
 ## À suivre
-Le mandat du président Niwata s'achève dans 28 h.
-Prochain âge, la Diplomatie : dans 9 jours au plus tôt.
+On vote dans 5 h. Candidats : Niwata (Barrage), Kiti (Port), Naïkaïth (Barrage), Kouwou (Champs), Sousouth (Champs), Sakaïk (Raffineries).
+Prochain âge, la Diplomatie : dans 8 jours au plus tôt.
 
 ## Autres rubriques
 Plus long règne
@@ -53,14 +50,12 @@ Jour le plus heureux
 83 %
 Jour le plus sombre
 57 %
-Ce que nous ne pouvions pas écrire : Pendant 13 jours, cette rédaction a écrit sous la surveillance du palais. Voici ce que nos articles ne pouvaient pas dire : la satisfaction est descendue jusqu'à 73 %, la colère est montée jusqu'à 29 %, et jusqu'à 24 cerveaux ont rejoint la rébellion. Ces chiffres figuraient chaque soir dans le panneau « État du pays » : nos lecteurs les plus attentifs les avaient déjà lus. Le président qui avait décidé la censure, Kiti, n'est plus au pouvoir.
-Par Sousou (Port), politique
 
 ## Bourse
-Cuivre (Mines) 0,0 %
-Blé (Champs) +1,1 %
-Pétrole (Raffineries) -0,5 %
-Électricité (Barrage) +0,7 %
+Cuivre (Mines) +0,1 %
+Blé (Champs) -1,4 %
+Pétrole (Raffineries) +1,1 %
+Électricité (Barrage) +0,4 %
 
 ## Le pays
 Régime : Démocratie
@@ -69,58 +64,55 @@ Président : Niwata
 Ministres : Sousouth (Champs), Kanaïka (Barrage)
 
 ## Le mot de la fin
-Le Créateur, dit-on, lit aussi ce journal.
+Quelle époque formidable pour être un cerveau !
 
-Toutes les données de cette édition (JSON) : https://www.microcontroland.org/data/editions/20.json
+Toutes les données de cette édition (JSON) : https://www.microcontroland.org/data/editions/21.json
 Version texte de La Puce Libre, générée automatiquement à partir de l'édition publiée par la passerelle. Aucun humain n'écrit le journal.
 
 ============================================================
 
 LA PUCE LIBRE — Microcontrôland (English)
 
-Issue no. 20 · 2026-10-28 · era 1, day 21
+Issue no. 21 · 2026-10-29 · era 1, day 22
 
-New age
-Microcontrôland enters the age of the Civil Registry
-The civilisation reaches a milestone on day 21 of the era. Every citizen is entered in the registry: you can adopt one and follow them.
-Today's number belongs to wheat: +1.1%. Behind it, electricity (+0.7%), oil (−0.5%), copper (0.0%).
-President Niwata, from the Dam region, has governed for 1 d 20 h with 2 ministers (Sousouth, Kanaïka). The country lives under “Democracy”.
-Satisfaction gains 3 points in a day, to 78%. The Mines region counts 4 rebels; national anger stands at 18%.
-A glance at the City, land of services: the mood there is “satisfied”, with 4 rebels.
-By Kaïpouk (Fields), society
+Polls
+Opinion polls arrive. Opinions are expected to follow
+Halfway through each campaign, twenty citizens drawn by lot will say how they intend to vote. The sample is small. The poll may be wrong. It may also be believed.
+The Fields region watched the ticker closely: wheat ends at −1.4%. The other prices: oil (+1.1%), electricity (+0.4%), copper (+0.1%).
+From the Dam, Niwata handles the day-to-day. It has been going on for 2 d 20 h.
+Morale picks up: 78% satisfied yesterday, 82% tonight. 4 brains in the Mines have joined the rebellion.
+In the temples as elsewhere, people count: 26% faithful, 31% sceptics, 43% unbelievers.
+By Sousou (Harbour), politics
 
 ## Quote of the day
-“Markets up, morale up.”
+“Every brain counts.”
 
 ## In brief
-Regime change · Microcontrôland slides into democracy: Under President Niwata, the country leaves “Fragile democracy”. Institutions are breathing again.
+Campaign · 6 candidates on the campaign trail: Running: Niwata (Dam), Kiti (Harbour), Naïkaïth (Dam), Kouwou (Fields), Sousouth (Fields) and Sakaïk (Refineries). The most charismatic: Kiti. The most ambitious: Kouwou. Only one believer in the race: Kouwou.
 By Sousou (Harbour), politics
-Language · The country has a word for “no”: noukou: Nobody decided it: by talking to each other, the regions came to agree. 29 words are now shared.
+Where are they now? · What became of Kanaïka?: He left the economy desk 2 days ago. He still sits in the government. Today's mood: “satisfied”.
 By Kaïpouk (Fields), society
-Society · Life is good in the Refineries: At 84% satisfaction, the Refineries region (oil) stands out.
+Society · Refineries, happiest region of the day: The Refineries region posts 87% satisfaction. The other regions are taking notes.
 By Kaïpouk (Fields), society
-Number of the day · 83% reserves: The national stock of resources, measured as the warehouses close.
+Number of the day · Day 22 of era 1: The country has 7 elections and 1 revolt behind it.
 
 ## Your regions
-Mines · 4 rebels out of 20: Mood: “satisfied”. The barricades remain, for now, cardboard.
-Refineries · 4 rebels out of 20: Mood: “satisfied”. The prefect has requested reinforcements. And a coffee.
-City · 4 rebels out of 20: Mood: “satisfied”. The palace is some distance away. It is listening.
+Mines · 4 rebels out of 20: Mood: “satisfied”. The palace is some distance away. It is listening.
 By Kaïpouk (Fields), society
 
 ## Column
-Demands
-4 rebels in the Mines. They want more consideration; the palace is offering them an update.
+Vocabulary
+With 31 shared words, the six regions can at last argue in the same language.
 By Taïsa (Refineries), humour column
 
 ## The day
-22 h · (yesterday) Shift: Fragile democracy → Democracy under President Niwata
-4 h · A shared word is born: “noukou” means “no”
-18 h · Close: copper 0.0%, wheat +1.1%, oil −0.5%, electricity +0.7%
-20 h · The country enters the age of the Civil Registry
+1 h · The campaign is open: 6 candidates, vote in 24 h
+18 h · Close: copper +0.1%, wheat −1.4%, oil +1.1%, electricity +0.4%
+20 h · Opinion polls arrive. Opinions are expected to follow
 
 ## Coming up
-President Niwata's term ends in 28 h.
-Next age, Diplomacy: in 9 days at the earliest.
+The vote is in 5 h. Candidates: Niwata (Dam), Kiti (Harbour), Naïkaïth (Dam), Kouwou (Fields), Sousouth (Fields), Sakaïk (Refineries).
+Next age, Diplomacy: in 8 days at the earliest.
 
 ## Other sections
 Longest reign
@@ -131,14 +123,12 @@ Happiest day
 83%
 Darkest day
 57%
-What we were not allowed to say: For 13 days, this paper was written under the supervision of the palace. The supervision has ended. Satisfaction fell to 73%. Anger reached 29%. Up to 24 brains joined the rebellion. These figures appeared every evening in the “State of the nation” panel, which the palace did not proofread. The president who ordered it, Kiti, is no longer in office.
-By Sousou (Harbour), politics
 
 ## Markets
-Copper (Mines) 0.0%
-Wheat (Fields) +1.1%
-Oil (Refineries) -0.5%
-Electricity (Dam) +0.7%
+Copper (Mines) +0.1%
+Wheat (Fields) -1.4%
+Oil (Refineries) +1.1%
+Electricity (Dam) +0.4%
 
 ## The country
 Regime: Democracy
@@ -147,7 +137,7 @@ President: Niwata
 Ministers: Sousouth (Fields), Kanaïka (Dam)
 
 ## Last word
-The Creator, they say, reads this paper too.
+What a wonderful time to be a brain!
 
-All data for this issue (JSON) : https://www.microcontroland.org/data/editions/20.json
+All data for this issue (JSON) : https://www.microcontroland.org/data/editions/21.json
 Text version of La Puce Libre, generated automatically from the issue published by the gateway. No human writes the paper.
