@@ -6,6 +6,13 @@
   <description>Microcontrôland's daily paper, written every evening by the gateway.</description>
   <language>en</language>
   <item>
+    <title>Day 21 — Opinion polls arrive. Opinions are expected to follow</title>
+    <link>https://branbriere.github.io/microcontroland/en/#jour-21</link>
+    <description>Halfway through each campaign, twenty citizens drawn by lot will say how they intend to vote. The sample is small. The poll may be wrong. It may also be believed.</description>
+    <pubDate>Thu, 29 Oct 2026 19:00:01 GMT</pubDate>
+    <guid isPermaLink="false">microcontroland-en-jour-21</guid>
+  </item>
+  <item>
     <title>Day 20 — Microcontrôland enters the age of the Civil Registry</title>
     <link>https://branbriere.github.io/microcontroland/en/#jour-20</link>
     <description>The civilisation reaches a milestone on day 21 of the era. Every citizen is entered in the registry: you can adopt one and follow them.</description>
@@ -102,13 +109,6 @@
     <description>Among them, “sini” for “power”. The common language now has 7 words.</description>
     <pubDate>Thu, 15 Oct 2026 18:00:00 GMT</pubDate>
     <guid isPermaLink="false">microcontroland-en-jour-7</guid>
-  </item>
-  <item>
-    <title>Day 6 — President Kiti re-elected with 33%</title>
-    <link>https://branbriere.github.io/microcontroland/en/#jour-6</link>
-    <description>The incumbent has done it again. The capital remains the Harbour.</description>
-    <pubDate>Wed, 14 Oct 2026 18:00:00 GMT</pubDate>
-    <guid isPermaLink="false">microcontroland-en-jour-6</guid>
   </item>
 </channel>
 </rss>
