@@ -6,6 +6,13 @@
   <description>Le quotidien de Microcontrôland, écrit chaque soir par la passerelle.</description>
   <language>fr</language>
   <item>
+    <title>Jour 22 — Le blé chute de 4,5 %</title>
+    <link>https://branbriere.github.io/microcontroland/#jour-22</link>
+    <description>La région Champs voit ses revenus fondre et le reste du pays en ressent l'onde de choc.</description>
+    <pubDate>Fri, 30 Oct 2026 19:00:02 GMT</pubDate>
+    <guid isPermaLink="false">microcontroland-fr-jour-22</guid>
+  </item>
+  <item>
     <title>Jour 21 — Les sondages font leur entrée dans la campagne</title>
     <link>https://branbriere.github.io/microcontroland/#jour-21</link>
     <description>À mi-campagne, vingt citoyens tirés au sort diront pour qui ils comptent voter. L'échantillon est petit : le sondage peut se tromper, et il pourrait bien influencer les indécis.</description>
@@ -102,13 +109,6 @@
     <description>Rien de spectaculaire, mais la région Mines refait ses comptes.</description>
     <pubDate>Fri, 16 Oct 2026 18:00:05 GMT</pubDate>
     <guid isPermaLink="false">microcontroland-fr-jour-8</guid>
-  </item>
-  <item>
-    <title>Jour 7 — 2 nouveaux mots communs en une journée</title>
-    <link>https://branbriere.github.io/microcontroland/#jour-7</link>
-    <description>Parmi eux, « sini » pour dire « courant ». La langue commune compte désormais 7 mots.</description>
-    <pubDate>Thu, 15 Oct 2026 18:00:00 GMT</pubDate>
-    <guid isPermaLink="false">microcontroland-fr-jour-7</guid>
   </item>
 </channel>
 </rss>
