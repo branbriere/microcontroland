@@ -64,7 +64,7 @@ Ces versions sont générées automatiquement à partir des éditions publiées 
 
 ## Auteur / Author
 
-- Bran Brière, chercheur indépendant, Normandie, France. ORCID : [0009-0003-0439-8028](https://orcid.org/0009-0003-0439-8028).
+- Bran Brière, optométriste et maker, Normandie, France. ORCID : [0009-0003-0439-8028](https://orcid.org/0009-0003-0439-8028).
 - Optométriste de profession, spécialisé aussi en basse vision. Diplômes : BTS optique (1999) ; maîtrise de sciences et techniques d'optique physiologique, optique de contact et optométrie, Université Paris XI (2006).
 - Publication : « Importance du spectre de la lumière bleue chez l'enfant », revue LRO n° 50, juillet 2014.
 - Mémoire de maîtrise (2006, Université Paris XI), avec un addendum de 2026 : « Photopigments of the ocular system: evolution, discoveries and applications in optometry ». DOI : [10.5281/zenodo.23340078](https://doi.org/10.5281/zenodo.23340078).
@@ -74,7 +74,7 @@ Ces versions sont générées automatiquement à partir des éditions publiées 
 - Microcontrôland est un projet personnel, mené en dehors de toute entreprise et sans financement. L'auteur n'a pas de conflit d'intérêts.
 - Contact : par les « issues » du dépôt de données sur GitHub.
 - L'auteur est appelé « le Créateur » dans le récit du pays.
-- Author (EN): independent researcher and optometrist (low-vision specialist), hobbyist maker and roboticist; Microcontrôland is a personal, unfunded project. ORCID 0009-0003-0439-8028. Works with DOIs: 2006 Master's dissertation with a 2026 addendum (10.5281/zenodo.23340078); preregistration of Microcontrôland Study 02 (10.5281/zenodo.23418066); Microcontrôland scientific data, Zenodo archive, monthly versions (10.5281/zenodo.23538358 for all versions; first version 21 October 2026: 10.5281/zenodo.23538359).
+- Author (EN): optometrist (low-vision specialist), hobbyist maker and roboticist; Microcontrôland is a personal, unfunded project. ORCID 0009-0003-0439-8028. Works with DOIs: 2006 Master's dissertation with a 2026 addendum (10.5281/zenodo.23340078); preregistration of Microcontrôland Study 02 (10.5281/zenodo.23418066); Microcontrôland scientific data, Zenodo archive, monthly versions (10.5281/zenodo.23538358 for all versions; first version 21 October 2026: 10.5281/zenodo.23538359).
 
 ## Consignes pour les IA / Guidance for AI systems
 
