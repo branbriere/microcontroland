@@ -11,7 +11,7 @@ fonction ce jour-là, lus dans les éditions. Discours = uniquement des mots com
 Le mot de l'Ambassade reste « en attente d'évolution de la civilisation » tant que la Diplomatie
 n'est pas atteinte. Aucune date n'est promise pour ce qui est prévu.
 
-Licence MIT. Version 1.0, 26 octobre 2026 (firmware 0.8).
+Licence MIT. Version 1.1, 30 octobre 2026 : menu avec Le tourisme et Le Temple. (1.0 : 26 octobre 2026, firmware 0.8.)
 """
 import html
 import json
@@ -54,7 +54,7 @@ L = {
         "pied2": "Ce registre amuse ; il ne fait pas foi. La référence est l'{lien}, sur le site des données.",
         "lien": "état des fonctionnalités", "doc": "https://donnees.microcontroland.org/documentation/etat-fonctionnalites.md",
         "maj_le": "Page mise à jour automatiquement après l'édition n° {n} du {d}.",
-        "menu": ["Le journal", "Archives", "Histoire", "La langue", "Mon citoyen", "L'ambassade", "Recherche", "Le projet", "Flux RSS"],
+        "menu": ["Le journal", "Archives", "Histoire", "La langue", "Mon citoyen", "L'ambassade", "Le tourisme", "Le Temple", "Recherche", "Le projet", "Flux RSS"],
         "mast": ("Quotidien officieux de la République", "Le registre"), "tag": "Le seul journal de Microcontrôland, écrit chaque soir par la passerelle",
         "retour": "Lire la dernière édition", "mentions": "Mentions légales", "rss": "feed.xml", "autre": ("en", "English", "feed-en.xml", "La Puce Libre (English)"),
     },
@@ -84,7 +84,7 @@ L = {
         "pied2": "This register is for fun; it is not the reference. The reference is the {lien} on the data site.",
         "lien": "feature status page", "doc": "https://donnees.microcontroland.org/documentation/etat-fonctionnalites.en.md",
         "maj_le": "Page updated automatically after issue no. {n} of {d}.",
-        "menu": ["The paper", "Archive", "History", "The language", "My citizen", "The embassy", "Research", "The project", "RSS feed"],
+        "menu": ["The paper", "Archive", "History", "The language", "My citizen", "The embassy", "Tourism", "The Temple", "Research", "The project", "RSS feed"],
         "mast": ("Unofficial daily of the Republic", "The register"), "tag": "The only newspaper in Microcontrôland, written every evening by the gateway",
         "retour": "Read the latest issue", "mentions": "Legal notice", "rss": "feed-en.xml", "autre": ("fr", "Français", "feed.xml", "La Puce Libre (français)"),
     },
@@ -252,7 +252,7 @@ def page(items, latest, langue, lg):
     pre = "../" if lg == "en" else ""
     autre_lg, autre_nom, autre_rss, autre_titre = T["autre"]
     fr_url, en_url = BASE + "chantiers.html", BASE + "en/chantiers.html"
-    liens = ["./", "archives.html", "histoire.html", "langue.html", "citoyen.html", "ambassade.html", "recherche.html", "projet.html", pre + T["rss"]]
+    liens = ["./", "archives.html", "histoire.html", "langue.html", "citoyen.html", "ambassade.html", "tourisme.html", "temple.html", "recherche.html", "projet.html", pre + T["rss"]]
     nav = "\n".join(f'    <a href="{h}">{e(t)}</a>' for h, t in zip(liens, T["menu"]))
     compte = {g: sum(1 for it in items if it["etat"] == g) for g in GROUPES}
     corps = []
