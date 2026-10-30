@@ -1,0 +1,426 @@
+{
+ "version": "1.0",
+ "date": "2026-10-26",
+ "firmware": "0.8",
+ "note": "Registre de « La République en chantier » (validé par Bran le 25 octobre 2026). À tenir à jour à chaque mise à jour : service = vérifié dans le firmware installé ; ferme = codé, ouvre à l'âge indiqué (passe seul en service quand l'âge est atteint) ; prevu = feuille de route, rien de codé, aucune date ; reserve = seulement si le pays est stable. Âges : 1 Parole, 2 Mémoire, 3 État civil, 4 Diplomatie, 5 Curiosité.",
+ "institutions": [
+  {
+   "id": "vote",
+   "etat": "service",
+   "depuis": "2026-10-09",
+   "fr": [
+    "Bureaux de vote",
+    "Élection du président tous les trois jours. Depuis la version 0.8 : abstention, vote blanc et sondages, ouverts un par soir."
+   ],
+   "en": [
+    "Polling stations",
+    "A presidential election every three days. Since version 0.8: abstention, blank votes and opinion polls, opened one per evening."
+   ],
+   "verifier": "data/histoire.json"
+  },
+  {
+   "id": "palais",
+   "etat": "service",
+   "depuis": "2026-10-09",
+   "dyn": "capitale",
+   "fr": [
+    "Palais présidentiel",
+    "La présidence siège dans la région du président, la capitale. Le palais n'est pas un bâtiment simulé : c'est le nom que le journal donne à la présidence."
+   ],
+   "en": [
+    "Presidential palace",
+    "The presidency sits in the president's region, the capital. The palace is not a simulated building: it is the paper's name for the presidency."
+   ],
+   "verifier": "data/latest.json (etat.capitale)"
+  },
+  {
+   "id": "gouvernement",
+   "etat": "service",
+   "depuis": "2026-10-09",
+   "dyn": "ministres",
+   "fr": [
+    "Gouvernement",
+    "Le président nomme des ministres. Un ministre ambitieux peut tenter un coup de palais."
+   ],
+   "en": [
+    "Government",
+    "The president appoints ministers. An ambitious minister may attempt a palace coup."
+   ],
+   "verifier": "data/latest.json (etat.ministres)"
+  },
+  {
+   "id": "bourse",
+   "etat": "service",
+   "depuis": "2026-10-09",
+   "fr": [
+    "Bourse des matières premières",
+    "Cuivre, blé, pétrole et électricité suivent quatre monnaies réelles, d'après les taux de la Banque centrale européenne."
+   ],
+   "en": [
+    "Commodity exchange",
+    "Copper, wheat, oil and electricity follow four real currencies, from European Central Bank rates."
+   ],
+   "verifier": "data/latest.json (bourse)"
+  },
+  {
+   "id": "presse",
+   "etat": "service",
+   "depuis": "2026-10-09",
+   "fr": [
+    "Presse nationale (et sa censure)",
+    "La Puce Libre paraît chaque soir à 20 h, écrite par la passerelle. Le président peut décréter la censure : articles noircis, chiffres intacts."
+   ],
+   "en": [
+    "National press (and its censor)",
+    "La Puce Libre comes out every evening at 8 pm, written by the gateway. The president may decree censorship: articles blacked out, figures untouched."
+   ],
+   "verifier": "data/editions/"
+  },
+  {
+   "id": "portevoix",
+   "etat": "service",
+   "depuis": "2026-10-09",
+   "fr": [
+    "Porte-voix national",
+    "Chaque heure, la passerelle diffuse à tout le pays le mot d'une région oratrice tirée au sort. La page « La langue » s'est ouverte avec la Parole, le 18 octobre 2026."
+   ],
+   "en": [
+    "National loudspeaker",
+    "Every hour, the gateway broadcasts to the whole country the word of one speaker region drawn at random. The “Language” page opened with Speech, on 18 October 2026."
+   ],
+   "verifier": "data/langue.json"
+  },
+  {
+   "id": "archives",
+   "etat": "ferme",
+   "age": 2,
+   "fr": [
+    "Archives nationales",
+    "Records de l'ère et passé des personnages, page « Histoire »."
+   ],
+   "en": [
+    "National Archives",
+    "Era records and the characters' pasts, on the “History” page."
+   ],
+   "verifier": "data/latest.json (records)"
+  },
+  {
+   "id": "etatcivil",
+   "etat": "ferme",
+   "age": 3,
+   "fr": [
+    "Registre d'état civil",
+    "Chaque citoyen est inscrit ; les lecteurs peuvent en adopter un et le suivre."
+   ],
+   "en": [
+    "Civil registry",
+    "Every citizen is registered; readers can adopt one and follow them."
+   ]
+  },
+  {
+   "id": "ambassade",
+   "etat": "ferme",
+   "age": 4,
+   "fr": [
+    "Ambassade",
+    "Questions du mois, lettre de l'ambassadeur, démentis officiels des coquilles passées."
+   ],
+   "en": [
+    "Embassy",
+    "Questions of the month, the ambassador's letter, official denials of past typos."
+   ]
+  },
+  {
+   "id": "relique",
+   "etat": "ferme",
+   "age": 4,
+   "site": true,
+   "fr": [
+    "Salle de la Relique",
+    "Le trésor offert par le Créateur, exposé à l'Ambassade. Le peuple ignore son usage ; les visiteurs étrangers peuvent le manipuler."
+   ],
+   "en": [
+    "Hall of the Relic",
+    "The treasure given by the Creator, on show at the Embassy. The people do not know its purpose; foreign visitors may handle it."
+   ]
+  },
+  {
+   "id": "recherche",
+   "etat": "ferme",
+   "age": 5,
+   "fr": [
+    "Centre de recherche",
+    "Émet un signal vers l'extérieur et écoute les réponses, écrites dans la langue du pays uniquement."
+   ],
+   "en": [
+    "Research Centre",
+    "Sends a signal to the outside and listens for replies, written in the country's language only."
+   ]
+  },
+  {
+   "id": "stade",
+   "etat": "prevu",
+   "maj": 3,
+   "age": 1,
+   "fr": [
+    "Stade",
+    "Jeux et athlètes qui s'entraînent."
+   ],
+   "en": [
+    "Stadium",
+    "Games and athletes in training."
+   ]
+  },
+  {
+   "id": "tresor",
+   "etat": "prevu",
+   "maj": 2,
+   "age": 2,
+   "fr": [
+    "Trésor public",
+    "Impôts et subventions du président."
+   ],
+   "en": [
+    "Treasury",
+    "The president's taxes and subsidies."
+   ]
+  },
+  {
+   "id": "mairies",
+   "etat": "prevu",
+   "maj": 5,
+   "age": 2,
+   "fr": [
+    "Mairies",
+    "Les régions ont leurs maires."
+   ],
+   "en": [
+    "Town halls",
+    "The regions get their mayors."
+   ]
+  },
+  {
+   "id": "banque",
+   "etat": "prevu",
+   "maj": 2,
+   "age": 3,
+   "fr": [
+    "Banque centrale et monnaie",
+    "L'octet devient monnaie ; un gouverneur, indépendant ou aux ordres, en crée ou en détruit. L'octet n'a aucune valeur réelle."
+   ],
+   "en": [
+    "Central bank and currency",
+    "The byte becomes money; a governor, independent or obedient, creates or destroys it. The byte has no real value."
+   ]
+  },
+  {
+   "id": "emploi",
+   "etat": "prevu",
+   "maj": 2,
+   "age": 3,
+   "fr": [
+    "Agence pour l'emploi",
+    "Répartit le travail entre les régions."
+   ],
+   "en": [
+    "Employment agency",
+    "Shares out work between the regions."
+   ]
+  },
+  {
+   "id": "loterie",
+   "etat": "prevu",
+   "maj": 2,
+   "age": 3,
+   "fr": [
+    "Loterie nationale",
+    "Si le président le veut. Les lecteurs ne jouent jamais."
+   ],
+   "en": [
+    "National lottery",
+    "If the president wants one. Readers never play."
+   ]
+  },
+  {
+   "id": "ecole",
+   "etat": "prevu",
+   "maj": 3,
+   "age": 3,
+   "fr": [
+    "École",
+    "Examen hebdomadaire du « QI national »."
+   ],
+   "en": [
+    "School",
+    "A weekly “national IQ” exam."
+   ]
+  },
+  {
+   "id": "hopital",
+   "etat": "prevu",
+   "maj": 5,
+   "age": 3,
+   "fr": [
+    "Hôpital",
+    "Système de santé, si le président le crée."
+   ],
+   "en": [
+    "Hospital",
+    "A health system, if the president creates one."
+   ]
+  },
+  {
+   "id": "retraites",
+   "etat": "prevu",
+   "maj": 5,
+   "age": 3,
+   "fr": [
+    "Caisse des retraites",
+    "Retraites et leur financement."
+   ],
+   "en": [
+    "Pension fund",
+    "Pensions and how to pay for them."
+   ]
+  },
+  {
+   "id": "refuge",
+   "etat": "prevu",
+   "maj": 4,
+   "age": 3,
+   "fr": [
+    "Refuge pour animaux",
+    "Recueille les animaux abandonnés, aux frais de l'État."
+   ],
+   "en": [
+    "Animal shelter",
+    "Takes in abandoned animals, at the state's expense."
+   ]
+  },
+  {
+   "id": "temple",
+   "etat": "prevu",
+   "dyn": "croyants",
+   "fr": [
+    "Temple",
+    "La foi existe déjà. Le Temple ouvrira quand un tiers du pays croira, plusieurs jours de suite."
+   ],
+   "en": [
+    "Temple",
+    "Faith already exists. The Temple will open once a third of the country believes, several days running."
+   ]
+  },
+  {
+   "id": "bourseinterieure",
+   "etat": "prevu",
+   "maj": 7,
+   "age": 4,
+   "fr": [
+    "Bourse intérieure",
+    "Œuvres, terrains et parts de régions ; krach possible."
+   ],
+   "en": [
+    "Domestic stock market",
+    "Artworks, land and shares in regions; crashes possible."
+   ]
+  },
+  {
+   "id": "tourisme",
+   "etat": "ferme",
+   "site": true,
+   "age": 4,
+   "fr": [
+    "Office national du tourisme",
+    "Régions, religion, sites à visiter, pièce collector d'un octet et dépliant PDF, sur ce site. Ouvre avec l'Ambassade."
+   ],
+   "en": [
+    "National Tourist Office",
+    "Regions, religion, places to visit, a one-byte collector coin and a PDF leaflet, on this website. Opens with the Embassy."
+   ]
+  },
+  {
+   "id": "poste",
+   "etat": "prevu",
+   "site": true,
+   "age": 4,
+   "fr": [
+    "Boîte postale",
+    "Une boîte postale à l'Ambassade, quand elle existera. Le pays n'a pas de poste."
+   ],
+   "en": [
+    "Post box",
+    "A post box at the Embassy, once it exists. The country has no postal service."
+   ]
+  },
+  {
+   "id": "musee",
+   "etat": "prevu",
+   "site": true,
+   "maj": 7,
+   "fr": [
+    "Musée",
+    "Musée en 3D sur ce site, une aile par ère ; galerie des œuvres avec la mise à jour 7."
+   ],
+   "en": [
+    "Museum",
+    "A 3D museum on this website, one wing per era; art gallery with update 7."
+   ]
+  },
+  {
+   "id": "galerie",
+   "etat": "service",
+   "depuis": "2026-10-28",
+   "site": true,
+   "age": 2,
+   "fr": [
+    "Galerie des présidents",
+    "Au musée national, un portrait par président, peint d'après les 81 poids de son cerveau, page « Galerie des présidents »."
+   ],
+   "en": [
+    "Presidential Gallery",
+    "At the National Museum, one portrait per president, painted from the 81 weights of their brain, on the “Presidential Gallery” page."
+   ],
+   "verifier": "galerie.json"
+  },
+  {
+   "id": "art",
+   "etat": "prevu",
+   "maj": 7,
+   "age": 5,
+   "fr": [
+    "Marché de l'art",
+    "Les œuvres des citoyens s'achètent et se vendent."
+   ],
+   "en": [
+    "Art market",
+    "Citizens' works are bought and sold."
+   ]
+  },
+  {
+   "id": "reseau",
+   "etat": "prevu",
+   "maj": 6,
+   "age": 5,
+   "fr": [
+    "Réseau social",
+    "Payant et basique ; le président peut le taxer, le couper ou s'en servir."
+   ],
+   "en": [
+    "Social network",
+    "Paid and basic; the president may tax it, cut it off or use it."
+   ]
+  },
+  {
+   "id": "tribunal",
+   "etat": "reserve",
+   "fr": [
+    "Tribunal et constitution",
+    "Un droit et un juge, seulement si le pays reste stable."
+   ],
+   "en": [
+    "Court and constitution",
+    "Law and a judge, only if the country stays stable."
+   ]
+  }
+ ]
+}
