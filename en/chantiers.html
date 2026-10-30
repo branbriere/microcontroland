@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="../favicon.ico" sizes="32x32">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<title>Republic Under Construction — Microcontrôland</title>
+<meta name="description" content="Public register of Microcontrôland&#x27;s institutions: in service, built but closed, planned, held in reserve.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="La Puce Libre — Microcontrôland">
+<meta property="og:title" content="Republic Under Construction — Microcontrôland">
+<meta property="og:description" content="Public register of Microcontrôland&#x27;s institutions: in service, built but closed, planned, held in reserve.">
+<link rel="alternate" hreflang="fr" href="https://www.microcontroland.org/chantiers.html">
+<link rel="alternate" hreflang="en" href="https://www.microcontroland.org/en/chantiers.html">
+<link rel="alternate" hreflang="x-default" href="https://www.microcontroland.org/chantiers.html">
+<link rel="alternate" type="application/rss+xml" title="La Puce Libre" href="../feed-en.xml">
+<link rel="alternate" type="application/rss+xml" title="La Puce Libre (français)" hreflang="fr" href="../feed.xml">
+<link rel="alternate" type="application/json" href="../institutions.json">
+<link rel="stylesheet" href="../style.css">
+<script src="../mesure.js" defer></script>
+<style>
+.reg{list-style:none;margin:0;padding:0;border-top:2px solid var(--ink)}
+.reg li{display:grid;grid-template-columns:1fr auto;gap:2px 14px;padding:10px 0;border-bottom:1px solid var(--rule)}
+.reg .nom{font-weight:700}.reg .quoi{grid-column:1;color:var(--muted);min-width:0}
+.reg .meta{grid-column:1;font:12.5px/1.5 var(--f-data);color:var(--muted);display:flex;flex-wrap:wrap;gap:2px 14px;min-width:0}
+.tampon{grid-column:2;grid-row:1/span 3;align-self:start;font:700 11px var(--f-data);letter-spacing:.1em;text-transform:uppercase;padding:3px 7px;border:1.5px solid currentColor;transform:rotate(-2deg);white-space:nowrap}
+.t-service{color:var(--up)}.t-ferme{color:var(--mask)}.t-prevu{color:var(--warn)}.t-reserve{color:var(--neutral)}
+.plaque{border:1px solid var(--rule);background:var(--sheet);padding:14px 16px;margin:18px 0}
+.plaque dl{display:grid;grid-template-columns:max-content 1fr;gap:4px 14px;margin:6px 0 0}.plaque dt{font:12px var(--f-data);text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.plaque dd{margin:0;min-width:0}.compte{font:13px var(--f-data);color:var(--muted)}.mot{font-family:var(--f-data);font-weight:700}
+@media (max-width:520px){.reg li{grid-template-columns:1fr}.tampon{grid-column:1;grid-row:auto;justify-self:start}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="mast">
+    <div class="top"><span>Unofficial daily of the Republic</span><span>The register</span></div>
+    <div class="title"><a href="./">La Puce <span>Libre</span></a></div>
+    <p class="tag">The only newspaper in Microcontrôland, written every evening by the gateway</p>
+  </header>
+  <nav class="main" aria-label="Navigation">
+    <a href="./">The paper</a>
+    <a href="archives.html">Archive</a>
+    <a href="histoire.html">History</a>
+    <a href="langue.html">The language</a>
+    <a href="citoyen.html">My citizen</a>
+    <a href="ambassade.html">The embassy</a>
+    <a href="recherche.html">Research</a>
+    <a href="projet.html">The project</a>
+    <a href="../feed-en.xml">RSS feed</a>
+  </nav>
+
+  <div class="prose">
+    <p class="compte">Ministry of Public Works · public register</p>
+    <h1>Republic Under Construction</h1>
+    <p class="chapo">What Microcontrôland already has, what is built but not yet open, and what is still on the drawing board. Every building matches a real mechanism in the program, or an update that is genuinely planned. No date is promised: a site opens when the country reaches the required age.</p>
+    <p class="compte">9 in service · 4 built, closed · 16 planned · 1 in reserve</p>
+    <div class="plaque"><p class="compte">Latest inauguration</p><h2 style="margin:0;border:0;padding:0">Civil registry</h2><dl><dt>Opened</dt><dd>28 October 2026, day 21</dd><dt>Ribbon</dt><dd>President Niwata (Dam), in office that day</dd><dt>Speech</dt><dd><span class="mot">“soubaï!”</span> (hello). The country shares 31 words; the speech uses no others.</dd><dt>Embassy</dt><dd><i>Awaiting the evolution of civilisation. The Embassy opens at the Age of Diplomacy.</i></dd></dl></div>
+    <h2>In service</h2><p class="compte">checked in the installed program and the published data</p><ol class="reg"><li><span class="nom">Polling stations</span><span class="tampon t-service">In service</span><span class="quoi">A presidential election every three days. Since version 0.8: abstention, blank votes and opinion polls, opened one per evening.</span><span class="meta"><span>opened 9 October 2026</span><span>president: Sakaïk (Refineries)</span><span>check: data/histoire.json</span></span></li><li><span class="nom">Presidential palace</span><span class="tampon t-service">In service</span><span class="quoi">The presidency sits in the president&#x27;s region, the capital. The palace is not a simulated building: it is the paper&#x27;s name for the presidency.</span><span class="meta"><span>opened 9 October 2026</span><span>president: Sakaïk (Refineries)</span><span>capital tonight: Dam</span><span>check: data/latest.json (etat.capitale)</span></span></li><li><span class="nom">Government</span><span class="tampon t-service">In service</span><span class="quoi">The president appoints ministers. An ambitious minister may attempt a palace coup.</span><span class="meta"><span>opened 9 October 2026</span><span>president: Sakaïk (Refineries)</span><span>ministers tonight: 2</span><span>check: data/latest.json (etat.ministres)</span></span></li><li><span class="nom">Commodity exchange</span><span class="tampon t-service">In service</span><span class="quoi">Copper, wheat, oil and electricity follow four real currencies, from European Central Bank rates.</span><span class="meta"><span>opened 9 October 2026</span><span>president: Sakaïk (Refineries)</span><span>check: data/latest.json (bourse)</span></span></li><li><span class="nom">National press (and its censor)</span><span class="tampon t-service">In service</span><span class="quoi">La Puce Libre comes out every evening at 8 pm, written by the gateway. The president may decree censorship: articles blacked out, figures untouched.</span><span class="meta"><span>opened 9 October 2026</span><span>president: Sakaïk (Refineries)</span><span>check: data/editions/</span></span></li><li><span class="nom">National loudspeaker</span><span class="tampon t-service">In service</span><span class="quoi">Every hour, the gateway broadcasts to the whole country the word of one speaker region drawn at random. The “Language” page opened with Speech, on 18 October 2026.</span><span class="meta"><span>opened 9 October 2026</span><span>president: Sakaïk (Refineries)</span><span>check: data/langue.json</span></span></li><li><span class="nom">National Archives</span><span class="tampon t-service">In service</span><span class="quoi">Era records and the characters&#x27; pasts, on the “History” page.</span><span class="meta"><span>opened 24 October 2026</span><span>president: Kiti (Harbour)</span><span>check: data/latest.json (records)</span></span></li><li><span class="nom">Civil registry</span><span class="tampon t-service">In service</span><span class="quoi">Every citizen is registered; readers can adopt one and follow them.</span><span class="meta"><span>opened 28 October 2026</span><span>president: Niwata (Dam)</span></span></li><li><span class="nom">Presidential Gallery</span><span class="tampon t-service">In service</span><span class="quoi">At the National Museum, one portrait per president, painted from the 81 weights of their brain, on the “Presidential Gallery” page.</span><span class="meta"><span>opened 28 October 2026</span><span>president: Niwata (Dam)</span><span>on this website</span><span>check: galerie.json</span></span></li></ol><h2>Built, not yet open</h2><p class="compte">the code exists; it waits for its age</p><ol class="reg"><li><span class="nom">Embassy</span><span class="tampon t-ferme">Closed</span><span class="quoi">Questions of the month, the ambassador&#x27;s letter, official denials of past typos.</span><span class="meta"><span>opens at Diplomacy</span><span>progress: day 22/30, 28/28 shared words</span></span></li><li><span class="nom">Hall of the Relic</span><span class="tampon t-ferme">Closed</span><span class="quoi">The treasure given by the Creator, on show at the Embassy. The people do not know its purpose; foreign visitors may handle it.</span><span class="meta"><span>opens at Diplomacy</span><span>on this website</span><span>progress: day 22/30, 28/28 shared words</span></span></li><li><span class="nom">Research Centre</span><span class="tampon t-ferme">Closed</span><span class="quoi">Sends a signal to the outside and listens for replies, written in the country&#x27;s language only.</span><span class="meta"><span>opens at Curiosity</span><span>progress: day 22/60, 31/34 shared words, 2/5 peaceful days</span></span></li><li><span class="nom">National Tourist Office</span><span class="tampon t-ferme">Closed</span><span class="quoi">Regions, religion, places to visit, a one-byte collector coin and a PDF leaflet, on this website. Opens with the Embassy.</span><span class="meta"><span>opens at Diplomacy</span><span>on this website</span><span>progress: day 22/30, 28/28 shared words</span></span></li></ol><h2>On the drawing board</h2><p class="compte">planned, nothing coded yet; the order may change</p><ol class="reg"><li><span class="nom">Stadium</span><span class="tampon t-prevu">Planned</span><span class="quoi">Games and athletes in training.</span><span class="meta"><span>opens at Speech</span><span>update 3</span></span></li><li><span class="nom">Treasury</span><span class="tampon t-prevu">Planned</span><span class="quoi">The president&#x27;s taxes and subsidies.</span><span class="meta"><span>opens at Memory</span><span>update 2</span></span></li><li><span class="nom">Town halls</span><span class="tampon t-prevu">Planned</span><span class="quoi">The regions get their mayors.</span><span class="meta"><span>opens at Memory</span><span>update 5</span></span></li><li><span class="nom">Central bank and currency</span><span class="tampon t-prevu">Planned</span><span class="quoi">The byte becomes money; a governor, independent or obedient, creates or destroys it. The byte has no real value.</span><span class="meta"><span>opens at the Civil Registry</span><span>update 2</span></span></li><li><span class="nom">Employment agency</span><span class="tampon t-prevu">Planned</span><span class="quoi">Shares out work between the regions.</span><span class="meta"><span>opens at the Civil Registry</span><span>update 2</span></span></li><li><span class="nom">National lottery</span><span class="tampon t-prevu">Planned</span><span class="quoi">If the president wants one. Readers never play.</span><span class="meta"><span>opens at the Civil Registry</span><span>update 2</span></span></li><li><span class="nom">School</span><span class="tampon t-prevu">Planned</span><span class="quoi">A weekly “national IQ” exam.</span><span class="meta"><span>opens at the Civil Registry</span><span>update 3</span></span></li><li><span class="nom">Hospital</span><span class="tampon t-prevu">Planned</span><span class="quoi">A health system, if the president creates one.</span><span class="meta"><span>opens at the Civil Registry</span><span>update 5</span></span></li><li><span class="nom">Pension fund</span><span class="tampon t-prevu">Planned</span><span class="quoi">Pensions and how to pay for them.</span><span class="meta"><span>opens at the Civil Registry</span><span>update 5</span></span></li><li><span class="nom">Animal shelter</span><span class="tampon t-prevu">Planned</span><span class="quoi">Takes in abandoned animals, at the state&#x27;s expense.</span><span class="meta"><span>opens at the Civil Registry</span><span>update 4</span></span></li><li><span class="nom">Temple</span><span class="tampon t-prevu">Planned</span><span class="quoi">Faith already exists. The Temple will open once a third of the country believes, several days running.</span><span class="meta"><span>condition: a third of believers (tonight: 26%)</span></span></li><li><span class="nom">Domestic stock market</span><span class="tampon t-prevu">Planned</span><span class="quoi">Artworks, land and shares in regions; crashes possible.</span><span class="meta"><span>opens at Diplomacy</span><span>update 7</span></span></li><li><span class="nom">Post box</span><span class="tampon t-prevu">Planned</span><span class="quoi">A post box at the Embassy, once it exists. The country has no postal service.</span><span class="meta"><span>opens at Diplomacy</span><span>on this website</span></span></li><li><span class="nom">Museum</span><span class="tampon t-prevu">Planned</span><span class="quoi">A 3D museum on this website, one wing per era; art gallery with update 7.</span><span class="meta"><span>update 7</span><span>on this website</span></span></li><li><span class="nom">Art market</span><span class="tampon t-prevu">Planned</span><span class="quoi">Citizens&#x27; works are bought and sold.</span><span class="meta"><span>opens at Curiosity</span><span>update 7</span></span></li><li><span class="nom">Social network</span><span class="tampon t-prevu">Planned</span><span class="quoi">Paid and basic; the president may tax it, cut it off or use it.</span><span class="meta"><span>opens at Curiosity</span><span>update 6</span></span></li></ol><h2>Held in reserve</h2><p class="compte">only if the country is stable</p><ol class="reg"><li><span class="nom">Court and constitution</span><span class="tampon t-reserve">Reserve</span><span class="quoi">Law and a judge, only if the country stays stable.</span><span class="meta"></span></li></ol>
+    <p><small>Inaugurations are a convention of this page: it records the opening date and the president in office that day, from the published issues. No Waïna has cut a ribbon, and the speech uses only words the country really shares.</small></p>
+    <p><small>This register is for fun; it is not the reference. The reference is the <a href="https://donnees.microcontroland.org/documentation/etat-fonctionnalites.en.md">feature status page</a> on the data site.</small></p>
+    <p><small>Page updated automatically after issue no. 21 of 29 October 2026.</small></p>
+  </div>
+
+  <footer class="site">
+    <span><a href="./">Read the latest issue</a></span>
+    <span><a href="../chantiers.html">Français</a></span>
+    <span><a href="mentions.html">Legal notice</a></span>
+  </footer>
+</div>
+<script>window.MCL_BASE = "../";</script>
+<script src="../reglages.js"></script>
+<script src="../commun.js"></script>
+<script src="../lang.js"></script>
+</body>
+</html>
