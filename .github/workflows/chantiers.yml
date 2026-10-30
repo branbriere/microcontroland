@@ -1,0 +1,56 @@
+# Microcontrôland : page « La République en chantier » / « Republic Under Construction ».
+# Après chaque édition publiée par la passerelle, régénère chantiers.html et en/chantiers.html
+# à partir de institutions.json et des données publiées (aucun mot ajouté au journal). La passerelle ne change pas.
+name: Republique en chantier
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "data/latest.json"
+      - "data/langue.json"
+      - "institutions.json"
+      - ".github/chantiers.py"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: chantiers
+  cancel-in-progress: false
+
+jobs:
+  chantiers:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Générer chantiers.html et en/chantiers.html
+        run: python3 .github/chantiers.py .
+
+      - name: Déposer si quelque chose a changé
+        run: |
+          git add chantiers.html en/chantiers.html
+          if git diff --cached --quiet; then
+            echo "Rien de nouveau."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -q -m "République en chantier (automatique)"
+          # Si la passerelle ou la version texte a publié entre-temps : on se remet à jour et on réessaie.
+          for i in 1 2 3; do
+            git push && echo "ok=1" >> "$GITHUB_ENV" && exit 0
+            sleep $((i * 10))
+            git pull --rebase -q origin main
+          done
+          exit 1
+
+      - name: Relancer la mise en ligne du site
+        if: env.ok == '1'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X POST "repos/${{ github.repository }}/pages/builds" || echo "Relance non nécessaire."
