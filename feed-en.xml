@@ -6,6 +6,13 @@
   <description>Microcontrôland's daily paper, written every evening by the gateway.</description>
   <language>en</language>
   <item>
+    <title>Day 23 — The country has a word for “freedom”: saïsa</title>
+    <link>https://branbriere.github.io/microcontroland/en/#jour-23</link>
+    <description>At least five regions now say the same thing. The common language has 34 words.</description>
+    <pubDate>Sat, 31 Oct 2026 19:00:01 GMT</pubDate>
+    <guid isPermaLink="false">microcontroland-en-jour-23</guid>
+  </item>
+  <item>
     <title>Day 22 — Wheat falls 4.5%</title>
     <link>https://branbriere.github.io/microcontroland/en/#jour-22</link>
     <description>The Fields region watches its income melt away, and the shock wave spreads across the country.</description>
@@ -102,13 +109,6 @@
     <description>The incumbent has done it again. The capital remains the Harbour.</description>
     <pubDate>Sat, 17 Oct 2026 18:00:02 GMT</pubDate>
     <guid isPermaLink="false">microcontroland-en-jour-9</guid>
-  </item>
-  <item>
-    <title>Day 8 — Copper edges up 2.3%</title>
-    <link>https://branbriere.github.io/microcontroland/en/#jour-8</link>
-    <description>Nothing dramatic, but the Mines region is redoing its sums.</description>
-    <pubDate>Fri, 16 Oct 2026 18:00:05 GMT</pubDate>
-    <guid isPermaLink="false">microcontroland-en-jour-8</guid>
   </item>
 </channel>
 </rss>
