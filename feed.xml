@@ -6,6 +6,13 @@
   <description>Le quotidien de Microcontrôland, écrit chaque soir par la passerelle.</description>
   <language>fr</language>
   <item>
+    <title>Jour 24 — Niwata en tête du sondage, avec 63 % des intentions</title>
+    <link>https://branbriere.github.io/microcontroland/#jour-24</link>
+    <description>Intentions de vote : Niwata 63 %, Kiti 32 %, Sita 5 % ; personne ne cite Naïkaïth, Kouwou ni Sakaïk ; parmi les interrogés, 1 compte s'abstenir. 20 citoyens tirés au sort ont été interrogés à 16 h ; à cette taille, la marge d'erreur approche 22 points.</description>
+    <pubDate>Sun, 01 Nov 2026 19:00:01 GMT</pubDate>
+    <guid isPermaLink="false">microcontroland-fr-jour-24</guid>
+  </item>
+  <item>
     <title>Jour 23 — Le pays a un mot pour « liberté » : saïsa</title>
     <link>https://branbriere.github.io/microcontroland/#jour-23</link>
     <description>Cinq régions au moins disent désormais la même chose. La langue commune compte 34 mots.</description>
@@ -102,13 +109,6 @@
     <description>La civilisation franchit une étape au jour 11 de l'ère. Les régions partagent leurs premiers mots : la page « La langue » s'ouvre.</description>
     <pubDate>Sun, 18 Oct 2026 18:00:00 GMT</pubDate>
     <guid isPermaLink="false">microcontroland-fr-jour-10</guid>
-  </item>
-  <item>
-    <title>Jour 9 — Le président Kiti réélu avec 39 %</title>
-    <link>https://branbriere.github.io/microcontroland/#jour-9</link>
-    <description>Le sortant a convaincu une fois de plus. La capitale reste Port.</description>
-    <pubDate>Sat, 17 Oct 2026 18:00:02 GMT</pubDate>
-    <guid isPermaLink="false">microcontroland-fr-jour-9</guid>
   </item>
 </channel>
 </rss>
