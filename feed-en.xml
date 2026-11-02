@@ -6,6 +6,13 @@
   <description>Microcontrôland's daily paper, written every evening by the gateway.</description>
   <language>en</language>
   <item>
+    <title>Day 25 — President Niwata re-elected with 63%</title>
+    <link>https://branbriere.github.io/microcontroland/en/#jour-25</link>
+    <description>Voters chose continuity. The palace stays in the Dam region.</description>
+    <pubDate>Mon, 02 Nov 2026 19:00:01 GMT</pubDate>
+    <guid isPermaLink="false">microcontroland-en-jour-25</guid>
+  </item>
+  <item>
     <title>Day 24 — Niwata leads the poll on 63%</title>
     <link>https://branbriere.github.io/microcontroland/en/#jour-24</link>
     <description>Voting intentions: Niwata 63%, Kiti 32%, Sita 5%; nobody mentions Naïkaïth, Kouwou or Sakaïk; of those asked, 1 intends to abstain. 20 citizens drawn by lot were asked at 16:00. With a sample this size, the margin of error is about 22 points. Interpret accordingly.</description>
@@ -102,13 +109,6 @@
     <description>The Dam region cashes in on the rise, and the shock wave spreads across the country.</description>
     <pubDate>Mon, 19 Oct 2026 18:00:01 GMT</pubDate>
     <guid isPermaLink="false">microcontroland-en-jour-11</guid>
-  </item>
-  <item>
-    <title>Day 10 — Microcontrôland enters the age of Speech</title>
-    <link>https://branbriere.github.io/microcontroland/en/#jour-10</link>
-    <description>The civilisation reaches a milestone on day 11 of the era. The regions share their first words: the “Language” page opens.</description>
-    <pubDate>Sun, 18 Oct 2026 18:00:00 GMT</pubDate>
-    <guid isPermaLink="false">microcontroland-en-jour-10</guid>
   </item>
 </channel>
 </rss>
