@@ -42,7 +42,9 @@
       feed: 'feed.xml', inh: 'hab',
       by: 'Par', staff: 'La rédaction', staffNote: 'Des citoyens du pays tiennent les rubriques. Quand l\'un d\'eux change de vie, un autre prend la plume.',
       billet: 'La puce à l\'oreille', yourRegions: 'Vos régions', sunday: 'L\'édition du dimanche', week: 'La semaine en bref', ads: 'Petites annonces',
-      censored: 'Censure'
+      censored: 'Censure',
+      binaiNo: (n, c) => `Journal clandestin · nº ${n} · ${c}e soir de censure`, binaiBy: 'Rédigé par', binaiRegions: 'Région par région', binaiCount: 'Compte à rebours',
+      binaiOff: 'Version officielle', binaiTrue: 'Vrais chiffres', binaiNote: 'Binaï n\'est pas La Puce Libre : il paraît en tête de l\'édition les soirs de censure. Le journal officiel commence plus bas.'
     },
     en: {
       issue: (n) => `Issue No. ${n}`, day: (n) => `Day ${n}`, ofRep: 'of the Republic', era: (n) => `era ${n}`, capital: 'Capital', president: (n, nom) => n ? `President ${nom || 'No. ' + n}` : 'The caretaker government',
@@ -66,7 +68,9 @@
       feed: 'feed-en.xml', inh: 'inh.',
       by: 'By', staff: 'The newsroom', staffNote: 'Citizens of the country run the sections. When one of them changes life, another takes up the pen.',
       billet: 'A flea in the ear', yourRegions: 'Your regions', sunday: 'The Sunday edition', week: 'The week in brief', ads: 'Small ads',
-      censored: 'Censorship'
+      censored: 'Censorship',
+      binaiNo: (n, c) => `Clandestine newspaper · No. ${n} · evening ${c} of censorship`, binaiBy: 'Written by', binaiRegions: 'Region by region', binaiCount: 'Countdown',
+      binaiOff: 'Official version', binaiTrue: 'Actual figures', binaiNote: 'Binaï is not La Puce Libre: it appears at the top of the issue on evenings of censorship. The official paper starts below.'
     }
   }[LANG];
   const REGION = { Mines: 'Mines', Champs: 'Fields', Raffineries: 'Refineries', Barrage: 'Dam', Port: 'Harbour', Ville: 'City' };
@@ -128,6 +132,27 @@
     </section>`;
   }
 
+  // Binaï (MAJ 1b-4) : le journal des rebelles, en tête de l'édition les soirs de censure (à partir du 3e).
+  function binaiHtml(e) {
+    const b = e.binai;
+    if (!b) return '';
+    const r = b.redacteur || {}, c = b.compteARebours;
+    return `<section class="binai" aria-label="Binaï">
+      <header><span class="bn-t">${esc(b.titre || 'Binaï')}</span><span class="bn-no">${L.binaiNo(b.numero, b.soirDeCensure)}</span></header>
+      ${b.slogan ? `<p class="bn-slogan">${esc(b.slogan)}</p>` : ''}
+      ${b.une ? `<h2>${esc(b.une.titre)}</h2><p>${esc(b.une.texte)}</p>` : ''}
+      ${c ? `<div class="bn-count"><span class="k2">${L.binaiCount}</span><div class="bn-bar" role="img" aria-label="${c.pct} / ${c.seuil} %"><i style="width:${Math.min(100, Math.round(c.pct / c.seuil * 100))}%"></i></div><p>${esc(c.texte)}</p></div>` : ''}
+      ${b.pasVotePourLui ? `<p>${esc(b.pasVotePourLui)}</p>` : ''}
+      ${b.correspondant ? `<p>${esc(b.correspondant)}</p>` : ''}
+      ${(b.regions || []).length ? `<h3>${L.binaiRegions}</h3><ul class="bn-reg">${b.regions.map((x) => `<li><b>${esc(rn(x.region))}</b> ${esc(x.texte)}</li>`).join('')}</ul>` : ''}
+      ${b.semaine && (b.semaine.jours || []).length ? `<h3>${esc(b.semaine.titre)}</h3><ul class="bn-week">${b.semaine.jours.map((j) => `<li><b>${esc(j.jour)}</b><span><i>${L.binaiOff}</i> ${esc(j.officiel)}</span><span><i>${L.binaiTrue}</i> ${esc(j.vrai)}</span></li>`).join('')}</ul>` : ''}
+      ${b.demain ? `<p class="bn-next">${esc(b.demain)}</p>` : ''}
+      ${r.nom ? `<p class="by">${L.binaiBy} <b>${esc(r.nom)}</b> (${esc(rn(r.region))}), ${esc(r.role)}</p>` : ''}
+      ${b.ours ? `<p class="bn-ours">${esc(b.ours)}</p>` : ''}
+      <p class="bn-ours">${L.binaiNote}</p>
+    </section>`;
+  }
+
   function staffHtml(e) {
     const r = e.redaction;
     if (!r || !r.length) return '';
@@ -162,6 +187,7 @@
     const regimeChanged = s.regimePrecedent && T(s.regimePrecedent) !== T(s.regime);
     const late = isLatest ? Math.floor((Date.now() - new Date(e.date + 'T20:00:00').getTime()) / 864e5) : 0;
     $('#edition').innerHTML = `${late >= 2 && !ESSAI ? `<p class="stale" role="status">${L.stale(late)}</p>` : ''}
+    ${binaiHtml(e)}
     <div class="grid">
       <main>
         <article>
