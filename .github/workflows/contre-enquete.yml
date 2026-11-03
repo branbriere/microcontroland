@@ -1,0 +1,58 @@
+# Microcontrôland : rubrique « Contre-enquête » / « Counter-investigation ».
+# Après chaque édition, relit les fichiers bruts publiés du dépôt microcontroland-data (événements politiques) et régénère contre-enquete.json, .html et .txt (FR, EN). Les dossiers sont écrits à la main dans contre-enquete/dossiers.json. La passerelle ne change pas.
+# Le fichier brut part juste après le journal : l'action l'attend jusqu'à 15 minutes, puis repasse à heure fixe.
+name: Contre-enquete
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "data/latest.json"
+      - ".github/contre_enquete.py"
+      - "contre-enquete/dossiers.json"
+      - ".github/galerie.py"
+  schedule:
+    - cron: "45 18 * * *"   # 20 h 45 à Paris en heure d'été
+    - cron: "45 19 * * *"   # 20 h 45 à Paris en heure d'hiver
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: contre-enquete
+  cancel-in-progress: false
+
+jobs:
+  contre-enquete:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Générer la contre-enquête
+        run: python3 .github/contre_enquete.py . --attendre ${{ github.event_name == 'push' && '900' || '0' }}
+
+      - name: Déposer si quelque chose a changé
+        run: |
+          git add contre-enquete.json contre-enquete.html contre-enquete.txt en/contre-enquete.html en/contre-enquete.txt
+          if git diff --cached --quiet; then
+            echo "Rien de nouveau."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -q -m "Contre-enquête (automatique)"
+          for i in 1 2 3; do
+            git push && echo "ok=1" >> "$GITHUB_ENV" && exit 0
+            sleep $((i * 10))
+            git pull --rebase -q origin main
+          done
+          exit 1
+
+      - name: Relancer la mise en ligne du site
+        if: env.ok == '1'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X POST "repos/${{ github.repository }}/pages/builds" || echo "Relance non nécessaire."
