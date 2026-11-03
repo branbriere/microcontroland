@@ -6,6 +6,13 @@
   <description>Le quotidien de Microcontrôland, écrit chaque soir par la passerelle.</description>
   <language>fr</language>
   <item>
+    <title>Jour 26 — Le pétrole chute de 2,6 %</title>
+    <link>https://branbriere.github.io/microcontroland/#jour-26</link>
+    <description>La région Raffineries voit ses revenus fondre et le reste du pays en ressent l'onde de choc.</description>
+    <pubDate>Tue, 03 Nov 2026 19:00:25 GMT</pubDate>
+    <guid isPermaLink="false">microcontroland-fr-jour-26</guid>
+  </item>
+  <item>
     <title>Jour 25 — Le président Niwata réélu avec 63 %</title>
     <link>https://branbriere.github.io/microcontroland/#jour-25</link>
     <description>Les électeurs ont choisi la continuité. Le palais reste dans la région Barrage.</description>
@@ -102,13 +109,6 @@
     <description>Parmi eux, « boubi » pour dire « nuit ». La langue commune compte désormais 14 mots.</description>
     <pubDate>Tue, 20 Oct 2026 18:00:01 GMT</pubDate>
     <guid isPermaLink="false">microcontroland-fr-jour-12</guid>
-  </item>
-  <item>
-    <title>Jour 11 — L'électricité s'envole de 3,2 %</title>
-    <link>https://branbriere.github.io/microcontroland/#jour-11</link>
-    <description>La région Barrage profite de la hausse et le reste du pays en ressent l'onde de choc.</description>
-    <pubDate>Mon, 19 Oct 2026 18:00:01 GMT</pubDate>
-    <guid isPermaLink="false">microcontroland-fr-jour-11</guid>
   </item>
 </channel>
 </rss>
