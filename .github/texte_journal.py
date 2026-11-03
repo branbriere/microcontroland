@@ -15,7 +15,7 @@ intitulés de rubrique. Censure (████) et coquilles restent telles quell
   decouvrir.html       « Découvrir le pays en 5 minutes » : textes fixes + état du pays du soir
 
 Usage : python3 .github/texte_journal.py [racine du site]
-Licence MIT. Version 1.5 (après la 0.8) : sitemap.xml déclare les paires français/anglais (hreflang). 1.4, 25 octobre 2026 : noms des ministres (firmware 0.8). (1.3, 1.2, 1.1 et 1.0 : 21 et 20 octobre 2026).
+Licence MIT. Version 1.6 (firmware 0.9, MAJ 1b-4) : Binaï, le journal des rebelles, en tête de l'édition. 1.5 (après la 0.8) : sitemap.xml déclare les paires français/anglais (hreflang). 1.4, 25 octobre 2026 : noms des ministres (firmware 0.8). (1.3, 1.2, 1.1 et 1.0 : 21 et 20 octobre 2026).
 """
 import html
 import json
@@ -31,7 +31,8 @@ LIB = {
            "fin": "Le mot de la fin", "complet": "Toutes les données de cette édition (JSON)",
            "source": "Version texte de La Puce Libre, générée automatiquement à partir de l'édition publiée par la passerelle. Aucun humain n'écrit le journal.",
            "liste": "La Puce Libre : toutes les éditions en texte", "retour": "Toutes les éditions",
-           "dimanche": "Édition du dimanche", "autres": "Autres rubriques"},
+           "dimanche": "Édition du dimanche", "autres": "Autres rubriques",
+           "binai": "Binaï, journal clandestin, nº {n} ({c}e soir de censure)", "binaiPar": "Rédigé par {nom} ({region}), {role}", "officiel": "version officielle", "vrai": "vrais chiffres"},
     "en": {"edition": "Issue no. {n}", "jour": "era {e}, day {j}", "par": "By {nom} ({region}), {rubrique}",
            "citation": "Quote of the day", "breves": "In brief", "regions": "Your regions", "billet": "Column",
            "journee": "The day", "suivre": "Coming up", "bourse": "Markets", "fermee": "closed",
@@ -39,7 +40,8 @@ LIB = {
            "fin": "Last word", "complet": "All data for this issue (JSON)",
            "source": "Text version of La Puce Libre, generated automatically from the issue published by the gateway. No human writes the paper.",
            "liste": "La Puce Libre: all issues as text", "retour": "All issues",
-           "dimanche": "Sunday edition", "autres": "Other sections"},
+           "dimanche": "Sunday edition", "autres": "Other sections",
+           "binai": "Binaï, clandestine newspaper, no. {n} (evening {c} of censorship)", "binaiPar": "Written by {nom} ({region}), {role}", "officiel": "official version", "vrai": "actual figures"},
 }
 
 
@@ -65,7 +67,7 @@ def tr(v, lg):
 NON_TEXTE = {"day", "date", "ere", "jourEre", "etat", "regions", "satisfaction7j", "ages", "redaction",
              "systeme", "president", "presidentNom", "election", "bourse"}
 TRAITES = {"censure", "kicker", "title", "chapo", "body", "signature", "quote", "briefs", "vosRegions",
-           "billet", "journee", "aSuivre", "motDeLaFin", "dimanche"}
+           "billet", "journee", "aSuivre", "motDeLaFin", "dimanche", "binai"}
 
 
 def par(sig, lg):
@@ -106,6 +108,29 @@ def sections(ed, lg):
     if cens.get("active") and tr(cens.get("bandeau"), lg):
         tete.append("[" + tr(cens.get("bandeau"), lg) + "]")
     out.append((None, tete))
+
+    # Binaï (firmware 0.9) : le journal des rebelles paraît en tête de l'édition les soirs de censure
+    bn = ed.get("binai") or {}
+    if bn:
+        sep = " : " if lg == "fr" else ": "
+        li = [tr(bn.get("slogan"), lg)]
+        une_b = bn.get("une") or {}
+        li += [tr(une_b.get("titre"), lg), tr(une_b.get("texte"), lg)]
+        li.append(tr((bn.get("compteARebours") or {}).get("texte"), lg))
+        li += [tr(bn.get("pasVotePourLui"), lg), tr(bn.get("correspondant"), lg)]
+        li += [reg(r.get("region", ""), lg) + sep + tr(r.get("texte"), lg) for r in bn.get("regions") or []]
+        sem = bn.get("semaine") or {}
+        if sem.get("jours"):
+            li.append(tr(sem.get("titre"), lg))
+            li += [tr(j.get("jour"), lg) + sep + L["officiel"] + " « " + tr(j.get("officiel"), lg) + " » ; " + L["vrai"] + sep + tr(j.get("vrai"), lg)
+                   if lg == "fr" else tr(j.get("jour"), lg) + sep + L["officiel"] + " “" + tr(j.get("officiel"), lg) + "”; " + L["vrai"] + sep + tr(j.get("vrai"), lg)
+                   for j in sem["jours"]]
+        li.append(tr(bn.get("demain"), lg))
+        rd = bn.get("redacteur") or {}
+        if rd.get("nom"):
+            li.append(L["binaiPar"].format(nom=rd["nom"], region=reg(rd.get("region", ""), lg), role=tr(rd.get("role"), lg)))
+        li.append(tr(bn.get("ours"), lg))
+        out.append((L["binai"].format(n=bn.get("numero", "?"), c=bn.get("soirDeCensure", "?")), [x for x in li if x]))
 
     une = []
     for champ in ("kicker", "title", "chapo"):
