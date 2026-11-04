@@ -1,0 +1,20 @@
+{
+  "format": 1,
+  "version": "1.0",
+  "date": "2026-11-02",
+  "note": "Liste des salles possibles du Musée national, lue chaque soir par .github/musee.py. Une salle n'apparaît que si son âge est atteint ET si ses données publiées existent. Pour une nouveauté future, ajouter une ligne ; si son type existe déjà (portraits, dessins, artistes), aucun code à écrire. L'ordre des lignes est l'ordre de la visite.",
+  "salles": [
+    {"id": "presidents", "type": "portraits", "age": 2, "source": "galerie.json",
+     "titre": {"en": "Hall of Presidents", "fr": "Salle des présidents"},
+     "lien": "galerie.html", "verifier": ["galerie.json"]},
+    {"id": "atelier", "type": "dessins", "age": 0, "source": "atelier.json",
+     "titre": {"en": "The Studio", "fr": "L'atelier"},
+     "lien": "atelier.html", "verifier": ["atelier.json"]},
+    {"id": "artistes", "type": "artistes", "age": 0, "source": "atelier.json",
+     "titre": {"en": "Artists of the evening", "fr": "Les artistes du soir"},
+     "lien": "atelier.html", "verifier": ["atelier.json"]}
+  ],
+  "annexes": [
+    {"id": "temple", "institution": "temple", "titre": {"en": "Temple annex", "fr": "Annexe du Temple"}, "lien": "temple.html"}
+  ]
+}

@@ -354,17 +354,19 @@
   },
   {
    "id": "musee",
-   "etat": "prevu",
+   "etat": "service",
+   "depuis": "2026-11-04",
    "site": true,
-   "maj": 7,
+   "age": 2,
    "fr": [
-    "Musée",
-    "Musée en 3D sur ce site, une aile par ère ; galerie des œuvres avec la mise à jour 7."
+    "Musée national",
+    "Musée en 3D sur ce site, reconstruit chaque soir à partir des données publiées : une aile par ère, salle des présidents, atelier, artistes du soir."
    ],
    "en": [
-    "Museum",
-    "A 3D museum on this website, one wing per era; art gallery with update 7."
-   ]
+    "National Museum",
+    "A 3D museum on this website, rebuilt every evening from the published data: one wing per era, Hall of Presidents, studio, artists of the evening."
+   ],
+   "verifier": "musee.json"
   },
   {
    "id": "galerie",
