@@ -6,6 +6,13 @@
   <description>Microcontrôland's daily paper, written every evening by the gateway.</description>
   <language>en</language>
   <item>
+    <title>Day 27 — Copper soars 3.3%</title>
+    <link>https://branbriere.github.io/microcontroland/en/#jour-27</link>
+    <description>The Mines region cashes in on the rise. The rest of the country feels it too.</description>
+    <pubDate>Wed, 04 Nov 2026 19:00:01 GMT</pubDate>
+    <guid isPermaLink="false">microcontroland-en-jour-27</guid>
+  </item>
+  <item>
     <title>Day 26 — Oil falls 2.6%</title>
     <link>https://branbriere.github.io/microcontroland/en/#jour-26</link>
     <description>The Refineries region watches its income melt away. The rest of the country feels it too.</description>
@@ -102,13 +109,6 @@
     <description>Voters chose continuity. The palace stays in the Harbour region.</description>
     <pubDate>Wed, 21 Oct 2026 18:00:01 GMT</pubDate>
     <guid isPermaLink="false">microcontroland-en-jour-13</guid>
-  </item>
-  <item>
-    <title>Day 12 — A great day for the language: 2 words adopted</title>
-    <link>https://branbriere.github.io/microcontroland/en/#jour-12</link>
-    <description>Among them, “boubi” for “night”. The common language now has 14 words.</description>
-    <pubDate>Tue, 20 Oct 2026 18:00:01 GMT</pubDate>
-    <guid isPermaLink="false">microcontroland-en-jour-12</guid>
   </item>
 </channel>
 </rss>
