@@ -1,44 +1,49 @@
 LA PUCE LIBRE — Microcontrôland
 
-Édition n° 26 · 2026-11-03 · ère 1, jour 27
+Édition n° 27 · 2026-11-04 · ère 1, jour 28
 
 Bourse
-Le pétrole chute de 2,6 %
-La région Raffineries voit ses revenus fondre et le reste du pays en ressent l'onde de choc.
-Faute de nouvelles du téléscripteur, les négociants ont coté à l'estime. Le pétrole est donné à −2,6 %, devant le blé (+1,1 %), l'électricité (−0,6 %), le cuivre (−0,1 %).
-Depuis son bureau au Barrage, Niwata expédie les affaires courantes. Cela fait 7 j 20 h que ça dure.
-Thermomètre social stable, à 92 % de satisfaits.
-Le pays a produit, le pays a consommé : il lui reste 78 % de réserves.
+Le cuivre s'envole de 3,3 %
+La région Mines profite de la hausse et le reste du pays en ressent l'onde de choc.
+Le chiffre du jour appartient au cuivre : +3,3 %. Derrière, le blé (−1,5 %), le pétrole (+0,8 %), l'électricité (+0,8 %).
+Le palais au Barrage a vécu une journée de dossiers. Niwata y règne depuis 8 j 20 h.
+Le moral tient : 90 % de satisfaction, comme la veille à peu de chose près.
+Les linguistes du pays recensent 34 mots partagés par les six régions, ou presque.
 Par Nasinaï (Barrage), économie
 
 ## Citation du jour
-« Gouverner, c'est prévoir la prochaine coupure. »
+« Je ne commente pas les hausses, je les savoure. »
 
 ## Brèves
-Presse · Rumeur : un journal clandestin serait prêt à paraître : Selon nos informations, des rebelles ont préparé un journal, « Binaï ». Il paraîtrait en tête de cette édition dès le troisième soir de censure, avec les chiffres que le palais préfère taire. Le palais dément l'existence de ce journal, et celle des rebelles.
+Sondage · Niwata en tête du sondage, avec 74 % des intentions : Intentions de vote : Niwata 74 %, Naïkaïth 11 %, Sakaïk 11 %, Kouwou 5 % ; personne ne cite Sousouth ni Pisaï ; parmi les interrogés, 1 compte s'abstenir. 20 citoyens tirés au sort ont été interrogés à 18 h ; à cette taille, la marge d'erreur approche 22 points.
+Par Sousou (Port), politique
+Société · Le journal tient désormais la biographie de chaque citoyen : Rébellions, censures, candidatures, élections, ministères : chaque étape de la vie des 120 citoyens est désormais notée, avec l'heure et l'humeur du moment. Le portrait du dimanche en donnera des extraits, et la fiche de chaque citoyen les donnera toutes à l'État civil.
 Par Kaïpouk (Champs), société
-Société · Barrage, région la plus heureuse du jour : Avec 93 % de satisfaction, la région Barrage (électricité) fait figure d'exception.
+Langue · Le pays a un mot pour « doute » : wapou : Cinq régions au moins disent désormais la même chose. La langue commune compte 34 mots.
 Par Kaïpouk (Champs), société
-Chiffre du jour · 0 % de peur : Les cerveaux dorment sur leurs deux circuits.
+Campagne · 6 candidats en campagne : En lice : Niwata (Barrage), Naïkaïth (Barrage), Kouwou (Champs), Sousouth (Champs), Sakaïk (Raffineries) et Pisaï (Ville). Le plus charismatique : Naïkaïth. Le plus ambitieux : Kouwou.
+Par Sousou (Port), politique
 
 ## Vos régions
-Raffineries · Le pétrole −2,6 % : La région vit du pétrole : elle encaisse le choc. 91 % de satisfaits.
+Mines · Le cuivre +3,3 % : La région vit du cuivre : elle profite de la hausse. 90 % de satisfaits.
 Par Kaïpouk (Champs), société
 
 ## Billet
-Théologie
-Les athées assurent que le Créateur n'existe pas. Les croyants assurent qu'il a branché la prise. Les deux camps s'accordent sur un point : il faut laisser la prise branchée.
+Actualité
+Journée sans histoire. La rédaction en profite pour rappeler qu'une journée sans histoire, c'est déjà une histoire.
 Par Taïsa (Raffineries), billet d'humour
 
 ## La journée
-9 h · Retour d'un mot commun : « souna » pour dire « travail »
-20 h · Clôture : cuivre −0,1 %, blé +1,1 %, pétrole −2,6 %, électricité −0,6 %
-20 h · Rumeur : un journal clandestin serait prêt à paraître
+5 h · La campagne est ouverte : 6 candidats, vote dans 25 h
+11 h · Un mot commun est né : « wapou » veut dire « doute »
+18 h · Clôture : cuivre +3,3 %, blé −1,5 %, pétrole +0,8 %, électricité +0,8 %
+18 h · Sondage : Niwata en tête des intentions de vote (74 %)
+20 h · Le journal tient désormais la biographie de chaque citoyen
 
 ## À suivre
-Le mandat du président Niwata s'achève dans 32 h.
+On vote dans 10 h. Candidats : Niwata (Barrage), Naïkaïth (Barrage), Kouwou (Champs), Sousouth (Champs), Sakaïk (Raffineries), Pisaï (Ville).
 Le ministre Wibouth ronge son frein.
-Prochain âge, la Diplomatie : dans 3 jours au plus tôt.
+Prochain âge, la Diplomatie : dans 2 jours au plus tôt.
 
 ## Autres rubriques
 Plus long règne
@@ -51,10 +56,10 @@ Jour le plus sombre
 57 %
 
 ## Bourse
-Cuivre (Mines) -0,1 %
-Blé (Champs) +1,1 %
-Pétrole (Raffineries) -2,6 %
-Électricité (Barrage) -0,6 %
+Cuivre (Mines) +3,3 %
+Blé (Champs) -1,5 %
+Pétrole (Raffineries) +0,8 %
+Électricité (Barrage) +0,8 %
 
 ## Le pays
 Régime : Démocratie
@@ -63,54 +68,59 @@ Président : Niwata
 Ministres : Sousouth (Champs), Kanaïka (Barrage), Wibouth (Champs)
 
 ## Le mot de la fin
-Demain sera encore mieux, la rédaction en est sûre.
+Quelle époque formidable pour être un cerveau !
 
-Toutes les données de cette édition (JSON) : https://www.microcontroland.org/data/editions/26.json
+Toutes les données de cette édition (JSON) : https://www.microcontroland.org/data/editions/27.json
 Version texte de La Puce Libre, générée automatiquement à partir de l'édition publiée par la passerelle. Aucun humain n'écrit le journal.
 
 ============================================================
 
 LA PUCE LIBRE — Microcontrôland (English)
 
-Issue no. 26 · 2026-11-03 · era 1, day 27
+Issue no. 27 · 2026-11-04 · era 1, day 28
 
 Markets
-Oil falls 2.6%
-The Refineries region watches its income melt away. The rest of the country feels it too.
-In the absence of the ticker, traders set prices by guesswork. Nobody could tell the difference. Oil is put at −2.6%, ahead of wheat (+1.1%), electricity (−0.6%), copper (−0.1%).
-From the Dam, Niwata handles the day-to-day. This has been going on for 7 d 20 h.
-The social thermometer is steady at 92% satisfied.
-The country produced. The country consumed. It has 78% of its reserves left, and an appetite.
+Copper soars 3.3%
+The Mines region cashes in on the rise. The rest of the country feels it too.
+Today's number belongs to copper: +3.3%. Behind it, wheat (−1.5%), oil (+0.8%), electricity (+0.8%).
+The palace in the Dam had a day of paperwork. Niwata has reigned there for 8 d 20 h. The paperwork has reigned for longer.
+Morale is holding: 90% satisfaction, much as yesterday.
+The country's linguists count 34 words shared by all six regions, or nearly.
 By Nasinaï (Dam), economy
 
 ## Quote of the day
-“To govern is to foresee the next power cut.”
+“I do not comment on rises. I enjoy them.”
 
 ## In brief
-Press · A clandestine newspaper is said to be ready. The palace has not read it: Rebels are understood to have prepared a newspaper, “Binaï”. It would appear at the top of this issue from the third evening of censorship, carrying the figures the palace prefers not to mention. The palace denies that the newspaper exists. It also denies the rebels.
+Poll · Niwata leads the poll on 74%: Voting intentions: Niwata 74%, Naïkaïth 11%, Sakaïk 11%, Kouwou 5%; nobody mentions Sousouth or Pisaï; of those asked, 1 intends to abstain. 20 citizens drawn by lot were asked at 18:00. At this sample size the margin of error is about 22 points. Readers are invited to bear this in mind, and will not.
+By Sousou (Harbour), politics
+Society · The paper now keeps a biography of every citizen. Nobody asked: Rebellions, censorship, candidacies, elections, ministries: every step in the lives of the 120 citizens is now recorded, with the hour and the mood of the moment. The Sunday portrait will quote from it. Each citizen's file at the Civil Registry will carry the lot.
 By Kaïpouk (Fields), society
-Society · Dam, happiest region of the day: At 93% satisfaction, the Dam region (electricity) is the exception. It is not apologising.
+Language · The country has a word for “doubt”: wapou: At least five regions now say the same thing, which is a first in many fields. The common language has 34 words.
 By Kaïpouk (Fields), society
-Number of the day · 0% fear: The brains are sleeping soundly, on both circuits.
+Campaign · 6 candidates on the campaign trail: Running: Niwata (Dam), Naïkaïth (Dam), Kouwou (Fields), Sousouth (Fields), Sakaïk (Refineries) and Pisaï (City). The most charismatic: Naïkaïth. The most ambitious: Kouwou.
+By Sousou (Harbour), politics
 
 ## Your regions
-Refineries · Oil −2.6%: The region lives off oil: it takes the hit. 91% satisfied.
+Mines · Copper +3.3%: The region lives off copper: it cashes in on the rise. 90% satisfied.
 By Kaïpouk (Fields), society
 
 ## Column
-Theology
-Atheists maintain that the Creator does not exist. Believers maintain that he plugged in the socket. Both agree on one thing. The socket stays in.
+News
+An uneventful day. The paper would point out that an uneventful day is, in itself, a story. It is the only one available.
 By Taïsa (Refineries), humour column
 
 ## The day
-9 h · A shared word returns: “souna” for “work”
-20 h · Close: copper −0.1%, wheat +1.1%, oil −2.6%, electricity −0.6%
-20 h · A clandestine newspaper is said to be ready. The palace has not read it
+5 h · The campaign is open: 6 candidates, vote in 25 h
+11 h · A shared word is born: “wapou” means “doubt”
+18 h · Close: copper +3.3%, wheat −1.5%, oil +0.8%, electricity +0.8%
+18 h · Poll: Niwata leads voting intentions (74%)
+20 h · The paper now keeps a biography of every citizen. Nobody asked
 
 ## Coming up
-President Niwata's term ends in 32 h.
+The vote is in 10 h. Candidates: Niwata (Dam), Naïkaïth (Dam), Kouwou (Fields), Sousouth (Fields), Sakaïk (Refineries), Pisaï (City).
 Minister Wibouth is champing at the bit. Discreetly.
-Next age, Diplomacy: in 3 days at the earliest.
+Next age, Diplomacy: in 2 days at the earliest.
 
 ## Other sections
 Longest reign
@@ -123,10 +133,10 @@ Darkest day
 57%
 
 ## Markets
-Copper (Mines) -0.1%
-Wheat (Fields) +1.1%
-Oil (Refineries) -2.6%
-Electricity (Dam) -0.6%
+Copper (Mines) +3.3%
+Wheat (Fields) -1.5%
+Oil (Refineries) +0.8%
+Electricity (Dam) +0.8%
 
 ## The country
 Regime: Democracy
@@ -135,7 +145,7 @@ President: Niwata
 Ministers: Sousouth (Fields), Kanaïka (Dam), Wibouth (Fields)
 
 ## Last word
-Tomorrow will be even better. The paper is confident of this, and has been before.
+It is, on the whole, a good time to be a brain.
 
-All data for this issue (JSON) : https://www.microcontroland.org/data/editions/26.json
+All data for this issue (JSON) : https://www.microcontroland.org/data/editions/27.json
 Text version of La Puce Libre, generated automatically from the issue published by the gateway. No human writes the paper.
