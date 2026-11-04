@@ -127,6 +127,8 @@ L = {
                 "Ils ne prêtent aucune pensée aux Waïnas : un cerveau de 81 connexions calcule, il ne veut rien.",
         "maj_le": "Carnet recalculé après l'édition n° {n} du {d}.",
         "json": "toutes les fiches (JSON)", "h": lambda h: f"{h} h", "pct": " %",
+        "sommaire": "Sommaire : {n} dossiers", "sommaire1": "Sommaire : 1 dossier", "vers_carnet": "Le carnet de l'enquêteur ({n} fiches)",
+        "retour_sommaire": "Retour au sommaire",
     },
     "en": {
         "titre": "Counter-investigation", "haut": "The column that checks the paper · era {ere}",
@@ -149,6 +151,8 @@ L = {
         "pied": "The files are written by Claude (an AI), the column's independent journalist, and read by Bran Brière before publication. "
                 "They attribute no thoughts to the Waïnas: an 81-connection brain computes, it wants nothing.",
         "maj_le": "Notebook recomputed after issue no. {n} of {d}.",
+        "sommaire": "Contents: {n} files", "sommaire1": "Contents: 1 file", "vers_carnet": "The investigator's notebook ({n} cards)",
+        "retour_sommaire": "Back to contents",
         "json": "all cards (JSON)", "h": lambda h: (f"{h % 12 or 12} {'am' if h < 12 else 'pm'}" if h not in (0, 12) else ("midnight" if h == 0 else "noon")), "pct": "%",
     },
 }
@@ -162,6 +166,12 @@ STYLE = """<style>
 .verdict{border-left:4px solid var(--ink);padding:6px 12px;margin:14px 0;background:var(--sheet)}
 .verdict b{display:block;font:600 12px var(--f-data);text-transform:uppercase;letter-spacing:.06em;margin-bottom:2px}
 .sig{font:12.5px/1.5 var(--f-data);color:var(--muted)}
+.sommaire{border:1px solid var(--rule);background:var(--sheet);padding:8px 12px;margin:14px 0}
+.sommaire summary{cursor:pointer;font:600 13px/1.5 var(--f-data);text-transform:uppercase;letter-spacing:.05em}
+.sommaire ol{list-style:none;margin:8px 0 2px;padding:0}
+.sommaire li{padding:5px 0;border-top:1px solid var(--rule)}
+.sommaire li span{display:block;font:12px var(--f-data);color:var(--muted)}
+.retour{font:12.5px var(--f-data)}
 .carnet details{border:1px solid var(--rule);background:var(--sheet);padding:6px 10px;margin:6px 0}
 .carnet summary{cursor:pointer;font:13px/1.5 var(--f-data)}
 .carnet table{border-collapse:collapse;font:12.5px/1.45 var(--f-data);margin:6px 0;width:100%}
@@ -191,8 +201,20 @@ def html_dossier(d, lg, T, fiche_ids):
     parts.append(f'<p class="sig"><b>{e(T["sources"])}</b><br>' + "<br>".join(liens) + "</p>")
     for r in d.get("rectificatifs") or []:
         parts.append(f'<p class="sig"><b>{e(T["rectif"])} ({e(G.date_longue(r.get("date", ""), lg))})</b> {e(t(r))}</p>')
-    parts.append("</article>")
+    parts.append(f'<p class="retour"><a href="#sommaire">↑ {e(T["retour_sommaire"])}</a></p></article>')
     return "".join(parts)
+
+
+def html_sommaire(dossiers, fs, lg, T):
+    """Sommaire déroulant sans JavaScript (<details>) : grandit tout seul avec dossiers.json, le plus récent en haut."""
+    t = lambda x: (x or {}).get(lg) or ""
+    n = len(dossiers)
+    tete = T["sommaire1"] if n == 1 else T["sommaire"].format(n=n)
+    items = "".join(f'<li><a href="#{e(d["id"])}">{e(t(d["titre"]))}</a>'
+                    f'<span>{e(T["dossier_n"].format(n=d["numero"]))} · {e(T["evt"].format(d=G.date_longue(d["evenement"], lg)))}</span></li>'
+                    for d in sorted(dossiers, key=lambda d: -d["numero"]))
+    items += f'<li><a href="#carnet">{e(T["vers_carnet"].format(n=len(fs)))}</a></li>'
+    return f'<details class="sommaire" id="sommaire"><summary>{e(tete)}</summary><ol>{items}</ol></details>'
 
 
 def html_fiche(f, lg, T, dossier_par_date):
@@ -245,12 +267,13 @@ def page(dossiers, signature, fs, latest, lg, ouvert, ere):
         corps.append(f'<h2>{e(T["dossiers"])}</h2>')
         corps.append(f'<p class="sig">{e(signature.get(lg, ""))}</p>')
         if dossiers:
+            corps.append(html_sommaire(dossiers, fs, lg, T))
             for d in dossiers:
                 ids = [f for f in fs if f["date"] == d["evenement"]]
                 corps.append(html_dossier(d, lg, T, ids))
         else:
             corps.append(f'<p>{e(T["aucun_dossier"])}</p>')
-        corps.append(f'<section class="carnet"><h2>{e(T["carnet"])}</h2><p>{e(T["carnet_chapo"])}</p>')
+        corps.append(f'<section class="carnet" id="carnet"><h2>{e(T["carnet"])}</h2><p>{e(T["carnet_chapo"])}</p>')
         corps.append("".join(html_fiche(f, lg, T, par_date) for f in reversed(fs)) or f'<p>{e(T["aucune_fiche"])}</p>')
         corps.append(f'<p class="muted"><a href="{pre}contre-enquete.json">{e(T["json"])}</a></p></section>')
     maj = T["maj_le"].format(n=latest.get("day", "?"), d=G.date_longue(str(latest.get("date", "")), lg))
@@ -321,6 +344,12 @@ def texte(dossiers, signature, fs, lg, ouvert):
     if not ouvert:
         return "\n".join(out + [T["ferme"], ""])
     out += [signature.get(lg, ""), ""]
+    if dossiers:
+        n = len(dossiers)
+        out.append((T["sommaire1"] if n == 1 else T["sommaire"].format(n=n)).upper())
+        out += [f'- {T["dossier_n"].format(n=d["numero"])} · {G.date_longue(d["evenement"], lg)} · {t(d["titre"])}'
+                for d in sorted(dossiers, key=lambda d: -d["numero"])]
+        out.append("")
     for d in dossiers:
         out += ["=" * 60, T["dossier_n"].format(n=d["numero"]) + " · " + T["evt"].format(d=G.date_longue(d["evenement"], lg)),
                 t(d["titre"]), "", t(d["accroche"]), ""]
