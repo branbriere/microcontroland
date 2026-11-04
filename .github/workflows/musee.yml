@@ -1,0 +1,63 @@
+# Microcontrôland : « Le Musée national » / « The National Museum » (visite 3D et visite en texte).
+# Le musée est procédural : après la galerie et l'atelier, il relit les fichiers déjà publiés (data/latest.json, galerie.json,
+# atelier.json, institutions.json) et la liste des salles possibles (musee-catalogue.json), puis régénère musee.json,
+# musee.html et en/musee.html. Aucune œuvre n'est dessinée à la main. La passerelle ne change pas.
+name: Musee national
+
+on:
+  workflow_run:
+    workflows: ["Galerie des presidents", "Atelier"]
+    types: [completed]
+  push:
+    branches: [main]
+    paths:
+      - "musee-catalogue.json"
+      - "institutions.json"
+      - ".github/musee.py"
+  schedule:
+    - cron: "5 19 * * *"    # 21 h 05 à Paris en heure d'été (filet de sécurité)
+    - cron: "5 20 * * *"    # 21 h 05 à Paris en heure d'hiver
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: musee
+  cancel-in-progress: false
+
+jobs:
+  musee:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Construire le musée
+        run: python3 .github/musee.py .
+
+      - name: Déposer si quelque chose a changé
+        run: |
+          git add musee.json musee.html en/musee.html
+          if git diff --cached --quiet; then
+            echo "Rien de nouveau."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -q -m "Musée national (automatique)"
+          for i in 1 2 3; do
+            git push && echo "ok=1" >> "$GITHUB_ENV" && exit 0
+            sleep $((i * 10))
+            git pull --rebase -q origin main
+          done
+          exit 1
+
+      - name: Relancer la mise en ligne du site
+        if: env.ok == '1'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X POST "repos/${{ github.repository }}/pages/builds" || echo "Relance non nécessaire."
