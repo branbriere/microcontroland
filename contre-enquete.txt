@@ -105,6 +105,7 @@ Verdict de l'enquêteur : Kiti n'a jamais été renversé par la rue qu'il n'ava
 Le carnet de l'enquêteur
 Une fiche par élection, révolte, coup de palais ou vacance du pouvoir, recalculée chaque soir à partir des fichiers bruts publiés. Les chiffres, rien que les chiffres : l'humour est réservé aux dossiers.
 
+- 5 novembre 2026, 6 h · Élection : Niwata réélu avec 75 % (https://donnees.microcontroland.org/donnees/ere-001/quotidien/2026-11-05.json)
 - 2 novembre 2026, 4 h · Élection : Niwata réélu avec 63 % (https://donnees.microcontroland.org/donnees/ere-001/quotidien/2026-11-02.json)
 - 30 octobre 2026, 2 h · Élection : Niwata réélu avec 37 % (https://donnees.microcontroland.org/donnees/ere-001/quotidien/2026-10-30.json)
 - 27 octobre 2026, 0 h · Élection : Niwata (Barrage) élu avec 45 %, Kiti battu (https://donnees.microcontroland.org/donnees/ere-001/quotidien/2026-10-27.json)

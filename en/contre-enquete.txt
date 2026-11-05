@@ -105,6 +105,7 @@ The investigator's verdict : Kiti was never toppled by the street he had not led
 The investigator's notebook
 One card per election, revolt, palace coup or power vacuum, recomputed every evening from the published raw files. Figures, nothing but figures: the jokes are kept for the files.
 
+- 5 November 2026, 6 am · Election: Niwata re-elected with 75% (https://donnees.microcontroland.org/donnees/ere-001/quotidien/2026-11-05.json)
 - 2 November 2026, 4 am · Election: Niwata re-elected with 63% (https://donnees.microcontroland.org/donnees/ere-001/quotidien/2026-11-02.json)
 - 30 October 2026, 2 am · Election: Niwata re-elected with 37% (https://donnees.microcontroland.org/donnees/ere-001/quotidien/2026-10-30.json)
 - 27 October 2026, midnight · Election: Niwata (Dam) elected with 45%, Kiti defeated (https://donnees.microcontroland.org/donnees/ere-001/quotidien/2026-10-27.json)
