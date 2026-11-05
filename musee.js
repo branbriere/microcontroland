@@ -1,10 +1,12 @@
-// Microcontrôland : visite 3D du Musée national. Version 1.0, 2 novembre 2026. Licence MIT.
+// Microcontrôland : visite 3D du Musée national. Version 1.1, 5 novembre 2026 (fenêtres sur le garage). Licence MIT.
 // Le plan n'est dessiné nulle part : les salles, leur longueur et leur hauteur sont calculées à partir de musee.json,
 // lui-même construit chaque soir par .github/musee.py à partir des seules données publiées.
 // Three.js r128 est hébergé sur le site (vendor/three-r128, licence MIT) : aucun appel extérieur.
 // Style validé par Bran le 26/10/2026 (« galerie claire » v3.1) : murs blancs mats, sol sombre mat, plafond à fentes,
 // poutres dans la longueur, raies de soleil rasantes, lumière qui ne cache jamais les œuvres.
 // Lumière (Bran, 2/11/2026) : cycle jour, soir et nuit selon l'heure de l'ordinateur du visiteur, ou au choix.
+// Fenêtres (Bran, 2/11 et 5/11/2026) : la dernière salle a 4 fenêtres sur l'intérieur du garage (vraies photos, vérifiées et floutées) ;
+// le visiteur est dans la boîte. Ce ne sont pas des œuvres et elles suivent la lumière du musée.
 (function () {
   'use strict';
   const zone = document.getElementById('m-entrer');
@@ -151,7 +153,7 @@
     const W = 8;                 // demi-largeur des salles (16 m)
     const PORTE = 1.6;           // demi-largeur des passages
     const H_PORTE = 3.1;
-    const obstacles = [], cliquables = [], salles = [], lumieresNuit = [], raies = [], plafonds = [];
+    const obstacles = [], cliquables = [], salles = [], lumieresNuit = [], raies = [], plafonds = [], vitres = [];
     const DALLE = new THREE.MeshBasicMaterial({ color: 0xd4d6d2 });
 
     // ---------------------------------------------------------------- matières (faites sur place, aucun fichier extérieur)
@@ -310,6 +312,29 @@
       plaque({ titre: r.titre, lignes: [...r.lignes, r.vrai], fond: '#1b2124', encre: '#f2f4f1', accent: '#f0b44c', taille: 34 }, l, h, x, y, zz, ry,
         { titre: r.titre, lignes: r.lignes, html: `<p class="m3-src">${esc(r.vrai)}</p>`, etiq: T.reclame });
     }
+    // Fenêtre sur le garage : embrasure claire, cadre alu, petit-bois, appui, reflet de vitre ; la photo suit la lumière (vitres)
+    const ALU = new THREE.MeshLambertMaterial({ color: 0x9aa1a4 });
+    const texReflet = new THREE.CanvasTexture(toile(256, 256, (g, w, h) => {
+      const d = g.createLinearGradient(0, 0, w, h); d.addColorStop(0, 'rgba(255,255,255,.55)'); d.addColorStop(0.35, 'rgba(255,255,255,0)'); d.addColorStop(0.55, 'rgba(255,255,255,.18)'); d.addColorStop(0.62, 'rgba(255,255,255,0)'); g.fillStyle = d; g.fillRect(0, 0, w, h);
+    }));
+    function fenetre(f, l, h, x, y, zz, ry) {
+      const grp = new THREE.Group(); grp.position.set(x, y, zz); grp.rotation.y = ry; scene.add(grp);
+      const c = f.cartel[LG], cartel = { titre: c.titre, lignes: c.lignes, html: `<p class="m3-src">${esc(c.vrai)}</p>`, etiq: f.titre[LG] };
+      const tex = new THREE.TextureLoader().load(BASE + f.image, () => {}, undefined, () => { grp.visible = false; });
+      const photo = new THREE.Mesh(new THREE.PlaneGeometry(l, h), new THREE.MeshBasicMaterial({ map: tex, color: 0xffffff }));
+      photo.position.z = 0.105; grp.add(photo); vitres.push(photo.material);
+      const e = 0.09, p = 0.16, zc = 0.1 + p / 2;
+      for (const [w, hh, px, py] of [[l + 2 * e, e, 0, h / 2 + e / 2], [l + 2 * e, e, 0, -h / 2 - e / 2], [e, h, -l / 2 - e / 2, 0], [e, h, l / 2 + e / 2, 0]]) {
+        const b = new THREE.Mesh(new THREE.BoxGeometry(w, hh, p), ALU); b.position.set(px, py, zc); grp.add(b); b.userData.cartel = cartel; cliquables.push(b);
+      }
+      const v = new THREE.Mesh(new THREE.BoxGeometry(0.035, h, 0.03), ALU); v.position.set(0, 0, 0.13); grp.add(v);
+      const hz = new THREE.Mesh(new THREE.BoxGeometry(l, 0.035, 0.03), ALU); hz.position.set(0, l < h ? h * 0.12 : 0, 0.13); grp.add(hz);
+      const appui = new THREE.Mesh(new THREE.BoxGeometry(l + 0.36, 0.06, 0.3), SOCLE); appui.position.set(0, -h / 2 - e - 0.03, 0.25); grp.add(appui);
+      const r = new THREE.Mesh(new THREE.PlaneGeometry(l, h), new THREE.MeshBasicMaterial({ map: texReflet, transparent: true, opacity: 0.22, blending: THREE.AdditiveBlending, depthWrite: false }));
+      r.position.z = 0.12; grp.add(r);
+      photo.userData.cartel = cartel; r.userData.cartel = cartel; cliquables.push(photo);
+      return grp;
+    }
     const verifier = (s) => [s.lien ? `<p>${T.voir} : ${lien(s.lien)}</p>` : '', (s.verifier || []).length ? `<p class="m3-src">${T.vers} : ${s.verifier.map((v) => lien(v)).join(', ')}</p>` : ''].join('');
 
     // ---------------------------------------------------------------- le plan, calculé
@@ -381,7 +406,9 @@
     }
     // Fond : l'aile de l'ère suivante, fermée
     if (!(M.plan || []).some((a) => a.etat === 'fermee')) {
-      const H = 4.2, z1 = z, z2 = z - 7;
+      const FEN = M.fenetres ? Object.fromEntries(M.fenetres.liste.map((f) => [f.id, f])) : {};
+      const avecFen = Object.keys(FEN).length > 0;
+      const H = 4.2, z1 = z, z2 = z - (avecFen ? 10 : 7);
       cloison(z1, Math.max(H, hPrec));
       // Cartel de sortie (idée de Bran, 2/11/2026) : tout un pays dans une boîte
       if (M.fin) {
@@ -392,12 +419,19 @@
       }
       murs(z1, z2, H); sol(-W, z1, W, z2); plafond(-W, z1, W, z2, H);
       const porte = cloison(z2, H, true); ruban(-PORTE, z2 + 0.6, PORTE, z2 + 0.6);
+      // Les 4 fenêtres : nord = mur du fond (on marche vers le nord), est à droite, ouest à gauche, sud = mur d'entrée
+      const pl = (f) => (f.largeur >= f.hauteur ? [3.0, 3.0 * f.hauteur / f.largeur] : [1.4, 1.4 * f.hauteur / f.largeur]);
+      if (FEN.nord) { const [l, h] = pl(FEN.nord); fenetre(FEN.nord, l, h, -(W + PORTE) / 2, 2.1, z2, 0); }
+      if (FEN.est) { const [l, h] = pl(FEN.est); fenetre(FEN.est, l, h, W, 0.85 + h / 2, z1 - 5, -Math.PI / 2); }
+      if (FEN.ouest) { const [l, h] = pl(FEN.ouest); fenetre(FEN.ouest, l, h, -W, 0.85 + h / 2, z1 - 7.6, Math.PI / 2); }
+      if (FEN.sud) { const [l, h] = pl(FEN.sud); fenetre(FEN.sud, l, h, (W + PORTE) / 2, 0.85 + h / 2, z1, Math.PI); }
+      if (avecFen) { const nom = M.fenetres.salle[LG]; zones.push({ z1, z2: z2 + 1.2, nom }); salles.push({ nom, z: z1 - 5 }); }
       const n = M.suivante ? M.suivante.ere : '?';
       const c = { titre: T.aile(n), lignes: [T.attente], etiq: 'c' };
       porte.userData.cartel = c; cliquables.push(porte);
       plaque({ titre: T.aile(n), lignes: [T.attente], etiq: { t: T.chantier.toUpperCase(), c: '#ffd23f' }, fond: '#1b1b17', encre: '#fff6cf', accent: '#ffd23f' }, 2.8, 1.1, 0, 3.55, z2, 0, c);
-      zones.push({ z1, z2, nom: T.aile(n) });
-      salles.push({ nom: T.aile(n), z: z1 - 1.5 });
+      zones.push({ z1: avecFen ? z2 + 1.2 : z1, z2, nom: T.aile(n) });
+      if (!avecFen) salles.push({ nom: T.aile(n), z: z1 - 1.5 });
     }
 
     // ---------------------------------------------------------------- salle des présidents
@@ -492,9 +526,9 @@
     const fond = new THREE.AmbientLight(0xffffff, 0.15); scene.add(fond);
     const soleil = new THREE.DirectionalLight(0xfff3dc, 0.35); soleil.position.set(6, 10, 4); scene.add(soleil);
     const AMB = {   // a = jour plein (1), s = soir (couleur chaude), n = nuit
-      jour: { ciel: 0.88, fond: 0.3, soleil: 0.35, c: 0xffffff, fente: 0xffffff, dalle: 0xd4d6d2, rais: 0.3, raisC: 0xfff8e6, halo: 0.0, bg: 0x121619 },
-      soir: { ciel: 0.7, fond: 0.22, soleil: 0.25, c: 0xffd9b0, fente: 0xf2b98a, dalle: 0xa89a8c, rais: 0.26, raisC: 0xffa868, halo: 0.25, bg: 0x1a1414 },
-      nuit: { ciel: 0.13, fond: 0.06, soleil: 0.0, c: 0x9fb0d0, fente: 0x27304a, dalle: 0x1a1d22, rais: 0.0, raisC: 0x000000, halo: 0.55, bg: 0x07090c },
+      jour: { vue: 0xffffff, ciel: 0.88, fond: 0.3, soleil: 0.35, c: 0xffffff, fente: 0xffffff, dalle: 0xd4d6d2, rais: 0.3, raisC: 0xfff8e6, halo: 0.0, bg: 0x121619 },
+      soir: { vue: 0xd6b898, ciel: 0.7, fond: 0.22, soleil: 0.25, c: 0xffd9b0, fente: 0xf2b98a, dalle: 0xa89a8c, rais: 0.26, raisC: 0xffa868, halo: 0.25, bg: 0x1a1414 },
+      nuit: { vue: 0x3a4252, ciel: 0.13, fond: 0.06, soleil: 0.0, c: 0x9fb0d0, fente: 0x27304a, dalle: 0x1a1d22, rais: 0.0, raisC: 0x000000, halo: 0.55, bg: 0x07090c },
     };
     const mel = (a, b, t) => a + (b - a) * t;
     const melC = (a, b, t) => new THREE.Color(a).lerp(new THREE.Color(b), t);
@@ -518,6 +552,7 @@
       ciel.color = melC(A.c, B.c, t);
       const fc = melC(A.fente, B.fente, t); plafonds.forEach((p) => p.material.color.copy(fc)); DALLE.color = melC(A.dalle, B.dalle, t);
       raies.forEach((r) => { r.material.opacity = mel(A.rais, B.rais, t); r.material.color = melC(A.raisC, B.raisC, t); r.visible = r.material.opacity > 0.01; });
+      const vc = melC(A.vue, B.vue, t); vitres.forEach((m) => m.color.copy(vc));
       lumieresNuit.forEach((l) => { l.material.opacity = mel(A.halo, B.halo, t); l.visible = l.material.opacity > 0.01; });
       const bg = melC(A.bg, B.bg, t); scene.background = bg; scene.fog = new THREE.Fog(bg, 26, 70);
       bLum.textContent = T.lumiere[mode] + (mode === 'auto' ? ` (${String(d.getHours()).padStart(2, '0')} h ${String(d.getMinutes()).padStart(2, '0')})` : '');
@@ -652,7 +687,7 @@
         renderer.dispose();
       },
       // Pour les contrôles automatiques : plan calculé et obstacles
-      controle: () => ({ zones: zones.map((q) => ({ ...q })), salles: salles.map((s) => ({ ...s })), cliquables: cliquables.length, lumiere: mode }),
+      controle: () => ({ zones: zones.map((q) => ({ ...q })), salles: salles.map((s) => ({ ...s })), cliquables: cliquables.length, lumiere: mode, fenetres: vitres.length }),
       aller: (i) => { const s = salles[i]; joueur.x = 0; joueur.z = s.z; joueur.yaw = 0; },
       echelle: () => changerEchelle(),
       regarder: (yaw, pitch = -0.03) => { joueur.yaw = yaw; joueur.pitch = pitch; },

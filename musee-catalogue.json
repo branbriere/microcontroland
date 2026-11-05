@@ -1,7 +1,7 @@
 {
   "format": 1,
-  "version": "1.0",
-  "date": "2026-11-02",
+  "version": "1.1",
+  "date": "2026-11-05",
   "note": "Liste des salles possibles du Musée national, lue chaque soir par .github/musee.py. Une salle n'apparaît que si son âge est atteint ET si ses données publiées existent. Pour une nouveauté future, ajouter une ligne ; si son type existe déjà (portraits, dessins, artistes), aucun code à écrire. L'ordre des lignes est l'ordre de la visite.",
   "salles": [
     {"id": "presidents", "type": "portraits", "age": 2, "source": "galerie.json",
@@ -16,5 +16,16 @@
   ],
   "annexes": [
     {"id": "temple", "institution": "temple", "titre": {"en": "Temple annex", "fr": "Annexe du Temple"}, "lien": "temple.html"}
+  ],
+  "note_fenetres": "Fenêtres de la dernière salle (idée de Bran, 2/11/2026) : vraies photos de l'intérieur du garage, prises le 5/11/2026, vérifiées avant usage (métadonnées et GPS retirés, indices du lieu floutés). Une fenêtre sans photo sur le site reste un mur plein.",
+  "fenetres": [
+    {"id": "nord", "image": "musee-fenetres/nord.jpg", "largeur": 1400, "hauteur": 663, "date": "2026-11-05",
+     "titre": {"en": "North window", "fr": "Fenêtre nord"}, "vue": {"en": "the garage door", "fr": "la porte du garage"}},
+    {"id": "est", "image": "musee-fenetres/est.jpg", "largeur": 662, "hauteur": 1400, "date": "2026-11-05",
+     "titre": {"en": "East window", "fr": "Fenêtre est"}, "vue": {"en": "the tool board and the workbench", "fr": "le panneau à outils et l'établi"}},
+    {"id": "sud", "image": "musee-fenetres/sud.jpg", "largeur": 662, "hauteur": 1400, "date": "2026-11-05",
+     "titre": {"en": "South window", "fr": "Fenêtre sud"}, "vue": {"en": "the fuse box", "fr": "le tableau électrique"}},
+    {"id": "ouest", "image": "musee-fenetres/ouest.jpg", "largeur": 662, "hauteur": 1400, "date": "2026-11-05",
+     "titre": {"en": "West window", "fr": "Fenêtre ouest"}, "vue": {"en": "the pantry shelves", "fr": "les étagères de provisions"}}
   ]
 }
