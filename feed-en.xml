@@ -6,6 +6,13 @@
   <description>Microcontrôland's daily paper, written every evening by the gateway.</description>
   <language>en</language>
   <item>
+    <title>Day 28 — President Niwata re-elected with 75%</title>
+    <link>https://branbriere.github.io/microcontroland/en/#jour-28</link>
+    <description>Voters have chosen continuity. The palace stays in the Dam region. So does everything else.</description>
+    <pubDate>Thu, 05 Nov 2026 19:00:01 GMT</pubDate>
+    <guid isPermaLink="false">microcontroland-en-jour-28</guid>
+  </item>
+  <item>
     <title>Day 27 — Copper soars 3.3%</title>
     <link>https://branbriere.github.io/microcontroland/en/#jour-27</link>
     <description>The Mines region cashes in on the rise. The rest of the country feels it too.</description>
@@ -102,13 +109,6 @@
     <description>The Mines region watches its income melt away, and the shock wave spreads across the country.</description>
     <pubDate>Thu, 22 Oct 2026 18:00:01 GMT</pubDate>
     <guid isPermaLink="false">microcontroland-en-jour-14</guid>
-  </item>
-  <item>
-    <title>Day 13 — President Kiti re-elected with 39%</title>
-    <link>https://branbriere.github.io/microcontroland/en/#jour-13</link>
-    <description>Voters chose continuity. The palace stays in the Harbour region.</description>
-    <pubDate>Wed, 21 Oct 2026 18:00:01 GMT</pubDate>
-    <guid isPermaLink="false">microcontroland-en-jour-13</guid>
   </item>
 </channel>
 </rss>
