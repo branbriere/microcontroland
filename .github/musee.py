@@ -29,7 +29,7 @@ import json
 import sys
 from pathlib import Path
 
-VERSION = "1.0"
+VERSION = "1.1"
 MEMOIRE = 2          # index de l'âge de la Mémoire dans ages.etapes : âge d'ouverture d'une aile (Bran, 28 oct. 2026)
 BASE = "https://www.microcontroland.org/"
 DONNEES = "https://donnees.microcontroland.org/"
@@ -64,7 +64,7 @@ T = {
                  "one wing per era, one room per kind of work, one frame per president, one picture per evening of the studio. "
                  "Nothing on its walls is drawn by hand.",
         "desc": "A 3D museum of Microcontrôland, rebuilt every evening from the published data: presidents' portraits, the studio's drawings, one wing per era.",
-        "entrer": "Enter the museum in 3D", "entrer_note": "Loads about 0.7 MB. Mouse and keyboard, or touch. The text tour below shows exactly the same works.",
+        "entrer": "Enter the museum in 3D", "entrer_note": "Loads about 1.3 MB. Mouse and keyboard, or touch. The text tour below shows exactly the same works.",
         "texte": "Text tour", "texte_intro": "The same rooms and the same captions as the 3D tour, for visitors without JavaScript and for AI agents.",
         "hall": "Entrance hall", "hall_txt": "Welcome to the National Museum of Microcontrôland. Everything shown here is computed from the published data.",
         "seul": "Visitor, you are the only one who can walk through every era. The Waïnas only ever see their own.",
@@ -89,7 +89,7 @@ T = {
                  "une aile par ère, une salle par genre d'œuvre, un cadre par président, un tableau par soir de l'atelier. "
                  "Rien sur ses murs n'est dessiné à la main.",
         "desc": "Un musée en 3D de Microcontrôland, reconstruit chaque soir à partir des données publiées : portraits des présidents, dessins de l'atelier, une aile par ère.",
-        "entrer": "Entrer dans le musée en 3D", "entrer_note": "Environ 0,7 Mo à charger. Souris et clavier, ou doigt. La visite en texte ci-dessous montre exactement les mêmes œuvres.",
+        "entrer": "Entrer dans le musée en 3D", "entrer_note": "Environ 1,3 Mo à charger. Souris et clavier, ou doigt. La visite en texte ci-dessous montre exactement les mêmes œuvres.",
         "texte": "Visite en texte", "texte_intro": "Les mêmes salles et les mêmes cartels que la visite 3D, pour les visiteurs sans JavaScript et pour les agents IA.",
         "hall": "Hall d'accueil", "hall_txt": "Bienvenue au Musée national de Microcontrôland. Tout ce qui est exposé ici est calculé à partir des données publiées.",
         "seul": "Visiteur, vous êtes le seul à pouvoir parcourir toutes les ères. Les Waïnas ne voient jamais que la leur.",
@@ -304,6 +304,43 @@ def cartel_fin(nb_cerveaux):
     }
 
 
+def cartel_fenetre(f):
+    """Fenêtres sur le garage (idée de Bran, 2/11/2026 ; photos du 5/11/2026, vérifiées et floutées avant usage).
+    Ce ne sont pas des œuvres : elles ne comptent pas dans le nombre d'œuvres du musée."""
+    d = f["date"]
+    a, m, j = (int(x) for x in d.split("-"))
+    mois_fr = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"][m - 1]
+    mois_en = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"][m - 1]
+    return {
+        "fr": {"titre": f'{f["titre"]["fr"]} · Vue depuis la boîte',
+               "lignes": ["Ce n'est pas une œuvre : c'est une fenêtre. Elle donne sur " + f["vue"]["fr"] + ". Dehors, c'est-à-dire dedans : le garage normand où vit le pays.",
+                          "La boîte n'a pas d'yeux ; quelqu'un a donc pris la photo à sa place."],
+               "vrai": f"Ce qui est vrai : vraie photo de l'intérieur du garage où se trouve la boîte, prise le {j}{'er' if j == 1 else ''} {mois_fr} {a} ; "
+                       "métadonnées et position GPS retirées, détails qui permettraient de situer le lieu floutés. "
+                       "C'est la seule image de ce musée qui n'est pas calculée."},
+        "en": {"titre": f'{f["titre"]["en"]} · View from the box',
+               "lignes": [f'This is not a work of art: it is a window. It looks out on {f["vue"]["en"]}. Outside, which is to say inside: the Normandy garage where the country lives.',
+                          "The box has no eyes, so someone took the picture for it."],
+               "vrai": f"What is true: a real photo of the inside of the garage where the box stands, taken on {j} {mois_en} {a}; "
+                       "metadata and GPS position removed, details that could locate the place blurred. "
+                       "It is the only picture in this museum that is not computed."},
+    }
+
+
+SALLE_FENETRES = {"fr": "Vue depuis la boîte", "en": "View from the box"}
+
+
+def fenetres(catalogue, racine):
+    """Une fenêtre n'apparaît que si sa photo est bien sur le site (sinon, mur plein)."""
+    out = []
+    for f in catalogue.get("fenetres", []):
+        if not (racine / f["image"]).is_file():
+            continue
+        out.append({"id": f["id"], "image": f["image"], "largeur": f["largeur"], "hauteur": f["hauteur"],
+                    "titre": f["titre"], "vue": f["vue"], "cartel": cartel_fenetre(f)})
+    return out
+
+
 TYPES = {"portraits": salles_portraits, "dessins": salles_dessins, "artistes": salles_artistes}
 
 
@@ -382,6 +419,9 @@ def construire(racine):
     M["architecte"] = ARCHITECTE
     dessins = next((x["dessins"] for x in courante["salles"] if x["type"] == "dessins"), None)
     M["fin"] = cartel_fin(len(dessins) if dessins else 120)
+    F = fenetres(catalogue, racine)
+    if F:
+        M["fenetres"] = {"salle": SALLE_FENETRES, "liste": F}
     return M
 
 
@@ -497,6 +537,13 @@ def page(M, latest, lg, G, A):
         if M.get("fin"):
             corps.append(f'<section class="m-aile"><h2>{e(M["fin"][lg]["titre"])}</h2>' + "".join(f"<p>{e(t)}</p>" for t in M["fin"][lg]["lignes"])
                          + f'<p><small>{e(M["fin"][lg]["vrai"])}</small></p></section>')
+        if M.get("fenetres"):
+            F = M["fenetres"]
+            figs = "".join(f'<figure><img src="{pre}{e(f["image"])}" width="{f["largeur"]}" height="{f["hauteur"]}" loading="lazy" '
+                           f'style="width:100%;height:auto" alt="{e(f["cartel"][lg]["lignes"][0])}">'
+                           f'<figcaption><b>{e(f["titre"][lg])}</b><br>{e(f["vue"][lg])}</figcaption></figure>' for f in F["liste"])
+            corps.append(f'<section class="m-aile"><h2>{e(F["salle"][lg])}</h2><p>{e(F["liste"][0]["cartel"][lg]["lignes"][0].split(". ")[0])}.</p>'
+                         f'<div class="m-oeuvres">{figs}</div><p><small>{e(F["liste"][0]["cartel"][lg]["vrai"])}</small></p></section>')
         corps.append(f'<section class="m-aile"><h2>{e(X["suivante"].format(ere=M["suivante"]["ere"]))}</h2><p>{e(X["suivante_txt"])}</p></section>')
         ls = ", ".join('<a href="' + pre + f + '">' + f + '</a>' for f in ("musee.json", "musee-catalogue.json"))
         corps.append(f'<p><small>{X["verifier"].format(liens=ls)}</small></p>')

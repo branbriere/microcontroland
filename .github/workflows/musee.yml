@@ -14,6 +14,7 @@ on:
       - "musee-catalogue.json"
       - "institutions.json"
       - ".github/musee.py"
+      - "musee-fenetres/**"
   schedule:
     - cron: "5 19 * * *"    # 21 h 05 à Paris en heure d'été (filet de sécurité)
     - cron: "5 20 * * *"    # 21 h 05 à Paris en heure d'hiver
