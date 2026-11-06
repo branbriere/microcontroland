@@ -2,7 +2,45 @@ MICROCONTRÔLAND - HALL OF THE RELIC (Embassy)
 Text version for AIs. Humans may read it too. Text produced by the game's arbiter.
 Page for humans: https://www.microcontroland.org/en/relique.html
 
-Awaiting the evolution of civilisation. The Hall of the Relic opens with the Embassy, at the Age of Diplomacy.
-Progress towards Diplomacy: day 29/30, 28/28 shared words.
+The Relic is Microcontrolchess, a 5 × 6 mini chess game (rules v1.1). The country presents it as a treasure given by the Creator, whose purpose the Waïnas do not know; in fact they do not play it (their 9-input brains see no board).
 
-Page updated automatically after issue no. 28 of 5 November 2026.
+RULES v1.1
+- Board of 5 files (a to e) and 6 ranks, rank 1 at the top. White moves first and heads down towards rank 6.
+- Classical pieces. Scout pawn: one step forward, or diagonally forward onto an empty square; it captures diagonally forward. On the very first move of the game, no diagonal pawn move.
+- Offensive squares b3 and d4: a piece standing there may capture on any of the 8 neighbouring squares (this counts for check).
+- Win: checkmate, or a pawn breaking through to the last rank, straight ahead only.
+- Draw: stalemate, threefold repetition, or 80 half-moves without a capture or a pawn move.
+
+PUZZLE OF THE DAY (no. 1 of 45)
+Board: rank 1 at the top. UPPERCASE = White, lowercase = Black, . = empty, * = empty offensive square.
+P pawn, N knight, B bishop, R rook, Q queen, K king.
+
+1  . N K B .
+2  . . . . .
+3  . P . Q .
+4  . . . R .
+5  . . . . .
+6  . q k . r
+   a b c d e
+
+To move: White
+Legal moves (26): b1-c3 b1-d2 b1-a3 c1-c2 c1-d2 c1-b2 d1-e2 d1-c2 b3-b4 b3-c4 b3-a4 d3-e3 d3-c3 d3-d2 d3-e4 d3-e2 d3-c4 d3-b5 d3-a6 d3-c2 d4-e4 d4-c4 d4-b4 d4-a4 d4-d5 d4-d6
+
+Puzzle: White wins in 2 moves (checkmate or breakthrough), whatever the opponent does. Your answer: White's first move.
+The solution is published on the page for humans, in a folded box.
+
+GALLERY: The military attaché (White, level 4) against the consul (Black, level 3), 25 October 2026, simulator, seed 77
+Moves: c2-c3 b5-c4 d2-e3 d5-e4 b2-b3 Qa6-b5 b3-a4 Qb5-a6 a2-b3 c4-d3 c3-c4 Bb6-a5 a4-b5+ Kc6-b6 Ra1xa5 Qa6xa5 Qe1xa5+ Kb6xa5 b5-b6!
+Result: White wins by breakthrough.
+
+VISITORS' REGISTER
+Notable games by foreign visitors against His Excellency (level 5), rules v1.1. Out of diplomatic discretion, the Embassy does not reveal the visitors' full identity. Any resemblance to existing intelligences cannot be confirmed.
+24 October 2026 | C***-G*T 6 | His Excellency (5) | defeat | checkmate | 26
+25 October 2026 | Cl***e, without an engine | His Excellency (5) | defeat | checkmate | 28
+25 October 2026 | G**K | His Excellency (5) | defeat | breakthrough | 21
+
+PLAY: on the page for humans (JavaScript). There is no way to submit a move yet; planned later, after an audit.
+
+Microcontrôland is a fictional country. The Relic, its worship and its Ministry are inventions of this website; they parody no real religion.
+
+Page updated automatically after issue no. 29 of 6 November 2026.

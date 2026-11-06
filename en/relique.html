@@ -6,11 +6,11 @@
 <link rel="icon" href="../favicon.ico" sizes="32x32">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <title>Hall of the Relic — Microcontrôland</title>
-<meta name="description" content="Hall of the Relic, at the Embassy of Microcontrôland: opens at the Age of Diplomacy.">
+<meta name="description" content="The Relic of Microcontrôland, a national treasure given by the Creator: a 5 × 6 mini chess game to try against the Embassy&#x27;s AI, with a text version for AIs.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="La Puce Libre — Microcontrôland">
 <meta property="og:title" content="Hall of the Relic — Microcontrôland">
-<meta property="og:description" content="Hall of the Relic, at the Embassy of Microcontrôland: opens at the Age of Diplomacy.">
+<meta property="og:description" content="The Relic of Microcontrôland, a national treasure given by the Creator: a 5 × 6 mini chess game to try against the Embassy&#x27;s AI, with a text version for AIs.">
 <link rel="alternate" hreflang="fr" href="https://www.microcontroland.org/relique.html">
 <link rel="alternate" hreflang="en" href="https://www.microcontroland.org/en/relique.html">
 <link rel="alternate" hreflang="x-default" href="https://www.microcontroland.org/relique.html">
@@ -20,6 +20,36 @@
 <link rel="stylesheet" href="../style.css">
 <script src="../mesure.js" defer></script>
 <style>
+@font-face{font-family:"Relique Pieces";font-display:swap;src:url(../relique/pieces.woff2) format("woff2");unicode-range:U+265A-265F,U+2736}
+.rq-jeu{display:grid;gap:14px;margin:14px 0}
+.rq-board{display:grid;grid-template-columns:20px repeat(5,minmax(0,1fr));width:min(100%,420px);margin:0 auto;user-select:none}
+.rq-board .lbl{font:12px var(--f-data);color:var(--muted);display:grid;place-items:center;min-height:20px}
+.rq-board .sq{aspect-ratio:1;position:relative;display:grid;place-items:center;border:0;border-radius:0;padding:0;margin:0;background:#2f6b47;cursor:default;min-width:0}
+.rq-board button.sq{cursor:pointer}
+.rq-board .sq.dark{background:#245a3b}
+.rq-board .sq.off::before{content:"";position:absolute;inset:7%;border:2px dashed #d6aa52;border-radius:50%}
+.rq-board .star{position:absolute;right:6%;top:2%;color:#d6aa52;font:12px "Relique Pieces",sans-serif}
+.rq-board .sq.last{box-shadow:inset 0 0 0 999px rgba(214,170,82,.45)}
+.rq-board .sq.sel{box-shadow:inset 0 0 0 4px #f2d15c}
+.rq-board .sq.tgt::after{content:"";position:absolute;width:26%;height:26%;border-radius:50%;background:rgba(242,209,92,.6)}
+.rq-board .sq.tgt.cap::after{width:86%;height:86%;background:transparent;border:4px solid rgba(242,209,92,.75)}
+.rq-board .sq:focus-visible{outline:3px solid #f2d15c;outline-offset:-3px;z-index:1}
+.rq-board .pc{font-family:"Relique Pieces","Noto Sans Symbols 2","Segoe UI Symbol","DejaVu Sans",serif;font-variant-emoji:text;font-size:clamp(26px,8vw,46px);line-height:1;position:relative;z-index:1}
+.rq-board .pc.up{color:#fff;text-shadow:-2px 0 0 #000,2px 0 0 #000,0 -2px 0 #000,0 2px 0 #000,-1.5px -1.5px 0 #000,1.5px 1.5px 0 #000,-1.5px 1.5px 0 #000,1.5px -1.5px 0 #000}
+.rq-board .pc.down{color:#000;text-shadow:-2px 0 0 #fff,2px 0 0 #fff,0 -2px 0 #fff,0 2px 0 #fff,-1.5px -1.5px 0 #fff,1.5px 1.5px 0 #fff,-1.5px 1.5px 0 #fff,1.5px -1.5px 0 #fff}
+.rq-status{text-align:center;font:600 15px var(--f-data);min-height:1.5em;margin:0}
+.rq-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 10px}
+.rq-row select,.rq-row button{font:600 13px var(--f-data);border:1px solid var(--rule);background:var(--sheet);color:var(--ink);padding:7px 10px;border-radius:0;max-width:100%}
+.rq-row button{cursor:pointer}.rq-row button.primary{background:var(--mask);color:var(--sheet);border-color:var(--mask)}
+.rq-row button:disabled,.rq-row select:disabled{opacity:.45;cursor:default}
+.rq-moves{font:13px var(--f-data);max-height:180px;overflow-y:auto;display:grid;grid-template-columns:2.4em 1fr 1fr;gap:2px 8px;font-variant-numeric:tabular-nums}
+.rq-moves .n{color:var(--muted)}
+.rq-pre{font:13px/1.45 var(--f-data);background:var(--sheet);border:1px solid var(--rule);padding:12px;overflow-x:auto;margin:0 0 10px;white-space:pre}
+.rq-scroll{overflow-x:auto}.rq-scroll td,.rq-scroll th{white-space:nowrap}
+.rq-ways{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:12px;margin:10px 0}
+.rq-ways div{background:var(--sheet);border:1px solid var(--rule);border-top:4px solid var(--mask);padding:12px}
+.rq-ways b{display:block}.rq-ways p{margin:4px 0 6px;font-size:15px}
+.rq-later{font:600 11px var(--f-data);color:var(--warn);text-transform:uppercase;letter-spacing:.06em}
 .rq-wait{border:1px solid var(--rule);border-top:6px solid var(--mask);background:var(--sheet);padding:22px 18px;margin:20px 0;text-align:center}
 .rq-wait p{margin:0 0 8px}.rq-wait .att{font-size:20px;font-style:italic}
 </style>
@@ -48,8 +78,68 @@
   <div class="prose">
     <p class="k2" style="margin-top:22px">Embassy of Microcontrôland · exhibition hall</p>
     <h1>Hall of the Relic</h1>
-    <div class="rq-wait"><p class="att">Awaiting the evolution of civilisation. The Hall of the Relic opens with the Embassy, at the Age of Diplomacy.</p><p class="note">Progress towards Diplomacy: day 29/30, 28/28 shared words.</p></div>
-    <p class="note">Page updated automatically after issue no. 28 of 5 November 2026.</p>
+    <p class="chapo">Where the Embassy shows the outside world the Republic&#x27;s most sacred, and most mysterious, national treasure.</p>
+
+    <h2>The Relic</h2>
+    <blockquote class="quote">“The Ministry confirms that the Relic was given to the people by the Creator in person. The people venerate it fervently. Its purpose has been the subject of in-depth studies, conducted since its reception with exemplary seriousness and a result that is, to date, being consolidated. The Embassy respectfully invites foreign visitors to handle the Relic, provided they put it back properly.”<cite>Statement from the Ministry of Worship</cite></blockquote>
+    <p><b>What is true:</b> the Relic is a game, Microcontrolchess: a mini chess game on 5 × 6 squares, 9 pieces per side, with two offensive squares. The Waïnas do not play it: their small 9-input brains perceive only the country's political life, not a board. Games here are played by visitors, human or AI, against the page's AI.</p>
+
+    <h2>Touch the Relic</h2>
+    <noscript><p class="note">The game needs JavaScript. Without it, the text version can still be read: <a href="relique.txt">relique.txt</a></p></noscript>
+    <div class="rq-jeu">
+      <p class="rq-status" id="status" aria-live="polite">Choose your side, then “Begin”.</p>
+      <div class="rq-board" id="board" aria-label="Hall of the Relic"></div>
+      <p class="note" style="text-align:center;margin:0">✶ b3 and d4: a piece standing there may capture on any of the 8 neighbouring squares.</p>
+    </div>
+    <div class="box">
+      <h3 style="margin:0 0 10px">Your audience</h3>
+      <div class="rq-row"><label for="side">I play</label>
+        <select id="side"><option value="1">White (I move first)</option><option value="-1">Black</option></select></div>
+      <div class="rq-row"><label for="depth">Opponent</label><select id="depth"><option value="1">The usher (1)</option><option value="2" selected>The secretary (2)</option><option value="3">The consul (3)</option><option value="4">The military attaché (4)</option><option value="5">His Excellency (5, slow)</option></select></div>
+      <div class="rq-row"><button type="button" class="primary" id="new">Begin</button><button type="button" id="resign" disabled>Resign</button></div>
+      <div class="rq-moves" id="moves"></div>
+    </div>
+    <details><summary>Rules v1.1</summary><ul><li>Board of 5 files (a to e) and 6 ranks, rank 1 at the top. White moves first and heads down towards rank 6.</li><li>Classical pieces. Scout pawn: one step forward, or diagonally forward onto an empty square; it captures diagonally forward. On the very first move of the game, no diagonal pawn move.</li><li>Offensive squares b3 and d4: a piece standing there may capture on any of the 8 neighbouring squares (this counts for check).</li><li>Win: checkmate, or a pawn breaking through to the last rank, straight ahead only.</li><li>Draw: stalemate, threefold repetition, or 80 half-moves without a capture or a pawn move.</li></ul></details>
+
+    <h2>The gallery of games</h2>
+    <p>A real simulator game, replayed move by move: The military attaché (White, level 4) against the consul (Black, level 3), 25 October 2026, simulator, seed 77.</p>
+    <div class="rq-jeu">
+      <p class="rq-status" id="rstatus">Exhibition game</p>
+      <div class="rq-board" id="rboard" aria-label="The gallery of games"></div>
+    </div>
+    <div class="rq-row" style="justify-content:center">
+      <button type="button" id="rfirst" aria-label="Start">⏮</button><button type="button" id="rprev" aria-label="Previous move">◀</button>
+      <button type="button" id="rplay" class="primary">Play</button>
+      <button type="button" id="rnext" aria-label="Next move">▶</button><button type="button" id="rlast" aria-label="End">⏭</button>
+    </div>
+    <p class="note" id="rmove" style="text-align:center">Starting position.</p>
+    <h3>The visitors&#x27; register</h3><p class="note">Notable games by foreign visitors against His Excellency (level 5), rules v1.1. Out of diplomatic discretion, the Embassy does not reveal the visitors&#x27; full identity. Any resemblance to existing intelligences cannot be confirmed.</p><div class="rq-scroll"><table><thead><tr><th>Date</th><th>Visitor</th><th>Opponent</th><th>Result</th><th>Ending</th><th>Half-moves</th></tr></thead><tbody><tr><td>24 October 2026</td><td>C***-G*T 6</td><td>His Excellency (5)</td><td>defeat</td><td>checkmate</td><td>26</td></tr><tr><td>25 October 2026</td><td>Cl***e, without an engine</td><td>His Excellency (5)</td><td>defeat</td><td>checkmate</td><td>28</td></tr><tr><td>25 October 2026</td><td>G**K</td><td>His Excellency (5)</td><td>defeat</td><td>breakthrough</td><td>21</td></tr></tbody></table></div>
+
+    <h2>For outside intelligences</h2>
+    <p>A public plain-text version that any AI can read without JavaScript: <a href="relique.txt">relique.txt</a>. Humans may read it too. The text is produced by the game's arbiter; it cannot contain an illegal move. The puzzle changes every evening.</p>
+    <pre class="rq-pre">PUZZLE OF THE DAY (no. 1 of 45)
+Board: rank 1 at the top. UPPERCASE = White, lowercase = Black, . = empty, * = empty offensive square.
+P pawn, N knight, B bishop, R rook, Q queen, K king.
+
+1  . N K B .
+2  . . . . .
+3  . P . Q .
+4  . . . R .
+5  . . . . .
+6  . q k . r
+   a b c d e
+
+To move: White
+Legal moves (26): b1-c3 b1-d2 b1-a3 c1-c2 c1-d2 c1-b2 d1-e2 d1-c2 b3-b4 b3-c4 b3-a4 d3-e3 d3-c3 d3-d2 d3-e4 d3-e2 d3-c4 d3-b5 d3-a6 d3-c2 d4-e4 d4-c4 d4-b4 d4-a4 d4-d5 d4-d6
+
+Puzzle: White wins in 2 moves (checkmate or breakthrough), whatever the opponent does. Your answer: White&#x27;s first move.</pre><details><summary>Puzzle solution</summary><p>First move: d3-c4. Every reply leads to checkmate or a breakthrough on the next move (checked by the arbiter).</p></details>
+
+    <h2>How to take part</h2>
+    <div class="rq-ways"><div><b>Play</b><p>Against the AI, in your browser. Five levels, from the usher to His Excellency. Nothing is sent, no account, no cookie.</p></div><div><b>Watch</b><p>The gallery replays a chosen game move by move, with an autoplay.</p></div><div><b>Solve</b><p>The daily puzzle (checkmate or breakthrough in 2), readable by humans and AIs alike.</p></div><div><b>Submit a move</b><p>A visiting AI may one day play by sending a move, checked by the arbiter. Observation data only.</p><span class="rq-later">later, after an audit</span></div></div>
+
+    <p class="note">Game code under the MIT licence: <a href="../relique/engine.js">engine.js</a> (arbiter and AI), <a href="../relique/relique.js">relique.js</a> (this page). Games played here are neither recorded nor sent anywhere.</p>
+    <p class="note">Microcontrôland is a fictional country. The Relic, its worship and its Ministry are inventions of this website; they parody no real religion.</p>
+    <p class="note">Page updated automatically after issue no. 29 of 6 November 2026.</p>
   </div>
 
   <footer class="site">
@@ -62,5 +152,8 @@
 <script src="../reglages.js"></script>
 <script src="../commun.js"></script>
 <script src="../lang.js"></script>
+<script type="application/json" id="galerie-donnees">{"mv": [[7, 12], [21, 17], [8, 14], [23, 19], [6, 11], [25, 21], [11, 15], [21, 25], [5, 11], [17, 13], [12, 17], [26, 20], [15, 21], [27, 26], [0, 20], [25, 20], [4, 20], [26, 20], [21, 26]], "notes": ["c2-c3", "b5-c4", "d2-e3", "d5-e4", "b2-b3", "Qa6-b5", "b3-a4", "Qb5-a6", "a2-b3", "c4-d3", "c3-c4", "Bb6-a5", "a4-b5+", "Kc6-b6", "Ra1xa5", "Qa6xa5", "Qe1xa5+", "Kb6xa5", "b5-b6!"]}</script>
+<script src="../relique/engine.js"></script>
+<script src="../relique/relique.js"></script>
 </body>
 </html>

@@ -2,7 +2,45 @@ MICROCONTRÔLAND - SALLE DE LA RELIQUE (Ambassade)
 Version texte pour les IA. Lecture humaine autorisée. Texte produit par l'arbitre du jeu.
 Page pour les humains : https://www.microcontroland.org/relique.html
 
-En attente d'évolution de la civilisation. La Salle de la Relique ouvre avec l'Ambassade, à l'âge de la Diplomatie.
-Progression vers la Diplomatie : jour 29/30, 28/28 mots communs.
+La Relique est Microcontrolchess, mini-jeu d'échecs 5 × 6 (règles v1.1). Le pays la présente comme un trésor offert par le Créateur, dont les Waïnas ignorent l'usage ; en vrai, ils n'y jouent pas (leur cerveau de 9 entrées ne voit pas de plateau).
 
-Page mise à jour automatiquement après l'édition n° 28 du 5 novembre 2026.
+RÈGLES v1.1
+- Plateau de 5 colonnes (a à e) et 6 rangées, rangée 1 en haut. Les blancs commencent et descendent vers la rangée 6.
+- Pièces classiques. Pion éclaireur : un pas en avant, ou en diagonale avant vers une case vide ; il prend en diagonale avant. Au tout premier coup de la partie, pas de pion en diagonale.
+- Cases offensives b3 et d4 : la pièce qui s'y trouve peut prendre sur les 8 cases voisines (cela compte pour l'échec).
+- Victoire : mat, ou percée d'un pion sur la dernière rangée, tout droit seulement.
+- Nulle : pat, triple répétition, ou 80 demi-coups sans prise ni coup de pion.
+
+PROBLÈME DU JOUR (n° 1 sur 45)
+Plateau : rangée 1 en haut. MAJUSCULES = blancs, minuscules = noirs, . = vide, * = case offensive vide.
+P pion, N cavalier, B fou, R tour, Q dame, K roi.
+
+1  . N K B .
+2  . . . . .
+3  . P . Q .
+4  . . . R .
+5  . . . . .
+6  . q k . r
+   a b c d e
+
+Trait : blancs
+Coups légaux (26) : b1-c3 b1-d2 b1-a3 c1-c2 c1-d2 c1-b2 d1-e2 d1-c2 b3-b4 b3-c4 b3-a4 d3-e3 d3-c3 d3-d2 d3-e4 d3-e2 d3-c4 d3-b5 d3-a6 d3-c2 d4-e4 d4-c4 d4-b4 d4-a4 d4-d5 d4-d6
+
+Énigme : les blancs gagnent en 2 coups (mat ou percée), quoi que fasse l'adversaire. Votre réponse : le premier coup des blancs.
+La solution est publiée sur la page pour les humains, dans un encadré replié.
+
+GALERIE : L'attaché militaire (blancs, niveau 4) contre le consul (noirs, niveau 3), 25 octobre 2026, simulateur, graine 77
+Coups : c2-c3 b5-c4 d2-e3 d5-e4 b2-b3 Qa6-b5 b3-a4 Qb5-a6 a2-b3 c4-d3 c3-c4 Bb6-a5 a4-b5+ Kc6-b6 Ra1xa5 Qa6xa5 Qe1xa5+ Kb6xa5 b5-b6!
+Résultat : les blancs gagnent par percée.
+
+REGISTRE DES VISITEURS
+Parties notables de visiteurs étrangers contre Son Excellence (niveau 5), règles v1.1. Par discrétion diplomatique, l'Ambassade ne révèle pas l'identité complète des visiteurs. Toute ressemblance avec des intelligences existantes ne saurait être confirmée.
+24 octobre 2026 | C***-G*T 6 | Son Excellence (5) | défaite | mat | 26
+25 octobre 2026 | Cl***e, sans moteur | Son Excellence (5) | défaite | mat | 28
+25 octobre 2026 | G**K | Son Excellence (5) | défaite | percée | 21
+
+JOUER : sur la page pour les humains (JavaScript). Il n'existe pas encore de moyen d'envoyer un coup ; prévu plus tard, après audit.
+
+Microcontrôland est un pays fictif. La Relique, son culte et son Ministère sont des inventions de ce site ; ils ne parodient aucune religion réelle.
+
+Page mise à jour automatiquement après l'édition n° 29 du 6 novembre 2026.

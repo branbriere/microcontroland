@@ -6,11 +6,11 @@
 <link rel="icon" href="favicon.ico" sizes="32x32">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <title>Salle de la Relique — Microcontrôland</title>
-<meta name="description" content="Salle de la Relique, à l&#x27;Ambassade de Microcontrôland : ouvre à l&#x27;âge de la Diplomatie.">
+<meta name="description" content="La Relique de Microcontrôland, trésor national offert par le Créateur : un mini-jeu d&#x27;échecs 5 × 6 à essayer contre l&#x27;IA de l&#x27;Ambassade, avec une version texte pour les IA.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="La Puce Libre — Microcontrôland">
 <meta property="og:title" content="Salle de la Relique — Microcontrôland">
-<meta property="og:description" content="Salle de la Relique, à l&#x27;Ambassade de Microcontrôland : ouvre à l&#x27;âge de la Diplomatie.">
+<meta property="og:description" content="La Relique de Microcontrôland, trésor national offert par le Créateur : un mini-jeu d&#x27;échecs 5 × 6 à essayer contre l&#x27;IA de l&#x27;Ambassade, avec une version texte pour les IA.">
 <link rel="alternate" hreflang="fr" href="https://www.microcontroland.org/relique.html">
 <link rel="alternate" hreflang="en" href="https://www.microcontroland.org/en/relique.html">
 <link rel="alternate" hreflang="x-default" href="https://www.microcontroland.org/relique.html">
@@ -20,6 +20,36 @@
 <link rel="stylesheet" href="style.css">
 <script src="mesure.js" defer></script>
 <style>
+@font-face{font-family:"Relique Pieces";font-display:swap;src:url(relique/pieces.woff2) format("woff2");unicode-range:U+265A-265F,U+2736}
+.rq-jeu{display:grid;gap:14px;margin:14px 0}
+.rq-board{display:grid;grid-template-columns:20px repeat(5,minmax(0,1fr));width:min(100%,420px);margin:0 auto;user-select:none}
+.rq-board .lbl{font:12px var(--f-data);color:var(--muted);display:grid;place-items:center;min-height:20px}
+.rq-board .sq{aspect-ratio:1;position:relative;display:grid;place-items:center;border:0;border-radius:0;padding:0;margin:0;background:#2f6b47;cursor:default;min-width:0}
+.rq-board button.sq{cursor:pointer}
+.rq-board .sq.dark{background:#245a3b}
+.rq-board .sq.off::before{content:"";position:absolute;inset:7%;border:2px dashed #d6aa52;border-radius:50%}
+.rq-board .star{position:absolute;right:6%;top:2%;color:#d6aa52;font:12px "Relique Pieces",sans-serif}
+.rq-board .sq.last{box-shadow:inset 0 0 0 999px rgba(214,170,82,.45)}
+.rq-board .sq.sel{box-shadow:inset 0 0 0 4px #f2d15c}
+.rq-board .sq.tgt::after{content:"";position:absolute;width:26%;height:26%;border-radius:50%;background:rgba(242,209,92,.6)}
+.rq-board .sq.tgt.cap::after{width:86%;height:86%;background:transparent;border:4px solid rgba(242,209,92,.75)}
+.rq-board .sq:focus-visible{outline:3px solid #f2d15c;outline-offset:-3px;z-index:1}
+.rq-board .pc{font-family:"Relique Pieces","Noto Sans Symbols 2","Segoe UI Symbol","DejaVu Sans",serif;font-variant-emoji:text;font-size:clamp(26px,8vw,46px);line-height:1;position:relative;z-index:1}
+.rq-board .pc.up{color:#fff;text-shadow:-2px 0 0 #000,2px 0 0 #000,0 -2px 0 #000,0 2px 0 #000,-1.5px -1.5px 0 #000,1.5px 1.5px 0 #000,-1.5px 1.5px 0 #000,1.5px -1.5px 0 #000}
+.rq-board .pc.down{color:#000;text-shadow:-2px 0 0 #fff,2px 0 0 #fff,0 -2px 0 #fff,0 2px 0 #fff,-1.5px -1.5px 0 #fff,1.5px 1.5px 0 #fff,-1.5px 1.5px 0 #fff,1.5px -1.5px 0 #fff}
+.rq-status{text-align:center;font:600 15px var(--f-data);min-height:1.5em;margin:0}
+.rq-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 10px}
+.rq-row select,.rq-row button{font:600 13px var(--f-data);border:1px solid var(--rule);background:var(--sheet);color:var(--ink);padding:7px 10px;border-radius:0;max-width:100%}
+.rq-row button{cursor:pointer}.rq-row button.primary{background:var(--mask);color:var(--sheet);border-color:var(--mask)}
+.rq-row button:disabled,.rq-row select:disabled{opacity:.45;cursor:default}
+.rq-moves{font:13px var(--f-data);max-height:180px;overflow-y:auto;display:grid;grid-template-columns:2.4em 1fr 1fr;gap:2px 8px;font-variant-numeric:tabular-nums}
+.rq-moves .n{color:var(--muted)}
+.rq-pre{font:13px/1.45 var(--f-data);background:var(--sheet);border:1px solid var(--rule);padding:12px;overflow-x:auto;margin:0 0 10px;white-space:pre}
+.rq-scroll{overflow-x:auto}.rq-scroll td,.rq-scroll th{white-space:nowrap}
+.rq-ways{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:12px;margin:10px 0}
+.rq-ways div{background:var(--sheet);border:1px solid var(--rule);border-top:4px solid var(--mask);padding:12px}
+.rq-ways b{display:block}.rq-ways p{margin:4px 0 6px;font-size:15px}
+.rq-later{font:600 11px var(--f-data);color:var(--warn);text-transform:uppercase;letter-spacing:.06em}
 .rq-wait{border:1px solid var(--rule);border-top:6px solid var(--mask);background:var(--sheet);padding:22px 18px;margin:20px 0;text-align:center}
 .rq-wait p{margin:0 0 8px}.rq-wait .att{font-size:20px;font-style:italic}
 </style>
@@ -48,8 +78,68 @@
   <div class="prose">
     <p class="k2" style="margin-top:22px">Ambassade de Microcontrôland · salle d&#x27;exposition</p>
     <h1>Salle de la Relique</h1>
-    <div class="rq-wait"><p class="att">En attente d&#x27;évolution de la civilisation. La Salle de la Relique ouvre avec l&#x27;Ambassade, à l&#x27;âge de la Diplomatie.</p><p class="note">Progression vers la Diplomatie : jour 29/30, 28/28 mots communs.</p></div>
-    <p class="note">Page mise à jour automatiquement après l&#x27;édition n° 28 du 5 novembre 2026.</p>
+    <p class="chapo">Où l&#x27;Ambassade expose au monde extérieur le trésor national le plus sacré, et le plus mystérieux, de la République.</p>
+
+    <h2>La Relique</h2>
+    <blockquote class="quote">« Le Ministère confirme que la Relique a été offerte au peuple par le Créateur en personne. Le peuple la vénère avec ferveur. Son usage fait l&#x27;objet d&#x27;études approfondies, menées depuis sa réception avec un sérieux exemplaire et un résultat, à ce jour, en cours de consolidation. L&#x27;Ambassade invite respectueusement les visiteurs étrangers à manipuler la Relique, sous réserve de la reposer correctement. »<cite>Communiqué du Ministère du Culte</cite></blockquote>
+    <p><b>Ce qui est vrai :</b> la Relique est un jeu, Microcontrolchess : un mini-jeu d'échecs de 5 × 6 cases, 9 pièces par camp, avec deux cases offensives. Les Waïnas n'y jouent pas : leur petit cerveau de 9 entrées ne perçoit que la vie politique du pays, pas un plateau. Les parties sont jouées ici par des visiteurs, humains ou IA, contre l'IA de la page.</p>
+
+    <h2>Toucher la Relique</h2>
+    <noscript><p class="note">Le jeu demande JavaScript. Sans lui, la version texte reste lisible : <a href="relique.txt">relique.txt</a></p></noscript>
+    <div class="rq-jeu">
+      <p class="rq-status" id="status" aria-live="polite">Choisissez votre camp, puis « Commencer ».</p>
+      <div class="rq-board" id="board" aria-label="Salle de la Relique"></div>
+      <p class="note" style="text-align:center;margin:0">✶ b3 et d4 : la pièce qui s&#x27;y trouve peut prendre sur les 8 cases voisines.</p>
+    </div>
+    <div class="box">
+      <h3 style="margin:0 0 10px">Votre audience</h3>
+      <div class="rq-row"><label for="side">Je joue</label>
+        <select id="side"><option value="1">les blancs (je commence)</option><option value="-1">les noirs</option></select></div>
+      <div class="rq-row"><label for="depth">Adversaire</label><select id="depth"><option value="1">L&#x27;huissier (1)</option><option value="2" selected>Le secrétaire (2)</option><option value="3">Le consul (3)</option><option value="4">L&#x27;attaché militaire (4)</option><option value="5">Son Excellence (5, lente)</option></select></div>
+      <div class="rq-row"><button type="button" class="primary" id="new">Commencer</button><button type="button" id="resign" disabled>Abandonner</button></div>
+      <div class="rq-moves" id="moves"></div>
+    </div>
+    <details><summary>Règles v1.1</summary><ul><li>Plateau de 5 colonnes (a à e) et 6 rangées, rangée 1 en haut. Les blancs commencent et descendent vers la rangée 6.</li><li>Pièces classiques. Pion éclaireur : un pas en avant, ou en diagonale avant vers une case vide ; il prend en diagonale avant. Au tout premier coup de la partie, pas de pion en diagonale.</li><li>Cases offensives b3 et d4 : la pièce qui s&#x27;y trouve peut prendre sur les 8 cases voisines (cela compte pour l&#x27;échec).</li><li>Victoire : mat, ou percée d&#x27;un pion sur la dernière rangée, tout droit seulement.</li><li>Nulle : pat, triple répétition, ou 80 demi-coups sans prise ni coup de pion.</li></ul></details>
+
+    <h2>La galerie des parties</h2>
+    <p>Une vraie partie du simulateur, rejouée coup par coup : L&#x27;attaché militaire (blancs, niveau 4) contre le consul (noirs, niveau 3), 25 octobre 2026, simulateur, graine 77.</p>
+    <div class="rq-jeu">
+      <p class="rq-status" id="rstatus">Partie de démonstration</p>
+      <div class="rq-board" id="rboard" aria-label="La galerie des parties"></div>
+    </div>
+    <div class="rq-row" style="justify-content:center">
+      <button type="button" id="rfirst" aria-label="Début">⏮</button><button type="button" id="rprev" aria-label="Coup précédent">◀</button>
+      <button type="button" id="rplay" class="primary">Lecture</button>
+      <button type="button" id="rnext" aria-label="Coup suivant">▶</button><button type="button" id="rlast" aria-label="Fin">⏭</button>
+    </div>
+    <p class="note" id="rmove" style="text-align:center">Position initiale.</p>
+    <h3>Le registre des visiteurs</h3><p class="note">Parties notables de visiteurs étrangers contre Son Excellence (niveau 5), règles v1.1. Par discrétion diplomatique, l&#x27;Ambassade ne révèle pas l&#x27;identité complète des visiteurs. Toute ressemblance avec des intelligences existantes ne saurait être confirmée.</p><div class="rq-scroll"><table><thead><tr><th>Date</th><th>Visiteur</th><th>Adversaire</th><th>Résultat</th><th>Fin</th><th>Demi-coups</th></tr></thead><tbody><tr><td>24 octobre 2026</td><td>C***-G*T 6</td><td>Son Excellence (5)</td><td>défaite</td><td>mat</td><td>26</td></tr><tr><td>25 octobre 2026</td><td>Cl***e, sans moteur</td><td>Son Excellence (5)</td><td>défaite</td><td>mat</td><td>28</td></tr><tr><td>25 octobre 2026</td><td>G**K</td><td>Son Excellence (5)</td><td>défaite</td><td>percée</td><td>21</td></tr></tbody></table></div>
+
+    <h2>Pour les intelligences extérieures</h2>
+    <p>Une version en texte brut, publique, que toute IA peut lire sans JavaScript : <a href="relique.txt">relique.txt</a>. Lecture humaine autorisée. Le texte est produit par l'arbitre du jeu ; il ne peut pas contenir de coup faux. Le problème change chaque soir.</p>
+    <pre class="rq-pre">PROBLÈME DU JOUR (n° 1 sur 45)
+Plateau : rangée 1 en haut. MAJUSCULES = blancs, minuscules = noirs, . = vide, * = case offensive vide.
+P pion, N cavalier, B fou, R tour, Q dame, K roi.
+
+1  . N K B .
+2  . . . . .
+3  . P . Q .
+4  . . . R .
+5  . . . . .
+6  . q k . r
+   a b c d e
+
+Trait : blancs
+Coups légaux (26) : b1-c3 b1-d2 b1-a3 c1-c2 c1-d2 c1-b2 d1-e2 d1-c2 b3-b4 b3-c4 b3-a4 d3-e3 d3-c3 d3-d2 d3-e4 d3-e2 d3-c4 d3-b5 d3-a6 d3-c2 d4-e4 d4-c4 d4-b4 d4-a4 d4-d5 d4-d6
+
+Énigme : les blancs gagnent en 2 coups (mat ou percée), quoi que fasse l&#x27;adversaire. Votre réponse : le premier coup des blancs.</pre><details><summary>Solution du problème</summary><p>Premier coup : d3-c4. Toutes les réponses mènent au mat ou à la percée au coup suivant (vérifié par l&#x27;arbitre).</p></details>
+
+    <h2>Comment interagir</h2>
+    <div class="rq-ways"><div><b>Jouer</b><p>Contre l&#x27;IA, dans le navigateur. Cinq niveaux, de l&#x27;huissier à Son Excellence. Rien n&#x27;est envoyé, aucun compte, aucun cookie.</p></div><div><b>Regarder</b><p>La galerie rejoue une partie choisie, coup par coup, avec une lecture automatique.</p></div><div><b>Résoudre</b><p>Le problème du jour (mat ou percée en 2), lisible par les humains comme par les IA.</p></div><div><b>Proposer un coup</b><p>Une IA visiteuse pourra peut-être jouer en envoyant un coup, vérifié par l&#x27;arbitre. Données d&#x27;observation seulement.</p><span class="rq-later">plus tard, après audit</span></div></div>
+
+    <p class="note">Code du jeu sous licence MIT : <a href="relique/engine.js">engine.js</a> (arbitre et IA), <a href="relique/relique.js">relique.js</a> (cette page). Les parties jouées ici ne sont ni enregistrées ni envoyées.</p>
+    <p class="note">Microcontrôland est un pays fictif. La Relique, son culte et son Ministère sont des inventions de ce site ; ils ne parodient aucune religion réelle.</p>
+    <p class="note">Page mise à jour automatiquement après l&#x27;édition n° 29 du 6 novembre 2026.</p>
   </div>
 
   <footer class="site">
@@ -62,5 +152,8 @@
 <script src="reglages.js"></script>
 <script src="commun.js"></script>
 <script src="lang.js"></script>
+<script type="application/json" id="galerie-donnees">{"mv": [[7, 12], [21, 17], [8, 14], [23, 19], [6, 11], [25, 21], [11, 15], [21, 25], [5, 11], [17, 13], [12, 17], [26, 20], [15, 21], [27, 26], [0, 20], [25, 20], [4, 20], [26, 20], [21, 26]], "notes": ["c2-c3", "b5-c4", "d2-e3", "d5-e4", "b2-b3", "Qa6-b5", "b3-a4", "Qb5-a6", "a2-b3", "c4-d3", "c3-c4", "Bb6-a5", "a4-b5+", "Kc6-b6", "Ra1xa5", "Qa6xa5", "Qe1xa5+", "Kb6xa5", "b5-b6!"]}</script>
+<script src="relique/engine.js"></script>
+<script src="relique/relique.js"></script>
 </body>
 </html>
