@@ -366,16 +366,19 @@
     const HAUT = { hall: 5.0, portraits: 6.2, dessins: 4.4, artistes: 3.6, sculptures: 5.4, sculpteurs: 3.9, glyphes: 4.8, fermee: 4.2 };
     const hauteur = (type, k) => (HAUT[type] || 4.4) + (type === 'artistes' || type === 'sculpteurs' ? (k % 2) * 0.6 : 0);   // type inconnu : hauteur ordinaire, jamais NaN
 
+    // L'écriture de l'ère en cours : annexe à droite du hall (demande de Bran, 7/11/2026), en attendant l'ascenseur (1.3)
+    const aileCourante = (M.plan || []).filter((a) => a.etat !== 'fermee' && !a.figee).pop();
+    const SG = aileCourante ? aileCourante.salles.find((s) => s.type === 'glyphes') : null;
     // Hall d'accueil
     {
       const H = HAUT.hall, L = 12, z1 = z, z2 = z - L;
       const annexe = (M.annexes || [])[0];
-      murs(z1, z2, H, annexe ? [{ cote: -1, z1: -3, z2: -9 }] : []);
+      murs(z1, z2, H, [...(annexe ? [{ cote: -1, z1: -3, z2: -9 }] : []), ...(SG ? [{ cote: 1, z1: -3, z2: -9 }] : [])]);
       boiteM(2 * W, H, 0.2, 0, H / 2, z1, MUR);
       sol(-W, z1, W, z2); plafond(-W, z1, W, z2, H); rais(z1 - 0.3, z2 + 0.3, H);
       plaque({ titre: T.bienvenue, lignes: [T.bienvenue_txt, T.compte(M, M.edition)], taille: 44 }, 4.2, 2.2, (W + PORTE) / 2, 2.2, z2, 0, { titre: T.bienvenue, lignes: [T.bienvenue_txt, T.compte(M, M.edition)], html: `<p class="m3-src">${lien('musee.json')}, ${lien('musee-catalogue.json')}</p>` });
       plaque({ titre: T.seul, lignes: [], taille: 30, fond: '#1b2124', encre: '#f2f4f1', accent: '#5fe08f' }, 3.4, 1.3, 4, 2.4, z1, Math.PI, { titre: T.seul, lignes: [] });
-      if (M.reclame) reclame(M.reclame[LG], 3.6, 2.6, W, 2.4, -6, -Math.PI / 2);
+      if (M.reclame) reclame(M.reclame[LG], 3.0, 2.2, -(W + PORTE) / 2, 2.3, z2, 0);   // mur du fond, à gauche de la porte (Bran, 7/11/2026)
       if (M.architecte) reclame(M.architecte[LG], 3.2, 2.2, -4, 2.3, z1, Math.PI);
       if (annexe) {
         const X1 = -W - 6, ch = annexe.etat !== 'ouverte';
@@ -387,6 +390,7 @@
       }
       zones.push({ z1, z2, nom: T.hall });
       salles.push({ nom: T.hall, z: z1 - 4 });
+      if (SG) annexeEcriture(SG, aileCourante.ere);
       z = z2;
     }
 
@@ -406,6 +410,7 @@
         break;   // rien au-delà d'une aile fermée
       }
       for (const s of aile.salles) {
+        if (s === SG) continue;   // déjà dans l'annexe de droite du hall
         const H = hauteur(s.type, k++);
         let L = 12;
         if (s.type === 'portraits') L = Math.max(14, Math.ceil(s.oeuvres.length / 2) * 4.4 + 6);
@@ -600,6 +605,65 @@
       plaque({ titre: T.histoire, lignes: lignes.slice(0, 12), taille: 30 }, 2.6, 2.4, -(W + PORTE) / 2, 2.2, z2, 0, { titre: T.histoire, lignes, html: src });
     }
 
+    // L'écriture dans une annexe à droite du hall (Bran, 7/11/2026) : 12 m de profondeur, ouverture de 6 m dans le mur du hall.
+    // Abécédaire au fond, cartouches au mur sud, frise et histoire au mur nord ; titre et réclame sur le mur du hall.
+    function annexeEcriture(s, ere) {
+      const X1 = W, X2 = W + 12, A1 = -1.6, A2 = -10.4, H = HAUT.glyphes, zm = (A1 + A2) / 2;
+      sol(X1, A1, X2, A2); plafond(X1, A1, X2, A2, H);
+      boiteM(X2 - X1, H, 0.2, (X1 + X2) / 2, H / 2, A1, MUR); boiteM(X2 - X1, H, 0.2, (X1 + X2) / 2, H / 2, A2, MUR); boiteM(0.2, H, A1 - A2 + 0.2, X2, H / 2, zm, MUR);
+      const nom = `${T.aile(ere)} · ${s.titre[LG]}`;
+      const src = (s.source ? `<p class="m3-src">${T.source} : <a href="https://donnees.microcontroland.org/${esc(s.source)}">${esc(s.source)}</a></p>` : '') + verifier(s);
+      // Dans le hall, de part et d'autre de l'ouverture : le titre de la salle et sa réclame
+      plaque({ titre: s.titre[LG], lignes: [T.aile(ere)], taille: 52 }, 2.4, 1.1, W - 0.1, 2.3, -10.5, -Math.PI / 2, { titre: s.titre[LG], lignes: [T.aile(ere)], html: verifier(s) });
+      if (s.reclame) reclame(s.reclame[LG], 2.4, 1.8, W - 0.1, 2.3, -1.5, -Math.PI / 2);
+      // Mur du fond : l'abécédaire
+      const ca = { titre: T.abc, lignes: [T.abc_txt(s.oeuvres.length, s.idees), T.ouverte_le(dateLongue(s.ouverture)), T.regle_g, ...s.oeuvres.map((o) => `${o.ecrit} : ${o[LG]}`)], html: src };
+      const abc = (g, w, h) => {
+        g.fillStyle = '#f4f5f1'; g.fillRect(0, 0, w, h); g.fillStyle = '#2a3034'; g.font = '700 30px Georgia, serif'; g.fillText(T.abc, 18, 40);
+        const nc = 8, nl = Math.max(1, Math.ceil(s.oeuvres.length / nc)), cw = w / nc, ch = (h - 60) / nl;
+        s.oeuvres.forEach((o, i) => {
+          const tt = Math.min(cw, ch) * 0.58, px = tt / 5, ox = (i % nc) * cw + (cw - tt) / 2, oy = 60 + Math.floor(i / nc) * ch + 4;
+          g.fillStyle = '#fff'; g.fillRect(ox - 3, oy - 3, tt + 6, tt + 6); g.fillStyle = '#1d2326';
+          for (let b = 0; b < 25; b++) if (o.glyphe[b] === '1') g.fillRect(ox + (b % 5) * px, oy + Math.floor(b / 5) * px, px + 0.5, px + 0.5);
+          g.font = `600 ${Math.max(11, Math.round(ch * 0.13))}px ui-monospace, Menlo, monospace`; g.textAlign = 'center';
+          g.fillText(o.ecrit, (i % nc) * cw + cw / 2, oy + tt + ch * 0.17); g.textAlign = 'left';
+        });
+      };
+      cadre(abc, 7.4, 3.2, X2 - 0.1, 2.2, zm, -Math.PI / 2, ca);
+      halo(X2 - 0.1, 2.2, zm, -Math.PI / 2, 8.6, 4.6);
+      // Mur sud : les noms en cartouche (la place se partage si les présidents se multiplient)
+      const n = s.noms.length, pas = n ? Math.min(3.2, 9.6 / n) : 0, ech = pas / 3.2;
+      s.noms.forEach((no, i) => {
+        const xc = X1 + 1.6 + pas * (i + 0.5), ry = Math.PI;
+        const cap = no.fin ? T.pres_de(dateLongue(no.debut), dateLongue(no.fin)) : T.pres_dep(dateLongue(no.debut));
+        const c = { titre: no.nom, lignes: [`${region(no.region)} · ${cap}`, T.noms_txt], html: verifier(s) };
+        cadre(grille(no.rangs, 0.08), 0.22 * no.rangs[0].length * ech, 0.22 * 7 * ech, xc, 2.1, A1, ry, c, true);
+        plaque({ titre: no.nom, lignes: [cap], taille: 46 }, 1.8 * ech, 0.6 * ech, xc, 1.0, A1, ry, c);
+        halo(xc, 2.1, A1, ry, 3 * ech, 2.8);
+      });
+      // Mur nord : la frise des soirs (les 24 derniers au mur, tous au cartel) et l'histoire
+      if (s.frise.length) {
+        const F = s.frise.slice(-24), nf = F.length, l = Math.min(5.6, 0.62 * nf + 0.6), xc = X1 + 1.2 + l / 2;
+        const cf = { titre: T.frise, lignes: [T.frise_txt, ...s.frise.map((f) => `${dateLongue(f.date)} : ${f.ecrit} (${f[LG]})`)], html: src };
+        const frise = (g, w, h) => {
+          g.fillStyle = '#ffffff'; g.fillRect(0, 0, w, h);
+          const cw = w / nf, tt = Math.min(cw * 0.72, h * 0.62), px = tt / 5;
+          F.forEach((f, i) => {
+            const ox = i * cw + (cw - tt) / 2, oy = h * 0.1; g.fillStyle = '#1d2326';
+            for (let b = 0; b < 25; b++) if (f.glyphe[b] === '1') g.fillRect(ox + (b % 5) * px, oy + Math.floor(b / 5) * px, px + 0.5, px + 0.5);
+            g.fillStyle = '#5b6560'; g.font = `${Math.max(10, Math.round(cw * 0.16))}px ui-monospace, Menlo, monospace`; g.textAlign = 'center';
+            g.fillText(f.date.slice(8).replace(/^0/, '') + '/' + f.date.slice(5, 7).replace(/^0/, ''), i * cw + cw / 2, h * 0.92); g.textAlign = 'left';
+          });
+        };
+        cadre(frise, l, Math.max(0.7, l / nf * 1.2), xc, 2.0, A2, 0, cf);
+        plaque({ titre: T.frise, lignes: [], taille: 46 }, 1.8, 0.45, xc, 1.15, A2, 0, cf);
+        halo(xc, 2.0, A2, 0, l + 1, 2.4);
+      }
+      const lignes = [T.ouverte_le(dateLongue(s.ouverture)), ...s.histoire.map(([d, k]) => T.hist(dateLongue(d), k))];
+      plaque({ titre: T.histoire, lignes: lignes.slice(0, 12), taille: 30 }, 2.6, 2.4, X2 - 2.0, 2.2, A2, 0, { titre: T.histoire, lignes, html: src });
+      salles.push({ nom, z: zm, x: W + 3, yaw: -Math.PI / 2 });
+    }
+
     // ---------------------------------------------------------------- les artistes du soir (un tableau par soir, une salle par mois)
     function salleArtistes(s, z1, z2, H) {
       s.oeuvres.forEach((o, i) => {
@@ -760,7 +824,7 @@
     // Plan des salles : liste calculée, un toucher pour s'y rendre
     const liste = $('#m3-liste');
     liste.querySelector('ol').innerHTML = salles.map((s, i) => `<li><button type="button" data-i="${i}">${esc(s.nom)}</button></li>`).join('');
-    liste.querySelectorAll('ol button').forEach((b) => { b.onclick = () => { const s = salles[+b.dataset.i]; joueur.x = 0; joueur.z = s.z; joueur.yaw = 0; joueur.pitch = -0.03; liste.hidden = true; }; });
+    liste.querySelectorAll('ol button').forEach((b) => { b.onclick = () => { const s = salles[+b.dataset.i]; joueur.x = s.x || 0; joueur.z = s.z; joueur.yaw = s.yaw || 0; joueur.pitch = -0.03; liste.hidden = true; }; });
     $('#m3-plan').onclick = () => { liste.hidden = !liste.hidden; };
     $('#m3-fplan').onclick = () => { liste.hidden = true; };
     $('#m3-sortir').onclick = fermer;
@@ -835,7 +899,8 @@
       for (const g of tournants) g.rotation.y += 0.25 * dt;
       camera.position.set(joueur.x, 1.65, joueur.z);
       camera.rotation.set(joueur.pitch, joueur.yaw, 0, 'YXZ');
-      const zo = zones.find((q) => joueur.z <= q.z1 && joueur.z > q.z2) || (joueur.x < -W ? { nom: (M.annexes[0] || {}).titre?.[LG] } : null);
+      const zoA = SG && joueur.x > W ? { nom: `${T.aile(aileCourante.ere)} · ${SG.titre[LG]}` } : null;
+      const zo = zoA || zones.find((q) => joueur.z <= q.z1 && joueur.z > q.z2) || (joueur.x < -W ? { nom: (M.annexes[0] || {}).titre?.[LG] } : null);
       const nom = zo && zo.nom ? zo.nom : derniere;
       if (nom !== derniere) { nomSalle.textContent = nom; derniere = nom; }
       renderer.render(scene, camera);
@@ -851,7 +916,7 @@
       },
       // Pour les contrôles automatiques : plan calculé et obstacles
       controle: () => ({ zones: zones.map((q) => ({ ...q })), salles: salles.map((s) => ({ ...s })), cliquables: cliquables.length, lumiere: mode, fenetres: vitres.length }),
-      aller: (i) => { const s = salles[i]; joueur.x = 0; joueur.z = s.z; joueur.yaw = 0; },
+      aller: (i) => { const s = salles[i]; joueur.x = s.x || 0; joueur.z = s.z; joueur.yaw = s.yaw || 0; },
       echelle: () => changerEchelle(),
       regarder: (yaw, pitch = -0.03) => { joueur.yaw = yaw; joueur.pitch = pitch; },
       lumiere: (m) => { mode = m; eclairer(); },

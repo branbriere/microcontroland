@@ -1,6 +1,6 @@
 {
  "format": 1,
- "version": "1.2.1",
+ "version": "1.2.2",
  "date": "2026-11-07",
  "note": "Liste des salles possibles du Musée national, lue chaque soir par .github/musee.py. Une salle n'apparaît que si son âge est atteint ET si ses données publiées existent. Pour une nouveauté future, ajouter une ligne ; si son type existe déjà (portraits, dessins, artistes), aucun code à écrire. L'ordre des lignes est l'ordre de la visite.",
  "salles": [
