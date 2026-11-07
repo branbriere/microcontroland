@@ -20,6 +20,7 @@ le même générateur que le firmware (mcl_rng.h, mcl_names.h).
 ecriture.json garde chaque jour déjà écrit ; une journée déjà écrite n'est jamais réécrite.
 Rien avant l'âge de l'État civil (pays.age < 3) ; une région absente (null) n'écrit rien ce jour-là.
 La passerelle et le journal ne changent pas. Licence MIT. Version 1.0, 6 novembre 2026 (firmware 0.9).
+1.0.1, 7 novembre 2026 : menu complet du site (Le tourisme, Le Temple), comme les autres pages.
 
   python3 .github/ecriture.py <racine du site> [--source URL_OU_DOSSIER] [--attendre SECONDES]
 """
@@ -325,7 +326,7 @@ L = {
         "verifier": "Vérifier : {brut} du jour (« lexiques ») et {arch} (tous les jours écrits).", "brut": "le fichier brut", "arch": "ecriture.json",
         "attente": "L'écriture s'ouvre à l'âge de l'État civil. Ce pays n'y est pas encore : aucun glyphe n'est écrit.",
         "maj_le": "Page mise à jour automatiquement après l'édition n° {n} du {d}.",
-        "menu": ["Le journal", "Archives", "Histoire", "La langue", "Mon citoyen", "L'ambassade", "Recherche", "Le projet", "Flux RSS"],
+        "menu": ["Le journal", "Archives", "Histoire", "La langue", "Mon citoyen", "L'ambassade", "Le tourisme", "Le Temple", "Recherche", "Le projet", "Flux RSS"],
         "mast": ("Quotidien officieux de la République", "L'écriture"), "tag": "Le seul journal de Microcontrôland, écrit chaque soir par la passerelle",
         "retour": "Lire la dernière édition", "mentions": "Mentions légales", "rss": "feed.xml", "autre": ("en", "English", "feed-en.xml", "La Puce Libre (English)"),
     },
@@ -352,7 +353,7 @@ L = {
         "verifier": "Check: {brut} of the day (“lexiques”) and {arch} (every day written so far).", "brut": "the raw data file", "arch": "ecriture.json",
         "attente": "Writing opens at the Age of the Civil Registry. This country has not reached it yet: no glyph has been written.",
         "maj_le": "Page updated automatically after issue no. {n} of {d}.",
-        "menu": ["The paper", "Archive", "History", "The language", "My citizen", "The embassy", "Research", "The project", "RSS feed"],
+        "menu": ["The paper", "Archive", "History", "The language", "My citizen", "The embassy", "Tourism", "The Temple", "Research", "The project", "RSS feed"],
         "mast": ("Unofficial daily of the Republic", "Writing"), "tag": "The only newspaper in Microcontrôland, written every evening by the gateway",
         "retour": "Read the latest issue", "mentions": "Legal notice", "rss": "feed-en.xml", "autre": ("fr", "Français", "feed.xml", "La Puce Libre (français)"),
     },
@@ -388,7 +389,7 @@ def page(jours, latest, galerie, lg):
     pre = "../" if lg == "en" else ""
     autre_lg, autre_nom, autre_rss, autre_titre = T["autre"]
     fr_url, en_url = BASE + "ecriture.html", BASE + "en/ecriture.html"
-    liens = ["./", "archives.html", "histoire.html", "langue.html", "citoyen.html", "ambassade.html", "recherche.html", "projet.html", pre + T["rss"]]
+    liens = ["./", "archives.html", "histoire.html", "langue.html", "citoyen.html", "ambassade.html", "tourisme.html", "temple.html", "recherche.html", "projet.html", pre + T["rss"]]
     nav = "\n".join(f'    <a href="{h}">{e(t)}</a>' for h, t in zip(liens, T["menu"]))
     rg = (lambda r: REGION_EN.get(r, r)) if lg == "en" else (lambda r: r)
     sens = (lambda j, c: j["sens"][c][1 if lg == "en" else 0])
