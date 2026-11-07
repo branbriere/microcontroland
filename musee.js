@@ -364,7 +364,7 @@
     const zones = [];   // pour le nom de la salle où l'on est
     // Hauteurs variables (Bran, 26/10 et 2/11/2026) : chaque genre de salle a sa hauteur, et deux salles voisines du même genre diffèrent.
     const HAUT = { hall: 5.0, portraits: 6.2, dessins: 4.4, artistes: 3.6, sculptures: 5.4, sculpteurs: 3.9, glyphes: 4.8, fermee: 4.2 };
-    const hauteur = (type, k) => HAUT[type] + (type === 'artistes' || type === 'sculpteurs' ? (k % 2) * 0.6 : 0);
+    const hauteur = (type, k) => (HAUT[type] || 4.4) + (type === 'artistes' || type === 'sculpteurs' ? (k % 2) * 0.6 : 0);   // type inconnu : hauteur ordinaire, jamais NaN
 
     // Hall d'accueil
     {
