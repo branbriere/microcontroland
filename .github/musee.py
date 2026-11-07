@@ -22,6 +22,8 @@ Rien n'est inventé ni recalculé : les portraits sont ceux de la galerie, les c
 textes que la galerie, les dessins et les critiques sont ceux de l'atelier. Une salle sans données n'apparaît pas.
 Licence MIT. Version 1.0, 2 novembre 2026 (firmware 0.8 / 0.9, site seulement). Version 1.2 : salle des sculptures et
 sculpteurs du soir (art secondaire, cubes 8 × 8 × 8, âge de la Mémoire ; décision de Bran du 5/11/2026).
+Version 1.2.1 (7 novembre 2026) : salle de l'écriture (type « glyphes », âge de l'État civil ; lue dans ecriture.json,
+glyphes et cartouches calculés par .github/ecriture.py ; demande de Bran du 6/11/2026).
 
   python3 .github/musee.py <racine du site>
 """
@@ -31,7 +33,7 @@ import json
 import sys
 from pathlib import Path
 
-VERSION = "1.2"
+VERSION = "1.2.1"
 MEMOIRE = 2          # index de l'âge de la Mémoire dans ages.etapes : âge d'ouverture d'une aile (Bran, 28 oct. 2026)
 BASE = "https://www.microcontroland.org/"
 DONNEES = "https://donnees.microcontroland.org/"
@@ -87,6 +89,11 @@ T = {
         "sculptures_titre": "Evening of {d} · issue no. {n}", "sculptures_txt": "{k} sculptures of 8 × 8 × 8 cubes, one per citizen, computed from the 81 weights of each brain (rule S1). Sculptor of the evening: Citizen No. {a} ({r}).",
         "sculpteur": "{d} · Citizen No. {id} ({r}) · {c} cube(s) moved",
         "couches": "Read as 8 layers, from the bottom (left) to the top (right); the darker the square, the bigger the cube.",
+        "glyphes_titre": "Writing on {d} · issue no. {n}", "glyphes_txt": "{k} common glyphs (written the same way by at least 5 regions out of 6), out of {m} ideas written. Writing opened on {o}.",
+        "abc": "The alphabet book", "frise": "The frieze of evenings", "frise_txt": "Every evening since writing opened, the word of the last hour, as most regions wrote it. Read from left to right:",
+        "noms": "Names in cartouches", "noms_txt": "First names are in no lexicon, but they are made of the same sounds: one stem per syllable, inside a frame.",
+        "histoire": "History of writing", "hist": "{d}: {k} common glyph(s)",
+        "pres_de": "President from {a} to {b}", "pres_dep": "President since {a}",
     },
     "fr": {
         "titre": "Le Musée national", "haut": "Ère {ere}, jour {jour} · construit automatiquement à partir des données publiées",
@@ -115,6 +122,11 @@ T = {
         "sculptures_titre": "Soir du {d} · édition n° {n}", "sculptures_txt": "{k} sculptures de 8 × 8 × 8 cubes, une par citoyen, calculées à partir des 81 poids de chaque cerveau (règle S1). Sculpteur du soir : citoyen n° {a} ({r}).",
         "sculpteur": "{d} · citoyen n° {id} ({r}) · {c} cube(s) déplacé(s)",
         "couches": "Lecture en 8 couches, du bas (à gauche) vers le haut (à droite) ; plus la case est foncée, plus le cube est grand.",
+        "glyphes_titre": "L'écriture au {d} · édition n° {n}", "glyphes_txt": "{k} glyphes communs (écrits pareil par au moins 5 régions sur 6), sur {m} idées écrites. L'écriture s'est ouverte le {o}.",
+        "abc": "L'abécédaire", "frise": "La frise des soirs", "frise_txt": "Chaque soir depuis l'ouverture de l'écriture, le mot de la dernière heure, tel que la plupart des régions l'ont écrit. Lecture de gauche à droite :",
+        "noms": "Les noms en cartouche", "noms_txt": "Les prénoms ne sont dans aucun lexique, mais ils sont faits des mêmes sons : une hampe par syllabe, dans un cadre.",
+        "histoire": "Histoire de l'écriture", "hist": "{d} : {k} glyphe(s) commun(s)",
+        "pres_de": "Président du {a} au {b}", "pres_dep": "Président depuis le {a}",
     },
 }
 
@@ -247,6 +259,53 @@ def salles_sculpteurs(entree, ere, ctx):
     return salles
 
 
+def salles_glyphes(entree, ere, ctx):
+    """L'écriture (âge de l'État civil) : abécédaire, frise des soirs, noms en cartouche, histoire.
+    Tout est lu dans ecriture.json ; glyphes et cartouches sont calculés par les fonctions de .github/ecriture.py."""
+    E = ctx.get("ecriture_py")
+    jours = [j for j in (ctx.get("ecriture") or {}).get("jours", []) if j.get("ere") == ere and j.get("mots")]
+    if E is None or not jours:
+        return []
+    a = jours[-1]
+    premier, histoire, frise = {}, [], []
+    for j in jours:
+        k = 0
+        for c, ligne in j["mots"].items():
+            if E.commun(ligne):
+                k += 1
+                premier.setdefault(c, j["date"])
+        histoire.append([j["date"], k, len(j["mots"])])
+        s = j.get("soir")
+        if s and str(s["idee"]) in j.get("sens", {}):
+            mots = [m for m in s["mots"] if m]
+            if mots:
+                gs = [E.glyphe(m[0], m[1]) for m in mots]
+                g = max(gs, key=lambda x: (gs.count(x), -gs.index(x)))
+                m = mots[gs.index(g)]
+                fr_, en_ = j["sens"][str(s["idee"])]
+                frise.append({"date": j["date"], "glyphe": g, "ecrit": m[2], "fr": fr_, "en": en_, "regions": gs.count(g)})
+    oeuvres = []
+    for c, ligne in a["mots"].items():
+        g = E.commun(ligne)
+        if g:
+            m = next(m for m in ligne if m and E.glyphe(m[0], m[1]) == g)
+            fr_, en_ = a["sens"][c]
+            oeuvres.append({"idee": int(c), "glyphe": g, "ecrit": m[2], "fr": fr_, "en": en_, "depuis": premier.get(c, a["date"])})
+    oeuvres.sort(key=lambda o: (o["depuis"], o["idee"]))
+    noms = []
+    sons = a.get("sons")
+    gal = ctx.get("galerie") or {}
+    if sons and gal.get("ere") == ere:
+        for m in gal.get("mandats") or []:
+            syl = E.syllabes_du_nom(m.get("nom", ""), sons["consonnes"], sons["voyelles"], sons["codas"])
+            if syl:
+                noms.append({"id": m.get("id"), "nom": m["nom"], "region": m.get("region"), "rangs": E.cartouche(syl),
+                             "debut": (m.get("debut") or {}).get("date"), "fin": (m.get("fin") or {}).get("date")})
+    return [{"id": entree["id"], "type": "glyphes", "titre": entree["titre"], "lien": entree.get("lien"), "verifier": entree.get("verifier", []),
+             "date": a["date"], "edition": a.get("edition"), "jourEre": a.get("jourEre"), "ouverture": jours[0]["date"],
+             "idees": len(a["mots"]), "oeuvres": oeuvres, "frise": frise, "noms": noms, "histoire": histoire, "source": a.get("source")}]
+
+
 # ---------------------------------------------------------------- la réclame du musée (humour, Bran 2/11/2026)
 # Convention de la maison (comme l'Office du tourisme et l'Ambassade) : la blague est toujours suivie de
 # « Ce qui est vrai », calculé à partir des mêmes données. Rien n'est prêté aux Waïnas.
@@ -293,6 +352,15 @@ def reclame_salle(s, H):
             "en": {"titre": "Do not touch: the works are fragile, they do not exist.",
                    "lignes": ["No chisel, no hammer and no sculptor was harmed in the making of this room."],
                    "vrai": f"What is true: {k} sculptures tonight, one per citizen, 127 cubes each on an 8 × 8 × 8 grid, computed from the 81 weights of each brain (rule S1); nobody carved them."}}
+    if s["type"] == "glyphes":
+        k, m = len(s["oeuvres"]), s["idees"]
+        return {
+            "fr": {"titre": "Orthographe officielle : aucune. Le correcteur orthographique n'a pas encore été inventé.",
+                   "lignes": ["Chaque région écrit comme elle parle ; l'Académie attend toujours son premier fauteuil."],
+                   "vrai": f"Ce qui est vrai : {k} glyphe{'s' if k > 1 else ''} commun{'s' if k > 1 else ''} sur {m} idées écrites ce soir ; chaque région écrit son propre mot avec la même règle (G1, la hampe), et la passerelle ne garde aucune écriture. Il n'y a pas d'Académie."},
+            "en": {"titre": "Official spelling: none. The spell checker has not been invented yet.",
+                   "lignes": ["Each region writes as it speaks; the Academy is still waiting for its first chair."],
+                   "vrai": f"What is true: {_s(k, 'en', '', 'common glyph')} out of {m} ideas written tonight; each region writes its own word with the same rule (G1, the stem), and the gateway keeps no writing. There is no Academy."}}
     if s["type"] == "sculpteurs":
         n = len(s["oeuvres"])
         return {
@@ -399,7 +467,7 @@ def fenetres(catalogue, racine):
 
 
 TYPES = {"portraits": salles_portraits, "dessins": salles_dessins, "artistes": salles_artistes,
-         "sculptures": salles_sculptures, "sculpteurs": salles_sculpteurs}
+         "sculptures": salles_sculptures, "sculpteurs": salles_sculpteurs, "glyphes": salles_glyphes}
 
 
 def aile(ere, ouverte, catalogue, ctx):
@@ -438,6 +506,7 @@ def compter(ailes):
         for x in a["salles"]:
             o += len(x.get("oeuvres", [])) + len(x.get("dessins", [])) + (1 if x.get("statue") else 0)
             o += sum(1 for y in x.get("sculptures", []) if y)
+            o += len(x.get("noms", [])) + len(x.get("frise", []))   # salle de l'écriture : cartouches et frise des soirs
     return {"ailes": sum(1 for a in ailes if a["etat"] != "fermee"), "salles": s, "oeuvres": o}
 
 
@@ -450,7 +519,9 @@ def construire(racine):
     ctx = {"etapes": etapes, "galerie_py": module(racine, "galerie"), "atelier_py": module(racine, "atelier"),
            "galerie": lire(racine / "galerie.json", None), "atelier": lire(racine / "atelier.json", None),
            "sculptures": lire(racine / "sculptures.json", None) if (racine / "sculptures.json").exists() else None,
-           "sculptures_soir": lire(racine / "sculptures-soir.json", None) if (racine / "sculptures-soir.json").exists() else None}
+           "sculptures_soir": lire(racine / "sculptures-soir.json", None) if (racine / "sculptures-soir.json").exists() else None,
+           "ecriture": lire(racine / "ecriture.json", None) if (racine / "ecriture.json").exists() else None,
+           "ecriture_py": module(racine, "ecriture") if (racine / ".github" / "ecriture.py").exists() else None}
     ailes = []
     # Ailes des ères passées : recopiées telles quelles de l'ancien musee.json, jamais recalculées (figées).
     for a in ancien.get("plan", []):
@@ -502,6 +573,9 @@ STYLE = """<style>
 .m-oeuvres figcaption b{color:var(--ink);font-size:1.15em}
 .m-vide{aspect-ratio:3/4;display:grid;place-content:center;text-align:center;padding:12px;border:1px dashed var(--rule);color:var(--muted)}
 .m-dessin{max-width:96px}
+.m-glyphes{grid-template-columns:repeat(auto-fill,minmax(min(100%,120px),1fr))}.m-glyphes svg{max-width:60px}
+.m-frise{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 12px}.m-frise svg{width:40px;height:40px;border:1px solid var(--rule)}
+.m-cartouche{max-width:220px;width:100%;height:auto}
 .m-sculpture{width:100%;max-width:420px;height:auto;display:block;background:transparent}
 .m-oeuvres-l{grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr))}
 .m-reclame{margin:10px 0;padding:8px 14px;border-left:3px solid var(--ink)}
@@ -533,6 +607,15 @@ def svg_sculpture(s, titre):
                     out.append(f'<rect x="{ox + i * c}" y="{(7 - j) * c}" width="{c}" height="{c}" fill="#1d2326" fill-opacity="{0.25 + 0.75 * v / 9:.2f}"/>')
     w = 8 * (g * c + 6) - 6
     return f'<svg class="m-sculpture" viewBox="0 0 {w} {g * c}" role="img" aria-label="{e(titre)}">{"".join(out)}</svg>'
+
+
+def svg_grille(rangs, titre, cls="m-dessin"):
+    """Glyphe (chaîne de 25) ou cartouche (liste de rangées) : cases pleines sur fond blanc."""
+    if isinstance(rangs, str):
+        n = int(round(len(rangs) ** 0.5)); rangs = [rangs[i * n:(i + 1) * n] for i in range(n)]
+    h, w, c = len(rangs), len(rangs[0]), 10
+    r = "".join(f'<rect x="{x * c}" y="{y * c}" width="{c}" height="{c}" fill="#1d2326"/>' for y, l in enumerate(rangs) for x, b in enumerate(l) if b == "1")
+    return f'<svg class="{cls}" viewBox="0 0 {w * c} {h * c}" role="img" aria-label="{e(titre)}"><rect width="{w * c}" height="{h * c}" fill="#fff"/>{r}</svg>'
 
 
 def plaque_txt(r):
@@ -613,6 +696,27 @@ def page(M, latest, lg, G, A):
                         cr = (o.get("critique") or {}).get(lg) or []
                         figs.append(f'<figure>{svg_sculpture(o["sculpture"], cap)}<figcaption><b>{e(cap)}</b><br>{"<br>".join(e(t) for t in cr)}</figcaption></figure>')
                     corps.append(f'<div class="m-oeuvres m-oeuvres-l">{"".join(figs)}</div><p><small>{e(X["couches"])}</small></p>')
+                elif s["type"] == "glyphes":
+                    corps.append(f'<p><b>{e(X["glyphes_titre"].format(d=G.date_longue(s["date"], lg), n=s["edition"]))}.</b> '
+                                 f'{e(X["glyphes_txt"].format(k=len(s["oeuvres"]), m=s["idees"], o=G.date_longue(s["ouverture"], lg)))}</p>')
+                    sens = 1 if lg == "en" else 0
+                    figs = "".join(f'<figure>{svg_grille(o["glyphe"], o["ecrit"])}<figcaption><b>{e(o["ecrit"])}</b><br>{e(o["en"] if sens else o["fr"])}'
+                                   f'{"" if o["depuis"] == s["ouverture"] else " · " + e(G.date_longue(o["depuis"], lg))}<br>{e(lignes_dessin(o["glyphe"]))}</figcaption></figure>'
+                                   for o in s["oeuvres"])
+                    corps.append(f'<h4>{e(X["abc"])}</h4><div class="m-oeuvres m-glyphes">{figs}</div>')
+                    if s["frise"]:
+                        corps.append(f'<h4>{e(X["frise"])}</h4><p>{e(X["frise_txt"])} '
+                                     + " · ".join(f'{e(f["ecrit"])} ({e(f["en"] if sens else f["fr"])}, {e(f["date"][8:].lstrip("0"))}/{e(f["date"][5:7].lstrip("0"))})' for f in s["frise"]) + "</p>"
+                                     + '<div class="m-frise">' + "".join(svg_grille(f["glyphe"], f["ecrit"]) for f in s["frise"]) + "</div>")
+                    if s["noms"]:
+                        figs = []
+                        for o in s["noms"]:
+                            a_, b_ = G.date_longue(o["debut"], lg), G.date_longue(o["fin"], lg) if o["fin"] else None
+                            cap = X["pres_de"].format(a=a_, b=b_) if b_ else X["pres_dep"].format(a=a_)
+                            rg = A.REGION_EN.get(o["region"], o["region"]) if lg == "en" else o["region"]
+                            figs.append(f'<figure>{svg_grille(o["rangs"], o["nom"], "m-cartouche")}<figcaption><b>{e(o["nom"])}</b><br>{e(rg)} · {e(cap)}</figcaption></figure>')
+                        corps.append(f'<h4>{e(X["noms"])}</h4><p>{e(X["noms_txt"])}</p><div class="m-oeuvres">{"".join(figs)}</div>')
+                    corps.append(f'<h4>{e(X["histoire"])}</h4><p>' + " · ".join(e(X["hist"].format(d=G.date_longue(d_, lg), k=k_)) for d_, k_, _ in s["histoire"]) + "</p>")
                 elif s["type"] == "artistes":
                     figs = []
                     for o in s["oeuvres"]:
