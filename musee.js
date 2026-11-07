@@ -377,9 +377,10 @@
       boiteM(2 * W, H, 0.2, 0, H / 2, z1, MUR);
       sol(-W, z1, W, z2); plafond(-W, z1, W, z2, H); rais(z1 - 0.3, z2 + 0.3, H);
       plaque({ titre: T.bienvenue, lignes: [T.bienvenue_txt, T.compte(M, M.edition)], taille: 44 }, 4.2, 2.2, (W + PORTE) / 2, 2.2, z2, 0, { titre: T.bienvenue, lignes: [T.bienvenue_txt, T.compte(M, M.edition)], html: `<p class="m3-src">${lien('musee.json')}, ${lien('musee-catalogue.json')}</p>` });
-      plaque({ titre: T.seul, lignes: [], taille: 30, fond: '#1b2124', encre: '#f2f4f1', accent: '#5fe08f' }, 3.4, 1.3, 4, 2.4, z1, Math.PI, { titre: T.seul, lignes: [] });
-      if (M.reclame) reclame(M.reclame[LG], 3.0, 2.2, -(W + PORTE) / 2, 2.3, z2, 0);   // mur du fond, à gauche de la porte (Bran, 7/11/2026)
-      if (M.architecte) reclame(M.architecte[LG], 3.2, 2.2, -4, 2.3, z1, Math.PI);
+      plaque({ titre: T.seul, lignes: [], taille: 30, fond: '#1b2124', encre: '#f2f4f1', accent: '#5fe08f' }, 3.4, 1.3, 5.2, 2.4, z1, Math.PI, { titre: T.seul, lignes: [] });
+      // La réclame est dans la dernière salle ; si une aile fermée la remplace, elle revient sur le mur d'entrée du hall
+      if (M.reclame && (M.plan || []).some((a) => a.etat === 'fermee')) reclame(M.reclame[LG], 3.0, 2.2, 0, 2.3, z1, Math.PI);
+      if (M.architecte) reclame(M.architecte[LG], 3.2, 2.2, -5.2, 2.3, z1, Math.PI);
       if (annexe) {
         const X1 = -W - 6, ch = annexe.etat !== 'ouverte';
         sol(X1, -2.8, -W, -9.2); plafond(X1, -2.8, -W, -9.2, 3.6);
@@ -451,6 +452,8 @@
         halo(-(W - 0.1), 2.1, z1 - 3.5, Math.PI / 2, 5.4, 4.4);
       }
       murs(z1, z2, H); sol(-W, z1, W, z2); plafond(-W, z1, W, z2, H);
+      // La réclame du musée, sur le mur d'entrée de la dernière salle, près de « Tout un pays dans une boîte » (Bran, 7/11/2026)
+      if (M.reclame) reclame(M.reclame[LG], 3.0, 2.2, -(W + PORTE) / 2, 2.3, z1, Math.PI);
       const porte = cloison(z2, H, true); ruban(-PORTE, z2 + 0.6, PORTE, z2 + 0.6);
       // Les 4 fenêtres : nord = mur du fond (on marche vers le nord), est à droite, ouest à gauche, sud = mur d'entrée
       const pl = (f) => (f.largeur >= f.hauteur ? [3.0, 3.0 * f.hauteur / f.largeur] : [1.4, 1.4 * f.hauteur / f.largeur]);
