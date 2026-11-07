@@ -6,6 +6,13 @@
   <description>Le quotidien de Microcontrôland, écrit chaque soir par la passerelle.</description>
   <language>fr</language>
   <item>
+    <title>Jour 30 — Niwata en tête du sondage, avec 50 % des intentions</title>
+    <link>https://branbriere.github.io/microcontroland/#jour-30</link>
+    <description>Intentions de vote : Niwata 50 %, Naïkaïth 33 %, Sakaïk 17 % ; personne ne cite Kouwou, Sita ni Pisaï ; parmi les interrogés, 8 comptent s'abstenir. 20 citoyens tirés au sort ont été interrogés à 20 h ; à cette taille, la marge d'erreur approche 28 points.</description>
+    <pubDate>Sat, 07 Nov 2026 19:00:01 GMT</pubDate>
+    <guid isPermaLink="false">microcontroland-fr-jour-30</guid>
+  </item>
+  <item>
     <title>Jour 29 — Microcontrôland entre dans l'âge de la Diplomatie</title>
     <link>https://branbriere.github.io/microcontroland/#jour-29</link>
     <description>La civilisation franchit une étape au jour 30 de l'ère. L'ambassade ouvre : questions du mois et lettre de l'ambassadeur.</description>
@@ -102,13 +109,6 @@
     <description>La civilisation franchit une étape au jour 17 de l'ère. Le pays tient ses annales : records et passé des personnages, page « Histoire ».</description>
     <pubDate>Sat, 24 Oct 2026 18:00:01 GMT</pubDate>
     <guid isPermaLink="false">microcontroland-fr-jour-16</guid>
-  </item>
-  <item>
-    <title>Jour 15 — Le pays a un mot pour « nous » : kouwaï</title>
-    <link>https://branbriere.github.io/microcontroland/#jour-15</link>
-    <description>Cinq régions au moins disent désormais la même chose. La langue commune compte 22 mots.</description>
-    <pubDate>Fri, 23 Oct 2026 18:00:01 GMT</pubDate>
-    <guid isPermaLink="false">microcontroland-fr-jour-15</guid>
   </item>
 </channel>
 </rss>
