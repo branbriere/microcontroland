@@ -35,7 +35,7 @@ import json
 import sys
 from pathlib import Path
 
-VERSION = "1.2.1"
+VERSION = "1.2.2"
 MEMOIRE = 2          # index de l'âge de la Mémoire dans ages.etapes : âge d'ouverture d'une aile (Bran, 28 oct. 2026)
 BASE = "https://www.microcontroland.org/"
 DONNEES = "https://donnees.microcontroland.org/"
