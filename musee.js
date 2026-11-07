@@ -41,6 +41,12 @@
       etapes: ['Une boîte de 7 cartes, au fond d\u2019un garage.', '120 citoyens, 6 régions : un point par case de leurs dessins.', (n) => `${n.toLocaleString('fr-FR')} cases, ${n.toLocaleString('fr-FR')} points : une galaxie. Tout est une question d\u2019échelle.`],
       sculpteur_soir: 'Sculpteur du soir', deplaces: (c) => c == null ? 'Premier soir : aucune sculpture de la veille pour comparer' : `${c} cube(s) déplacé(s) depuis la veille`,
       table: (r) => `${r} : 20 sculptures`, table_txt: 'Une sculpture par citoyen, 127 cubes sur une grille de 8 × 8 × 8, calculée à partir des 81 poids de son cerveau (règle S1). Le socle doré est celui du sculpteur du soir.',
+      abc: "L'abécédaire", abc_txt: (k, m) => `${k} glyphes communs (écrits pareil par au moins 5 régions sur 6), sur ${m} idées écrites.`,
+      frise: 'La frise des soirs', frise_txt: 'Chaque soir depuis l\u2019ouverture de l\u2019écriture, le mot de la dernière heure, tel que la plupart des régions l\u2019ont écrit. De gauche à droite :',
+      noms: 'Les noms en cartouche', noms_txt: 'Les prénoms ne sont dans aucun lexique, mais ils sont faits des mêmes sons : une hampe par syllabe, dans un cadre.',
+      pres_de: (a, b) => `Président du ${a} au ${b}`, pres_dep: (a) => `Président depuis le ${a}`,
+      histoire: 'Histoire de l\u2019écriture', hist: (d, k) => `${d} : ${k} glyphe(s) commun(s)`, ouverte_le: (d) => `L\u2019écriture s\u2019est ouverte le ${d}, à l\u2019âge de l\u2019État civil.`,
+      regle_g: 'Règle G1, la hampe : colonne du milieu toujours pleine ; 1re syllabe à gauche, 2e à droite ; un bit à 1 trace un trait. Chaque région écrit son propre mot.',
       vrai_u: (d) => `Ce qui est vrai : chaque point est une case d\u2019un dessin de l\u2019atelier publié le ${d} (case pleine = étoile claire) ; la place de chaque citoyen dépend seulement de son numéro et de sa région, rien n\u2019est tiré au hasard.`,
     },
     en: {
@@ -62,6 +68,12 @@
       etapes: ['A box of 7 boards, at the back of a garage.', '120 citizens, 6 regions: one point per square of their drawings.', (n) => `${n.toLocaleString('en-GB')} squares, ${n.toLocaleString('en-GB')} points: a galaxy. It is all a matter of scale.`],
       sculpteur_soir: 'Sculptor of the evening', deplaces: (c) => c == null ? 'First evening: no sculpture from the day before to compare with' : `${c} cube(s) moved since the day before`,
       table: (r) => `${r}: 20 sculptures`, table_txt: 'One sculpture per citizen, 127 cubes on an 8 × 8 × 8 grid, computed from the 81 weights of its brain (rule S1). The gilded base belongs to the sculptor of the evening.',
+      abc: 'The alphabet book', abc_txt: (k, m) => `${k} common glyphs (written the same way by at least 5 regions out of 6), out of ${m} ideas written.`,
+      frise: 'The frieze of evenings', frise_txt: 'Every evening since writing opened, the word of the last hour, as most regions wrote it. Left to right:',
+      noms: 'Names in cartouches', noms_txt: 'First names are in no lexicon, but they are made of the same sounds: one stem per syllable, inside a frame.',
+      pres_de: (a, b) => `President from ${a} to ${b}`, pres_dep: (a) => `President since ${a}`,
+      histoire: 'History of writing', hist: (d, k) => `${d}: ${k} common glyph(s)`, ouverte_le: (d) => `Writing opened on ${d}, at the Age of the Civil Registry.`,
+      regle_g: 'Rule G1, the stem: the middle column is always filled; 1st syllable on the left, 2nd on the right; a bit set to 1 draws a stroke. Each region writes its own word.',
       vrai_u: (d) => `What is true: each point is a square of a studio drawing published on ${d} (filled square = bright star); each citizen's place depends only on their number and region, nothing is random.`,
     },
   }[LG];
@@ -351,7 +363,7 @@
     let z = 0;
     const zones = [];   // pour le nom de la salle où l'on est
     // Hauteurs variables (Bran, 26/10 et 2/11/2026) : chaque genre de salle a sa hauteur, et deux salles voisines du même genre diffèrent.
-    const HAUT = { hall: 5.0, portraits: 6.2, dessins: 4.4, artistes: 3.6, sculptures: 5.4, sculpteurs: 3.9, fermee: 4.2 };
+    const HAUT = { hall: 5.0, portraits: 6.2, dessins: 4.4, artistes: 3.6, sculptures: 5.4, sculpteurs: 3.9, glyphes: 4.8, fermee: 4.2 };
     const hauteur = (type, k) => HAUT[type] + (type === 'artistes' || type === 'sculpteurs' ? (k % 2) * 0.6 : 0);
 
     // Hall d'accueil
@@ -401,6 +413,7 @@
         if (s.type === 'artistes') L = Math.max(9, Math.ceil(s.oeuvres.length / 2) * 2.4 + 4);
         if (s.type === 'sculptures') L = 19;
         if (s.type === 'sculpteurs') L = Math.max(9, Math.ceil(s.oeuvres.length / 2) * 2.6 + 4);
+        if (s.type === 'glyphes') L = Math.max(15, s.noms.length * 3.4 + 5);
         const z1 = z, z2 = z - L, nom = `${T.aile(aile.ere)} · ${s.titre[LG]}`;
         cloison(z1, Math.max(H, hPrec));
         murs(z1, z2, H); sol(-W, z1, W, z2); plafond(-W, z1, W, z2, H);
@@ -413,6 +426,7 @@
         if (s.type === 'artistes') salleArtistes(s, z1, z2, H);
         if (s.type === 'sculptures') salleSculptures(s, z1, z2, H);
         if (s.type === 'sculpteurs') salleSculpteurs(s, z1, z2, H);
+        if (s.type === 'glyphes') salleGlyphes(s, z1, z2, H);
         zones.push({ z1, z2, nom });
         salles.push({ nom, z: z1 - 2 });
         z = z2; hPrec = H;
@@ -521,6 +535,69 @@
         void g;
         plaque({ titre: T.artiste_soir, lignes: [T.cit(art, regionDe(art))], taille: 46 }, 1.6, 0.5, 0, 0.62, zc, sens > 0 ? 0 : Math.PI, cs);
       }
+    }
+
+    // ---------------------------------------------------------------- l'écriture (glyphes 5 × 5 et cartouches, âge de l'État civil)
+    // Glyphes et cartouches sont calculés par .github/ecriture.py et lus tels quels dans musee.json.
+    function grille(rangs, marge = 0.1) {
+      const R = typeof rangs === 'string' ? rangs.match(/.{5}/g) : rangs;
+      return (g, w, h) => {
+        g.fillStyle = '#ffffff'; g.fillRect(0, 0, w, h);
+        const px = Math.min(w * (1 - 2 * marge) / R[0].length, h * (1 - 2 * marge) / R.length), ox = (w - px * R[0].length) / 2, oy = (h - px * R.length) / 2;
+        g.fillStyle = '#1d2326'; R.forEach((l, y) => { for (let x = 0; x < l.length; x++) if (l[x] === '1') g.fillRect(ox + x * px, oy + y * px, px + 0.5, px + 0.5); });
+      };
+    }
+    function salleGlyphes(s, z1, z2, H) {
+      const src = (s.source ? `<p class="m3-src">${T.source} : <a href="https://donnees.microcontroland.org/${esc(s.source)}">${esc(s.source)}</a></p>` : '') + verifier(s);
+      // Mur de gauche : l'abécédaire, un grand panneau de tous les glyphes communs avec leur mot
+      const ca = { titre: T.abc, lignes: [T.abc_txt(s.oeuvres.length, s.idees), T.ouverte_le(dateLongue(s.ouverture)), T.regle_g, ...s.oeuvres.map((o) => `${o.ecrit} : ${o[LG]}`)], html: src };
+      const abc = (g, w, h) => {
+        g.fillStyle = '#f4f5f1'; g.fillRect(0, 0, w, h); g.fillStyle = '#2a3034'; g.font = '700 30px Georgia, serif'; g.fillText(T.abc, 18, 40);
+        const nc = 8, nl = Math.max(1, Math.ceil(s.oeuvres.length / nc)), cw = w / nc, ch = (h - 60) / nl;
+        s.oeuvres.forEach((o, i) => {
+          const t = Math.min(cw, ch) * 0.58, px = t / 5, ox = (i % nc) * cw + (cw - t) / 2, oy = 60 + Math.floor(i / nc) * ch + 4;
+          g.fillStyle = '#fff'; g.fillRect(ox - 3, oy - 3, t + 6, t + 6); g.fillStyle = '#1d2326';
+          for (let b = 0; b < 25; b++) if (o.glyphe[b] === '1') g.fillRect(ox + (b % 5) * px, oy + Math.floor(b / 5) * px, px + 0.5, px + 0.5);
+          g.font = `600 ${Math.max(11, Math.round(ch * 0.13))}px ui-monospace, Menlo, monospace`; g.textAlign = 'center';
+          g.fillText(o.ecrit, (i % nc) * cw + cw / 2, oy + t + ch * 0.17); g.textAlign = 'left';
+        });
+      };
+      const za = (z1 + z2) / 2;
+      cadre(abc, Math.min(8, -(z2 - z1) - 4), 3.2, -(W - 0.1), 2.2, za, Math.PI / 2, ca);
+      halo(-(W - 0.1), 2.2, za, Math.PI / 2, 9, 4.6);
+      // Mur de droite : les noms en cartouche
+      s.noms.forEach((n, i) => {
+        const zc = z1 - 3 - i * 3.4, ry = -Math.PI / 2;
+        const cap = n.fin ? T.pres_de(dateLongue(n.debut), dateLongue(n.fin)) : T.pres_dep(dateLongue(n.debut));
+        const c = { titre: n.nom, lignes: [`${region(n.region)} · ${cap}`, T.noms_txt], html: verifier(s) };
+        const l = 0.22 * n.rangs[0].length;
+        cadre(grille(n.rangs, 0.08), l, 0.22 * 7, W - 0.1, 2.1, zc, ry, c, true);
+        plaque({ titre: n.nom, lignes: [cap], taille: 46 }, 1.8, 0.6, W - 0.1, 0.95, zc, ry, c);
+        halo(W - 0.1, 2.1, zc, ry, 3, 2.8);
+      });
+      // Au centre, la frise des soirs sur une cimaise vue des deux côtés
+      if (s.frise.length) {
+        const F = s.frise.slice(-24), zc = (z1 + z2) / 2, n = F.length, l = Math.min(5.6, 0.62 * n + 0.6);   // les 24 derniers soirs au mur, tous au cartel
+        const cf = { titre: T.frise, lignes: [T.frise_txt, ...s.frise.map((f) => `${dateLongue(f.date)} : ${f.ecrit} (${f[LG]})`)], html: src };
+        const frise = (g, w, h) => {
+          g.fillStyle = '#ffffff'; g.fillRect(0, 0, w, h);
+          const cw = w / n, t = Math.min(cw * 0.72, h * 0.62), px = t / 5;
+          F.forEach((f, i) => {
+            const ox = i * cw + (cw - t) / 2, oy = h * 0.1; g.fillStyle = '#1d2326';
+            for (let b = 0; b < 25; b++) if (f.glyphe[b] === '1') g.fillRect(ox + (b % 5) * px, oy + Math.floor(b / 5) * px, px + 0.5, px + 0.5);
+            g.fillStyle = '#5b6560'; g.font = `${Math.max(10, Math.round(cw * 0.16))}px ui-monospace, Menlo, monospace`; g.textAlign = 'center';
+            g.fillText(f.date.slice(8).replace(/^0/, '') + '/' + f.date.slice(5, 7).replace(/^0/, ''), i * cw + cw / 2, h * 0.92); g.textAlign = 'left';
+          });
+        };
+        boiteM(l + 0.6, 2.6, 0.25, 0, 1.3, zc, MUR);
+        for (const sens of [1, -1]) {
+          cadre(frise, l, Math.max(0.7, l / n * 1.2), 0, 1.9, zc, sens > 0 ? 0 : Math.PI, cf);
+          plaque({ titre: T.frise, lignes: [], taille: 46 }, 1.8, 0.45, 0, 0.75, zc, sens > 0 ? 0 : Math.PI, cf);
+        }
+      }
+      // Mur du fond : l'histoire de l'écriture
+      const lignes = [T.ouverte_le(dateLongue(s.ouverture)), ...s.histoire.map(([d, k]) => T.hist(dateLongue(d), k))];
+      plaque({ titre: T.histoire, lignes: lignes.slice(0, 12), taille: 30 }, 2.6, 2.4, -(W + PORTE) / 2, 2.2, z2, 0, { titre: T.histoire, lignes, html: src });
     }
 
     // ---------------------------------------------------------------- les artistes du soir (un tableau par soir, une salle par mois)
