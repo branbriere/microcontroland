@@ -1,7 +1,8 @@
 """Microcontrôland : « Le Musée national » (FR) / « The National Museum » (EN), visite 3D et visite en texte.
 
 Le musée est PROCÉDURAL : il n'a aucun plan dessiné à la main. Chaque soir, ce script relit les fichiers déjà
-publiés sur le site (data/latest.json, galerie.json, atelier.json, institutions.json) et la liste des salles
+publiés sur le site (data/latest.json, galerie.json, atelier.json, sculptures.json, sculptures-soir.json,
+institutions.json) et la liste des salles
 possibles (musee-catalogue.json), puis écrit musee.json, musee.html et en/musee.html. La visite 3D (musee.js)
 construit les salles à partir de musee.json seulement : leur nombre, leur longueur et leur hauteur suivent les
 données.
@@ -19,7 +20,8 @@ Comment il s'agrandit, sans geste à la main :
 
 Rien n'est inventé ni recalculé : les portraits sont ceux de la galerie, les cartels sont écrits avec les mêmes
 textes que la galerie, les dessins et les critiques sont ceux de l'atelier. Une salle sans données n'apparaît pas.
-Licence MIT. Version 1.0, 2 novembre 2026 (firmware 0.8 / 0.9, site seulement).
+Licence MIT. Version 1.0, 2 novembre 2026 (firmware 0.8 / 0.9, site seulement). Version 1.2 : salle des sculptures et
+sculpteurs du soir (art secondaire, cubes 8 × 8 × 8, âge de la Mémoire ; décision de Bran du 5/11/2026).
 
   python3 .github/musee.py <racine du site>
 """
@@ -29,7 +31,7 @@ import json
 import sys
 from pathlib import Path
 
-VERSION = "1.1"
+VERSION = "1.2"
 MEMOIRE = 2          # index de l'âge de la Mémoire dans ages.etapes : âge d'ouverture d'une aile (Bran, 28 oct. 2026)
 BASE = "https://www.microcontroland.org/"
 DONNEES = "https://donnees.microcontroland.org/"
@@ -82,6 +84,9 @@ T = {
         "maj_le": "Page updated automatically after issue no. {n} of {d}.",
         "ferme": "The museum opens when the country reaches the Age of Memory.",
         "pas_js": "The 3D tour needs JavaScript and WebGL; the text tour below shows the same works.",
+        "sculptures_titre": "Evening of {d} · issue no. {n}", "sculptures_txt": "{k} sculptures of 8 × 8 × 8 cubes, one per citizen, computed from the 81 weights of each brain (rule S1). Sculptor of the evening: Citizen No. {a} ({r}).",
+        "sculpteur": "{d} · Citizen No. {id} ({r}) · {c} cube(s) moved",
+        "couches": "Read as 8 layers, from the bottom (left) to the top (right); the darker the square, the bigger the cube.",
     },
     "fr": {
         "titre": "Le Musée national", "haut": "Ère {ere}, jour {jour} · construit automatiquement à partir des données publiées",
@@ -107,6 +112,9 @@ T = {
         "maj_le": "Page mise à jour automatiquement après l'édition n° {n} du {d}.",
         "ferme": "Le musée ouvre quand le pays atteint l'âge de la Mémoire.",
         "pas_js": "La visite 3D demande JavaScript et WebGL ; la visite en texte ci-dessous montre les mêmes œuvres.",
+        "sculptures_titre": "Soir du {d} · édition n° {n}", "sculptures_txt": "{k} sculptures de 8 × 8 × 8 cubes, une par citoyen, calculées à partir des 81 poids de chaque cerveau (règle S1). Sculpteur du soir : citoyen n° {a} ({r}).",
+        "sculpteur": "{d} · citoyen n° {id} ({r}) · {c} cube(s) déplacé(s)",
+        "couches": "Lecture en 8 couches, du bas (à gauche) vers le haut (à droite) ; plus la case est foncée, plus le cube est grand.",
     },
 }
 
@@ -208,6 +216,37 @@ def salles_artistes(entree, ere, ctx):
     return salles
 
 
+def salles_sculptures(entree, ere, ctx):
+    """Les 120 sculptures du dernier soir (sculptures-soir.json) et le cartel du soir (sculptures.json)."""
+    S = ctx.get("sculptures_soir") or {}
+    if S.get("ere") != ere or not any(S.get("sculptures") or []):
+        return []
+    j = next((x for x in reversed((ctx.get("sculptures") or {}).get("jours", [])) if x.get("ere") == ere and x.get("date") == S.get("date")), {})
+    return [{"id": entree["id"], "type": "sculptures", "titre": entree["titre"], "lien": entree.get("lien"), "verifier": entree.get("verifier", []),
+             "date": S["date"], "edition": S["edition"], "jourEre": S["jourEre"], "regle": S.get("regle"),
+             "president": S.get("president"), "sculpteur": S.get("sculpteur"), "sculptures": S["sculptures"],
+             "critique": j.get("critique"), "source": S.get("source")}]
+
+
+def salles_sculpteurs(entree, ere, ctx):
+    """Une sculpture par soir ; une salle par mois (la salle du mois en cours s'allonge chaque soir)."""
+    A = ctx["atelier_py"]
+    jours = [j for j in (ctx.get("sculptures") or {}).get("jours", []) if j.get("ere") == ere and j.get("sculpteur") and j.get("sculpture")]
+    mois = {}
+    for j in jours:
+        mois.setdefault(j["date"][:7], []).append(j)
+    salles = []
+    for ym, js in mois.items():
+        a, m = (int(x) for x in ym.split("-"))
+        titre = {lg: f'{entree["titre"][lg]} · {A.MOIS[lg][m - 1]} {a}' for lg in ("en", "fr")}
+        oeuvres = [{"date": j["date"], "edition": j["edition"], "jourEre": j["jourEre"], "id": j["sculpteur"],
+                    "region": A.REGIONS[(j["sculpteur"] - 1) // 20], "sculpture": j["sculpture"],
+                    "deplaces": j.get("deplaces"), "critique": j.get("critique"), "source": j.get("source")} for j in js]
+        salles.append({"id": f'{entree["id"]}-{ym}', "type": "sculpteurs", "titre": titre, "lien": entree.get("lien"),
+                       "verifier": entree.get("verifier", []), "oeuvres": oeuvres})
+    return salles
+
+
 # ---------------------------------------------------------------- la réclame du musée (humour, Bran 2/11/2026)
 # Convention de la maison (comme l'Office du tourisme et l'Ambassade) : la blague est toujours suivie de
 # « Ce qui est vrai », calculé à partir des mêmes données. Rien n'est prêté aux Waïnas.
@@ -245,6 +284,24 @@ def reclame_salle(s, H):
             "en": {"titre": "Permanent collection: one more masterpiece every evening, whether the critic likes it or not.",
                    "lignes": ["The museum grows on its own. The attendants are asking for a raise."],
                    "vrai": f"What is true: {_s(n, 'en', '', 'picture')} in this room, one per evening of the studio; there are no attendants."}}
+    if s["type"] == "sculptures":
+        k = sum(1 for x in s["sculptures"] if x)
+        return {
+            "fr": {"titre": "Défense de toucher : les œuvres sont fragiles, elles n'existent pas.",
+                   "lignes": ["Aucun ciseau, aucun marteau, aucun sculpteur n'a été blessé pendant la fabrication de cette salle."],
+                   "vrai": f"Ce qui est vrai : {k} sculptures ce soir, une par citoyen, 127 cubes chacune sur une grille de 8 × 8 × 8, calculées à partir des 81 poids de chaque cerveau (règle S1) ; personne ne les a taillées."},
+            "en": {"titre": "Do not touch: the works are fragile, they do not exist.",
+                   "lignes": ["No chisel, no hammer and no sculptor was harmed in the making of this room."],
+                   "vrai": f"What is true: {k} sculptures tonight, one per citizen, 127 cubes each on an 8 × 8 × 8 grid, computed from the 81 weights of each brain (rule S1); nobody carved them."}}
+    if s["type"] == "sculpteurs":
+        n = len(s["oeuvres"])
+        return {
+            "fr": {"titre": "Chaque soir, un nouveau socle. Le marbrier ne suit plus.",
+                   "lignes": ["La salle s'allonge d'elle-même ; l'architecte, qui n'existe pas, n'a pas été prévenu."],
+                   "vrai": f"Ce qui est vrai : {_s(n, 'fr', 'sculpture', '')} dans cette salle, une par soir ; le sculpteur du soir est le citoyen dont la sculpture a le plus changé depuis la veille. Il n'y a pas de marbrier."},
+            "en": {"titre": "A new plinth every evening. The stonemason can no longer keep up.",
+                   "lignes": ["The room lengthens by itself; the architect, who does not exist, was not told."],
+                   "vrai": f"What is true: {_s(n, 'en', '', 'sculpture')} in this room, one per evening; the sculptor of the evening is the citizen whose sculpture changed most since the day before. There is no stonemason."}}
     return None
 
 
@@ -341,7 +398,8 @@ def fenetres(catalogue, racine):
     return out
 
 
-TYPES = {"portraits": salles_portraits, "dessins": salles_dessins, "artistes": salles_artistes}
+TYPES = {"portraits": salles_portraits, "dessins": salles_dessins, "artistes": salles_artistes,
+         "sculptures": salles_sculptures, "sculpteurs": salles_sculpteurs}
 
 
 def aile(ere, ouverte, catalogue, ctx):
@@ -379,6 +437,7 @@ def compter(ailes):
     for a in ailes:
         for x in a["salles"]:
             o += len(x.get("oeuvres", [])) + len(x.get("dessins", [])) + (1 if x.get("statue") else 0)
+            o += sum(1 for y in x.get("sculptures", []) if y)
     return {"ailes": sum(1 for a in ailes if a["etat"] != "fermee"), "salles": s, "oeuvres": o}
 
 
@@ -389,7 +448,9 @@ def construire(racine):
     ere = int(latest.get("ere") or 1)
     etapes = (latest.get("ages") or {}).get("etapes") or []
     ctx = {"etapes": etapes, "galerie_py": module(racine, "galerie"), "atelier_py": module(racine, "atelier"),
-           "galerie": lire(racine / "galerie.json", None), "atelier": lire(racine / "atelier.json", None)}
+           "galerie": lire(racine / "galerie.json", None), "atelier": lire(racine / "atelier.json", None),
+           "sculptures": lire(racine / "sculptures.json", None) if (racine / "sculptures.json").exists() else None,
+           "sculptures_soir": lire(racine / "sculptures-soir.json", None) if (racine / "sculptures-soir.json").exists() else None}
     ailes = []
     # Ailes des ères passées : recopiées telles quelles de l'ancien musee.json, jamais recalculées (figées).
     for a in ancien.get("plan", []):
@@ -409,7 +470,8 @@ def construire(racine):
         "format": 1, "version": VERSION, "ere": ere, "jourEre": latest.get("jourEre"),
         "edition": latest.get("day"), "date": latest.get("date"),
         "note": "Construit chaque soir par .github/musee.py à partir des seuls fichiers publiés ; aucune œuvre dessinée à la main. "
-                "Poids : entier x 5 / 127, ordre w1[6][10] (biais en dernier) puis w2[3][7]. Dessins : 25 cases, ligne par ligne, 1 = plein.",
+                "Poids : entier x 5 / 127, ordre w1[6][10] (biais en dernier) puis w2[3][7]. Dessins : 25 cases, ligne par ligne, 1 = plein. "
+                "Sculptures : 512 chiffres, case i*64 + j*8 + k pour X = i, Y = j, Z = k (Z = hauteur), 0 = vide, 1 à 9 = taille du cube.",
         **compter(ailes),   # « ailes », « salles », « oeuvres » : nombres lus aussi par l'Office du tourisme (tourisme.py)
         "annexes": annexes(catalogue, lire(racine / "institutions.json", {})),
         "plan": ailes,
@@ -440,6 +502,8 @@ STYLE = """<style>
 .m-oeuvres figcaption b{color:var(--ink);font-size:1.15em}
 .m-vide{aspect-ratio:3/4;display:grid;place-content:center;text-align:center;padding:12px;border:1px dashed var(--rule);color:var(--muted)}
 .m-dessin{max-width:96px}
+.m-sculpture{width:100%;max-width:420px;height:auto;display:block;background:transparent}
+.m-oeuvres-l{grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr))}
 .m-reclame{margin:10px 0;padding:8px 14px;border-left:3px solid var(--ink)}
 .m-reclame p{margin:.3em 0}
 .compte{font:13px var(--f-data);color:var(--muted)}
@@ -453,6 +517,22 @@ def svg_dessin(bits, titre):
     c = 10
     r = "".join(f'<rect x="{(k % n) * c}" y="{(k // n) * c}" width="{c}" height="{c}" fill="#1d2326"/>' for k, b in enumerate(bits) if b == "1")
     return f'<svg class="m-dessin" viewBox="0 0 {n * c} {n * c}" role="img" aria-label="{e(titre)}"><rect width="{n * c}" height="{n * c}" fill="#fff"/>{r}</svg>'
+
+
+def svg_sculpture(s, titre):
+    """Image fixe pour la visite en texte : les 8 couches (Z = 0 en bas, à gauche), plus foncé = plus grand cube."""
+    c, g = 6, 8
+    out = []
+    for k in range(8):
+        ox = k * (g * c + 6)
+        out.append(f'<rect x="{ox}" y="0" width="{g * c}" height="{g * c}" fill="#fff" stroke="#c9ccc8" stroke-width="1"/>')
+        for i in range(8):
+            for j in range(8):
+                v = int(s[i * 64 + j * 8 + k])
+                if v:
+                    out.append(f'<rect x="{ox + i * c}" y="{(7 - j) * c}" width="{c}" height="{c}" fill="#1d2326" fill-opacity="{0.25 + 0.75 * v / 9:.2f}"/>')
+    w = 8 * (g * c + 6) - 6
+    return f'<svg class="m-sculpture" viewBox="0 0 {w} {g * c}" role="img" aria-label="{e(titre)}">{"".join(out)}</svg>'
 
 
 def plaque_txt(r):
@@ -516,6 +596,23 @@ def page(M, latest, lg, G, A):
                                  f'{e(X["dessins_txt"].format(k=len(s["dessins"]), a=a_id, r=region_de(a_id, lg, A)))}</p>')
                     cr = (s.get("critique") or {}).get(lg) or []
                     corps.append("".join(f"<p><i>{e(t)}</i></p>" for t in cr))
+                elif s["type"] == "sculptures":
+                    a_id = s["sculpteur"]
+                    corps.append(f'<p><b>{e(X["sculptures_titre"].format(d=G.date_longue(s["date"], lg), n=s["edition"]))}.</b> '
+                                 f'{e(X["sculptures_txt"].format(k=sum(1 for x in s["sculptures"] if x), a=a_id, r=region_de(a_id, lg, A)))}</p>')
+                    cr = (s.get("critique") or {}).get(lg) or []
+                    corps.append("".join(f"<p><i>{e(t)}</i></p>" for t in cr))
+                    if a_id and s["sculptures"][a_id - 1]:
+                        corps.append(f'<figure>{svg_sculpture(s["sculptures"][a_id - 1], X["sculptures_txt"].format(k=1, a=a_id, r=region_de(a_id, lg, A)))}'
+                                     f'<figcaption><small>{e(X["couches"])}</small></figcaption></figure>')
+                elif s["type"] == "sculpteurs":
+                    figs = []
+                    for o in s["oeuvres"]:
+                        rg = A.REGION_EN.get(o["region"], o["region"]) if lg == "en" else o["region"]
+                        cap = X["sculpteur"].format(d=G.date_longue(o["date"], lg), id=o["id"], r=rg, c=o["deplaces"] if o["deplaces"] is not None else "?")
+                        cr = (o.get("critique") or {}).get(lg) or []
+                        figs.append(f'<figure>{svg_sculpture(o["sculpture"], cap)}<figcaption><b>{e(cap)}</b><br>{"<br>".join(e(t) for t in cr)}</figcaption></figure>')
+                    corps.append(f'<div class="m-oeuvres m-oeuvres-l">{"".join(figs)}</div><p><small>{e(X["couches"])}</small></p>')
                 elif s["type"] == "artistes":
                     figs = []
                     for o in s["oeuvres"]:

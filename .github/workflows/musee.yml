@@ -1,12 +1,12 @@
 # Microcontrôland : « Le Musée national » / « The National Museum » (visite 3D et visite en texte).
-# Le musée est procédural : après la galerie et l'atelier, il relit les fichiers déjà publiés (data/latest.json, galerie.json,
-# atelier.json, institutions.json) et la liste des salles possibles (musee-catalogue.json), puis régénère musee.json,
+# Le musée est procédural : après la galerie, l'atelier et les sculptures, il relit les fichiers déjà publiés (data/latest.json,
+# galerie.json, atelier.json, sculptures.json, sculptures-soir.json, institutions.json) et la liste des salles possibles (musee-catalogue.json), puis régénère musee.json,
 # musee.html et en/musee.html. Aucune œuvre n'est dessinée à la main. La passerelle ne change pas.
 name: Musee national
 
 on:
   workflow_run:
-    workflows: ["Galerie des presidents", "Atelier"]
+    workflows: ["Galerie des presidents", "Atelier", "Sculptures"]
     types: [completed]
   push:
     branches: [main]
