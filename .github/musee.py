@@ -23,7 +23,9 @@ textes que la galerie, les dessins et les critiques sont ceux de l'atelier. Une 
 Licence MIT. Version 1.0, 2 novembre 2026 (firmware 0.8 / 0.9, site seulement). Version 1.2 : salle des sculptures et
 sculpteurs du soir (art secondaire, cubes 8 × 8 × 8, âge de la Mémoire ; décision de Bran du 5/11/2026).
 Version 1.2.1 (7 novembre 2026) : salle de l'écriture (type « glyphes », âge de l'État civil ; lue dans ecriture.json,
-glyphes et cartouches calculés par .github/ecriture.py ; demande de Bran du 6/11/2026).
+glyphes et cartouches calculés par .github/ecriture.py ; demande de Bran du 6/11/2026). Le lien vers musee.js porte
+le numéro de version (musee.js?v=…) : un navigateur ou un cache qui garde l'ancien musee.js ne peut plus le mélanger
+avec le nouveau musee.json.
 
   python3 .github/musee.py <racine du site>
 """
@@ -804,7 +806,7 @@ def page(M, latest, lg, G, A):
 <script src="{pre}reglages.js"></script>
 <script src="{pre}commun.js"></script>
 <script src="{pre}lang.js"></script>
-<script src="{pre}musee.js" defer></script>
+<script src="{pre}musee.js?v={VERSION}" defer></script>
 </body>
 </html>
 """
