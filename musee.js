@@ -39,6 +39,8 @@
       vers: 'Vérifier', donnee: 'Donnée réelle publiée', fermer: 'Fermer', reclame: 'Réclame du musée',
       echelle: "Changer d'échelle", retour: 'Revenir au musée',
       etapes: ['Une boîte de 7 cartes, au fond d\u2019un garage.', '120 citoyens, 6 régions : un point par case de leurs dessins.', (n) => `${n.toLocaleString('fr-FR')} cases, ${n.toLocaleString('fr-FR')} points : une galaxie. Tout est une question d\u2019échelle.`],
+      sculpteur_soir: 'Sculpteur du soir', deplaces: (c) => c == null ? 'Premier soir : aucune sculpture de la veille pour comparer' : `${c} cube(s) déplacé(s) depuis la veille`,
+      table: (r) => `${r} : 20 sculptures`, table_txt: 'Une sculpture par citoyen, 127 cubes sur une grille de 8 × 8 × 8, calculée à partir des 81 poids de son cerveau (règle S1). Le socle doré est celui du sculpteur du soir.',
       vrai_u: (d) => `Ce qui est vrai : chaque point est une case d\u2019un dessin de l\u2019atelier publié le ${d} (case pleine = étoile claire) ; la place de chaque citoyen dépend seulement de son numéro et de sa région, rien n\u2019est tiré au hasard.`,
     },
     en: {
@@ -58,6 +60,8 @@
       vers: 'Check', donnee: 'Real published data', fermer: 'Close', reclame: 'Museum advertising',
       echelle: 'Change the scale', retour: 'Back to the museum',
       etapes: ['A box of 7 boards, at the back of a garage.', '120 citizens, 6 regions: one point per square of their drawings.', (n) => `${n.toLocaleString('en-GB')} squares, ${n.toLocaleString('en-GB')} points: a galaxy. It is all a matter of scale.`],
+      sculpteur_soir: 'Sculptor of the evening', deplaces: (c) => c == null ? 'First evening: no sculpture from the day before to compare with' : `${c} cube(s) moved since the day before`,
+      table: (r) => `${r}: 20 sculptures`, table_txt: 'One sculpture per citizen, 127 cubes on an 8 × 8 × 8 grid, computed from the 81 weights of its brain (rule S1). The gilded base belongs to the sculptor of the evening.',
       vrai_u: (d) => `What is true: each point is a square of a studio drawing published on ${d} (filled square = bright star); each citizen's place depends only on their number and region, nothing is random.`,
     },
   }[LG];
@@ -172,6 +176,12 @@
     const rayee = new THREE.CanvasTexture(toile(64, 64, (g) => { g.fillStyle = '#111'; g.fillRect(0, 0, 64, 64); g.fillStyle = '#ffd23f'; for (let i = -64; i < 128; i += 32) { g.beginPath(); g.moveTo(i, 0); g.lineTo(i + 16, 0); g.lineTo(i - 48, 64); g.lineTo(i - 64, 64); g.fill(); } }));
     rayee.wrapS = rayee.wrapT = THREE.RepeatWrapping;
     const RUBAN = new THREE.MeshBasicMaterial({ map: rayee });
+    // Sculptures (1.2) : une seule couleur, socle doré pour le sculpteur du soir
+    const BRONZE = new THREE.MeshLambertMaterial({ color: 0xb59f78 });
+    const OR = new THREE.MeshLambertMaterial({ color: 0xc9a447 });
+    const tournants = [];
+    const lent = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const unCube = new THREE.BoxGeometry(1, 1, 1);
 
     function boiteM(w, h, d, x, y, z, mat, bloque = true) {
       const m = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), mat); m.position.set(x, y, z); scene.add(m);
@@ -341,8 +351,8 @@
     let z = 0;
     const zones = [];   // pour le nom de la salle où l'on est
     // Hauteurs variables (Bran, 26/10 et 2/11/2026) : chaque genre de salle a sa hauteur, et deux salles voisines du même genre diffèrent.
-    const HAUT = { hall: 5.0, portraits: 6.2, dessins: 4.4, artistes: 3.6, fermee: 4.2 };
-    const hauteur = (type, k) => HAUT[type] + (type === 'artistes' ? (k % 2) * 0.6 : 0);
+    const HAUT = { hall: 5.0, portraits: 6.2, dessins: 4.4, artistes: 3.6, sculptures: 5.4, sculpteurs: 3.9, fermee: 4.2 };
+    const hauteur = (type, k) => HAUT[type] + (type === 'artistes' || type === 'sculpteurs' ? (k % 2) * 0.6 : 0);
 
     // Hall d'accueil
     {
@@ -389,6 +399,8 @@
         if (s.type === 'portraits') L = Math.max(14, Math.ceil(s.oeuvres.length / 2) * 4.4 + 6);
         if (s.type === 'dessins') L = 17.4;
         if (s.type === 'artistes') L = Math.max(9, Math.ceil(s.oeuvres.length / 2) * 2.4 + 4);
+        if (s.type === 'sculptures') L = 19;
+        if (s.type === 'sculpteurs') L = Math.max(9, Math.ceil(s.oeuvres.length / 2) * 2.6 + 4);
         const z1 = z, z2 = z - L, nom = `${T.aile(aile.ere)} · ${s.titre[LG]}`;
         cloison(z1, Math.max(H, hPrec));
         murs(z1, z2, H); sol(-W, z1, W, z2); plafond(-W, z1, W, z2, H);
@@ -399,6 +411,8 @@
         if (s.type === 'portraits') sallePortraits(s, z1, z2, H);
         if (s.type === 'dessins') salleDessins(s, z1, z2, H);
         if (s.type === 'artistes') salleArtistes(s, z1, z2, H);
+        if (s.type === 'sculptures') salleSculptures(s, z1, z2, H);
+        if (s.type === 'sculpteurs') salleSculpteurs(s, z1, z2, H);
         zones.push({ z1, z2, nom });
         salles.push({ nom, z: z1 - 2 });
         z = z2; hPrec = H;
@@ -518,6 +532,77 @@
         cadre(dessin5(o.dessin), 1.0, 1.0, cote * (W - 0.1), 2.0, zc, ry, c);
         plaque({ titre: dateLongue(o.date), lignes: [T.cit(o.id, region(o.region))], taille: 52 }, 1.0, 0.5, cote * (W - 0.1), 1.05, zc, ry, c);
         halo(cote * (W - 0.1), 2.0, zc, ry, 2.2, 2.6);
+      });
+    }
+
+    // ---------------------------------------------------------------- les sculptures (art secondaire, cubes 8 × 8 × 8, règle S1)
+    // Les cubes sont calculés par .github/sculptures.py et lus tels quels (512 chiffres : 0 = vide, 1 à 9 = taille) :
+    // la visite 3D ne recalcule rien. Une seule couleur (la couleur est réservée à l'art évolué de la Curiosité).
+    // Pose les cubes de plusieurs sculptures dans un seul InstancedMesh : [{ s, x, y, z, taille }] (y = bas de la sculpture)
+    function cubes(liste, parent) {
+      const n = liste.reduce((t, o) => t + (o.s.match(/[1-9]/g) || []).length, 0);
+      if (!n) return null;
+      const im = new THREE.InstancedMesh(unCube, BRONZE, n), m = new THREE.Matrix4(), q = new THREE.Quaternion(), p = new THREE.Vector3(), e = new THREE.Vector3();
+      let k = 0;
+      for (const o of liste) {
+        const c = o.taille / 8;
+        for (let i = 0; i < 512; i++) {
+          const v = +o.s[i]; if (!v) continue;
+          const X = Math.floor(i / 64), Y = Math.floor(i / 8) % 8, Z = i % 8, t = c * (0.35 + 0.6 * (v - 1) / 8);
+          p.set(o.x + (X - 3.5) * c, o.y + (Z + 0.5) * c, o.z + (Y - 3.5) * c); e.set(t, t, t);
+          m.compose(p, q, e); im.setMatrixAt(k++, m);
+        }
+      }
+      im.instanceMatrix.needsUpdate = true;
+      (parent || scene).add(im);
+      return im;
+    }
+    function zoneClic(x, y, zz, l, h, d, cartel) {
+      const m = new THREE.Mesh(new THREE.BoxGeometry(l, h, d), new THREE.MeshBasicMaterial({ visible: false }));
+      m.position.set(x, y, zz); scene.add(m); m.userData.cartel = cartel; cliquables.push(m);
+    }
+    function salleSculptures(s, z1, z2, H) {
+      const sc = s.sculpteur, crit = ((s.critique || {})[LG]) || [];
+      const src = s.source ? `<p class="m3-src">${T.source} : <a href="https://donnees.microcontroland.org/${esc(s.source)}">${esc(s.source)}</a></p>` : '';
+      const cs = { titre: s.titre[LG], lignes: [T.soir_du(dateLongue(s.date), s.edition), T.sculpteur_soir + ' : ' + T.cit(sc, regionDe(sc)), ...crit], html: src + verifier(s) };
+      const petites = [];
+      for (let r = 0; r < 6; r++) {
+        // Une table par région, 3 de chaque côté ; 20 sculptures en 2 rangs de 10
+        const cote = r < 3 ? -1 : 1, i = r % 3, zc = z1 - 3.4 - i * 5.0, xt = cote * (W - 1.5), Lt = 3.6, D = 1.0, ht = 0.85;
+        boiteM(D, ht, Lt, xt, ht / 2, zc, SOCLE);
+        const ct = { titre: T.table(region(REGIONS[r])), lignes: [T.soir_du(dateLongue(s.date), s.edition), T.table_txt], html: src + verifier(s) };
+        zoneClic(xt, ht + 0.25, zc, D, 0.6, Lt, ct);
+        plaque({ titre: region(REGIONS[r]), lignes: [T.table(region(REGIONS[r]))], taille: 50 }, 1.6, 0.55, cote * (W - 0.1), 1.75, zc, cote < 0 ? Math.PI / 2 : -Math.PI / 2, ct);
+        halo(cote * (W - 0.1), 1.6, zc, cote < 0 ? Math.PI / 2 : -Math.PI / 2, 4.4, 3.2);
+        for (let q = 0; q < 20; q++) {
+          const id = r * 20 + q + 1, sculpt = s.sculptures[id - 1]; if (!sculpt) continue;
+          const x = xt + (q < 10 ? -0.22 : 0.22) * cote, zz = zc - Lt / 2 + 0.18 + (q % 10) * 0.36;
+          if (id === sc) boiteM(0.3, 0.02, 0.3, x, ht + 0.01, zz, OR, false);
+          petites.push({ s: sculpt, x, y: ht + 0.02, z: zz, taille: 0.24 });
+        }
+      }
+      cubes(petites);
+      // Au centre, le sculpteur du soir en grand, sur un socle ; il tourne lentement (sauf si le visiteur a demandé moins d'animations)
+      const zc = (z1 + z2) / 2;
+      boiteM(1.3, 0.9, 1.3, 0, 0.45, zc, SOCLE);
+      if (sc && s.sculptures[sc - 1]) {
+        const grp = new THREE.Group(); grp.position.set(0, 0, zc); scene.add(grp);
+        cubes([{ s: s.sculptures[sc - 1], x: 0, y: 0.9, z: 0, taille: 1.15 }], grp);
+        if (!lent) tournants.push(grp);
+      }
+      zoneClic(0, 1.4, zc, 1.4, 2.0, 1.4, cs);
+      for (const sens of [1, -1]) plaque({ titre: T.sculpteur_soir, lignes: [T.cit(sc, regionDe(sc))], taille: 46 }, 1.2, 0.42, 0, 0.45, zc + sens * 0.66, sens > 0 ? 0 : Math.PI, cs);
+    }
+    function salleSculpteurs(s, z1, z2, H) {
+      s.oeuvres.forEach((o, i) => {
+        const cote = i % 2 === 0 ? -1 : 1, rang = Math.floor(i / 2), zc = z1 - 2.8 - rang * 2.6, ry = cote < 0 ? Math.PI / 2 : -Math.PI / 2, x = cote * (W - 1.3);
+        const crit = ((o.critique || {})[LG]) || [];
+        const c = { titre: T.cit(o.id, region(o.region)), lignes: [T.soir_du(dateLongue(o.date), o.edition), T.deplaces(o.deplaces), ...crit], html: (o.source ? `<p class="m3-src">${T.source} : <a href="https://donnees.microcontroland.org/${esc(o.source)}">${esc(o.source)}</a></p>` : '') + verifier(s) };
+        boiteM(0.7, 1.0, 0.7, x, 0.5, zc, SOCLE);
+        cubes([{ s: o.sculpture, x, y: 1.0, z: zc, taille: 0.55 }]);
+        zoneClic(x, 1.25, zc, 0.8, 0.7, 0.8, c);
+        plaque({ titre: dateLongue(o.date), lignes: [T.cit(o.id, region(o.region))], taille: 52 }, 1.0, 0.5, cote * (W - 0.1), 2.15, zc, ry, c);
+        halo(cote * (W - 0.1), 1.9, zc, ry, 2.2, 2.6);
       });
     }
 
@@ -670,6 +755,7 @@
         if (libre(nx, joueur.z)) joueur.x = nx;
         if (libre(joueur.x, nz)) joueur.z = nz;
       }
+      for (const g of tournants) g.rotation.y += 0.25 * dt;
       camera.position.set(joueur.x, 1.65, joueur.z);
       camera.rotation.set(joueur.pitch, joueur.yaw, 0, 'YXZ');
       const zo = zones.find((q) => joueur.z <= q.z1 && joueur.z > q.z2) || (joueur.x < -W ? { nom: (M.annexes[0] || {}).titre?.[LG] } : null);
