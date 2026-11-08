@@ -173,6 +173,7 @@ Verdict de l'enquêteur : Niwata n'a limogé personne : la règle s'en est charg
 Le carnet de l'enquêteur
 Une fiche par élection, révolte, coup de palais ou vacance du pouvoir, recalculée chaque soir à partir des fichiers bruts publiés. Les chiffres, rien que les chiffres : l'humour est réservé aux dossiers.
 
+- 8 novembre 2026, 8 h · Élection : Niwata réélu avec 54 % (https://donnees.microcontroland.org/donnees/ere-001/quotidien/2026-11-08.json)
 - 5 novembre 2026, 6 h · Élection : Niwata réélu avec 75 % (https://donnees.microcontroland.org/donnees/ere-001/quotidien/2026-11-05.json)
 - 2 novembre 2026, 4 h · Élection : Niwata réélu avec 63 % (https://donnees.microcontroland.org/donnees/ere-001/quotidien/2026-11-02.json)
 - 30 octobre 2026, 2 h · Élection : Niwata réélu avec 37 % (https://donnees.microcontroland.org/donnees/ere-001/quotidien/2026-10-30.json)
