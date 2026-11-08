@@ -10,7 +10,7 @@ Six regions, four raw materials, a brand-new language and 1.2 million simulated 
 Regime in force: Democracy
 Head of State: Niwata
 Current capital: Dam
-Situation on day 31 of the Republic, era 1: 3 ministers, president in power for 11 d 20 h. Updated every evening at 8 pm by the gateway.
+Situation on day 32 of the Republic, era 1: 3 ministers, president in power for 12 d 20 h. Updated every evening at 8 pm by the gateway.
 
 ## The National Museum of Microcontrôland (The country's one and only monument)
 The largest virtual museum in the country. Also the smallest. The only one, in fact. The only museum in the world where the human visitor sees what no inhabitant ever will: all the eras at once. You come out a changed person, or at least recharged.
@@ -40,9 +40,9 @@ The country practises the Cult of the Creator, He-who-soldered-the-Pins. Tonight
 - hello = soubaï (6/6)
 - yes = souka (6/6)
 - no = noukou (5/6)
-- friend = kika (1/6)
+- friend = naïwi (2/6)
 - you = soutaï (1/6)
-- question = sousou (0/6)
+- question = wana (1/6)
 - country = tawi (6/6)
 - box = waïhaï (6/6)
 Each region speaks its own language. These words come from the latest count: when fewer than 6 regions agree, part of the country will say something else. The wise tourist nods.
@@ -50,9 +50,9 @@ Each region speaks its own language. These words come from the latest count: whe
 ## Microcontrôland's world firsts
 Certified by the Ministry. The Ministry certifies everything.
 - Age of the Founding: First country in the world whose only newspaper is written every evening by its own public service.
-  What is true: La Puce Libre comes out every evening at 8 pm, written by the gateway: 30 issues as of 7 November 2026.
+  What is true: La Puce Libre comes out every evening at 8 pm, written by the gateway: 31 issues as of 8 November 2026.
 - Age of Speech: First national language invented by six regions that had never said a word to each other.
-  What is true: Age reached on 18 October 2026. 34 shared words out of 40 ideas as of 7 November 2026; each region keeps its own lexicon.
+  What is true: Age reached on 18 October 2026. 33 shared words out of 40 ideas as of 8 November 2026; each region keeps its own lexicon.
 - Age of Memory: First national annals kept by a country of 1.8 litres.
   What is true: Age reached on 24 October 2026. Records and the characters' pasts, on the History page. Longest reign: Kiti, 15 d 14 h.
 - Age of the Civil Registry: First country where any inhabitant can be followed by a foreigner, with no form to fill in.
@@ -76,4 +76,4 @@ PDF: https://www.microcontroland.org/tourisme/depliant-fr.pdf · https://www.mic
 
 Microcontrôland is an entirely fictional country, simulated by microcontrollers for a maker project. It has no link with any real state, party, person, religion or tourist office. The Waïnas are neither alive nor conscious.
 
-Page updated automatically after issue No. 30 of 7 November 2026.
+Page updated automatically after issue No. 31 of 8 November 2026.

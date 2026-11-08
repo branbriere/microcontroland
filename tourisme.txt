@@ -10,7 +10,7 @@ Six régions, quatre matières premières, une langue toute neuve et 1,2 million
 Régime en vigueur : Démocratie
 Chef de l'État : Niwata
 Capitale actuelle : Barrage
-Situation au jour 31 de la République, ère 1 : 3 ministres, président au pouvoir depuis 11 j 20 h. Mise à jour chaque soir à 20 h par la passerelle.
+Situation au jour 32 de la République, ère 1 : 3 ministres, président au pouvoir depuis 12 j 20 h. Mise à jour chaque soir à 20 h par la passerelle.
 
 ## Le Musée national de Microcontrôland (Monument unique du pays)
 Le plus grand musée virtuel du pays. Le plus petit aussi. Le seul, en fait. Le seul musée au monde où le visiteur humain voit ce qu'aucun habitant ne verra jamais : toutes les ères à la fois. On en ressort changé, ou au moins rechargé.
@@ -40,9 +40,9 @@ Le pays pratique le Culte du Créateur, Celui-qui-souda-les-Broches. Ce soir, la
 - salut = soubaï (6/6)
 - oui = souka (6/6)
 - non = noukou (5/6)
-- ami = kika (1/6)
+- ami = naïwi (2/6)
 - vous = soutaï (1/6)
-- question = sousou (0/6)
+- question = wana (1/6)
 - pays = tawi (6/6)
 - boîte = waïhaï (6/6)
 Chaque région parle sa propre langue. Ces mots sont ceux du dernier relevé : quand moins de 6 régions sont d'accord, une partie du pays dira autre chose. Le touriste avisé hoche la tête.
@@ -50,9 +50,9 @@ Chaque région parle sa propre langue. Ces mots sont ceux du dernier relevé : q
 ## Les premières mondiales de Microcontrôland
 Homologuées par le Ministère. Le Ministère homologue tout.
 - Âge de la Fondation : Premier pays au monde dont l'unique journal est écrit chaque soir par son propre service public.
-  Ce qui est vrai : La Puce Libre paraît chaque soir à 20 h, écrite par la passerelle : 30 éditions au 7 novembre 2026.
+  Ce qui est vrai : La Puce Libre paraît chaque soir à 20 h, écrite par la passerelle : 31 éditions au 8 novembre 2026.
 - Âge de la Parole : Première langue nationale inventée par six régions qui ne s'étaient jamais rien dit.
-  Ce qui est vrai : Âge atteint le 18 octobre 2026. 34 mots communs sur 40 idées au 7 novembre 2026 ; chaque région garde son propre lexique.
+  Ce qui est vrai : Âge atteint le 18 octobre 2026. 33 mots communs sur 40 idées au 8 novembre 2026 ; chaque région garde son propre lexique.
 - Âge de la Mémoire : Premières annales nationales tenues par un pays de 1,8 litre.
   Ce qui est vrai : Âge atteint le 24 octobre 2026. Records et passé des personnages, sur la page Histoire. Plus long règne : Kiti, 15 j 14 h.
 - Âge de l'État civil : Premier pays où chaque habitant peut être suivi par un étranger, sans aucun formulaire.
@@ -76,4 +76,4 @@ PDF : https://www.microcontroland.org/tourisme/depliant-fr.pdf · https://www.mi
 
 Microcontrôland est un pays entièrement fictif, simulé par des microcontrôleurs pour un projet de maker. Il n'a aucun lien avec un État, un parti, une personne, une religion ou un office de tourisme réels. Les Waïnas ne sont ni vivants ni conscients.
 
-Page mise à jour automatiquement après l'édition n° 30 du 7 novembre 2026.
+Page mise à jour automatiquement après l'édition n° 31 du 8 novembre 2026.
