@@ -6,6 +6,13 @@
   <description>Microcontrôland's daily paper, written every evening by the gateway.</description>
   <language>en</language>
   <item>
+    <title>Day 32 — Copper edges up 1.6%</title>
+    <link>https://branbriere.github.io/microcontroland/en/#jour-32</link>
+    <description>Nothing dramatic. The Mines region is doing its sums again, just in case.</description>
+    <pubDate>Mon, 09 Nov 2026 19:00:01 GMT</pubDate>
+    <guid isPermaLink="false">microcontroland-en-jour-32</guid>
+  </item>
+  <item>
     <title>Day 31 — President Niwata re-elected with 54%</title>
     <link>https://branbriere.github.io/microcontroland/en/#jour-31</link>
     <description>Voters have chosen continuity. The palace stays in the Dam region. So does everything else.</description>
@@ -102,13 +109,6 @@
     <description>The Fields region watches its income melt away, and the shock wave spreads across the country.</description>
     <pubDate>Mon, 26 Oct 2026 19:00:03 GMT</pubDate>
     <guid isPermaLink="false">microcontroland-en-jour-18</guid>
-  </item>
-  <item>
-    <title>Day 17 — The country has a word for “market”: kika</title>
-    <link>https://branbriere.github.io/microcontroland/en/#jour-17</link>
-    <description>At least five regions now say the same thing. The common language has 23 words.</description>
-    <pubDate>Sun, 25 Oct 2026 19:00:01 GMT</pubDate>
-    <guid isPermaLink="false">microcontroland-en-jour-17</guid>
   </item>
 </channel>
 </rss>
