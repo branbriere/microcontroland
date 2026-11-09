@@ -11,22 +11,22 @@ RÈGLES v1.1
 - Victoire : mat, ou percée d'un pion sur la dernière rangée, tout droit seulement.
 - Nulle : pat, triple répétition, ou 80 demi-coups sans prise ni coup de pion.
 
-PROBLÈME DU JOUR (n° 3 sur 45)
+PROBLÈME DU JOUR (n° 4 sur 45)
 Plateau : rangée 1 en haut. MAJUSCULES = blancs, minuscules = noirs, . = vide, * = case offensive vide.
 P pion, N cavalier, B fou, R tour, Q dame, K roi.
 
-1  . . . . K
-2  . . . R p
-3  . * . p .
-4  B q . * .
-5  . . . . r
-6  . . . k .
+1  . . . B .
+2  . K . . .
+3  . P . . .
+4  . . . Q .
+5  . k . . .
+6  . . . . .
    a b c d e
 
-Trait : noirs
-Coups légaux (24) : b4-c4 b4-d4 b4-e4 b4xa4 b4-b5 b4-b6 b4-b3 b4-b2 b4-b1 b4-c5 b4-c3 b4xd2 b4-a5 b4-a3 e5-d5 e5-c5 e5-b5 e5-a5 e5-e6 e5-e4 e5-e3 d6-e6 d6-d5 d6-c5
+Trait : blancs
+Coups légaux (25) : d1-e2 d1-c2 b2-c2 b2-a2 b2-b1 b2-c3 b2-c1 b2-a3 b2-a1 b3-b4 b3-c4 b3-a4 d4-e4 d4-c4 d4-b4 d4-a4 d4-d5 d4-d6 d4-d3 d4-d2 d4-e5 d4-e3 d4-c5 d4-b6 d4-c3
 
-Énigme : les noirs gagnent en 2 coups (mat ou percée), quoi que fasse l'adversaire. Votre réponse : le premier coup des noirs.
+Énigme : les blancs gagnent en 2 coups (mat ou percée), quoi que fasse l'adversaire. Votre réponse : le premier coup des blancs.
 La solution est publiée sur la page pour les humains, dans un encadré replié.
 
 GALERIE : L'attaché militaire (blancs, niveau 4) contre le consul (noirs, niveau 3), 25 octobre 2026, simulateur, graine 77
@@ -43,4 +43,4 @@ JOUER : sur la page pour les humains (JavaScript). Il n'existe pas encore de moy
 
 Microcontrôland est un pays fictif. La Relique, son culte et son Ministère sont des inventions de ce site ; ils ne parodient aucune religion réelle.
 
-Page mise à jour automatiquement après l'édition n° 31 du 8 novembre 2026.
+Page mise à jour automatiquement après l'édition n° 32 du 9 novembre 2026.
