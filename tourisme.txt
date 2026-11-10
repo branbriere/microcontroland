@@ -10,7 +10,7 @@ Six régions, quatre matières premières, une langue toute neuve et 1,2 million
 Régime en vigueur : Démocratie
 Chef de l'État : Niwata
 Capitale actuelle : Barrage
-Situation au jour 33 de la République, ère 1 : 3 ministres, président au pouvoir depuis 13 j 20 h. Mise à jour chaque soir à 20 h par la passerelle.
+Situation au jour 34 de la République, ère 1 : 3 ministres, président au pouvoir depuis 14 j 20 h. Mise à jour chaque soir à 20 h par la passerelle.
 
 ## Le Musée national de Microcontrôland (Monument unique du pays)
 Le plus grand musée virtuel du pays. Le plus petit aussi. Le seul, en fait. Le seul musée au monde où le visiteur humain voit ce qu'aucun habitant ne verra jamais : toutes les ères à la fois. On en ressort changé, ou au moins rechargé.
@@ -25,10 +25,10 @@ Ce qui est vrai : le musée est une page du site, construite à partir des donn�
 - Nos stars mondialement connues (dans Microcontrôland) [En attente d'évolution de la civilisation] : Aucune star pour l'instant. Les dessins de l'Atelier ne comptent pas : leurs auteurs ne savent pas qu'ils dessinent.
 
 ## Les six régions
-- Mines (Cuivre, sasa) : Riche quand le cuivre monte, en colère quand il chute. Humeur : satisfaite, cuivre +1,6 %.
-- Champs (Blé, houhou) : Région agricole, souvent la plus calme du pays. Humeur : satisfaite, blé −0,7 %.
-- Raffineries (Pétrole, sihaï) : Suit les humeurs du baril, et le reste du pays avec. Humeur : satisfaite, pétrole −0,8 %.
-- Barrage (Électricité, païpi) : Capitale ce soir. Fournit les cinq volts de la nation et le rappelle volontiers. Humeur : satisfaite, électricité +0,6 %.
+- Mines (Cuivre, sasa) : Riche quand le cuivre monte, en colère quand il chute. Humeur : satisfaite, cuivre +1,0 %.
+- Champs (Blé, houhou) : Région agricole, souvent la plus calme du pays. Humeur : satisfaite, blé −1,9 %.
+- Raffineries (Pétrole, sihaï) : Suit les humeurs du baril, et le reste du pays avec. Humeur : satisfaite, pétrole −0,7 %.
+- Barrage (Électricité, païpi) : Capitale ce soir. Fournit les cinq volts de la nation et le rappelle volontiers. Humeur : satisfaite, électricité −1,8 %.
 - Port (Commerce, haïpi) : Vit de tous les cours à la fois ; premier touché par les tempêtes. Humeur : satisfaite.
 - Ville (Services, wawa) : Indifférente à la bourse, sensible à la censure. Humeur : satisfaite.
 
@@ -40,19 +40,19 @@ Le pays pratique le Culte du Créateur, Celui-qui-souda-les-Broches. Ce soir, la
 - salut = soubaï (5/6)
 - oui = souka (6/6)
 - non = noukou (6/6)
-- ami = pawaï (2/6)
+- ami = païpou (4/6)
 - vous = soutaï (1/6)
 - question = wana (2/6)
 - pays = tawi (6/6)
-- boîte = waïhaï (6/6)
+- boîte = waïhaï (5/6)
 Chaque région parle sa propre langue. Ces mots sont ceux du dernier relevé : quand moins de 6 régions sont d'accord, une partie du pays dira autre chose. Le touriste avisé hoche la tête.
 
 ## Les premières mondiales de Microcontrôland
 Homologuées par le Ministère. Le Ministère homologue tout.
 - Âge de la Fondation : Premier pays au monde dont l'unique journal est écrit chaque soir par son propre service public.
-  Ce qui est vrai : La Puce Libre paraît chaque soir à 20 h, écrite par la passerelle : 32 éditions au 9 novembre 2026.
+  Ce qui est vrai : La Puce Libre paraît chaque soir à 20 h, écrite par la passerelle : 33 éditions au 10 novembre 2026.
 - Âge de la Parole : Première langue nationale inventée par six régions qui ne s'étaient jamais rien dit.
-  Ce qui est vrai : Âge atteint le 18 octobre 2026. 34 mots communs sur 40 idées au 9 novembre 2026 ; chaque région garde son propre lexique.
+  Ce qui est vrai : Âge atteint le 18 octobre 2026. 34 mots communs sur 40 idées au 10 novembre 2026 ; chaque région garde son propre lexique.
 - Âge de la Mémoire : Premières annales nationales tenues par un pays de 1,8 litre.
   Ce qui est vrai : Âge atteint le 24 octobre 2026. Records et passé des personnages, sur la page Histoire. Plus long règne : Kiti, 15 j 14 h.
 - Âge de l'État civil : Premier pays où chaque habitant peut être suivi par un étranger, sans aucun formulaire.
@@ -76,4 +76,4 @@ PDF : https://www.microcontroland.org/tourisme/depliant-fr.pdf · https://www.mi
 
 Microcontrôland est un pays entièrement fictif, simulé par des microcontrôleurs pour un projet de maker. Il n'a aucun lien avec un État, un parti, une personne, une religion ou un office de tourisme réels. Les Waïnas ne sont ni vivants ni conscients.
 
-Page mise à jour automatiquement après l'édition n° 32 du 9 novembre 2026.
+Page mise à jour automatiquement après l'édition n° 33 du 10 novembre 2026.

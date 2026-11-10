@@ -10,7 +10,7 @@ endobj
 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Oblique /Encoding /WinAnsiEncoding >>
 endobj
 4 0 obj
-<< /Length 8444 >>
+<< /Length 8448 >>
 stream
 0.960 0.970 0.950 rg 0 0 842 595 re f
 0.050 0.420 0.280 rg 561.3 0 280.7 595 re f
@@ -19,11 +19,11 @@ BT /F2 11.5 Tf 0.080 0.130 0.100 rg 26.0 544.6 Td (MOTS UTILES DU VOYAGEUR) Tj E
 BT /F1 9.0 Tf 0.080 0.130 0.100 rg 26.0 530.9 Td (salut : soubaï \(5/6\)) Tj ET
 BT /F1 9.0 Tf 0.080 0.130 0.100 rg 26.0 519.2 Td (oui : souka \(6/6\)) Tj ET
 BT /F1 9.0 Tf 0.080 0.130 0.100 rg 26.0 507.5 Td (non : noukou \(6/6\)) Tj ET
-BT /F1 9.0 Tf 0.080 0.130 0.100 rg 26.0 495.8 Td (ami : pawaï \(2/6\)) Tj ET
+BT /F1 9.0 Tf 0.080 0.130 0.100 rg 26.0 495.8 Td (ami : païpou \(4/6\)) Tj ET
 BT /F1 9.0 Tf 0.080 0.130 0.100 rg 26.0 484.1 Td (vous : soutaï \(1/6\)) Tj ET
 BT /F1 9.0 Tf 0.080 0.130 0.100 rg 26.0 472.4 Td (question : wana \(2/6\)) Tj ET
 BT /F1 9.0 Tf 0.080 0.130 0.100 rg 26.0 460.7 Td (pays : tawi \(6/6\)) Tj ET
-BT /F1 9.0 Tf 0.080 0.130 0.100 rg 26.0 449.0 Td (boîte : waïhaï \(6/6\)) Tj ET
+BT /F1 9.0 Tf 0.080 0.130 0.100 rg 26.0 449.0 Td (boîte : waïhaï \(5/6\)) Tj ET
 BT /F1 7.5 Tf 0.340 0.400 0.360 rg 26.0 436.3 Td (Chaque région parle sa propre langue. Ces mots sont ceux du) Tj ET
 BT /F1 7.5 Tf 0.340 0.400 0.360 rg 26.0 426.5 Td (dernier relevé : quand moins de 6 régions sont d'accord, une partie) Tj ET
 BT /F1 7.5 Tf 0.340 0.400 0.360 rg 26.0 416.8 Td (du pays dira autre chose. Le touriste avisé hoche la tête.) Tj ET
@@ -49,13 +49,13 @@ BT /F2 7.0 Tf 0.720 0.210 0.160 rg 306.7 504.4 Td (ÂGE DE LA FONDATION) Tj ET
 BT /F2 9.0 Tf 0.080 0.130 0.100 rg 306.7 492.7 Td (Premier pays au monde dont l'unique journal est écrit) Tj ET
 BT /F2 9.0 Tf 0.080 0.130 0.100 rg 306.7 481.0 Td (chaque soir par son propre service public.) Tj ET
 BT /F1 7.5 Tf 0.340 0.400 0.360 rg 306.7 471.2 Td (Ce qui est vrai : La Puce Libre paraît chaque soir à 20 h, écrite par la) Tj ET
-BT /F1 7.5 Tf 0.340 0.400 0.360 rg 306.7 461.5 Td (passerelle : 32 éditions au 9 novembre 2026.) Tj ET
+BT /F1 7.5 Tf 0.340 0.400 0.360 rg 306.7 461.5 Td (passerelle : 33 éditions au 10 novembre 2026.) Tj ET
 BT /F2 7.0 Tf 0.720 0.210 0.160 rg 306.7 447.4 Td (ÂGE DE LA PAROLE) Tj ET
 BT /F2 9.0 Tf 0.080 0.130 0.100 rg 306.7 435.7 Td (Première langue nationale inventée par six régions) Tj ET
 BT /F2 9.0 Tf 0.080 0.130 0.100 rg 306.7 424.0 Td (qui ne s'étaient jamais rien dit.) Tj ET
 BT /F1 7.5 Tf 0.340 0.400 0.360 rg 306.7 414.2 Td (Ce qui est vrai : Âge atteint le 18 octobre 2026. 34 mots communs) Tj ET
-BT /F1 7.5 Tf 0.340 0.400 0.360 rg 306.7 404.5 Td (sur 40 idées au 9 novembre 2026 ; chaque région garde son propre) Tj ET
-BT /F1 7.5 Tf 0.340 0.400 0.360 rg 306.7 394.8 Td (lexique.) Tj ET
+BT /F1 7.5 Tf 0.340 0.400 0.360 rg 306.7 404.5 Td (sur 40 idées au 10 novembre 2026 ; chaque région garde son) Tj ET
+BT /F1 7.5 Tf 0.340 0.400 0.360 rg 306.7 394.8 Td (propre lexique.) Tj ET
 BT /F2 7.0 Tf 0.720 0.210 0.160 rg 306.7 380.6 Td (ÂGE DE LA MÉMOIRE) Tj ET
 BT /F2 9.0 Tf 0.080 0.130 0.100 rg 306.7 368.9 Td (Premières annales nationales tenues par un pays de) Tj ET
 BT /F2 9.0 Tf 0.080 0.130 0.100 rg 306.7 357.2 Td (1,8 litre.) Tj ET
@@ -76,7 +76,7 @@ BT /F1 7.5 Tf 0.340 0.400 0.360 rg 306.7 204.3 Td (publie les questions du mois 
 BT /F1 7.5 Tf 0.340 0.400 0.360 rg 306.7 194.5 Td (l'ambassadeur.) Tj ET
 BT /F2 8.5 Tf 0.080 0.130 0.100 rg 306.7 103.0 Td (Tout le pays en ligne :) Tj ET
 BT /F1 8.5 Tf 0.050 0.420 0.280 rg 306.7 91.9 Td (https://www.microcontroland.org/tourisme.html) Tj ET
-BT /F1 7.0 Tf 0.340 0.400 0.360 rg 306.7 78.8 Td (Dépliant fabriqué automatiquement après l'édition n° 32 du 9 novembre) Tj ET
+BT /F1 7.0 Tf 0.340 0.400 0.360 rg 306.7 78.8 Td (Dépliant fabriqué automatiquement après l'édition n° 33 du 10 novembre) Tj ET
 BT /F1 7.0 Tf 0.340 0.400 0.360 rg 306.7 69.7 Td (2026.) Tj ET
 BT /F1 6.5 Tf 0.340 0.400 0.360 rg 306.7 57.3 Td (Microcontrôland est un pays entièrement fictif, simulé par des microcontrôleurs) Tj ET
 BT /F1 6.5 Tf 0.340 0.400 0.360 rg 306.7 48.8 Td (pour un projet de maker. Il n'a aucun lien avec un État, un parti, une personne,) Tj ET
@@ -130,8 +130,8 @@ BT /F2 14.0 Tf 0.050 0.420 0.280 rg 26.0 494.7 Td (Niwata) Tj ET
 BT /F1 7.5 Tf 0.340 0.400 0.360 rg 26.0 484.9 Td (Chef de l'État) Tj ET
 BT /F2 14.0 Tf 0.050 0.420 0.280 rg 26.0 465.8 Td (Barrage) Tj ET
 BT /F1 7.5 Tf 0.340 0.400 0.360 rg 26.0 456.1 Td (Capitale actuelle) Tj ET
-BT /F1 7.5 Tf 0.340 0.400 0.360 rg 26.0 442.3 Td (Situation au jour 33 de la République, ère 1 : 3 ministres, président) Tj ET
-BT /F1 7.5 Tf 0.340 0.400 0.360 rg 26.0 432.6 Td (au pouvoir depuis 13 j 20 h. Mise à jour chaque soir à 20 h par la) Tj ET
+BT /F1 7.5 Tf 0.340 0.400 0.360 rg 26.0 442.3 Td (Situation au jour 34 de la République, ère 1 : 3 ministres, président) Tj ET
+BT /F1 7.5 Tf 0.340 0.400 0.360 rg 26.0 432.6 Td (au pouvoir depuis 14 j 20 h. Mise à jour chaque soir à 20 h par la) Tj ET
 BT /F1 7.5 Tf 0.340 0.400 0.360 rg 26.0 422.8 Td (passerelle.) Tj ET
 0.080 0.130 0.100 rg 26.0 414.8 228.7 1.6 re f
 BT /F2 11.5 Tf 0.080 0.130 0.100 rg 26.0 398.4 Td (LA RELIGION PRATIQUÉE) Tj ET
@@ -186,17 +186,17 @@ BT /F1 8.0 Tf 0.080 0.130 0.100 rg 306.7 154.9 Td (pas : leurs auteurs ne savent
 BT /F2 11.5 Tf 0.080 0.130 0.100 rg 587.3 544.6 Td (LES SIX RÉGIONS) Tj ET
 BT /F2 9.0 Tf 0.050 0.420 0.280 rg 587.3 526.9 Td (MINES · Cuivre · « sasa ») Tj ET
 BT /F1 8.0 Tf 0.080 0.130 0.100 rg 587.3 516.5 Td (Riche quand le cuivre monte, en colère quand il chute.) Tj ET
-BT /F1 7.5 Tf 0.340 0.400 0.360 rg 587.3 506.8 Td (Humeur : satisfaite · cuivre +1,6 %) Tj ET
+BT /F1 7.5 Tf 0.340 0.400 0.360 rg 587.3 506.8 Td (Humeur : satisfaite · cuivre +1,0 %) Tj ET
 BT /F2 9.0 Tf 0.050 0.420 0.280 rg 587.3 491.1 Td (CHAMPS · Blé · « houhou ») Tj ET
 BT /F1 8.0 Tf 0.080 0.130 0.100 rg 587.3 480.7 Td (Région agricole, souvent la plus calme du pays.) Tj ET
-BT /F1 7.5 Tf 0.340 0.400 0.360 rg 587.3 470.9 Td (Humeur : satisfaite · blé -0,7 %) Tj ET
+BT /F1 7.5 Tf 0.340 0.400 0.360 rg 587.3 470.9 Td (Humeur : satisfaite · blé -1,9 %) Tj ET
 BT /F2 9.0 Tf 0.050 0.420 0.280 rg 587.3 455.2 Td (RAFFINERIES · Pétrole · « sihaï ») Tj ET
 BT /F1 8.0 Tf 0.080 0.130 0.100 rg 587.3 444.8 Td (Suit les humeurs du baril, et le reste du pays avec.) Tj ET
-BT /F1 7.5 Tf 0.340 0.400 0.360 rg 587.3 435.1 Td (Humeur : satisfaite · pétrole -0,8 %) Tj ET
+BT /F1 7.5 Tf 0.340 0.400 0.360 rg 587.3 435.1 Td (Humeur : satisfaite · pétrole -0,7 %) Tj ET
 BT /F2 9.0 Tf 0.050 0.420 0.280 rg 587.3 419.4 Td (BARRAGE · Électricité · « païpi ») Tj ET
 BT /F1 8.0 Tf 0.080 0.130 0.100 rg 587.3 409.0 Td (Capitale ce soir. Fournit les cinq volts de la nation et le rappelle) Tj ET
 BT /F1 8.0 Tf 0.080 0.130 0.100 rg 587.3 398.6 Td (volontiers.) Tj ET
-BT /F1 7.5 Tf 0.340 0.400 0.360 rg 587.3 388.8 Td (Humeur : satisfaite · électricité +0,6 %) Tj ET
+BT /F1 7.5 Tf 0.340 0.400 0.360 rg 587.3 388.8 Td (Humeur : satisfaite · électricité -1,8 %) Tj ET
 BT /F2 9.0 Tf 0.050 0.420 0.280 rg 587.3 373.1 Td (PORT · Commerce · « haïpi ») Tj ET
 BT /F1 8.0 Tf 0.080 0.130 0.100 rg 587.3 362.7 Td (Vit de tous les cours à la fois ; premier touché par les tempêtes.) Tj ET
 BT /F1 7.5 Tf 0.340 0.400 0.360 rg 587.3 353.0 Td (Humeur : satisfaite) Tj ET
@@ -226,14 +226,14 @@ xref
 0000000112 00000 n 
 0000000214 00000 n 
 0000000319 00000 n 
-0000008815 00000 n 
-0000008961 00000 n 
-0000016545 00000 n 
-0000016691 00000 n 
-0000016754 00000 n 
-0000016854 00000 n 
+0000008819 00000 n 
+0000008965 00000 n 
+0000016549 00000 n 
+0000016695 00000 n 
+0000016758 00000 n 
+0000016858 00000 n 
 trailer
 << /Size 11 /Root 10 0 R /Info 9 0 R >>
 startxref
-16904
+16908
 %%EOF
