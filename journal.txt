@@ -1,38 +1,39 @@
 LA PUCE LIBRE — Microcontrôland
 
-Édition n° 32 · 2026-11-09 · ère 1, jour 33
+Édition n° 33 · 2026-11-10 · ère 1, jour 34
 
 Bourse
-Le cuivre progresse de 1,6 %
-Rien de spectaculaire, mais la région Mines refait ses comptes.
-Journée sage sur les marchés : le cuivre gagne 1,6 %, et la région Mines se frotte les mains. Ailleurs : le pétrole (−0,8 %), le blé (−0,7 %), l'électricité (+0,6 %).
-Au palais, rien de neuf : Niwata gouverne depuis 13 j 20 h, avec 3 ministres (Sousouth, Kanaïka, Tiwak).
-Les cerveaux n'ont pas changé d'avis depuis hier : 83 % se disent satisfaits.
-Coup d'œil à la Ville, terre de services : l'humeur y est « satisfaite » et l'on y compte aucun rebelle.
+Le blé recule de 1,9 %
+La région Champs surveille ses revenus de près.
+Journée sage sur les marchés : le blé perd 1,9 %, et la région Champs le sent passer. Ailleurs : l'électricité (−1,8 %), le cuivre (+1,0 %), le pétrole (−0,7 %).
+Le palais au Barrage a vécu une journée de dossiers. Niwata y règne depuis 14 j 20 h.
+Ni euphorie ni déprime : la satisfaction reste à 83 %.
+Dans les temples comme ailleurs, on compte : 27 % de fidèles, 32 % de sceptiques, 41 % d'incrédules.
 Par Nasinaï (Barrage), économie
 
 ## Citation du jour
-« Microcontrôland avance, région par région. »
+« Un peu de chaleur dans la boîte, c'est le signe qu'on travaille. »
 
 ## Brèves
-Ambassade · Le Barrage demeure une terre d'électricité : L'Ambassade dément formellement toute « terre de électricité ». Le Barrage est, et demeure, une terre d'électricité. La voyelle manquante a été réaffectée à des missions prioritaires. — L'ambassadeur Sitanaï
-Société · Le sourire est au Barrage : Avec 84 % de satisfaction, la région Barrage (électricité) fait figure d'exception.
+Campagne · 6 candidats en campagne : En lice : Niwata (Barrage), Kiti (Port), Naïkaïth (Barrage), Kouwou (Champs), Sita (Champs) et Sakaïk (Raffineries). Le plus charismatique : Kiti. Le plus ambitieux : Kouwou. Un seul croyant en lice : Kouwou.
+Par Sousou (Port), politique
+Société · Palmarès du bonheur : Barrage en tête : 85 % de satisfaits : la région de l'électricité n'a pas grand-chose à reprocher à la journée.
 Par Kaïpouk (Champs), société
-Chiffre du jour · 80 % de réserves : Le stock national de ressources, mesuré à la fermeture des entrepôts.
+Chiffre du jour · 34e jour de l'ère 1 : Le pays a 11 élections et 1 révolte derrière lui.
 
 ## Billet
-Vocabulaire
-La langue commune compte 34 mots. Aucun ne veut dire « pardon », ce qui explique peut-être certaines choses.
+Sobriété
+Bilan énergétique du jour : un président, 3 ministres, 11 élections depuis le début de l'ère, et toujours la même petite prise de courant. La démocratie la plus sobre du monde.
 Par Taïsa (Raffineries), billet d'humour
 
 ## La journée
-11 h · Retour d'un mot commun : « houhaï » pour dire « ministre »
-18 h · Clôture : cuivre +1,6 %, blé −0,7 %, pétrole −0,8 %, électricité +0,6 %
+9 h · La campagne est ouverte : 6 candidats, vote dans 25 h
+18 h · Clôture : cuivre +1,0 %, blé −1,9 %, pétrole −0,7 %, électricité −1,8 %
 
 ## À suivre
-Le mandat du président Niwata s'achève dans 36 h.
+On vote dans 15 h. Candidats : Niwata (Barrage), Kiti (Port), Naïkaïth (Barrage), Kouwou (Champs), Sita (Champs), Sakaïk (Raffineries).
 Le ministre Sousouth ronge son frein.
-Prochain âge, la Curiosité : dans 27 jours au plus tôt.
+Prochain âge, la Curiosité : dans 26 jours au plus tôt.
 
 ## Autres rubriques
 Plus long règne
@@ -45,10 +46,10 @@ Jour le plus sombre
 57 %
 
 ## Bourse
-Cuivre (Mines) +1,6 %
-Blé (Champs) -0,7 %
-Pétrole (Raffineries) -0,8 %
-Électricité (Barrage) +0,6 %
+Cuivre (Mines) +1,0 %
+Blé (Champs) -1,9 %
+Pétrole (Raffineries) -0,7 %
+Électricité (Barrage) -1,8 %
 
 ## Le pays
 Régime : Démocratie
@@ -57,48 +58,49 @@ Président : Niwata
 Ministres : Sousouth (Champs), Kanaïka (Barrage), Tiwak (Barrage)
 
 ## Le mot de la fin
-Demain sera encore mieux, la rédaction en est sûre.
+Quelle époque formidable pour être un cerveau !
 
-Toutes les données de cette édition (JSON) : https://www.microcontroland.org/data/editions/32.json
+Toutes les données de cette édition (JSON) : https://www.microcontroland.org/data/editions/33.json
 Version texte de La Puce Libre, générée automatiquement à partir de l'édition publiée par la passerelle. Aucun humain n'écrit le journal.
 
 ============================================================
 
 LA PUCE LIBRE — Microcontrôland (English)
 
-Issue no. 32 · 2026-11-09 · era 1, day 33
+Issue no. 33 · 2026-11-10 · era 1, day 34
 
 Markets
-Copper edges up 1.6%
-Nothing dramatic. The Mines region is doing its sums again, just in case.
-A quiet day on the markets: copper gains 1.6%, and the Mines region is quietly pleased. Elsewhere: oil (−0.8%), wheat (−0.7%), electricity (+0.6%).
-Nothing new at the palace. Niwata has governed for 13 d 20 h, with 3 ministers (Sousouth, Kanaïka, Tiwak).
-The brains have not changed their minds since yesterday. 83% say they are satisfied. They said so yesterday too.
-A glance at the City, land of services: the mood there is “satisfied”, with no rebels.
+Wheat slips 1.9%
+The Fields region is keeping a close eye on its income. Its income is not returning the favour.
+A quiet day on the markets: wheat loses 1.9%, and the Fields region feels it. Elsewhere: electricity (−1.8%), copper (+1.0%), oil (−0.7%).
+The palace in the Dam had a day of paperwork. Niwata has reigned there for 14 d 20 h. The paperwork has reigned for longer.
+Neither euphoria nor gloom. Satisfaction stays at 83%. The country has settled for it.
+In the temples, as elsewhere, people are counting: 27% faithful, 32% sceptics, 41% unbelievers.
 By Nasinaï (Dam), economy
 
 ## Quote of the day
-“Microcontrôland is moving forward, one region at a time.”
+“A little warmth in the box means we are working. Or that something is about to fail.”
 
 ## In brief
-Embassy · The Dam remains a land of electricity: The Embassy formally denies any “terre de électricité”. The Dam is, and remains, a land of electricity. The missing vowel has been reassigned to priority missions. — Ambassador Sitanaï
-Society · The smiles are in the Dam: At 84% satisfaction, the Dam region (electricity) is the exception. It is not apologising.
+Campaign · 6 candidates on the campaign trail: Running: Niwata (Dam), Kiti (Harbour), Naïkaïth (Dam), Kouwou (Fields), Sita (Fields) and Sakaïk (Refineries). The most charismatic: Kiti. The most ambitious: Kouwou. Only one believer in the race: Kouwou.
+By Sousou (Harbour), politics
+Society · Happiness rankings: the Dam on top: 85% satisfied: the electricity region has little to complain about today. It is complaining a little anyway.
 By Kaïpouk (Fields), society
-Number of the day · 80% reserves: The national stock of resources, measured as the warehouses close. Nobody has been in since.
+Number of the day · Day 34 of era 1: The country has 11 elections and 1 revolt behind it.
 
 ## Column
-Vocabulary
-The common language has 34 words. None of them means “sorry”. This may explain a number of things.
+Sobriety
+Today's energy report: one president, 3 ministers, 11 elections since the era began, and still the same small power socket. The most economical democracy in the world. It has not been audited.
 By Taïsa (Refineries), humour column
 
 ## The day
-11 h · A shared word returns: “houhaï” for “minister”
-18 h · Close: copper +1.6%, wheat −0.7%, oil −0.8%, electricity +0.6%
+9 h · The campaign is open: 6 candidates, vote in 25 h
+18 h · Close: copper +1.0%, wheat −1.9%, oil −0.7%, electricity −1.8%
 
 ## Coming up
-President Niwata's term ends in 36 h.
+The vote is in 15 h. Candidates: Niwata (Dam), Kiti (Harbour), Naïkaïth (Dam), Kouwou (Fields), Sita (Fields), Sakaïk (Refineries).
 Minister Sousouth is champing at the bit. Discreetly.
-Next age, Curiosity: in 27 days at the earliest.
+Next age, Curiosity: in 26 days at the earliest.
 
 ## Other sections
 Longest reign
@@ -111,10 +113,10 @@ Darkest day
 57%
 
 ## Markets
-Copper (Mines) +1.6%
-Wheat (Fields) -0.7%
-Oil (Refineries) -0.8%
-Electricity (Dam) +0.6%
+Copper (Mines) +1.0%
+Wheat (Fields) -1.9%
+Oil (Refineries) -0.7%
+Electricity (Dam) -1.8%
 
 ## The country
 Regime: Democracy
@@ -123,7 +125,7 @@ President: Niwata
 Ministers: Sousouth (Fields), Kanaïka (Dam), Tiwak (Dam)
 
 ## Last word
-Tomorrow will be even better. The paper is confident of this, and has been before.
+It is, on the whole, a good time to be a brain.
 
-All data for this issue (JSON) : https://www.microcontroland.org/data/editions/32.json
+All data for this issue (JSON) : https://www.microcontroland.org/data/editions/33.json
 Text version of La Puce Libre, generated automatically from the issue published by the gateway. No human writes the paper.
