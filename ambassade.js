@@ -7,6 +7,24 @@
   const T = (v) => (v && typeof v === 'object') ? (v[LANG] ?? v.fr ?? '') : (v ?? '');
   const REGION = { Mines: 'Mines', Champs: 'Fields', Raffineries: 'Refineries', Barrage: 'Dam', Port: 'Harbour', Ville: 'City' };
   const $ = (id) => document.getElementById(id);
+  // Votes de l'Ambassade (Worker du site, 6/11/2026) : une voix par question et par mois depuis ce navigateur.
+  // Le souvenir du vote reste dans ce navigateur seulement (localStorage) ; le serveur ne garde qu'un compteur.
+  function brancherVotes(el, api, en) {
+    const mois = new Date().toISOString().slice(0, 7), cle = 'mcl-votes-' + mois;
+    let deja = []; try { deja = JSON.parse(localStorage.getItem(cle) || '[]'); } catch (_) {}
+    el.querySelectorAll('button.vote').forEach((b) => {
+      const q = Number(b.dataset.q);
+      const fait = () => { b.disabled = true; b.textContent = en ? 'Voted' : 'Voté'; };
+      if (deja.includes(q)) fait();
+      b.addEventListener('click', () => {
+        b.disabled = true;
+        fetch(api + 'voter', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ q }) })
+          .then((r) => r.ok ? r.json() : Promise.reject(r.status))
+          .then(() => { deja.push(q); try { localStorage.setItem(cle, JSON.stringify(deja)); } catch (_) {} fait(); })
+          .catch(() => { b.disabled = false; b.textContent = en ? 'Try again later' : 'Réessayez plus tard'; });
+      });
+    });
+  }
   // Diplomatie : les questions du mois, le vote, et les lettres de l'ambassadeur avec leur pierre de Rosette.
   function diplo(e) {
     const el = $('diplo'), M = window.MCL; if (!el || !M) return;
@@ -17,14 +35,16 @@
       const total = a.questions.reduce((n, q) => n + q.voix, 0);
       el.innerHTML = `<p>${en ? `Ambassador ${esc(a.ambassadeur)} answers the three most requested questions at the end of each month, in Microcontrôlandais, with a word-for-word translation.`
                                  : `L'ambassadeur ${esc(a.ambassadeur)} répond à la fin de chaque mois aux trois questions les plus demandées, en microcontrôlandais, avec la traduction mot à mot.`}</p>
-        <ol class="qlist">${a.questions.map((q) => `<li><span>${esc(q.q)}</span>${R.votes ? `<b>${q.voix}</b>` : ''}</li>`).join('')}</ol>
-        ${R.votes ? `<p><a class="btn" href="${esc(R.votes)}" rel="noopener">${en ? 'Vote for a question' : 'Voter pour une question'}</a> <span class="note">${en ? `${total} vote${total === 1 ? '' : 's'} this month. The form is hosted by a third party.` : `${total} vote${total > 1 ? 's' : ''} ce mois-ci. Le formulaire est hébergé par un service tiers.`}</span></p>`
+        <ol class="qlist">${a.questions.map((q, i) => `<li><span>${esc(q.q)}</span>${R.votes ? `<b>${q.voix}</b>` : ''}${R.votes && R.votes.startsWith('/') ? ` <button type="button" class="btn vote" data-q="${i + 1}">${en ? 'Vote' : 'Voter'}</button>` : ''}</li>`).join('')}</ol>
+        ${R.votes && R.votes.startsWith('/') ? `<p class="note">${en ? `${total} vote${total === 1 ? '' : 's'} this month (counted each evening at 20:00). Votes are counted on this site: no account, no cookie, no IP address kept. One vote per question per month from this browser.` : `${total} vote${total > 1 ? 's' : ''} ce mois-ci (comptés chaque soir à 20 h). Les votes sont comptés sur ce site : ni compte, ni cookie, ni adresse IP gardée. Une voix par question et par mois depuis ce navigateur.`}</p>`
+          : R.votes ? `<p><a class="btn" href="${esc(R.votes)}" rel="noopener">${en ? 'Vote for a question' : 'Voter pour une question'}</a> <span class="note">${en ? `${total} vote${total === 1 ? '' : 's'} this month. The form is hosted by a third party.` : `${total} vote${total > 1 ? 's' : ''} ce mois-ci. Le formulaire est hébergé par un service tiers.`}</span></p>`
                   : `<p class="note">${en ? 'Voting is not open yet: for now the country chooses which questions it answers.' : 'Le vote n\'est pas encore ouvert : pour l\'instant, le pays choisit lui-même les questions auxquelles il répond.'}</p>`}
         ${letters.length ? letters.map((l, i) => `<details class="letter"${i ? '' : ' open'}><summary>${en ? 'Letter No.' : 'Lettre nº'} ${l.n} · ${esc(M.fmtDate(l.date))}</summary>
           ${l.lignes.map((x) => `<div class="qa"><div class="k2">${esc(x.question)}</div><p class="signal" lang="x-mcl">${esc(x.reponse) || '…'}</p><p class="note">${en ? 'Word for word: ' : 'Mot à mot : '}${esc(x.litteral)}</p></div>`).join('')}
           <p class="sign">— ${esc(l.signature)}, ${en ? 'ambassador' : 'ambassadeur'}</p>
           <table class="hist lex"><thead><tr><th>${en ? 'Rosetta stone' : 'Pierre de Rosette'}</th><th></th></tr></thead><tbody>${l.rosette.map((r) => `<tr><td><b class="mot">${esc(r.mot)}</b></td><td>${esc(r.sens)}</td></tr>`).join('')}</tbody></table></details>`).join('')
           : `<p class="note">${en ? 'The first letter will be published on the last day of the month.' : 'La première lettre paraîtra le dernier jour du mois.'}</p>`}`;
+      if (R.votes && R.votes.startsWith('/')) brancherVotes(el, R.votes, en);
     }).catch(() => {});
   }
 
