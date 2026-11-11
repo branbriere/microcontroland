@@ -233,7 +233,14 @@ nav.main a.locked::after{content:" ⌛";font-size:11px}
 .body .fin{font-style:italic;color:var(--muted)}
 .billet{margin-top:26px;padding:14px 16px;background:var(--sheet);border:1px dashed var(--rule);border-left:4px solid var(--warn)}
 .billet h3{font:700 20px/1.2 var(--f-text);margin:4px 0 6px}.billet p{margin:0}
-.billet.chron{margin-top:18px}.billet.chron .piece h3{margin-top:4px}
+.billet.chron{margin-top:18px}
+/* Rubrique Arts (MAJ 1b-5) */
+.arts{margin-top:26px;padding:14px 16px;background:var(--sheet);border:1px solid var(--rule)}
+.arts h3{font:700 20px/1.2 var(--f-text);margin:4px 0 8px}.arts p{margin:0 0 6px}.arts p.by{margin-top:6px;font:12.5px var(--f-data);color:var(--muted)}
+.arts-row{display:flex;gap:16px;align-items:flex-start}.arts-g{flex:0 0 96px;width:96px;height:96px}.arts-g .fond{fill:var(--sheet);stroke:var(--rule);stroke-width:.04}.arts-g rect:not(.fond){fill:currentColor}
+.arts-who{font:600 14px var(--f-data)}
+@media (max-width:520px){.arts-row{flex-direction:column}}
+.billet.chron .piece h3{margin-top:4px}
 .vos-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:10px}
 @media (max-width:700px){.vos-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:420px){.vos-grid{grid-template-columns:minmax(0,1fr)}}

@@ -1,7 +1,7 @@
 {
- "version": "1.0",
- "date": "2026-10-26",
- "firmware": "0.8",
+ "version": "1.1",
+ "date": "2026-11-07",
+ "firmware": "0.10.1",
  "note": "Registre de « La République en chantier » (validé par Bran le 25 octobre 2026). À tenir à jour à chaque mise à jour : service = vérifié dans le firmware installé ; ferme = codé, ouvre à l'âge indiqué (passe seul en service quand l'âge est atteint) ; prevu = feuille de route, rien de codé, aucune date ; reserve = seulement si le pays est stable. Âges : 1 Parole, 2 Mémoire, 3 État civil, 4 Diplomatie, 5 Curiosité.",
  "institutions": [
   {
@@ -68,11 +68,11 @@
    "depuis": "2026-10-09",
    "fr": [
     "Presse nationale (et sa censure)",
-    "La Puce Libre paraît chaque soir à 20 h, écrite par la passerelle. Le président peut décréter la censure : articles noircis, chiffres intacts."
+    "La Puce Libre paraît chaque soir à 20 h, écrite par la passerelle. Le président peut décréter la censure : articles noircis, chiffres intacts. Depuis la version 0.10 : rubrique Arts (art primitif, deux lignes du critique)."
    ],
    "en": [
     "National press (and its censor)",
-    "La Puce Libre comes out every evening at 8 pm, written by the gateway. The president may decree censorship: articles blacked out, figures untouched."
+    "La Puce Libre comes out every evening at 8 pm, written by the gateway. The president may decree censorship: articles blacked out, figures untouched. Since version 0.10: an Arts page (primitive art, two lines from the critic)."
    ],
    "verifier": "data/editions/"
   },
@@ -123,11 +123,11 @@
    "age": 4,
    "fr": [
     "Ambassade",
-    "Questions du mois, lettre de l'ambassadeur, démentis officiels des coquilles passées."
+    "Questions du mois (votes du public comptés sur ce site depuis la version 0.10), lettre de l'ambassadeur, démentis officiels des coquilles passées."
    ],
    "en": [
     "Embassy",
-    "Questions of the month, the ambassador's letter, official denials of past typos."
+    "Questions of the month (public votes counted on this website since version 0.10), the ambassador's letter, official denials of past typos."
    ]
   },
   {
@@ -376,11 +376,11 @@
    "age": 2,
    "fr": [
     "Galerie des présidents",
-    "Au musée national, un portrait par président, peint d'après les 81 poids de son cerveau, page « Galerie des présidents »."
+    "Au musée national, un portrait par président, peint d'après les 81 poids de son cerveau, page « Galerie des présidents ». Depuis la version 0.10, un second portrait : le cerveau qui gouverne (75 poids)."
    ],
    "en": [
     "Presidential Gallery",
-    "At the National Museum, one portrait per president, painted from the 81 weights of their brain, on the “Presidential Gallery” page."
+    "At the National Museum, one portrait per president, painted from the 81 weights of their brain, on the “Presidential Gallery” page. Since version 0.10, a second portrait: the brain that governs (75 weights)."
    ],
    "verifier": "galerie.json"
   },

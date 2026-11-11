@@ -41,7 +41,7 @@
       notFound: 'Édition introuvable', noIssue: 'Cette édition n\'existe pas. <a href="./">Lire la dernière édition</a>.', first: 'La première édition sera publiée ce soir à 20 h.',
       feed: 'feed.xml', inh: 'hab',
       by: 'Par', staff: 'La rédaction', staffNote: 'Des citoyens du pays tiennent les rubriques. Quand l\'un d\'eux change de vie, un autre prend la plume.',
-      billet: 'La puce à l\'oreille', yourRegions: 'Vos régions', sunday: 'L\'édition du dimanche', week: 'La semaine en bref', ads: 'Petites annonces',
+      billet: 'La puce à l\'oreille', arts: 'Arts', artsSee: 'Tous les dessins à l\'atelier', artsCit: (n, r) => `Dessin du citoyen nº ${n} (${r})`, yourRegions: 'Vos régions', sunday: 'L\'édition du dimanche', week: 'La semaine en bref', ads: 'Petites annonces',
       censored: 'Censure',
       binaiNo: (n, c) => `Journal clandestin · nº ${n} · ${c}e soir de censure`, binaiBy: 'Rédigé par', binaiRegions: 'Région par région', binaiCount: 'Compte à rebours',
       binaiOff: 'Version officielle', binaiTrue: 'Vrais chiffres', binaiNote: 'Binaï n\'est pas La Puce Libre : il paraît en tête de l\'édition les soirs de censure. Le journal officiel commence plus bas.'
@@ -67,7 +67,7 @@
       notFound: 'Issue not found', noIssue: 'This issue does not exist. <a href="./">Read the latest issue</a>.', first: 'The first issue will be published tonight at 8 pm.',
       feed: 'feed-en.xml', inh: 'inh.',
       by: 'By', staff: 'The newsroom', staffNote: 'Citizens of the country run the sections. When one of them changes life, another takes up the pen.',
-      billet: 'A flea in the ear', yourRegions: 'Your regions', sunday: 'The Sunday edition', week: 'The week in brief', ads: 'Small ads',
+      billet: 'A flea in the ear', arts: 'Arts', artsSee: 'All the drawings at the Studio', artsCit: (n, r) => `Drawing by Citizen No. ${n} (${r})`, yourRegions: 'Your regions', sunday: 'The Sunday edition', week: 'The week in brief', ads: 'Small ads',
       censored: 'Censorship',
       binaiNo: (n, c) => `Clandestine newspaper · No. ${n} · evening ${c} of censorship`, binaiBy: 'Written by', binaiRegions: 'Region by region', binaiCount: 'Countdown',
       binaiOff: 'Official version', binaiTrue: 'Actual figures', binaiNote: 'Binaï is not La Puce Libre: it appears at the top of the issue on evenings of censorship. The official paper starts below.'
@@ -111,6 +111,17 @@
     const b = e.billet;
     if (!b || !b.texte) return '';
     return `<section class="billet"><span class="k2">${L.billet}</span><h3>${esc(b.titre)}</h3><p>${black(esc(b.texte))}</p>${b.signature ? `<p class="by">${sig(b.signature)}</p>` : ''}</section>`;
+  }
+
+  // Rubrique Arts (MAJ 1b-5) : le dessin 5×5 du soir, calculé par la passerelle avec la règle de la page « L'atelier »
+  function artsHtml(e) {
+    const a = e.arts;
+    if (!a || !a.artiste || !/^[01]{25}$/.test(a.dessin || '')) return '';
+    const who = L.artsCit(a.artiste.id, rn(a.artiste.region));
+    const cells = [...a.dessin].map((c, k) => c === '1' ? `<rect x="${k % 5 + 0.06}" y="${Math.floor(k / 5) + 0.06}" width=".88" height=".88"/>` : '').join('');
+    const crit = (T(a.critique) || []).map((p) => `<p>${esc(p)}</p>`).join('');
+    return `<section class="arts"><span class="k2">${L.arts}</span><h3>${esc(a.titre)}</h3><div class="arts-row"><svg class="arts-g" viewBox="0 0 5 5" role="img" aria-label="${esc(who)}"><rect class="fond" x="0" y="0" width="5" height="5"/>${cells}</svg>` +
+      `<div><p class="arts-who">${esc(who)}${a.artiste.nom ? ' · ' + esc(a.artiste.nom) : ''}</p>${crit}<p class="by">${esc(a.signature)} · <a href="atelier.html">${L.artsSee}</a></p></div></div></section>`;
   }
 
   function regionsHtml(e) {
@@ -203,6 +214,7 @@
         ${nextBox(e, isLatest)}
         ${briefsHtml(e)}
         ${billetHtml(e)}
+        ${artsHtml(e)}
         ${regionsHtml(e)}
         ${sundayHtml(e)}
         <section class="section">
