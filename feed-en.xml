@@ -6,6 +6,13 @@
   <description>Microcontrôland's daily paper, written every evening by the gateway.</description>
   <language>en</language>
   <item>
+    <title>Day 34 — Copper falls 3.0%</title>
+    <link>https://branbriere.github.io/microcontroland/en/#jour-34</link>
+    <description>The Mines region watches its income melt away. The rest of the country feels it too.</description>
+    <pubDate>Wed, 11 Nov 2026 19:00:02 GMT</pubDate>
+    <guid isPermaLink="false">microcontroland-en-jour-34</guid>
+  </item>
+  <item>
     <title>Day 33 — Wheat slips 1.9%</title>
     <link>https://branbriere.github.io/microcontroland/en/#jour-33</link>
     <description>The Fields region is keeping a close eye on its income. Its income is not returning the favour.</description>
@@ -102,13 +109,6 @@
     <description>The civilisation reaches a milestone on day 21 of the era. Every citizen is entered in the registry: you can adopt one and follow them.</description>
     <pubDate>Wed, 28 Oct 2026 19:00:01 GMT</pubDate>
     <guid isPermaLink="false">microcontroland-en-jour-20</guid>
-  </item>
-  <item>
-    <title>Day 19 — Niwata elected president with 45% of the vote</title>
-    <link>https://branbriere.github.io/microcontroland/en/#jour-19</link>
-    <description>The new president comes from the Dam region, which becomes the capital. The incumbent, Kiti, is defeated.</description>
-    <pubDate>Tue, 27 Oct 2026 19:00:01 GMT</pubDate>
-    <guid isPermaLink="false">microcontroland-en-jour-19</guid>
   </item>
 </channel>
 </rss>
