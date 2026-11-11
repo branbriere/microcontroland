@@ -607,11 +607,11 @@ STYLE = """<style>
 .m-aile{border-top:2px solid var(--ink);margin-top:26px;padding-top:6px}
 .m-salle{border-top:1px solid var(--rule);margin-top:16px;padding-top:6px}
 .m-oeuvres{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,190px),1fr));gap:16px;margin:10px 0}
-.m-oeuvres figure{margin:0;display:grid;gap:6px;min-width:0}
+.m-oeuvres figure{margin:0;display:grid;grid-template-columns:minmax(0,1fr);gap:6px;min-width:0}
 .m-oeuvres svg{width:100%;height:auto;display:block;background:#fff;border:1px solid var(--rule)}
-.m-oeuvres figcaption{font:12.5px/1.5 var(--f-data, system-ui);color:var(--muted)}
+.m-oeuvres figcaption{font:12.5px/1.5 var(--f-data, system-ui);color:var(--muted);overflow-wrap:anywhere}
 .m-oeuvres figcaption b{color:var(--ink);font-size:1.15em}
-.m-vide{aspect-ratio:3/4;display:grid;place-content:center;text-align:center;padding:12px;border:1px dashed var(--rule);color:var(--muted)}
+.m-vide{box-sizing:border-box;width:100%;min-width:0;overflow-wrap:anywhere;aspect-ratio:3/4;display:grid;place-content:center;text-align:center;padding:12px;border:1px dashed var(--rule);color:var(--muted)}
 .m-dessin{max-width:96px}
 .m-glyphes{grid-template-columns:repeat(auto-fill,minmax(min(100%,120px),1fr))}.m-glyphes svg{max-width:60px}
 .m-frise{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 12px}.m-frise svg{width:40px;height:40px;border:1px solid var(--rule)}
