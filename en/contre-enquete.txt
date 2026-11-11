@@ -173,6 +173,7 @@ The investigator's verdict : Niwata sacked nobody: the rule took care of it, sev
 The investigator's notebook
 One card per election, revolt, palace coup or power vacuum, recomputed every evening from the published raw files. Figures, nothing but figures: the jokes are kept for the files.
 
+- 11 November 2026, 11 am · Election: Niwata re-elected with 45% (https://donnees.microcontroland.org/donnees/ere-001/quotidien/2026-11-11.json)
 - 8 November 2026, 8 am · Election: Niwata re-elected with 54% (https://donnees.microcontroland.org/donnees/ere-001/quotidien/2026-11-08.json)
 - 5 November 2026, 6 am · Election: Niwata re-elected with 75% (https://donnees.microcontroland.org/donnees/ere-001/quotidien/2026-11-05.json)
 - 2 November 2026, 4 am · Election: Niwata re-elected with 63% (https://donnees.microcontroland.org/donnees/ere-001/quotidien/2026-11-02.json)
