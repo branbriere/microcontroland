@@ -166,7 +166,7 @@ def mandats(jours):
                     finir("battu", d, h, t, par=n, nom_par=x["nom"])
                 cur = dict(id=n, nom=x["nom"], region=REGIONS[(n - 1) // 20] if n else None, debut=dict(date=d, heure=h, tick=t),
                            elections=[dict(date=d, heure=h, tick=t, pct=x["pct"], raison=RAISON[x["raison"]])],
-                           portrait=None, releves=0, identiques=0, fin=None)
+                           portrait=None, releves=0, identiques=0, fin=None, portrait_president=None)
             elif genre == "c" and cur:
                 finir("revolte", d, h, t, rebelles=x["rebelles"])
             elif genre == "k":
@@ -174,9 +174,21 @@ def mandats(jours):
                     finir("coup", d, h, t, par=x["id"], nom_par=x["nom"])
                 n = x["id"]
                 cur = dict(id=n, nom=x["nom"], region=REGIONS[(n - 1) // 20] if n else None, debut=dict(date=d, heure=h, tick=t, coup=True),
-                           elections=[], portrait=None, releves=0, identiques=0, fin=None)
+                           elections=[], portrait=None, releves=0, identiques=0, fin=None, portrait_president=None)
             elif genre == "v" and cur:
                 finir("vacance", d, h, t)
+        # Second portrait (MAJ 1b-5, fichier brut format 5) : le cerveau qui gouverne, 75 poids, envoyé par la région du président.
+        # Seulement si le relevé du matin porte bien le numéro de ce président (jamais celui d'un prédécesseur).
+        pp = brut.get("poidsPresident") if int(brut.get("format") or 0) >= 5 else None
+        if cur and isinstance(pp, dict) and pp.get("id") == cur["id"] and isinstance(pp.get("poids"), list) and len(pp["poids"]) == 75:
+            if cur.get("portrait_president") is None:
+                h = next((x.get("heure") for x in brut.get("heures") or [] if x.get("tick") == pp.get("tick")), None)
+                d, h = quand(brut["date"], h)
+                cur["portrait_president"] = dict(date=d, heure=h, tick=pp.get("tick"), poids=pp["poids"], fichier=brut["_fichier"], releves=1, identiques=1)
+            else:
+                cur["portrait_president"]["releves"] += 1
+                if pp["poids"] == cur["portrait_president"]["poids"]:
+                    cur["portrait_president"]["identiques"] += 1
         # Portrait : le président de fin de journée est celui du mandat en cours (relevé figé au début du jour)
         if cur and pres == cur["id"] and int(brut.get("format") or 0) >= 3:
             p, tk = poids_de(brut, cur["id"])
@@ -272,6 +284,30 @@ def svg_hinton(poids, titre):
             f'<rect x="{x1 + 6 * c}" y="{y1}" width="{c}" height="{3 * c}" fill="none" stroke="#000" stroke-opacity=".35"/></svg>')
 
 
+def svg_hinton_president(poids, titre):
+    """Le cerveau qui gouverne (8-5-5) : w1[5][9] (biais en dernier) puis w2[5][6]."""
+    w = [x * 5.0 / 127.0 for x in poids]
+    w1, w2 = [w[i * 9:(i + 1) * 9] for i in range(5)], [w[45 + k * 6:45 + (k + 1) * 6] for k in range(5)]
+    W, H, c = 300, 400, 26
+    x0, y0 = (W - 9 * c) / 2, 50
+    x1, y1 = (W - 6 * c) / 2, y0 + 5 * c + 40
+    out = []
+
+    def sq(x, y, v):
+        s = (abs(v) / 5) ** 0.5 * (c - 3)
+        out.append(f'<rect x="{x + (c - s) / 2:.1f}" y="{y + (c - s) / 2:.1f}" width="{s:.1f}" height="{s:.1f}" fill="{"#ffffff" if v >= 0 else "#000000"}"/>')
+
+    for h in range(5):
+        for j in range(9):
+            sq(x0 + j * c, y0 + h * c, w1[h][j])
+    for o in range(5):
+        for j in range(6):
+            sq(x1 + j * c, y1 + o * c, w2[o][j])
+    return (f'<svg class="portrait" viewBox="0 0 {W} {H}" role="img" aria-label="{e(titre)}"><rect width="{W}" height="{H}" fill="#8c8f8d"/>{"".join(out)}'
+            f'<rect x="{x0 + 8 * c}" y="{y0}" width="{c}" height="{5 * c}" fill="none" stroke="#000" stroke-opacity=".35"/>'
+            f'<rect x="{x1 + 5 * c}" y="{y1}" width="{c}" height="{5 * c}" fill="none" stroke="#000" stroke-opacity=".35"/></svg>')
+
+
 def svg_mosaique(poids, titre):
     W, H, c = 300, 400, 30
     x0, y0 = (W - 9 * c) / 2, (H - 9 * c) / 2
@@ -316,8 +352,12 @@ L = {
                     ("3 outputs", "support for the president, wish to run, wish to rebel · 21 connections"),
                     ("Reading the squares", "top block: one row per hidden neuron, one column per input, bias in the framed last column; bottom block: one row per output, one column per hidden neuron, bias framed"),
                     ("Colours", "white square = positive weight, black square = negative weight; the bigger the square, the stronger the connection (from −5 to +5)")],
-        "note": "This is the president's citizen brain, the one that votes, runs and rebels. During the term it neither computes nor learns. "
-                "The brain that governs (fairness, repression, postponement, openness: 75 connections) is not published yet.",
+        "note": "The first portrait is the president's citizen brain, the one that votes, runs and rebels. During the term it neither computes nor learns. "
+                "The second, from update 1b-5 onwards, is the brain that governs (fairness, repression, postponement, openness: 75 connections), recorded each morning by the president's own region; it learns while he governs.",
+        "citoyen": "The citizen", "gouverne": "The president · the brain that governs",
+        "technique_pres": "Medium: 75 int8 weights (8 inputs, 5 hidden neurons, 5 outputs). Sitting: {d}, {h} (tick {t}).",
+        "fige_pres": "Same 75 weights in all {n} records of the term.", "fige_pres_non": "The governing brain changed between records ({m} of {n} identical): it learns from each hour in office.",
+        "legende_pres": ("The brain that governs", "8 inputs (actual performance, average anger, average fear, time to the election, ego, size of the government, outside hostility, reserves) · 5 hidden neurons · 5 outputs (fairness, repression, wish to postpone, openness of the government, hostility: reserved)"),
         "verifier": "Check: {brut} of the portrait, and {arch} (every term and every weight).", "brut": "the raw data file", "arch": "galerie.json",
         "pied": "The captions are a satirical convention; every date, score and weight comes from the published data. The Waïnas are neither alive nor conscious.",
         "maj_le": "Page updated automatically after issue no. {n} of {d}.",
@@ -352,8 +392,12 @@ L = {
                     ("3 sorties", "soutien au président, envie d'être candidat, envie de se rebeller · 21 connexions"),
                     ("Lire les carrés", "en haut : une ligne par neurone caché, une colonne par entrée, le biais dans la dernière colonne encadrée ; en bas : une ligne par sortie, une colonne par neurone caché, biais encadré"),
                     ("Couleurs", "carré blanc = poids positif, carré noir = poids négatif ; plus le carré est grand, plus la connexion est forte (de −5 à +5)")],
-        "note": "C'est le cerveau de citoyen du président, celui qui vote, se présente et se révolte. Pendant le mandat, il ne calcule ni n'apprend. "
-                "Le cerveau qui gouverne (équité, répression, report, ouverture : 75 connexions) n'est pas encore publié.",
+        "citoyen": "Le citoyen", "gouverne": "Le président · le cerveau qui gouverne",
+        "technique_pres": "Technique : 75 poids int8 (8 entrées, 5 neurones cachés, 5 sorties). Prise de vue : {d}, {h} (tick {t}).",
+        "fige_pres": "Les mêmes 75 poids dans les {n} relevés du mandat.", "fige_pres_non": "Le cerveau qui gouverne a changé entre deux relevés ({m} identiques sur {n}) : il apprend de chaque heure au palais.",
+        "legende_pres": ("Le cerveau qui gouverne", "8 entrées (performance réelle, colère moyenne, peur moyenne, temps avant l'élection, ego, taille du gouvernement, hostilité extérieure, réserves) · 5 neurones cachés · 5 sorties (équité, répression, envie de reporter, ouverture du gouvernement, hostilité : réservée)"),
+        "note": "Le premier portrait est le cerveau de citoyen du président, celui qui vote, se présente et se révolte. Pendant le mandat, il ne calcule ni n'apprend. "
+                "Le second, depuis la MAJ 1b-5, est le cerveau qui gouverne (équité, répression, report, ouverture : 75 connexions), relevé chaque matin par la région du président ; lui apprend pendant le mandat.",
         "verifier": "Vérifier : {brut} du portrait, et {arch} (tous les mandats et tous les poids).", "brut": "le fichier brut", "arch": "galerie.json",
         "pied": "Les cartels sont une convention satirique ; chaque date, chaque score et chaque poids vient des données publiées. Les Waïnas ne sont ni vivants ni conscients.",
         "maj_le": "Page mise à jour automatiquement après l'édition n° {n} du {d}.",
@@ -370,6 +414,7 @@ STYLE = """<style>
 .cadre{background:#2b2f33;padding:11px;box-shadow:0 8px 20px rgba(0,0,0,.25)}
 .passe{background:var(--sheet);padding:11px}
 .portrait{display:block;width:100%;height:auto}
+.passe.deux{display:grid;grid-template-columns:1fr 1fr;gap:8px;align-items:end}.passe.deux .etiq{display:block;font:11px var(--f-data);color:var(--muted);margin-bottom:4px}
 .vide{aspect-ratio:3/4;display:grid;place-content:center;text-align:center;gap:8px;padding:16px;border:1px dashed var(--rule);color:var(--muted);font-size:.92em}
 .vide b{font-style:italic;font-size:1.15em;color:var(--ink)}
 .cartel{border:1px solid var(--rule);background:var(--sheet);padding:10px 12px;display:grid;gap:5px}
@@ -433,6 +478,13 @@ def cadre(m, i, T, lg, ere, suivant=None):
         bas = [T["technique"].format(d=date_longue(p["date"], lg), h=H(p["heure"]) if p["heure"] is not None else "?", t=p["tick"])]
         if m["releves"] >= 2:
             bas.append(T["fige"].format(n=m["releves"]) if m["identiques"] == m["releves"] else T["fige_non"].format(m=m["identiques"], n=m["releves"]))
+        q = m.get("portrait_president")
+        if q:   # MAJ 1b-5 : second portrait dans le même cadre
+            art = (f'<div class="cadre"><div class="passe deux"><div><span class="etiq">{e(T["citoyen"])}</span>{PEINDRE[STYLE_PORTRAIT](p["poids"], nom)}</div>'
+                   f'<div><span class="etiq">{e(T["gouverne"])}</span>{svg_hinton_president(q["poids"], nom + " · " + T["gouverne"])}</div></div></div>')
+            bas.append(T["technique_pres"].format(d=date_longue(q["date"], lg), h=H(q["heure"]) if q["heure"] is not None else "?", t=q["tick"]))
+            if q["releves"] >= 2:
+                bas.append(T["fige_pres"].format(n=q["releves"]) if q["identiques"] == q["releves"] else T["fige_pres_non"].format(m=q["identiques"], n=q["releves"]))
     else:
         f = m["fin"]
         if f and f["genre"] in ("revolte", "coup") and suivant:
@@ -462,7 +514,8 @@ def page(regnes, latest, lg, ouvert, ere):
         corps.append(f'<p>{e(T["ferme"])}</p>')
     else:
         corps.append('<div class="salle">' + "".join(cadre(m, i, T, lg, ere, regnes[i + 1] if i + 1 < len(regnes) else None) for i, m in enumerate(regnes)) + "</div>")
-        corps.append(f'<h2>{e(T["lire"])}</h2><dl class="legende">' + "".join(f"<dt>{e(a)}</dt><dd>{e(b)}</dd>" for a, b in T["legende"]) + "</dl>")
+        leg = list(T["legende"]) + ([T["legende_pres"]] if any(m.get("portrait_president") for m in regnes) else [])
+        corps.append(f'<h2>{e(T["lire"])}</h2><dl class="legende">' + "".join(f"<dt>{e(a)}</dt><dd>{e(b)}</dd>" for a, b in leg) + "</dl>")
         corps.append(f'<p>{e(T["note"])}</p>')
         dernier = next((m["portrait"] for m in reversed(regnes) if m["portrait"]), None)
         lien_arch = f'<a href="{pre}galerie.json">{e(T["arch"])}</a>'
@@ -543,7 +596,8 @@ def mettre_a_jour(racine, source, attendre=0):
         time.sleep(60)
     regnes = mandats(jours_publies(source, ere)) if ouvert else []
     sortie = {"format": 1, "ere": ere, "style": STYLE_PORTRAIT, "ouvert": ouvert,
-              "note": "Poids du cerveau de citoyen (9-6-3), valeur = entier x 5 / 127, ordre w1[6][10] (biais en dernier) puis w2[3][7].",
+              "note": "Poids du cerveau de citoyen (9-6-3), valeur = entier x 5 / 127, ordre w1[6][10] (biais en dernier) puis w2[3][7]. "
+                      "portrait_president (MAJ 1b-5, brut format 5) : cerveau qui gouverne (8-5-5), même échelle, ordre w1[5][9] puis w2[5][6].",
               "mandats": regnes}
     (racine / "galerie.json").write_text(json.dumps(sortie, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
     (racine / "galerie.html").write_text(page(regnes, latest, "fr", ouvert, ere), encoding="utf-8")

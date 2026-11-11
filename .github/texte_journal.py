@@ -25,7 +25,8 @@ from pathlib import Path
 LANGS = ("fr", "en")
 LIB = {
     "fr": {"edition": "Édition n° {n}", "jour": "ère {e}, jour {j}", "par": "Par {nom} ({region}), {rubrique}",
-           "citation": "Citation du jour", "breves": "Brèves", "regions": "Vos régions", "billet": "Billet",
+           "citation": "Citation du jour", "breves": "Brèves", "regions": "Vos régions", "billet": "Billet", "arts": "Arts",
+           "artsCit": "Dessin du citoyen n° {n} ({region}), règle B3 : {d}", "artsVoir": "Tous les dessins : https://www.microcontroland.org/atelier.html",
            "journee": "La journée", "suivre": "À suivre", "bourse": "Bourse", "fermee": "fermée",
            "etat": "Le pays", "regime": "Régime", "capitale": "Capitale", "president": "Président", "ministres": "Ministres",
            "fin": "Le mot de la fin", "complet": "Toutes les données de cette édition (JSON)",
@@ -34,7 +35,8 @@ LIB = {
            "dimanche": "Édition du dimanche", "autres": "Autres rubriques",
            "binai": "Binaï, journal clandestin, nº {n} ({c}e soir de censure)", "binaiPar": "Rédigé par {nom} ({region}), {role}", "officiel": "version officielle", "vrai": "vrais chiffres"},
     "en": {"edition": "Issue no. {n}", "jour": "era {e}, day {j}", "par": "By {nom} ({region}), {rubrique}",
-           "citation": "Quote of the day", "breves": "In brief", "regions": "Your regions", "billet": "Column",
+           "citation": "Quote of the day", "breves": "In brief", "regions": "Your regions", "billet": "Column", "arts": "Arts",
+           "artsCit": "Drawing by Citizen No. {n} ({region}), rule B3: {d}", "artsVoir": "All the drawings: https://www.microcontroland.org/en/atelier.html",
            "journee": "The day", "suivre": "Coming up", "bourse": "Markets", "fermee": "closed",
            "etat": "The country", "regime": "Regime", "capitale": "Capital", "president": "President", "ministres": "Ministers",
            "fin": "Last word", "complet": "All data for this issue (JSON)",
@@ -67,7 +69,7 @@ def tr(v, lg):
 NON_TEXTE = {"day", "date", "ere", "jourEre", "etat", "regions", "satisfaction7j", "ages", "redaction",
              "systeme", "president", "presidentNom", "election", "bourse"}
 TRAITES = {"censure", "kicker", "title", "chapo", "body", "signature", "quote", "briefs", "vosRegions",
-           "billet", "journee", "aSuivre", "motDeLaFin", "dimanche", "binai"}
+           "billet", "arts", "journee", "aSuivre", "motDeLaFin", "dimanche", "binai"}
 
 
 def par(sig, lg):
@@ -162,6 +164,17 @@ def sections(ed, lg):
     bi = ed.get("billet") or {}
     if tr(bi.get("texte"), lg):
         out.append((L["billet"], [x for x in (tr(bi.get("titre"), lg), tr(bi.get("texte"), lg)) if x] + par(bi.get("signature"), lg)))
+
+    # Rubrique Arts (MAJ 1b-5) : le dessin en lignes de 5 cases (# pleine, . vide), puis les deux lignes du critique
+    ar = ed.get("arts") or {}
+    art = ar.get("artiste") or {}
+    if art.get("id") and len(str(ar.get("dessin") or "")) == 25:
+        d = str(ar["dessin"])
+        lignes = [tr(ar.get("titre"), lg), L["artsCit"].format(n=art["id"], region=reg(art.get("region", ""), lg), d=" / ".join(d[i:i + 5].replace("1", "#").replace("0", ".") for i in range(0, 25, 5)))]
+        crit = ar.get("critique") or {}
+        lignes += [str(x) for x in (crit.get(lg) or []) if x]
+        lignes += [x for x in (tr(ar.get("signature"), lg), L["artsVoir"]) if x]
+        out.append((L["arts"], [x for x in lignes if x]))
 
     jn = [f"{j.get('heure', '?')} h · {tr(j.get('texte'), lg)}" for j in ed.get("journee") or [] if tr(j.get("texte"), lg)]
     if jn:
