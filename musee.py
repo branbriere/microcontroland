@@ -196,12 +196,17 @@ def salles_portraits(entree, ere, ctx):
 
 
 def region_de(cid, lg, A):
+    if not isinstance(cid, int) or not 1 <= cid <= 120:   # pas d'artiste ce soir-là (ou numéro impossible) : jamais de plantage
+        return "?"
     r = A.REGIONS[(cid - 1) // 20]
     return A.REGION_EN.get(r, r) if lg == "en" else r
 
 
 def salles_dessins(entree, ere, ctx):
-    jours = [j for j in (ctx["atelier"] or {}).get("jours", []) if j.get("ere") == ere and j.get("dessins")]
+    # Soir fermé (aucune région n'a envoyé tous ses poids : 120 dessins à null, pas d'artiste, ex. 10/11/2026) :
+    # la salle garde le dernier vrai soir, comme le mur des artistes. Rien n'est inventé ni réécrit.
+    jours = [j for j in (ctx["atelier"] or {}).get("jours", [])
+             if j.get("ere") == ere and j.get("artiste") and any(j.get("dessins") or [])]
     if not jours:
         return []
     j = jours[-1]
@@ -233,7 +238,14 @@ def salles_artistes(entree, ere, ctx):
 def salles_sculptures(entree, ere, ctx):
     """Les 120 sculptures du dernier soir (sculptures-soir.json) et le cartel du soir (sculptures.json)."""
     S = ctx.get("sculptures_soir") or {}
-    if S.get("ere") != ere or not any(S.get("sculptures") or []):
+    if S.get("ere") != ere or not S.get("sculpteur") or not any(S.get("sculptures") or []):
+        # Soir fermé (sculptures toutes à null, pas de sculpteur, ex. 10/11/2026) : sculptures-soir.json ne garde que ce soir-là,
+        # donc la salle reprend telle quelle celle du musée précédent (dernier vrai soir) au lieu de disparaître.
+        for a in (ctx.get("ancien") or {}).get("plan", []):
+            if a.get("ere") == ere:
+                for x in a.get("salles", []):
+                    if x.get("type") == "sculptures" and x.get("id") == entree["id"] and x.get("sculpteur"):
+                        return [{k: v for k, v in x.items() if k != "reclame"}]
         return []
     j = next((x for x in reversed((ctx.get("sculptures") or {}).get("jours", [])) if x.get("ere") == ere and x.get("date") == S.get("date")), {})
     return [{"id": entree["id"], "type": "sculptures", "titre": entree["titre"], "lien": entree.get("lien"), "verifier": entree.get("verifier", []),
@@ -265,7 +277,10 @@ def salles_glyphes(entree, ere, ctx):
     """L'écriture (âge de l'État civil) : abécédaire, frise des soirs, noms en cartouche, histoire.
     Tout est lu dans ecriture.json ; glyphes et cartouches sont calculés par les fonctions de .github/ecriture.py."""
     E = ctx.get("ecriture_py")
-    jours = [j for j in (ctx.get("ecriture") or {}).get("jours", []) if j.get("ere") == ere and j.get("mots")]
+    # Un soir sans aucun lexique reçu (tous les mots à null, ex. 10/11/2026) n'est ni compté ni exposé :
+    # sinon l'abécédaire tomberait à 0 et l'histoire montrerait une chute qui n'a pas eu lieu.
+    jours = [j for j in (ctx.get("ecriture") or {}).get("jours", [])
+             if j.get("ere") == ere and any(any(m for m in (l or [])) for l in (j.get("mots") or {}).values())]
     if E is None or not jours:
         return []
     a = jours[-1]
@@ -472,6 +487,20 @@ TYPES = {"portraits": salles_portraits, "dessins": salles_dessins, "artistes": s
          "sculptures": salles_sculptures, "sculpteurs": salles_sculpteurs, "glyphes": salles_glyphes}
 
 
+def controle(salle):
+    """Refuse une salle dont l'artiste ou le sculpteur du soir n'est pas un citoyen 1-120 avec une œuvre ce soir-là
+    (la page planterait plus loin). L'erreur est rattrapée dans aile() : la salle du musée précédent est gardée."""
+    for cle, liste in (("artiste", "dessins"), ("sculpteur", "sculptures")):
+        if cle in salle:
+            n = salle[cle]
+            if not isinstance(n, int) or not 1 <= n <= len(salle.get(liste) or []) or not salle[liste][n - 1]:
+                raise ValueError(f"{cle} {n!r} sans œuvre ce soir-là")
+    for o in salle.get("oeuvres") or []:
+        if salle["type"] in ("artistes", "sculpteurs") and not (isinstance(o.get("id"), int) and 1 <= o["id"] <= 120):
+            raise ValueError(f"citoyen {o.get('id')!r} impossible")
+    return salle
+
+
 def aile(ere, ouverte, catalogue, ctx):
     a = {"ere": ere, "etat": "ouverte" if ouverte else "fermee", "figee": False, "salles": []}
     if not ouverte:
@@ -485,7 +514,16 @@ def aile(ere, ouverte, catalogue, ctx):
         if f is None:
             print(f"Type de salle inconnu ignoré : {entree.get('type')}", file=sys.stderr)
             continue
-        a["salles"].extend(f(entree, ere, ctx))
+        try:
+            a["salles"].extend([controle(x) for x in f(entree, ere, ctx)])
+        except Exception as err:
+            # Filet de sécurité (11/11/2026) : une donnée imprévue dans une salle ne fait plus tomber tout le musée.
+            # La salle reste telle qu'elle était dans le musée précédent ; l'avertissement apparaît dans l'onglet Actions.
+            anciennes = [x for al in (ctx.get("ancien") or {}).get("plan", []) if al.get("ere") == ere
+                         for x in al.get("salles", []) if x.get("id") == entree["id"] or str(x.get("id", "")).startswith(entree["id"] + "-")]
+            print(f"::warning title=Musée::salle « {entree['id']} » non recalculée ({type(err).__name__}: {err}) ; "
+                  f"{len(anciennes)} salle(s) reprise(s) du musée précédent")
+            a["salles"].extend({k: v for k, v in x.items() if k != "reclame"} for x in anciennes)
     return a
 
 
@@ -518,7 +556,7 @@ def construire(racine):
     ancien = lire(racine / "musee.json", {}) if (racine / "musee.json").exists() else {}
     ere = int(latest.get("ere") or 1)
     etapes = (latest.get("ages") or {}).get("etapes") or []
-    ctx = {"etapes": etapes, "galerie_py": module(racine, "galerie"), "atelier_py": module(racine, "atelier"),
+    ctx = {"etapes": etapes, "ancien": ancien, "galerie_py": module(racine, "galerie"), "atelier_py": module(racine, "atelier"),
            "galerie": lire(racine / "galerie.json", None), "atelier": lire(racine / "atelier.json", None),
            "sculptures": lire(racine / "sculptures.json", None) if (racine / "sculptures.json").exists() else None,
            "sculptures_soir": lire(racine / "sculptures-soir.json", None) if (racine / "sculptures-soir.json").exists() else None,
@@ -569,11 +607,11 @@ STYLE = """<style>
 .m-aile{border-top:2px solid var(--ink);margin-top:26px;padding-top:6px}
 .m-salle{border-top:1px solid var(--rule);margin-top:16px;padding-top:6px}
 .m-oeuvres{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,190px),1fr));gap:16px;margin:10px 0}
-.m-oeuvres figure{margin:0;display:grid;gap:6px;min-width:0}
+.m-oeuvres figure{margin:0;display:grid;grid-template-columns:minmax(0,1fr);gap:6px;min-width:0}
 .m-oeuvres svg{width:100%;height:auto;display:block;background:#fff;border:1px solid var(--rule)}
-.m-oeuvres figcaption{font:12.5px/1.5 var(--f-data, system-ui);color:var(--muted)}
+.m-oeuvres figcaption{font:12.5px/1.5 var(--f-data, system-ui);color:var(--muted);overflow-wrap:anywhere}
 .m-oeuvres figcaption b{color:var(--ink);font-size:1.15em}
-.m-vide{aspect-ratio:3/4;display:grid;place-content:center;text-align:center;padding:12px;border:1px dashed var(--rule);color:var(--muted)}
+.m-vide{box-sizing:border-box;width:100%;min-width:0;overflow-wrap:anywhere;aspect-ratio:3/4;display:grid;place-content:center;text-align:center;padding:12px;border:1px dashed var(--rule);color:var(--muted)}
 .m-dessin{max-width:96px}
 .m-glyphes{grid-template-columns:repeat(auto-fill,minmax(min(100%,120px),1fr))}.m-glyphes svg{max-width:60px}
 .m-frise{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 12px}.m-frise svg{width:40px;height:40px;border:1px solid var(--rule)}
