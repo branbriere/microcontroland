@@ -312,6 +312,7 @@ L = {
         "soir": "Le mot du soir", "soir_sous": "L'idée de la dernière heure du relevé ({h} h) : « {fr} ». Voici comment chaque région l'écrit.",
         "soir_accord": "{n} régions sur 6 l'écrivent de la même façon.", "soir_seul": "Les régions ne l'écrivent pas encore de la même façon.",
         "muette": "muette",
+        "soir_muet": "Le {d}, aucune région n'a envoyé son lexique : la page montre le dernier soir reçu, le {r}. Aucun mot n'est jamais inventé.",
         "abc": "L'abécédaire de l'ère {ere}", "abc_sous": "{n} glyphes communs le {d}. L'écriture s'ouvre le {o} ; pour les glyphes venus ensuite, la date est celle du premier jour où au moins 5 régions l'ont écrit pareil.",
         "depuis": "depuis le {d}",
         "var": "Les écritures régionales", "var_sous": "Idées que les régions écrivent encore de plusieurs façons le {d}.",
@@ -339,6 +340,7 @@ L = {
         "soir": "Tonight's word", "soir_sous": "The idea of the last hour on record ({h}:00): “{en}”. Here is how each region writes it.",
         "soir_accord": "{n} regions out of 6 write it the same way.", "soir_seul": "The regions do not yet write it the same way.",
         "muette": "silent",
+        "soir_muet": "On {d}, no region sent its lexicon: this page shows the last evening received, {r}. No word is ever made up.",
         "abc": "The alphabet book of era {ere}", "abc_sous": "{n} common glyphs on {d}. Writing opens on {o}; for glyphs that came later, the date is the first day on which at least 5 regions wrote it the same way.",
         "depuis": "since {d}",
         "var": "Regional spellings", "var_sous": "Ideas the regions still write in more than one way on {d}.",
@@ -397,7 +399,12 @@ def page(jours, latest, galerie, lg):
     if not jours:
         corps.append(f'<p>{e(T["attente"])}</p>')
     else:
-        a = jours[-1]
+        # Soir muet (tous les lexiques à null, ex. 10/11/2026, passerelle revenue en 0.9) : on montre le dernier soir reçu,
+        # sinon l'abécédaire tomberait à 0 glyphe. ecriture.json garde le soir muet tel quel (jamais réécrit).
+        parlants = [j for j in jours if any(any(m for m in (l or [])) for l in (j.get("mots") or {}).values())]
+        a = parlants[-1] if parlants else jours[-1]
+        if a is not jours[-1]:
+            corps.append(f'<p class="compte"><i>{e(T["soir_muet"].format(d=date_longue(jours[-1]["date"], lg), r=date_longue(a["date"], lg)))}</i></p>')
         ere = a.get("ere")
         de_l_ere = [j for j in jours if j.get("ere") == ere]
         d = date_longue(a["date"], lg)
