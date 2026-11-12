@@ -1,0 +1,68 @@
+# Microcontrôland : « Bibliothèque nationale » / « National Library » (version de base, 1b-5).
+# Chaque soir, après le journal, la galerie et l'atelier, relit les seules données publiées du site
+# et recompile les livres de l'ère en cours (bibliotheque/ere-NNN.json), l'index de recherche et les deux pages.
+# Les ères terminées ne sont jamais réécrites. La passerelle ne change pas.
+name: Bibliotheque nationale
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "data/latest.json"
+      - "bibliotheque-catalogue.json"
+      - ".github/bibliotheque.py"
+  schedule:
+    - cron: "55 18 * * *"   # 20 h 55 à Paris en heure d'été
+    - cron: "55 19 * * *"   # 20 h 55 à Paris en heure d'hiver
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: bibliotheque
+  cancel-in-progress: false
+
+jobs:
+  bibliotheque:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Compiler les livres et générer les pages
+        run: python3 .github/bibliotheque.py .
+
+      - name: Déposer si quelque chose a changé
+        run: |
+          git add bibliotheque bibliotheque-index.json bibliotheque.html en/bibliotheque.html
+          if git diff --cached --quiet; then
+            echo "Rien de nouveau."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -q -m "Bibliothèque nationale (automatique)"
+          # Si une autre action a publié entre-temps : on repart de la dernière version du site, on recompile et on
+          # réessaie (pas de « git pull --rebase », qui bute sur les pages générées : correctif du 12/11/2026).
+          for i in 1 2 3 4 5; do
+            git push -q origin HEAD:main && echo "ok=1" >> "$GITHUB_ENV" && exit 0
+            sleep $((i * 10))
+            git fetch -q origin main
+            git reset -q --hard origin/main
+            python3 .github/bibliotheque.py .
+            git add bibliotheque bibliotheque-index.json bibliotheque.html en/bibliotheque.html
+            if git diff --cached --quiet; then
+              echo "Rien de nouveau : une autre exécution a déjà publié ces pages."
+              exit 0
+            fi
+            git commit -q -m "Bibliothèque nationale (automatique)"
+          done
+          exit 1
+
+      - name: Relancer la mise en ligne du site
+        if: env.ok == '1'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X POST "repos/${{ github.repository }}/pages/builds" || echo "Relance non nécessaire."
