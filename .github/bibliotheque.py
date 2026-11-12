@@ -18,7 +18,7 @@ Pas de rayon Roman : rien n'y figure avant la sortie du livre concerné (ajout �
 Exception voulue (Bran, 12 novembre 2026) : le rayon Philosophie étrangère accueille des essais écrits hors du pays
 (par des humains et une IA), déposés tels quels. Leur fiche vient d'un fichier livres/COTE.json (compilateur « essai ») :
 le script ne les écrit pas et ne les modifie jamais, il les range sur l'étagère et renvoie vers leur page.
-Licence MIT. Version 1.1, 12 novembre 2026.
+Licence MIT. Version 1.2, 12 novembre 2026 (lien anglais des essais).
 
   python3 .github/bibliotheque.py <racine du site>
 """
@@ -464,7 +464,7 @@ def essai(c, b):
             "chapitres": [chap(T("Quatrième de couverture", "Back cover"), T(f["resume"]["fr"], f["resume"].get("en")),
                                T(f["credits"]["fr"], f["credits"].get("en"))),
                           chap(T("Sommaire", "Contents"), *tdm,
-                               {"lien": f["page"], "fr": "Ouvrir le livre", "en": f.get("ouvrir_en") or "Open the book (in French)"})],
+                               {"lien": f["page"], "lien_en": f.get("page_en") or f["page"], "fr": "Ouvrir le livre", "en": f.get("ouvrir_en") or "Open the book (in French)"})],
             "nbChapitres": len(tdm), "sources": f.get("sources", "")}
 
 
@@ -647,7 +647,8 @@ def bloc_html(b, lg):
         return f'<figure class="bn-dessin">{svg5(b["dessin"], leg)}<figcaption>{e(leg)}</figcaption></figure>'
     if "lien" in b:
         pre = "../" if lg == "en" else ""
-        return f'<p><a class="bn-ouvrir" href="{pre}{e(b["lien"])}">{e(texte(b, lg))} →</a></p>'
+        cible = (b.get("lien_en") or b["lien"]) if lg == "en" else b["lien"]
+        return f'<p><a class="bn-ouvrir" href="{pre}{e(cible)}">{e(texte(b, lg))} →</a></p>'
     return f"<p>{e(texte(b, lg))}</p>"
 
 
