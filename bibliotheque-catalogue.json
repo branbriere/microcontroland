@@ -13,7 +13,8 @@
     {"id": "eco", "fr": "Économie", "en": "Economics"},
     {"id": "maths", "fr": "Mathématiques", "en": "Mathematics"},
     {"id": "inter", "fr": "Relations internationales", "en": "International relations"},
-    {"id": "sciences", "fr": "Sciences", "en": "Science"}
+    {"id": "sciences", "fr": "Sciences", "en": "Science"},
+    {"id": "philo-etr", "fr": "Philosophie étrangère", "en": "Foreign philosophy"}
   ],
   "livres": [
     {"cote": "LAN-01", "rayon": "langue", "compilateur": "dictionnaire", "age": 3,
@@ -40,6 +41,8 @@
      "attente": {"fr": "Mise à jour 3 : concours de mathématiques, Calculette.", "en": "Update 3: maths contests, the Calculator."}},
     {"cote": "SCI-01", "rayon": "sciences", "compilateur": null, "age": 5,
      "fr": "Revue scientifique de Microcontrôland", "en": "Microcontrôland Scientific Review",
-     "attente": {"fr": "Âge de la Curiosité, puis les premiers articles des citoyens chercheurs.", "en": "The Age of Curiosity, then the first papers by citizen researchers."}}
+     "attente": {"fr": "Âge de la Curiosité, puis les premiers articles des citoyens chercheurs.", "en": "The Age of Curiosity, then the first papers by citizen researchers."}},
+    {"cote": "PHE-01", "rayon": "philo-etr", "compilateur": "essai", "age": 4, "fichier": "livres/PHE-01.json",
+     "fr": "Des visages dans la machine", "en": "Faces in the Machine (in French)"}
   ]
 }

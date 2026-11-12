@@ -1,0 +1,25 @@
+{
+  "format": 1,
+  "cote": "PHE-01",
+  "note": "Essai déposé à la Bibliothèque nationale, rayon Philosophie étrangère. Texte daté, jamais retouché (une nouvelle édition aurait sa propre cote). Faits arrêtés au 12 novembre 2026.",
+  "page": "livres/des-visages-dans-la-machine.html",
+  "ouvrir_en": "Open the book (in French)",
+  "sous": {"fr": "Essai de philosophie cognitive à partir de l'expérience Microcontrôland · en français", "en": "An essay in cognitive philosophy based on the Microcontrôland experiment · in French"},
+  "resume": {"fr": "Ils ne sont ni vivants ni conscients. Pourtant, leur pays raconte des histoires. Un dessin de vingt-cinq cases devient un visage, une règle devient un président qui renvoie son ministre. Ce livre ne vous dit pas quoi penser : il vous montre les faits, vous pose la question, et vous laisse juger.",
+             "en": "They are neither alive nor conscious. Yet their country tells stories. A drawing of twenty-five squares becomes a face; a rule becomes a president who sacks his minister. This book does not tell you what to think: it shows you the facts, asks you the question, and leaves the judgement to you."},
+  "credits": {"fr": "Idée, plan et réécriture : Bran Brière · Texte : Claude · Orthographe : une IA correctrice · Question de départ : Z, chat.",
+              "en": "Idea, outline and rewriting: Bran Brière · Text: Claude · Spelling: a proofreading AI · Starting question: Z, a cat."},
+  "chapitres": [
+    {"lab": "Avant-propos", "lab_en": "Foreword", "fr": "Un garage, six watts et une voix", "en": "A garage, six watts and a voice"},
+    {"lab": "Mode d'emploi", "lab_en": "How to read it", "fr": "Comment fonctionne Microcontrôland ?", "en": "How does Microcontrôland work?"},
+    {"lab": "Chapitre 1", "lab_en": "Chapter 1", "fr": "Des visages dans la lune", "en": "Faces in the moon"},
+    {"lab": "Chapitre 2", "lab_en": "Chapter 2", "fr": "Deux triangles et un cercle", "en": "Two triangles and a circle"},
+    {"lab": "Chapitre 3", "lab_en": "Chapter 3", "fr": "Le limogeage sans auteur", "en": "The dismissal nobody made"},
+    {"lab": "Chapitre 4", "lab_en": "Chapter 4", "fr": "La grandeur d'un pays de six watts", "en": "The greatness of a six-watt country"},
+    {"lab": "Chapitre 5", "lab_en": "Chapter 5", "fr": "ELIZA et la porte fermée", "en": "ELIZA and the closed door"},
+    {"lab": "Chapitre 6", "lab_en": "Chapter 6", "fr": "Le miroir", "en": "The mirror"},
+    {"lab": "Chapitre 7", "lab_en": "Chapter 7", "fr": "Le miroir à l'envers", "en": "The mirror turned around"},
+    {"lab": "Conclusion", "lab_en": "Conclusion", "fr": "Ce que l'œil rapporte", "en": "What the eye brings back"}
+  ],
+  "sources": "livres/PHE-01.json ; éditions de La Puce Libre citées dans le livre ; contre-enquête, dossiers 1 à 4"
+}
