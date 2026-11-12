@@ -15,7 +15,10 @@ Règles :
 - bibliotheque-index.json : un passage par ligne, pour la recherche (dans la page, sans serveur) et les IA.
 
 Pas de rayon Roman : rien n'y figure avant la sortie du livre concerné (ajout à la main ce jour-là).
-Licence MIT. Version 1.0, 9 novembre 2026.
+Exception voulue (Bran, 12 novembre 2026) : le rayon Philosophie étrangère accueille des essais écrits hors du pays
+(par des humains et une IA), déposés tels quels. Leur fiche vient d'un fichier livres/COTE.json (compilateur « essai ») :
+le script ne les écrit pas et ne les modifie jamais, il les range sur l'étagère et renvoie vers leur page.
+Licence MIT. Version 1.1, 12 novembre 2026.
 
   python3 .github/bibliotheque.py <racine du site>
 """
@@ -114,6 +117,7 @@ def table(entetes, lignes):
 
 class Ctx:
     def __init__(self, racine):
+        self.racine = Path(racine)
         self.latest = lire(racine / "data" / "latest.json", {})
         self.ere = int(self.latest.get("ere") or 1)
         self.age = int(((self.latest.get("ages") or {}).get("age")) or 0)
@@ -450,6 +454,20 @@ def relations(c):
             "sources": "data/ambassade.json ; data/editions/ (âge de la Diplomatie)"}
 
 
+def essai(c, b):
+    """Un essai déposé (rayon Philosophie étrangère) : fiche lue dans livres/COTE.json, jamais réécrite."""
+    f = lire(c.racine / str(b.get("fichier") or ""), None)
+    if not isinstance(f, dict) or not f.get("page"):
+        return None
+    tdm = [T(f"{x['lab']} : {x['fr']}", f"{x.get('lab_en', x['lab'])}: {x.get('en', x['fr'])}") for x in f.get("chapitres") or []]
+    return {"sous": T(f["sous"]["fr"], f["sous"].get("en")),
+            "chapitres": [chap(T("Quatrième de couverture", "Back cover"), T(f["resume"]["fr"], f["resume"].get("en")),
+                               T(f["credits"]["fr"], f["credits"].get("en"))),
+                          chap(T("Sommaire", "Contents"), *tdm,
+                               {"lien": f["page"], "fr": "Ouvrir le livre", "en": f.get("ouvrir_en") or "Open the book (in French)"})],
+            "nbChapitres": len(tdm), "sources": f.get("sources", "")}
+
+
 COMPILATEURS = {"dictionnaire": dictionnaire, "annales": annales, "presidents": presidents, "atlas": atlas, "anatomie": anatomie,
                 "foi": foi, "art_primitif": art_primitif, "relations": relations}
 
@@ -462,9 +480,9 @@ def compiler(c, cat):
             continue   # jamais par le script : ajout à la main le jour de la sortie
         ent = {"cote": b["cote"], "rayon": b["rayon"], "titre": T(b["fr"], b["en"]), "age": int(b.get("age") or 0)}
         corps = None
-        if c.age >= ent["age"] and b.get("compilateur") in COMPILATEURS:
+        if c.age >= ent["age"] and (b.get("compilateur") in COMPILATEURS or b.get("compilateur") == "essai"):
             try:
-                corps = COMPILATEURS[b["compilateur"]](c)
+                corps = essai(c, b) if b.get("compilateur") == "essai" else COMPILATEURS[b["compilateur"]](c)
             except Exception as err:   # une donnée manquante ne doit jamais casser la bibliothèque
                 print(f"{b['cote']} : non compilé ({err!r})", file=sys.stderr)
                 corps = None
@@ -485,7 +503,7 @@ L = {
         "titre": "Bibliothèque nationale", "haut": "République de Microcontrôland · salle de lecture",
         "chapo": "Les livres de la République, rangés par ère et par rayon. Ils sont compilés chaque soir par les bibliothécaires de la République "
                  "(un programme) à partir des seules données publiées ; aucun n'est écrit par les Waïnas. Un rayon s'ouvre quand la civilisation y arrive, "
-                 "et une ère terminée reste consultable pour toujours.",
+                 "et une ère terminée reste consultable pour toujours. Seul le rayon Philosophie étrangère accueille des essais venus de l'extérieur, déposés tels quels.",
         "desc": "La Bibliothèque nationale de Microcontrôland : des livres par ère et par rayon, compilés chaque soir à partir des données publiées du pays.",
         "regles": [["Silence : 120 cerveaux réfléchissent.", "120 citoyens, 81 poids chacun."],
                    ["Le fonds le plus riche du pays.", "C'est la seule bibliothèque. {o} livres ouverts, {a} en attente."],
@@ -509,7 +527,7 @@ L = {
         "titre": "National Library", "haut": "Republic of Microcontrôland · reading room",
         "chapo": "The books of the Republic, shelved by era and by section. They are compiled every evening by the librarians of the Republic "
                  "(a program) from published data alone; none is written by the Waïnas. A section opens when civilisation gets there, "
-                 "and a finished era stays open for reading forever.",
+                 "and a finished era stays open for reading forever. Only the Foreign philosophy section holds essays from outside, shelved as they are.",
         "desc": "Microcontrôland's National Library: books by era and by section, compiled every evening from the country's published data.",
         "regles": [["Silence: 120 brains at work.", "120 citizens, 81 weights each."],
                    ["The richest collection in the country.", "It is the only library. {o} books open, {a} waiting."],
@@ -551,6 +569,7 @@ details.bn-livre summary .st{display:block;font:12.5px var(--f-data);color:var(-
 details.bn-livre[open] summary{border-bottom:1px solid var(--rule);margin-bottom:6px}
 .bn-livre h4{margin:16px 0 4px}.bn-livre p{margin:6px 0}
 .bn-livre .src{font:12.5px var(--f-data);color:var(--muted);margin:14px 0 12px}
+.bn-ouvrir{display:inline-block;font-weight:600;border:1px solid var(--ink);padding:6px 12px;text-decoration:none;color:var(--ink)}.bn-ouvrir:hover{background:var(--ink);color:var(--sheet)}
 .bn-attente{border:1px dashed var(--rule);padding:10px 14px;margin:8px 0;color:var(--muted)}
 .bn-attente .tampon{display:inline-block;margin-top:6px;font:700 11.5px var(--f-data);letter-spacing:.05em;text-transform:uppercase;color:var(--warn);border:2px solid var(--warn);padding:2px 6px;transform:rotate(-2deg)}
 .bn-table{overflow-x:auto;margin:8px 0}.bn-table table{border-collapse:collapse;width:100%;font-size:.95em}
@@ -626,6 +645,9 @@ def bloc_html(b, lg):
     if "dessin" in b:
         leg = texte(b["legende"], lg)
         return f'<figure class="bn-dessin">{svg5(b["dessin"], leg)}<figcaption>{e(leg)}</figcaption></figure>'
+    if "lien" in b:
+        pre = "../" if lg == "en" else ""
+        return f'<p><a class="bn-ouvrir" href="{pre}{e(b["lien"])}">{e(texte(b, lg))} →</a></p>'
     return f"<p>{e(texte(b, lg))}</p>"
 
 
@@ -637,7 +659,7 @@ def livre_html(ere, b, lg):
                 f'<br>{e(texte(b["attente"], lg))}<br><span class="tampon">{e(Tl["attente"])}</span></div>')
     ch = "".join(f'<h4>{e(texte(c["titre"], lg))}</h4>' + "".join(bloc_html(x, lg) for x in c["blocs"]) for c in b["chapitres"])
     return (f'<details class="bn-livre" id="ere{ere}-{e(b["cote"])}"><summary><span class="cote">{e(b["cote"])}</span><b>{e(tit)}</b>'
-            f'<span class="st">{e(texte(b["sous"], lg))} · {e(Tl["chapitres"].format(n=len(b["chapitres"])))}</span></summary>'
+            f'<span class="st">{e(texte(b["sous"], lg))} · {e(Tl["chapitres"].format(n=b.get("nbChapitres") or len(b["chapitres"])))}</span></summary>'
             f'{ch}<p class="src">{e(Tl["sources"])}{e(b.get("sources", ""))}.</p></details>')
 
 
@@ -748,7 +770,7 @@ def index(eres):
                         for ln in bl["table"]["lignes"]:
                             out.append({"ere": x["ere"], "cote": b["cote"], "rayon": b["rayon"], "chapitre": c["titre"],
                                         **{lg: " · ".join(texte(v, lg) if isinstance(v, dict) and "accord" not in v else str(v.get("accord")) + "/6" if isinstance(v, dict) else str(v) for v in ln) for lg in ("fr", "en")}})
-                    elif "barre" in bl or "dessin" in bl:
+                    elif "barre" in bl or "dessin" in bl or "lien" in bl:
                         continue
                     else:
                         out.append({"ere": x["ere"], "cote": b["cote"], "rayon": b["rayon"], "chapitre": c["titre"], "fr": texte(bl, "fr"), "en": texte(bl, "en")})
