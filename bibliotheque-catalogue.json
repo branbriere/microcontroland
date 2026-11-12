@@ -43,6 +43,6 @@
      "fr": "Revue scientifique de Microcontrôland", "en": "Microcontrôland Scientific Review",
      "attente": {"fr": "Âge de la Curiosité, puis les premiers articles des citoyens chercheurs.", "en": "The Age of Curiosity, then the first papers by citizen researchers."}},
     {"cote": "PHE-01", "rayon": "philo-etr", "compilateur": "essai", "age": 4, "fichier": "livres/PHE-01.json",
-     "fr": "Des visages dans la machine", "en": "Faces in the Machine (in French)"}
+     "fr": "Des visages dans la machine", "en": "Faces in the Machine"}
   ]
 }
