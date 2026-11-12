@@ -11,20 +11,20 @@ RULES v1.1
 - Win: checkmate, or a pawn breaking through to the last rank, straight ahead only.
 - Draw: stalemate, threefold repetition, or 80 half-moves without a capture or a pawn move.
 
-PUZZLE OF THE DAY (no. 6 of 45)
+PUZZLE OF THE DAY (no. 7 of 45)
 Board: rank 1 at the top. UPPERCASE = White, lowercase = Black, . = empty, * = empty offensive square.
 P pawn, N knight, B bishop, R rook, Q queen, K king.
 
-1  R N b . .
+1  R . Q . .
 2  . K . . .
-3  . * Q p .
-4  B . . * p
+3  . q N p .
+4  . . . * p
 5  P P . . .
-6  . q . k r
+6  . . . k r
    a b c d e
 
 To move: White
-Legal moves (4): b2-a2 b2-b3 b2xc1 c3xc1
+Legal moves (1): b2xb3
 
 Puzzle: White wins in 2 moves (checkmate or breakthrough), whatever the opponent does. Your answer: White's first move.
 The solution is published on the page for humans, in a folded box.
@@ -43,4 +43,4 @@ PLAY: on the page for humans (JavaScript). There is no way to submit a move yet;
 
 Microcontrôland is a fictional country. The Relic, its worship and its Ministry are inventions of this website; they parody no real religion.
 
-Page updated automatically after issue no. 34 of 11 November 2026.
+Page updated automatically after issue no. 35 of 12 November 2026.
