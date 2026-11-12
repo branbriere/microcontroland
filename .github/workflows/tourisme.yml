@@ -47,11 +47,22 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git commit -q -m "Office du tourisme (automatique)"
-          # Si la passerelle ou une autre action a publié entre-temps : on se remet à jour et on réessaie.
-          for i in 1 2 3; do
-            git push && echo "ok=1" >> "$GITHUB_ENV" && exit 0
+          # Si la passerelle ou une autre action a publié entre-temps : on repart de la dernière version du site,
+          # on régénère l'Office et on réessaie. (12/11/2026 : l'ancien « git pull --rebase » pouvait buter sur les
+          # dépliants PDF, qui ne se fusionnent pas, pendant la rafale d'actions qui suit l'édition de 20 h.)
+          for i in 1 2 3 4 5; do
+            git push -q origin HEAD:main && echo "ok=1" >> "$GITHUB_ENV" && exit 0
             sleep $((i * 10))
-            git pull --rebase -q origin main
+            git fetch -q origin main
+            git reset -q --hard origin/main
+            python3 .github/tourisme.py .
+            git add tourisme.html en/tourisme.html tourisme.txt en/tourisme.txt
+            if [ -d tourisme ]; then git add tourisme; fi
+            if git diff --cached --quiet; then
+              echo "Rien de nouveau : une autre exécution a déjà publié ces pages."
+              exit 0
+            fi
+            git commit -q -m "Office du tourisme (automatique)"
           done
           exit 1
 
