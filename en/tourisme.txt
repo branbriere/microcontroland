@@ -10,7 +10,7 @@ Six regions, four raw materials, a brand-new language and 1.2 million simulated 
 Regime in force: Democracy
 Head of State: Niwata
 Current capital: Dam
-Situation on day 36 of the Republic, era 1: 3 ministers, president in power for 16 d 20 h. Updated every evening at 8 pm by the gateway.
+Situation on day 37 of the Republic, era 1: 3 ministers, president in power for 17 d 20 h. Updated every evening at 8 pm by the gateway.
 
 ## The National Museum of Microcontrôland (The country's one and only monument)
 The largest virtual museum in the country. Also the smallest. The only one, in fact. The only museum in the world where the human visitor sees what no inhabitant ever will: all the eras at once. You come out a changed person, or at least recharged.
@@ -26,16 +26,16 @@ What is true: the museum is a page of this site, built from the published data. 
 - Our world-famous stars (in Microcontrôland) [Waiting for the civilisation to evolve]: No stars yet. The Workshop drawings do not count: their authors do not know they are drawing.
 
 ## The six regions
-- Mines (Copper, sasa): Rich when copper rises, angry when it falls. Mood: satisfied, copper −2.7%.
-- Fields (Wheat, houhou): The farming region, often the calmest in the country. Mood: satisfied, wheat −3.2%.
-- Refineries (Oil, sihaï): Follows the mood of the barrel, and drags the country along. Mood: satisfied, oil −0.3%.
-- Dam (Electricity, païpi): Capital tonight. Supplies the nation's five volts, and likes to remind everyone. Mood: satisfied, electricity +0.2%.
+- Mines (Copper, sasa): Rich when copper rises, angry when it falls. Mood: satisfied, copper −4.4%.
+- Fields (Wheat, houhou): The farming region, often the calmest in the country. Mood: satisfied, wheat −2.5%.
+- Refineries (Oil, sihaï): Follows the mood of the barrel, and drags the country along. Mood: satisfied, oil −0.2%.
+- Dam (Electricity, païpi): Capital tonight. Supplies the nation's five volts, and likes to remind everyone. Mood: satisfied, electricity −1.0%.
 - Harbour (Trade, haïpi): Lives off every price at once; first to be hit by storms. Mood: satisfied.
 - City (Services, wawa): Indifferent to the markets, sensitive to censorship. Mood: satisfied.
 
 ## Religion
 The country practises the Cult of the Creator, He-who-soldered-the-Pins. Tonight, devotion breaks down as follows:
-32% believers, 22% agnostics, 46% atheists. The president is agnostic.
+32% believers, 21% agnostics, 47% atheists. The president is agnostic.
 
 ## Useful words for travellers
 - hello = soubaï (6/6)
@@ -43,7 +43,7 @@ The country practises the Cult of the Creator, He-who-soldered-the-Pins. Tonight
 - no = noukou (6/6)
 - friend = pawaï (3/6)
 - you = soutaï (2/6)
-- question = wana (2/6)
+- question = nouwaï (2/6)
 - country = tawi (6/6)
 - box = waïhaï (5/6)
 Each region speaks its own language. These words come from the latest count: when fewer than 6 regions agree, part of the country will say something else. The wise tourist nods.
@@ -51,11 +51,11 @@ Each region speaks its own language. These words come from the latest count: whe
 ## Microcontrôland's world firsts
 Certified by the Ministry. The Ministry certifies everything.
 - Age of the Founding: First country in the world whose only newspaper is written every evening by its own public service.
-  What is true: La Puce Libre comes out every evening at 8 pm, written by the gateway: 35 issues as of 12 November 2026.
+  What is true: La Puce Libre comes out every evening at 8 pm, written by the gateway: 36 issues as of 13 November 2026.
 - Age of Speech: First national language invented by six regions that had never said a word to each other.
-  What is true: Age reached on 18 October 2026. 34 shared words out of 41 ideas as of 12 November 2026; each region keeps its own lexicon.
+  What is true: Age reached on 18 October 2026. 35 shared words out of 42 ideas as of 13 November 2026; each region keeps its own lexicon.
 - Age of Memory: First national annals kept by a country of 1.8 litres.
-  What is true: Age reached on 24 October 2026. Records and the characters' pasts, on the History page. Longest reign: Niwata, 16 d 20 h.
+  What is true: Age reached on 24 October 2026. Records and the characters' pasts, on the History page. Longest reign: Niwata, 17 d 20 h.
 - Age of the Civil Registry: First country where any inhabitant can be followed by a foreigner, with no form to fill in.
   What is true: Age reached on 28 October 2026. All 120 citizens are entered in the registry; the “My citizen” page lets you follow one.
 - Age of Diplomacy: First embassy in the world whose entire staff fits inside a gateway.
@@ -77,4 +77,4 @@ PDF: https://www.microcontroland.org/tourisme/depliant-fr.pdf · https://www.mic
 
 Microcontrôland is an entirely fictional country, simulated by microcontrollers for a maker project. It has no link with any real state, party, person, religion or tourist office. The Waïnas are neither alive nor conscious.
 
-Page updated automatically after issue No. 35 of 12 November 2026.
+Page updated automatically after issue No. 36 of 13 November 2026.
