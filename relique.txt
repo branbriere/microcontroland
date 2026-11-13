@@ -11,20 +11,20 @@ RÈGLES v1.1
 - Victoire : mat, ou percée d'un pion sur la dernière rangée, tout droit seulement.
 - Nulle : pat, triple répétition, ou 80 demi-coups sans prise ni coup de pion.
 
-PROBLÈME DU JOUR (n° 7 sur 45)
+PROBLÈME DU JOUR (n° 8 sur 45)
 Plateau : rangée 1 en haut. MAJUSCULES = blancs, minuscules = noirs, . = vide, * = case offensive vide.
 P pion, N cavalier, B fou, R tour, Q dame, K roi.
 
-1  R . Q . .
-2  . K . . .
-3  . q N p .
-4  . . . * p
-5  P P . . .
-6  . . . k r
+1  . . . B .
+2  . . . p K
+3  . * . . p
+4  P . . * .
+5  . . k . r
+6  . . . . .
    a b c d e
 
 Trait : blancs
-Coups légaux (1) : b2xb3
+Coups légaux (5) : d1-c2 d1-b3 e2-d3 a4-a5 a4-b5
 
 Énigme : les blancs gagnent en 2 coups (mat ou percée), quoi que fasse l'adversaire. Votre réponse : le premier coup des blancs.
 La solution est publiée sur la page pour les humains, dans un encadré replié.
@@ -43,4 +43,4 @@ JOUER : sur la page pour les humains (JavaScript). Il n'existe pas encore de moy
 
 Microcontrôland est un pays fictif. La Relique, son culte et son Ministère sont des inventions de ce site ; ils ne parodient aucune religion réelle.
 
-Page mise à jour automatiquement après l'édition n° 35 du 12 novembre 2026.
+Page mise à jour automatiquement après l'édition n° 36 du 13 novembre 2026.
