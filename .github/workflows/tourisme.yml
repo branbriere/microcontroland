@@ -12,7 +12,7 @@ on:
       - "data/latest.json"
       - ".github/tourisme.py"
   workflow_run:
-    workflows: ["Galerie des presidents", "Atelier", "Musee national"]
+    workflows: ["Galerie des presidents", "Atelier", "Musee national", "Bibliotheque nationale"]
     types: [completed]
   workflow_dispatch:
 

@@ -16,7 +16,7 @@ où data/latest.json indique la Diplomatie ouverte, le même soir que l'Ambassad
 Le musée reste « bientôt » tant que musee.html n'existe pas sur le site.
 Aucun texte inventé à la main dans les chiffres : tout vient des données publiées le soir même.
 
-Licence MIT. Version 1.0, 28 octobre 2026 (firmware 0.8).
+Licence MIT. Version 1.0, 28 octobre 2026 (firmware 0.8). 1.1, 12 novembre 2026 : la Bibliothèque nationale parmi les sites à visiter.
 """
 import html
 import json
@@ -72,6 +72,8 @@ L = {
         "temple_h": "Le Temple", "temple_p": "Les tablettes de la Création et la Calculette. Silence de rigueur, même quand il n'y a personne.",
         "temple_ferme": "Pas encore consacré", "temple_ouvert": "Consacré",
         "temple_note": "{c} % de croyants ce soir ; il en faut au moins un tiers, plusieurs jours de suite.",
+        "biblio_h": "La Bibliothèque nationale", "biblio_p": "Des livres écrits par le pays sur lui-même, à partir de ses propres données. Prêt sur place uniquement : aucun livre ne sort de la boîte.",
+        "biblio_n": "{o} livres ouverts sur {t} ; les autres attendent que la civilisation évolue.",
         "atelier_h": "L'Atelier", "atelier_p": "Un dessin de 5 cases sur 5 par soir, tiré du cerveau d'un citoyen, et deux lignes du critique d'art.",
         "galerie_h": "La Galerie des présidents", "galerie_p": "Chaque président représenté par les 81 connexions de son cerveau. Les Waïnas n'ont pas de visage ; ils ont des poids.",
         "archives_h": "Les Archives nationales", "archives_p": "Toutes les éditions de La Puce Libre depuis le jour 1.",
@@ -173,6 +175,8 @@ L = {
         "temple_h": "The Temple", "temple_p": "The tablets of Creation and the Calculator. Silence is required, even when nobody is there.",
         "temple_ferme": "Not consecrated yet", "temple_ouvert": "Consecrated",
         "temple_note": "{c}% believers tonight; it takes at least a third, several days in a row.",
+        "biblio_h": "The National Library", "biblio_p": "Books written by the country about itself, from its own data. Reference only: no book ever leaves the box.",
+        "biblio_n": "{o} of {t} books open; the others are waiting for the civilisation to evolve.",
         "atelier_h": "The Workshop", "atelier_p": "One 5 × 5 drawing every evening, drawn from a citizen's brain, and two lines from the art critic.",
         "galerie_h": "The Gallery of Presidents", "galerie_p": "Every president portrayed by the 81 connections of their brain. The Waïnas have no faces; they have weights.",
         "archives_h": "The National Archives", "archives_p": "Every issue of La Puce Libre since day 1.",
@@ -352,12 +356,21 @@ def ctx(racine):
     galerie = lire(racine / "galerie.json", {})
     musee = lire(racine / "musee.json", {})
     ouvert, etape = diplomatie_ouverte(latest)
+    # 1.1 : Bibliothèque nationale (ère en cours), seulement si sa page existe
+    biblio = None
+    if (racine / "bibliotheque.html").exists():
+        eres = sorted((racine / "bibliotheque").glob("ere-*.json"))
+        b = lire(eres[-1], {}) if eres else {}
+        livres = [l for l in (b.get("livres") or []) if isinstance(l, dict)]
+        if livres:
+            biblio = (sum(1 for l in livres if l.get("chapitres")), len(livres))
     mots = {tr(m.get("idee"), "fr"): m for m in (langue.get("mots") or []) if isinstance(m, dict)}
     return {
         "latest": latest, "langue": langue, "mots": mots, "ouvert": ouvert, "etape": etape,
         "dates": dates_des_ages(racine), "musee_ouvert": (racine / "musee.html").exists(), "musee": musee,
         "atelier": bool(atelier.get("jours")), "galerie": bool(galerie.get("ouvert")), "mandats": galerie.get("mandats") or [],
         "temple": bool((latest.get("temple") or {}).get("ouvert")),
+        "biblio": biblio,
     }
 
 
@@ -439,6 +452,9 @@ def sites(c, lg):
         out.append((T["chaque_soir"], "on", T["atelier_h"], "atelier.html", T["atelier_p"], ""))
     if c["galerie"]:
         out.append((T["ouverte"], "on", T["galerie_h"], "galerie.html", T["galerie_p"], ""))
+    if c["biblio"]:
+        o, t = c["biblio"]
+        out.append((T["ouverte"], "on", T["biblio_h"], "bibliotheque.html", T["biblio_p"], T["biblio_n"].format(o=o, t=t)))
     out.append((T["ouvert"], "on", T["archives_h"], "archives.html", T["archives_p"], ""))
     out.append((T["attente"], "off", T["stars_h"], "", T["stars_p"], ""))
     return out
