@@ -21,6 +21,7 @@ Ce qui est vrai : le musée est une page du site, construite à partir des donn�
 - Le Temple [Pas encore consacré] : Les tablettes de la Création et la Calculette. Silence de rigueur, même quand il n'y a personne. (32 % de croyants ce soir ; il en faut au moins un tiers, plusieurs jours de suite.)
 - L'Atelier [Ouvert chaque soir] : Un dessin de 5 cases sur 5 par soir, tiré du cerveau d'un citoyen, et deux lignes du critique d'art.
 - La Galerie des présidents [Ouverte] : Chaque président représenté par les 81 connexions de son cerveau. Les Waïnas n'ont pas de visage ; ils ont des poids.
+- La Bibliothèque nationale [Ouverte] : Des livres écrits par le pays sur lui-même, à partir de ses propres données. Prêt sur place uniquement : aucun livre ne sort de la boîte. (9 livres ouverts sur 12 ; les autres attendent que la civilisation évolue.)
 - Les Archives nationales [Ouvert] : Toutes les éditions de La Puce Libre depuis le jour 1.
 - Nos stars mondialement connues (dans Microcontrôland) [En attente d'évolution de la civilisation] : Aucune star pour l'instant. Les dessins de l'Atelier ne comptent pas : leurs auteurs ne savent pas qu'ils dessinent.
 
