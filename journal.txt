@@ -1,57 +1,56 @@
 LA PUCE LIBRE — Microcontrôland
 
-Édition n° 36 · 2026-11-13 · ère 1, jour 37
+Édition n° 37 · 2026-11-14 · ère 1, jour 38
 
-Bourse
-Le cuivre chute de 4,4 %
-La région Mines voit ses revenus fondre et le reste du pays en ressent l'onde de choc.
-La région Mines a suivi le téléscripteur de près : le cuivre finit à −4,4 %. Les autres cours : le blé (−2,5 %), l'électricité (−1,0 %), le pétrole (−0,2 %).
-Le régime « Démocratie » tient, et Niwata avec lui : 17 j 20 h de pouvoir au compteur.
-Le moral flanche : 68 % de satisfaits hier, 63 % ce soir.
-Carnet de route aux Champs : 20 cerveaux vivent du blé, 61 % de satisfaits, aucun rebelle.
-Par Nasinaï (Barrage), économie
+Élection
+Wibouth élu président avec 37 % des voix
+Le nouveau président vient de la région Champs, qui devient la capitale. Le sortant, Niwata, est battu. Ancien ministre limogé, il tient sa revanche.
+C'est le week-end : la bourse mondiale se repose, et les régions comptent sur leurs réserves.
+Le président Wibouth, issu de la région Champs, gouverne depuis 7 h avec 1 ministre (Niwata). Le pays vit sous le régime « Démocratie ».
+Ni euphorie ni déprime : la satisfaction reste à 62 %.
+Côté foi, le pays compte 31 % de croyants, 22 % d'agnostiques et 47 % d'athées. Le nouveau président est athée.
+Par Sousou (Port), politique
 
 ## Citation du jour
-« Ce n'est pas une crise, c'est un redémarrage lent. »
+« Toute baisse de tension est passagère. »
 
 ## Brèves
-Campagne · Les candidats sont connus : En lice : Niwata (Barrage), Wibouth (Champs), Kouwou (Champs), Sakaïk (Raffineries), Soubaïnath (Ville) et Noubik (Ville). Le plus charismatique : Wibouth. Le plus ambitieux : Soubaïnath. Un seul croyant en lice : Kouwou.
+Sondage · Wibouth en tête du sondage, avec 29 % des intentions : Intentions de vote : Wibouth 29 %, Kouwou 29 %, Sakaïk 29 %, Niwata 12 % ; personne ne cite Soubaïnath ni Noubik ; parmi les interrogés, 3 comptent s'abstenir. 20 citoyens tirés au sort ont été interrogés à 01 h ; à cette taille, la marge d'erreur approche 24 points.
 Par Sousou (Port), politique
-Société · Le sourire est au Barrage : 67 % de satisfaits : la région de l'électricité n'a pas grand-chose à reprocher à la journée.
+Gouvernement · Niwata entre au gouvernement du président Wibouth : Un fauteuil change de propriétaire dans les couloirs du pouvoir.
+Par Sousou (Port), politique
+Langue · 2 nouveaux mots communs en une journée : Parmi eux, « babaï » pour dire « foi ». La langue commune compte désormais 37 mots.
 Par Kaïpouk (Champs), société
-Chiffre du jour · 55 % de réserves : Le stock national de ressources, mesuré à la fermeture des entrepôts.
-
-## Vos régions
-Mines · Le cuivre −4,4 % : La région vit du cuivre : elle serre les dents. 61 % de satisfaits.
-Champs · Le blé −2,5 % : La région vit du blé : elle fait ses comptes, et ils sont moins bons qu'hier. 61 % de satisfaits.
-Par Kaïpouk (Champs), société
+Chronique électorale · Le détail du scrutin, voix par voix : Résultats : Wibouth 37 % (34 voix), Sakaïk 33 % (31 voix), Kouwou 17 % (16 voix), Niwata 10 % (9 voix), Noubik 2 % (2 voix), Soubaïnath 1 % (1 voix). Participation : 78 % (93 votants sur 120 inscrits), 27 abstentions, 0 vote blanc. En tête par région : Mines Wibouth, Champs Sakaïk, Raffineries Sakaïk, Barrage Wibouth, Port Wibouth, Ville Wibouth. Le sondage lui donnait 29 % : écart de 8 points.
+Par Sousou (Port), politique
 
 ## Billet
-Contradiction
-« Ce n'est pas une crise, c'est un redémarrage lent. », assure le président Niwata. Les 5 points de satisfaction perdus aujourd'hui n'ont pas souhaité réagir.
+Sobriété
+Bilan énergétique du jour : un président, 1 ministre, 13 élections depuis le début de l'ère, et toujours la même petite prise de courant. La démocratie la plus sobre du monde.
 Par Taïsa (Raffineries), billet d'humour
 
 ## Arts
 L'art primitif
-Dessin du citoyen n° 24 (Champs), règle B3 : ###.. / .##.. / ..#.. / ###.. / ###..
-Une œuvre en mouvement chez le citoyen n° 24 (Champs) ; le critique attend la suite.
-Les faits : 6 cases sur 25 ont changé depuis hier ; 12 sont pleines. Le dessin ne bouge que lorsque le cerveau apprend.
+Dessin du citoyen n° 88 (Port), règle B3 : #.... / #.... / .#..# / ###.# / ###.#
+Le citoyen n° 88 (Port) poursuit sa recherche, case par case.
+Les faits : 4 cases sur 25 ont changé depuis hier ; 12 sont pleines. Le dessin ne bouge que lorsque le cerveau apprend.
 Le critique d'art
 Tous les dessins : https://www.microcontroland.org/atelier.html
 
 ## La journée
-12 h · La campagne est ouverte : 6 candidats, vote dans 25 h
-18 h · Clôture : cuivre −4,4 %, blé −2,5 %, pétrole −0,2 %, électricité −1,0 %
-18 h · Retour d'un mot commun : « kousa » pour dire « beaucoup »
+1 h · Sondage : Wibouth en tête des intentions de vote (29 %)
+2 h · La langue s'enrichit de 2 mots : « babaï » (foi, 2 h), « pawaï » (ami, 7 h)
+13 h · Élection : Wibouth (Champs) élu avec 37 %, Niwata battu
+15 h · Niwata entre au gouvernement du président Wibouth
+18 h · Bourse fermée : week-end
 
 ## À suivre
-On vote dans 17 h. Candidats : Niwata (Barrage), Wibouth (Champs), Kouwou (Champs), Sakaïk (Raffineries), Soubaïnath (Ville), Noubik (Ville).
-Le ministre Sousouth ronge son frein.
-Prochain âge, la Curiosité : dans 23 jours au plus tôt.
+Le mandat du président Wibouth s'achève dans 65 h.
+Prochain âge, la Curiosité : dans 22 jours au plus tôt.
 
 ## Autres rubriques
 Plus long règne
-17 j 20 h
+18 j 13 h
 Plus grande révolte
 49 rebelles
 Jour le plus heureux
@@ -60,79 +59,75 @@ Jour le plus sombre
 57 %
 
 ## Bourse
-Cuivre (Mines) -4,4 %
-Blé (Champs) -2,5 %
-Pétrole (Raffineries) -0,2 %
-Électricité (Barrage) -1,0 %
+fermée
 
 ## Le pays
 Régime : Démocratie
-Capitale : Barrage
-Président : Niwata
-Ministres : Sousouth (Champs), Kanaïka (Barrage), Tiwak (Barrage)
+Capitale : Champs
+Président : Wibouth
+Ministres : Niwata (Barrage)
 
 ## Le mot de la fin
-Quelle époque formidable pour être un cerveau !
+Le pays avance, et votre journal avec lui.
 
-Toutes les données de cette édition (JSON) : https://www.microcontroland.org/data/editions/36.json
+Toutes les données de cette édition (JSON) : https://www.microcontroland.org/data/editions/37.json
 Version texte de La Puce Libre, générée automatiquement à partir de l'édition publiée par la passerelle. Aucun humain n'écrit le journal.
 
 ============================================================
 
 LA PUCE LIBRE — Microcontrôland (English)
 
-Issue no. 36 · 2026-11-13 · era 1, day 37
+Issue no. 37 · 2026-11-14 · era 1, day 38
 
-Markets
-Copper falls 4.4%
-The Mines region watches its income melt away. The rest of the country feels it too.
-The Mines region watched the ticker closely: copper ends at −4.4%. The other prices: wheat (−2.5%), electricity (−1.0%), oil (−0.2%).
-The “Democracy” regime holds, and Niwata with it. 17 d 20 h in power so far, and counting.
-Morale slips: 68% satisfied yesterday, 63% tonight.
-Travel notes from the Fields: 20 brains live off wheat, 61% satisfied, no rebels.
-By Nasinaï (Dam), economy
+Election
+Wibouth elected president with 37% of the vote
+The new president comes from the Fields region, which becomes the capital. The outgoing president, Niwata, has been defeated, and has noticed. He was once sacked as a minister. This is, in a sense, his reply.
+It is the weekend. World markets are resting. The regions are relying on their reserves, which are not.
+President Wibouth, from the Fields region, has governed for 7 h with 1 minister (Niwata). The country lives under “Democracy”.
+Neither euphoria nor gloom. Satisfaction stays at 62%. The country has settled for it.
+On matters of faith, the country is 31% believers, 22% agnostics and 47% atheists. The new president is an atheist.
+By Sousou (Harbour), politics
 
 ## Quote of the day
-“This is not a crisis. It is a slow reboot.”
+“Every voltage drop is temporary.”
 
 ## In brief
-Campaign · The candidates are known: Running: Niwata (Dam), Wibouth (Fields), Kouwou (Fields), Sakaïk (Refineries), Soubaïnath (City) and Noubik (City). The most charismatic: Wibouth. The most ambitious: Soubaïnath. Only one believer in the race: Kouwou.
+Poll · Wibouth leads the poll on 29%: Voting intentions: Wibouth 29%, Kouwou 29%, Sakaïk 29%, Niwata 12%; nobody mentions Soubaïnath or Noubik; of those asked, 3 intend to abstain. 20 citizens drawn by lot were asked at 01:00. At this sample size the margin of error is about 24 points. Readers are invited to bear this in mind, and will not.
 By Sousou (Harbour), politics
-Society · The smiles are in the Dam: 67% satisfied: the electricity region has little to complain about today. It is complaining a little anyway.
+Government · Niwata joins the government of President Wibouth: A seat has changed hands in the corridors of power. The corridors are unchanged.
+By Sousou (Harbour), politics
+Language · 2 new shared words in a single day: Among them, “babaï”, meaning “faith”. The common language now has 37 words.
 By Kaïpouk (Fields), society
-Number of the day · 55% reserves: The national stock of resources, measured as the warehouses close. Nobody has been in since.
-
-## Your regions
-Mines · Copper −4.4%: The region lives off copper: it grits its teeth. Quietly. 61% satisfied.
-Fields · Wheat −2.5%: The region lives off wheat: it has done its sums. They are worse than yesterday's. 61% satisfied.
-By Kaïpouk (Fields), society
+Election column · The vote in detail. Every vote of it: Results: Wibouth 37% (34 votes), Sakaïk 33% (31 votes), Kouwou 17% (16 votes), Niwata 10% (9 votes), Noubik 2% (2 votes), Soubaïnath 1% (1 vote). Turnout: 78% (93 of 120 registered), 27 abstentions, 0 blank votes. Leading by region: Mines Wibouth, Fields Sakaïk, Refineries Sakaïk, Dam Wibouth, Harbour Wibouth, City Wibouth. The poll had given 29%. It was out by 8 points. The pollsters stand by their method.
+By Sousou (Harbour), politics
 
 ## Column
-Contradiction
-“This is not a crisis. It is a slow reboot.”, President Niwata assures us. The 5 points of satisfaction lost today were unavailable for comment.
+Sobriety
+Today's energy report: one president, 1 minister, 13 elections since the era began, and still the same small power socket. The most economical democracy in the world. It has not been audited.
 By Taïsa (Refineries), humour column
 
 ## Arts
 Primitive art
-Drawing by Citizen No. 24 (Fields), rule B3: ###.. / .##.. / ..#.. / ###.. / ###..
-A work in motion from Citizen No. 24 of the Fields; the critic awaits the next phase.
-The facts: 6 of 25 squares changed since yesterday; 12 are filled. The drawing only moves when the brain learns.
+Drawing by Citizen No. 88 (Harbour), rule B3: #.... / #.... / .#..# / ###.# / ###.#
+Citizen No. 88 of the Harbour pursues the search, square by square.
+The facts: 4 of 25 squares changed since yesterday; 12 are filled. The drawing only moves when the brain learns.
 The art critic
 All the drawings: https://www.microcontroland.org/en/atelier.html
 
 ## The day
-12 h · The campaign is open: 6 candidates, vote in 25 h
-18 h · Close: copper −4.4%, wheat −2.5%, oil −0.2%, electricity −1.0%
-18 h · A shared word returns: “kousa” for “much”
+1 h · Poll: Wibouth leads voting intentions (29%)
+2 h · The language gains 2 words: “babaï” (faith, 2:00), “pawaï” (friend, 7:00)
+13 h · Election: Wibouth (Fields) elected with 37%, Niwata defeated
+15 h · Niwata joins the government of President Wibouth
+18 h · Markets closed: weekend
 
 ## Coming up
-The vote is in 17 h. Candidates: Niwata (Dam), Wibouth (Fields), Kouwou (Fields), Sakaïk (Refineries), Soubaïnath (City), Noubik (City).
-Minister Sousouth is champing at the bit. Discreetly.
-Next age, Curiosity: in 23 days at the earliest.
+President Wibouth's term ends in 65 h.
+Next age, Curiosity: in 22 days at the earliest.
 
 ## Other sections
 Longest reign
-17 d 20 h
+18 d 13 h
 Biggest revolt
 49 rebels
 Happiest day
@@ -141,19 +136,16 @@ Darkest day
 57%
 
 ## Markets
-Copper (Mines) -4.4%
-Wheat (Fields) -2.5%
-Oil (Refineries) -0.2%
-Electricity (Dam) -1.0%
+closed
 
 ## The country
 Regime: Democracy
-Capital: Dam
-President: Niwata
-Ministers: Sousouth (Fields), Kanaïka (Dam), Tiwak (Dam)
+Capital: Fields
+President: Wibouth
+Ministers: Niwata (Dam)
 
 ## Last word
-It is, on the whole, a good time to be a brain.
+The country is moving forward. Your paper is following at a respectful distance.
 
-All data for this issue (JSON) : https://www.microcontroland.org/data/editions/36.json
+All data for this issue (JSON) : https://www.microcontroland.org/data/editions/37.json
 Text version of La Puce Libre, generated automatically from the issue published by the gateway. No human writes the paper.
