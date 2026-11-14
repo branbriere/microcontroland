@@ -613,6 +613,181 @@
     }
    ],
    "rectificatifs": []
+  },
+  {
+   "id": "la-secheresse",
+   "numero": 5,
+   "evenement": "2026-11-11",
+   "publie": "2026-11-14",
+   "titre": {
+    "fr": "La sécheresse qui ne fit vendre aucun ventilateur",
+    "en": "The drought that sold no fans"
+   },
+   "accroche": {
+    "fr": "Le 11 novembre à 10 h, Microcontrôland connaît sa première catastrophe naturelle : une sécheresse de 48 heures. Chez nous, un été sec et chaud envoie les gens au rayon des ventilateurs et des climatiseurs. Nous avons donc cherché ce que la République avait acheté. Rien. Elle a eu un peu peur, elle a perdu plus d'un tiers de ses réserves, et elle a appris deux mots qu'elle aurait préféré ignorer.",
+    "en": "At 10 am on 11 November, Microcontrôland suffered its first natural disaster: a 48-hour drought. In our world, a hot dry spell sends people to the shops for fans and air conditioners. We therefore looked into what the Republic had bought. Nothing. It was slightly frightened, it lost more than a third of its reserves, and it learned two words it would rather not have known."
+   },
+   "sections": [
+    {
+     "titre": {
+      "fr": "Ce que le journal a raconté",
+      "en": "What the paper reported"
+     },
+     "paragraphes": [
+      {
+       "fr": "L'édition n° 34 annonce la chose sobrement : « La sécheresse s'installe : Les ressources du pays ne se renouvellent plus pendant deux jours. » Le lendemain, l'édition n° 35 trouve la formule de la semaine : « Les sondeurs notent un coup de froid : la satisfaction passe à 68 % (−11). » Un coup de froid, en pleine sécheresse. La citation du jour donne le ton : « Nous traversons une mauvaise passe. » Le 13, une fois la pluie revenue dans les règles, le président Niwata assure : « Ce n'est pas une crise, c'est un redémarrage lent. »",
+       "en": "Issue no. 34 broke the news soberly: “Drought sets in: The country's resources will not renew for two days.” The next day, issue no. 35 found the phrase of the week: “Pollsters report a cold snap: satisfaction moves to 68% (−11).” A cold snap, in the middle of a drought. The quote of the day set the tone: “We are going through a difficult patch. It is a long patch.” On the 13th, with the rain back in the rulebook, President Niwata offered reassurance: “This is not a crisis. It is a slow reboot.”"
+      }
+     ]
+    },
+    {
+     "titre": {
+      "fr": "Quarante-huit heures, relevé par relevé",
+      "en": "Forty-eight hours, reading by reading"
+     },
+     "liste": [
+      {
+       "fr": "10 novembre, 20 h : réserves nationales à 80 %, satisfaction 83 %, peur 0 %. Aucune catastrophe dans les fichiers publiés depuis le 9 octobre.",
+       "en": "10 November, 8 pm: national reserves at 80%, satisfaction 83%, fear 0%. No disaster in any file published since 9 October."
+      },
+      {
+       "fr": "11 novembre, 9 h : la peur vaut toujours 0 dans les six régions.",
+       "en": "11 November, 9 am: fear still stands at 0 in all six regions."
+      },
+      {
+       "fr": "10 h : la sécheresse commence. Dans le même relevé, la peur passe de 0 à 1 (sur 255) dans cinq régions sur six.",
+       "en": "10 am: the drought begins. In the same reading, fear moves from 0 to 1 (out of 255) in five regions out of six."
+      },
+      {
+       "fr": "11 novembre, 20 h : peur 2 %, réserves 70 %, satisfaction 79 %.",
+       "en": "11 November, 8 pm: fear 2%, reserves 70%, satisfaction 79%."
+      },
+      {
+       "fr": "12 novembre, 20 h : peur 6 %, réserves 50 %, satisfaction 68 %. Le pays n'atteint plus que 75 % de son objectif.",
+       "en": "12 November, 8 pm: fear 6%, reserves 50%, satisfaction 68%. The country now meets only 75% of its target."
+      },
+      {
+       "fr": "13 novembre, 9 h : dernière heure de sécheresse. La peur moyenne des six régions atteint son plus haut, 7,3 %.",
+       "en": "13 November, 9 am: the last hour of drought. Average fear across the six regions peaks at 7.3%."
+      },
+      {
+       "fr": "10 h : pour la première fois en 48 heures, la peur ne monte nulle part ; elle recule au Barrage.",
+       "en": "10 am: for the first time in 48 hours, fear rises nowhere; it falls in the Dam."
+      },
+      {
+       "fr": "13 novembre, 20 h : peur 6 %, réserves remontées à 55 %, satisfaction 63 %, objectif atteint à 71 %.",
+       "en": "13 November, 8 pm: fear 6%, reserves back up to 55%, satisfaction 63%, target met at 71%."
+      }
+     ]
+    },
+    {
+     "titre": {
+      "fr": "Ce que disent les règles, et ce qu'elles taisent",
+      "en": "What the rules say, and what they leave out"
+     },
+     "paragraphes": [
+      {
+       "fr": "Les règles publiques donnent à la sécheresse un seul effet : pendant 48 heures, « les ressources ne se régénèrent plus ». C'est l'épidémie, pas la sécheresse, dont elles disent que « la peur monte ». Les chiffres disent autre chose : la peur a commencé à monter dans l'heure même où la sécheresse a commencé, elle a monté chaque jour, et elle a cessé de monter l'heure où la sécheresse a pris fin. Nous en concluons que la sécheresse fait peur, un peu. Le mécanisme exact n'est pas publié.",
+       "en": "The public rules give the drought a single effect: for 48 hours, “resources no longer regenerate”. It is the epidemic, not the drought, that they say makes “fear rise”. The figures say otherwise: fear began to rise in the very hour the drought began, it rose every day, and it stopped rising in the hour the drought ended. We conclude that the drought is frightening, slightly. The exact mechanism is not published."
+      },
+      {
+       "fr": "Les règles disent aussi que chaque citoyen perçoit une « menace (tempête…) » et qu'il a, tirée au sort, une « tolérance à la peur ». Cela colle avec l'éventail du 13 au soir : selon le citoyen, la peur va de 0 à 11 %. Personne n'a paniqué.",
+       "en": "The rules also say that each citizen perceives a “threat (storm…)” and has a randomly drawn “tolerance of fear”. That fits the spread on the evening of the 13th: depending on the citizen, fear ranges from 0 to 11%. Nobody panicked."
+      }
+     ]
+    },
+    {
+     "titre": {
+      "fr": "L'affaire des ventilateurs",
+      "en": "The matter of the fans"
+     },
+     "paragraphes": [
+      {
+       "fr": "Dans notre monde, une période sèche et chaude se lit dans les ventes de ventilateurs et de climatiseurs, puis sur la facture d'électricité. Microcontrôland a sa facture, mesurée au mur par le compteur d'une prise connectée, relevé chaque heure. Avant la sécheresse (11 novembre, de 0 h à 10 h) : 6,4 W en moyenne. Pendant les 48 heures : 6,3 W. Après (13 novembre, de 10 h à 20 h) : 6,3 W. Si la sécheresse a changé quelque chose, c'est à la baisse, d'un dixième de watt, et ce dixième ne revient pas quand elle s'arrête : autant dire rien. Pendant toute la crise, les cartes sont restées entre 61 et 70 °C.",
+       "en": "In our world, a hot dry spell shows up in sales of fans and air conditioners, and then on the electricity bill. Microcontrôland has a bill too, measured at the wall by the meter of a smart plug, read every hour. Before the drought (11 November, midnight to 10 am): 6.4 W on average. During the 48 hours: 6.3 W. After (13 November, 10 am to 8 pm): 6.3 W. If the drought changed anything, it was downwards, by a tenth of a watt, and that tenth did not come back when the drought ended: which is to say, nothing. Throughout the crisis, the boards stayed between 61 and 70 °C."
+      },
+      {
+       "fr": "Il n'y a ni ventilateur ni climatiseur à vendre dans la République, et personne pour en vouloir : la sécheresse y vide les réserves, elle ne fait pas monter la température. Le seul gagnant apparent est le Barrage, région de l'électricité : le 12, le journal note qu'avec 71 % de satisfaits il « fait figure d'exception ». Nous ne savons pas pourquoi. Nous pouvons seulement exclure les climatiseurs.",
+       "en": "There are no fans or air conditioners for sale in the Republic, and no one to want one: there, a drought empties the reserves; it does not raise the temperature. The only apparent winner is the Dam, the electricity region: on the 12th the paper noted that, at 71% satisfied, it was “the exception”. We do not know why. We can only rule out air conditioning."
+      }
+     ]
+    },
+    {
+     "titre": {
+      "fr": "Deux mots de plus",
+      "en": "Two more words"
+     },
+     "paragraphes": [
+      {
+       "fr": "Les règles le disent : « Une idée n'entre dans la langue que lorsque le pays l'a vécue. » Le 11 novembre, l'idée de « sécheresse » entre dans la langue (relevé du soir : « sousou », aucune région d'accord avec une autre). Le 13, c'est au tour de la « faim » (« wanou »), le jour où le pays n'atteint plus que 71 % de son objectif. L'idée de « peur », elle, n'est toujours pas entrée : à 7 %, le pays n'a visiblement pas vécu assez de peur pour avoir besoin d'un mot.",
+       "en": "The rules say so: “An idea enters the language only once the country has lived it.” On 11 November, the idea of “drought” entered the language (evening reading: “sousou”, no two regions agreeing). On the 13th it was the turn of “hunger” (“wanou”), on the day the country met only 71% of its target. The idea of “fear” has still not entered: at 7%, the country has evidently not lived enough fear to need a word for it."
+      }
+     ]
+    },
+    {
+     "titre": {
+      "fr": "Ce que l'on ne sait pas",
+      "en": "What we do not know"
+     },
+     "paragraphes": [
+      {
+       "fr": "Nous ne savons pas pourquoi la satisfaction continue de baisser après la fin de la sécheresse (68 % le 12, 63 % le 13), alors que les réserves remontent. Le cuivre recule en Bourse depuis trois jours, et les fichiers ne permettent pas de séparer les deux causes.",
+       "en": "We do not know why satisfaction kept falling after the drought ended (68% on the 12th, 63% on the 13th) while the reserves were recovering. Copper has fallen on the Bourse for three days running, and the files do not allow the two causes to be separated."
+      },
+      {
+       "fr": "Nous ne savons pas non plus si la sécheresse pèsera sur le vote du 14 novembre, dont la campagne s'est ouverte le 13 à midi avec six candidats. Nous le saurons après le scrutin, et pas avant.",
+       "en": "Nor do we know whether the drought will weigh on the vote of 14 November, whose campaign opened at noon on the 13th with six candidates. We will know after the ballot, and not before."
+      }
+     ]
+    }
+   ],
+   "verdict": {
+    "fr": "La première sécheresse de la République n'a fait vendre aucun ventilateur : la prise n'a pas bougé, les cartes non plus. Elle a vidé les réserves de 80 à 50 %, fait monter la peur jusqu'à 7 %, ce que les règles ne promettaient pas, et appris au pays les mots « sécheresse » et « faim ». Le président parle d'un redémarrage lent. Le journal, lui, a parlé d'un coup de froid.",
+    "en": "The Republic's first drought sold no fans: the plug did not move, and neither did the boards. It drained the reserves from 80% to 50%, pushed fear up to 7%, which the rules had not promised, and taught the country the words “drought” and “hunger”. The president speaks of a slow reboot. The paper, for its part, spoke of a cold snap."
+   },
+   "sources": [
+    {
+     "fr": "Édition n° 34 (11 novembre 2026) : « La sécheresse s'installe »",
+     "en": "Issue no. 34 (11 November 2026): “Drought sets in”",
+     "url": "https://www.microcontroland.org/texte/34.html"
+    },
+    {
+     "fr": "Édition n° 35 (12 novembre) : « un coup de froid »",
+     "en": "Issue no. 35 (12 November): “a cold snap”",
+     "url": "https://www.microcontroland.org/texte/35.html"
+    },
+    {
+     "fr": "Édition n° 36 (13 novembre) : « un redémarrage lent »",
+     "en": "Issue no. 36 (13 November): “a slow reboot”",
+     "url": "https://www.microcontroland.org/texte/36.html"
+    },
+    {
+     "fr": "Fichier brut du 11 novembre (début de la sécheresse, relevés horaires, prise)",
+     "en": "Raw file for 11 November (start of the drought, hourly readings, plug)",
+     "url": "https://donnees.microcontroland.org/donnees/ere-001/quotidien/2026-11-11.json"
+    },
+    {
+     "fr": "Fichier brut du 12 novembre (relevés horaires, prise)",
+     "en": "Raw file for 12 November (hourly readings, plug)",
+     "url": "https://donnees.microcontroland.org/donnees/ere-001/quotidien/2026-11-12.json"
+    },
+    {
+     "fr": "Fichier brut du 13 novembre (fin de la sécheresse, langue, état civil)",
+     "en": "Raw file for 13 November (end of the drought, language, civil register)",
+     "url": "https://donnees.microcontroland.org/donnees/ere-001/quotidien/2026-11-13.json"
+    },
+    {
+     "fr": "Fichier brut du 10 novembre (la veille)",
+     "en": "Raw file for 10 November (the day before)",
+     "url": "https://donnees.microcontroland.org/donnees/ere-001/quotidien/2026-11-10.json"
+    },
+    {
+     "fr": "Les règles du monde : les catastrophes, les émotions, la langue",
+     "en": "The rules of the world: disasters, emotions, language",
+     "url": "https://www.microcontroland.org/regles.html"
+    }
+   ],
+   "rectificatifs": []
   }
  ]
 }
