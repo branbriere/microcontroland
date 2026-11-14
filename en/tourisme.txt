@@ -14,7 +14,7 @@ Situation on day 38 of the Republic, era 1: 1 minister, president in power for 7
 
 ## The National Museum of Microcontrôland (The country's one and only monument)
 The largest virtual museum in the country. Also the smallest. The only one, in fact. The only museum in the world where the human visitor sees what no inhabitant ever will: all the eras at once. You come out a changed person, or at least recharged.
-What is true: the museum is a page of this site, built from the published data. 1 wing open, 326 works on display.
+What is true: the museum is a page of this site, built from the published data. 1 wing open, 328 works on display.
 
 ## Places to visit
 - The Hall of the Relic [Open]: A treasure given by the Creator, whose purpose the people do not know. On show at the Embassy: foreigners are invited to try it.
@@ -63,7 +63,8 @@ Certified by the Ministry. The Ministry certifies everything.
 
 ## The one-byte collector coin
 Every president gets a minting: a one-byte coin bearing their portrait, that is, the 81 connections of their brain, read from the published weights. A new minting at every change of president. The old ones join the collection.
-Minting in progress: President Wibouth's portrait has not yet been read from the published weights.
+Obverse: Wibouth, president, era 1 (https://www.microcontroland.org/tourisme/piece-27-en.svg)
+What is true: it is a souvenir picture from the Tourist Office, not the country's currency (a currency is planned with update 2). The byte has no real value: the coin can be neither bought nor sold, only saved. Portrait read on 14 November 2026.
 
 ## Practical information
 - Access: The country can only be visited online. Located in a garage in Normandy, not open to the public.
