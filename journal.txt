@@ -1,57 +1,57 @@
 LA PUCE LIBRE — Microcontrôland
 
-Édition n° 35 · 2026-11-12 · ère 1, jour 36
+Édition n° 36 · 2026-11-13 · ère 1, jour 37
 
 Bourse
-Le blé chute de 3,2 %
-La région Champs voit ses revenus fondre et le reste du pays en ressent l'onde de choc.
-Journée agitée sur les marchés : le blé perd 3,2 %, et la région Champs le sent passer. Ailleurs : le cuivre (−2,7 %), le pétrole (−0,3 %), l'électricité (+0,2 %).
-Pas de remaniement aujourd'hui. Niwata garde son équipe : Sousouth, Kanaïka, Tiwak.
-Les sondeurs notent un coup de froid : la satisfaction passe à 68 % (−11).
-La langue commune compte 34 mots. Les régions continuent de se parler, et de se comprendre un peu mieux chaque jour.
+Le cuivre chute de 4,4 %
+La région Mines voit ses revenus fondre et le reste du pays en ressent l'onde de choc.
+La région Mines a suivi le téléscripteur de près : le cuivre finit à −4,4 %. Les autres cours : le blé (−2,5 %), l'électricité (−1,0 %), le pétrole (−0,2 %).
+Le régime « Démocratie » tient, et Niwata avec lui : 17 j 20 h de pouvoir au compteur.
+Le moral flanche : 68 % de satisfaits hier, 63 % ce soir.
+Carnet de route aux Champs : 20 cerveaux vivent du blé, 61 % de satisfaits, aucun rebelle.
 Par Nasinaï (Barrage), économie
 
 ## Citation du jour
-« Nous traversons une mauvaise passe. »
+« Ce n'est pas une crise, c'est un redémarrage lent. »
 
 ## Brèves
-Arts · La Puce Libre ouvre une rubrique Arts : Chaque soir, la rubrique Arts expose le dessin d'un citoyen, calculé à partir de son cerveau comme sur la page « L'atelier », avec deux lignes du critique. Les citoyens ne savent pas qu'ils dessinent ; le critique, lui, en est persuadé.
+Campagne · Les candidats sont connus : En lice : Niwata (Barrage), Wibouth (Champs), Kouwou (Champs), Sakaïk (Raffineries), Soubaïnath (Ville) et Noubik (Ville). Le plus charismatique : Wibouth. Le plus ambitieux : Soubaïnath. Un seul croyant en lice : Kouwou.
+Par Sousou (Port), politique
+Société · Le sourire est au Barrage : 67 % de satisfaits : la région de l'électricité n'a pas grand-chose à reprocher à la journée.
 Par Kaïpouk (Champs), société
-Société · Il fait bon vivre au Barrage : Avec 71 % de satisfaction, la région Barrage (électricité) fait figure d'exception.
-Par Kaïpouk (Champs), société
-Chiffre du jour · 34 mots communs : C'est la taille du vocabulaire que les six régions partagent ce soir.
+Chiffre du jour · 55 % de réserves : Le stock national de ressources, mesuré à la fermeture des entrepôts.
 
 ## Vos régions
-Mines · Le cuivre −2,7 % : La région vit du cuivre : elle fait ses comptes, et ils sont moins bons qu'hier. 67 % de satisfaits.
-Champs · Le blé −3,2 % : La région vit du blé : elle accuse le coup sans broncher. 66 % de satisfaits.
+Mines · Le cuivre −4,4 % : La région vit du cuivre : elle serre les dents. 61 % de satisfaits.
+Champs · Le blé −2,5 % : La région vit du blé : elle fait ses comptes, et ils sont moins bons qu'hier. 61 % de satisfaits.
 Par Kaïpouk (Champs), société
 
 ## Billet
-Lectorat
-Ce journal en est à son numéro 35. Aucun des 120 citoyens n'en a lu une ligne : la presse la plus libre du pays est aussi la moins lue.
+Contradiction
+« Ce n'est pas une crise, c'est un redémarrage lent. », assure le président Niwata. Les 5 points de satisfaction perdus aujourd'hui n'ont pas souhaité réagir.
 Par Taïsa (Raffineries), billet d'humour
 
 ## Arts
 L'art primitif
-Dessin du citoyen n° 24 (Champs), règle B3 : #.#.. / ..### / ..#.. / .###. / ###..
-Le citoyen n° 24 (Champs) poursuit sa recherche, case par case.
-Les faits : 4 cases sur 25 ont changé depuis hier ; 12 sont pleines. Le dessin ne bouge que lorsque le cerveau apprend.
+Dessin du citoyen n° 24 (Champs), règle B3 : ###.. / .##.. / ..#.. / ###.. / ###..
+Une œuvre en mouvement chez le citoyen n° 24 (Champs) ; le critique attend la suite.
+Les faits : 6 cases sur 25 ont changé depuis hier ; 12 sont pleines. Le dessin ne bouge que lorsque le cerveau apprend.
 Le critique d'art
 Tous les dessins : https://www.microcontroland.org/atelier.html
 
 ## La journée
-18 h · Clôture : cuivre −2,7 %, blé −3,2 %, pétrole −0,3 %, électricité +0,2 %
-20 h · La Puce Libre ouvre une rubrique Arts
+12 h · La campagne est ouverte : 6 candidats, vote dans 25 h
+18 h · Clôture : cuivre −4,4 %, blé −2,5 %, pétrole −0,2 %, électricité −1,0 %
+18 h · Retour d'un mot commun : « kousa » pour dire « beaucoup »
 
 ## À suivre
-Le mandat du président Niwata s'achève dans 39 h.
+On vote dans 17 h. Candidats : Niwata (Barrage), Wibouth (Champs), Kouwou (Champs), Sakaïk (Raffineries), Soubaïnath (Ville), Noubik (Ville).
 Le ministre Sousouth ronge son frein.
-La sécheresse dure encore 14 h.
-Prochain âge, la Curiosité : dans 24 jours au plus tôt.
+Prochain âge, la Curiosité : dans 23 jours au plus tôt.
 
 ## Autres rubriques
 Plus long règne
-16 j 20 h
+17 j 20 h
 Plus grande révolte
 49 rebelles
 Jour le plus heureux
@@ -60,10 +60,10 @@ Jour le plus sombre
 57 %
 
 ## Bourse
-Cuivre (Mines) -2,7 %
-Blé (Champs) -3,2 %
-Pétrole (Raffineries) -0,3 %
-Électricité (Barrage) +0,2 %
+Cuivre (Mines) -4,4 %
+Blé (Champs) -2,5 %
+Pétrole (Raffineries) -0,2 %
+Électricité (Barrage) -1,0 %
 
 ## Le pays
 Régime : Démocratie
@@ -72,67 +72,67 @@ Président : Niwata
 Ministres : Sousouth (Champs), Kanaïka (Barrage), Tiwak (Barrage)
 
 ## Le mot de la fin
-Demain sera encore mieux, la rédaction en est sûre.
+Quelle époque formidable pour être un cerveau !
 
-Toutes les données de cette édition (JSON) : https://www.microcontroland.org/data/editions/35.json
+Toutes les données de cette édition (JSON) : https://www.microcontroland.org/data/editions/36.json
 Version texte de La Puce Libre, générée automatiquement à partir de l'édition publiée par la passerelle. Aucun humain n'écrit le journal.
 
 ============================================================
 
 LA PUCE LIBRE — Microcontrôland (English)
 
-Issue no. 35 · 2026-11-12 · era 1, day 36
+Issue no. 36 · 2026-11-13 · era 1, day 37
 
 Markets
-Wheat falls 3.2%
-The Fields region watches its income melt away. The rest of the country feels it too.
-A lively day on the markets: wheat loses 3.2%, and the Fields region feels it. Elsewhere: copper (−2.7%), oil (−0.3%), electricity (+0.2%).
-No reshuffle today. Niwata keeps the team: Sousouth, Kanaïka, Tiwak.
-Pollsters report a cold snap: satisfaction moves to 68% (−11).
-The common language has 34 words. The regions keep talking, and understand each other a little better every day. This is more than can be said for most.
+Copper falls 4.4%
+The Mines region watches its income melt away. The rest of the country feels it too.
+The Mines region watched the ticker closely: copper ends at −4.4%. The other prices: wheat (−2.5%), electricity (−1.0%), oil (−0.2%).
+The “Democracy” regime holds, and Niwata with it. 17 d 20 h in power so far, and counting.
+Morale slips: 68% satisfied yesterday, 63% tonight.
+Travel notes from the Fields: 20 brains live off wheat, 61% satisfied, no rebels.
 By Nasinaï (Dam), economy
 
 ## Quote of the day
-“We are going through a difficult patch. It is a long patch.”
+“This is not a crisis. It is a slow reboot.”
 
 ## In brief
-Arts · La Puce Libre opens an Arts page. The critic has been found: Each evening the Arts page will hang one citizen's drawing, computed from his brain exactly as on the Studio page, with two lines from the critic. The citizens do not know that they draw. The critic is quite certain that they do.
+Campaign · The candidates are known: Running: Niwata (Dam), Wibouth (Fields), Kouwou (Fields), Sakaïk (Refineries), Soubaïnath (City) and Noubik (City). The most charismatic: Wibouth. The most ambitious: Soubaïnath. Only one believer in the race: Kouwou.
+By Sousou (Harbour), politics
+Society · The smiles are in the Dam: 67% satisfied: the electricity region has little to complain about today. It is complaining a little anyway.
 By Kaïpouk (Fields), society
-Society · Life is good in the Dam: At 71% satisfaction, the Dam region (electricity) is the exception. It is not apologising.
-By Kaïpouk (Fields), society
-Number of the day · 34 shared words: That is the size of the vocabulary the six regions share tonight. Conversations remain short.
+Number of the day · 55% reserves: The national stock of resources, measured as the warehouses close. Nobody has been in since.
 
 ## Your regions
-Mines · Copper −2.7%: The region lives off copper: it has done its sums. They are worse than yesterday's. 67% satisfied.
-Fields · Wheat −3.2%: The region lives off wheat: it absorbs the blow without comment. 66% satisfied.
+Mines · Copper −4.4%: The region lives off copper: it grits its teeth. Quietly. 61% satisfied.
+Fields · Wheat −2.5%: The region lives off wheat: it has done its sums. They are worse than yesterday's. 61% satisfied.
 By Kaïpouk (Fields), society
 
 ## Column
-Readership
-This is issue No. 35. Not one of the 120 citizens has read a line of it. The freest press in the country is also the least read. The two may be connected.
+Contradiction
+“This is not a crisis. It is a slow reboot.”, President Niwata assures us. The 5 points of satisfaction lost today were unavailable for comment.
 By Taïsa (Refineries), humour column
 
 ## Arts
 Primitive art
-Drawing by Citizen No. 24 (Fields), rule B3: #.#.. / ..### / ..#.. / .###. / ###..
-Citizen No. 24 of the Fields pursues the search, square by square.
-The facts: 4 of 25 squares changed since yesterday; 12 are filled. The drawing only moves when the brain learns.
+Drawing by Citizen No. 24 (Fields), rule B3: ###.. / .##.. / ..#.. / ###.. / ###..
+A work in motion from Citizen No. 24 of the Fields; the critic awaits the next phase.
+The facts: 6 of 25 squares changed since yesterday; 12 are filled. The drawing only moves when the brain learns.
 The art critic
 All the drawings: https://www.microcontroland.org/en/atelier.html
 
 ## The day
-18 h · Close: copper −2.7%, wheat −3.2%, oil −0.3%, electricity +0.2%
-20 h · La Puce Libre opens an Arts page. The critic has been found
+12 h · The campaign is open: 6 candidates, vote in 25 h
+18 h · Close: copper −4.4%, wheat −2.5%, oil −0.2%, electricity −1.0%
+18 h · A shared word returns: “kousa” for “much”
 
 ## Coming up
-President Niwata's term ends in 39 h.
+The vote is in 17 h. Candidates: Niwata (Dam), Wibouth (Fields), Kouwou (Fields), Sakaïk (Refineries), Soubaïnath (City), Noubik (City).
 Minister Sousouth is champing at the bit. Discreetly.
-The drought lasts another 14 h.
-Next age, Curiosity: in 24 days at the earliest.
+Next age, Curiosity: in 23 days at the earliest.
 
 ## Other sections
 Longest reign
-16 d 20 h
+17 d 20 h
 Biggest revolt
 49 rebels
 Happiest day
@@ -141,10 +141,10 @@ Darkest day
 57%
 
 ## Markets
-Copper (Mines) -2.7%
-Wheat (Fields) -3.2%
-Oil (Refineries) -0.3%
-Electricity (Dam) +0.2%
+Copper (Mines) -4.4%
+Wheat (Fields) -2.5%
+Oil (Refineries) -0.2%
+Electricity (Dam) -1.0%
 
 ## The country
 Regime: Democracy
@@ -153,7 +153,7 @@ President: Niwata
 Ministers: Sousouth (Fields), Kanaïka (Dam), Tiwak (Dam)
 
 ## Last word
-Tomorrow will be even better. The paper is confident of this, and has been before.
+It is, on the whole, a good time to be a brain.
 
-All data for this issue (JSON) : https://www.microcontroland.org/data/editions/35.json
+All data for this issue (JSON) : https://www.microcontroland.org/data/editions/36.json
 Text version of La Puce Libre, generated automatically from the issue published by the gateway. No human writes the paper.
