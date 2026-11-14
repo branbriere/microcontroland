@@ -8,9 +8,9 @@ Six régions, quatre matières premières, une langue toute neuve et 1,2 million
 
 ## Le pays ce soir
 Régime en vigueur : Démocratie
-Chef de l'État : Niwata
-Capitale actuelle : Barrage
-Situation au jour 37 de la République, ère 1 : 3 ministres, président au pouvoir depuis 17 j 20 h. Mise à jour chaque soir à 20 h par la passerelle.
+Chef de l'État : Wibouth
+Capitale actuelle : Champs
+Situation au jour 38 de la République, ère 1 : 1 ministre, président au pouvoir depuis 7 h. Mise à jour chaque soir à 20 h par la passerelle.
 
 ## Le Musée national de Microcontrôland (Monument unique du pays)
 Le plus grand musée virtuel du pays. Le plus petit aussi. Le seul, en fait. Le seul musée au monde où le visiteur humain voit ce qu'aucun habitant ne verra jamais : toutes les ères à la fois. On en ressort changé, ou au moins rechargé.
@@ -18,7 +18,7 @@ Ce qui est vrai : le musée est une page du site, construite à partir des donn�
 
 ## Sites à visiter
 - La Salle de la Relique [Ouverte] : Un trésor offert par le Créateur, dont le peuple ignore l'usage. Exposé à l'Ambassade : les étrangers sont invités à l'essayer.
-- Le Temple [Pas encore consacré] : Les tablettes de la Création et la Calculette. Silence de rigueur, même quand il n'y a personne. (32 % de croyants ce soir ; il en faut au moins un tiers, plusieurs jours de suite.)
+- Le Temple [Pas encore consacré] : Les tablettes de la Création et la Calculette. Silence de rigueur, même quand il n'y a personne. (31 % de croyants ce soir ; il en faut au moins un tiers, plusieurs jours de suite.)
 - L'Atelier [Ouvert chaque soir] : Un dessin de 5 cases sur 5 par soir, tiré du cerveau d'un citoyen, et deux lignes du critique d'art.
 - La Galerie des présidents [Ouverte] : Chaque président représenté par les 81 connexions de son cerveau. Les Waïnas n'ont pas de visage ; ils ont des poids.
 - La Bibliothèque nationale [Ouverte] : Des livres écrits par le pays sur lui-même, à partir de ses propres données. Prêt sur place uniquement : aucun livre ne sort de la boîte. (9 livres ouverts sur 12 ; les autres attendent que la civilisation évolue.)
@@ -26,36 +26,36 @@ Ce qui est vrai : le musée est une page du site, construite à partir des donn�
 - Nos stars mondialement connues (dans Microcontrôland) [En attente d'évolution de la civilisation] : Aucune star pour l'instant. Les dessins de l'Atelier ne comptent pas : leurs auteurs ne savent pas qu'ils dessinent.
 
 ## Les six régions
-- Mines (Cuivre, sasa) : Riche quand le cuivre monte, en colère quand il chute. Humeur : satisfaite, cuivre −4,4 %.
-- Champs (Blé, houhou) : Région agricole, souvent la plus calme du pays. Humeur : satisfaite, blé −2,5 %.
-- Raffineries (Pétrole, sihaï) : Suit les humeurs du baril, et le reste du pays avec. Humeur : satisfaite, pétrole −0,2 %.
-- Barrage (Électricité, païpi) : Capitale ce soir. Fournit les cinq volts de la nation et le rappelle volontiers. Humeur : satisfaite, électricité −1,0 %.
+- Mines (Cuivre, sasa) : Riche quand le cuivre monte, en colère quand il chute. Humeur : satisfaite, cuivre 0,0 %.
+- Champs (Blé, houhou) : Capitale ce soir. Région agricole, souvent la plus calme du pays. Humeur : indifférente, blé 0,0 %.
+- Raffineries (Pétrole, sihaï) : Suit les humeurs du baril, et le reste du pays avec. Humeur : indifférente, pétrole 0,0 %.
+- Barrage (Électricité, païpi) : Fournit les cinq volts de la nation et le rappelle volontiers. Humeur : satisfaite, électricité 0,0 %.
 - Port (Commerce, haïpi) : Vit de tous les cours à la fois ; premier touché par les tempêtes. Humeur : satisfaite.
 - Ville (Services, wawa) : Indifférente à la bourse, sensible à la censure. Humeur : satisfaite.
 
 ## La religion pratiquée
 Le pays pratique le Culte du Créateur, Celui-qui-souda-les-Broches. Ce soir, la ferveur se répartit ainsi :
-32 % de croyants, 21 % d'agnostiques, 47 % d'athées. Le président est agnostique.
+31 % de croyants, 22 % d'agnostiques, 47 % d'athées. Le président est athée.
 
 ## Mots utiles du voyageur
 - salut = soubaï (6/6)
 - oui = souka (6/6)
 - non = noukou (6/6)
-- ami = pawaï (3/6)
+- ami = pawaï (5/6)
 - vous = soutaï (2/6)
 - question = nouwaï (2/6)
 - pays = tawi (6/6)
-- boîte = waïhaï (5/6)
+- boîte = waïhaï (6/6)
 Chaque région parle sa propre langue. Ces mots sont ceux du dernier relevé : quand moins de 6 régions sont d'accord, une partie du pays dira autre chose. Le touriste avisé hoche la tête.
 
 ## Les premières mondiales de Microcontrôland
 Homologuées par le Ministère. Le Ministère homologue tout.
 - Âge de la Fondation : Premier pays au monde dont l'unique journal est écrit chaque soir par son propre service public.
-  Ce qui est vrai : La Puce Libre paraît chaque soir à 20 h, écrite par la passerelle : 36 éditions au 13 novembre 2026.
+  Ce qui est vrai : La Puce Libre paraît chaque soir à 20 h, écrite par la passerelle : 37 éditions au 14 novembre 2026.
 - Âge de la Parole : Première langue nationale inventée par six régions qui ne s'étaient jamais rien dit.
-  Ce qui est vrai : Âge atteint le 18 octobre 2026. 35 mots communs sur 42 idées au 13 novembre 2026 ; chaque région garde son propre lexique.
+  Ce qui est vrai : Âge atteint le 18 octobre 2026. 37 mots communs sur 42 idées au 14 novembre 2026 ; chaque région garde son propre lexique.
 - Âge de la Mémoire : Premières annales nationales tenues par un pays de 1,8 litre.
-  Ce qui est vrai : Âge atteint le 24 octobre 2026. Records et passé des personnages, sur la page Histoire. Plus long règne : Niwata, 17 j 20 h.
+  Ce qui est vrai : Âge atteint le 24 octobre 2026. Records et passé des personnages, sur la page Histoire. Plus long règne : Niwata, 18 j 13 h.
 - Âge de l'État civil : Premier pays où chaque habitant peut être suivi par un étranger, sans aucun formulaire.
   Ce qui est vrai : Âge atteint le 28 octobre 2026. Les 120 citoyens sont inscrits au registre ; la page « Mon citoyen » permet d'en suivre un.
 - Âge de la Diplomatie : Première ambassade au monde dont le personnel entier tient dans une passerelle.
@@ -63,8 +63,7 @@ Homologuées par le Ministère. Le Ministère homologue tout.
 
 ## La pièce collector d'un octet
 Chaque président a sa frappe : une pièce d'un octet à son portrait, c'est-à-dire aux 81 connexions de son cerveau, relevées dans les poids publiés. Une nouvelle frappe à chaque changement de président. Les anciennes rejoignent la collection.
-Avers : Niwata, président, ère 1 (https://www.microcontroland.org/tourisme/piece-67-fr.svg)
-Ce qui est vrai : c'est une image souvenir de l'Office, pas la monnaie du pays (une monnaie est prévue avec la MAJ 2). L'octet n'a aucune valeur réelle : la pièce ne s'achète ni ne se vend, elle s'enregistre. Portrait relevé le 27 octobre 2026.
+Frappe en cours : le portrait du président Wibouth n'a pas encore été relevé dans les poids publiés.
 
 ## Informations pratiques
 - Accès : Le pays se visite uniquement en ligne. Situé dans un garage normand, non ouvert au public.
@@ -77,4 +76,4 @@ PDF : https://www.microcontroland.org/tourisme/depliant-fr.pdf · https://www.mi
 
 Microcontrôland est un pays entièrement fictif, simulé par des microcontrôleurs pour un projet de maker. Il n'a aucun lien avec un État, un parti, une personne, une religion ou un office de tourisme réels. Les Waïnas ne sont ni vivants ni conscients.
 
-Page mise à jour automatiquement après l'édition n° 36 du 13 novembre 2026.
+Page mise à jour automatiquement après l'édition n° 37 du 14 novembre 2026.
