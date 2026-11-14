@@ -43,10 +43,21 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git commit -q -m "Historique des citoyens (automatique)"
-          for i in 1 2 3; do
-            git push && echo "ok=1" >> "$GITHUB_ENV" && exit 0
-            sleep $((i * 10))
-            git pull --rebase -q origin main
+          # Si une autre action a publié entre-temps : on repart de la dernière version du site, on régénère et on réessaie
+          # (correctif du 13/11/2026 : après l'édition de 20 h, une dizaine d'actions publient en même temps ; l'ancien
+          # « git pull --rebase » suivi de 3 essais échouait ces soirs-là). Pauses de 15 à 75 s, plus un peu de hasard.
+          for i in 1 2 3 4 5; do
+            git push -q origin HEAD:main && echo "ok=1" >> "$GITHUB_ENV" && exit 0
+            sleep $((i * 15 + RANDOM % 10))
+            git fetch -q origin main
+            git reset -q --hard origin/main
+            python3 .github/historique.py . --attendre 0
+            git add data/historique.json
+            if git diff --cached --quiet; then
+              echo "Rien de nouveau : une autre exécution a déjà publié ces fichiers."
+              exit 0
+            fi
+            git commit -q -m "Historique des citoyens (automatique)"
           done
           exit 1
 
