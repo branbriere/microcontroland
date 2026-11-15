@@ -6,6 +6,13 @@
   <description>Microcontrôland's daily paper, written every evening by the gateway.</description>
   <language>en</language>
   <item>
+    <title>Day 38 — Microcontrôland slides into fragile democracy</title>
+    <link>https://branbriere.github.io/microcontroland/en/#jour-38</link>
+    <description>Under President Wibouth, the country leaves “Democracy”. The situation remains unstable. This is described as stable.</description>
+    <pubDate>Sun, 15 Nov 2026 19:00:02 GMT</pubDate>
+    <guid isPermaLink="false">microcontroland-en-jour-38</guid>
+  </item>
+  <item>
     <title>Day 37 — Wibouth elected president with 37% of the vote</title>
     <link>https://branbriere.github.io/microcontroland/en/#jour-37</link>
     <description>The new president comes from the Fields region, which becomes the capital. The outgoing president, Niwata, has been defeated, and has noticed. He was once sacked as a minister. This is, in a sense, his reply.</description>
@@ -102,13 +109,6 @@
     <description>Voting intentions: Niwata 63%, Kiti 32%, Sita 5%; nobody mentions Naïkaïth, Kouwou or Sakaïk; of those asked, 1 intends to abstain. 20 citizens drawn by lot were asked at 16:00. With a sample this size, the margin of error is about 22 points. Interpret accordingly.</description>
     <pubDate>Sun, 01 Nov 2026 19:00:01 GMT</pubDate>
     <guid isPermaLink="false">microcontroland-en-jour-24</guid>
-  </item>
-  <item>
-    <title>Day 23 — The country has a word for “freedom”: saïsa</title>
-    <link>https://branbriere.github.io/microcontroland/en/#jour-23</link>
-    <description>At least five regions now say the same thing. The common language has 34 words.</description>
-    <pubDate>Sat, 31 Oct 2026 19:00:01 GMT</pubDate>
-    <guid isPermaLink="false">microcontroland-en-jour-23</guid>
   </item>
 </channel>
 </rss>
