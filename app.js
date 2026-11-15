@@ -33,6 +33,8 @@
       state: 'État du pays', pres: 'Président', since: 'Au pouvoir depuis', gov: 'Gouvernement', none: 'aucun',
       ministers: (n) => `${n} ministre${n > 1 ? 's' : ''}`, goal: 'Objectif atteint', res: 'Ressources',
       sat: 'Satisfaction', fear: 'Peur', anger: 'Colère', satN: (n) => `Satisfaction, ${n} dernières éditions.`,
+      eco: 'L\'octet', ecoOct: 'Octets', ecoVal: 'Valeur', ecoJob: 'Chômeurs', ecoStrike: 'en grève', ecoGeneral: 'Grève générale en cours.',
+      ecoNote: 'Octets frappés aujourd\'hui par le calcul de chaque région ; valeur d\'un octet au cours de sa matière. L\'octet n\'a de valeur que dans la boîte.',
       market: 'Cours du jour', closed: 'Bourse mondiale fermée aujourd\'hui.', commodity: 'Matière', region: 'Région', close: 'Clôture',
       real: 'Cours réels.', sim: 'Cours simulés.', regions: 'Les régions', mood: 'Humeur', rebels: 'Rebelles',
       system: 'État du système', internet: 'Internet', mkt: 'Bourse du jour', pub: 'Publication', regAnswer: (a, b) => `Régions : ${a}/${b} répondent`,
@@ -59,6 +61,8 @@
       state: 'State of the nation', pres: 'President', since: 'In power for', gov: 'Government', none: 'none',
       ministers: (n) => `${n} minister${n > 1 ? 's' : ''}`, goal: 'Target reached', res: 'Resources',
       sat: 'Satisfaction', fear: 'Fear', anger: 'Anger', satN: (n) => `Satisfaction, last ${n} issues.`,
+      eco: 'The byte', ecoOct: 'Bytes', ecoVal: 'Value', ecoJob: 'Jobless', ecoStrike: 'on strike', ecoGeneral: 'A general strike is under way.',
+      ecoNote: 'Bytes minted today by each region\'s arithmetic; value of one byte at the price of its commodity. The byte is worth something only inside the box.',
       market: 'Today\'s markets', closed: 'World markets were closed today.', commodity: 'Commodity', region: 'Region', close: 'Close',
       real: 'Real prices.', sim: 'Simulated prices.', regions: 'The regions', mood: 'Mood', rebels: 'Rebels',
       system: 'System status', internet: 'Internet', mkt: 'Today\'s market data', pub: 'Publishing', regAnswer: (a, b) => `Regions: ${a}/${b} responding`,
@@ -122,6 +126,17 @@
     const crit = (T(a.critique) || []).map((p) => `<p>${esc(p)}</p>`).join('');
     return `<section class="arts"><span class="k2">${L.arts}</span><h3>${esc(a.titre)}</h3><div class="arts-row"><svg class="arts-g" viewBox="0 0 5 5" role="img" aria-label="${esc(who)}"><rect class="fond" x="0" y="0" width="5" height="5"/>${cells}</svg>` +
       `<div><p class="arts-who">${esc(who)}${a.artiste.nom ? ' · ' + esc(a.artiste.nom) : ''}</p>${crit}<p class="by">${esc(a.signature)} · <a href="atelier.html">${L.artsSee}</a></p></div></div></section>`;
+  }
+
+  // L'octet (MAJ 2, firmware 0.11) : ce que chaque région a frappé aujourd'hui. Absent avant l'ouverture du travail.
+  function ecoHtml(e) {
+    const x = e.economie;
+    if (!x || !(x.regions || []).length) return '';
+    const num = (v) => Number(v).toLocaleString(LANG === 'en' ? 'en-GB' : 'fr-FR');
+    return `<section class="box eco"><h2>${L.eco}</h2>
+      <table><thead><tr><th>${L.region}</th><th class="num">${L.ecoOct}</th><th class="num">${L.ecoVal}</th>${x.chomage ? `<th class="num">${L.ecoJob}</th>` : ''}</tr></thead><tbody>
+      ${x.regions.map((r) => `<tr><td>${esc(rn(r.region))}${r.enGreve ? ` <small class="down">${L.ecoStrike}</small>` : ''}</td><td class="num">${num(r.octets)}</td><td class="num">${Number(r.valeurOctet).toLocaleString(LANG === 'en' ? 'en-GB' : 'fr-FR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>${x.chomage ? `<td class="num">${num(r.chomeursMoyen)}</td>` : ''}</tr>`).join('')}
+      </tbody></table>${x.greveGenerale ? `<p class="note down">${L.ecoGeneral}</p>` : ''}<p class="note">${L.ecoNote}</p></section>`;
   }
 
   function regionsHtml(e) {
@@ -242,6 +257,7 @@
           ${spark(e.satisfaction7j)}
         </section>
         ${e.ages && window.MCL ? `<section class="box"><h2>${L.agesT}</h2>${window.MCL.frise(e)}</section>` : ''}
+        ${ecoHtml(e)}
         <section class="box">
           <h2>${L.market}</h2>
           ${b.fermee ? `<p class="note" style="margin:0">${L.closed}</p>` : `
