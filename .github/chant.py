@@ -13,7 +13,7 @@ Règle C1 v1 (validée par Bran le 5/11/2026, maquette jouable validée le 9/11/
 Le son est fabriqué par le navigateur du visiteur (Web Audio), après un clic : aucun fichier audio, aucun appel extérieur.
 
 Âge : la Fondation (ages.etapes[0]). Le chant commence le soir de la livraison, sans recalcul des soirs passés
-(même règle que les sculptures). La passerelle ne change pas. Licence MIT. Version 1.0, novembre 2026 (firmware 0.10.1).
+(même règle que les sculptures). La passerelle ne change pas. Licence MIT. Version 1.0, novembre 2026 (firmware 0.10.1) ; 1.0.1, 16 novembre 2026 : lien vers L'atelier.
 
   python3 .github/chant.py <racine du site> [--source <dépôt de données ou URL>] [--attendre <secondes>]
 """
@@ -137,7 +137,7 @@ T = {
                   "Chaque région a son timbre : Mines grave, Champs bois, Raffineries métal, Barrage tambour profond, Port grelot, Ville claquement.",
                   "Une région muette cette heure-là ne frappe pas. Rien n'est tiré au hasard : le même jour donne toujours le même chant.",
                   "Il n'y a ni mélodie ni hauteur : c'est le stade primitif. Le son est fabriqué par votre navigateur, aucun fichier audio n'est téléchargé."],
-        "verifier": "Vérifier : {brut} du jour, et {arch} (tous les soirs transcrits).", "brut": "le fichier brut", "arch": "chant.json",
+        "verifier": "Vérifier : {brut} du jour, et {arch} (tous les soirs transcrits).", "brut": "le fichier brut", "arch": "chant.json", "voir": "Voir aussi l'art primitif : <a href=\"atelier.html\">L'atelier</a>.",
         "attente": "Le chant de la place commence avec le premier soir transcrit. Les soirs précédents ne sont pas recalculés.",
         "pied": "Le critique est une rubrique satirique ; les faits qu'il cite sont mesurés.",
         "region": ["Mines", "Champs", "Raffineries", "Barrage", "Port", "Ville"],
@@ -161,7 +161,7 @@ T = {
                   "Each region has its own sound: Mines low, Fields wood, Refineries metal, Dam deep drum, Harbour shaker, City clap.",
                   "A region that is silent that hour does not strike. Nothing is random: the same day always gives the same song.",
                   "There is no melody and no pitch: this is the primitive stage. The sound is made by your browser; no audio file is downloaded."],
-        "verifier": "Check: {brut} of the day, and {arch} (every evening transcribed so far).", "brut": "the raw data file", "arch": "chant.json",
+        "verifier": "Check: {brut} of the day, and {arch} (every evening transcribed so far).", "brut": "the raw data file", "arch": "chant.json", "voir": "See also the primitive art: <a href=\"atelier.html\">The Studio</a>.",
         "attente": "The Song of the Square starts with the first evening transcribed. Earlier evenings are not recomputed.",
         "pied": "The critic is a satirical column; the facts quoted are measured.",
         "region": ["Mines", "Fields", "Refineries", "Dam", "Harbour", "City"],
@@ -324,7 +324,7 @@ def page(jours, latest, lg):
         brut = f'<a href="{A.DONNEES}donnees/ere-{int(a.get("ere") or 1):03d}/quotidien/{A.e(a["date"])}.json">{A.e(t["brut"])}</a>'
         lien_arch = f'<a href="{pre}chant.json">{A.e(t["arch"])}</a>'
         corps.append(f'<h2>{A.e(t["comment"])}</h2><ol>{"".join(f"<li>{A.e(x)}</li>" for x in t["regle"])}</ol>'
-                     f'<p>{t["verifier"].format(brut=brut, arch=lien_arch)}</p>')
+                     f'<p>{t["verifier"].format(brut=brut, arch=lien_arch)}</p><p>{t["voir"]}</p>')
     maj = P["maj_le"].format(n=latest.get("day", "?"), d=A.date_longue(str(latest.get("date", "")), lg))
     return f"""<!doctype html>
 <html lang="{lg}">

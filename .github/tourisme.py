@@ -74,6 +74,7 @@ L = {
         "temple_note": "{c} % de croyants ce soir ; il en faut au moins un tiers, plusieurs jours de suite.",
         "biblio_h": "La Bibliothèque nationale", "biblio_p": "Des livres écrits par le pays sur lui-même, à partir de ses propres données. Prêt sur place uniquement : aucun livre ne sort de la boîte.",
         "biblio_n": "{o} livres ouverts sur {t} ; les autres attendent que la civilisation évolue.",
+        "chant_h": "Le chant de la place", "chant_p": "Chaque heure, les six régions frappent le mot qu'elles ont écrit : six percussions, et l'unisson quand le mot est le même. Partition et lecteur sur place.",
         "atelier_h": "L'Atelier", "atelier_p": "Un dessin de 5 cases sur 5 par soir, tiré du cerveau d'un citoyen, et deux lignes du critique d'art.",
         "galerie_h": "La Galerie des présidents", "galerie_p": "Chaque président représenté par les 81 connexions de son cerveau. Les Waïnas n'ont pas de visage ; ils ont des poids.",
         "archives_h": "Les Archives nationales", "archives_p": "Toutes les éditions de La Puce Libre depuis le jour 1.",
@@ -177,6 +178,7 @@ L = {
         "temple_note": "{c}% believers tonight; it takes at least a third, several days in a row.",
         "biblio_h": "The National Library", "biblio_p": "Books written by the country about itself, from its own data. Reference only: no book ever leaves the box.",
         "biblio_n": "{o} of {t} books open; the others are waiting for the civilisation to evolve.",
+        "chant_h": "The Song of the Square", "chant_p": "Every hour, the six regions beat the word they wrote: six drums, and unison when the word is the same. Score and player on site.",
         "atelier_h": "The Workshop", "atelier_p": "One 5 × 5 drawing every evening, drawn from a citizen's brain, and two lines from the art critic.",
         "galerie_h": "The Gallery of Presidents", "galerie_p": "Every president portrayed by the 81 connections of their brain. The Waïnas have no faces; they have weights.",
         "archives_h": "The National Archives", "archives_p": "Every issue of La Puce Libre since day 1.",
@@ -353,6 +355,7 @@ def ctx(racine):
     latest = lire(racine / "data" / "latest.json", {})
     langue = lire(racine / "data" / "langue.json", {})
     atelier = lire(racine / "atelier.json", {})
+    chant = lire(racine / "chant.json", {}) if (racine / "chant.json").exists() else {}
     galerie = lire(racine / "galerie.json", {})
     musee = lire(racine / "musee.json", {})
     ouvert, etape = diplomatie_ouverte(latest)
@@ -368,7 +371,7 @@ def ctx(racine):
     return {
         "latest": latest, "langue": langue, "mots": mots, "ouvert": ouvert, "etape": etape,
         "dates": dates_des_ages(racine), "musee_ouvert": (racine / "musee.html").exists(), "musee": musee,
-        "atelier": bool(atelier.get("jours")), "galerie": bool(galerie.get("ouvert")), "mandats": galerie.get("mandats") or [],
+        "atelier": bool(atelier.get("jours")), "chant": bool(chant.get("jours")), "galerie": bool(galerie.get("ouvert")), "mandats": galerie.get("mandats") or [],
         "temple": bool((latest.get("temple") or {}).get("ouvert")),
         "biblio": biblio,
     }
@@ -450,6 +453,8 @@ def sites(c, lg):
     ]
     if c["atelier"]:
         out.append((T["chaque_soir"], "on", T["atelier_h"], "atelier.html", T["atelier_p"], ""))
+    if c.get("chant"):
+        out.append((T["chaque_soir"], "on", T["chant_h"], "chant.html", T["chant_p"], ""))
     if c["galerie"]:
         out.append((T["ouverte"], "on", T["galerie_h"], "galerie.html", T["galerie_p"], ""))
     if c["biblio"]:

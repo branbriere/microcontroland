@@ -291,7 +291,7 @@ L = {
                  "La case est pleine si la valeur dépasse la médiane des 25. Seule la couche de sortie apprend : le dessin change quand le cerveau apprend. "
                  "Le cerveau de citoyen d'un président ne calcule ni n'apprend pendant le mandat : son dessin reste figé.",
         "artiste": "L'artiste du soir est le citoyen dont le dessin a le plus changé depuis la veille ; à égalité, ou si rien n'a changé, un roulement selon le jour.",
-        "verifier": "Vérifier : {brut} du jour, et {arch} (tous les soirs exposés).", "brut": "le fichier brut", "arch": "atelier.json",
+        "verifier": "Vérifier : {brut} du jour, et {arch} (tous les soirs exposés).", "brut": "le fichier brut", "arch": "atelier.json", "voir": "Voir aussi la musique primitive : <a href=\"chant.html\">Le chant de la place</a>.",
         "attente": "L'atelier ouvre avec le premier relevé complet des poids des cerveaux (firmware 0.8, à partir du 26 octobre 2026). Les soirs précédents n'ont pas de dessin.",
         "pied": "Le critique est une rubrique satirique ; les faits qu'il cite sont mesurés. Les Waïnas ne sont ni vivants ni conscients, et ils n'ont aucune intention artistique.",
         "maj_le": "Page mise à jour automatiquement après l'édition n° {n} du {d}.",
@@ -314,7 +314,7 @@ L = {
                  "The square is filled if the value is above the median of the 25. Only the output layer learns: the drawing changes when the brain learns. "
                  "A president's citizen brain neither computes nor learns during the term, so that drawing stays frozen.",
         "artiste": "Tonight's artist is the citizen whose drawing changed most since the previous day; on a tie, or if nothing changed, a rotation by day.",
-        "verifier": "Check: {brut} of the day, and {arch} (every evening shown so far).", "brut": "the raw data file", "arch": "atelier.json",
+        "verifier": "Check: {brut} of the day, and {arch} (every evening shown so far).", "brut": "the raw data file", "arch": "atelier.json", "voir": "See also the primitive music: <a href=\"chant.html\">The Song of the Square</a>.",
         "attente": "The Studio opens with the first complete record of the brains' weights (firmware 0.8, from 26 October 2026). Earlier evenings have no drawing.",
         "pied": "The critic is a satirical column; the facts quoted are measured. The Waïnas are neither alive nor conscious, and have no artistic intent.",
         "maj_le": "Page updated automatically after issue no. {n} of {d}.",
@@ -389,7 +389,7 @@ def page(archive, latest, lg):
         brut = f'<a href="{DONNEES}donnees/ere-{int(a.get("ere") or 1):03d}/quotidien/{e(a["date"])}.json">{e(T["brut"])}</a>'
         lien_arch = f'<a href="{pre}atelier.json">{e(T["arch"])}</a>'
         corps.append(f'<h2>{e(T["comment"])}</h2><p>{e(T["regle"])}</p><p>{e(T["artiste"])}</p>'
-                     f'<p>{T["verifier"].format(brut=brut, arch=lien_arch)}</p>')
+                     f'<p>{T["verifier"].format(brut=brut, arch=lien_arch)}</p><p>{T["voir"]}</p>')
     maj = T["maj_le"].format(n=latest.get("day", "?"), d=date_longue(str(latest.get("date", "")), lg))
     return f"""<!doctype html>
 <html lang="{lg}">
