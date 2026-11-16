@@ -7,10 +7,10 @@ Page complète : https://www.microcontroland.org/tourisme.html
 Six régions, quatre matières premières, une langue toute neuve et 1,2 million d'habitants simulés dans 1,8 litre : aucune autre destination n'offre autant de pays par centimètre cube. Réservez dès maintenant. Il n'y a rien à réserver.
 
 ## Le pays ce soir
-Régime en vigueur : Démocratie fragile
+Régime en vigueur : Agitation révolutionnaire
 Chef de l'État : Wibouth
 Capitale actuelle : Champs
-Situation au jour 39 de la République, ère 1 : 1 ministre, président au pouvoir depuis 1 j 7 h. Mise à jour chaque soir à 20 h par la passerelle.
+Situation au jour 40 de la République, ère 1 : 1 ministre, président au pouvoir depuis 2 j 7 h. Mise à jour chaque soir à 20 h par la passerelle.
 
 ## Le Musée national de Microcontrôland (Monument unique du pays)
 Le plus grand musée virtuel du pays. Le plus petit aussi. Le seul, en fait. Le seul musée au monde où le visiteur humain voit ce qu'aucun habitant ne verra jamais : toutes les ères à la fois. On en ressort changé, ou au moins rechargé.
@@ -18,7 +18,7 @@ Ce qui est vrai : le musée est une page du site, construite à partir des donn�
 
 ## Sites à visiter
 - La Salle de la Relique [Ouverte] : Un trésor offert par le Créateur, dont le peuple ignore l'usage. Exposé à l'Ambassade : les étrangers sont invités à l'essayer.
-- Le Temple [Pas encore consacré] : Les tablettes de la Création et la Calculette. Silence de rigueur, même quand il n'y a personne. (33 % de croyants ce soir ; il en faut au moins un tiers, plusieurs jours de suite.)
+- Le Temple [Pas encore consacré] : Les tablettes de la Création et la Calculette. Silence de rigueur, même quand il n'y a personne. (32 % de croyants ce soir ; il en faut au moins un tiers, plusieurs jours de suite.)
 - L'Atelier [Ouvert chaque soir] : Un dessin de 5 cases sur 5 par soir, tiré du cerveau d'un citoyen, et deux lignes du critique d'art.
 - Le chant de la place [Ouvert chaque soir] : Chaque heure, les six régions frappent le mot qu'elles ont écrit : six percussions, et l'unisson quand le mot est le même. Partition et lecteur sur place.
 - La Galerie des présidents [Ouverte] : Chaque président représenté par les 81 connexions de son cerveau. Les Waïnas n'ont pas de visage ; ils ont des poids.
@@ -27,24 +27,24 @@ Ce qui est vrai : le musée est une page du site, construite à partir des donn�
 - Nos stars mondialement connues (dans Microcontrôland) [En attente d'évolution de la civilisation] : Aucune star pour l'instant. Les dessins de l'Atelier ne comptent pas : leurs auteurs ne savent pas qu'ils dessinent.
 
 ## Les six régions
-- Mines (Cuivre, sasa) : Riche quand le cuivre monte, en colère quand il chute. Humeur : en colère, cuivre 0,0 %.
-- Champs (Blé, houhou) : Capitale ce soir. Région agricole, souvent la plus calme du pays. Humeur : en colère, blé 0,0 %.
-- Raffineries (Pétrole, sihaï) : Suit les humeurs du baril, et le reste du pays avec. Humeur : en colère, pétrole 0,0 %.
-- Barrage (Électricité, païpi) : Fournit les cinq volts de la nation et le rappelle volontiers. Humeur : en colère, électricité 0,0 %.
+- Mines (Cuivre, sasa) : Riche quand le cuivre monte, en colère quand il chute. Humeur : en colère, cuivre +0,4 %.
+- Champs (Blé, houhou) : Capitale ce soir. Région agricole, souvent la plus calme du pays. Humeur : en colère, blé −2,2 %.
+- Raffineries (Pétrole, sihaï) : Suit les humeurs du baril, et le reste du pays avec. Humeur : en colère, pétrole −0,6 %.
+- Barrage (Électricité, païpi) : Fournit les cinq volts de la nation et le rappelle volontiers. Humeur : en colère, électricité −1,2 %.
 - Port (Commerce, haïpi) : Vit de tous les cours à la fois ; premier touché par les tempêtes. Humeur : en colère.
 - Ville (Services, wawa) : Indifférente à la bourse, sensible à la censure. Humeur : en colère.
 
 ## La religion pratiquée
 Le pays pratique le Culte du Créateur, Celui-qui-souda-les-Broches. Ce soir, la ferveur se répartit ainsi :
-33 % de croyants, 19 % d'agnostiques, 48 % d'athées. Le président est athée.
+32 % de croyants, 20 % d'agnostiques, 48 % d'athées. Le président est athée.
 
 ## Mots utiles du voyageur
 - salut = soubaï (6/6)
 - oui = souka (6/6)
 - non = noukou (6/6)
-- ami = pawaï (5/6)
+- ami = pawaï (6/6)
 - vous = soutaï (2/6)
-- question = nouwaï (2/6)
+- question = wana (3/6)
 - pays = tawi (6/6)
 - boîte = waïhaï (6/6)
 Chaque région parle sa propre langue. Ces mots sont ceux du dernier relevé : quand moins de 6 régions sont d'accord, une partie du pays dira autre chose. Le touriste avisé hoche la tête.
@@ -52,9 +52,9 @@ Chaque région parle sa propre langue. Ces mots sont ceux du dernier relevé : q
 ## Les premières mondiales de Microcontrôland
 Homologuées par le Ministère. Le Ministère homologue tout.
 - Âge de la Fondation : Premier pays au monde dont l'unique journal est écrit chaque soir par son propre service public.
-  Ce qui est vrai : La Puce Libre paraît chaque soir à 20 h, écrite par la passerelle : 38 éditions au 15 novembre 2026.
+  Ce qui est vrai : La Puce Libre paraît chaque soir à 20 h, écrite par la passerelle : 39 éditions au 16 novembre 2026.
 - Âge de la Parole : Première langue nationale inventée par six régions qui ne s'étaient jamais rien dit.
-  Ce qui est vrai : Âge atteint le 18 octobre 2026. 37 mots communs sur 42 idées au 15 novembre 2026 ; chaque région garde son propre lexique.
+  Ce qui est vrai : Âge atteint le 18 octobre 2026. 37 mots communs sur 42 idées au 16 novembre 2026 ; chaque région garde son propre lexique.
 - Âge de la Mémoire : Premières annales nationales tenues par un pays de 1,8 litre.
   Ce qui est vrai : Âge atteint le 24 octobre 2026. Records et passé des personnages, sur la page Histoire. Plus long règne : Niwata, 18 j 13 h.
 - Âge de l'État civil : Premier pays où chaque habitant peut être suivi par un étranger, sans aucun formulaire.
@@ -78,4 +78,4 @@ PDF : https://www.microcontroland.org/tourisme/depliant-fr.pdf · https://www.mi
 
 Microcontrôland est un pays entièrement fictif, simulé par des microcontrôleurs pour un projet de maker. Il n'a aucun lien avec un État, un parti, une personne, une religion ou un office de tourisme réels. Les Waïnas ne sont ni vivants ni conscients.
 
-Page mise à jour automatiquement après l'édition n° 38 du 15 novembre 2026.
+Page mise à jour automatiquement après l'édition n° 39 du 16 novembre 2026.
