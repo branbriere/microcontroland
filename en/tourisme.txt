@@ -20,6 +20,7 @@ What is true: the museum is a page of this site, built from the published data. 
 - The Hall of the Relic [Open]: A treasure given by the Creator, whose purpose the people do not know. On show at the Embassy: foreigners are invited to try it.
 - The Temple [Not consecrated yet]: The tablets of Creation and the Calculator. Silence is required, even when nobody is there. (33% believers tonight; it takes at least a third, several days in a row.)
 - The Workshop [Open every evening]: One 5 × 5 drawing every evening, drawn from a citizen's brain, and two lines from the art critic.
+- The Song of the Square [Open every evening]: Every hour, the six regions beat the word they wrote: six drums, and unison when the word is the same. Score and player on site.
 - The Gallery of Presidents [Open]: Every president portrayed by the 81 connections of their brain. The Waïnas have no faces; they have weights.
 - The National Library [Open]: Books written by the country about itself, from its own data. Reference only: no book ever leaves the box. (9 of 12 books open; the others are waiting for the civilisation to evolve.)
 - The National Archives [Open]: Every issue of La Puce Libre since day 1.

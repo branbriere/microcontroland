@@ -20,6 +20,7 @@ Ce qui est vrai : le musée est une page du site, construite à partir des donn�
 - La Salle de la Relique [Ouverte] : Un trésor offert par le Créateur, dont le peuple ignore l'usage. Exposé à l'Ambassade : les étrangers sont invités à l'essayer.
 - Le Temple [Pas encore consacré] : Les tablettes de la Création et la Calculette. Silence de rigueur, même quand il n'y a personne. (33 % de croyants ce soir ; il en faut au moins un tiers, plusieurs jours de suite.)
 - L'Atelier [Ouvert chaque soir] : Un dessin de 5 cases sur 5 par soir, tiré du cerveau d'un citoyen, et deux lignes du critique d'art.
+- Le chant de la place [Ouvert chaque soir] : Chaque heure, les six régions frappent le mot qu'elles ont écrit : six percussions, et l'unisson quand le mot est le même. Partition et lecteur sur place.
 - La Galerie des présidents [Ouverte] : Chaque président représenté par les 81 connexions de son cerveau. Les Waïnas n'ont pas de visage ; ils ont des poids.
 - La Bibliothèque nationale [Ouverte] : Des livres écrits par le pays sur lui-même, à partir de ses propres données. Prêt sur place uniquement : aucun livre ne sort de la boîte. (9 livres ouverts sur 12 ; les autres attendent que la civilisation évolue.)
 - Les Archives nationales [Ouvert] : Toutes les éditions de La Puce Libre depuis le jour 1.
