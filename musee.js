@@ -58,7 +58,8 @@
       regle_g: 'Règle G1, la hampe : colonne du milieu toujours pleine ; 1re syllabe à gauche, 2e à droite ; un bit à 1 trace un trait. Chaque région écrit son propre mot.',
       presidents: ['Salle des présidents', "Chaque président élu a son portrait : le dessin de ses 81 poids. Son cerveau en fonction est exposé au niveau −5."],
       plan: (s, n) => ['Plan du musée', `Surface visitable : ${s}`, `Salles visitables : ${n} sur ${n + 1}`],
-      plan_c: { t: 'Plan du musée', d: 'Hall · un bunker sous la boîte', m: ["Le musée est creusé sous la boîte : l'ascenseur ne fait que descendre, et chaque niveau peut être plus vaste que l'entrée. Chaque niveau est dessiné à sa vraie surface, traversé par la cage d'ascenseur.", 'Un niveau s’allume quand vous l’avez visité. Le plan garde ainsi la trace de vos visites, dans votre navigateur seulement.', 'Le compteur additionne les surfaces des niveaux ouverts. Il passera aux kilomètres carrés le jour où le musée en aura besoin.'], v: 'La surface est calculée à partir des salles construites ce soir : elle ne peut que grandir. Le compte des salles est exact.' },
+      plan_c: { t: 'Plan du musée', d: 'Hall · un bunker sous la boîte', m: ["Le musée est creusé sous la boîte : l'ascenseur ne fait que descendre, et chaque niveau peut être plus vaste que l'entrée. Chaque niveau est dessiné à sa vraie surface, traversé par la cage d'ascenseur.", 'Un niveau s’allume quand vous l’avez visité. Le plan garde ainsi la trace de vos visites, dans votre navigateur seulement.', 'Le compteur additionne les surfaces des niveaux ouverts. Il passera aux kilomètres carrés le jour où le musée en aura besoin.', 'Les points orange sont les autres visiteurs humains présents en ce moment dans le musée 3D. Vous les croiserez en silhouettes grises dans les niveaux (au plus 30) ; elles s’effacent quand vous approchez, pour ne jamais cacher une œuvre.'], v: 'La surface est calculée à partir des salles construites ce soir : elle ne peut que grandir. Le compte des salles est exact. Le nombre de visiteurs est réel, mais leurs places sont tirées au hasard : le musée ne montre jamais où sont les gens. Votre navigateur signale seulement « je suis là » une fois par minute, avec un numéro tiré au hasard et oublié à la sortie : ni adresse IP, ni cookie.' },
+      visiteurs: (n, ex) => n == null ? '' : `Visiteurs en ce moment : ${n}${n === 1 ? ' (vous)' : ''}${ex ? ' (exemple)' : ''}`,
       hinton: { t: "Hinton, l'ancêtre", d: '2026 · toujours en chantier', m: [
         'Juillet 2026 : un cerveau 3-8-3 sur 14 cartes ESP32, une carte par neurone. Ses LED montraient son état et il corrigeait ses poids par rétropropagation. 59 réglages.',
         "Hinton 1, pour une exposition scolaire de sciences : pierre, feuille ou ciseaux. Un réseau 8-8-3, 88 liaisons et 11 biais, soit 99 réglages, sur une seule carte grâce au TinyML, plus une carte pour l'écran de score. Sur le panneau du haut, ses poids changeaient de couleur pendant le calcul ; sur celui de face s'affichait son coup.",
@@ -129,7 +130,8 @@
       regle_g: 'Rule G1, the stem: the middle column is always filled; 1st syllable on the left, 2nd on the right; a bit set to 1 draws a stroke. Each region writes its own word.',
       presidents: ['Hall of Presidents', 'Every elected president has a portrait: the drawing of their 81 weights. The brain of the president in office is shown on level −5.'],
       plan: (s, n) => ['Museum map', `Area open to visitors: ${s}`, `Rooms open: ${n} out of ${n + 1}`],
-      plan_c: { t: 'Museum map', d: 'Hall · a bunker beneath the box', m: ['The museum is dug beneath the box: the lift only goes down, and each level can be larger than the entrance. Each level is drawn at its real area, crossed by the lift shaft.', 'A level lights up once you have visited it. The map keeps track of your visits, in your browser only.', 'The counter adds up the areas of the open levels. It will switch to square kilometres the day the museum needs it.'], v: 'The area is computed from the rooms built tonight: it can only grow. The room count is exact.' },
+      plan_c: { t: 'Museum map', d: 'Hall · a bunker beneath the box', m: ['The museum is dug beneath the box: the lift only goes down, and each level can be larger than the entrance. Each level is drawn at its real area, crossed by the lift shaft.', 'A level lights up once you have visited it. The map keeps track of your visits, in your browser only.', 'The counter adds up the areas of the open levels. It will switch to square kilometres the day the museum needs it.', 'The orange dots are the other human visitors in the 3D museum right now. You will pass them as grey silhouettes on the levels (30 at most); they fade as you come closer, so they never hide a work.'], v: 'The area is computed from the rooms built tonight: it can only grow. The room count is exact. The number of visitors is real, but their places are drawn at random: the museum never shows where people are. Your browser only says “I am here” once a minute, with a random number forgotten when you leave: no IP address, no cookie.' },
+      visiteurs: (n, ex) => n == null ? '' : `Visitors right now: ${n}${n === 1 ? ' (you)' : ''}${ex ? ' (example)' : ''}`,
       hinton: { t: 'Hinton, the ancestor', d: '2026 · still under construction', m: [
         'July 2026: a 3-8-3 brain on 14 ESP32 boards, one board per neuron. Its LEDs showed its state and it corrected its weights by backpropagation. 59 settings.',
         'Hinton 1, for a school science fair: rock, paper, scissors. An 8-8-3 network, 88 connections and 11 biases, 99 settings in all, on a single board thanks to TinyML, plus one board for the scoreboard. On the top panel its weights changed colour during the computation; the front panel showed its move.',
@@ -670,7 +672,7 @@
       const surf = ouverts.reduce((t, id) => t + surfaceDe(DEF[id]), 0);
       const aff = surf >= 1e6 ? `${(surf / 1e6).toLocaleString(LG === 'fr' ? 'fr-FR' : 'en-GB', { maximumFractionDigits: 2 })} km²` : `${nb(surf)} m²`;
       panneau(e, 'plan', T.plan(aff, ouverts.length), 0.62, 0.34, px, 0.72, pz + 0.41, 0, { titre: 44, corps: 32 });
-      PLAN = { tour, maj: () => { const v = new Set(vus()); for (const id of ordre) mats[id].opacity = v.has(id) ? 1 : 0.35; blocs['-1'].visible = v.has('-1'); } };
+      PLAN = { tour, dec, k, hN, Y: Object.fromEntries(ordre.map((id, r) => [id, 0.74 - r * 0.1])), compteur: VIS.compteur(e, px, 0.5, pz + 0.411), maj: () => { const v = new Set(vus()); for (const id of ordre) mats[id].opacity = v.has(id) ? 1 : 0.35; blocs['-1'].visible = v.has('-1'); } };
       PLAN.maj();
     }
 
@@ -1062,6 +1064,86 @@
       photo(e, 'table', 'dessous', 1.3, Dr, 1.6, -4.3, RD);
     }
 
+    // ---------------------------------------------------------------- les autres visiteurs (idée de Bran, 13/11/2026)
+    // N personnes dans le musée 3D = N−1 silhouettes grises et autant de points orange sur le plan de l'entrée.
+    // Le NOMBRE est réel (petit compteur Cloudflare sur l'adresse du site, voir worker-visiteurs) ; les PLACES sont tirées
+    // au hasard : le musée ne montre jamais où sont les gens. Jamais dans la réserve. Au plus 30 silhouettes, qui s'effacent
+    // quand on s'approche. Sans réponse du compteur : aucune silhouette, aucun chiffre (jamais de faux visiteurs).
+    const VIS = (() => {
+      const MAXS = 30, FANT = [], NIVX = Object.keys(DEF).filter((id) => id !== '-1'), rnd = mul((Math.random() * 1e9) | 0);
+      const MATF = new THREE.MeshStandardMaterial({ color: 0x4a5154, roughness: 0.85, transparent: true, opacity: 0.6 });
+      const GC = new THREE.CylinderGeometry(0.17, 0.22, 1.15, 12), GT = new THREE.SphereGeometry(0.13, 14, 10);
+      const EX = typeof window.MCL_VISITEURS_ESSAI === 'number';   // aperçu hors du site seulement : nombre d'exemple, annoncé comme tel
+      const SITE = /(^|\.)microcontroland\.org$/.test(location.hostname) && !/[?&]essai\b/.test(location.search);
+      const DNT = navigator.doNotTrack === '1' || window.doNotTrack === '1' || navigator.globalPrivacyControl === true;
+      const ID = Array.from(crypto.getRandomValues(new Uint8Array(8)), (b) => b.toString(16).padStart(2, '0')).join('');   // en mémoire seulement
+      let n = EX ? window.MCL_VISITEURS_ESSAI : null, rates = 0, minuterie = null, affiche;
+      const libreE = (e, x, z) => !e.obs.some((o) => x > o.x1 - 0.35 && x < o.x2 + 0.35 && z > o.z1 - 0.35 && z < o.z2 + 0.35);
+      function pointAuHasard(id) {
+        const D = DEF[id], e = ETAGES[id];
+        for (let q = 0; q < 40; q++) {
+          let x, z;
+          if (D.n != null) { const c = e && e.damier ? e.damier : spirale(D.n + 1), [cx, cz] = c[Math.floor(rnd() * c.length)]; x = cx * CASE + (rnd() - 0.5) * 8; z = cz * CASE + (rnd() - 0.5) * 8; }
+          else { x = (rnd() * 2 - 1) * (D.X - 1); z = D.Z2 + 1 + rnd() * (D.Z1 - D.Z2 - 2); }
+          if (!e || libreE(e, x, z)) return [x, z];
+        }
+        return e ? [e.depart.x, e.depart.z] : [0, 0];
+      }
+      function mettre(f) {   // une silhouette n'a de corps que dans un niveau déjà construit
+        const e = ETAGES[f.id]; if (!e || f.gr) return;
+        if (!libreE(e, f.x, f.z)) [f.x, f.z] = pointAuHasard(f.id);
+        f.mf = MATF.clone(); f.gr = new THREE.Group();
+        const c = new THREE.Mesh(GC, f.mf); c.position.y = 0.78; f.gr.add(c); const t = new THREE.Mesh(GT, f.mf); t.position.y = 1.52; f.gr.add(t);
+        f.gr.position.set(f.x, 0, f.z); e.g.add(f.gr); f.but = pointAuHasard(f.id);
+      }
+      function ajuster() {
+        const voulu = n == null ? 0 : Math.max(0, Math.min(MAXS, n - 1));
+        while (FANT.length < voulu) { const id = NIVX[Math.floor(rnd() * NIVX.length)], [x, z] = pointAuHasard(id); const f = { id, x, z, but: pointAuHasard(id), pause: rnd() * 4, v: 0.8 + rnd() * 0.5, ph: rnd() * 6, gr: null }; mettre(f); FANT.push(f); }
+        while (FANT.length > voulu) { const f = FANT.pop(); if (f.gr) { f.gr.parent.remove(f.gr); f.mf.dispose(); } }
+        if (affiche) affiche();
+      }
+      function signal(m) {
+        if (!SITE) return;
+        fetch('/musee-visiteurs' + (m === 'GET' ? '' : '?id=' + ID), { method: m, cache: 'no-store', keepalive: m === 'DELETE' })
+          .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
+          .then((j) => { if (m !== 'DELETE' && Number.isInteger(j.n)) { n = Math.max(DNT ? j.n + 1 : j.n, 1); rates = 0; ajuster(); } })
+          .catch(() => { if (++rates >= 2) { n = null; ajuster(); } });
+      }
+      const battre = () => { if (!document.hidden) signal(DNT ? 'GET' : 'POST'); };
+      if (SITE) { battre(); minuterie = setInterval(battre, 60000); }
+      return {
+        compteur(e, x, y, z) {   // « Visiteurs en ce moment : N », sous le plan
+          const cv = document.createElement('canvas'); cv.width = 768; cv.height = 96; const t = new THREE.CanvasTexture(cv); t.encoding = THREE.sRGBEncoding;
+          const m = new THREE.Mesh(new THREE.PlaneGeometry(0.62, 0.078), new THREE.MeshBasicMaterial({ map: t, toneMapped: false })); m.position.set(x, y, z); e.g.add(m); cible(e, m, 'plan');
+          affiche = () => { const g = cv.getContext('2d'); g.fillStyle = '#f7f8f5'; g.fillRect(0, 0, 768, 96); g.fillStyle = '#b36b12'; g.font = '600 38px system-ui, sans-serif'; g.textBaseline = 'middle'; g.fillText(T.visiteurs(n, EX), 22, 50); t.needsUpdate = true; m.visible = n != null; };
+          affiche();
+          const pts = new THREE.BufferGeometry(); pts.setAttribute('position', new THREE.Float32BufferAttribute(new Float32Array(3 * (MAXS + 2)), 3));
+          const p = new THREE.Points(pts, new THREE.PointsMaterial({ color: 0xffb347, size: 0.018, toneMapped: false, transparent: true })); p.renderOrder = 4; p.frustumCulled = false;
+          return { pts, p };
+        },
+        niveau() { ajuster(); for (const f of FANT) mettre(f); },
+        animer(t, dt) {
+          for (const f of FANT) {
+            if (f.gr && f.id === courant.id) { const d = Math.hypot(f.x - joueur.x, f.z - joueur.z); f.mf.opacity = Math.max(0.06, Math.min(0.6, (d - 1.2) / 3)); }
+            if (f.pause > 0) { f.pause -= dt; continue; }
+            const dx = f.but[0] - f.x, dz = f.but[1] - f.z, d = Math.hypot(dx, dz);
+            if (d < 0.3) { f.but = pointAuHasard(f.id); f.pause = 2 + rnd() * 6; continue; }   // s'arrête devant une œuvre, puis repart
+            const nx = f.x + dx / d * f.v * dt, nz = f.z + dz / d * f.v * dt, e = ETAGES[f.id];
+            if (!e || libreE(e, nx, nz)) { f.x = nx; f.z = nz; if (f.gr) { f.gr.position.set(f.x, Math.abs(Math.sin(t / 260 + f.ph)) * 0.03, f.z); f.gr.rotation.y = Math.atan2(-dx, -dz); } }
+            else f.but = pointAuHasard(f.id);
+          }
+          if (PLAN && PLAN.compteur && courant.id === '0') {
+            const P = PLAN.compteur; if (!P.p.parent) PLAN.dec.add(P.p);
+            const a = P.pts.attributes.position; let i = 0;
+            for (const f of FANT) { const D = DEF[f.id], cz = D.n != null ? 1.0 : D.cz; a.setXYZ(i++, f.x * PLAN.k, PLAN.Y[f.id] + PLAN.hN * 0.5, (f.z - cz) * PLAN.k); }
+            for (; i < MAXS + 2; i++) a.setXYZ(i, 0, -9, 0); a.needsUpdate = true;
+          }
+        },
+        etat: () => ({ n, silhouettes: FANT.length, ici: FANT.filter((f) => f.id === courant.id).length, niveaux: [...new Set(FANT.map((f) => f.id))] }),
+        fermer() { if (minuterie) clearInterval(minuterie); if (SITE && !DNT) signal('DELETE'); },
+      };
+    })();
+
     // ---------------------------------------------------------------- changer d'échelle : la galaxie des dessins (clin d'œil à Elite)
     let univers = null, camU = null, echelle = null;
     const DESSINS = atelier ? atelier.dessins.filter(Boolean) : [];
@@ -1114,7 +1196,7 @@
     function montrer(id) {
       if (SON && id !== '3') SON.arreter();
       if (courant) { courant.g.visible = false; if (courant.video) courant.video.pause(); }
-      courant = obtenir(id); courant.g.visible = true; if (courant.video) courant.video.play().catch(() => {});
+      courant = obtenir(id); VIS.niveau(); courant.g.visible = true; if (courant.video) courant.video.play().catch(() => {});
       $('#m3-modes').hidden = id !== '5'; $('#m3-musique').hidden = id !== '3';
       const FOND = { '5': 0x030506 }[id] ?? 0xdfe2dd;
       scene.background.set(FOND); scene.fog.color.set(FOND); scene.fog.far = id === '5' ? 120 : 38;
@@ -1172,14 +1254,14 @@
         if (libre(nx, joueur.z)) joueur.x = nx; if (libre(joueur.x, nz)) joueur.z = nz;
       }
       camera.position.set(joueur.x, 1.62, joueur.z); camera.rotation.order = 'YXZ'; camera.rotation.y = joueur.yaw; camera.rotation.x = joueur.pitch;
-      animerHinton(t); for (const f of courant.anim) f(t, dt);
+      animerHinton(t); VIS.animer(t, dt); for (const f of courant.anim) f(t, dt);
       renderer.render(scene, camera); requestAnimationFrame(boucle);
     }
     requestAnimationFrame(boucle);
-    window.MCL_MUSEE = { aller: (id) => DEF[id] && montrer(id), joueur, etat: () => ({ niveau: courant.id, niveaux: Object.keys(DEF), son: SON && SON.etat() }), ouvrirAsc, changerEchelle };
+    window.MCL_MUSEE = { aller: (id) => DEF[id] && montrer(id), joueur, etat: () => ({ niveau: courant.id, niveaux: Object.keys(DEF), son: SON && SON.etat(), visiteurs: VIS.etat() }), ouvrirAsc, changerEchelle };
     // à la sortie : tout s'arrête, rien ne reste en mémoire
     return () => {
-      actif = false; if (SON) SON.fermer();
+      actif = false; if (SON) SON.fermer(); VIS.fermer();
       removeEventListener('keydown', bas); removeEventListener('keyup', haut); removeEventListener('resize', taille);
       for (const id in ETAGES) if (ETAGES[id].video) ETAGES[id].video.pause();
       renderer.dispose(); delete window.MCL_MUSEE;
