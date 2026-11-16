@@ -6,6 +6,13 @@
   <description>Le quotidien de Microcontrôland, écrit chaque soir par la passerelle.</description>
   <language>fr</language>
   <item>
+    <title>Dernière minute — Élection post-révolution : Kiti (Port) élu avec 57 %</title>
+    <link>https://branbriere.github.io/microcontroland/</link>
+    <description>Élection post-révolution : Kiti (Port) élu avec 57 %</description>
+    <pubDate>Mon, 16 Nov 2026 23:00:01 GMT</pubDate>
+    <guid isPermaLink="false">microcontroland-fr-depeche-1-939</guid>
+  </item>
+  <item>
     <title>Dernière minute — Révolte ! Le président Wibouth est renversé par 50 cerveaux rebelles (500 k hab)</title>
     <link>https://branbriere.github.io/microcontroland/</link>
     <description>Révolte ! Le président Wibouth est renversé par 50 cerveaux rebelles (500 k hab)</description>
@@ -102,13 +109,6 @@
     <description>La région Mines profite de la hausse et le reste du pays en ressent l'onde de choc.</description>
     <pubDate>Wed, 04 Nov 2026 19:00:01 GMT</pubDate>
     <guid isPermaLink="false">microcontroland-fr-jour-27</guid>
-  </item>
-  <item>
-    <title>Jour 26 — Le pétrole chute de 2,6 %</title>
-    <link>https://branbriere.github.io/microcontroland/#jour-26</link>
-    <description>La région Raffineries voit ses revenus fondre et le reste du pays en ressent l'onde de choc.</description>
-    <pubDate>Tue, 03 Nov 2026 19:00:25 GMT</pubDate>
-    <guid isPermaLink="false">microcontroland-fr-jour-26</guid>
   </item>
 </channel>
 </rss>
