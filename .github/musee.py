@@ -27,6 +27,13 @@ glyphes et cartouches calculés par .github/ecriture.py ; demande de Bran du 6/1
 le numéro de version (musee.js?v=…) : un navigateur ou un cache qui garde l'ancien musee.js ne peut plus le mélanger
 avec le nouveau musee.json.
 
+Version 1.3.0 (17 novembre 2026, décisions de Bran du 11 au 16/11/2026) : le musée devient un BUNKER sous la boîte.
+Hall d'accueil (Hinton, présidents, plan en fil de fer vert, fenêtres sur le garage), puis un ascenseur qui ne fait
+que descendre : un niveau par art (−1 art primaire, −2 sculpture, −3 musique, −4 écriture, −5 planétarium du cerveau,
+−6 sanctuaire, en chantier). Nouvelle salle « chant » (musique primitive, lue dans chant.json, une œuvre par soir).
+Chaque salle porte son « niveau » (musee-catalogue.json). Ce script ne dessine toujours rien : la visite 3D place les
+salles d'un niveau en damier de cases de 10 m, en spirale autour de l'ascenseur.
+
   python3 .github/musee.py <racine du site>
 """
 import html
@@ -35,7 +42,7 @@ import json
 import sys
 from pathlib import Path
 
-VERSION = "1.2.2"
+VERSION = "1.3.0"
 MEMOIRE = 2          # index de l'âge de la Mémoire dans ages.etapes : âge d'ouverture d'une aile (Bran, 28 oct. 2026)
 BASE = "https://www.microcontroland.org/"
 DONNEES = "https://donnees.microcontroland.org/"
@@ -96,6 +103,19 @@ T = {
         "noms": "Names in cartouches", "noms_txt": "First names are in no lexicon, but they are made of the same sounds: one stem per syllable, inside a frame.",
         "histoire": "History of writing", "hist": "{d}: {k} common glyph(s)",
         "pres_de": "President from {a} to {b}", "pres_dep": "President since {a}",
+        "niveau": {"0": "Ground floor", "1": "Level −1", "2": "Level −2", "3": "Level −3", "4": "Level −4", "5": "Level −5", "6": "Level −6"},
+        "bunker": "The museum is dug beneath the box, like a bunker: the lift only goes down, one level per art. "
+                  "In the 3D tour: ground floor (hall, Hinton, presidents), −1 primary art, −2 sculpture, −3 music, −4 writing, "
+                  "−5 the brain planetarium, −6 the sanctuary (under construction).",
+        "hinton": "Hinton, the ancestor", "hinton_txt": "In the middle of the hall, a green wireframe drawing of Hinton 1, the Creator's first neural network built "
+                  "on a microcontroller (2026, rock, paper, scissors: 99 settings on a single board). The name is a tribute to the work of Geoffrey Hinton, "
+                  "with no link to him or endorsement from him.",
+        "chant_titre": "The song of the square · {k} evening(s)", "chant_txt": "Every evening each region writes words; each syllable becomes 5 beats, strike or silence (rule C1). "
+                  "In the 3D tour, six drums, one per region, play the last evening's song in your browser, with no sound file.",
+        "chant_soir": "{d} · issue no. {n} · {u} hour(s) out of {h} in unison · {f} beats · most struck word “{m}”",
+        "cerveau": "Level −5 · The brain planetarium", "cerveau_txt": "A dark room where you walk through the citizen brain of President {nom}, grown to the size of a room: "
+                  "9 inputs, 6 hidden neurons, 3 outputs, its 81 published weights. Three buttons change how it works: propagation, backpropagation, reward. "
+                  "Nothing done in the room ever touches the real country.",
     },
     "fr": {
         "titre": "Le Musée national", "haut": "Ère {ere}, jour {jour} · construit automatiquement à partir des données publiées",
@@ -129,6 +149,19 @@ T = {
         "noms": "Les noms en cartouche", "noms_txt": "Les prénoms ne sont dans aucun lexique, mais ils sont faits des mêmes sons : une hampe par syllabe, dans un cadre.",
         "histoire": "Histoire de l'écriture", "hist": "{d} : {k} glyphe(s) commun(s)",
         "pres_de": "Président du {a} au {b}", "pres_dep": "Président depuis le {a}",
+        "niveau": {"0": "Rez-de-chaussée", "1": "Niveau −1", "2": "Niveau −2", "3": "Niveau −3", "4": "Niveau −4", "5": "Niveau −5", "6": "Niveau −6"},
+        "bunker": "Le musée est creusé sous la boîte, comme un bunker : l'ascenseur ne fait que descendre, un niveau par art. "
+                  "Dans la visite 3D : rez-de-chaussée (hall, Hinton, présidents), −1 art primaire, −2 sculpture, −3 musique, −4 écriture, "
+                  "−5 planétarium du cerveau, −6 sanctuaire (en chantier).",
+        "hinton": "Hinton, l'ancêtre", "hinton_txt": "Au milieu du hall, Hinton 1 redessiné en fil de fer vert : le premier réseau de neurones du Créateur "
+                  "monté sur un microcontrôleur (2026, pierre, feuille ou ciseaux : 99 réglages sur une seule carte). Le nom est un hommage aux travaux "
+                  "de Geoffrey Hinton, sans aucun lien avec lui ni caution de sa part.",
+        "chant_titre": "Le chant de la place · {k} soir(s)", "chant_txt": "Chaque soir, chaque région écrit ses mots ; chaque syllabe devient 5 temps, frappe ou silence (règle C1). "
+                  "Dans la visite 3D, six tambours, un par région, jouent le chant du dernier soir dans votre navigateur, sans aucun fichier son.",
+        "chant_soir": "{d} · édition n° {n} · {u} heure(s) sur {h} à l'unisson · {f} frappes · mot le plus frappé « {m} »",
+        "cerveau": "Niveau −5 · Planétarium du cerveau", "cerveau_txt": "Une salle noire où l'on marche au milieu du cerveau de citoyen du président {nom}, grandi à la taille "
+                  "d'une pièce : 9 entrées, 6 neurones cachés, 3 sorties, ses 81 poids publiés. Trois boutons changent sa façon de travailler : propagation, "
+                  "rétropropagation, récompense. Rien de ce qu'on y fait ne touche au vrai pays.",
     },
 }
 
@@ -323,6 +356,17 @@ def salles_glyphes(entree, ere, ctx):
              "idees": len(a["mots"]), "oeuvres": oeuvres, "frise": frise, "noms": noms, "histoire": histoire, "source": a.get("source")}]
 
 
+def salles_chant(entree, ere, ctx):
+    """Le chant de la place (musique primitive, règle C1) : une œuvre par soir, lue telle quelle dans chant.json
+    (archive jamais réécrite, écrite par .github/chant.py). Rien n'est recalculé ici."""
+    jours = [j for j in (ctx.get("chant") or {}).get("jours", []) if j.get("ere") == ere and j.get("partition")]
+    if not jours:
+        return []
+    cles = ("date", "edition", "jourEre", "regle", "heures", "unisson", "muettes", "frappes", "mot", "mesures", "critique", "partition")
+    return [{"id": entree["id"], "type": "chant", "titre": entree["titre"], "lien": entree.get("lien"), "verifier": entree.get("verifier", []),
+             "regle": (ctx.get("chant") or {}).get("regle"), "oeuvres": [{k: j.get(k) for k in cles} for j in jours]}]
+
+
 # ---------------------------------------------------------------- la réclame du musée (humour, Bran 2/11/2026)
 # Convention de la maison (comme l'Office du tourisme et l'Ambassade) : la blague est toujours suivie de
 # « Ce qui est vrai », calculé à partir des mêmes données. Rien n'est prêté aux Waïnas.
@@ -336,12 +380,25 @@ def reclame_salle(s, H):
     if s["type"] == "portraits":
         n = len(s["oeuvres"]); p = sum(1 for o in s["oeuvres"] if o["poids"])
         return {
-            "fr": {"titre": f"{H['portraits']:.1f} m sous plafond : la salle la plus haute du musée, pour laisser de la place aux ego.".replace(".", ",", 1),
-                   "lignes": ["La statue officielle a été calculée, pas sculptée : le président n'a pas posé, ses poids si."],
-                   "vrai": f"Ce qui est vrai : l'ego est bien l'une des 9 entrées du cerveau des Waïnas. {_s(n, 'fr', 'président', '')}, {_s(p, 'fr', 'portrait', '')} accroché{'s' if p > 1 else ''}, la hauteur des salles est fixée par le script."},
-            "en": {"titre": f"{H['portraits']:.1f} m to the ceiling: the tallest room in the museum, to leave room for the egos.",
-                   "lignes": ["The official statue was computed, not carved: the president did not sit for it, their weights did."],
-                   "vrai": f"What is true: ego really is one of the 9 inputs of a Waïna brain. {_s(n, 'en', '', 'president')}, {_s(p, 'en', '', 'portrait')} on the walls; the script sets the height of each room."}}
+            "fr": {"titre": "Les présidents restent au rez-de-chaussée : ils n'aiment pas les sous-sols.",
+                   "lignes": ["Tous les arts sont sous terre. Le pouvoir, lui, garde la lumière du hall."],
+                   "vrai": f"Ce qui est vrai : {_s(n, 'fr', 'président', '')}, {_s(p, 'fr', 'portrait', '')} accroché{'s' if p > 1 else ''} dans le hall ; "
+                           "le cerveau du président en fonction est exposé au niveau −5, le planétarium."},
+            "en": {"titre": "The presidents stay on the ground floor: they do not like basements.",
+                   "lignes": ["All the arts are underground. Power keeps the light of the hall."],
+                   "vrai": f"What is true: {_s(n, 'en', '', 'president')}, {_s(p, 'en', '', 'portrait')} on the walls of the hall; "
+                           "the brain of the president in office is shown on level −5, the planetarium."}}
+    if s["type"] == "chant":
+        n = len(s["oeuvres"]); d = s["oeuvres"][-1]
+        return {
+            "fr": {"titre": "Salle insonorisée : 3 étages de béton au-dessus de vous, les voisins ne se plaignent plus.",
+                   "lignes": ["Le chef d'orchestre n'a pas été recruté. La place joue très bien sans lui."],
+                   "vrai": f"Ce qui est vrai : {_s(n, 'fr', 'chant', '')} dans cette salle, un par soir ; le dernier a {d['unisson']} heure{'s' if (d['unisson'] or 0) > 1 else ''} "
+                           f"sur {d['heures']} à l'unisson des six régions. Personne ne dirige : chaque frappe vient d'un mot écrit par une région (règle C1)."},
+            "en": {"titre": "Soundproofed room: 3 floors of concrete above you, the neighbours no longer complain.",
+                   "lignes": ["No conductor has been hired. The square plays very well without one."],
+                   "vrai": f"What is true: {_s(n, 'en', '', 'song')} in this room, one per evening; the last one has {d['unisson']} hour(s) out of {d['heures']} "
+                           "in unison across the six regions. Nobody conducts: every beat comes from a word written by a region (rule C1)."}}
     if s["type"] == "dessins":
         k = len(s["dessins"])
         return {
@@ -483,7 +540,7 @@ def fenetres(catalogue, racine):
     return out
 
 
-TYPES = {"portraits": salles_portraits, "dessins": salles_dessins, "artistes": salles_artistes,
+TYPES = {"portraits": salles_portraits, "dessins": salles_dessins, "artistes": salles_artistes, "chant": salles_chant,
          "sculptures": salles_sculptures, "sculpteurs": salles_sculpteurs, "glyphes": salles_glyphes}
 
 
@@ -515,7 +572,11 @@ def aile(ere, ouverte, catalogue, ctx):
             print(f"Type de salle inconnu ignoré : {entree.get('type')}", file=sys.stderr)
             continue
         try:
-            a["salles"].extend([controle(x) for x in f(entree, ere, ctx)])
+            nouvelles = [controle(x) for x in f(entree, ere, ctx)]
+            for x in nouvelles:
+                if "niveau" in entree:
+                    x["niveau"] = entree["niveau"]   # 1.3 : niveau du bunker (0 = hall, 1 = −1, …), lu par musee.js
+            a["salles"].extend(nouvelles)
         except Exception as err:
             # Filet de sécurité (11/11/2026) : une donnée imprévue dans une salle ne fait plus tomber tout le musée.
             # La salle reste telle qu'elle était dans le musée précédent ; l'avertissement apparaît dans l'onglet Actions.
@@ -561,7 +622,8 @@ def construire(racine):
            "sculptures": lire(racine / "sculptures.json", None) if (racine / "sculptures.json").exists() else None,
            "sculptures_soir": lire(racine / "sculptures-soir.json", None) if (racine / "sculptures-soir.json").exists() else None,
            "ecriture": lire(racine / "ecriture.json", None) if (racine / "ecriture.json").exists() else None,
-           "ecriture_py": module(racine, "ecriture") if (racine / ".github" / "ecriture.py").exists() else None}
+           "ecriture_py": module(racine, "ecriture") if (racine / ".github" / "ecriture.py").exists() else None,
+           "chant": lire(racine / "chant.json", None) if (racine / "chant.json").exists() else None}
     ailes = []
     # Ailes des ères passées : recopiées telles quelles de l'ancien musee.json, jamais recalculées (figées).
     for a in ancien.get("plan", []):
@@ -685,8 +747,9 @@ def page(M, latest, lg, G, A):
         corps.append(f'<div class="m-entrer" id="m-entrer" hidden><button type="button" id="m-bouton">{e(X["entrer"])}</button>'
                      f'<small>{e(X["entrer_note"])}</small></div>')
         corps.append(f'<noscript><p><small>{e(X["pas_js"])}</small></p></noscript>')
-        corps.append(f'<h2>{e(X["texte"])}</h2><p>{e(X["texte_intro"])}</p>')
+        corps.append(f'<h2>{e(X["texte"])}</h2><p>{e(X["texte_intro"])}</p><p>{e(X["bunker"])}</p>')
         corps.append(f'<section class="m-salle"><h3>{e(X["hall"])}</h3><p>{e(X["hall_txt"])}</p>{plaque_txt(M["reclame"][lg])}{plaque_txt(M["architecte"][lg])}<p><i>{e(X["seul"])}</i></p>'
+                     f'<p><b>{e(X["hinton"])}.</b> {e(X["hinton_txt"])}</p>'
                      f'<p class="compte">{e(X["compte"].format(a=c["ailes"], s=c["salles"], o=c["oeuvres"], n=M["edition"], d=dl))}</p>')
         for x in M["annexes"]:
             etat = X["annexe_ouverte"] if x["etat"] == "ouverte" else X["annexe_chantier"]
@@ -701,7 +764,8 @@ def page(M, latest, lg, G, A):
             if a.get("figee"):
                 corps.append(f'<p><i>{e(X["aile_figee"].format(ere=a["ere"]))}</i></p>')
             for s in a["salles"]:
-                corps.append(f'<section class="m-salle"><h3>{e(s["titre"][lg])}</h3>' + (plaque_txt(s["reclame"][lg]) if s.get("reclame") else ""))
+                niv = X["niveau"].get(str(s.get("niveau")), "") if not a.get("figee") else ""
+                corps.append(f'<section class="m-salle"><h3>{e(niv + " · " if niv else "")}{e(s["titre"][lg])}</h3>' + (plaque_txt(s["reclame"][lg]) if s.get("reclame") else ""))
                 if s["type"] == "portraits":
                     if s.get("statue"):
                         st = s["statue"]
@@ -757,11 +821,20 @@ def page(M, latest, lg, G, A):
                             figs.append(f'<figure>{svg_grille(o["rangs"], o["nom"], "m-cartouche")}<figcaption><b>{e(o["nom"])}</b><br>{e(rg)} · {e(cap)}</figcaption></figure>')
                         corps.append(f'<h4>{e(X["noms"])}</h4><p>{e(X["noms_txt"])}</p><div class="m-oeuvres">{"".join(figs)}</div>')
                     corps.append(f'<h4>{e(X["histoire"])}</h4><p>' + " · ".join(e(X["hist"].format(d=G.date_longue(d_, lg), k=k_)) for d_, k_, _ in s["histoire"]) + "</p>")
+                elif s["type"] == "chant":
+                    corps.append(f'<p><b>{e(X["chant_titre"].format(k=len(s["oeuvres"])))}.</b> {e(X["chant_txt"])}</p><ul>')
+                    for o in reversed(s["oeuvres"]):
+                        cr = (o.get("critique") or {}).get(lg) or []
+                        corps.append(f'<li>{e(X["chant_soir"].format(d=G.date_longue(o["date"], lg), n=o["edition"], u=o["unisson"], h=o["heures"], f=o["frappes"], m=o["mot"]))}'
+                                     + (f'<br><i>{e(cr[0])}</i>' if cr else "") + '</li>')
+                    corps.append('</ul>')
                 elif s["type"] == "artistes":
                     figs = []
                     for o in s["oeuvres"]:
                         rg = A.REGION_EN.get(o["region"], o["region"]) if lg == "en" else o["region"]
                         cap = X["artiste"].format(d=G.date_longue(o["date"], lg), id=o["id"], r=rg, c=o["cases"])
+                        if o["cases"] is None:   # 1.3 : premier soir (rien à comparer) ou soir sans dessin la veille
+                            cap = cap.rsplit(" · ", 1)[0]
                         cr = (o.get("critique") or {}).get(lg) or []
                         figs.append(f'<figure>{svg_dessin(o["dessin"], cap)}<figcaption><b>{e(cap)}</b><br>'
                                     f'{e(lignes_dessin(o["dessin"]))}<br>{"<br>".join(e(t) for t in cr)}</figcaption></figure>')
@@ -775,6 +848,9 @@ def page(M, latest, lg, G, A):
                     bouts.append(f'<p><small>{X["verifier"].format(liens=ls)}</small></p>')
                 corps.append("".join(bouts) + "</section>")
             corps.append('</section>')
+        st = next((x["statue"] for a in M["plan"] if a["etat"] != "fermee" and not a.get("figee") for x in a["salles"] if x.get("statue")), None)
+        if st:
+            corps.append(f'<section class="m-aile"><h2>{e(X["cerveau"])}</h2><p>{e(X["cerveau_txt"].format(nom=st["nom"]))}</p></section>')
         if M.get("fin"):
             corps.append(f'<section class="m-aile"><h2>{e(M["fin"][lg]["titre"])}</h2>' + "".join(f"<p>{e(t)}</p>" for t in M["fin"][lg]["lignes"])
                          + f'<p><small>{e(M["fin"][lg]["vrai"])}</small></p></section>')

@@ -1,12 +1,13 @@
 # Microcontrôland : « Le Musée national » / « The National Museum » (visite 3D et visite en texte).
 # Le musée est procédural : après la galerie, l'atelier et les sculptures, il relit les fichiers déjà publiés (data/latest.json,
-# galerie.json, atelier.json, sculptures.json, sculptures-soir.json, institutions.json) et la liste des salles possibles (musee-catalogue.json), puis régénère musee.json,
+# galerie.json, atelier.json, sculptures.json, sculptures-soir.json, ecriture.json, chant.json, institutions.json) et la liste des salles possibles (musee-catalogue.json), puis régénère musee.json,
 # musee.html et en/musee.html. Aucune œuvre n'est dessinée à la main. La passerelle ne change pas.
+# 1.3 (17/11/2026) : le musée devient un bunker (sept niveaux) ; relance aussi après l'écriture et le chant de la place.
 name: Musee national
 
 on:
   workflow_run:
-    workflows: ["Galerie des presidents", "Atelier", "Sculptures"]
+    workflows: ["Galerie des presidents", "Atelier", "Sculptures", "Ecriture", "Chant de la place"]
     types: [completed]
   push:
     branches: [main]
@@ -15,6 +16,8 @@ on:
       - "institutions.json"
       - ".github/musee.py"
       - "musee-fenetres/**"
+      - "musee-reserve/**"
+      - "musee.js"
   schedule:
     - cron: "5 19 * * *"    # 21 h 05 à Paris en heure d'été (filet de sécurité)
     - cron: "5 20 * * *"    # 21 h 05 à Paris en heure d'hiver
