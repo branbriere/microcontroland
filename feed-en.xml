@@ -6,6 +6,13 @@
   <description>Microcontrôland's daily paper, written every evening by the gateway.</description>
   <language>en</language>
   <item>
+    <title>Breaking — Revolt! President Wibouth toppled by 50 rebel brains (500k inhabitants)</title>
+    <link>https://branbriere.github.io/microcontroland/en/</link>
+    <description>Revolt! President Wibouth toppled by 50 rebel brains (500k inhabitants)</description>
+    <pubDate>Mon, 16 Nov 2026 21:00:03 GMT</pubDate>
+    <guid isPermaLink="false">microcontroland-en-depeche-1-937</guid>
+  </item>
+  <item>
     <title>Day 39 — Microcontrôland slides into revolutionary unrest</title>
     <link>https://branbriere.github.io/microcontroland/en/#jour-39</link>
     <description>Under President Wibouth, the country leaves “Fragile democracy”. The situation remains unstable. This is described as stable.</description>
@@ -102,13 +109,6 @@
     <description>The Refineries region watches its income melt away. The rest of the country feels it too.</description>
     <pubDate>Tue, 03 Nov 2026 19:00:25 GMT</pubDate>
     <guid isPermaLink="false">microcontroland-en-jour-26</guid>
-  </item>
-  <item>
-    <title>Day 25 — President Niwata re-elected with 63%</title>
-    <link>https://branbriere.github.io/microcontroland/en/#jour-25</link>
-    <description>Voters chose continuity. The palace stays in the Dam region.</description>
-    <pubDate>Mon, 02 Nov 2026 19:00:01 GMT</pubDate>
-    <guid isPermaLink="false">microcontroland-en-jour-25</guid>
   </item>
 </channel>
 </rss>
