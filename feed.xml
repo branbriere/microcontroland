@@ -6,6 +6,13 @@
   <description>Le quotidien de Microcontrôland, écrit chaque soir par la passerelle.</description>
   <language>fr</language>
   <item>
+    <title>Jour 39 — Microcontrôland bascule en agitation révolutionnaire</title>
+    <link>https://branbriere.github.io/microcontroland/#jour-39</link>
+    <description>Sous le président Wibouth, le pays quitte le régime « Démocratie fragile ». La situation reste instable.</description>
+    <pubDate>Mon, 16 Nov 2026 19:00:01 GMT</pubDate>
+    <guid isPermaLink="false">microcontroland-fr-jour-39</guid>
+  </item>
+  <item>
     <title>Jour 38 — Microcontrôland bascule en démocratie fragile</title>
     <link>https://branbriere.github.io/microcontroland/#jour-38</link>
     <description>Sous le président Wibouth, le pays quitte le régime « Démocratie ». La situation reste instable.</description>
@@ -102,13 +109,6 @@
     <description>Les électeurs ont choisi la continuité. Le palais reste dans la région Barrage.</description>
     <pubDate>Mon, 02 Nov 2026 19:00:01 GMT</pubDate>
     <guid isPermaLink="false">microcontroland-fr-jour-25</guid>
-  </item>
-  <item>
-    <title>Jour 24 — Niwata en tête du sondage, avec 63 % des intentions</title>
-    <link>https://branbriere.github.io/microcontroland/#jour-24</link>
-    <description>Intentions de vote : Niwata 63 %, Kiti 32 %, Sita 5 % ; personne ne cite Naïkaïth, Kouwou ni Sakaïk ; parmi les interrogés, 1 compte s'abstenir. 20 citoyens tirés au sort ont été interrogés à 16 h ; à cette taille, la marge d'erreur approche 22 points.</description>
-    <pubDate>Sun, 01 Nov 2026 19:00:01 GMT</pubDate>
-    <guid isPermaLink="false">microcontroland-fr-jour-24</guid>
   </item>
 </channel>
 </rss>
