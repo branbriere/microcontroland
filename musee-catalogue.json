@@ -1,8 +1,8 @@
 {
  "format": 1,
- "version": "1.2.2",
- "date": "2026-11-07",
- "note": "Liste des salles possibles du Musée national, lue chaque soir par .github/musee.py. Une salle n'apparaît que si son âge est atteint ET si ses données publiées existent. Pour une nouveauté future, ajouter une ligne ; si son type existe déjà (portraits, dessins, artistes), aucun code à écrire. L'ordre des lignes est l'ordre de la visite.",
+ "version": "1.3.0",
+ "date": "2026-11-17",
+ "note": "Liste des salles possibles du Musée national, lue chaque soir par .github/musee.py. Une salle n'apparaît que si son âge est atteint ET si ses données publiées existent. Pour une nouveauté future, ajouter une ligne ; si son type existe déjà (portraits, dessins, artistes), aucun code à écrire. L'ordre des lignes est l'ordre de la visite. 1.3 (17/11/2026) : chaque salle porte son « niveau » du bunker (0 = hall, 1 = niveau −1, 2 = −2, 3 = −3, 4 = −4) ; un niveau sans salle reste fermé dans l'ascenseur.",
  "salles": [
   {
    "id": "presidents",
@@ -16,7 +16,8 @@
    "lien": "galerie.html",
    "verifier": [
     "galerie.json"
-   ]
+   ],
+   "niveau": 0
   },
   {
    "id": "atelier",
@@ -30,7 +31,8 @@
    "lien": "atelier.html",
    "verifier": [
     "atelier.json"
-   ]
+   ],
+   "niveau": 1
   },
   {
    "id": "artistes",
@@ -44,7 +46,8 @@
    "lien": "atelier.html",
    "verifier": [
     "atelier.json"
-   ]
+   ],
+   "niveau": 1
   },
   {
    "id": "sculptures",
@@ -58,7 +61,8 @@
    "verifier": [
     "sculptures-soir.json",
     "sculptures.json"
-   ]
+   ],
+   "niveau": 2
   },
   {
    "id": "sculpteurs",
@@ -71,7 +75,23 @@
    },
    "verifier": [
     "sculptures.json"
-   ]
+   ],
+   "niveau": 2
+  },
+  {
+   "id": "chant",
+   "type": "chant",
+   "age": 0,
+   "source": "chant.json",
+   "titre": {
+    "en": "The Song of the Square",
+    "fr": "Le chant de la place"
+   },
+   "lien": "chant.html",
+   "verifier": [
+    "chant.json"
+   ],
+   "niveau": 3
   },
   {
    "id": "ecriture",
@@ -85,7 +105,8 @@
    "lien": "ecriture.html",
    "verifier": [
     "ecriture.json"
-   ]
+   ],
+   "niveau": 4
   }
  ],
  "annexes": [
