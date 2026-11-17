@@ -64,7 +64,8 @@ Certified by the Ministry. The Ministry certifies everything.
 
 ## The one-byte collector coin
 Every president gets a minting: a one-byte coin bearing their portrait, that is, the 81 connections of their brain, read from the published weights. A new minting at every change of president. The old ones join the collection.
-Minting in progress: President Kiti's portrait has not yet been read from the published weights.
+Obverse: Kiti, president, era 1 (https://www.microcontroland.org/tourisme/piece-98-en.svg)
+What is true: it is a souvenir picture from the Tourist Office, not the country's currency (a currency is planned with update 2). The byte has no real value: the coin can be neither bought nor sold, only saved. Portrait read on 17 November 2026.
 
 ## Practical information
 - Access: The country can only be visited online. Located in a garage in Normandy, not open to the public.
