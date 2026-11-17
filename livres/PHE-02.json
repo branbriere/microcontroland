@@ -1,0 +1,26 @@
+{
+  "format": 1,
+  "cote": "PHE-02",
+  "note": "Essai déposé à la Bibliothèque nationale, rayon Philosophie étrangère. 1re édition, faits arrêtés au 15 novembre 2026 (édition n° 38). Texte daté, jamais retouché : la 2e édition (fin de la phase 1) aura sa propre cote.",
+  "page": "livres/la-republique-des-6-4-watts.html",
+  "ouvrir_en": "Open the book (in French)",
+  "sous": {"fr": "Petite expérience sur l'ego, le pouvoir et l'impossible société parfaite · 1re édition · en français", "en": "A small experiment on ego, power and the impossible perfect society · 1st edition · in French"},
+  "resume": {"fr": "« Ils ne pensent pas comme nous. Ils ne vivent pas comme nous. Pourtant, en observant leurs querelles, nous finissons par nous interroger sur les nôtres. » Une révolution sans meneur, une censure sans tyran, un limogeage sans auteur : huit chapitres, des faits datés, les règles du monde, une question et quelques philosophes, pour laisser le lecteur conclure.",
+             "en": "“They do not think like us. They do not live like us. Yet, watching their quarrels, we end up questioning our own.” A revolution without a leader, censorship without a tyrant, a dismissal nobody made: eight chapters, dated facts, the rules of the world, one question and a few philosophers, so that the reader draws the conclusion."},
+  "credits": {"fr": "Idée, titre, plan, questions et quatrième de couverture : Bran Brière · Texte : Claude.",
+              "en": "Idea, title, outline, questions and back cover: Bran Brière · Text: Claude."},
+  "chapitres": [
+    {"lab": "Avant-propos", "lab_en": "Foreword", "fr": "Un conte, une expérience, un carnet", "en": "A tale, an experiment, a notebook"},
+    {"lab": "Chapitre 1", "lab_en": "Chapter 1", "fr": "Au commencement, ils étaient différents", "en": "In the beginning, they were different"},
+    {"lab": "Chapitre 2", "lab_en": "Chapter 2", "fr": "La première révolution", "en": "The first revolution"},
+    {"lab": "Chapitre 3", "lab_en": "Chapter 3", "fr": "Kiti ou la tentation du silence", "en": "Kiti, or the temptation of silence"},
+    {"lab": "Chapitre 4", "lab_en": "Chapter 4", "fr": "Le bonheur de Babiba", "en": "Babiba's happiness"},
+    {"lab": "Chapitre 5", "lab_en": "Chapter 5", "fr": "Wibouth, ministre malheureux d'un pays heureux", "en": "Wibouth, unhappy minister of a happy country"},
+    {"lab": "Chapitre 6", "lab_en": "Chapter 6", "fr": "La vérité a plusieurs journaux", "en": "Truth has several newspapers"},
+    {"lab": "Chapitre 7", "lab_en": "Chapter 7", "fr": "La naissance de la culture", "en": "The birth of culture"},
+    {"lab": "Chapitre 8", "lab_en": "Chapter 8", "fr": "L'impossible perfection", "en": "The impossible perfection"},
+    {"lab": "Réflexion finale", "lab_en": "Final thought", "fr": "Pourquoi est-il si difficile de vivre ensemble ?", "en": "Why is it so hard to live together?"},
+    {"lab": "Sources", "lab_en": "Sources", "fr": "Références et sources", "en": "References and sources"}
+  ],
+  "sources": "livres/PHE-02.json ; éditions n° 1 à 38 de La Puce Libre ; contre-enquête, dossiers 1 à 5 ; fichiers bruts des 14 et 15 novembre 2026 ; règles du monde"
+}
