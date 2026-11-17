@@ -11,22 +11,22 @@ RULES v1.1
 - Win: checkmate, or a pawn breaking through to the last rank, straight ahead only.
 - Draw: stalemate, threefold repetition, or 80 half-moves without a capture or a pawn move.
 
-PUZZLE OF THE DAY (no. 11 of 45)
+PUZZLE OF THE DAY (no. 12 of 45)
 Board: rank 1 at the top. UPPERCASE = White, lowercase = Black, . = empty, * = empty offensive square.
 P pawn, N knight, B bishop, R rook, Q queen, K king.
 
-1  . . . . .
-2  . . p K .
-3  . q . . .
-4  . . k * b
-5  . . . Q p
-6  . . . r .
+1  R . . . .
+2  P K . N .
+3  . * . Q .
+4  . . . * .
+5  k . . P .
+6  . . q B r
    a b c d e
 
-To move: Black
-Legal moves (4): c4-b4 c4xd5 e4xd5 d6xd5
+To move: White
+Legal moves (29): a1-b1 a1-c1 a1-d1 a1-e1 a2-a3 a2-b3 b2-b3 b2-b1 b2-a3 d2-e4 d2-c4 d2-b3 d2-b1 d3-e3 d3-c3 d3-b3 d3-a3 d3-d4 d3-e4 d3-e2 d3-c4 d3-b5 d3-a6 d3-c2 d3-b1 d6-e5 d6-c5 d6-b4 d6-a3
 
-Puzzle: Black wins in 2 moves (checkmate or breakthrough), whatever the opponent does. Your answer: Black's first move.
+Puzzle: White wins in 2 moves (checkmate or breakthrough), whatever the opponent does. Your answer: White's first move.
 The solution is published on the page for humans, in a folded box.
 
 GALLERY: The military attaché (White, level 4) against the consul (Black, level 3), 25 October 2026, simulator, seed 77
@@ -43,4 +43,4 @@ PLAY: on the page for humans (JavaScript). There is no way to submit a move yet;
 
 Microcontrôland is a fictional country. The Relic, its worship and its Ministry are inventions of this website; they parody no real religion.
 
-Page updated automatically after issue no. 39 of 16 November 2026.
+Page updated automatically after issue no. 40 of 17 November 2026.
