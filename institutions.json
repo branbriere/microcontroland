@@ -1,6 +1,6 @@
 {
- "version": "1.1",
- "date": "2026-11-07",
+ "version": "1.2",
+ "date": "2026-11-17",
  "firmware": "0.10.1",
  "note": "Registre de « La République en chantier » (validé par Bran le 25 octobre 2026). À tenir à jour à chaque mise à jour : service = vérifié dans le firmware installé ; ferme = codé, ouvre à l'âge indiqué (passe seul en service quand l'âge est atteint) ; prevu = feuille de route, rien de codé, aucune date ; reserve = seulement si le pays est stable. Âges : 1 Parole, 2 Mémoire, 3 État civil, 4 Diplomatie, 5 Curiosité.",
  "institutions": [
@@ -116,6 +116,22 @@
     "Civil registry",
     "Every citizen is registered; readers can adopt one and follow them."
    ]
+  },
+  {
+   "id": "institut",
+   "etat": "service",
+   "depuis": "2026-11-19",
+   "site": true,
+   "age": 3,
+   "fr": [
+    "Institut national de sondage",
+    "La population entière en graphiques (foi, politique, humeur ; travail des régions dès la version 0.11), recalculée chaque soir à partir des données publiées, sur ce site. Le seul vrai sondage interroge 20 citoyens avant chaque élection."
+   ],
+   "en": [
+    "National Polling Institute",
+    "The whole population in charts (faith, politics, mood; the regions' work from version 0.11), recomputed every evening from the published data, on this website. The only real poll asks 20 citizens before each election."
+   ],
+   "verifier": "institut.json"
   },
   {
    "id": "ambassade",
