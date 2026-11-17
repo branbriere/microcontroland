@@ -1,4 +1,4 @@
-// Microcontrôland : visite 3D du Musée national. Version 1.3.0, 17 novembre 2026 : le bunker. Licence MIT.
+// Microcontrôland : visite 3D du Musée national. Version 1.3.2, 17 novembre 2026 : le bunker ; la lumière suit l’heure du visiteur ; l’aile des présidents. Licence MIT.
 // Le plan n'est dessiné nulle part : les niveaux, leurs salles et leurs œuvres sont calculés à partir de musee.json,
 // lui-même construit chaque soir par .github/musee.py à partir des seules données publiées.
 // Décisions de Bran (11 au 16/11/2026) : un hall avec Hinton au centre et l'ascenseur au fond ; un ascenseur qui ne fait
@@ -34,7 +34,7 @@
   // ================================================================ textes (les cartels de données viennent de musee.json)
   const T = {
     fr: {
-      chargement: 'Ouverture des portes du musée…', quitter: 'Sortir', fermer: 'Fermer', vrai: 'Ce qui est vrai.', source: 'Source', voir: 'Voir la page', vers: 'Vérifier',
+      chargement: 'Ouverture des portes du musée…', quitter: 'Sortir', ici: 'Vous êtes ici', aller: 'Aller à…', aller_pres: 'Salle des présidents', lumiere: { auto: 'Lumière : votre heure', jour: 'Lumière : jour', soir: 'Lumière : soir', nuit: 'Lumière : nuit' }, fermer: 'Fermer', vrai: 'Ce qui est vrai.', source: 'Source', voir: 'Voir la page', vers: 'Vérifier',
       aide: "Glisser pour regarder · flèches ou ZQSD pour marcher · toucher une œuvre pour lire son cartel · Maj ou « Marche rapide » pour aller plus vite · ↻ ou R pour se retourner · toucher les portes de l'ascenseur pour descendre",
       rapide: 'Marche rapide', demitour: 'Se retourner', avancer: 'Avancer', reculer: 'Reculer', gauche: 'Tourner à gauche', droite: 'Tourner à droite',
       asc: 'Ascenseur', asc_sous: 'Capacité : un visiteur humain. Cet ascenseur ne fait que descendre.', asc_msg: "Choisissez un niveau. Les portes s'ouvrent une fois le choix fait.",
@@ -106,7 +106,7 @@
       lire: 'toucher pour lire',
     },
     en: {
-      chargement: 'Opening the museum doors…', quitter: 'Leave', fermer: 'Close', vrai: 'What is true.', source: 'Source', voir: 'See the page', vers: 'Check',
+      chargement: 'Opening the museum doors…', quitter: 'Leave', ici: 'You are here', aller: 'Go to…', aller_pres: 'Hall of Presidents', lumiere: { auto: 'Light: your time', jour: 'Light: day', soir: 'Light: evening', nuit: 'Light: night' }, fermer: 'Close', vrai: 'What is true.', source: 'Source', voir: 'See the page', vers: 'Check',
       aide: 'Drag to look · arrow keys or WASD to walk · tap a work to read its caption · Shift or “Fast walk” to go faster · ↻ or R to turn around · tap the lift doors to go down',
       rapide: 'Fast walk', demitour: 'Turn around', avancer: 'Forward', reculer: 'Back', gauche: 'Turn left', droite: 'Turn right',
       asc: 'Lift', asc_sous: 'Capacity: one human visitor. This lift only goes down.', asc_msg: 'Choose a level. The doors open once you have chosen.',
@@ -269,7 +269,7 @@
   function html() {
     const N = T.niveaux;
     return `<style>${CSS}</style><canvas aria-label="${T.bienvenue}"></canvas>
-<div class="m3-bandeau"><div class="m3-etiq" id="m3-ou"></div><button type="button" class="m3-etiq" id="m3-sortir" style="border:0;cursor:pointer">${T.quitter}</button></div>
+<div class="m3-bandeau"><div class="m3-etiq" id="m3-ou"></div><span style="display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end"><select class="m3-etiq" id="m3-aller" aria-label="${T.aller}" style="border:0;cursor:pointer;max-width:46vw"></select><button type="button" class="m3-etiq" id="m3-lum" style="border:0;cursor:pointer"></button><button type="button" class="m3-etiq" id="m3-sortir" style="border:0;cursor:pointer">${T.quitter}</button></span></div>
 <div class="m3-aide">${T.aide}</div>
 <div class="m3-pad">
   <button type="button" id="m3-rapide" class="m3-rapide" aria-pressed="false">${T.rapide}</button>
@@ -334,6 +334,9 @@
     // ---------------------------------------------------------------- cartels (fenêtre HTML)
     // c = { t: titre, d: sous-titre, m: [paragraphes], v: « ce qui est vrai », img: [noms], vid, html, echelle }
     const voile = $('#m3-cartel');
+    // sur téléphone, le toucher qui ouvre la cabine ou un cartel « retombe » parfois sur le bouton qui vient d'apparaître sous le doigt
+    // (Bran, 17/11/2026) : la fenêtre ignore les touchers pendant 450 ms après son ouverture
+    function bouclier(el) { el.style.pointerEvents = 'none'; clearTimeout(el._bouclier); el._bouclier = setTimeout(() => { el.style.pointerEvents = ''; }, 450); }
     function ouvrir(c) {
       if (!c) return;
       $('#m3-ct').textContent = c.t; $('#m3-cd').textContent = c.d || '';
@@ -345,7 +348,7 @@
       $('#m3-cv').innerHTML = c.v ? `<strong>${T.vrai}</strong> ${esc(c.v)}` + (c.echelle ? `<p style="margin-top:10px"><button type="button" class="m3-btn" id="m3-ech">${T.echelle}</button></p>` : '') : '';
       $('#m3-cv').hidden = !c.v;
       if (c.echelle) $('#m3-ech').onclick = () => { fermerCartel(); changerEchelle(); };
-      voile.hidden = false; $('#m3-fermer').focus();
+      voile.hidden = false; bouclier(voile); $('#m3-fermer').focus();
     }
     function fermerCartel() { voile.hidden = true; $('#m3-cx').innerHTML = ''; }
     $('#m3-fermer').onclick = fermerCartel;
@@ -385,9 +388,16 @@
       m.position.set(x, y, z); m.rotation.y = ry; e.g.add(m); if (c) cible(e, m, c); return m;
     }
     // un cadre au mur ou sur une cimaise ; dessiner(g, w, h) peut rendre une promesse (image SVG)
+    // une lumière douce sur chaque œuvre accrochée, comme les halos du musée d'avant (Bran, 17/11/2026) : à peine 10 % le jour,
+    // plus présente le soir et la nuit (la force est réglée par le cycle de lumière, 9c-lumiere.js)
+    const texHalo = new THREE.CanvasTexture(toile(128, 128, (g) => { const d = g.createRadialGradient(64, 64, 0, 64, 64, 64); d.addColorStop(0, 'rgba(255,240,210,.9)'); d.addColorStop(1, 'rgba(255,240,210,0)'); g.fillStyle = d; g.fillRect(0, 0, 128, 128); }));
+    function halo(grp, l, h) {
+      const m = new THREE.Mesh(new THREE.PlaneGeometry(l * 1.9 + 0.5, h * 1.7 + 0.5), new THREE.MeshBasicMaterial({ map: texHalo, transparent: true, opacity: 0.1, blending: THREE.AdditiveBlending, depthWrite: false, toneMapped: false }));
+      m.position.set(0, h * 0.08, 0.004); m.userData.halo = true; grp.add(m); return m;
+    }
     function cadre(e, c, dessiner, l, h, x, y, z, ry, dore = false, res = 256) {
       const grp = new THREE.Group(); grp.position.set(x, y, z); grp.rotation.y = ry; e.g.add(grp);
-      const b = new THREE.Mesh(new THREE.BoxGeometry(l + 0.1, h + 0.1, 0.05), dore ? DORE : CADRE); b.position.z = 0.025; grp.add(b);
+      const b = new THREE.Mesh(new THREE.BoxGeometry(l + 0.1, h + 0.1, 0.05), dore ? DORE : CADRE); b.position.z = 0.025; grp.add(b); if (l * h < 12) halo(grp, l, h);
       const cv = document.createElement('canvas'); const k = res / Math.max(l, h); cv.width = Math.max(16, Math.round(l * k)); cv.height = Math.max(16, Math.round(h * k));
       const t = new THREE.CanvasTexture(cv); t.encoding = THREE.sRGBEncoding;
       const p = new THREE.Mesh(new THREE.PlaneGeometry(l, h), new THREE.MeshBasicMaterial({ map: t, toneMapped: false })); p.position.z = 0.052; grp.add(p);
@@ -399,7 +409,7 @@
       const grp = new THREE.Group(); grp.position.set(x, y, z); grp.rotation.y = ry; e.g.add(grp);
       const t = loader.load(BASE + 'musee-reserve/' + nom + '.jpg', (tx) => {
         const h = larg * tx.image.height / tx.image.width;
-        const cad = new THREE.Mesh(new THREE.BoxGeometry(larg + 0.12, h + 0.12, 0.05), CADRE); cad.position.z = 0.025; grp.add(cad);
+        const cad = new THREE.Mesh(new THREE.BoxGeometry(larg + 0.12, h + 0.12, 0.05), CADRE); cad.position.z = 0.025; grp.add(cad); const ha = halo(grp, larg, h); if (LUM && LUM.ajouter) LUM.ajouter(ha);
         const p = new THREE.Mesh(new THREE.PlaneGeometry(larg, h), new THREE.MeshBasicMaterial({ map: tx, toneMapped: false })); p.position.z = 0.052; grp.add(p); cible(e, p, c);
       });
       t.encoding = THREE.sRGBEncoding; return grp;
@@ -453,14 +463,19 @@
     }
 
     // une salle simple (hall, musique, planétarium, réserve) : sol, plafond, poutres, 4 murs, lampes
-    function salleSimple(e, X, Z1, Z2, Hs = H, lampes = true) {
+    function salleSimple(e, X, Z1, Z2, Hs = H, lampes = true, porteEst = null) {
       Object.assign(e, { X, Z1, Z2 });
       const sol = new THREE.Mesh(new THREE.PlaneGeometry(2 * X, Z1 - Z2), new THREE.MeshStandardMaterial({ map: tex(cSol, 2 * X / 2.5, (Z1 - Z2) / 2.5), roughness: 0.55 }));
       sol.rotation.x = -Math.PI / 2; sol.position.set(0, 0, (Z1 + Z2) / 2); e.g.add(sol);
       const pl = new THREE.Mesh(new THREE.PlaneGeometry(2 * X, Z1 - Z2), new THREE.MeshStandardMaterial({ color: 0xd8dad6, roughness: 1 }));
       pl.rotation.x = Math.PI / 2; pl.position.set(0, Hs, (Z1 + Z2) / 2); e.g.add(pl);
       for (let z = Z1 - 1; z > Z2; z -= 2.2) boiteE(e, 2 * X, 0.22, 0.18, 0, Hs - 0.11, z, POUTRE, false);
-      boiteE(e, 0.2, Hs, Z1 - Z2, -X, Hs / 2, (Z1 + Z2) / 2, MUR); boiteE(e, 0.2, Hs, Z1 - Z2, X, Hs / 2, (Z1 + Z2) / 2, MUR);
+      boiteE(e, 0.2, Hs, Z1 - Z2, -X, Hs / 2, (Z1 + Z2) / 2, MUR);
+      if (porteEst) {   // une ouverture dans le mur de droite (aile des présidents, Bran 17/11/2026) : deux pans et un linteau
+        const [za, zb] = porteEst, hp = 2.9;
+        boiteE(e, 0.2, Hs, Z1 - zb, X, Hs / 2, (Z1 + zb) / 2, MUR); boiteE(e, 0.2, Hs, za - Z2, X, Hs / 2, (za + Z2) / 2, MUR);
+        boiteE(e, 0.2, Hs - hp, zb - za, X, (Hs + hp) / 2, (za + zb) / 2, MUR, false);
+      } else boiteE(e, 0.2, Hs, Z1 - Z2, X, Hs / 2, (Z1 + Z2) / 2, MUR);
       boiteE(e, 2 * X, Hs, 0.2, 0, Hs / 2, Z2, MUR); boiteE(e, 2 * X, Hs, 0.2, 0, Hs / 2, Z1, MUR);
       if (lampes) for (let z = Z1 - 2; z > Z2; z -= 5) { const l = new THREE.PointLight(0xfff3df, 0.45, 13, 1.6); l.position.set(0, Hs - 0.4, z); e.g.add(l); }
     }
@@ -503,14 +518,47 @@
         const bt = plan(new THREE.CircleGeometry(0.05, 20), new THREE.MeshBasicMaterial({ color: 0xffb347 }), 1.0, 1.15, 0.012); bt.userData.asc = true; e.cibles.push(bt);
       };
       portes(sens); if (double) portes(-sens);
+      miniPlan(e, x, z, sens); if (double) miniPlan(e, x, z, -sens);
       const f = z + sens * d / 2; e.depart = { x, z: f + sens * 1.3, yaw: sens > 0 ? Math.PI : 0 };
+    }
+    // « Vous êtes ici » (finition validée par Bran le 13/11/2026) : le plan du niveau en fil de fer vert sur un pupitre, à gauche de
+    // chaque porte d'ascenseur. Il est tourné comme le visiteur qui le lit (le haut du plan = devant lui) ; un point ambre le suit.
+    function miniPlan(e, x, z, sg) {
+      const R = [];   // rectangles du niveau [x1, z1, x2, z2]
+      if (e.damier) for (const [cx, cz] of e.damier) R.push([cx * CASE - CASE / 2, cz * CASE - CASE / 2, cx * CASE + CASE / 2, cz * CASE + CASE / 2]);
+      else { R.push([-e.X, e.Z2, e.X, e.Z1]); const A = e.id === '0' && DEF['0'].aile; if (A) R.push([8, A.z2, A.x2, A.z1]); }
+      let x1 = Infinity, z1 = Infinity, x2 = -Infinity, z2 = -Infinity;
+      for (const r of R) { x1 = Math.min(x1, r[0]); z1 = Math.min(z1, r[1]); x2 = Math.max(x2, r[2]); z2 = Math.max(z2, r[3]); }
+      const W = 640, Hc = 480, m = 46, top = 64, k = Math.min((W - 2 * m) / (x2 - x1), (Hc - top - m) / (z2 - z1));
+      const ox = (W - (x2 - x1) * k) / 2, oy = top + (Hc - top - m - (z2 - z1) * k) / 2;
+      // sg > 0 : le lecteur regarde vers −z, la droite est +x ; sg < 0 : tout tourne d'un demi-tour
+      const P = (px, pz) => sg > 0 ? [ox + (px - x1) * k, oy + (pz - z1) * k] : [ox + (x2 - px) * k, oy + (z2 - pz) * k];
+      const cv = toile(W, Hc, (g) => {
+        g.fillStyle = '#030807'; g.fillRect(0, 0, W, Hc); g.strokeStyle = '#2c5a3c'; g.lineWidth = 4; g.strokeRect(2, 2, W - 4, Hc - 4);
+        g.fillStyle = '#5fe08f'; g.font = '700 30px system-ui, sans-serif'; g.fillText(`${T.ici} · ${e.nom.split(' · ')[0]}`, 22, 42);
+        g.strokeStyle = '#5fe08f'; g.lineWidth = 2;
+        for (const r of R) { const [a, b] = P(r[0], r[1]), [c, d] = P(r[2], r[3]); g.strokeRect(Math.min(a, c), Math.min(b, d), Math.abs(c - a), Math.abs(d - b)); }
+        const [a, b] = P(x - 1.3, z - 1.2), [c, d] = P(x + 1.3, z + 1.2); g.fillStyle = '#ffb347'; g.fillRect(Math.min(a, c), Math.min(b, d), Math.abs(c - a), Math.abs(d - b));
+      });
+      const l = 0.84, h = l * Hc / W, f = z + sg * 1.2, px = x - 1.95 * sg, pz = f + sg * 0.55, ry = sg > 0 ? 0 : Math.PI;
+      boiteE(e, 0.5, 0.95, 0.3, px, 0.475, pz, SOCLE);
+      const grp = new THREE.Group(); grp.position.set(px, 1.24, pz); grp.rotation.y = ry; e.g.add(grp);
+      const pan = new THREE.Group(); pan.rotation.x = -0.75; grp.add(pan);
+      const t = new THREE.CanvasTexture(cv); t.encoding = THREE.sRGBEncoding;
+      pan.add(new THREE.Mesh(new THREE.PlaneGeometry(l, h), new THREE.MeshBasicMaterial({ map: t, toneMapped: false })));
+      const point = new THREE.Mesh(new THREE.CircleGeometry(0.016, 16), new THREE.MeshBasicMaterial({ color: 0xffb347, toneMapped: false })); point.position.z = 0.004; pan.add(point);
+      e.anim.push((tt) => {
+        if (courant !== e) return;
+        const [u, v] = P(joueur.x, joueur.z); point.position.x = (u / W - 0.5) * l; point.position.y = (0.5 - v / Hc) * h;
+        point.visible = Math.floor(tt / 500) % 2 === 0 || lent;   // il clignote, comme sur les vrais plans
+      });
     }
     // fenêtre sur le garage (musée 1.1 : vraies photos, vérifiées et floutées) ; ce n'est pas une œuvre
     function fenetre(e, f, l, h, x, y, z, ry) {
       const k = f.cartel[LG], c = { t: k.titre, d: f.titre[LG], m: k.lignes, v: k.vrai.replace(/^(Ce qui est vrai|What is true) ?: ?/, '') };
       const grp = new THREE.Group(); grp.position.set(x, y, z); grp.rotation.y = ry; e.g.add(grp);
       const tx = loader.load(BASE + f.image, () => {}, undefined, () => { grp.visible = false; }); tx.encoding = THREE.sRGBEncoding;
-      const p = new THREE.Mesh(new THREE.PlaneGeometry(l, h), new THREE.MeshBasicMaterial({ map: tx, toneMapped: false })); p.position.z = 0.105; grp.add(p); cible(e, p, c);
+      const p = new THREE.Mesh(new THREE.PlaneGeometry(l, h), new THREE.MeshBasicMaterial({ map: tx, toneMapped: false })); p.position.z = 0.105; p.userData.vitre = true; grp.add(p); cible(e, p, c);
       const ALU = new THREE.MeshLambertMaterial({ color: 0x9aa1a4 }), b = 0.09, q = 0.16;
       for (const [w, hh, px, py] of [[l + 2 * b, b, 0, h / 2 + b / 2], [l + 2 * b, b, 0, -h / 2 - b / 2], [b, h, -l / 2 - b / 2, 0], [b, h, l / 2 + b / 2, 0]]) { const m = new THREE.Mesh(new THREE.BoxGeometry(w, hh, q), ALU); m.position.set(px, py, 0.1 + q / 2); grp.add(m); cible(e, m, c); }
       const v = new THREE.Mesh(new THREE.BoxGeometry(0.035, h, 0.03), ALU); v.position.set(0, 0, 0.13); grp.add(v);
@@ -529,8 +577,9 @@
     const parNiveau = {}; for (const s of aile.salles) (parNiveau[niveauDe(s)] = parNiveau[niveauDe(s)] || []).push(s);
     // nombre de salles de chaque niveau en damier (case 0 = l'ascenseur)
     const nSculpteurs = S('sculpteurs').reduce((t, s) => t + Math.max(1, Math.ceil(s.oeuvres.length / 16)), 0);
+    const PAS_P = 3.0;   // aile des présidents : un portrait et son cartel tous les 3 m, sur les deux grands murs
     const DEF = {
-      '0': { X: 8, Z1: 6, Z2: -14, cz: -12.7, build: hall },
+      '0': { X: 8, Z1: 6, Z2: -14, cz: -12.7, build: hall, aile: pres && pres.oeuvres.length ? { x2: 8 + Math.max(10, Math.ceil(pres.oeuvres.length / 2) * PAS_P + 4), z1: 2, z2: -6, porte: [-3.4, -0.6] } : null },
       '1': (atelier || S('artistes').length) && { n: (atelier ? 7 : 0) + S('artistes').length, build: niveauArt },
       '2': (sculpt || S('sculpteurs').length) && { n: (sculpt ? 7 : 0) + nSculpteurs, build: niveauSculpture },
       '3': chant && { X: 8, Z1: 3, Z2: -21, cz: 1.7, build: niveauMusique },
@@ -539,7 +588,7 @@
       '-1': { X: 5, Z1: 3, Z2: -19, cz: 1.7, build: reserve },
     };
     for (const id of Object.keys(DEF)) if (!DEF[id]) delete DEF[id];
-    const surfaceDe = (d) => d.n != null ? (d.n + 1) * CASE * CASE : 2 * d.X * (d.Z1 - d.Z2);
+    const surfaceDe = (d) => d.n != null ? (d.n + 1) * CASE * CASE : 2 * d.X * (d.Z1 - d.Z2) + (d.aile ? (d.aile.x2 - d.X) * (d.aile.z1 - d.aile.z2) : 0);
     function obtenir(id) {
       if (ETAGES[id]) return ETAGES[id];
       const e = base(id); DEF[id].build(e); return e;   // chargement par niveau : seul un niveau visité est construit
@@ -599,7 +648,7 @@
 
     // ---------------------------------------------------------------- rez-de-chaussée : le hall
     function hall(e) {
-      salleSimple(e, 8, 6, -14);
+      salleSimple(e, 8, 6, -14, H, true, DEF['0'].aile && DEF['0'].aile.porte);
       cage(e, 0, -12.7);
       e.depart = { x: 0, z: 4.8, yaw: 0 };
       const O = -8 + 0.11, E = 8 - 0.11, N = -14 + 0.11, Sd = 6 - 0.11;
@@ -628,19 +677,37 @@
       if (FEN.est) fenetre(e, FEN.est, 0.95, 0.95 * FEN.est.hauteur / FEN.est.largeur, E, 1.95, 1.6, -Math.PI / 2);
       if (FEN.ouest) fenetre(e, FEN.ouest, 0.95, 0.95 * FEN.ouest.hauteur / FEN.ouest.largeur, O, 1.95, -5.2, Math.PI / 2);
       if (FEN.sud) fenetre(e, FEN.sud, 0.95, 0.95 * FEN.sud.hauteur / FEN.sud.largeur, 3.6, 1.95, Sd, Math.PI);
-      // les présidents, au mur de droite (un cadre par président, la statue est devenue le planétarium du −5)
-      if (pres) {
-        const cs = C(pres.titre[LG], T.nom['0'], [T.presidents[1]], null, verifier(pres));
-        panneau(e, cs, [pres.titre[LG], T.presidents[1]], 1.4, 0.75, E, 1.7, -4.6, -Math.PI / 2, { titre: 46, corps: 24 });
-        if (pres.reclame) panneau(e, Creclame(pres.reclame[LG]), [pres.reclame[LG].titre, ...pres.reclame[LG].lignes], 1.6, 1.1, E, 1.9, -2.3, -Math.PI / 2, { titre: 34, corps: 24, fond: '#1b2124', encre: '#f2f4f1', doux: '#c9cfcb' });
-        const n = pres.oeuvres.length, pas = Math.min(2.1, 6.9 / Math.max(1, n)), s = Math.min(1, pas / 2.1);
-        pres.oeuvres.forEach((o, i) => {
-          const k = o.cartel[LG], z = -6.6 - i * pas;
-          const c = C(k.nom, k.info, [...k.lignes, ...k.bas], null, srcDe(o.fichier) + verifier(pres));
-          cadre(e, c, o.svg ? svgImage(o.svg) : cadreVide(k.vide[0], k.vide[1]), 1.0 * s, 1.25 * s, E, 1.85, z, -Math.PI / 2);
-          panneau(e, c, [k.nom, k.info], 1.0 * s, 0.3 * s, E, 1.85 - 0.8 * s, z, -Math.PI / 2, { titre: 40, corps: 22 });
-        });
-      }
+      // les présidents : leur aile s'ouvre à droite de l'entrée (Bran, 17/11/2026) ; la statue est devenue le planétarium du −5
+      if (pres && DEF['0'].aile) aileDesPresidents(e, DEF['0'].aile);
+    }
+
+    // ---------------------------------------------------------------- l'aile des présidents (Bran, 17/11/2026)
+    // Une galerie de 8 m de large et 6,2 m sous plafond (les egos présidentiels, comme dans le musée d'avant) derrière le mur de droite du hall. Chaque portrait a son cartel À CÔTÉ, à sa droite, jamais
+    // dessous : le cartel ne mange plus le tableau. Ordre des mandats : mur de gauche en entrant, puis retour par le mur d'en face.
+    // L'aile s'allonge seule de 2,7 m tous les deux présidents.
+    function aileDesPresidents(e, A) {
+      const HP = 6.2, X1 = 8, X2 = A.x2, Z1 = A.z1, Z2 = A.z2, L = X2 - X1, xm = (X1 + X2) / 2, zm = (Z1 + Z2) / 2;
+      const sol = new THREE.Mesh(new THREE.PlaneGeometry(L, Z1 - Z2), new THREE.MeshStandardMaterial({ map: tex(cSol, L / 2.5, (Z1 - Z2) / 2.5), roughness: 0.55 }));
+      sol.rotation.x = -Math.PI / 2; sol.position.set(xm, 0.001, zm); e.g.add(sol);
+      const pl = new THREE.Mesh(new THREE.PlaneGeometry(L, Z1 - Z2), new THREE.MeshStandardMaterial({ color: 0xd8dad6, roughness: 1 }));
+      pl.rotation.x = Math.PI / 2; pl.position.set(xm, HP, zm); e.g.add(pl);
+      for (let x = X1 + 1.2; x < X2; x += 2.2) boiteE(e, 0.18, 0.22, Z1 - Z2, x, HP - 0.11, zm, POUTRE, false);
+      boiteE(e, L + 0.2, HP, 0.2, xm, HP / 2, Z2, MUR); boiteE(e, L + 0.2, HP, 0.2, xm, HP / 2, Z1, MUR); boiteE(e, 0.2, HP, Z1 - Z2, X2, HP / 2, zm, MUR);
+      boiteE(e, 0.2, HP - H, Z1 - Z2, X1 + 0.1, (H + HP) / 2, zm, MUR, false);   // au-dessus du mur du hall, côté aile
+      for (let x = X1 + 2.5; x < X2; x += 4.5) { const l = new THREE.PointLight(0xfff3df, 0.6, 15, 1.6); l.position.set(x, HP - 0.5, zm); e.g.add(l); }
+      // au-dessus de la porte, côté hall, et au fond de l'aile : le titre ; la réclame sur le mur du fond
+      const [za, zb] = A.porte, cs = C(pres.titre[LG], T.nom['0'], [T.presidents[1]], null, verifier(pres));
+      panneau(e, cs, [pres.titre[LG]], 2.4, 0.42, X1 - 0.12, 3.3, (za + zb) / 2, -Math.PI / 2, { titre: 64, corps: 24, l: 2.4, h: 0.42 });
+      panneau(e, cs, [pres.titre[LG], T.presidents[1]], 1.8, 0.9, X2 - 0.11, 2.6, zm + 1.6, -Math.PI / 2, { titre: 46, corps: 24 });
+      if (pres.reclame) panneau(e, Creclame(pres.reclame[LG]), [pres.reclame[LG].titre, ...pres.reclame[LG].lignes], 1.8, 1.2, X2 - 0.11, 1.9, zm - 1.6, -Math.PI / 2, { titre: 34, corps: 24, fond: '#1b2124', encre: '#f2f4f1', doux: '#c9cfcb' });
+      const nN = Math.ceil(pres.oeuvres.length / 2);
+      pres.oeuvres.forEach((o, i) => {
+        const k = o.cartel[LG], c = C(k.nom, k.info, [...k.lignes, ...k.bas], null, srcDe(o.fichier) + verifier(pres));
+        // mur nord (on le regarde vers −z : la droite est +x) puis mur sud (on le regarde vers +z : la droite est −x)
+        const nord = i < nN, r = nord ? i : pres.oeuvres.length - 1 - i, xc = X1 + 2.2 + r * PAS_P, z = nord ? Z2 + 0.11 : Z1 - 0.11, ry = nord ? 0 : Math.PI, d = nord ? 1 : -1;
+        cadre(e, c, o.svg ? svgImage(o.svg) : cadreVide(k.vide[0], k.vide[1]), 1.3, 1.62, xc - 0.55 * d, 2.15, z, ry);
+        panneau(e, c, [k.nom, k.info, ...k.lignes], 0.95, 0.9, xc + 0.82 * d, 1.6, z + 0.01 * (nord ? 1 : -1), ry, { titre: 68, corps: 42 });
+      });
     }
 
     // ---------------------------------------------------------------- le plan du musée en fil de fer vert (Bran, 13/11/2026)
@@ -660,7 +727,7 @@
         const seg = [], B = (a, b) => seg.push(...a, ...b);
         const boiteFil = (x1, z1, x2, z2) => { const c = [[x1, z1], [x2, z1], [x2, z2], [x1, z2]]; for (let q = 0; q < 4; q++) { const [ax, az] = c[q], [bx, bz] = c[(q + 1) % 4]; B([ax, y, az], [bx, y, bz]); B([ax, y + hN, az], [bx, y + hN, bz]); B([ax, y, az], [ax, y + hN, az]); } };
         if (D && D.n != null) { const h = CASE / 2 * k; for (const [cx, cz] of spirale(D.n + 1)) { const X0 = cx * CASE * k, Z0 = (cz * CASE - 1.0) * k; boiteFil(X0 - h, Z0 - h, X0 + h, Z0 + h); } }
-        else { const X = D ? D.X : 7.5, Z1 = D ? D.Z1 : 3, Z2 = D ? D.Z2 : -23, cz = D ? D.cz : 1.7; boiteFil(-X * k, (Z1 - cz) * k, X * k, (Z2 - cz) * k); const zc = ((Z1 + Z2) / 2 - cz) * k; B([-X * k, y, zc], [X * k, y, zc]); B([-X * k, y + hN, zc], [X * k, y + hN, zc]); }
+        else { const X = D ? D.X : 7.5, Z1 = D ? D.Z1 : 3, Z2 = D ? D.Z2 : -23, cz = D ? D.cz : 1.7; boiteFil(-X * k, (Z1 - cz) * k, X * k, (Z2 - cz) * k); if (D && D.aile) boiteFil(X * k, (D.aile.z1 - cz) * k, D.aile.x2 * k, (D.aile.z2 - cz) * k); const zc = ((Z1 + Z2) / 2 - cz) * k; B([-X * k, y, zc], [X * k, y, zc]); B([-X * k, y + hN, zc], [X * k, y + hN, zc]); }
         const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(seg, 3));
         const l = new THREE.LineSegments(g, mat); l.renderOrder = 3; if (pointille) l.computeLineDistances();
         const bloc = new THREE.Group(); bloc.add(l); dec.add(bloc); blocs[id] = bloc;
@@ -1144,6 +1211,54 @@
       };
     })();
 
+    // ---------------------------------------------------------------- lumière : cycle selon l'heure du visiteur (Bran, 2/11/2026 ; repris dans le bunker le 16/11)
+    // Nuit avant 6 h et après 22 h ; aube de 6 h à 8 h ; jour jusqu'à 17 h 30 ; soir jusqu'à 20 h ; tombée de la nuit jusqu'à 22 h.
+    // Le bouton choisit « votre heure », jour, soir ou nuit (choix gardé dans le navigateur seulement). Le planétarium (−5) reste noir.
+    const LUM = (() => {
+      const AMB = {
+        jour: { hemi: 0.75, c: 0xfffbf0, soleil: 0.5, fond: 0xdfe2dd, vue: 0xffffff, lampes: 1, expo: 1.05, halo: 0.1 },
+        soir: { hemi: 0.5, c: 0xffd9b0, soleil: 0.28, fond: 0xc9b9a6, vue: 0xd6b898, lampes: 1, expo: 1.0, halo: 0.25 },
+        nuit: { hemi: 0.16, c: 0x9fb0d0, soleil: 0.0, fond: 0x1a1e24, vue: 0x3a4252, lampes: 0.7, expo: 0.88, halo: 0.45 },
+      };
+      const NOIR = { ...AMB.jour, fond: 0x030506 };   // −5 : le planétarium garde sa nuit d'étoiles à toute heure
+      const MODES = ['auto', 'jour', 'soir', 'nuit'], mel = (a, b, t) => a + (b - a) * t, melC = (a, b, t) => new THREE.Color(a).lerp(new THREE.Color(b), t);
+      function etatHeure(h) {
+        if (h < 6 || h >= 22) return ['nuit', 'nuit', 0];
+        if (h < 8) return ['nuit', 'jour', (h - 6) / 2];
+        if (h < 17.5) return ['jour', 'jour', 0];
+        if (h < 20) return ['jour', 'soir', (h - 17.5) / 2.5];
+        return ['soir', 'nuit', (h - 20) / 2];
+      }
+      let mode = 'auto', e = null, vitres = [], lampes = [], halos = [];
+      try { const m = localStorage.getItem('mcl-musee-lumiere'); if (MODES.includes(m)) mode = m; } catch (_) { /* stockage indisponible : votre heure */ }
+      const bLum = $('#m3-lum');
+      function eclairer() {
+        if (!e) return;
+        const d = new Date(), h = d.getHours() + d.getMinutes() / 60, [a, b, t] = mode === 'auto' ? etatHeure(h) : [mode, mode, 0];
+        const A = e.id === '5' ? NOIR : AMB[a], B = e.id === '5' ? NOIR : AMB[b];
+        HEMI.intensity = mel(A.hemi, B.hemi, t); HEMI.color = melC(A.c, B.c, t); soleil.intensity = mel(A.soleil, B.soleil, t);
+        renderer.toneMappingExposure = mel(A.expo, B.expo, t);
+        const f = melC(A.fond, B.fond, t); scene.background.copy(f); scene.fog.color.copy(f);
+        const v = melC(A.vue, B.vue, t); for (const m of vitres) m.material.color.copy(v);
+        const k = mel(A.lampes, B.lampes, t); for (const l of lampes) l.intensity = l.userData.base * k;
+        const ho = mel(A.halo, B.halo, t); for (const m of halos) m.material.opacity = ho;
+        bLum.textContent = T.lumiere[mode] + (mode === 'auto' ? ` (${String(d.getHours()).padStart(2, '0')} h ${String(d.getMinutes()).padStart(2, '0')})` : '');
+      }
+      bLum.onclick = () => { mode = MODES[(MODES.indexOf(mode) + 1) % MODES.length]; try { localStorage.setItem('mcl-musee-lumiere', mode); } catch (_) { /* rien */ } eclairer(); };
+      const minuteur = setInterval(eclairer, 60000);
+      return {
+        niveau(n) {
+          e = n; vitres = []; lampes = []; halos = [];
+          n.g.traverse((o) => { if (o.userData.vitre) vitres.push(o); if (o.userData.halo) halos.push(o); if (o.isPointLight) { if (o.userData.base == null) o.userData.base = o.intensity; lampes.push(o); } });
+          eclairer();
+        },
+        ajouter(m) { halos.push(m); eclairer(); },   // photos de la réserve, chargées après la construction du niveau
+        mode(m) { if (MODES.includes(m)) { mode = m; eclairer(); } },
+        etat: () => ({ mode, halos: halos.length, halo: halos[0] ? +halos[0].material.opacity.toFixed(2) : null, fond: '#' + scene.background.getHexString(), hemi: +HEMI.intensity.toFixed(3) }),
+        fermer() { clearInterval(minuteur); },
+      };
+    })();
+
     // ---------------------------------------------------------------- changer d'échelle : la galaxie des dessins (clin d'œil à Elite)
     let univers = null, camU = null, echelle = null;
     const DESSINS = atelier ? atelier.dessins.filter(Boolean) : [];
@@ -1188,7 +1303,7 @@
     let essais = 0;
     function ouvrirAsc() {
       if (!asc.hidden) return; essais = 0; msg.textContent = T.asc_msg;
-      boite.querySelectorAll('.m3-etage').forEach((b) => b.classList.toggle('on', b.dataset.e === courant.id)); afficher(courant.id); asc.hidden = false;
+      boite.querySelectorAll('.m3-etage').forEach((b) => b.classList.toggle('on', b.dataset.e === courant.id)); afficher(courant.id); asc.hidden = false; bouclier(asc);
     }
     $('#m3-rester').onclick = () => { asc.hidden = true; joueur.z += 0.8 * (courant.sens || 1); };
     $('#m3-vis').onclick = () => { essais++; if (essais < 2) { msg.textContent = T.vis1; return; } msg.textContent = T.vis2; setTimeout(() => aller('-1'), 700); };
@@ -1198,8 +1313,7 @@
       if (courant) { courant.g.visible = false; if (courant.video) courant.video.pause(); }
       courant = obtenir(id); VIS.niveau(); courant.g.visible = true; if (courant.video) courant.video.play().catch(() => {});
       $('#m3-modes').hidden = id !== '5'; $('#m3-musique').hidden = id !== '3';
-      const FOND = { '5': 0x030506 }[id] ?? 0xdfe2dd;
-      scene.background.set(FOND); scene.fog.color.set(FOND); scene.fog.far = id === '5' ? 120 : 38;
+      LUM.niveau(courant); scene.fog.far = id === '5' ? 120 : 38;
       noterVu(id); if (PLAN) PLAN.maj();
       const d = courant.depart; joueur.x = d.x; joueur.z = d.z; joueur.yaw = d.yaw ?? Math.PI; joueur.pitch = -0.03;
       const [a, b] = courant.nom.split(' · '); $('#m3-ou').innerHTML = `<b>${esc(a)}</b>${b ? ' · ' + esc(b) : ''}`;
@@ -1212,6 +1326,17 @@
     $('#m3-demitour').onclick = demiTour;
     $('#m3-rapide').onclick = () => { RAPIDE = !RAPIDE; $('#m3-rapide').setAttribute('aria-pressed', RAPIDE); };
     $('#m3-sortir').onclick = fermer;
+    // déplacement rapide (Bran, 17/11/2026) : un menu mène directement à chaque niveau ouvert, et à l'aile des présidents ;
+    // jamais à la réserve secrète, qui ne s'atteint que par la vis de l'ascenseur
+    const menu = $('#m3-aller'), NIV_MENU = ['0', '1', '2', '3', '4', '5', '6'].filter((id) => DEF[id]);
+    menu.innerHTML = `<option value="">${esc(T.aller)}</option>` + NIV_MENU.map((id) => `<option value="${id}">${esc(AFF[id] + ' · ' + T.niveaux[id][0])}</option>`).join('')
+      + (DEF['0'].aile ? `<option value="pres">${esc('0 · ' + T.aller_pres)}</option>` : '');
+    menu.onchange = () => {
+      const v = menu.value; menu.value = ''; menu.blur(); if (!v) return;
+      if (!voile.hidden) fermerCartel(); echelle = null; $('#m3-univ').hidden = true;
+      if (v === 'pres') { aller('0'); setTimeout(() => { joueur.x = 9.6; joueur.z = -2; joueur.yaw = -Math.PI / 2; }, 420); }
+      else aller(v);
+    };
     const bas = (e) => {
       if (e.key === 'Escape') { if (!voile.hidden) fermerCartel(); else if (!asc.hidden) $('#m3-rester').onclick(); else if (echelle) $('#m3-retour').onclick(); else fermer(); return; }
       if ((e.key === 'r' || e.key === 'R') && voile.hidden && asc.hidden) demiTour();
@@ -1258,10 +1383,10 @@
       renderer.render(scene, camera); requestAnimationFrame(boucle);
     }
     requestAnimationFrame(boucle);
-    window.MCL_MUSEE = { aller: (id) => DEF[id] && montrer(id), joueur, etat: () => ({ niveau: courant.id, niveaux: Object.keys(DEF), son: SON && SON.etat(), visiteurs: VIS.etat() }), ouvrirAsc, changerEchelle };
+    window.MCL_MUSEE = { aller: (id) => DEF[id] && montrer(id), joueur, etat: () => ({ niveau: courant.id, niveaux: Object.keys(DEF), son: SON && SON.etat(), visiteurs: VIS.etat(), lumiere: LUM.etat() }), lumiere: (m) => LUM.mode(m), ouvrirAsc, changerEchelle };
     // à la sortie : tout s'arrête, rien ne reste en mémoire
     return () => {
-      actif = false; if (SON) SON.fermer(); VIS.fermer();
+      actif = false; if (SON) SON.fermer(); VIS.fermer(); LUM.fermer();
       removeEventListener('keydown', bas); removeEventListener('keyup', haut); removeEventListener('resize', taille);
       for (const id in ETAGES) if (ETAGES[id].video) ETAGES[id].video.pause();
       renderer.dispose(); delete window.MCL_MUSEE;
