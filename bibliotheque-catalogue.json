@@ -45,6 +45,6 @@
     {"cote": "PHE-01", "rayon": "philo-etr", "compilateur": "essai", "age": 4, "fichier": "livres/PHE-01.json",
      "fr": "Des visages dans la machine", "en": "Faces in the Machine"},
     {"cote": "PHE-02", "rayon": "philo-etr", "compilateur": "essai", "age": 4, "fichier": "livres/PHE-02.json",
-     "fr": "La République des 6,4 watts", "en": "The Republic of 6.4 Watts (in French)"}
+     "fr": "La République des 6,4 watts", "en": "The Republic of 6.4 Watts"}
   ]
 }
