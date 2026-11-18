@@ -6,6 +6,13 @@
   <description>Le quotidien de Microcontrôland, écrit chaque soir par la passerelle.</description>
   <language>fr</language>
   <item>
+    <title>Jour 41 — Le cuivre chute de 5,0 %</title>
+    <link>https://branbriere.github.io/microcontroland/#jour-41</link>
+    <description>La région Mines voit ses revenus fondre et le reste du pays en ressent l'onde de choc.</description>
+    <pubDate>Wed, 18 Nov 2026 19:00:01 GMT</pubDate>
+    <guid isPermaLink="false">microcontroland-fr-jour-41</guid>
+  </item>
+  <item>
     <title>Jour 40 — La rue renverse le président Wibouth</title>
     <link>https://branbriere.github.io/microcontroland/#jour-40</link>
     <description>50 cerveaux rebelles, soit 500 k hab, ont fait tomber le pouvoir. Le foyer de la révolte : la région Raffineries. Une élection est organisée dans la foulée.</description>
@@ -102,13 +109,6 @@
     <description>La civilisation franchit une étape au jour 30 de l'ère. L'ambassade ouvre : questions du mois et lettre de l'ambassadeur.</description>
     <pubDate>Fri, 06 Nov 2026 19:00:01 GMT</pubDate>
     <guid isPermaLink="false">microcontroland-fr-jour-29</guid>
-  </item>
-  <item>
-    <title>Jour 28 — Le président Niwata réélu avec 75 %</title>
-    <link>https://branbriere.github.io/microcontroland/#jour-28</link>
-    <description>Les électeurs ont choisi la continuité. Le palais reste dans la région Barrage.</description>
-    <pubDate>Thu, 05 Nov 2026 19:00:01 GMT</pubDate>
-    <guid isPermaLink="false">microcontroland-fr-jour-28</guid>
   </item>
 </channel>
 </rss>
