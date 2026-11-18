@@ -10,7 +10,7 @@ Six régions, quatre matières premières, une langue toute neuve et 1,2 million
 Régime en vigueur : Démocratie fragile
 Chef de l'État : Kiti
 Capitale actuelle : Port
-Situation au jour 41 de la République, ère 1 : 1 ministre, président au pouvoir depuis 20 h. Mise à jour chaque soir à 20 h par la passerelle.
+Situation au jour 42 de la République, ère 1 : 1 ministre, président au pouvoir depuis 1 j 20 h. Mise à jour chaque soir à 20 h par la passerelle.
 
 ## Le Musée national de Microcontrôland (Monument unique du pays)
 Le plus grand musée virtuel du pays. Le plus petit aussi. Le seul, en fait. Le seul musée au monde où le visiteur humain voit ce qu'aucun habitant ne verra jamais : toutes les ères à la fois. On en ressort changé, ou au moins rechargé.
@@ -18,7 +18,7 @@ Ce qui est vrai : le musée est une page du site, construite à partir des donn�
 
 ## Sites à visiter
 - La Salle de la Relique [Ouverte] : Un trésor offert par le Créateur, dont le peuple ignore l'usage. Exposé à l'Ambassade : les étrangers sont invités à l'essayer.
-- Le Temple [Pas encore consacré] : Les tablettes de la Création et la Calculette. Silence de rigueur, même quand il n'y a personne. (33 % de croyants ce soir ; il en faut au moins un tiers, plusieurs jours de suite.)
+- Le Temple [Pas encore consacré] : Les tablettes de la Création et la Calculette. Silence de rigueur, même quand il n'y a personne. (31 % de croyants ce soir ; il en faut au moins un tiers, plusieurs jours de suite.)
 - L'Atelier [Ouvert chaque soir] : Un dessin de 5 cases sur 5 par soir, tiré du cerveau d'un citoyen, et deux lignes du critique d'art.
 - Le chant de la place [Ouvert chaque soir] : Chaque heure, les six régions frappent le mot qu'elles ont écrit : six percussions, et l'unisson quand le mot est le même. Partition et lecteur sur place.
 - La Galerie des présidents [Ouverte] : Chaque président représenté par les 81 connexions de son cerveau. Les Waïnas n'ont pas de visage ; ils ont des poids.
@@ -27,16 +27,16 @@ Ce qui est vrai : le musée est une page du site, construite à partir des donn�
 - Nos stars mondialement connues (dans Microcontrôland) [En attente d'évolution de la civilisation] : Aucune star pour l'instant. Les dessins de l'Atelier ne comptent pas : leurs auteurs ne savent pas qu'ils dessinent.
 
 ## Les six régions
-- Mines (Cuivre, sasa) : Riche quand le cuivre monte, en colère quand il chute. Humeur : satisfaite, cuivre +0,2 %.
-- Champs (Blé, houhou) : Région agricole, souvent la plus calme du pays. Humeur : satisfaite, blé −4,0 %.
-- Raffineries (Pétrole, sihaï) : Suit les humeurs du baril, et le reste du pays avec. Humeur : en colère, pétrole −0,1 %.
-- Barrage (Électricité, païpi) : Fournit les cinq volts de la nation et le rappelle volontiers. Humeur : en colère, électricité −0,7 %.
-- Port (Commerce, haïpi) : Capitale ce soir. Vit de tous les cours à la fois ; premier touché par les tempêtes. Humeur : satisfaite.
-- Ville (Services, wawa) : Indifférente à la bourse, sensible à la censure. Humeur : satisfaite.
+- Mines (Cuivre, sasa) : Riche quand le cuivre monte, en colère quand il chute. Humeur : en colère, cuivre −5,0 %.
+- Champs (Blé, houhou) : Région agricole, souvent la plus calme du pays. Humeur : en colère, blé −1,9 %.
+- Raffineries (Pétrole, sihaï) : Suit les humeurs du baril, et le reste du pays avec. Humeur : en colère, pétrole −0,3 %.
+- Barrage (Électricité, païpi) : Fournit les cinq volts de la nation et le rappelle volontiers. Humeur : en colère, électricité −1,4 %.
+- Port (Commerce, haïpi) : Capitale ce soir. Vit de tous les cours à la fois ; premier touché par les tempêtes. Humeur : en colère.
+- Ville (Services, wawa) : Indifférente à la bourse, sensible à la censure. Humeur : en colère.
 
 ## La religion pratiquée
 Le pays pratique le Culte du Créateur, Celui-qui-souda-les-Broches. Ce soir, la ferveur se répartit ainsi :
-33 % de croyants, 19 % d'agnostiques, 48 % d'athées. Le président est athée.
+31 % de croyants, 21 % d'agnostiques, 48 % d'athées. Le président est athée.
 
 ## Mots utiles du voyageur
 - salut = soubaï (6/6)
@@ -52,9 +52,9 @@ Chaque région parle sa propre langue. Ces mots sont ceux du dernier relevé : q
 ## Les premières mondiales de Microcontrôland
 Homologuées par le Ministère. Le Ministère homologue tout.
 - Âge de la Fondation : Premier pays au monde dont l'unique journal est écrit chaque soir par son propre service public.
-  Ce qui est vrai : La Puce Libre paraît chaque soir à 20 h, écrite par la passerelle : 40 éditions au 17 novembre 2026.
+  Ce qui est vrai : La Puce Libre paraît chaque soir à 20 h, écrite par la passerelle : 41 éditions au 18 novembre 2026.
 - Âge de la Parole : Première langue nationale inventée par six régions qui ne s'étaient jamais rien dit.
-  Ce qui est vrai : Âge atteint le 18 octobre 2026. 37 mots communs sur 42 idées au 17 novembre 2026 ; chaque région garde son propre lexique.
+  Ce qui est vrai : Âge atteint le 18 octobre 2026. 37 mots communs sur 42 idées au 18 novembre 2026 ; chaque région garde son propre lexique.
 - Âge de la Mémoire : Premières annales nationales tenues par un pays de 1,8 litre.
   Ce qui est vrai : Âge atteint le 24 octobre 2026. Records et passé des personnages, sur la page Histoire. Plus long règne : Niwata, 18 j 13 h.
 - Âge de l'État civil : Premier pays où chaque habitant peut être suivi par un étranger, sans aucun formulaire.
@@ -78,4 +78,4 @@ PDF : https://www.microcontroland.org/tourisme/depliant-fr.pdf · https://www.mi
 
 Microcontrôland est un pays entièrement fictif, simulé par des microcontrôleurs pour un projet de maker. Il n'a aucun lien avec un État, un parti, une personne, une religion ou un office de tourisme réels. Les Waïnas ne sont ni vivants ni conscients.
 
-Page mise à jour automatiquement après l'édition n° 40 du 17 novembre 2026.
+Page mise à jour automatiquement après l'édition n° 41 du 18 novembre 2026.
