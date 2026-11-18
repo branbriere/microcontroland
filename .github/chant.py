@@ -13,7 +13,7 @@ Règle C1 v1 (validée par Bran le 5/11/2026, maquette jouable validée le 9/11/
 Le son est fabriqué par le navigateur du visiteur (Web Audio), après un clic : aucun fichier audio, aucun appel extérieur.
 
 Âge : la Fondation (ages.etapes[0]). Le chant commence le soir de la livraison, sans recalcul des soirs passés
-(même règle que les sculptures). La passerelle ne change pas. Licence MIT. Version 1.0, novembre 2026 (firmware 0.10.1) ; 1.0.1, 16 novembre 2026 : lien vers L'atelier.
+(même règle que les sculptures). La passerelle ne change pas. Licence MIT. Version 1.0, novembre 2026 (firmware 0.10.1) ; 1.0.1, 16 novembre 2026 : lien vers L'atelier ; 1.0.2, 16 novembre 2026 : attend que le brut du soir soit lisible.
 
   python3 .github/chant.py <racine du site> [--source <dépôt de données ou URL>] [--attendre <secondes>]
 """
@@ -405,7 +405,18 @@ def mettre_a_jour(racine, source, attendre=0):
     fin = time.time() + attendre
     while True:
         fichiers = [f for f in A.manifeste(source, ere) if f.get("fichier")]
-        if not attendre or latest.get("date") in {f.get("date") for f in fichiers} or time.time() > fin:
+        pret = [f for f in fichiers if f.get("date") == latest.get("date")]
+        if attendre and pret:
+            # 1.0.2 : le manifeste peut annoncer le brut avant qu'il soit lisible (16/11/2026 : le soir n'a pas été
+            # transcrit) ; pendant l'attente, on vérifie que le fichier se lit et correspond à son empreinte.
+            try:
+                o = A.charger(source, pret[0]["fichier"])
+                if pret[0].get("sha256") and hashlib.sha256(o).hexdigest() != pret[0]["sha256"]:
+                    raise ValueError("empreinte différente du manifeste")
+            except Exception as err:
+                print(f"Brut du soir annoncé mais pas encore lisible ({err})", file=sys.stderr)
+                pret = []
+        if not attendre or pret or time.time() > fin:
             break
         print("Fichier brut du soir pas encore publié : nouvel essai dans 60 s")
         time.sleep(60)
