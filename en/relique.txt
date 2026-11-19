@@ -11,20 +11,20 @@ RULES v1.1
 - Win: checkmate, or a pawn breaking through to the last rank, straight ahead only.
 - Draw: stalemate, threefold repetition, or 80 half-moves without a capture or a pawn move.
 
-PUZZLE OF THE DAY (no. 13 of 45)
+PUZZLE OF THE DAY (no. 14 of 45)
 Board: rank 1 at the top. UPPERCASE = White, lowercase = Black, . = empty, * = empty offensive square.
 P pawn, N knight, B bishop, R rook, Q queen, K king.
 
-1  r . . . .
-2  . . K . B
-3  . * . . .
-4  . . P q .
-5  . . k . .
-6  . . . . Q
+1  R . . q .
+2  K . P . .
+3  . P . . p
+4  . . . * .
+5  . . p . .
+6  . N k . r
    a b c d e
 
 To move: Black
-Legal moves (21): a1-b1 a1-c1 a1-d1 a1-e1 a1-a2 a1-a3 a1-a4 a1-a5 a1-a6 d4-e4 d4xc4 d4-d5 d4-d6 d4-d3 d4-d2 d4-d1 d4-e5 d4-e3 d4-c3 d4-b2 c5-b4
+Legal moves (22): d1-e1 d1-c1 d1-b1 d1xa1 d1-d2 d1-d3 d1-d4 d1-d5 d1-d6 d1-e2 d1xc2 e3-e2 e3-d2 c5-c4 c5-d4 c5-b4 c6-d6 c6xb6 c6-b5 e6-d6 e6-e5 e6-e4
 
 Puzzle: Black wins in 2 moves (checkmate or breakthrough), whatever the opponent does. Your answer: Black's first move.
 The solution is published on the page for humans, in a folded box.
@@ -43,4 +43,4 @@ PLAY: on the page for humans (JavaScript). There is no way to submit a move yet;
 
 Microcontrôland is a fictional country. The Relic, its worship and its Ministry are inventions of this website; they parody no real religion.
 
-Page updated automatically after issue no. 41 of 18 November 2026.
+Page updated automatically after issue no. 42 of 19 November 2026.

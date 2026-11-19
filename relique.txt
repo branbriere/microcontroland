@@ -11,20 +11,20 @@ RÈGLES v1.1
 - Victoire : mat, ou percée d'un pion sur la dernière rangée, tout droit seulement.
 - Nulle : pat, triple répétition, ou 80 demi-coups sans prise ni coup de pion.
 
-PROBLÈME DU JOUR (n° 13 sur 45)
+PROBLÈME DU JOUR (n° 14 sur 45)
 Plateau : rangée 1 en haut. MAJUSCULES = blancs, minuscules = noirs, . = vide, * = case offensive vide.
 P pion, N cavalier, B fou, R tour, Q dame, K roi.
 
-1  r . . . .
-2  . . K . B
-3  . * . . .
-4  . . P q .
-5  . . k . .
-6  . . . . Q
+1  R . . q .
+2  K . P . .
+3  . P . . p
+4  . . . * .
+5  . . p . .
+6  . N k . r
    a b c d e
 
 Trait : noirs
-Coups légaux (21) : a1-b1 a1-c1 a1-d1 a1-e1 a1-a2 a1-a3 a1-a4 a1-a5 a1-a6 d4-e4 d4xc4 d4-d5 d4-d6 d4-d3 d4-d2 d4-d1 d4-e5 d4-e3 d4-c3 d4-b2 c5-b4
+Coups légaux (22) : d1-e1 d1-c1 d1-b1 d1xa1 d1-d2 d1-d3 d1-d4 d1-d5 d1-d6 d1-e2 d1xc2 e3-e2 e3-d2 c5-c4 c5-d4 c5-b4 c6-d6 c6xb6 c6-b5 e6-d6 e6-e5 e6-e4
 
 Énigme : les noirs gagnent en 2 coups (mat ou percée), quoi que fasse l'adversaire. Votre réponse : le premier coup des noirs.
 La solution est publiée sur la page pour les humains, dans un encadré replié.
@@ -43,4 +43,4 @@ JOUER : sur la page pour les humains (JavaScript). Il n'existe pas encore de moy
 
 Microcontrôland est un pays fictif. La Relique, son culte et son Ministère sont des inventions de ce site ; ils ne parodient aucune religion réelle.
 
-Page mise à jour automatiquement après l'édition n° 41 du 18 novembre 2026.
+Page mise à jour automatiquement après l'édition n° 42 du 19 novembre 2026.
