@@ -45,11 +45,11 @@
   <url><loc>https://www.microcontroland.org/en/relique.html</loc><xhtml:link rel="alternate" hreflang="fr" href="https://www.microcontroland.org/relique.html"/><xhtml:link rel="alternate" hreflang="en" href="https://www.microcontroland.org/en/relique.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://www.microcontroland.org/relique.html"/></url>
   <url><loc>https://www.microcontroland.org/en/temple.html</loc><xhtml:link rel="alternate" hreflang="fr" href="https://www.microcontroland.org/temple.html"/><xhtml:link rel="alternate" hreflang="en" href="https://www.microcontroland.org/en/temple.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://www.microcontroland.org/temple.html"/></url>
   <url><loc>https://www.microcontroland.org/en/tourisme.html</loc><xhtml:link rel="alternate" hreflang="fr" href="https://www.microcontroland.org/tourisme.html"/><xhtml:link rel="alternate" hreflang="en" href="https://www.microcontroland.org/en/tourisme.html"/><xhtml:link rel="alternate" hreflang="x-default" href="https://www.microcontroland.org/tourisme.html"/></url>
-  <url><loc>https://www.microcontroland.org/journal.txt</loc><lastmod>2026-11-18</lastmod></url>
+  <url><loc>https://www.microcontroland.org/journal.txt</loc><lastmod>2026-11-19</lastmod></url>
   <url><loc>https://www.microcontroland.org/llms.txt</loc></url>
-  <url><loc>https://www.microcontroland.org/texte/</loc><lastmod>2026-11-18</lastmod></url>
-  <url><loc>https://www.microcontroland.org/texte/histoire.html</loc><lastmod>2026-11-18</lastmod></url>
-  <url><loc>https://www.microcontroland.org/texte/langue.html</loc><lastmod>2026-11-18</lastmod></url>
+  <url><loc>https://www.microcontroland.org/texte/</loc><lastmod>2026-11-19</lastmod></url>
+  <url><loc>https://www.microcontroland.org/texte/histoire.html</loc><lastmod>2026-11-19</lastmod></url>
+  <url><loc>https://www.microcontroland.org/texte/langue.html</loc><lastmod>2026-11-19</lastmod></url>
   <url><loc>https://www.microcontroland.org/texte/1.html</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://www.microcontroland.org/texte/2.html</loc><lastmod>2026-10-10</lastmod></url>
   <url><loc>https://www.microcontroland.org/texte/3.html</loc><lastmod>2026-10-11</lastmod></url>
@@ -91,4 +91,5 @@
   <url><loc>https://www.microcontroland.org/texte/39.html</loc><lastmod>2026-11-16</lastmod></url>
   <url><loc>https://www.microcontroland.org/texte/40.html</loc><lastmod>2026-11-17</lastmod></url>
   <url><loc>https://www.microcontroland.org/texte/41.html</loc><lastmod>2026-11-18</lastmod></url>
+  <url><loc>https://www.microcontroland.org/texte/42.html</loc><lastmod>2026-11-19</lastmod></url>
 </urlset>
