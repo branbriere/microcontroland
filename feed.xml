@@ -6,6 +6,13 @@
   <description>Le quotidien de Microcontrôland, écrit chaque soir par la passerelle.</description>
   <language>fr</language>
   <item>
+    <title>Jour 42 — Le blé chute de 3,7 %</title>
+    <link>https://branbriere.github.io/microcontroland/#jour-42</link>
+    <description>La région Champs voit ses revenus fondre et le reste du pays en ressent l'onde de choc.</description>
+    <pubDate>Thu, 19 Nov 2026 19:00:02 GMT</pubDate>
+    <guid isPermaLink="false">microcontroland-fr-jour-42</guid>
+  </item>
+  <item>
     <title>Jour 41 — Le cuivre chute de 5,0 %</title>
     <link>https://branbriere.github.io/microcontroland/#jour-41</link>
     <description>La région Mines voit ses revenus fondre et le reste du pays en ressent l'onde de choc.</description>
@@ -102,13 +109,6 @@
     <description>Intentions de vote : Niwata 50 %, Naïkaïth 33 %, Sakaïk 17 % ; personne ne cite Kouwou, Sita ni Pisaï ; parmi les interrogés, 8 comptent s'abstenir. 20 citoyens tirés au sort ont été interrogés à 20 h ; à cette taille, la marge d'erreur approche 28 points.</description>
     <pubDate>Sat, 07 Nov 2026 19:00:01 GMT</pubDate>
     <guid isPermaLink="false">microcontroland-fr-jour-30</guid>
-  </item>
-  <item>
-    <title>Jour 29 — Microcontrôland entre dans l'âge de la Diplomatie</title>
-    <link>https://branbriere.github.io/microcontroland/#jour-29</link>
-    <description>La civilisation franchit une étape au jour 30 de l'ère. L'ambassade ouvre : questions du mois et lettre de l'ambassadeur.</description>
-    <pubDate>Fri, 06 Nov 2026 19:00:01 GMT</pubDate>
-    <guid isPermaLink="false">microcontroland-fr-jour-29</guid>
   </item>
 </channel>
 </rss>
