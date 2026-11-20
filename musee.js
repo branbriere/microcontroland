@@ -707,6 +707,13 @@
         const nord = i < nN, r = nord ? i : pres.oeuvres.length - 1 - i, xc = X1 + 2.2 + r * PAS_P, z = nord ? Z2 + 0.11 : Z1 - 0.11, ry = nord ? 0 : Math.PI, d = nord ? 1 : -1;
         cadre(e, c, o.svg ? svgImage(o.svg) : cadreVide(k.vide[0], k.vide[1]), 1.3, 1.62, xc - 0.55 * d, 2.15, z, ry);
         panneau(e, c, [k.nom, k.info, ...k.lignes], 0.95, 0.9, xc + 0.82 * d, 1.6, z + 0.01 * (nord ? 1 : -1), ry, { titre: 68, corps: 42 });
+        // sous le portrait : la plaque du gouvernement de ce mandat (1.3.3, Bran 20/11/2026), lue dans les éditions publiées ;
+        // fonction des ministres : honorifique. Le haut de la plaque reste sous le cadre (1,29 m) ; elle grandit vers le sol avec le nombre de ministres.
+        const g = o.gouvernement && o.gouvernement[LG];
+        if (g) {
+          const hP = Math.min(1.1, (190 + 88 * g.lignes.length) * 1.3 / 768), cg = C(g.titre, g.sous, [...g.lignes, g.humour], g.vrai, verifier(pres));
+          panneau(e, cg, [g.titre, ...g.lignes, g.humour], 1.3, hP, xc - 0.55 * d, 1.2 - hP / 2, z + 0.01 * (nord ? 1 : -1), ry, { titre: 40, corps: 30, fond: '#eef0ec' });
+        }
       });
     }
 
