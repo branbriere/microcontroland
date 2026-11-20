@@ -14,7 +14,7 @@ Situation au jour 44 de la République, ère 1 : 3 ministres, président au pouv
 
 ## Le Musée national de Microcontrôland (Monument unique du pays)
 Le plus grand musée virtuel du pays. Le plus petit aussi. Le seul, en fait. Le seul musée au monde où le visiteur humain voit ce qu'aucun habitant ne verra jamais : toutes les ères à la fois. On en ressort changé, ou au moins rechargé.
-Ce qui est vrai : le musée est une page du site, construite à partir des données publiées. 1 aile ouverte, 357 œuvres exposées.
+Ce qui est vrai : le musée est une page du site, construite à partir des données publiées. 1 aile ouverte, 360 œuvres exposées.
 
 ## Sites à visiter
 - La Salle de la Relique [Ouverte] : Un trésor offert par le Créateur, dont le peuple ignore l'usage. Exposé à l'Ambassade : les étrangers sont invités à l'essayer.
@@ -64,7 +64,8 @@ Homologuées par le Ministère. Le Ministère homologue tout.
 
 ## La pièce collector d'un octet
 Chaque président a sa frappe : une pièce d'un octet à son portrait, c'est-à-dire aux 81 connexions de son cerveau, relevées dans les poids publiés. Une nouvelle frappe à chaque changement de président. Les anciennes rejoignent la collection.
-Frappe en cours : le portrait du président Niwata n'a pas encore été relevé dans les poids publiés.
+Avers : Niwata, président, ère 1 (https://www.microcontroland.org/tourisme/piece-67-fr.svg)
+Ce qui est vrai : c'est une image souvenir de l'Office, pas la monnaie du pays (une monnaie est prévue avec la MAJ 2). L'octet n'a aucune valeur réelle : la pièce ne s'achète ni ne se vend, elle s'enregistre. Portrait relevé le 20 novembre 2026.
 
 ## Informations pratiques
 - Accès : Le pays se visite uniquement en ligne. Situé dans un garage normand, non ouvert au public.
