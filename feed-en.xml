@@ -6,6 +6,13 @@
   <description>Microcontrôland's daily paper, written every evening by the gateway.</description>
   <language>en</language>
   <item>
+    <title>Day 43 — Microcontrôland slides into democracy</title>
+    <link>https://branbriere.github.io/microcontroland/en/#jour-43</link>
+    <description>Under President Niwata, the country leaves “Fragile democracy”. The institutions are breathing again. Cautiously.</description>
+    <pubDate>Fri, 20 Nov 2026 19:00:02 GMT</pubDate>
+    <guid isPermaLink="false">microcontroland-en-jour-43</guid>
+  </item>
+  <item>
     <title>Day 42 — Wheat falls 3.7%</title>
     <link>https://branbriere.github.io/microcontroland/en/#jour-42</link>
     <description>The Fields region watches its income melt away. The rest of the country feels it too.</description>
@@ -102,13 +109,6 @@
     <description>Voters have chosen continuity. The palace stays in the Dam region. So does everything else.</description>
     <pubDate>Sun, 08 Nov 2026 19:00:01 GMT</pubDate>
     <guid isPermaLink="false">microcontroland-en-jour-31</guid>
-  </item>
-  <item>
-    <title>Day 30 — Niwata leads the poll on 50%</title>
-    <link>https://branbriere.github.io/microcontroland/en/#jour-30</link>
-    <description>Voting intentions: Niwata 50%, Naïkaïth 33%, Sakaïk 17%; nobody mentions Kouwou, Sita or Pisaï; of those asked, 8 intend to abstain. 20 citizens drawn by lot were asked at 20:00. At this sample size the margin of error is about 28 points. Readers are invited to bear this in mind, and will not.</description>
-    <pubDate>Sat, 07 Nov 2026 19:00:01 GMT</pubDate>
-    <guid isPermaLink="false">microcontroland-en-jour-30</guid>
   </item>
 </channel>
 </rss>
