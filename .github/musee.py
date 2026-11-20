@@ -34,15 +34,24 @@ que descendre : un niveau par art (−1 art primaire, −2 sculpture, −3 musiq
 Chaque salle porte son « niveau » (musee-catalogue.json). Ce script ne dessine toujours rien : la visite 3D place les
 salles d'un niveau en damier de cases de 10 m, en spirale autour de l'ascenseur.
 
+Version 1.3.3 (20 novembre 2026, demande de Bran du 20/11/2026) : sous chaque portrait de la salle des présidents, la
+plaque du GOUVERNEMENT de ce mandat (nom, région, dates d'entrée et de sortie de chaque ministre). Rien n'est inventé :
+les entrées, limogeages et remaniements sont relus dans la chronologie des éditions publiées (data/editions/*.json,
+« journee », phrases fixes du firmware, mcl_writer.h), les régions dans data/citoyens.json ; contrôle : chaque soir,
+le gouvernement reconstitué doit être celui du relevé publié (etat.ministres, etat.ministresNoms). Fonction des
+ministres : « honorifique » (aucun portefeuille dans le firmware à ce jour).
+
   python3 .github/musee.py <racine du site>
 """
 import html
 import importlib.util
 import json
+import re
 import sys
+from datetime import date, timedelta
 from pathlib import Path
 
-VERSION = "1.3.2"
+VERSION = "1.3.3"
 MEMOIRE = 2          # index de l'âge de la Mémoire dans ages.etapes : âge d'ouverture d'une aile (Bran, 28 oct. 2026)
 BASE = "https://www.microcontroland.org/"
 DONNEES = "https://donnees.microcontroland.org/"
@@ -205,11 +214,142 @@ def cartel_portrait(G, m, i, lg, suivant):
     return {"nom": nom, "info": info, "lignes": lignes, "bas": bas, "vide": vide}
 
 
+# ---------------------------------------------------------------- les gouvernements (1.3.3, Bran 20/11/2026)
+# Phrases fixes du firmware (mcl_writer.h, événements 'm') telles qu'elles paraissent dans la chronologie de l'édition.
+RE_GOUV = (("entre", re.compile(r"^(?:\(hier\) )?(\S+) entre au gouvernement du président (\S+)$")),
+           ("limoge", re.compile(r"^(?:\(hier\) )?Le ministre (\S+) est limogé par le président (\S+)$")),
+           ("remanie", re.compile(r"^(?:\(hier\) )?Remaniement : (\S+) quitte le gouvernement$")))
+REGIONS = ["Mines", "Champs", "Raffineries", "Barrage", "Port", "Ville"]   # citoyens 1-20, 21-40… (fiche de référence)
+
+
+def gouvernements(racine, mandats):
+    """Pour chaque mandat de galerie.json, la liste de ses ministres, lue dans les éditions publiées (jamais modifiées)."""
+    racine = Path(racine)
+    noms = {}
+    for c in (lire(racine / "data" / "citoyens.json", {}) or {}).get("citoyens", []):
+        noms[c[1]] = c[0]
+    eds = []
+    for f in (racine / "data" / "editions").glob("*.json"):
+        d = lire(f, None)
+        if isinstance(d, dict) and d.get("date"):
+            eds.append(d)
+    eds.sort(key=lambda d: d["date"])
+    evts, vus = [], set()
+    for d in eds:
+        try:
+            jour = date.fromisoformat(d["date"])
+        except ValueError:
+            continue
+        chrono = d.get("journee") or []
+        marque = any("veille" in x for x in chrono)   # les premières éditions n'avaient pas le drapeau « veille » : après 20 h = la veille
+        for x in chrono:
+            h, t = x.get("heure"), (x.get("texte") or {}).get("fr", "")
+            if not isinstance(h, int):
+                continue
+            j = (jour - timedelta(days=1) if (x.get("veille") if marque else h > 20) else jour).isoformat()
+            for genre, rx in RE_GOUV:
+                m = rx.match(t)
+                if m and (genre, m.group(1), j, h) not in vus:
+                    vus.add((genre, m.group(1), j, h))
+                    evts.append({"genre": genre, "nom": m.group(1), "date": j, "heure": h})
+        for m in (d.get("etat") or {}).get("ministresNoms") or []:
+            noms.setdefault(m.get("nom"), m.get("id"))
+    evts.sort(key=lambda x: (x["date"], x["heure"]))
+    ids = [m["id"] for m in mandats]
+    tout = []
+    for i, m in enumerate(mandats):
+        deb = (m["debut"]["date"], m["debut"]["heure"] or 0)
+        fin = (m["fin"]["date"], m["fin"]["heure"] or 0) if m.get("fin") else None
+        actifs, liste = {}, []
+        for x in evts:
+            k = (x["date"], x["heure"])
+            if k < deb or (fin and k >= fin):
+                continue
+            if x["genre"] == "entre":
+                cid = noms.get(x["nom"])
+                r = {"id": cid, "nom": x["nom"], "region": REGIONS[(cid - 1) // 20] if isinstance(cid, int) and 1 <= cid <= 120 else None,
+                     "debut": {"date": x["date"], "heure": x["heure"]}, "fin": None}
+                actifs[x["nom"]] = r
+                liste.append(r)
+            elif x["nom"] in actifs:
+                actifs.pop(x["nom"])["fin"] = {"date": x["date"], "heure": x["heure"], "genre": x["genre"]}
+        for r in actifs.values():   # un nouveau président repart sans ministre (setLeader, mcl_country.cpp) : le gouvernement finit avec le mandat
+            if fin:
+                r["fin"] = {"date": m["fin"]["date"], "heure": m["fin"]["heure"], "genre": "mandat_" + m["fin"]["genre"]}
+        for r in liste:
+            r["ancien_president"] = r["id"] in ids[:i]
+            r["futur_president"] = r["id"] in ids[i + 1:]
+            r["deja_sous"] = [mandats[k]["nom"] for k in range(i) if any(x["id"] == r["id"] for x in tout[k])]
+        tout.append(liste)
+    return tout
+
+
+GV = {
+    "fr": {
+        "titre": "Gouvernement de {nom}",
+        "sous": "Fonction des ministres : honorifique",
+        "du_au": "{nom} ({r}) · du {d1} {h1} au {d2} {h2}{fin}",
+        "depuis": "{nom} ({r}) · depuis le {d1} {h1}, en fonction",
+        "fins": {"limoge": " (limogeage)", "remanie": " (remaniement)", "mandat_revolte": " (chute du gouvernement)", "mandat_coup": " (chute du gouvernement)"},
+        "ancien": " · ancien président", "futur": " · futur président", "deja": " · déjà ministre sous {p}",
+        "seul": "Aucun ministre : le président a gouverné seul, honneurs compris.",
+        "humour": ["Fonction de chaque ministre : honorifique. Le palais n'a jamais précisé de quoi.",
+                   "Fonction : honorifique. Aucun dossier n'a été égaré, faute de dossier.",
+                   "Fonction : honorifique. Le titre était fourni ; le bureau, non.",
+                   "Fonction : honorifique. Le président décidait ; les ministres approuvaient, à titre honorifique.",
+                   "Fonction : honorifique. Les ministres en conviennent : personne ne les a jamais contredits."],
+        "vrai": "À ce jour, le firmware ne confie aucune tâche aux ministres : ils entrent au gouvernement, en sortent ou sont limogés ; "
+                "leur charisme apaise un peu la colère du pays et ils votent volontiers pour le président sortant. "
+                "Noms, dates et heures : rubrique Gouvernement des éditions publiées de La Puce Libre, contrôlée chaque soir contre le relevé du gouvernement.",
+        "txt": "Gouvernement",
+    },
+    "en": {
+        "titre": "{nom}'s government",
+        "sous": "Ministers' office: honorary",
+        "du_au": "{nom} ({r}) · {d1} {h1} to {d2} {h2}{fin}",
+        "depuis": "{nom} ({r}) · since {d1} {h1}, in office",
+        "fins": {"limoge": ", sacked", "remanie": ", reshuffled out", "mandat_revolte": ", fell with the government", "mandat_coup": ", fell with the government"},
+        "ancien": " · former president", "futur": " · future president", "deja": " · previously a minister under {p}",
+        "seul": "No ministers: the president governed alone, honours included.",
+        "humour": ["Each minister's office: honorary. The palace never specified of what.",
+                   "Office: honorary. No file was ever lost, for want of a file.",
+                   "Office: honorary. The title came with the job; the desk did not.",
+                   "Office: honorary. The president decided; the ministers approved, in an honorary capacity.",
+                   "Office: honorary. The ministers agree that nobody has ever contradicted them."],
+        "vrai": "To this day, the firmware gives ministers no task at all: they join the government, leave it or get sacked; "
+                "their charisma soothes the country's anger a little, and they tend to vote for the sitting president. "
+                "Names, dates and times: the Government column of the published editions of La Puce Libre, checked every evening against the government roll.",
+        "txt": "Government",
+    },
+}
+
+
+def plaque_gouvernement(G, m, i, ministres, lg):
+    """La plaque posée sous le portrait : une ligne par ministre, puis la fonction (honorifique), puis ce qui est vrai."""
+    X, H = GV[lg], G.L[lg]["h"]
+    nom = m["nom"] or (f"No. {m['id']}" if lg == "en" else f"n° {m['id']}")
+    lignes = []
+    for r in ministres:
+        rg = (G.REGION_EN.get(r["region"], r["region"]) if lg == "en" else r["region"]) or "?"
+        tag = (X["ancien"] if r["ancien_president"] else "") + (X["futur"] if r["futur_president"] else "")
+        if r.get("deja_sous"):
+            tag += X["deja"].format(p=", ".join(dict.fromkeys(r["deja_sous"])))
+        d1, h1 = G.date_courte(r["debut"]["date"], lg), H(r["debut"]["heure"])
+        if r["fin"]:
+            lignes.append(X["du_au"].format(nom=r["nom"], r=rg, d1=d1, h1=h1, d2=G.date_courte(r["fin"]["date"], lg), h2=H(r["fin"]["heure"]),
+                                            fin=X["fins"].get(r["fin"]["genre"], "")) + tag)
+        else:
+            lignes.append(X["depuis"].format(nom=r["nom"], r=rg, d1=d1, h1=h1) + tag)
+    return {"titre": X["titre"].format(nom=nom), "sous": X["sous"], "lignes": lignes or [X["seul"]],
+            "humour": X["humour"][i % len(X["humour"])], "vrai": X["vrai"]}
+
+
 def salles_portraits(entree, ere, ctx):
     G, gal = ctx["galerie_py"], ctx["galerie"]
     if not gal or gal.get("ere") != ere or not gal.get("ouvert") or not gal.get("mandats"):
         return []
     ms = gal["mandats"]
+    gv = ctx.get("gouvernements") or [None] * len(ms)
     oeuvres = []
     for i, m in enumerate(ms):
         suivant = ms[i + 1] if i + 1 < len(ms) else None
@@ -220,6 +360,9 @@ def salles_portraits(entree, ere, ctx):
             "poids": p["poids"] if p else None, "fichier": p["fichier"] if p else None,
             "cartel": {lg: cartel_portrait(G, m, i, lg, suivant) for lg in ("en", "fr")},
         })
+        if i < len(gv) and gv[i] is not None:
+            oeuvres[-1]["ministres"] = [{"id": r["id"], "nom": r["nom"], "region": r["region"], "debut": r["debut"], "fin": r["fin"]} for r in gv[i]]
+            oeuvres[-1]["gouvernement"] = {lg: plaque_gouvernement(G, m, i, gv[i], lg) for lg in ("en", "fr")}
     salle = {"id": entree["id"], "type": "portraits", "titre": entree["titre"], "lien": entree.get("lien"),
              "verifier": entree.get("verifier", []), "oeuvres": oeuvres}
     en_fonction = next((o for o, m in zip(oeuvres, ms) if not m["fin"] and o["poids"]), None)
@@ -624,6 +767,8 @@ def construire(racine):
            "ecriture": lire(racine / "ecriture.json", None) if (racine / "ecriture.json").exists() else None,
            "ecriture_py": module(racine, "ecriture") if (racine / ".github" / "ecriture.py").exists() else None,
            "chant": lire(racine / "chant.json", None) if (racine / "chant.json").exists() else None}
+    gal = ctx["galerie"]
+    ctx["gouvernements"] = gouvernements(racine, gal["mandats"]) if gal and gal.get("mandats") and (racine / "data" / "editions").is_dir() else None
     ailes = []
     # Ailes des ères passées : recopiées telles quelles de l'ancien musee.json, jamais recalculées (figées).
     for a in ancien.get("plan", []):
@@ -775,6 +920,10 @@ def page(M, latest, lg, G, A):
                         k = o["cartel"][lg]
                         art = o["svg"] if o["svg"] else f'<div class="m-vide"><b>{e(k["vide"][0])}</b><span>{e(k["vide"][1])}</span></div>'
                         txt = "<br>".join(e(t) for t in [k["info"]] + k["lignes"] + k["bas"])
+                        gv = (o.get("gouvernement") or {}).get(lg)
+                        if gv:
+                            txt += (f'<br><br><b>{e(gv["titre"])}</b> · <i>{e(gv["sous"])}</i><br>' + "<br>".join(e(t) for t in gv["lignes"])
+                                    + f'<br><i>{e(gv["humour"])}</i>')
                         figs.append(f'<figure>{art}<figcaption><b>{e(k["nom"])}</b><br>{txt}</figcaption></figure>')
                     corps.append(f'<div class="m-oeuvres">{"".join(figs)}</div>')
                 elif s["type"] == "dessins":
