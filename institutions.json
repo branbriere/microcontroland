@@ -1,6 +1,6 @@
 {
- "version": "1.2",
- "date": "2026-11-17",
+ "version": "1.3",
+ "date": "2026-11-20",
  "firmware": "0.10.1",
  "note": "Registre de « La République en chantier » (validé par Bran le 25 octobre 2026). À tenir à jour à chaque mise à jour : service = vérifié dans le firmware installé ; ferme = codé, ouvre à l'âge indiqué (passe seul en service quand l'âge est atteint) ; prevu = feuille de route, rien de codé, aucune date ; reserve = seulement si le pays est stable. Âges : 1 Parole, 2 Mémoire, 3 État civil, 4 Diplomatie, 5 Curiosité.",
  "institutions": [
@@ -171,6 +171,20 @@
    "en": [
     "Research Centre",
     "Sends a signal to the outside and listens for replies, written in the country's language only."
+   ]
+  },
+  {
+   "id": "oeil",
+   "etat": "service",
+   "depuis": "2026-11-20",
+   "site": true,
+   "fr": [
+    "Générateur quantique",
+    "L'Œil à détection quantique, quatrième trésor national, sur ce site. Encore en fabrication : en attendant, le hasard ordinaire du navigateur. Aucun chiffre n'entre dans la boîte."
+   ],
+   "en": [
+    "Quantum Generator",
+    "The Quantum-Detection Eye, fourth national treasure, on this website. Still being built: meanwhile, the browser's ordinary chance. No number enters the box."
    ]
   },
   {

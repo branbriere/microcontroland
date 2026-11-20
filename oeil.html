@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="favicon.ico" sizes="32x32">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<title>Le générateur quantique — Microcontrôland</title>
+<meta name="description" content="L'Œil à détection quantique, quatrième trésor national de Microcontrôland, et l'atelier où les Waïnas impriment ses chiffres. Satire d'un pays de 7 microcontrôleurs.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="La Puce Libre — Microcontrôland">
+<meta property="og:title" content="Le générateur quantique — Microcontrôland">
+<meta property="og:description" content="L'Œil à détection quantique, quatrième trésor national de Microcontrôland, et l'atelier où les Waïnas impriment ses chiffres. Satire d'un pays de 7 microcontrôleurs.">
+<meta property="og:image" content="https://branbriere.github.io/microcontroland/apercu.png">
+<link rel="alternate" hreflang="fr" href="https://www.microcontroland.org/oeil.html">
+<link rel="alternate" hreflang="en" href="https://www.microcontroland.org/en/oeil.html">
+<link rel="alternate" hreflang="x-default" href="https://www.microcontroland.org/oeil.html">
+<link rel="alternate" type="application/rss+xml" title="La Puce Libre" href="feed.xml">
+<link rel="alternate" type="application/rss+xml" title="La Puce Libre (English)" hreflang="en" href="feed-en.xml">
+<link rel="stylesheet" href="style.css">
+<script src="mesure.js" defer></script>
+<style>
+/* Le générateur quantique : en haut la vitrine high-tech de l'Œil, en bas l'atelier bricolé des Waïnas, reliés par un câble scotché.
+   Même aspect en thème clair et sombre, comme le Temple. */
+.generateur{--g-labo:#0b1220;--g-vitre:#7fe3ff;--g-iris:#b493ff;--g-encre-labo:#dfe8f7;--g-gris:#8a9bb8;--g-kraft:#c8a36e;--g-kraft2:#a88552;
+  --g-papier:#f3ead6;--g-encre:#2b2117;--g-ardoise:#2f3a35;--g-craie:#eef1e6;--g-scotch:#e8d98f;--g-rouge:#b23b25;
+  --g-craie-f:"Segoe Print","Bradley Hand","Chalkboard SE","Comic Sans MS",cursive;
+  margin:18px 0 0;display:grid;font-family:var(--f-text);font-size:16px;line-height:1.6}
+.generateur :focus-visible{outline:3px solid var(--g-vitre);outline-offset:2px}
+.g-vitrine{background:radial-gradient(ellipse at 50% 30%,#18284a 0%,var(--g-labo) 65%);color:var(--g-encre-labo);position:relative;overflow:hidden;
+  padding:32px clamp(16px,4vw,36px) 40px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px;align-items:center}
+.g-vitrine::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(127,227,255,.035) 0 1px,transparent 1px 3px);pointer-events:none}
+.g-sur{font:600 12px/1.3 var(--f-data);letter-spacing:.2em;text-transform:uppercase;color:var(--g-vitre)}
+.generateur h1{font:900 clamp(36px,7vw,62px)/1 var(--f-mast);margin:.3em 0 .25em;letter-spacing:.02em;text-transform:uppercase;text-wrap:balance;color:var(--g-encre-labo)}
+.generateur h1 em{font-style:normal;color:var(--g-vitre);text-shadow:0 0 18px rgba(127,227,255,.45)}
+.g-chapo{color:var(--g-gris);max-width:44ch;margin:0}
+.g-voyants{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;min-height:30px}
+.g-voyant{font:400 12px/1 var(--f-data);border:1px solid #2a3b5e;border-radius:3px;padding:7px 9px;display:inline-flex;gap:7px;align-items:center}
+.g-voyant i{width:8px;height:8px;border-radius:50%;background:#53e08a;box-shadow:0 0 8px #53e08a}
+.g-voyant.panne i{background:#f0b34a;box-shadow:0 0 8px #f0b34a}
+.g-plaque{margin-top:24px;border:1px solid #c9a95a;background:linear-gradient(180deg,#2a2412,#171308);color:#f0d98c;padding:13px 16px;border-radius:2px;
+  font:600 15px/1.45 var(--f-text);max-width:48ch}
+.g-plaque small{display:block;font:400 11px/1.4 var(--f-data);color:#a89058;margin-top:6px;letter-spacing:.08em;text-transform:uppercase}
+.g-cadre{position:relative;aspect-ratio:1;max-width:360px;width:100%;margin:0 auto}
+.g-boite{position:absolute;inset:8%;background:linear-gradient(145deg,#1a1f2b,#06080d);border-radius:14px;box-shadow:0 30px 60px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.06);display:grid;place-items:center}
+.g-boite::before{content:"MCL · ŒIL Q-1";position:absolute;top:10px;left:14px;font:400 10px/1 var(--f-data);letter-spacing:.18em;color:#46546f}
+.g-iris{width:58%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,#fff 0 6%,var(--g-vitre) 12%,var(--g-iris) 34%,#1b1440 62%,#05060a 70%);
+  box-shadow:0 0 40px rgba(127,227,255,.55),0 0 90px rgba(180,147,255,.3);animation:g-pulse 2.6s ease-in-out infinite}
+.vacances .g-iris{animation-duration:9s;filter:saturate(.5) brightness(.55);box-shadow:0 0 18px rgba(127,227,255,.18)}
+@keyframes g-pulse{0%,100%{transform:scale(1);filter:brightness(1)}50%{transform:scale(1.045);filter:brightness(1.25)}}
+.g-anneau{position:absolute;inset:0;border:1px dashed rgba(127,227,255,.25);border-radius:50%;animation:g-tourne 40s linear infinite}
+@keyframes g-tourne{to{transform:rotate(360deg)}}
+.g-zzz{position:absolute;right:16%;top:14%;font:700 22px/1 var(--g-craie-f);color:var(--g-gris);display:none}
+.vacances .g-zzz{display:block}
+.g-flux{margin-top:14px;font:400 11.5px/1.5 var(--f-data);color:#6f87b0;word-break:break-all;min-height:3em}
+.g-cable{height:70px;position:relative;background:linear-gradient(180deg,var(--g-labo),var(--g-kraft2))}
+.g-cable svg{position:absolute;left:50%;top:-6px;transform:translateX(-50%);width:120px;height:82px;max-width:100%}
+.g-etiquette{position:absolute;left:calc(50% + 40px);top:22px;background:var(--g-papier);color:var(--g-encre);font:700 12px/1.2 var(--g-craie-f);padding:4px 7px;transform:rotate(-6deg);box-shadow:0 2px 3px rgba(0,0,0,.3)}
+.g-atelier{background:var(--g-kraft);background-image:radial-gradient(rgba(0,0,0,.06) 1px,transparent 1px);background-size:6px 6px;color:var(--g-encre);padding:30px clamp(16px,4vw,36px) 36px}
+.g-atelier h2{font:700 30px/1.1 var(--g-craie-f);margin:0 0 4px;transform:rotate(-1deg);color:var(--g-encre)}
+.g-sous{font-size:15px;margin:0 0 22px;max-width:62ch}
+.g-etabli{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:26px;align-items:start}
+.g-imprimante{background:#6e5a3e;border-radius:8px 8px 3px 3px;padding:12px 12px 0;box-shadow:inset 0 -6px 0 #54442e,0 4px 0 #4a3b28}
+.g-nom{font:700 14px/1 var(--g-craie-f);color:var(--g-papier);margin-bottom:8px;display:flex;justify-content:space-between;gap:8px}
+.g-fente{height:8px;background:#1d160e;border-radius:4px}
+.g-ruban{background:var(--g-papier);color:var(--g-encre);margin:0 14px;min-height:260px;max-height:320px;overflow:hidden;padding:10px 14px 18px;transform:rotate(.8deg);box-shadow:0 6px 10px rgba(0,0,0,.25);
+  -webkit-mask:linear-gradient(#000 0 0) top/100% calc(100% - 10px) no-repeat,conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) bottom/14px 10px repeat-x;
+  mask:linear-gradient(#000 0 0) top/100% calc(100% - 10px) no-repeat,conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) bottom/14px 10px repeat-x}
+.g-ligne{font:400 22px/1.5 "Courier New",var(--f-data);font-weight:700;letter-spacing:.16em;white-space:nowrap;display:flex;gap:.08em;font-variant-numeric:tabular-nums}
+.g-ligne span{display:inline-block}
+.g-ligne .g-h{font:400 10px/1 var(--f-data);letter-spacing:0;color:#8b7a5f;align-self:center;margin-left:auto}
+.g-ligne.neuve{animation:g-sort .5s ease-out}
+@keyframes g-sort{from{transform:translateY(-14px);opacity:.2}to{transform:none;opacity:1}}
+.g-dechire{font:700 15px/1.3 var(--g-craie-f);color:var(--g-rouge);text-align:center;padding:6px 0}
+.g-ardoise{background:var(--g-ardoise);border:10px solid #7b5a35;border-radius:4px;padding:16px 18px;color:var(--g-craie);font-family:var(--g-craie-f);box-shadow:0 6px 12px rgba(0,0,0,.3);position:relative}
+.g-ardoise .t{font-size:17px;opacity:.85}
+.g-grand{font-size:clamp(36px,7vw,54px);line-height:1.1;letter-spacing:.12em;margin:6px 0 4px;min-height:1.2em;font-weight:700}
+.vacances .g-grand{opacity:.25}
+.g-cop{font-size:16px;opacity:.9}
+.g-mot{display:none;margin-top:12px;background:var(--g-papier);color:var(--g-encre);font:700 17px/1.35 var(--g-craie-f);padding:9px 11px;transform:rotate(-2deg);box-shadow:0 2px 4px rgba(0,0,0,.35)}
+.vacances .g-mot{display:block}
+.g-scotch{position:absolute;width:60px;height:18px;background:var(--g-scotch);opacity:.8;top:-14px;left:40%;transform:rotate(-4deg)}
+.g-note{font:400 13px/1.45 var(--f-text);opacity:.65;margin-top:10px}
+.g-boutons{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.g-boutons button{font:600 14px/1 var(--f-text);border:2px solid var(--g-encre);background:var(--g-papier);color:var(--g-encre);padding:10px 14px;border-radius:3px;cursor:pointer;box-shadow:3px 3px 0 var(--g-encre)}
+.g-boutons button:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--g-encre)}
+.g-loterie{margin-top:28px;border:2px dashed var(--g-encre);padding:14px 16px;display:flex;flex-wrap:wrap;gap:8px 20px;align-items:center;justify-content:space-between;background:rgba(243,234,214,.35)}
+.g-loterie strong{font:700 20px/1.2 var(--g-craie-f)}
+.g-cadenas{font:600 12px/1.3 var(--f-data);letter-spacing:.04em;background:var(--g-encre);color:var(--g-papier);padding:6px 9px;border-radius:2px}
+.g-verite{background:#efe8da;color:#2a2620;padding:18px clamp(16px,4vw,36px);font-size:15px}
+.g-verite p{margin:0;max-width:72ch}
+.g-verite a{color:#1d4f8a}
+@media (max-width:760px){.g-vitrine,.g-etabli{grid-template-columns:minmax(0,1fr)}.g-cadre{max-width:280px}.g-etiquette{left:calc(50% + 34px)}}
+@media (prefers-reduced-motion:reduce){.g-iris,.g-anneau,.g-ligne.neuve{animation:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="mast">
+    <div class="top"><span>Quotidien officieux de la République</span><span>Le générateur quantique</span></div>
+    <div class="title"><a href="./">La Puce <span>Libre</span></a></div>
+    <p class="tag">Le seul journal de Microcontrôland, écrit chaque soir par la passerelle</p>
+  </header>
+  <nav class="main" aria-label="Navigation">
+    <a href="./">Le journal</a>
+    <a href="archives.html">Archives</a>
+    <a href="histoire.html">Histoire</a>
+    <a href="langue.html">La langue</a>
+    <a href="citoyen.html">Mon citoyen</a>
+    <a href="ambassade.html">L&#x27;ambassade</a>
+    <a href="tourisme.html">Le tourisme</a>
+    <a href="temple.html">Le Temple</a>
+    <a href="recherche.html">Recherche</a>
+    <a href="projet.html">Le projet</a>
+    <a href="feed.xml">Flux RSS</a>
+  </nav>
+
+  <main class="generateur vacances" id="generateur">
+    <section class="g-vitrine">
+      <div>
+        <div class="g-sur">Centre de recherche · quatrième trésor national</div>
+        <h1>Le générateur <em>quantique</em></h1>
+        <p class="g-chapo">Offert par le Créateur, l'Œil à détection quantique capte la lumière et la change en hasard pur. La science du monde entier nous l'envie.</p>
+        <div class="g-voyants" id="g-voyants"><span class="g-voyant panne"><i></i>Œil : en sommeil</span><span class="g-voyant panne"><i></i>Copiste : en vacances</span><span class="g-voyant"><i></i>Ruban : hasard ordinaire</span></div>
+        <div class="g-plaque">« Microcontrôland est le seul pays au monde doté d'une loterie quantique. »<small>Sitanaï · Ambassade de Microcontrôland</small></div>
+      </div>
+      <div>
+        <div class="g-cadre" id="g-oeil" aria-hidden="true">
+          <div class="g-anneau"></div>
+          <div class="g-boite"><div class="g-iris"></div></div>
+          <div class="g-zzz">z z z</div>
+        </div>
+        <div class="g-flux" id="g-flux" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <div class="g-cable" aria-hidden="true">
+      <svg viewBox="0 0 120 82">
+        <path d="M60 0 C 60 20, 30 25, 48 42 S 70 60, 60 82" stroke="#1d160e" stroke-width="7" fill="none" stroke-linecap="round"/>
+        <rect x="40" y="34" width="30" height="12" fill="#e8d98f" opacity=".85" transform="rotate(-18 55 40)"/>
+        <rect x="46" y="58" width="26" height="11" fill="#e8d98f" opacity=".85" transform="rotate(12 59 63)"/>
+      </svg>
+      <div class="g-etiquette">chiffres →</div>
+    </div>
+
+    <section class="g-atelier" aria-labelledby="g-atelier-h">
+      <h2 id="g-atelier-h">L'atelier des chiffres</h2>
+      <p class="g-sous">Personne ne sait à quoi sert l'Œil. Il fait de la lumière et sort des chiffres. On les imprime sur un ruban, un citoyen les recopie à la craie, et un jour, dit-on, on tirera la loterie avec.</p>
+      <div class="g-etabli">
+        <div class="g-imprimante">
+          <div class="g-nom"><span>Imprimante nationale</span><span id="g-compteur">ruban n° 1</span></div>
+          <div class="g-fente"></div>
+          <div class="g-ruban" id="g-ruban"></div>
+        </div>
+        <div>
+          <div class="g-ardoise" id="g-ardoise">
+            <div class="g-scotch"></div>
+            <div class="t">Dernier chiffre recopié :</div>
+            <div class="g-grand" id="g-recopie">······</div>
+            <div class="g-cop" id="g-copiste">Copiste du jour : <b>personne pour l'instant</b></div>
+            <div class="g-mot">Le copiste est parti en vacances. En attendant son retour, l'imprimante sort du hasard ordinaire, tiré par votre navigateur.</div>
+            <div class="g-note">L'ardoise est effacée chaque soir à 20 h.</div>
+          </div>
+          <div class="g-boutons"><button type="button" id="g-dechirer">Déchirer le ruban</button></div>
+        </div>
+      </div>
+      <div class="g-loterie"><strong>Loterie nationale · tirage du dimanche</strong><span class="g-cadenas">En attente d'évolution de la civilisation</span></div>
+    </section>
+
+    <section class="g-verite"><p>Ce qui est vrai : l'Œil est une petite caméra éclairée par une diode dans une boîte noire. Le nombre de grains de lumière qu'elle reçoit varie au hasard ; ce bruit devrait être en partie d'origine quantique, et les premières mesures diront quelle part. L'Œil est encore en fabrication ; tant qu'il n'envoie rien, les chiffres de cette page viennent de votre navigateur. Ses mesures, quand il en aura, iront sur le <a href="https://branbriere.github.io/microcontroland-data/">site des données</a>, sans aucun fanfaron.</p></section>
+  </main>
+
+  <footer class="site">
+    <span>Le générateur quantique · chiffres sans valeur hors de la boîte.</span>
+    <span><a href="projet.html">Comment ça marche ?</a></span>
+    <span><a href="mentions.html">Mentions légales</a></span>
+  </footer>
+</div>
+<script src="reglages.js"></script>
+<script src="commun.js"></script>
+<script src="oeil.js"></script>
+<script src="lang.js"></script>
+</body>
+</html>
