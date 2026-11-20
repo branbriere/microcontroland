@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="../favicon.ico" sizes="32x32">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<title>Who does what — Microcontrôland</title>
+<meta name="description" content="Microcontrôland org chart redrawn every evening: president, ministers, religion, political sides and checks and balances of a country of 7 microcontrollers.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="La Puce Libre — Microcontrôland">
+<meta property="og:title" content="Who does what — Microcontrôland">
+<meta property="og:description" content="Microcontrôland org chart redrawn every evening: president, ministers, religion, political sides and checks and balances of a country of 7 microcontrollers.">
+<meta property="og:image" content="https://branbriere.github.io/microcontroland/apercu.png">
+<link rel="alternate" hreflang="fr" href="https://www.microcontroland.org/organigramme.html">
+<link rel="alternate" hreflang="en" href="https://www.microcontroland.org/en/organigramme.html">
+<link rel="alternate" hreflang="x-default" href="https://www.microcontroland.org/organigramme.html">
+<link rel="alternate" type="application/rss+xml" title="La Puce Libre" href="../feed-en.xml">
+<link rel="alternate" type="application/rss+xml" title="La Puce Libre (français)" hreflang="fr" href="../feed.xml">
+<link rel="stylesheet" href="../style.css">
+<script src="../mesure.js" defer></script>
+<style>
+/* Qui fait quoi : organigramme du pays, dans les couleurs du journal (jetons de style.css). */
+.org{display:grid;gap:34px;margin:18px 0 0;font-family:var(--f-text)}
+.org h1{font:700 clamp(34px,7vw,52px)/1 var(--f-mast);letter-spacing:.01em;margin:0;text-wrap:balance}
+.org h2{font:700 26px/1.1 var(--f-mast);letter-spacing:.03em;margin:0}
+.o-lede{color:var(--muted);max-width:65ch;margin:8px 0 0}
+.o-meta{font:12px var(--f-data);color:var(--muted);letter-spacing:.04em}
+.o-sec{display:grid;gap:14px}
+.o-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 14px;border-bottom:1px solid var(--rule);padding-bottom:6px}
+.o-tag{display:inline-block;font:11px var(--f-data);letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:3px;border:1px solid var(--mask);color:var(--mask)}
+.o-tag.new{border-color:var(--warn);color:var(--warn)}
+.o-tag.soon{border:1px dashed var(--neutral);color:var(--muted)}
+#o-gouv,.o-tree{display:grid;justify-items:center}
+.o-node{background:var(--sheet);border:1px solid var(--rule);border-radius:6px;padding:12px 16px;min-width:0;text-align:center;display:grid;gap:4px;align-content:start}
+.o-role{font:11px var(--f-data);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.o-name{font-weight:600;font-size:19px}
+.o-side{font:700 24px/1 var(--f-mast);letter-spacing:.04em}
+.o-sub{font-size:14px;color:var(--muted)}
+.o-port{font:12px var(--f-data);color:var(--mask)}
+.o-top{border:2px solid var(--mask);padding:14px 26px;max-width:100%}
+.o-empty{border-style:dashed;background:transparent}
+.o-empty .o-name{color:var(--muted)}
+.o-stem{width:2px;height:22px;background:var(--rule)}
+.o-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;width:100%;position:relative;padding-top:22px}
+#o-bords .o-row,.o-row4{padding-top:0}
+.o-row4{grid-template-columns:repeat(4,minmax(0,1fr))}
+#o-gouv .o-row::before{content:"";position:absolute;top:0;left:16.6%;right:16.6%;height:2px;background:var(--rule)}
+#o-gouv .o-row>.o-node{position:relative}
+#o-gouv .o-row>.o-node::before{content:"";position:absolute;top:-22px;left:50%;width:2px;height:22px;background:var(--rule)}
+.o-note{font-size:15px;color:var(--muted);margin:10px 0 0;text-align:center}
+.o-foi{margin:0;font-variant-numeric:tabular-nums}
+.o-wait{background:var(--paper);border:1px dashed var(--rule);border-radius:6px;padding:14px 16px;color:var(--muted);font-size:15px}
+.o-wait b{color:var(--ink)}
+.o-pied{font-size:14px;color:var(--muted);border-top:1px solid var(--rule);padding-top:12px;display:grid;gap:4px}
+@media (max-width:720px){.o-row4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.o-row,.o-row4{grid-template-columns:1fr;padding-top:0}#o-gouv .o-row{padding-top:0}#o-gouv .o-row::before,#o-gouv .o-row>.o-node::before{display:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="mast">
+    <div class="top"><span>Unofficial daily of the Republic</span><span>Who does what</span></div>
+    <div class="title"><a href="./">La Puce <span>Libre</span></a></div>
+    <p class="tag">Microcontrôland's only newspaper, written every evening by the gateway</p>
+  </header>
+  <nav class="main" aria-label="Navigation">
+    <a href="./">The paper</a>
+    <a href="archives.html">Archive</a>
+    <a href="histoire.html">History</a>
+    <a href="langue.html">The language</a>
+    <a href="citoyen.html">My citizen</a>
+    <a href="ambassade.html">The embassy</a>
+    <a href="tourisme.html">Tourism</a>
+    <a href="temple.html">The Temple</a>
+    <a href="recherche.html">Research</a>
+    <a href="projet.html">The project</a>
+    <a href="../feed-en.xml">RSS feed</a>
+  </nav>
+
+  <main class="org" id="org">
+    <header>
+      <div class="o-meta" id="o-date">Loading the issue…</div>
+      <h1>Who does what</h1>
+      <p class="o-lede">The country as it stands tonight: who governs, who believes, who opposes and who can hold the president back. The page is redrawn every evening with the paper. Each level lights up on the day its system exists.</p>
+    </header>
+    <section class="o-sec" aria-labelledby="o-g"><div class="o-head"><h2 id="o-g">The government</h2><span class="o-tag">in service</span></div><div id="o-gouv"></div></section>
+    <section class="o-sec" aria-labelledby="o-r"><div class="o-head"><h2 id="o-r">Religion</h2></div><div id="o-rel"></div></section>
+    <section class="o-sec" aria-labelledby="o-b"><div class="o-head"><h2 id="o-b">Political sides</h2></div><div id="o-bords"></div></section>
+    <section class="o-sec" aria-labelledby="o-c"><div class="o-head"><h2 id="o-c">Checks and balances</h2><span class="o-meta">who can hold the president back</span></div><div id="o-contre"></div></section>
+    <footer class="o-pied">
+      <span>Drawn every evening from the paper's issue; nothing appears here that is not already published.</span>
+      <span>Waïnas are small neural networks, neither alive nor conscious. No real party or government is depicted.</span>
+    </footer>
+  </main>
+
+  <footer class="site">
+    <span>Who does what in Microcontrôland · redrawn every evening.</span>
+    <span><a href="projet.html">How does it work?</a></span>
+    <span><a href="mentions.html">Legal notice</a></span>
+  </footer>
+</div>
+<script>window.MCL_BASE = "../";</script>
+<script src="../reglages.js"></script>
+<script src="../commun.js"></script>
+<script src="../organigramme.js"></script>
+<script src="../lang.js"></script>
+</body>
+</html>
