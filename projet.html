@@ -58,6 +58,17 @@
       <figure class="photo"><a href="photos/boite/boite-pays-passerelle.jpg"><img src="photos/boite/boite-pays-passerelle-vignette.jpg" alt="La carte passerelle sur sa plaque d'essai, à côté d'un petit immeuble imprimé" loading="lazy"></a><figcaption>La passerelle sur sa plaque d'essai, au pied de la Tour de l'Ère. Au fond, la Douane.</figcaption></figure>
       <figure class="photo" style="grid-column:1/-1"><a href="photos/boite/boite-pays-plan-legende-fr.jpg"><img src="photos/boite/boite-pays-plan-legende-fr.jpg" alt="Plan de la boîte vue de dessus, avec treize repères numérotés et leur légende" loading="lazy" style="aspect-ratio:auto;object-fit:contain;max-width:560px;margin:0 auto"></a><figcaption style="text-align:center">Plan de la capitale vu du ciel. Aucun permis de construire n'a été demandé.</figcaption></figure>
     </div>
+    <dialog id="visionneuse" style="padding:0;border:0;background:transparent;max-width:96vw;max-height:96vh;overflow:visible">
+      <button type="button" aria-label="Fermer" title="Fermer" style="position:absolute;top:-14px;right:-14px;width:40px;height:40px;border-radius:50%;border:2px solid #fff;background:#111;color:#fff;font:26px/1 sans-serif;cursor:pointer">&times;</button>
+      <img alt="" style="display:block;max-width:96vw;max-height:94vh;width:auto;height:auto">
+    </dialog>
+    <style>#visionneuse::backdrop{background:rgba(0,0,0,.85)}</style>
+    <script>
+    (function(){var d=document.getElementById('visionneuse');if(!d||!d.showModal)return;var im=d.querySelector('img');
+      document.querySelectorAll('.photos a').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();var i=a.querySelector('img');im.src=a.href;im.alt=i?i.alt:'';d.showModal();});});
+      d.querySelector('button').addEventListener('click',function(){d.close();});
+      d.addEventListener('click',function(e){if(e.target===d)d.close();});})();
+    </script>
 
     <h2>Comment ça marche</h2>
     <ol class="steps">
