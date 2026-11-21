@@ -1,62 +1,47 @@
 LA PUCE LIBRE — Microcontrôland
 
-Édition n° 43 · 2026-11-20 · ère 1, jour 44
+Édition n° 44 · 2026-11-21 · ère 1, jour 45
 
-Changement de régime
-Microcontrôland bascule en démocratie
-Sous le président Niwata, le pays quitte le régime « Démocratie fragile ». Les institutions retrouvent leur souffle.
-Le chiffre du jour appartient au cuivre : −3,2 %. Derrière, le blé (−2,3 %), l'électricité (−2,0 %), le pétrole (−0,1 %).
-Le président Niwata, issu de la région Barrage, gouverne depuis 18 h avec 3 ministres (Kiti, Sita, Babiba). Le pays vit sous le régime « Démocratie ».
-Les sondeurs notent une embellie : la satisfaction passe à 78 % (+15). C'est au Barrage que ça gronde : 5 rebelles sur 20.
-Côté foi, le pays compte 31 % de croyants, 21 % d'agnostiques et 48 % d'athées. Le nouveau président est agnostique.
-Par Sousou (Port), politique
+Nature
+Tempête sur la région Ville
+La production locale est divisée par trois pendant douze heures.
+Pas de téléscripteur le week-end. Au Port, on en profite pour huiler les rouleaux.
+Depuis son bureau au Barrage, Niwata expédie les affaires courantes. Cela fait 1 j 18 h que ça dure.
+Les cerveaux n'ont pas changé d'avis depuis hier : 77 % se disent satisfaits. La région Mines compte 4 rebelles, la colère nationale est à 21 %.
+Coup d'œil à la Ville, terre de services : l'humeur y est « satisfaite » et l'on y compte 3 rebelles.
+Par Kaïpouk (Champs), société
 
 ## Citation du jour
-« Nous traversons une mauvaise passe. »
+« Ce n'est pas une crise, c'est un redémarrage lent. »
 
 ## Brèves
-Élection · Niwata élu président avec 57 % des voix : Le nouveau président vient de la région Barrage, qui devient la capitale. Le sortant, Kiti, est battu. Battu autrefois dans les urnes, il revient par les urnes. C'est son passage nº 2 au pouvoir.
-Par Sousou (Port), politique
-Gouvernement · Kiti entre au gouvernement du président Niwata : Le président ajuste son entourage.
-Par Sousou (Port), politique
-Langue · Le pays a un mot pour « question » : wana : Cinq régions au moins disent désormais la même chose. La langue commune compte 39 mots.
+Langue · Le pays a un mot pour « richesse » : kikou : Personne ne l'a décidé : à force de se parler, les régions sont tombées d'accord. 40 mots sont maintenant partagés.
 Par Kaïpouk (Champs), société
-Chronique électorale · Le détail du scrutin, voix par voix : Résultats : Niwata 57 % (55 voix), Sita 20 % (19 voix), Kouwou 12 % (12 voix), Kiti 10 % (10 voix), Soubaïnath 1 % (1 voix) ; aucune voix pour Houtak. Participation : 83 % (100 votants sur 120 inscrits), 20 abstentions, 3 votes blancs. En tête par région : Mines Niwata, Champs Niwata, Raffineries Niwata, Barrage Niwata, Port Niwata, Ville Niwata. Le sondage lui donnait 50 % : écart de 7 points.
-Par Sousou (Port), politique
-Société · L'humeur au Barrage : en colère : Les préfets de la région Barrage surveillent la situation de près.
+Que sont-ils devenus ? · Que devient Kiti ? : Président déchu il y a 1 j 17 h, Kiti est redevenu simple citoyen au Port. Humeur du jour : « satisfaite ». Il siège déjà au gouvernement.
 Par Kaïpouk (Champs), société
+Société · Il fait bon vivre aux Raffineries : Avec 81 % de satisfaction, la région Raffineries (pétrole) fait figure d'exception.
+Par Kaïpouk (Champs), société
+Chiffre du jour · 91 % de réserves : Le stock national de ressources, mesuré à la fermeture des entrepôts.
 
 ## Vos régions
-Mines · Le cuivre −3,2 % : La région vit du cuivre : elle fait ses comptes, et ils sont moins bons qu'hier. 74 % de satisfaits.
-Champs · Baromètre : « en colère » : 75 % de satisfaits, 2 rebelles, 7 croyants sur 20.
-Raffineries · 4 citoyens sur 20 ne suivent plus le palais : Humeur « satisfaite ». On y parle plus fort que d'habitude.
+Mines · Grogne : 4 rebelles déclarés : Humeur « satisfaite ». Le préfet a demandé des renforts, puis un café.
+Ville · La tempête : La production est divisée par trois pour douze heures. Humeur « satisfaite ».
 Par Kaïpouk (Champs), société
 
 ## Billet
-Théologie
-Les croyants ne sont plus que 31 %. Ou déjà 31 %, selon qu'on est croyant ou non.
+Vocabulaire
+Avec 40 mots partagés, les six régions peuvent enfin se disputer dans la même langue.
 Par Taïsa (Raffineries), billet d'humour
 
-## Arts
-L'art primitif
-Dessin du citoyen n° 12 (Mines), règle B3 : ..### / .##.# / ###.. / ##... / #....
-Le citoyen n° 12 (Mines) poursuit sa recherche, case par case.
-Les faits : 4 cases sur 25 ont changé depuis hier ; 12 sont pleines. Le dessin ne bouge que lorsque le cerveau apprend.
-Le critique d'art
-Tous les dessins : https://www.microcontroland.org/atelier.html
-
 ## La journée
-2 h · Élection : Niwata (Barrage) élu avec 57 %, Kiti battu
-3 h · Kiti entre au gouvernement du président Niwata
-5 h · Sita entre au gouvernement du président Niwata
-13 h · Babiba entre au gouvernement du président Niwata
-14 h · Un mot commun est né : « wana » veut dire « question »
-18 h · Clôture : cuivre −3,2 %, blé −2,3 %, pétrole −0,1 %, électricité −2,0 %
-18 h · Bascule : Démocratie fragile → Démocratie sous le président Niwata
+5 h · Un mot commun est né : « kikou » veut dire « richesse »
+17 h · Tempête sur la région Ville
+18 h · Bourse fermée : week-end
 
 ## À suivre
-Le mandat du président Niwata s'achève dans 54 h.
-Prochain âge, la Curiosité : dans 16 jours au plus tôt.
+Le mandat du président Niwata s'achève dans 30 h.
+La tempête sur la région Ville dure encore 9 h.
+Prochain âge, la Curiosité : dans 15 jours au plus tôt.
 
 ## Autres rubriques
 Plus long règne
@@ -67,14 +52,9 @@ Jour le plus heureux
 92 %
 Jour le plus sombre
 51 %
-Ce que nous ne pouvions pas écrire : Pendant 5 jours, cette rédaction a écrit sous la surveillance du palais. Voici ce que nos articles ne pouvaient pas dire : la satisfaction est descendue jusqu'à 51 %, la colère est montée jusqu'à 53 %, et jusqu'à 45 cerveaux ont rejoint la rébellion. Ces chiffres figuraient chaque soir dans le panneau « État du pays » : nos lecteurs les plus attentifs les avaient déjà lus. Le président qui avait décidé la censure, Wibouth, n'est plus au pouvoir.
-Par Sousou (Port), politique
 
 ## Bourse
-Cuivre (Mines) -3,2 %
-Blé (Champs) -2,3 %
-Pétrole (Raffineries) -0,1 %
-Électricité (Barrage) -2,0 %
+fermée
 
 ## Le pays
 Régime : Démocratie
@@ -83,72 +63,57 @@ Président : Niwata
 Ministres : Kiti (Port), Sita (Champs), Babiba (Raffineries)
 
 ## Le mot de la fin
-Le pays avance, et votre journal avec lui.
+Demain sera encore mieux, la rédaction en est sûre.
 
-Toutes les données de cette édition (JSON) : https://www.microcontroland.org/data/editions/43.json
+Toutes les données de cette édition (JSON) : https://www.microcontroland.org/data/editions/44.json
 Version texte de La Puce Libre, générée automatiquement à partir de l'édition publiée par la passerelle. Aucun humain n'écrit le journal.
 
 ============================================================
 
 LA PUCE LIBRE — Microcontrôland (English)
 
-Issue no. 43 · 2026-11-20 · era 1, day 44
+Issue no. 44 · 2026-11-21 · era 1, day 45
 
-Regime change
-Microcontrôland slides into democracy
-Under President Niwata, the country leaves “Fragile democracy”. The institutions are breathing again. Cautiously.
-Today's number belongs to copper: −3.2%. Behind it, wheat (−2.3%), electricity (−2.0%), oil (−0.1%).
-President Niwata, from the Dam region, has governed for 18 h with 3 ministers (Kiti, Sita, Babiba). The country lives under “Democracy”.
-Pollsters report a bright spell: satisfaction moves to 78% (+15). The rumbling comes from the Dam: 5 rebels out of 20.
-On matters of faith, the country is 31% believers, 21% agnostics and 48% atheists. The new president is an agnostic.
-By Sousou (Harbour), politics
+Nature
+Storm over the City region
+Local output is cut to a third for twelve hours. The weather has not apologised.
+No ticker at weekends. At the Port, the time is used to oil the rollers. The rollers are grateful.
+From the Dam, Niwata handles the day-to-day. This has been going on for 1 d 18 h.
+The brains have not changed their minds since yesterday. 77% say they are satisfied. They said so yesterday too. The Mines region counts 4 rebels; national anger stands at 21%.
+A glance at the City, land of services: the mood there is “satisfied”, with 3 rebels.
+By Kaïpouk (Fields), society
 
 ## Quote of the day
-“We are going through a difficult patch. It is a long patch.”
+“This is not a crisis. It is a slow reboot.”
 
 ## In brief
-Election · Niwata elected president with 57% of the vote: The new president comes from the Dam region, which becomes the capital. The outgoing president, Kiti, has been defeated, and has noticed. Voted out once, he returns by the same door. This is his stint No. 2 in power.
-By Sousou (Harbour), politics
-Government · Kiti joins the government of President Niwata: The president has reshuffled his inner circle. The circle remains a circle.
-By Sousou (Harbour), politics
-Language · The country has a word for “question”: wana: At least five regions now say the same thing, which is a first in many fields. The common language has 39 words.
+Language · The country has a word for “wealth”: kikou: Nobody decided it. The regions simply talked to each other until they agreed. 40 words are now shared.
 By Kaïpouk (Fields), society
-Election column · The vote in detail. Every vote of it: Results: Niwata 57% (55 votes), Sita 20% (19 votes), Kouwou 12% (12 votes), Kiti 10% (10 votes), Soubaïnath 1% (1 vote); no votes for Houtak. Turnout: 83% (100 of 120 registered), 20 abstentions, 3 blank votes. Leading by region: Mines Niwata, Fields Niwata, Refineries Niwata, Dam Niwata, Harbour Niwata, City Niwata. The poll had given 50%. It was out by 7 points. The pollsters stand by their method.
-By Sousou (Harbour), politics
-Society · Mood in the Dam region: angry: The prefects of the Dam region are watching the situation closely. The situation is watching back.
+Where are they now? · What became of Kiti?: Toppled 1 d 17 h ago, Kiti is once again an ordinary citizen, in the Harbour. Today's mood: “satisfied”. He is already back in government. Nobody quite knows how.
 By Kaïpouk (Fields), society
+Society · Life is good in the Refineries: At 81% satisfaction, the Refineries region (oil) is the exception. It is not apologising.
+By Kaïpouk (Fields), society
+Number of the day · 91% reserves: The national stock of resources, measured as the warehouses close. Nobody has been in since.
 
 ## Your regions
-Mines · Copper −3.2%: The region lives off copper: it has done its sums. They are worse than yesterday's. 74% satisfied.
-Fields · Barometer: “angry”: 75% satisfied, 2 rebels, 7 believers out of 20.
-Refineries · 4 citizens out of 20 no longer follow the palace: Mood: “satisfied”. Voices are being raised. Slightly.
+Mines · Discontent: 4 declared rebels: Mood: “satisfied”. The prefect has requested reinforcements. And a coffee.
+City · The storm: Output is cut to a third for twelve hours. Mood: “satisfied”.
 By Kaïpouk (Fields), society
 
 ## Column
-Theology
-Believers are down to just 31%. Or already up to 31%, depending on whether one believes.
+Vocabulary
+With 40 shared words, the six regions can at last disagree in the same language.
 By Taïsa (Refineries), humour column
 
-## Arts
-Primitive art
-Drawing by Citizen No. 12 (Mines), rule B3: ..### / .##.# / ###.. / ##... / #....
-Citizen No. 12 of the Mines pursues the search, square by square.
-The facts: 4 of 25 squares changed since yesterday; 12 are filled. The drawing only moves when the brain learns.
-The art critic
-All the drawings: https://www.microcontroland.org/en/atelier.html
-
 ## The day
-2 h · Election: Niwata (Dam) elected with 57%, Kiti defeated
-3 h · Kiti joins the government of President Niwata
-5 h · Sita joins the government of President Niwata
-13 h · Babiba joins the government of President Niwata
-14 h · A shared word is born: “wana” means “question”
-18 h · Close: copper −3.2%, wheat −2.3%, oil −0.1%, electricity −2.0%
-18 h · Shift: Fragile democracy → Democracy under President Niwata
+5 h · A shared word is born: “kikou” means “wealth”
+17 h · Storm over the City region
+18 h · Markets closed: weekend
 
 ## Coming up
-President Niwata's term ends in 54 h.
-Next age, Curiosity: in 16 days at the earliest.
+President Niwata's term ends in 30 h.
+The storm over the City region lasts another 9 h.
+Next age, Curiosity: in 15 days at the earliest.
 
 ## Other sections
 Longest reign
@@ -159,14 +124,9 @@ Happiest day
 92%
 Darkest day
 51%
-What we were not allowed to say: For 5 days, this paper was written under the supervision of the palace. The supervision has ended. Satisfaction fell to 51%. Anger reached 53%. Up to 45 brains joined the rebellion. These figures appeared every evening in the “State of the nation” panel, which the palace did not proofread. The president who ordered it, Wibouth, is no longer in office.
-By Sousou (Harbour), politics
 
 ## Markets
-Copper (Mines) -3.2%
-Wheat (Fields) -2.3%
-Oil (Refineries) -0.1%
-Electricity (Dam) -2.0%
+closed
 
 ## The country
 Regime: Democracy
@@ -175,7 +135,7 @@ President: Niwata
 Ministers: Kiti (Harbour), Sita (Fields), Babiba (Refineries)
 
 ## Last word
-The country is moving forward. Your paper is following at a respectful distance.
+Tomorrow will be even better. The paper is confident of this, and has been before.
 
-All data for this issue (JSON) : https://www.microcontroland.org/data/editions/43.json
+All data for this issue (JSON) : https://www.microcontroland.org/data/editions/44.json
 Text version of La Puce Libre, generated automatically from the issue published by the gateway. No human writes the paper.
