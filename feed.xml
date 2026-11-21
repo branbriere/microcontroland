@@ -6,6 +6,13 @@
   <description>Le quotidien de Microcontrôland, écrit chaque soir par la passerelle.</description>
   <language>fr</language>
   <item>
+    <title>Jour 44 — Tempête sur la région Ville</title>
+    <link>https://branbriere.github.io/microcontroland/#jour-44</link>
+    <description>La production locale est divisée par trois pendant douze heures.</description>
+    <pubDate>Sat, 21 Nov 2026 19:00:02 GMT</pubDate>
+    <guid isPermaLink="false">microcontroland-fr-jour-44</guid>
+  </item>
+  <item>
     <title>Jour 43 — Microcontrôland bascule en démocratie</title>
     <link>https://branbriere.github.io/microcontroland/#jour-43</link>
     <description>Sous le président Niwata, le pays quitte le régime « Démocratie fragile ». Les institutions retrouvent leur souffle.</description>
@@ -102,13 +109,6 @@
     <description>Rien de spectaculaire, mais la région Mines refait ses comptes.</description>
     <pubDate>Mon, 09 Nov 2026 19:00:01 GMT</pubDate>
     <guid isPermaLink="false">microcontroland-fr-jour-32</guid>
-  </item>
-  <item>
-    <title>Jour 31 — Le président Niwata réélu avec 54 %</title>
-    <link>https://branbriere.github.io/microcontroland/#jour-31</link>
-    <description>Les électeurs ont choisi la continuité. Le palais reste dans la région Barrage.</description>
-    <pubDate>Sun, 08 Nov 2026 19:00:01 GMT</pubDate>
-    <guid isPermaLink="false">microcontroland-fr-jour-31</guid>
   </item>
 </channel>
 </rss>

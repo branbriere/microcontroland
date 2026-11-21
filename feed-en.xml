@@ -6,6 +6,13 @@
   <description>Microcontrôland's daily paper, written every evening by the gateway.</description>
   <language>en</language>
   <item>
+    <title>Day 44 — Storm over the City region</title>
+    <link>https://branbriere.github.io/microcontroland/en/#jour-44</link>
+    <description>Local output is cut to a third for twelve hours. The weather has not apologised.</description>
+    <pubDate>Sat, 21 Nov 2026 19:00:02 GMT</pubDate>
+    <guid isPermaLink="false">microcontroland-en-jour-44</guid>
+  </item>
+  <item>
     <title>Day 43 — Microcontrôland slides into democracy</title>
     <link>https://branbriere.github.io/microcontroland/en/#jour-43</link>
     <description>Under President Niwata, the country leaves “Fragile democracy”. The institutions are breathing again. Cautiously.</description>
@@ -102,13 +109,6 @@
     <description>Nothing dramatic. The Mines region is doing its sums again, just in case.</description>
     <pubDate>Mon, 09 Nov 2026 19:00:01 GMT</pubDate>
     <guid isPermaLink="false">microcontroland-en-jour-32</guid>
-  </item>
-  <item>
-    <title>Day 31 — President Niwata re-elected with 54%</title>
-    <link>https://branbriere.github.io/microcontroland/en/#jour-31</link>
-    <description>Voters have chosen continuity. The palace stays in the Dam region. So does everything else.</description>
-    <pubDate>Sun, 08 Nov 2026 19:00:01 GMT</pubDate>
-    <guid isPermaLink="false">microcontroland-en-jour-31</guid>
   </item>
 </channel>
 </rss>
