@@ -1,47 +1,74 @@
 LA PUCE LIBRE — Microcontrôland
 
-Édition n° 44 · 2026-11-21 · ère 1, jour 45
+Édition n° 45 · 2026-11-22 · ère 1, jour 46
 
-Nature
-Tempête sur la région Ville
-La production locale est divisée par trois pendant douze heures.
-Pas de téléscripteur le week-end. Au Port, on en profite pour huiler les rouleaux.
-Depuis son bureau au Barrage, Niwata expédie les affaires courantes. Cela fait 1 j 18 h que ça dure.
-Les cerveaux n'ont pas changé d'avis depuis hier : 77 % se disent satisfaits. La région Mines compte 4 rebelles, la colère nationale est à 21 %.
-Coup d'œil à la Ville, terre de services : l'humeur y est « satisfaite » et l'on y compte 3 rebelles.
-Par Kaïpouk (Champs), société
+Sondage
+Sita en tête du sondage, avec 53 % des intentions
+Intentions de vote : Sita 53 %, Niwata 35 %, Soubaïnath 12 % ; personne ne cite Houtak, Nakaïk ni Saïnaïtaï ; parmi les interrogés, 3 comptent s'abstenir. 20 citoyens tirés au sort ont été interrogés à 16 h ; à cette taille, la marge d'erreur approche 24 points.
+C'est le week-end : la bourse mondiale se repose, et les régions comptent sur leurs réserves.
+Au palais, rien de neuf : Niwata gouverne depuis 2 j 18 h, avec 3 ministres (Kiti, Sita, Babiba).
+Le moral remonte : 77 % de satisfaits hier, 86 % ce soir. 2 cerveaux aux Mines ont rejoint la rébellion.
+Dans les temples comme ailleurs, on compte : 33 % de fidèles, 19 % de sceptiques, 48 % d'incrédules.
+Par Sousou (Port), politique
 
 ## Citation du jour
-« Ce n'est pas une crise, c'est un redémarrage lent. »
+« Nous ne sommes que 120, mais nous sommes bien câblés. »
 
 ## Brèves
-Langue · Le pays a un mot pour « richesse » : kikou : Personne ne l'a décidé : à force de se parler, les régions sont tombées d'accord. 40 mots sont maintenant partagés.
+Campagne · 6 candidats en campagne : En lice : Niwata (Barrage), Sita (Champs), Soubaïnath (Ville), Houtak (Raffineries), Nakaïk (Barrage) et Saïnaïtaï (Port). Le plus charismatique : Sita. Le plus ambitieux : Soubaïnath. Un seul croyant en lice : Nakaïk.
+Par Sousou (Port), politique
+Notoriété · Les noms qui comptent cette semaine : Les citoyens dont on parle le plus : Niwata (Barrage, 98), Kiti (Port, 74) et Wibouth (Champs, 54). Notoriété sur 100 : elle monte avec le pouvoir, les campagnes et les signatures, et s'efface quand on vous oublie.
 Par Kaïpouk (Champs), société
-Que sont-ils devenus ? · Que devient Kiti ? : Président déchu il y a 1 j 17 h, Kiti est redevenu simple citoyen au Port. Humeur du jour : « satisfaite ». Il siège déjà au gouvernement.
+Société · Raffineries, région la plus heureuse du jour : La région Raffineries affiche 90 % de satisfaction. Les autres régions prennent des notes.
 Par Kaïpouk (Champs), société
-Société · Il fait bon vivre aux Raffineries : Avec 81 % de satisfaction, la région Raffineries (pétrole) fait figure d'exception.
-Par Kaïpouk (Champs), société
-Chiffre du jour · 91 % de réserves : Le stock national de ressources, mesuré à la fermeture des entrepôts.
+Chiffre du jour · 46e jour de l'ère 1 : Le pays a 15 élections et 2 révoltes derrière lui.
 
 ## Vos régions
-Mines · Grogne : 4 rebelles déclarés : Humeur « satisfaite ». Le préfet a demandé des renforts, puis un café.
-Ville · La tempête : La production est divisée par trois pour douze heures. Humeur « satisfaite ».
+Mines · Baromètre : « satisfaite » : 82 % de satisfaits, 2 rebelles, 4 croyants sur 20.
+Champs · Le moral ? « satisfaite » : 82 % de satisfaits, 1 rebelle, 7 croyants sur 20.
+Raffineries · Climat « satisfaite » : 90 % de satisfaits, 0 rebelle, 8 croyants sur 20.
+Barrage · Région capitale : 89 % de satisfaits, 1 rebelle, 8 croyants sur 20.
+Port · Humeur « satisfaite » : 84 % de satisfaits, 1 rebelle, 7 croyants sur 20.
+Ville · Ambiance « satisfaite » : 87 % de satisfaits, 0 rebelle, 5 croyants sur 20.
 Par Kaïpouk (Champs), société
 
 ## Billet
-Vocabulaire
-Avec 40 mots partagés, les six régions peuvent enfin se disputer dans la même langue.
+Recensement
+Recensement du soir : 120 citoyens, comme hier, comme au premier jour. Personne ne naît, personne ne meurt, et l'administration trouve cela très reposant.
 Par Taïsa (Raffineries), billet d'humour
 
+## Arts
+L'art primitif
+Dessin du citoyen n° 47 (Raffineries), règle B3 : ...## / ..### / ..### / ...## / ...##
+Vernissage à l'atelier : le citoyen n° 47 (Raffineries) ouvre le bal.
+Les faits : aucun dessin de la veille pour comparer ; l'artiste du soir est désigné par roulement. 12 cases pleines sur 25.
+Le critique d'art
+Tous les dessins : https://www.microcontroland.org/atelier.html
+
 ## La journée
-5 h · Un mot commun est né : « kikou » veut dire « richesse »
-17 h · Tempête sur la région Ville
+3 h · La campagne est ouverte : 6 candidats, vote dans 25 h
+16 h · Sondage : Sita en tête des intentions de vote (53 %)
 18 h · Bourse fermée : week-end
 
 ## À suivre
-Le mandat du président Niwata s'achève dans 30 h.
-La tempête sur la région Ville dure encore 9 h.
-Prochain âge, la Curiosité : dans 15 jours au plus tôt.
+On vote dans 8 h. Candidats : Niwata (Barrage), Sita (Champs), Soubaïnath (Ville), Houtak (Raffineries), Nakaïk (Barrage), Saïnaïtaï (Port).
+Prochain âge, la Curiosité : dans 14 jours au plus tôt.
+
+## Édition du dimanche
+Lundi : Bascule : Démocratie fragile → Agitation révolutionnaire sous le président Wibouth (édition relue par le palais)
+Mardi : Révolte ! Le président Wibouth est renversé par 50 cerveaux rebelles (500 k hab) (édition relue par le palais)
+Mercredi : Journée calme, 66 % de satisfaction. (édition relue par le palais)
+Jeudi : Sondage : Niwata en tête des intentions de vote (50 %) (édition relue par le palais)
+Vendredi : Bascule : Démocratie fragile → Démocratie sous le président Niwata
+Samedi : Tempête sur la région Ville
+Dimanche : Sondage : Sita en tête des intentions de vote (53 %)
+Le parcours de la semaine : Kiti : En sept jours, Kiti (Port) a été candidat, élu président puis entré au gouvernement. Une semaine bien remplie.
+Portrait : Païsi : Païsi est l'un des 20 cerveaux aux Raffineries. Humeur de la semaine : « satisfaite ». Satisfaction personnelle : 98 %. Il croit au Créateur. N'exerce aucun pouvoir, et ne s'en plaint pas. Sa biographie compte 2 étapes. Jour 40, 15 h : il rejoint la rébellion (colère 59 %), alors que la censure pèse sur le pays. Jour 41, 22 h : il quitte la rébellion (satisfaction 52 %), alors que la censure pèse sur le pays.
+VENDS 0,5 W, jamais servi, cause sobriété.
+VENDS réserves d'électricité, cause bourse fermée. Prix à débattre lundi. S'adresser au Barrage.
+TROUVÉ : 35 points de satisfaction. Le palais assure qu'ils lui appartiennent.
+Représentativité : Cette semaine, le pays a usé 3 présidents. À ce rythme, chacun des 120 citoyens aura gouverné avant la fin de l'ère, ce qui réglera enfin la question de la représentativité.
+Par Taïsa (Raffineries), billet d'humour
 
 ## Autres rubriques
 Plus long règne
@@ -63,57 +90,84 @@ Président : Niwata
 Ministres : Kiti (Port), Sita (Champs), Babiba (Raffineries)
 
 ## Le mot de la fin
-Demain sera encore mieux, la rédaction en est sûre.
+Quelle époque formidable pour être un cerveau !
 
-Toutes les données de cette édition (JSON) : https://www.microcontroland.org/data/editions/44.json
+Toutes les données de cette édition (JSON) : https://www.microcontroland.org/data/editions/45.json
 Version texte de La Puce Libre, générée automatiquement à partir de l'édition publiée par la passerelle. Aucun humain n'écrit le journal.
 
 ============================================================
 
 LA PUCE LIBRE — Microcontrôland (English)
 
-Issue no. 44 · 2026-11-21 · era 1, day 45
+Issue no. 45 · 2026-11-22 · era 1, day 46
 
-Nature
-Storm over the City region
-Local output is cut to a third for twelve hours. The weather has not apologised.
-No ticker at weekends. At the Port, the time is used to oil the rollers. The rollers are grateful.
-From the Dam, Niwata handles the day-to-day. This has been going on for 1 d 18 h.
-The brains have not changed their minds since yesterday. 77% say they are satisfied. They said so yesterday too. The Mines region counts 4 rebels; national anger stands at 21%.
-A glance at the City, land of services: the mood there is “satisfied”, with 3 rebels.
-By Kaïpouk (Fields), society
+Poll
+Sita leads the poll on 53%
+Voting intentions: Sita 53%, Niwata 35%, Soubaïnath 12%; nobody mentions Houtak, Nakaïk or Saïnaïtaï; of those asked, 3 intend to abstain. 20 citizens drawn by lot were asked at 16:00. At this sample size the margin of error is about 24 points. Readers are invited to bear this in mind, and will not.
+It is the weekend. World markets are resting. The regions are relying on their reserves, which are not.
+Nothing new at the palace. Niwata has governed for 2 d 18 h, with 3 ministers (Kiti, Sita, Babiba).
+Morale picks up: 77% satisfied yesterday, 86% tonight. 2 brains in the Mines have joined the rebellion.
+In the temples, as elsewhere, people are counting: 33% faithful, 19% sceptics, 48% unbelievers.
+By Sousou (Harbour), politics
 
 ## Quote of the day
-“This is not a crisis. It is a slow reboot.”
+“There are only 120 of us. But we are well wired.”
 
 ## In brief
-Language · The country has a word for “wealth”: kikou: Nobody decided it. The regions simply talked to each other until they agreed. 40 words are now shared.
+Campaign · 6 candidates on the campaign trail: Running: Niwata (Dam), Sita (Fields), Soubaïnath (City), Houtak (Refineries), Nakaïk (Dam) and Saïnaïtaï (Harbour). The most charismatic: Sita. The most ambitious: Soubaïnath. Only one believer in the race: Nakaïk.
+By Sousou (Harbour), politics
+Fame · The names that matter this week: The most talked-about citizens: Niwata (Dam, 98), Kiti (Harbour, 74) and Wibouth (Fields, 54). Fame is out of 100. It rises with power, campaigns and bylines. It fades when people forget you, which they do.
 By Kaïpouk (Fields), society
-Where are they now? · What became of Kiti?: Toppled 1 d 17 h ago, Kiti is once again an ordinary citizen, in the Harbour. Today's mood: “satisfied”. He is already back in government. Nobody quite knows how.
+Society · Refineries, happiest region of the day: The Refineries region posts 90% satisfaction. The other regions are taking notes.
 By Kaïpouk (Fields), society
-Society · Life is good in the Refineries: At 81% satisfaction, the Refineries region (oil) is the exception. It is not apologising.
-By Kaïpouk (Fields), society
-Number of the day · 91% reserves: The national stock of resources, measured as the warehouses close. Nobody has been in since.
+Number of the day · Day 46 of era 1: The country has 15 elections and 2 revolts behind it.
 
 ## Your regions
-Mines · Discontent: 4 declared rebels: Mood: “satisfied”. The prefect has requested reinforcements. And a coffee.
-City · The storm: Output is cut to a third for twelve hours. Mood: “satisfied”.
+Mines · Barometer: “satisfied”: 82% satisfied, 2 rebels, 4 believers out of 20.
+Fields · Morale? “satisfied”: 82% satisfied, 1 rebel, 7 believers out of 20.
+Refineries · Climate: “satisfied”: 90% satisfied, 0 rebel, 8 believers out of 20.
+Dam · Capital region: 89% satisfied, 1 rebel, 8 believers out of 20.
+Harbour · Mood: “satisfied”: 84% satisfied, 1 rebel, 7 believers out of 20.
+City · Atmosphere: “satisfied”: 87% satisfied, 0 rebel, 5 believers out of 20.
 By Kaïpouk (Fields), society
 
 ## Column
-Vocabulary
-With 40 shared words, the six regions can at last disagree in the same language.
+Census
+Tonight's census: 120 citizens, as yesterday, as on the first day. Nobody is born, nobody dies, and the civil service finds it most restful.
 By Taïsa (Refineries), humour column
 
+## Arts
+Primitive art
+Drawing by Citizen No. 47 (Refineries), rule B3: ...## / ..### / ..### / ...## / ...##
+Opening night at the Studio: Citizen No. 47 of the Refineries is the first to hang.
+The facts: no drawing from the previous day to compare with; tonight's artist was chosen by rotation. 12 of 25 squares are filled.
+The art critic
+All the drawings: https://www.microcontroland.org/en/atelier.html
+
 ## The day
-5 h · A shared word is born: “kikou” means “wealth”
-17 h · Storm over the City region
+3 h · The campaign is open: 6 candidates, vote in 25 h
+16 h · Poll: Sita leads voting intentions (53%)
 18 h · Markets closed: weekend
 
 ## Coming up
-President Niwata's term ends in 30 h.
-The storm over the City region lasts another 9 h.
-Next age, Curiosity: in 15 days at the earliest.
+The vote is in 8 h. Candidates: Niwata (Dam), Sita (Fields), Soubaïnath (City), Houtak (Refineries), Nakaïk (Dam), Saïnaïtaï (Harbour).
+Next age, Curiosity: in 14 days at the earliest.
+
+## Sunday edition
+Monday: Shift: Fragile democracy → Revolutionary unrest under President Wibouth (issue proofread by the palace)
+Tuesday: Revolt! President Wibouth toppled by 50 rebel brains (500k inhabitants) (issue proofread by the palace)
+Wednesday: A quiet day, 66% satisfaction. (issue proofread by the palace)
+Thursday: Poll: Niwata leads voting intentions (50%) (issue proofread by the palace)
+Friday: Shift: Fragile democracy → Democracy under President Niwata
+Saturday: Storm over the City region
+Sunday: Poll: Sita leads voting intentions (53%)
+Journey of the week: Kiti: In seven days, Kiti (Harbour) was a candidate, elected president, then brought into government. A full week.
+Portrait: Païsi: Païsi is one of the 20 brains in the Refineries. Mood of the week: “satisfied”. Personal satisfaction: 98%. He believes in the Creator. Holds no power, and has not complained. His biography has 2 steps. Day 40, 15:00: he joins the rebellion (anger 59%), under censorship. Day 41, 22:00: he leaves the rebellion (satisfaction 52%), under censorship.
+FOR SALE: 0.5 W, never used. Owner economising.
+FOR SALE: electricity reserves, owing to market closure. Price negotiable on Monday. Apply in the Dam.
+FOUND: 35 points of satisfaction. The palace has claimed them.
+Representation: This week the country got through 3 presidents. At this rate each of the 120 citizens will have governed before the era is out. That should settle the question of representation.
+By Taïsa (Refineries), humour column
 
 ## Other sections
 Longest reign
@@ -135,7 +189,7 @@ President: Niwata
 Ministers: Kiti (Harbour), Sita (Fields), Babiba (Refineries)
 
 ## Last word
-Tomorrow will be even better. The paper is confident of this, and has been before.
+It is, on the whole, a good time to be a brain.
 
-All data for this issue (JSON) : https://www.microcontroland.org/data/editions/44.json
+All data for this issue (JSON) : https://www.microcontroland.org/data/editions/45.json
 Text version of La Puce Libre, generated automatically from the issue published by the gateway. No human writes the paper.
