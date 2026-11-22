@@ -6,6 +6,13 @@
   <description>Le quotidien de Microcontrôland, écrit chaque soir par la passerelle.</description>
   <language>fr</language>
   <item>
+    <title>Jour 45 — Sita en tête du sondage, avec 53 % des intentions</title>
+    <link>https://branbriere.github.io/microcontroland/#jour-45</link>
+    <description>Intentions de vote : Sita 53 %, Niwata 35 %, Soubaïnath 12 % ; personne ne cite Houtak, Nakaïk ni Saïnaïtaï ; parmi les interrogés, 3 comptent s'abstenir. 20 citoyens tirés au sort ont été interrogés à 16 h ; à cette taille, la marge d'erreur approche 24 points.</description>
+    <pubDate>Sun, 22 Nov 2026 19:00:02 GMT</pubDate>
+    <guid isPermaLink="false">microcontroland-fr-jour-45</guid>
+  </item>
+  <item>
     <title>Jour 44 — Tempête sur la région Ville</title>
     <link>https://branbriere.github.io/microcontroland/#jour-44</link>
     <description>La production locale est divisée par trois pendant douze heures.</description>
@@ -102,13 +109,6 @@
     <description>La région Champs surveille ses revenus de près.</description>
     <pubDate>Tue, 10 Nov 2026 19:57:09 GMT</pubDate>
     <guid isPermaLink="false">microcontroland-fr-jour-33</guid>
-  </item>
-  <item>
-    <title>Jour 32 — Le cuivre progresse de 1,6 %</title>
-    <link>https://branbriere.github.io/microcontroland/#jour-32</link>
-    <description>Rien de spectaculaire, mais la région Mines refait ses comptes.</description>
-    <pubDate>Mon, 09 Nov 2026 19:00:01 GMT</pubDate>
-    <guid isPermaLink="false">microcontroland-fr-jour-32</guid>
   </item>
 </channel>
 </rss>
