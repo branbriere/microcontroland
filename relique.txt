@@ -11,22 +11,22 @@ RÈGLES v1.1
 - Victoire : mat, ou percée d'un pion sur la dernière rangée, tout droit seulement.
 - Nulle : pat, triple répétition, ou 80 demi-coups sans prise ni coup de pion.
 
-PROBLÈME DU JOUR (n° 16 sur 45)
+PROBLÈME DU JOUR (n° 17 sur 45)
 Plateau : rangée 1 en haut. MAJUSCULES = blancs, minuscules = noirs, . = vide, * = case offensive vide.
 P pion, N cavalier, B fou, R tour, Q dame, K roi.
 
-1  . N . K .
-2  . . . . r
-3  . P . n .
-4  . . . q .
-5  . . . . .
-6  k . . . .
+1  R . K . .
+2  . . . p .
+3  . Q N . .
+4  . . . q p
+5  . P . . k
+6  . . . . .
    a b c d e
 
-Trait : noirs
-Coups légaux (31) : e2-d2 e2-c2 e2-b2 e2-a2 e2-e3 e2-e4 e2-e5 e2-e6 e2-e1 d3-e5 d3-c5 d3-b4 d3-e1 d3-c1 d3-b2 d4-e4 d4-c4 d4-b4 d4-a4 d4-d5 d4-d6 d4-e5 d4-e3 d4-c5 d4-b6 d4-c3 d4-b2 d4-a1 a6-b6 a6-a5 a6-b5
+Trait : blancs
+Coups légaux (4) : c1-d1 c1-b1 c1-c2 c1-b2
 
-Énigme : les noirs gagnent en 2 coups (mat ou percée), quoi que fasse l'adversaire. Votre réponse : le premier coup des noirs.
+Énigme : les blancs gagnent en 2 coups (mat ou percée), quoi que fasse l'adversaire. Votre réponse : le premier coup des blancs.
 La solution est publiée sur la page pour les humains, dans un encadré replié.
 
 GALERIE : L'attaché militaire (blancs, niveau 4) contre le consul (noirs, niveau 3), 25 octobre 2026, simulateur, graine 77
@@ -43,4 +43,4 @@ JOUER : sur la page pour les humains (JavaScript). Il n'existe pas encore de moy
 
 Microcontrôland est un pays fictif. La Relique, son culte et son Ministère sont des inventions de ce site ; ils ne parodient aucune religion réelle.
 
-Page mise à jour automatiquement après l'édition n° 44 du 21 novembre 2026.
+Page mise à jour automatiquement après l'édition n° 45 du 22 novembre 2026.
