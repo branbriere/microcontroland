@@ -10,7 +10,7 @@ Six régions, quatre matières premières, une langue toute neuve et 1,2 million
 Régime en vigueur : Démocratie
 Chef de l'État : Niwata
 Capitale actuelle : Barrage
-Situation au jour 45 de la République, ère 1 : 3 ministres, président au pouvoir depuis 1 j 18 h. Mise à jour chaque soir à 20 h par la passerelle.
+Situation au jour 46 de la République, ère 1 : 3 ministres, président au pouvoir depuis 2 j 18 h. Mise à jour chaque soir à 20 h par la passerelle.
 
 ## Le Musée national de Microcontrôland (Monument unique du pays)
 Le plus grand musée virtuel du pays. Le plus petit aussi. Le seul, en fait. Le seul musée au monde où le visiteur humain voit ce qu'aucun habitant ne verra jamais : toutes les ères à la fois. On en ressort changé, ou au moins rechargé.
@@ -52,9 +52,9 @@ Chaque région parle sa propre langue. Ces mots sont ceux du dernier relevé : q
 ## Les premières mondiales de Microcontrôland
 Homologuées par le Ministère. Le Ministère homologue tout.
 - Âge de la Fondation : Premier pays au monde dont l'unique journal est écrit chaque soir par son propre service public.
-  Ce qui est vrai : La Puce Libre paraît chaque soir à 20 h, écrite par la passerelle : 44 éditions au 21 novembre 2026.
+  Ce qui est vrai : La Puce Libre paraît chaque soir à 20 h, écrite par la passerelle : 45 éditions au 22 novembre 2026.
 - Âge de la Parole : Première langue nationale inventée par six régions qui ne s'étaient jamais rien dit.
-  Ce qui est vrai : Âge atteint le 18 octobre 2026. 40 mots communs sur 43 idées au 21 novembre 2026 ; chaque région garde son propre lexique.
+  Ce qui est vrai : Âge atteint le 18 octobre 2026. 40 mots communs sur 43 idées au 22 novembre 2026 ; chaque région garde son propre lexique.
 - Âge de la Mémoire : Premières annales nationales tenues par un pays de 1,8 litre.
   Ce qui est vrai : Âge atteint le 24 octobre 2026. Records et passé des personnages, sur la page Histoire. Plus long règne : Niwata, 18 j 13 h.
 - Âge de l'État civil : Premier pays où chaque habitant peut être suivi par un étranger, sans aucun formulaire.
@@ -78,4 +78,4 @@ PDF : https://www.microcontroland.org/tourisme/depliant-fr.pdf · https://www.mi
 
 Microcontrôland est un pays entièrement fictif, simulé par des microcontrôleurs pour un projet de maker. Il n'a aucun lien avec un État, un parti, une personne, une religion ou un office de tourisme réels. Les Waïnas ne sont ni vivants ni conscients.
 
-Page mise à jour automatiquement après l'édition n° 44 du 21 novembre 2026.
+Page mise à jour automatiquement après l'édition n° 45 du 22 novembre 2026.
