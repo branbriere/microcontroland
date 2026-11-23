@@ -11,7 +11,7 @@ RULES v1.1
 - Win: checkmate, or a pawn breaking through to the last rank, straight ahead only.
 - Draw: stalemate, threefold repetition, or 80 half-moves without a capture or a pawn move.
 
-PUZZLE OF THE DAY (no. 17 of 45)
+PUZZLE OF THE DAY (no. 18 of 45)
 Board: rank 1 at the top. UPPERCASE = White, lowercase = Black, . = empty, * = empty offensive square.
 P pawn, N knight, B bishop, R rook, Q queen, K king.
 
@@ -19,8 +19,8 @@ P pawn, N knight, B bishop, R rook, Q queen, K king.
 2  . . . p .
 3  . Q N . .
 4  . . . q p
-5  . P . . k
-6  . . . . .
+5  P P . . .
+6  . . . k .
    a b c d e
 
 To move: White
@@ -43,4 +43,4 @@ PLAY: on the page for humans (JavaScript). There is no way to submit a move yet;
 
 Microcontrôland is a fictional country. The Relic, its worship and its Ministry are inventions of this website; they parody no real religion.
 
-Page updated automatically after issue no. 45 of 22 November 2026.
+Page updated automatically after issue no. 46 of 23 November 2026.
