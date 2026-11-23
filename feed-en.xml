@@ -6,6 +6,13 @@
   <description>Microcontrôland's daily paper, written every evening by the gateway.</description>
   <language>en</language>
   <item>
+    <title>Day 46 — Wheat falls 3.0%</title>
+    <link>https://branbriere.github.io/microcontroland/en/#jour-46</link>
+    <description>The Fields region watches its income melt away. The rest of the country feels it too.</description>
+    <pubDate>Mon, 23 Nov 2026 19:00:01 GMT</pubDate>
+    <guid isPermaLink="false">microcontroland-en-jour-46</guid>
+  </item>
+  <item>
     <title>Day 45 — Sita leads the poll on 53%</title>
     <link>https://branbriere.github.io/microcontroland/en/#jour-45</link>
     <description>Voting intentions: Sita 53%, Niwata 35%, Soubaïnath 12%; nobody mentions Houtak, Nakaïk or Saïnaïtaï; of those asked, 3 intend to abstain. 20 citizens drawn by lot were asked at 16:00. At this sample size the margin of error is about 24 points. Readers are invited to bear this in mind, and will not.</description>
@@ -102,13 +109,6 @@
     <description>The Mines region watches its income melt away. The rest of the country feels it too.</description>
     <pubDate>Wed, 11 Nov 2026 19:00:02 GMT</pubDate>
     <guid isPermaLink="false">microcontroland-en-jour-34</guid>
-  </item>
-  <item>
-    <title>Day 33 — Wheat slips 1.9%</title>
-    <link>https://branbriere.github.io/microcontroland/en/#jour-33</link>
-    <description>The Fields region is keeping a close eye on its income. Its income is not returning the favour.</description>
-    <pubDate>Tue, 10 Nov 2026 19:57:09 GMT</pubDate>
-    <guid isPermaLink="false">microcontroland-en-jour-33</guid>
   </item>
 </channel>
 </rss>

@@ -6,6 +6,13 @@
   <description>Le quotidien de Microcontrôland, écrit chaque soir par la passerelle.</description>
   <language>fr</language>
   <item>
+    <title>Jour 46 — Le blé chute de 3,0 %</title>
+    <link>https://branbriere.github.io/microcontroland/#jour-46</link>
+    <description>La région Champs voit ses revenus fondre et le reste du pays en ressent l'onde de choc.</description>
+    <pubDate>Mon, 23 Nov 2026 19:00:01 GMT</pubDate>
+    <guid isPermaLink="false">microcontroland-fr-jour-46</guid>
+  </item>
+  <item>
     <title>Jour 45 — Sita en tête du sondage, avec 53 % des intentions</title>
     <link>https://branbriere.github.io/microcontroland/#jour-45</link>
     <description>Intentions de vote : Sita 53 %, Niwata 35 %, Soubaïnath 12 % ; personne ne cite Houtak, Nakaïk ni Saïnaïtaï ; parmi les interrogés, 3 comptent s'abstenir. 20 citoyens tirés au sort ont été interrogés à 16 h ; à cette taille, la marge d'erreur approche 24 points.</description>
@@ -102,13 +109,6 @@
     <description>La région Mines voit ses revenus fondre et le reste du pays en ressent l'onde de choc.</description>
     <pubDate>Wed, 11 Nov 2026 19:00:02 GMT</pubDate>
     <guid isPermaLink="false">microcontroland-fr-jour-34</guid>
-  </item>
-  <item>
-    <title>Jour 33 — Le blé recule de 1,9 %</title>
-    <link>https://branbriere.github.io/microcontroland/#jour-33</link>
-    <description>La région Champs surveille ses revenus de près.</description>
-    <pubDate>Tue, 10 Nov 2026 19:57:09 GMT</pubDate>
-    <guid isPermaLink="false">microcontroland-fr-jour-33</guid>
   </item>
 </channel>
 </rss>
