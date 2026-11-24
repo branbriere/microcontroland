@@ -219,6 +219,7 @@ The investigator's verdict : The Republic's first drought sold no fans: the plug
 The investigator's notebook
 One card per election, revolt, palace coup or power vacuum, recomputed every evening from the published raw files. Figures, nothing but figures: the jokes are kept for the files.
 
+- 23 November 2026, 4 am · Election: Niwata re-elected with 56% (https://donnees.microcontroland.org/donnees/ere-001/quotidien/2026-11-23.json)
 - 20 November 2026, 2 am · Election: Niwata (Dam) elected with 57%, Kiti defeated (https://donnees.microcontroland.org/donnees/ere-001/quotidien/2026-11-20.json)
 - 17 November 2026, midnight · Post-revolution election: Kiti (Harbour) elected with 57% (https://donnees.microcontroland.org/donnees/ere-001/quotidien/2026-11-17.json)
 - 16 November 2026, 10 pm · Revolt! President Wibouth toppled by 50 rebel brains (500k inhabitants) (https://donnees.microcontroland.org/donnees/ere-001/quotidien/2026-11-17.json)
