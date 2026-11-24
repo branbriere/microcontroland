@@ -1,52 +1,55 @@
 LA PUCE LIBRE — Microcontrôland
 
-Édition n° 46 · 2026-11-23 · ère 1, jour 47
+Édition n° 47 · 2026-11-24 · ère 1, jour 48
 
 Bourse
-Le blé chute de 3,0 %
-La région Champs voit ses revenus fondre et le reste du pays en ressent l'onde de choc.
-Journée agitée sur les marchés : le blé perd 3,0 %, et la région Champs le sent passer. Ailleurs : l'électricité (−1,7 %), le pétrole (−1,2 %), le cuivre (−0,7 %).
-Le président Niwata, issu de la région Barrage, gouverne depuis 3 j 18 h avec 3 ministres (Kiti, Sita, Babiba). Le pays vit sous le régime « Démocratie ».
-Thermomètre social stable, à 88 % de satisfaits.
-Les réserves nationales s'établissent à 88 %. Les greniers sont pleins.
+Le blé s'envole de 6,6 %
+La région Champs profite de la hausse et le reste du pays en ressent l'onde de choc.
+La région Champs a suivi le téléscripteur de près : le blé finit à +6,6 %. Les autres cours : le pétrole (+0,7 %), le cuivre (−0,6 %), l'électricité (+0,5 %).
+Le palais au Barrage a vécu une journée de dossiers. Niwata y règne depuis 4 j 18 h.
+Les sondeurs notent un coup de froid : la satisfaction passe à 84 % (−4).
+La langue commune compte 41 mots. Les régions continuent de se parler, et de se comprendre un peu mieux chaque jour.
 Par Nasinaï (Barrage), économie
 
 ## Citation du jour
-« Gouverner, c'est prévoir la prochaine coupure. »
+« Nous traversons une mauvaise passe. »
 
 ## Brèves
-Élection · Le président Niwata réélu avec 56 % : Les électeurs ont choisi la continuité. Le palais reste dans la région Barrage.
-Par Sousou (Port), politique
-Chronique électorale · Participation 90 % : le scrutin en chiffres : Résultats : Niwata 56 % (60 voix), Sita 42 % (45 voix), Soubaïnath 2 % (2 voix), Saïnaïtaï 1 % (1 voix) ; aucune voix pour Houtak et Nakaïk. Participation : 90 % (108 votants sur 120 inscrits), 12 abstentions, 0 vote blanc. En tête par région : Mines Niwata, Champs Sita, Raffineries Niwata, Barrage Niwata, Port Niwata, Ville Sita. Le sondage lui donnait 35 % : écart de 21 points.
-Par Sousou (Port), politique
-Société · Palmarès du bonheur : Raffineries en tête : 92 % de satisfaits : la région du pétrole n'a pas grand-chose à reprocher à la journée.
+Nature · Tempête sur la région Mines : La production locale est divisée par trois pendant douze heures.
 Par Kaïpouk (Champs), société
-Chiffre du jour · 1 % de peur : Les cerveaux dorment sur leurs deux circuits.
+Langue · Le pays a un mot pour « vous » : soutaï : Cinq régions au moins disent désormais la même chose. La langue commune compte 41 mots.
+Par Kaïpouk (Champs), société
+Société · Le sourire est aux Raffineries : Avec 87 % de satisfaction, la région Raffineries (pétrole) fait figure d'exception.
+Par Kaïpouk (Champs), société
+Chiffre du jour · 41 mots communs : C'est la taille du vocabulaire que les six régions partagent ce soir.
 
 ## Vos régions
-Champs · Le blé −3,0 % : La région vit du blé : elle accuse le coup sans broncher. 85 % de satisfaits.
+Mines · La tempête : La production est divisée par trois pour douze heures. Humeur « satisfaite ».
+Champs · Le blé +6,6 % : La région vit du blé : elle savoure la hausse sans trop le montrer. 82 % de satisfaits.
 Par Kaïpouk (Champs), société
 
 ## Billet
-Gouvernement
-3 ministres pour 120 citoyens, soit un ministre pour 40 administrés. Les ministres jugent la proportion raisonnable ; les administrés n'ont pas été consultés.
+Théologie
+29 % de croyants, 47 % d'athées, et le reste qui attend une preuve. Le Créateur, lui, n'a pas répondu au sondage.
 Par Taïsa (Raffineries), billet d'humour
 
 ## Arts
 L'art primitif
-Dessin du citoyen n° 88 (Port), règle B3 : ..... / ....# / ....# / ##### / #####
-Une œuvre en mouvement chez le citoyen n° 88 (Port) ; le critique attend la suite.
+Dessin du citoyen n° 41 (Raffineries), règle B3 : ##.#. / ##.#. / ##### / ....# / .....
+Le citoyen n° 41 (Raffineries) poursuit sa recherche, case par case.
 Les faits : 4 cases sur 25 ont changé depuis hier ; 12 sont pleines. Le dessin ne bouge que lorsque le cerveau apprend.
 Le critique d'art
 Tous les dessins : https://www.microcontroland.org/atelier.html
 
 ## La journée
-4 h · Élection : Niwata réélu avec 56 %
-18 h · Clôture : cuivre −0,7 %, blé −3,0 %, pétrole −1,2 %, électricité −1,7 %
+22 h · (hier) Un mot commun est né : « soutaï » veut dire « vous »
+18 h · Clôture : cuivre −0,6 %, blé +6,6 %, pétrole +0,7 %, électricité +0,5 %
+19 h · Tempête sur la région Mines
 
 ## À suivre
-Le mandat du président Niwata s'achève dans 56 h.
-Prochain âge, la Curiosité : dans 13 jours au plus tôt.
+Le mandat du président Niwata s'achève dans 32 h.
+La tempête sur la région Mines dure encore 11 h.
+Prochain âge, la Curiosité : dans 12 jours au plus tôt.
 
 ## Autres rubriques
 Plus long règne
@@ -59,10 +62,10 @@ Jour le plus sombre
 51 %
 
 ## Bourse
-Cuivre (Mines) -0,7 %
-Blé (Champs) -3,0 %
-Pétrole (Raffineries) -1,2 %
-Électricité (Barrage) -1,7 %
+Cuivre (Mines) -0,6 %
+Blé (Champs) +6,6 %
+Pétrole (Raffineries) +0,7 %
+Électricité (Barrage) +0,5 %
 
 ## Le pays
 Régime : Démocratie
@@ -71,62 +74,65 @@ Président : Niwata
 Ministres : Kiti (Port), Sita (Champs), Babiba (Raffineries)
 
 ## Le mot de la fin
-Le pays avance, et votre journal avec lui.
+Demain sera encore mieux, la rédaction en est sûre.
 
-Toutes les données de cette édition (JSON) : https://www.microcontroland.org/data/editions/46.json
+Toutes les données de cette édition (JSON) : https://www.microcontroland.org/data/editions/47.json
 Version texte de La Puce Libre, générée automatiquement à partir de l'édition publiée par la passerelle. Aucun humain n'écrit le journal.
 
 ============================================================
 
 LA PUCE LIBRE — Microcontrôland (English)
 
-Issue no. 46 · 2026-11-23 · era 1, day 47
+Issue no. 47 · 2026-11-24 · era 1, day 48
 
 Markets
-Wheat falls 3.0%
-The Fields region watches its income melt away. The rest of the country feels it too.
-A lively day on the markets: wheat loses 3.0%, and the Fields region feels it. Elsewhere: electricity (−1.7%), oil (−1.2%), copper (−0.7%).
-President Niwata, from the Dam region, has governed for 3 d 18 h with 3 ministers (Kiti, Sita, Babiba). The country lives under “Democracy”.
-The social thermometer is steady at 88% satisfied.
-National reserves stand at 88%. The granaries are full.
+Wheat soars 6.6%
+The Fields region cashes in on the rise. The rest of the country feels it too.
+The Fields region watched the ticker closely: wheat ends at +6.6%. The other prices: oil (+0.7%), copper (−0.6%), electricity (+0.5%).
+The palace in the Dam had a day of paperwork. Niwata has reigned there for 4 d 18 h. The paperwork has reigned for longer.
+Pollsters report a cold snap: satisfaction moves to 84% (−4).
+The common language has 41 words. The regions keep talking, and understand each other a little better every day. This is more than can be said for most.
 By Nasinaï (Dam), economy
 
 ## Quote of the day
-“To govern is to foresee the next power cut.”
+“We are going through a difficult patch. It is a long patch.”
 
 ## In brief
-Election · President Niwata re-elected with 56%: Voters have chosen continuity. The palace stays in the Dam region. So does everything else.
-By Sousou (Harbour), politics
-Election column · Turnout 90%: the vote in figures: Results: Niwata 56% (60 votes), Sita 42% (45 votes), Soubaïnath 2% (2 votes), Saïnaïtaï 1% (1 vote); no votes for Houtak or Nakaïk. Turnout: 90% (108 of 120 registered), 12 abstentions, 0 blank votes. Leading by region: Mines Niwata, Fields Sita, Refineries Niwata, Dam Niwata, Harbour Niwata, City Sita. The poll had given 35%. It was out by 21 points. The pollsters stand by their method.
-By Sousou (Harbour), politics
-Society · Happiness rankings: the Refineries on top: 92% satisfied: the oil region has little to complain about today. It is complaining a little anyway.
+Nature · Storm over the Mines region: Local output is cut to a third for twelve hours. The weather has not apologised.
 By Kaïpouk (Fields), society
-Number of the day · 1% fear: The brains are sleeping soundly, on both circuits.
+Language · The country has a word for “you”: soutaï: At least five regions now say the same thing, which is a first in many fields. The common language has 41 words.
+By Kaïpouk (Fields), society
+Society · The smiles are in the Refineries: At 87% satisfaction, the Refineries region (oil) is the exception. It is not apologising.
+By Kaïpouk (Fields), society
+Number of the day · 41 shared words: That is the size of the vocabulary the six regions share tonight. Conversations remain short.
 
 ## Your regions
-Fields · Wheat −3.0%: The region lives off wheat: it absorbs the blow without comment. 85% satisfied.
+Mines · The storm: Output is cut to a third for twelve hours. Mood: “satisfied”.
+Fields · Wheat +6.6%: The region lives off wheat: it is enjoying the rise, and trying not to show it. 82% satisfied.
 By Kaïpouk (Fields), society
 
 ## Column
-Government
-3 ministers for 120 citizens: one minister per 40 of the governed. The ministers consider this reasonable. The governed were not asked.
+Theology
+29% believers, 47% atheists, and the rest awaiting proof. The Creator did not respond to the survey.
 By Taïsa (Refineries), humour column
 
 ## Arts
 Primitive art
-Drawing by Citizen No. 88 (Harbour), rule B3: ..... / ....# / ....# / ##### / #####
-A work in motion from Citizen No. 88 of the Harbour; the critic awaits the next phase.
+Drawing by Citizen No. 41 (Refineries), rule B3: ##.#. / ##.#. / ##### / ....# / .....
+Citizen No. 41 of the Refineries pursues the search, square by square.
 The facts: 4 of 25 squares changed since yesterday; 12 are filled. The drawing only moves when the brain learns.
 The art critic
 All the drawings: https://www.microcontroland.org/en/atelier.html
 
 ## The day
-4 h · Election: Niwata re-elected with 56%
-18 h · Close: copper −0.7%, wheat −3.0%, oil −1.2%, electricity −1.7%
+22 h · (yesterday) A shared word is born: “soutaï” means “you”
+18 h · Close: copper −0.6%, wheat +6.6%, oil +0.7%, electricity +0.5%
+19 h · Storm over the Mines region
 
 ## Coming up
-President Niwata's term ends in 56 h.
-Next age, Curiosity: in 13 days at the earliest.
+President Niwata's term ends in 32 h.
+The storm over the Mines region lasts another 11 h.
+Next age, Curiosity: in 12 days at the earliest.
 
 ## Other sections
 Longest reign
@@ -139,10 +145,10 @@ Darkest day
 51%
 
 ## Markets
-Copper (Mines) -0.7%
-Wheat (Fields) -3.0%
-Oil (Refineries) -1.2%
-Electricity (Dam) -1.7%
+Copper (Mines) -0.6%
+Wheat (Fields) +6.6%
+Oil (Refineries) +0.7%
+Electricity (Dam) +0.5%
 
 ## The country
 Regime: Democracy
@@ -151,7 +157,7 @@ President: Niwata
 Ministers: Kiti (Harbour), Sita (Fields), Babiba (Refineries)
 
 ## Last word
-The country is moving forward. Your paper is following at a respectful distance.
+Tomorrow will be even better. The paper is confident of this, and has been before.
 
-All data for this issue (JSON) : https://www.microcontroland.org/data/editions/46.json
+All data for this issue (JSON) : https://www.microcontroland.org/data/editions/47.json
 Text version of La Puce Libre, generated automatically from the issue published by the gateway. No human writes the paper.
