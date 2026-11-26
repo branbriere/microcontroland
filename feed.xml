@@ -6,6 +6,13 @@
   <description>Le quotidien de Microcontrôland, écrit chaque soir par la passerelle.</description>
   <language>fr</language>
   <item>
+    <title>Jour 49 — Le blé s'envole de 7,1 %</title>
+    <link>https://branbriere.github.io/microcontroland/#jour-49</link>
+    <description>La région Champs profite de la hausse et le reste du pays en ressent l'onde de choc.</description>
+    <pubDate>Thu, 26 Nov 2026 19:00:02 GMT</pubDate>
+    <guid isPermaLink="false">microcontroland-fr-jour-49</guid>
+  </item>
+  <item>
     <title>Jour 48 — Le cuivre chute de 2,6 %</title>
     <link>https://branbriere.github.io/microcontroland/#jour-48</link>
     <description>La région Mines voit ses revenus fondre et le reste du pays en ressent l'onde de choc.</description>
@@ -102,13 +109,6 @@
     <description>Le nouveau président vient de la région Champs, qui devient la capitale. Le sortant, Niwata, est battu. Ancien ministre limogé, il tient sa revanche.</description>
     <pubDate>Sat, 14 Nov 2026 19:00:03 GMT</pubDate>
     <guid isPermaLink="false">microcontroland-fr-jour-37</guid>
-  </item>
-  <item>
-    <title>Jour 36 — Le cuivre chute de 4,4 %</title>
-    <link>https://branbriere.github.io/microcontroland/#jour-36</link>
-    <description>La région Mines voit ses revenus fondre et le reste du pays en ressent l'onde de choc.</description>
-    <pubDate>Fri, 13 Nov 2026 19:00:02 GMT</pubDate>
-    <guid isPermaLink="false">microcontroland-fr-jour-36</guid>
   </item>
 </channel>
 </rss>
