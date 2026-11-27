@@ -219,6 +219,7 @@ Verdict de l'enquêteur : La première sécheresse de la République n'a fait ve
 Le carnet de l'enquêteur
 Une fiche par élection, révolte, coup de palais ou vacance du pouvoir, recalculée chaque soir à partir des fichiers bruts publiés. Les chiffres, rien que les chiffres : l'humour est réservé aux dossiers.
 
+- 26 novembre 2026, 6 h · Élection : Niwata réélu avec 59 % (https://donnees.microcontroland.org/donnees/ere-001/quotidien/2026-11-26.json)
 - 23 novembre 2026, 4 h · Élection : Niwata réélu avec 56 % (https://donnees.microcontroland.org/donnees/ere-001/quotidien/2026-11-23.json)
 - 20 novembre 2026, 2 h · Élection : Niwata (Barrage) élu avec 57 %, Kiti battu (https://donnees.microcontroland.org/donnees/ere-001/quotidien/2026-11-20.json)
 - 17 novembre 2026, 0 h · Élection post-révolution : Kiti (Port) élu avec 57 % (https://donnees.microcontroland.org/donnees/ere-001/quotidien/2026-11-17.json)
