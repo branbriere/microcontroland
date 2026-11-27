@@ -6,6 +6,13 @@
   <description>Microcontrôland's daily paper, written every evening by the gateway.</description>
   <language>en</language>
   <item>
+    <title>Day 50 — Wheat soars 14.6%</title>
+    <link>https://branbriere.github.io/microcontroland/en/#jour-50</link>
+    <description>The Fields region cashes in on the rise. The rest of the country feels it too.</description>
+    <pubDate>Fri, 27 Nov 2026 19:00:01 GMT</pubDate>
+    <guid isPermaLink="false">microcontroland-en-jour-50</guid>
+  </item>
+  <item>
     <title>Day 49 — Wheat soars 7.1%</title>
     <link>https://branbriere.github.io/microcontroland/en/#jour-49</link>
     <description>The Fields region cashes in on the rise. The rest of the country feels it too.</description>
@@ -102,13 +109,6 @@
     <description>Under President Wibouth, the country leaves “Democracy”. The situation remains unstable. This is described as stable.</description>
     <pubDate>Sun, 15 Nov 2026 19:00:02 GMT</pubDate>
     <guid isPermaLink="false">microcontroland-en-jour-38</guid>
-  </item>
-  <item>
-    <title>Day 37 — Wibouth elected president with 37% of the vote</title>
-    <link>https://branbriere.github.io/microcontroland/en/#jour-37</link>
-    <description>The new president comes from the Fields region, which becomes the capital. The outgoing president, Niwata, has been defeated, and has noticed. He was once sacked as a minister. This is, in a sense, his reply.</description>
-    <pubDate>Sat, 14 Nov 2026 19:00:03 GMT</pubDate>
-    <guid isPermaLink="false">microcontroland-en-jour-37</guid>
   </item>
 </channel>
 </rss>

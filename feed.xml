@@ -6,6 +6,13 @@
   <description>Le quotidien de Microcontrôland, écrit chaque soir par la passerelle.</description>
   <language>fr</language>
   <item>
+    <title>Jour 50 — Le blé s'envole de 14,6 %</title>
+    <link>https://branbriere.github.io/microcontroland/#jour-50</link>
+    <description>La région Champs profite de la hausse et le reste du pays en ressent l'onde de choc.</description>
+    <pubDate>Fri, 27 Nov 2026 19:00:01 GMT</pubDate>
+    <guid isPermaLink="false">microcontroland-fr-jour-50</guid>
+  </item>
+  <item>
     <title>Jour 49 — Le blé s'envole de 7,1 %</title>
     <link>https://branbriere.github.io/microcontroland/#jour-49</link>
     <description>La région Champs profite de la hausse et le reste du pays en ressent l'onde de choc.</description>
@@ -102,13 +109,6 @@
     <description>Sous le président Wibouth, le pays quitte le régime « Démocratie ». La situation reste instable.</description>
     <pubDate>Sun, 15 Nov 2026 19:00:02 GMT</pubDate>
     <guid isPermaLink="false">microcontroland-fr-jour-38</guid>
-  </item>
-  <item>
-    <title>Jour 37 — Wibouth élu président avec 37 % des voix</title>
-    <link>https://branbriere.github.io/microcontroland/#jour-37</link>
-    <description>Le nouveau président vient de la région Champs, qui devient la capitale. Le sortant, Niwata, est battu. Ancien ministre limogé, il tient sa revanche.</description>
-    <pubDate>Sat, 14 Nov 2026 19:00:03 GMT</pubDate>
-    <guid isPermaLink="false">microcontroland-fr-jour-37</guid>
   </item>
 </channel>
 </rss>
