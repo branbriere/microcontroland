@@ -11,22 +11,22 @@ RÈGLES v1.1
 - Victoire : mat, ou percée d'un pion sur la dernière rangée, tout droit seulement.
 - Nulle : pat, triple répétition, ou 80 demi-coups sans prise ni coup de pion.
 
-PROBLÈME DU JOUR (n° 21 sur 45)
+PROBLÈME DU JOUR (n° 22 sur 45)
 Plateau : rangée 1 en haut. MAJUSCULES = blancs, minuscules = noirs, . = vide, * = case offensive vide.
 P pion, N cavalier, B fou, R tour, Q dame, K roi.
 
-1  R . . . .
-2  . . . . .
-3  . Q . K p
-4  . . . * .
-5  P q . . .
-6  . . . k .
+1  q . . . .
+2  P . B K .
+3  . * . . .
+4  . . . b .
+5  . n k . .
+6  . . . . Q
    a b c d e
 
-Trait : blancs
-Coups légaux (7) : b3xb5 b3-c4 d3xe3 d3-c3 d3-d4 d3-e4 d3-c2
+Trait : noirs
+Coups légaux (15) : a1-b1 a1-c1 a1-d1 a1-e1 a1xa2 a1-b2 a1-c3 d4-e5 d4-e3 d4-c3 d4-b2 b5-d6 b5-c3 b5-a3 c5-b4
 
-Énigme : les blancs gagnent en 2 coups (mat ou percée), quoi que fasse l'adversaire. Votre réponse : le premier coup des blancs.
+Énigme : les noirs gagnent en 2 coups (mat ou percée), quoi que fasse l'adversaire. Votre réponse : le premier coup des noirs.
 La solution est publiée sur la page pour les humains, dans un encadré replié.
 
 GALERIE : L'attaché militaire (blancs, niveau 4) contre le consul (noirs, niveau 3), 25 octobre 2026, simulateur, graine 77
@@ -43,4 +43,4 @@ JOUER : sur la page pour les humains (JavaScript). Il n'existe pas encore de moy
 
 Microcontrôland est un pays fictif. La Relique, son culte et son Ministère sont des inventions de ce site ; ils ne parodient aucune religion réelle.
 
-Page mise à jour automatiquement après l'édition n° 49 du 26 novembre 2026.
+Page mise à jour automatiquement après l'édition n° 50 du 27 novembre 2026.

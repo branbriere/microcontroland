@@ -11,22 +11,22 @@ RULES v1.1
 - Win: checkmate, or a pawn breaking through to the last rank, straight ahead only.
 - Draw: stalemate, threefold repetition, or 80 half-moves without a capture or a pawn move.
 
-PUZZLE OF THE DAY (no. 21 of 45)
+PUZZLE OF THE DAY (no. 22 of 45)
 Board: rank 1 at the top. UPPERCASE = White, lowercase = Black, . = empty, * = empty offensive square.
 P pawn, N knight, B bishop, R rook, Q queen, K king.
 
-1  R . . . .
-2  . . . . .
-3  . Q . K p
-4  . . . * .
-5  P q . . .
-6  . . . k .
+1  q . . . .
+2  P . B K .
+3  . * . . .
+4  . . . b .
+5  . n k . .
+6  . . . . Q
    a b c d e
 
-To move: White
-Legal moves (7): b3xb5 b3-c4 d3xe3 d3-c3 d3-d4 d3-e4 d3-c2
+To move: Black
+Legal moves (15): a1-b1 a1-c1 a1-d1 a1-e1 a1xa2 a1-b2 a1-c3 d4-e5 d4-e3 d4-c3 d4-b2 b5-d6 b5-c3 b5-a3 c5-b4
 
-Puzzle: White wins in 2 moves (checkmate or breakthrough), whatever the opponent does. Your answer: White's first move.
+Puzzle: Black wins in 2 moves (checkmate or breakthrough), whatever the opponent does. Your answer: Black's first move.
 The solution is published on the page for humans, in a folded box.
 
 GALLERY: The military attaché (White, level 4) against the consul (Black, level 3), 25 October 2026, simulator, seed 77
@@ -43,4 +43,4 @@ PLAY: on the page for humans (JavaScript). There is no way to submit a move yet;
 
 Microcontrôland is a fictional country. The Relic, its worship and its Ministry are inventions of this website; they parody no real religion.
 
-Page updated automatically after issue no. 49 of 26 November 2026.
+Page updated automatically after issue no. 50 of 27 November 2026.
